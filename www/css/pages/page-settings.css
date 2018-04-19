@@ -1,0 +1,83 @@
+#page-content-settings .content-block{
+	text-align: center;
+	height: 100%;
+	color: #6d6d72;
+	padding: 0 15px;
+}
+
+#page-content-settings label.active-state
+{
+  -webkit-transition-duration: 0ms;
+  transition-duration: 0ms;
+  background-color: transparent !important;
+}
+
+#data-page-settings .left a + a{
+	margin-left: 0px;
+}
+
+#btnBackPageSettings{
+	
+}
+
+#btnMenuPageSettings{
+	display: none;
+}
+
+#data-page-settings .right{
+	width: 50px;
+}
+
+#page-content-settings .disciplines-list{
+
+	
+}
+
+#buttonSaveFavouritesSettings{
+	font-weight: 700;
+	font-size: 14px;
+	
+}
+
+#div-choosenot-initsettings{
+	width: 100%;
+	font-size: 22px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.label-checkbox-volume{
+	margin-left: 10px;
+}
+
+.label-ckeckbox-half{
+	width: 50% !important;
+}
+
+.icon-cbx-left{
+	float: left !important;
+}
+
+.list-block .item-content-checkbox{
+	padding-left: 30px;
+}
+
+#divSettingsErrorHeader{
+	font-size: 20px;
+	text-align: center;
+}
+
+#divSettingsErrorText{
+	padding: 10px 20px 20px;
+	text-align: center;
+	color: #808080;
+}
+
+#divImgSettingsError{
+	text-align: center;
+}
+
+#imgSettingsUpload{
+	height: auto;
+	max-width: 120px;
+}

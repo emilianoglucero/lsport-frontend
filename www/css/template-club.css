@@ -1,0 +1,491 @@
+/* *********************************************** */
+/* ******************* GENERAL ******************* */
+/* *********************************************** */
+
+.navbar::after,
+.navbar 
+{
+    background-color: #D71921;
+}
+
+.theme-lenguajesport a {
+    color: #000000;
+}
+
+.photo-browser .navbar 
+{
+    background: #D71921 none repeat scroll 0 0;
+}
+
+.modal-title
+{
+	color: #D71921;
+}
+
+.modal-button
+{
+	color: #D71921;
+}
+
+.popover-inner ul li a .row
+{
+	color: #D71921;
+}
+
+
+/* **************************************************** */
+/* ******************* MENU LATERAL ******************* */
+/* **************************************************** */
+
+.panel.panel-left
+{
+	background-color: #333333;
+}
+
+.activeStateMenu {
+    background: rgb(94, 96, 105) !important;
+}
+
+.panel.panel-left .list-block ul::before,
+.panel.panel-left .list-block ul::after,
+.panel.panel-left .list-block .item-inner::after
+{
+	background-color: #D71921;
+}
+
+#lblMnuTitle
+{
+	color: white;
+}
+
+
+/* ********************************************************* */
+/* ******************** Page: #page-home ******************** */
+/* ********************************************************* */
+
+
+
+#page-home #divExistConnectionHome .content-block-title-home-fav 
+{
+    color: white;
+    font-size: 20px;
+    margin: 0px;
+    padding: 8px;
+    background-color: black;
+}
+
+#page-home #cardLastestNewsHome .card-header,
+#page-home #cardLastestNewsHome .card-header #divLastestNewsHome
+{
+	background-color: black;
+	color: white;
+    font-size: 20px;
+    margin: 0;
+    padding: 5px;
+}
+
+#page-home #last-news-list-block ul li .item-title
+{
+	color: #D71921;
+}
+
+#page-home #last-news-list-block ul li .item-title-row
+{
+	/* background-image:none; */
+}
+
+#page-home #content-block-favourites-home .row-home-page .col-50 .text-row-home-page{
+	background: RGBA(0, 0, 0, 0) none repeat scroll 0% 0%;
+}
+
+#page-home #last-news-list-block .list-block .item-inner::after 
+{
+    background-color: #D71921;
+}
+
+#page-home .row-home-page .col-50 
+{
+	color: #FFFFFF;
+}
+
+/* ******************************************************* */
+/* ******************* Page: #page-notifications ****************** */
+/* ******************************************************* */
+
+#page-notifications #list-block-notifications li.notificationNoRead {
+    background: #FEE;
+}
+
+#page-notifications #list-block-notifications .item-title{
+	color: #D71921;
+}
+
+    
+/* ******************************************************* */
+/* ******************* Page: #page-news ****************** */
+/* ******************************************************* */
+
+#page-news ul li a .item-title.item-title-new
+{
+	color: #D71921;
+}
+
+
+/* ****************************************************************** */
+/* ************************ Page: #page-newdetails ****************** */
+/* ****************************************************************** */
+
+#page-newdetails #titleNewDetails
+{
+	color: #D71921;
+}
+
+
+/* ****************************************************************** */
+/* ************************ Page: #page-newdetails ****************** */
+/* ****************************************************************** */
+
+#subnavbarSportDetails.subnavbar
+{
+    background: #D71921; none repeat scroll 0 0;
+}
+
+#subnavbarSportDetails .buttons-row a.button.active:not(.button-fill) 
+{
+    color: black;
+    background-color:#FFFFFF;
+}
+
+#page-sportdetails #tabs-sportdetails ul li a div.item-subtitle,
+#page-sportdetails #tabs-sportdetails ul li a div.item-title,
+#page-fixtures ul li a div.item-title
+{
+	color: #D71921;
+}
+
+#subnavbarSportDetails .buttons-row .button {
+    border-radius: 0;
+}
+
+#subnavbarSportDetails .buttons-row .button:not(.button-fill), 
+#subnavbarSportDetails .buttons-row .buttons-row .button, 
+#subnavbarSportDetails .buttons-row .button:not(.button-fill) 
+{
+    border-color: #FFFFFF !important;
+}
+
+#tabSportDetails1 .card-header::after 
+{
+	/*background-color: #FFFFFF;*/
+}
+
+#tabSportDetails1 .list-block .item-inner::after 
+{
+	/*background-color: #FFFFFF;*/
+}
+
+
+/* ****************************************************************** */
+/* ************************ Page: #page-activities ****************** */
+/* ****************************************************************** */
+
+#page-activities #activities-list .card-activity-content .card-header.card-header-title
+{
+	color: #D71921;
+}
+
+#page-activities #activities-list  .card-header::after 
+{
+    background-color: #d71921;
+    border: 1px solid;
+}
+
+/* *********************************************************************** */
+/* ************************ Page: #page-activitydetails ****************** */
+/* *********************************************************************** */
+
+#subnavbarActivityDetails.subnavbar
+{
+    background: #D71921; none repeat scroll 0 0;
+}
+
+#subnavbarActivityDetails .buttons-row a.button.active:not(.button-fill) 
+{
+    color: black;
+    background-color:#FFFFFF;
+}
+
+#page-activitydetails .tabs ul li a div.item-subtitle,
+#page-activitydetails .tabs ul li a div.item-title
+{
+	color: #D71921;
+}
+
+.color-blue i.icon, 
+.theme-lenguajesport i.icon, 
+i.icon.color-blue, 
+i.icon.theme-lenguajesport 
+{
+    color: #D71921;
+}
+
+.navbar-inner-activitydetails .buttons-row .button
+{
+    border-radius: 0;
+    border-color: #FFFFFF;
+}
+
+#tabs-activitydetails .card-header::after 
+{
+    /*background-color: #FFFFFF;*/
+}
+
+/* *********************************************************************** */
+/* ***************************** Page: #page-events ********************** */
+/* *********************************************************************** */
+
+#page-events a.aEventDetails .card-event-content,
+#page-events a.aEventDetails .row.row-events-page
+{
+	/* background-color: black; */
+}
+
+#page-events a.aEventDetails .card-footer.card-footer-event
+{
+	color: #D71921;
+}
+
+#page-events a.aEventDetails .card-footer::before
+{
+	background-color: #D71921;
+}
+
+#page-events a.aEventDetails .table-events-page
+{
+	color: white;
+}
+
+#page-events #events-content-block .table-events-page tr
+{
+	background-color: black;
+}
+
+
+/* *********************************************************************** */
+/* ************************** Page: #page-eventdetails ******************* */
+/* *********************************************************************** */
+
+#page-eventdetails .row-eventdetails-page 
+{
+    /*background-color: black; */
+}
+
+#page-eventdetails .row-eventdetails-page .col-50
+{
+    padding-right: 7px;
+}
+
+#page-eventdetails .content-block #placeTextEventDetails{
+    background-color: black;
+    color: white;
+}
+#page-eventdetails .table-eventdetails-page tr td
+{
+	background-color: black;
+	color: white;
+}
+
+
+/* *********************************************************************** */
+/* ***************************** Page: #page-about *********************** */
+/* *********************************************************************** */
+
+#page-about .list-block ul
+{
+	background-color: black;
+}
+
+#page-about .list-block ul li
+{
+	color: white;
+}
+
+#page-about .list-block ul li a:active
+{
+	background-color: #D71921;
+}
+
+#page-about .list-block .item-inner::after 
+{
+    background-color: #D71921;
+}
+
+/* *********************************************************************** */
+/* ************************ Page: #page-installations ******************** */
+/* *********************************************************************** */
+
+#page-installations #installations-list .card.card-installations .card-content .item-title
+{
+	color: #D71921;
+}
+
+/* *********************************************************************** */
+/* ******************** Galerias de imágenes ****************** */
+/* *********************************************************************** */
+
+.content-block-title.content-block-title-custom.lblPhotoGallery,
+.content-block-title.content-block-title-custom.lblVideoGallery
+{
+	color: #D71921;
+}
+
+.swiper-pagination.color-blue .swiper-pagination-bullet-active, 
+.theme-lenguajesport .swiper-pagination .swiper-pagination-bullet-active 
+{
+    background-color: #D71921;
+}
+
+/* *********************************************************************** */
+/* ******************** Page: #page-installationdetails ****************** */
+/* *********************************************************************** */
+
+
+
+
+/* *********************************************************************** */
+/* ************************** Page: #page-milestones ********************* */
+/* *********************************************************************** */
+
+#page-milestones #milestones-list .card.card-milestones ul li a .item-title
+{
+	color: #D71921;
+}
+
+/* *********************************************************************** */
+/* ********************* Page: #page-milestonedetails ******************** */
+/* *********************************************************************** */
+
+
+/* *********************************************************************** */
+/* ************************ Page: #page-achievements ********************* */
+/* *********************************************************************** */
+
+#page-achievements #achievements-list .card.card-achievements ul li a .item-title
+{
+	color: #D71921;
+}
+
+/* *********************************************************************** */
+/* ********************* Page: #page-achievementdetails ****************** */
+/* *********************************************************************** */
+
+/* *********************************************************************** */
+/* ************************* Page: #page-managers ************************ */
+/* *********************************************************************** */
+
+#page-managers #managers-list .card-managers-content a
+{
+	color: #D71921;
+}
+
+/* *********************************************************************** */
+/* ************************** Page: #page-contact ************************ */
+/* *********************************************************************** */
+
+#page-contact #list-block-contact ul li .item-title.label
+{
+	color: #D71921;
+}
+
+/* *********************************************************************** */
+/* ************************** Page: #page-sports ************************ */
+/* *********************************************************************** */
+#page-sports  #sports-list .list-block .item-inner::after 
+{
+    background-color: #D71921;
+}
+
+#page-sports  #sports-list .list-block ul::before 
+{
+    background-color: #EFEFF4;
+}
+#page-sports  #sports-list .list-block ul::after 
+{
+    background-color: #EFEFF4;
+}
+
+#row-lastmatch-tournament .col-lastmatch-tournament .col-lastmatch-tournament-result{
+	border: 3px solid rgb(0, 0, 0);
+	color: #FFFFFF;
+	background-color: #D71921;
+}
+
+.table-tournaments .tr-header{
+	background-color: #D71921;
+	color: #FFFFFF;
+}
+
+/* *********************************************************************** */
+/* ************************* Page: #page-dateslist *********************** */
+/* *********************************************************************** */
+#page-dateslist .button{
+	border: 1px solid #D71921;
+	color: #D71921;
+	background-color: #FFFFFF;
+}
+
+#page-dateslist .table-datelist tr {
+    border-bottom: 1px solid #D71921;
+}
+
+.interzonal-datelist {
+	background: #F8E0E6;
+}
+
+.interzonal-label-datelist{
+	color: red;
+	font-weight: bold;
+}
+
+/* *********************************************************************** */
+/* ************************* Page: #page-positionstable *********************** */
+/* *********************************************************************** */
+
+#page-positionstable .table-positionstable tr {
+    border-bottom: 1px solid #D71921;
+}
+
+/* *********************************************************************** */
+/* ************************* Page: #page-shooterstable *********************** */
+/* *********************************************************************** */
+
+#page-shooterstable .table-shooterstable tr {
+    border-bottom: 1px solid #D71921;
+}
+
+/* *********************************************************************** */
+/* ************************** Page: #page-user and login ************************ */
+/* *********************************************************************** */
+
+#lblLogoutButton {
+	color: #D71921;
+}
+
+#lblSendButtonLogin {
+	color: #D71921;
+}
+
+#resend-smscode {
+	color: #D71921;
+}
+
+#lblSendSmsCodeButton{
+	color: #D71921;
+}
+
+#lblSendButtonProfile {
+	color: #D71921;
+}
+
+
+
