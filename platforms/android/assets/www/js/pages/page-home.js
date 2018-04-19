@@ -198,19 +198,21 @@ function loadContentHomePage(){
       url: "http://clubes.lenguajefutbol.com/9/api/getHome",
       dataType: 'json',
       success: function(response){
-      if(response.errorCode != 0)
+      console.log(response);
+     /* if(response.errorCode != 0)
         {
             hideLoadSpinnerWS();
             $('#divNoConnectionHome').show();
             filterCodeErrorWS(response);
             return;
-        }
-        if(isAppUpdate(response.serverVersion) == false){
+        }*/
+        /*if(isAppUpdate(response.serverVersion) == false){
             hideLoadSpinnerWS();
             mainView.router.load({pageName: 'update'});
             return;
-        }
+        }*/
         newsListHome = response.sucesosPanel.sucesos;
+        console.log(newsListHome);
 
         currentPageNumberHomeNews = parseInt(response.sucesosPanel.paginaActual);
         currentTotalPageHomeNews = parseInt(response.sucesosPanel.paginaTotal);
@@ -219,8 +221,8 @@ function loadContentHomePage(){
         //arraySportsHomeWS = response.home.arraySports;
         //arrayActivitiesHomeWS = response.home.arrayActivities;
         //builderHomeBanner(response.home.banner);
-        unreadNotifications = response.home.unreadNotifications;
-        setBadgeIconNotificationsHome();
+        //unreadNotifications = response.home.unreadNotifications;
+        //setBadgeIconNotificationsHome();
 
         //admob interstitial
                     // show the interstitial later, e.g. at end of game level
@@ -237,6 +239,9 @@ function loadContentHomePage(){
 
         },
         error: function (data, status, error){
+        console.log(error);
+        console.log(data);
+        console.log(status);
         $('#divNoConnectionHome').show();
         hideLoadSpinnerWS();
         showMessageToast(messageConexionError);
@@ -323,8 +328,45 @@ function reloadContentHomePage(){
 	});
 
 	$.ajax({
+	// URL del Web Service
+    		url: 'http://clubes.lenguajefutbol.com/9/api/getHome',
+    		dataType: 'jsonp',
+    		timeout: timeOut,
+    		success: function(response){
+    			if(response.errorCode != 0)
+    			{
+    				hideLoadSpinnerWS();
+    			    filterCodeErrorWS(response);
+    			    $('#iconHeaderFavouritesHome .icon').removeClass('animation-preloader');
+    			    return;
+    			}
+    			if(isAppUpdate(response.serverVersion) == false){
+    				hideLoadSpinnerWS();
+    				mainView.router.load({pageName: 'update'});
+    				return;
+    			}
+    			//arraySportsHomeWS = response.sucesosPanel.arraySports;
+    			//arrayActivitiesHomeWS = response.home.arrayActivities;
+    			//chequear como armar esto builderHomeBanner(response.home.banner);
+    			//unreadNotifications = response.home.unreadNotifications;
+    			setBadgeIconNotificationsHome();
+    			builderFavouritesHome();
+    			$('#iconHeaderFavouritesHome').hide();
+    			$('#iconHeaderFavouritesHome .icon').removeClass('animation-preloader');
+    			hideLoadSpinnerWS();
+    			areFavouritesChanged = false;
+
+    		},
+    		error: function (data, status, error){
+    			showMessageToast(messageConexionError);
+    			$('#iconHeaderFavouritesHome .icon').removeClass('animation-preloader');
+    	   }
+	
+
+
+
 		// URL del Web Service
-		url: getPathWS() + 'getHome',
+		/*url: getPathWS() + 'getHome',
 		dataType: 'jsonp',
 		data: { 'idClub': idClub,
 				'clientId': window.localStorage.getItem("CLIENTID"+idClub),
@@ -360,7 +402,7 @@ function reloadContentHomePage(){
 		error: function (data, status, error){
 			showMessageToast(messageConexionError);
 			$('#iconHeaderFavouritesHome .icon').removeClass('animation-preloader');
-	   }
+	   }  */
 	});
 }
 
@@ -578,14 +620,16 @@ function builderFavouritesHome(){
 function builderNewsHomeDetails(){
 	//$('#last-news-list-block').html('');
 	var strBuilderLastNewsContent = [];
-	if(newsListHome.news.length == 0){
+	console.log(newsListHome);
+	console.log(newsListHome.length);
+	if(newsListHome.length == 0){
 			strBuilderLastNewsContent.push('<div class="divNotLastestNews">'+divNotLastestNews+'</div>');
 	}
 	else{
 		strBuilderLastNewsContent.push('<div class="list-block list-block-home media-list">');
 		strBuilderLastNewsContent.push('<ul>');
-		$.each( newsListHome.news, function( i, item ){
-            if(item.type == "banner"){
+		$.each( newsListHome, function( i, item ){
+            if(item.tipoObjeto == "banner"){
                         strBuilderLastNewsContent.push('<div class="item-list-banner">');
                             strBuilderLastNewsContent.push(builderBannerPublicityList(item.urlAdBanner,item.linkAdBanner));
                         strBuilderLastNewsContent.push('</div>');
@@ -596,14 +640,14 @@ function builderNewsHomeDetails(){
                         if(item.urlImgMin != ""){
                             urlImgNewsList = item.urlImgMin;
                         }
-                        strBuilderLastNewsContent.push('<div class="item-media"><img alt="'+item.altImg+'" data-src="'+urlImgNewsList+'" class="lazy lazy-fadeIn imgNewsSportDetails"></img></div>');
+                        strBuilderLastNewsContent.push('<div class="item-media"><img alt="'+item.imagenPrincipalMin+'" data-src="'+urlImgNewsList+'" class="lazy lazy-fadeIn imgNewsSportDetails"></img></div>');
                         strBuilderLastNewsContent.push('<div class="item-inner">');
                             strBuilderLastNewsContent.push('<div class="item-title-row">');
-                                strBuilderLastNewsContent.push('<div class="item-title">'+item.title+'</div>');
+                                strBuilderLastNewsContent.push('<div class="item-title">'+item.titulo+'</div>');
                             strBuilderLastNewsContent.push('</div>');
                             strBuilderLastNewsContent.push('<div class="item-text">');
-                        strBuilderLastNewsContent.push('<span class="item-date">'+item.publishDate+'</span>');
-                        strBuilderLastNewsContent.push('<span class="item-shortContent">'+item.shortContent+'</span>');
+                        strBuilderLastNewsContent.push('<span class="item-date">'+item.fecha.fecha+'</span>');
+                        strBuilderLastNewsContent.push('<span class="item-shortContent">'+item.detalle+'</span>');
                     strBuilderLastNewsContent.push('</div>');
                         strBuilderLastNewsContent.push('</div>');
                     strBuilderLastNewsContent.push('</a>');
