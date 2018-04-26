@@ -219,7 +219,7 @@ function loadContentHomePage(){
 
         currentPageNumberHomeNews = parseInt(response.sucesosPanel.paginaActual);
         currentTotalPageHomeNews = parseInt(response.sucesosPanel.paginasTotal);
-        //nextPageNumberHomeNews = parseInt(response.sucesosPanel.paginaActual) + 1;
+        nextPageNumberHomeNews = parseInt(response.sucesosPanel.paginaActual) + 1;
         console.log(currentTotalPageHomeNews);
         console.log(currentPageNumberHomeNews);
         console.log(nextPageNumberHomeNews);
@@ -391,7 +391,7 @@ console.log(currentTotalPageHomeNews);
 					loadingInfiniteScrollHomeNews = true;
 
 					if (areAccessedServerHomeNews == false){
-					console.log('loadhomesportdetails');
+					console.log('areaccesesloadhomesportdetails');
 						loadNewsHomeSportDetails();
 					} else {
 					console.log('noconnection');
@@ -409,7 +409,7 @@ console.log(currentTotalPageHomeNews);
             				//areContentTabNewsSportDetailsBuilder = true;
             				console.log('newlisthomefail');
             			//builderNewsHomeDetails();
-            			loadNewsHomeSportDetails();
+            			builderNewsHomeDetails();
             }
     //$('#last-news-list-block').append(builderNewsHomeDetails());
 
@@ -457,7 +457,7 @@ function loadNewsHomeSportDetails(){
 console.log('insideloadnews');
 console.log(currentPageNumberHomeNews);
 console.log(nextPageNumberHomeNews);
-	showLoadSpinnerWS();
+	//showLoadSpinnerWS();
 	$.ajax({
 			// URL del Web Service
 			url: getPathWS() + 'getSucesos',
@@ -486,17 +486,17 @@ console.log(nextPageNumberHomeNews);
 				console.log('primer pag');
 					$('#last-news-list-block').html("");
 					newsListHome = [];
-					newsListHome = response;
+					newsListHome = response.sucesos;
 					builderNewsHomeDetails();
 					//$('#last-news-list-block').append(builderNewsHomeDetails());
 					hideLoadSpinnerWS();
 				} else {
 				console.log('segunda pag');
 					newsListHome = [];
-					newsListHome = response;
+					newsListHome = response.sucesos;
 					builderNewsHomeDetails();
 					//$('#last-news-list-block').append(builderNewsHomeDetails());
-					hideLoadSpinnerWS();
+					//hideLoadSpinnerWS();
 				}
 
 				if( response.paginasTotal < nextPageNumberHomeNews ){
@@ -603,15 +603,15 @@ function builderNewsHomeDetails(){
 console.log('arranca builder de los suceso');
 	//$('#last-news-list-block').html('');
 	var strBuilderLastNewsContent = [];
-	console.log(newsListHome.sucesos);
-	console.log(newsListHome.sucesos.length);
-	if(newsListHome.sucesos.length == 0){
+	console.log(newsListHome);
+	console.log(newsListHome.length);
+	if(newsListHome.length == 0){
 			strBuilderLastNewsContent.push('<div class="divNotLastestNews">'+divNotLastestNews+'</div>');
 	}
 	else{
 		strBuilderLastNewsContent.push('<div class="list-block list-block-home media-list">');
 		strBuilderLastNewsContent.push('<ul>');
-		$.each( newsListHome.sucesos, function( i, item ){
+		$.each( newsListHome, function( i, item ){
 		console.log(item);
             if(item.tipoObjeto == "banner"){
                         strBuilderLastNewsContent.push('<div class="item-list-banner">');
