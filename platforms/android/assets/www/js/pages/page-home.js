@@ -198,7 +198,7 @@ function loadContentHomePage(){
 	clientId = window.localStorage.getItem("CLIENTID"+idClub);
 	console.log(deviceID);
     $.ajax({
-      url: "http://clubes.lenguajefutbol.com/9/api/getHome",
+      url: getPathWS() + 'getHome',
       dataType: 'json',
       success: function(response){
       console.log(response);
@@ -219,7 +219,7 @@ function loadContentHomePage(){
 
         currentPageNumberHomeNews = parseInt(response.sucesosPanel.paginaActual);
         currentTotalPageHomeNews = parseInt(response.sucesosPanel.paginasTotal);
-        nextPageNumberHomeNews = parseInt(response.sucesosPanel.paginaActual) + 1;
+        //nextPageNumberHomeNews = parseInt(response.sucesosPanel.paginaActual) + 1;
         console.log(currentTotalPageHomeNews);
         console.log(currentPageNumberHomeNews);
         console.log(nextPageNumberHomeNews);
@@ -336,11 +336,11 @@ function reloadContentHomePage(){
 
 	$.ajax({
 	// URL del Web Service
-    		url: 'http://clubes.lenguajefutbol.com/9/api/getHome',
-    		dataType: 'jsonp',
+    		url: getPathWS() + 'getHome',
+    		dataType: 'json',
     		timeout: timeOut,
     		success: function(response){
-    			if(response.errorCode != 0)
+    			/*if(response.errorCode != 0)
     			{
     				hideLoadSpinnerWS();
     			    filterCodeErrorWS(response);
@@ -351,7 +351,7 @@ function reloadContentHomePage(){
     				hideLoadSpinnerWS();
     				mainView.router.load({pageName: 'update'});
     				return;
-    			}
+    			}*/
     			//arraySportsHomeWS = response.sucesosPanel.arraySports;
     			//arrayActivitiesHomeWS = response.home.arrayActivities;
     			//chequear como armar esto builderHomeBanner(response.home.banner);
@@ -369,49 +369,6 @@ function reloadContentHomePage(){
     			$('#iconHeaderFavouritesHome .icon').removeClass('animation-preloader');
     	   },
            beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer dcce59676c43e1c54a342e5207dfce0dc00fd502' ); } //set tokenString before send
-
-	
-
-
-
-		// URL del Web Service
-		/*url: getPathWS() + 'getHome',
-		dataType: 'jsonp',
-		data: { 'idClub': idClub,
-				'clientId': window.localStorage.getItem("CLIENTID"+idClub),
-				'arrayIdSports': currentFavouritesSports.toString(),
-				'arrayIdActivities': currentFavouritesActivities.toString()
-			 },
-		timeout: timeOut,
-		success: function(response){
-			if(response.errorCode != 0)
-			{
-				hideLoadSpinnerWS();
-			    filterCodeErrorWS(response);
-			    $('#iconHeaderFavouritesHome .icon').removeClass('animation-preloader');
-			    return;
-			}
-			if(isAppUpdate(response.serverVersion) == false){
-				hideLoadSpinnerWS();
-				mainView.router.load({pageName: 'update'});
-				return;
-			}
-			arraySportsHomeWS = response.home.arraySports;
-			arrayActivitiesHomeWS = response.home.arrayActivities;
-			builderHomeBanner(response.home.banner);
-			unreadNotifications = response.home.unreadNotifications;
-			setBadgeIconNotificationsHome();
-			builderFavouritesHome();
-			$('#iconHeaderFavouritesHome').hide();
-			$('#iconHeaderFavouritesHome .icon').removeClass('animation-preloader');
-			hideLoadSpinnerWS();
-			areFavouritesChanged = false;
-
-		},
-		error: function (data, status, error){
-			showMessageToast(messageConexionError);
-			$('#iconHeaderFavouritesHome .icon').removeClass('animation-preloader');
-	   }  */
 	});
 }
 
@@ -428,14 +385,16 @@ console.log(currentTotalPageHomeNews);
 				$$('.infinite-scroll-homenews').on('infinite', function () {
 
 					if (loadingInfiniteScrollHomeNews){
+					console.log('return loadinginfinitescroll');
 						return;
 					}
 					loadingInfiniteScrollHomeNews = true;
 
 					if (areAccessedServerHomeNews == false){
-					console.log('loadhomesportdetails')
+					console.log('loadhomesportdetails');
 						loadNewsHomeSportDetails();
 					} else {
+					console.log('noconnection');
 						$('#noConnection-content-block-homenews').show();
 					}
 				});
@@ -448,7 +407,9 @@ console.log(currentTotalPageHomeNews);
             if(newsListHome != "")
             {
             				//areContentTabNewsSportDetailsBuilder = true;
-            			builderNewsHomeDetails();
+            				console.log('newlisthomefail');
+            			//builderNewsHomeDetails();
+            			loadNewsHomeSportDetails();
             }
     //$('#last-news-list-block').append(builderNewsHomeDetails());
 
@@ -493,17 +454,21 @@ function builderHomeBanner(banner){
 }
 
 function loadNewsHomeSportDetails(){
-	//showLoadSpinnerWS();
+console.log('insideloadnews');
+console.log(currentPageNumberHomeNews);
+console.log(nextPageNumberHomeNews);
+	showLoadSpinnerWS();
 	$.ajax({
 			// URL del Web Service
-			url: 'http://clubes.lenguajefutbol.com/9/api/getSucesos',
-			dataType: 'jsonp',
-			data: { 'paginaActual': currentPageNumberHomeNews,
-			        'itemsPorPagina': itemsPage,
+			url: getPathWS() + 'getSucesos',
+			dataType: 'json',
+			data: { 'paginaActual': nextPageNumberHomeNews,
+			        'itemsPorPagina': itemsPage
             },
+            //beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer Bearer dcce59676c43e1c54a342e5207dfce0dc00fd502' ); }, //set tokenString before send
 			timeout: timeOut,
 			success: function(response){
-				if(response.errorCode != 0)
+				/*if(response.errorCode != 0)
 				{
 				    hideLoadSpinnerWS();
 				    filterCodeErrorWS(response);
@@ -513,11 +478,12 @@ function loadNewsHomeSportDetails(){
 					hideLoadSpinnerWS();
 					mainView.router.load({pageName: 'update'});
 					return;
-				}
+				}*/
 
 				nextPageNumberHomeNews = parseInt(response.paginaActual) + 1;
-
-				if( response.pageNumber == 1 ){
+                console.log(nextPageNumberHomeNews);
+				if( response.paginaActual == 1 ){
+				console.log('primer pag');
 					$('#last-news-list-block').html("");
 					newsListHome = [];
 					newsListHome = response;
@@ -525,6 +491,7 @@ function loadNewsHomeSportDetails(){
 					//$('#last-news-list-block').append(builderNewsHomeDetails());
 					hideLoadSpinnerWS();
 				} else {
+				console.log('segunda pag');
 					newsListHome = [];
 					newsListHome = response;
 					builderNewsHomeDetails();
@@ -532,7 +499,7 @@ function loadNewsHomeSportDetails(){
 					hideLoadSpinnerWS();
 				}
 
-				if( response.totalPage < nextPageNumberHomeNews ){
+				if( response.paginasTotal < nextPageNumberHomeNews ){
 					myApp.detachInfiniteScroll('.infinite-scroll-homenews');
 				}
 				loadingInfiniteScrollHomeNews = false;
@@ -633,17 +600,18 @@ function builderFavouritesHome(){
 }
 
 function builderNewsHomeDetails(){
+console.log('arranca builder de los suceso');
 	//$('#last-news-list-block').html('');
 	var strBuilderLastNewsContent = [];
-	console.log(newsListHome);
-	console.log(newsListHome.length);
-	if(newsListHome.length == 0){
+	console.log(newsListHome.sucesos);
+	console.log(newsListHome.sucesos.length);
+	if(newsListHome.sucesos.length == 0){
 			strBuilderLastNewsContent.push('<div class="divNotLastestNews">'+divNotLastestNews+'</div>');
 	}
 	else{
 		strBuilderLastNewsContent.push('<div class="list-block list-block-home media-list">');
 		strBuilderLastNewsContent.push('<ul>');
-		$.each( newsListHome, function( i, item ){
+		$.each( newsListHome.sucesos, function( i, item ){
 		console.log(item);
             if(item.tipoObjeto == "banner"){
                         strBuilderLastNewsContent.push('<div class="item-list-banner">');
@@ -704,7 +672,7 @@ function builderNewsHomeDetails(){
             //$.each(positionTables, function(n, table) {
                 strBuilderLastNewsContent.push('<div class="card card-table-tournaments">');
                 strBuilderLastNewsContent.push('<div class="card-header card-header-center card-header-positionstable">'+item.tablaGeneral.titulo+'</div>');
-                strBuilderLastNewsContent.push('<div class="card-header card-header-center">'+item.tablaGeneral.titulo+'</div>');
+                strBuilderLastNewsContent.push('<div class="card-header card-header-center">'+item.titulo+'</div>');
                 strBuilderLastNewsContent.push('<div class="card-content">');
                 strBuilderLastNewsContent.push('<div class="card-content-inner">');
                 strBuilderLastNewsContent.push('<div class="list-block">');
