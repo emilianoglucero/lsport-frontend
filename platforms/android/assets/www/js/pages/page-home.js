@@ -41,6 +41,10 @@ $(document).ready(function(){
 	    $('#lblHeaderContact').text(lblHeaderContact);
 	    $('.lblHeaderBack').text(lblHeaderBack);
 
+        $('#subnavbarHomeDetails1').text(lblTabHome1);
+        $('#subnavbarHomeDetails2').text(lblTabHome2);
+        $('#subnavbarHomeDetails3').text(lblTabHome3);
+
 	    //INIT LBL MENU
 	    $('#lblMnuTitle').text(lblMnuTitle);
 	    $('#lblMnuHome').text(lblMnuHome);
@@ -72,7 +76,25 @@ myApp.onPageInit('home', function (page)
 		mainView.router.load({pageName: 'settings'});
 	});
 
-
+    $$('#tabHomeDetails1').on('show', function () {
+		if(areContentTabInformationSportDetailsBuilder == false){
+			builderHomePage();
+			areContentTabInformationSportDetailsBuilder = true;
+		}
+	});
+	$$('#tabHomeDetails2').on('show', function () {
+	    if (areContentTabNewsSportDetailsBuilder == false){
+	    	builderNewsSportDetails();
+	    	areContentTabNewsSportDetailsBuilder  = true;
+	    }
+	    alert('22');
+	});
+	$$('#tabHomeDetails3').on('show', function () {
+	    if (areContentTabTournamentsSportDetailsBuilder == false){
+	    	builderTournamentsSportDetails();
+	    }
+	    alert('33');
+	});
 
 	//admob settings
 	// place our admob ad unit id here
