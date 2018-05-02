@@ -149,8 +149,17 @@
 {
     background: #2E539F; none repeat scroll 0 0;
 }
+#subnavbarHomeDetails.subnavbar
+{
+    background: #2E539F; none repeat scroll 0 0;
+}
 
 #subnavbarSportDetails .buttons-row a.button.active:not(.button-fill) 
+{
+    color: white;
+    background-color:#2E539F;
+}
+#subnavbarHomeDetails .buttons-row a.button.active:not(.button-fill)
 {
     color: white;
     background-color:#2E539F;
@@ -165,10 +174,20 @@
 #subnavbarSportDetails .buttons-row .button {
     border-radius: 0;
 }
+#subnavbarHomeDetails .buttons-row .button {
+    border-radius: 0;
+}
 
 #subnavbarSportDetails .buttons-row .button:not(.button-fill), 
 #subnavbarSportDetails .buttons-row .buttons-row .button, 
 #subnavbarSportDetails .buttons-row .button:not(.button-fill) 
+{
+    border-color: black !important;
+    background-color: black;
+}
+#subnavbarHomeDetails .buttons-row .button:not(.button-fill),
+#subnavbarHomeDetails .buttons-row .buttons-row .button,
+#subnavbarHomeDetails .buttons-row .button:not(.button-fill)
 {
     border-color: black !important;
     background-color: black;

@@ -5,6 +5,8 @@ var unreadNotifications = 0;
 //cuantos suscesos por pagina se cargan
 var itemsPage = 15;
 
+var areContentTabSucesosHomeDetailsBuilder = false;
+
 var newsListHome = [];
 var nextPageNumberHomeNews = 1;
 var loadingInfiniteScrollHomeNews = false;
@@ -77,20 +79,22 @@ myApp.onPageInit('home', function (page)
 	});
 
     $$('#tabHomeDetails1').on('show', function () {
-		if(areContentTabInformationSportDetailsBuilder == false){
+    console.log(areContentTabSucesosHomeDetailsBuilder);
+		if(areContentTabSucesosHomeDetailsBuilder == false){
+		console.log('inside tabhumedetails1');
 			builderHomePage();
-			areContentTabInformationSportDetailsBuilder = true;
+			areContentTabSucesosHomeDetailsBuilder = true;
 		}
 	});
 	$$('#tabHomeDetails2').on('show', function () {
-	    if (areContentTabNewsSportDetailsBuilder == false){
+	    if (areContentTabSucesosHomeDetailsBuilder == false){
 	    	builderNewsSportDetails();
 	    	areContentTabNewsSportDetailsBuilder  = true;
 	    }
 	    alert('22');
 	});
 	$$('#tabHomeDetails3').on('show', function () {
-	    if (areContentTabTournamentsSportDetailsBuilder == false){
+	    if (areContentTabSucesosHomeDetailsBuilder == false){
 	    	builderTournamentsSportDetails();
 	    }
 	    alert('33');
@@ -258,6 +262,7 @@ function loadContentHomePage(){
                           //if(AdMob) AdMob.showInterstitial();
 
         areHomeNewsLoaded = true;
+        areContentTabSucesosHomeDetailsBuilder = true;
 
         builderHomePage();
         $('#divExistConnectionHome').show();
@@ -436,7 +441,7 @@ console.log(currentTotalPageHomeNews);
     //$('#last-news-list-block').append(builderNewsHomeDetails());
 
 	myApp.initImagesLazyLoad(mainView.activePage.container);
-	$('#page-content-home').scroll(function()
+	$('#tabHomeDetails1').scroll(function()
 	{
 		if ($(this).scrollTop() < 30)
 		{
@@ -449,7 +454,7 @@ console.log(currentTotalPageHomeNews);
 		}
 	});
 	myApp.initImagesLazyLoad(mainView.activePage.container);
-	$('#page-content-home').scroll(function()
+	$('#tabHomeDetails1').scroll(function()
 	{
 		if ($(this).scrollTop() < 30)
 		{
@@ -526,6 +531,8 @@ console.log(nextPageNumberHomeNews);
 				}
 				loadingInfiniteScrollHomeNews = false;
 				areAccessedServerHomeNews = false;
+
+				areContentTabSucesosHomeDetailsBuilder = true;
 				//$('#noConnection-content-block-sportdetails').hide();
 
 			},
