@@ -224,3 +224,32 @@
 {
     height: 0;
 }
+
+
+/*sucesos del home
+
+.card-header-home{
+	display: block !important;
+	text-align: center;
+	color: #1A9AD9;
+	font-size: 16px;
+
+    min-height: 44px;
+    position: relative;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+}*/
+
+.card-event-home {
+   /* box-shadow: none;*/
+    box-shadow: 0 2px 4px rgba(0,0,0,.4) !important;
+}
+
+.card-event-home-content{
+	/*box-shadow: 0 2px 4px rgba(0,0,0,.4) !important;*/
+	width: 100%;
+	height: 100%;
+}

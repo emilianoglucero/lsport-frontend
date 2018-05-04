@@ -131,6 +131,22 @@
 }
 
 
+.card-header-home{
+	display: block !important;
+	text-align: center;
+	color: #108342;
+	font-size: 16px;
+
+    min-height: 44px;
+    position: relative;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+
 /* ****************************************************************** */
 /* ************************ Page: #page-newdetails ****************** */
 /* ****************************************************************** */
@@ -596,4 +612,5 @@ label.label-checkbox input[type="checkbox"]:checked + .item-media i.icon-form-ch
 #lblSendButtonProfile {
     color: #108342;
 }
+
 
