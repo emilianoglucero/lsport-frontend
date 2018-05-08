@@ -701,7 +701,7 @@ console.log('arranca builder de los suceso');
             //$.each(positionTables, function(n, table) {
                 strBuilderLastNewsContent.push('<div class="card card-table-tournaments">');
                 strBuilderLastNewsContent.push('<div class="card-header card-header-center card-header-positionstable">'+item.tablaGeneral.titulo+'</div>');
-                strBuilderLastNewsContent.push('<div class="card-header card-header-center">'+item.titulo+'</div>');
+                //strBuilderLastNewsContent.push('<div class="card-header card-header-center">'+item.titulo+'</div>');
                 strBuilderLastNewsContent.push('<div class="card-content">');
                 strBuilderLastNewsContent.push('<div class="card-content-inner">');
                 strBuilderLastNewsContent.push('<div class="list-block">');
@@ -709,17 +709,19 @@ console.log('arranca builder de los suceso');
                 strBuilderLastNewsContent.push('<table class="table-tournaments table-positionstable">');
                 strBuilderLastNewsContent.push('<tr class="tr-header">');
                 console.log(item);
-                //$.each(item, function(i, item) {
-                    if (item.tablaGeneral.cabecera.columna == 'eq'){
-                        if(item.tablaGeneral.cabecera.columna != "" && item.tablaGeneral.cabecera.columna != undefined){
-                            strBuilderLastNewsContent.push('<th class="th-40-tournaments">'+item.cabecera.columna+'</th>');
+                console.log(item.tablaGeneral.cabecera);
+                $.each(item.tablaGeneral.cabecera, function(i, item) {
+                console.log(item.nombreCorto);
+                    if (item.nombreCorto == 'eq'){
+                        if(item.nombreCorto != "" && item.nombreCorto != undefined){
+                            strBuilderLastNewsContent.push('<th class="th-40-tournaments">'+item.nombreCorto+'</th>');
                         }
                     } else {
-                        if(item.tablaGeneral.cabecera.columna != "" && item.tablaGeneral.cabecera.columna != undefined){
-                            strBuilderLastNewsContent.push('<th class="th-10-tournaments">'+item.cabecera.columna+'</th>');
+                        if(item.nombreCorto != "" && item.nombreCorto != undefined){
+                            strBuilderLastNewsContent.push('<th class="th-10-tournaments">'+item.nombreCorto+'</th>');
                         }
                     }
-                //});
+                });
                 strBuilderLastNewsContent.push('</tr>');
 
                 $.each(item.tablaGeneral.cuerpo, function(i, item) {

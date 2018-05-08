@@ -308,12 +308,12 @@ function loadPageLogin()
                         console.log('Email is verified or has phone or logged by facebook');
 
                         userFullName = user.displayName;
-                        firebase.auth().currentUser.getIdToken(true).then(function(idToken) {
+                        /*firebase.auth().currentUser.getIdToken(true).then(function(idToken) {
                           console.log(idToken);
                           tokenUser = idToken;
                         }).catch(function(error) {
                           console.log(error);
-                        });
+                        });*/
 
 
                         if (userFullName == null) {
@@ -324,6 +324,49 @@ function loadPageLogin()
 
                             if(window.localStorage.getItem("PAGEINITCONFIG"+idClub) != null)
                             {
+                                  //me conecto con el ws de login y le paso todos los datos necesarios
+                                  /*firebase.auth().currentUser.getIdToken(true).then(function(idToken) {
+                                    console.log(idToken);
+                                    tokenUser = idToken;
+                                  }).catch(function(error) {
+                                    console.log(error);
+                                  });*/
+                                  firebase.auth().currentUser.getIdToken(true).then(function(idToken) {
+                                    console.log(idToken);
+                                    tokenUser = idToken;
+                                  }).catch(function(error) {
+                                    console.log(error);
+                                  });
+                                  console.log(userFullName); //nombre y apellido del usuario
+                                  console.log(tokenUser);
+                                  console.log(deviceID);
+                                  console.log(window.localStorage.getItem("TOKEN"+idClub));
+                                  console.log(platform);
+
+                                  	/*$.ajax({
+                                  	// URL del Web Service
+                                    url: getPathWS() + 'getHome',
+                                    dataType: 'json',
+                                    timeout: timeOut,
+                                    data: { 'grant_type': nextPageNumberHomeNews,
+                                            'assertion': tokenUser,
+                                            'dispositivoId': deviceID,
+                                            'tokenNotificacion': window.localStorage.getItem("TOKEN"+idClub),
+                                            'plataforma': platform
+                                    },
+                                    success: function(response){
+                                        console.log(response);
+                                        mainView.router.load({pageName: 'home'});
+                                        reloadContentHomePage();
+
+                                    },
+                                    error: function (data, status, error){
+                                        console.log(data);
+                                        console.log(status);
+                                        console.log(error);
+                                    }
+                                  	});*/
+
 
                                   mainView.router.load({pageName: 'home'});
                                   reloadContentHomePage();
@@ -346,7 +389,7 @@ function loadPageLogin()
                   mainView.router.load({pageName: 'login'});
               }
 
-       });
+        });
 
 }
 
