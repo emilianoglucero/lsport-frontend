@@ -1,6 +1,10 @@
 <div id="tabs-sportdetails" class="tabs-swipeable-wrap">
 	<div class="tabs">
-        <div data-distance="1000" id="tabHomeDetails1" class="page-content tab active infinite-scroll infinite-scroll-homenews">
+        <div data-distance="1000" id="tabHomeDetails1" class="page-content pull-to-refresh-content tab active infinite-scroll infinite-scroll-homenews">
+            <div class="pull-to-refresh-layer">
+                <div class="preloader"></div>
+                <div class="pull-to-refresh-arrow"></div>
+            </div>
             <div id="divNoConnectionHome" onclick="reloadPageHome()">
                 <div class="divImgNoConnection link">
                     <img class="imgNoConnection" src="img/template/icon-upload.png" alt="reload image" />

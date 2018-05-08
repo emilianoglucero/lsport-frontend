@@ -146,6 +146,18 @@ myApp.onPageInit('home', function (page)
 
       //admob finished
 
+      // Pull to refresh content
+      var ptrContent = $$('.pull-to-refresh-content');
+
+      // Add 'refresh' listener on it
+      ptrContent.on('ptr:refresh', function (e) {
+          //refresh code
+          loadContentHomePage();
+          //alert('pull refresh');
+              // When loading done, we need to reset it
+              myApp.pullToRefreshDone();
+      });
+
 });
 
 myApp.onPageBeforeAnimation('home', function (page)
@@ -383,8 +395,8 @@ function reloadContentHomePage(){
     			//arrayActivitiesHomeWS = response.home.arrayActivities;
     			//chequear como armar esto builderHomeBanner(response.home.banner);
     			//unreadNotifications = response.home.unreadNotifications;
-    			setBadgeIconNotificationsHome();
-    			builderFavouritesHome();
+    			//setBadgeIconNotificationsHome();
+    			//builderFavouritesHome();
     			$('#iconHeaderFavouritesHome').hide();
     			$('#iconHeaderFavouritesHome .icon').removeClass('animation-preloader');
     			hideLoadSpinnerWS();
