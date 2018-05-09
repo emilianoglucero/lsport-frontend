@@ -253,6 +253,8 @@ function loadContentHomePage(){
             return;
         }*/
         newsListHome = response.sucesosPanel.sucesos;
+        calendarListHome = response.calendarioPanel;
+        tournamentListHome = response.torneoPanel;
         console.log(newsListHome);
 
         currentPageNumberHomeNews = parseInt(response.sucesosPanel.paginaActual);
@@ -646,6 +648,10 @@ console.log('arranca builder de los suceso');
 	var strBuilderLastNewsContent = [];
 	console.log(newsListHome);
 	console.log(newsListHome.length);
+	var resultSearch = newsListHome.filter(function( obj ) {
+      return obj.id == 48;
+    });
+    console.log(resultSearch);
 	if(newsListHome.length == 0){
 			strBuilderLastNewsContent.push('<div class="divNotLastestNews">'+divNotLastestNews+'</div>');
 	}
@@ -677,6 +683,9 @@ console.log('arranca builder de los suceso');
                         strBuilderLastNewsContent.push('</div>');
                     strBuilderLastNewsContent.push('</a>');
                     strBuilderLastNewsContent.push('</li>');
+
+                    //almaceno en un objeto toda la info de la noticia
+
             } else if (item.tipoObjeto == "evento") {
                     strBuilderLastNewsContent.push('<a href="#" class="aEventDetails" onclick="loadEventDetails('+item.id+')">');
                         strBuilderLastNewsContent.push('<div class="card card-event-home">');

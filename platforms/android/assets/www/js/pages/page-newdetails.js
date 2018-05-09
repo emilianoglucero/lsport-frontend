@@ -21,72 +21,55 @@ myApp.onPageBeforeAnimation('newdetails', function (page)
 });
 
 function loadNewDetails(idNew){
-	showLoadSpinnerWS();
-	$.ajax({
-		// URL del Web Service
-		url: getPathWS() + 'getNewDetails',
-		dataType: 'jsonp',
-		data: { 'idClub': idClub,
-				'id': idNew,
-		 },
-		timeout: timeOut,
-		success: function(response){
-			if(response.errorCode != 0)
-			{
-			    hideLoadSpinnerWS();
-			    filterCodeErrorWS(response);
-			    return;
-			}
-			if(isAppUpdate(response.serverVersion) == false){
-				hideLoadSpinnerWS();
-				mainView.router.load({pageName: 'update'});
-				return;
-			}
-			builderNewBanner(response.banner);
-			builderNewDetails(response.newDetails);
+	        showLoadSpinnerWS();
+	        //console.log(idNew);
+
+	        	var newsDetails = newsListHome.filter(function( obj ) {
+                  return obj.id == idNew;
+                });
+                newsDetailsHome = newsDetails[0];
+
+
+			// averiguar como hacer esto builderNewBanner(response.banner);
+			builderNewDetails(newsDetailsHome);
 			hideLoadSpinnerWS();
 
-		},
-		error: function (data, status, error){
-	          hideLoadSpinnerWS();
-	          showMessage(messageConexionError);
-	   }
-		});
 }
 
 function builderNewDetails(newDetailsItem){
+console.log(newDetailsItem);
 	
 	$('#backgroundHeaderNewDetails').html('');
 	var strBuilderImgHeaderNew = [];
 	var urlImgNewDetails = getDefaultImageNewDetails();
 	var pathImgShare = "www/" + getDefaultImageNewDetails();
-	if(newDetailsItem.urlImg != ""){
-		urlImgNewDetails = newDetailsItem.urlImg; 
-		pathImgShare = newDetailsItem.urlImg;
+	if(newDetailsItem.imagenPrincipal != ""){
+		urlImgNewDetails = newDetailsItem.imagenPrincipal;
+		pathImgShare = newDetailsItem.imagenPrincipal;
 	}
 	
 	strBuilderImgHeaderNew.push('<img class="lazy lazy-fadeIn imgHeaderNewDetails" data-src="'+urlImgNewDetails+'" alt="'+newDetailsItem.altImg+'"/>');
 	
 	$('#backgroundHeaderNewDetails').append(strBuilderImgHeaderNew.join(""));
 	
-	$('#titleNewDetails').html(newDetailsItem.title);
-	$('#shortContentNewDetails').html(newDetailsItem.shortContent);
-	$('#publisherNewDetails').html(lblPublisherBy +' '+ newDetailsItem.publisher);
+	$('#titleNewDetails').html(newDetailsItem.titulo);
+	$('#shortContentNewDetails').html(newDetailsItem.bajada);
+	//$('#publisherNewDetails').html(lblPublisherBy +' '+ newDetailsItem.publisher);
 	
-	$('#contentNewDetails').html(newDetailsItem.content);
-	$('#dateNewDetails').html(lblPublicDateNew+' ' +newDetailsItem.publishDate + ' '+lblPublicDateHour+' ' +newDetailsItem.publishHour);
+	$('#contentNewDetails').html(newDetailsItem.detalle);
+	$('#dateNewDetails').html(lblPublicDateNew+' ' +newDetailsItem.fecha.fecha + ' '+lblPublicDateHour+' ' +newDetailsItem.fecha.hora);
 	
-	$('#shareNewWhatsapp').attr("onclick","shareNewWhatsapp('"+newDetailsItem.title+"','"+newDetailsItem.shortContent+"','"+pathImgShare+"','"+newDetailsItem.urlShare+"')");
-	$('#shareNewFacebook').attr("onclick","shareNewFacebook('"+newDetailsItem.title+"','"+pathImgShare+"','"+newDetailsItem.urlShare+"')");
-	$('#shareNewTwitter').attr("onclick","shareNewTwitter('"+newDetailsItem.title+"','"+newDetailsItem.urlShare+"')");
+	$('#shareNewWhatsapp').attr("onclick","shareNewWhatsapp('"+newDetailsItem.titulo+"','"+newDetailsItem.bajada+"','"+pathImgShare+"','"+newDetailsItem.imagenPrincipal+"')");
+	$('#shareNewFacebook').attr("onclick","shareNewFacebook('"+newDetailsItem.titulo+"','"+pathImgShare+"','"+newDetailsItem.imagenPrincipal+"')");
+	$('#shareNewTwitter').attr("onclick","shareNewTwitter('"+newDetailsItem.titulo+"','"+newDetailsItem.imagenPrincipal+"')");
 	
-	$('#divContentPhotoGalleryNewDetails').html(builderPhotoGalleryNewDetails(newDetailsItem.galleryImages));
-	$('#divContentVideoGalleryNewDetails').html(builderVideoGalleryNewDetails(newDetailsItem.galleryVideos));
+	$('#divContentPhotoGalleryNewDetails').html(builderPhotoGalleryNewDetails(newDetailsItem.audiovisuales));
+	$('#divContentVideoGalleryNewDetails').html(builderVideoGalleryNewDetails(newDetailsItem.audiovisuales));
 	
 	mainView.router.load({pageName: 'newdetails'});
 	
 	var centerSwiperPhotos = false;
-	if (newDetailsItem.galleryImages.length == 1){
+	if (newDetailsItem.imagenes.length == 1){
 		centerSwiperPhotos = true;
 	}
 	
@@ -103,7 +86,7 @@ function builderNewDetails(newDetailsItem){
     });
     
     var centerSwiperVideos = false;
-	if (newDetailsItem.galleryVideos.length == 1){
+	if (newDetailsItem.audiovisuales.length == 1){
 		centerSwiperVideos = true;
 	}
     
