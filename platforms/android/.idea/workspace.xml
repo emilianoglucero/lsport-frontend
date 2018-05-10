@@ -23,21 +23,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="page-home.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="page-home.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="652" column="7" lean-forward="false" selection-start-line="652" selection-start-column="7" selection-end-line="652" selection-end-column="7" />
+            <state relative-caret-position="180">
+              <caret line="817" column="33" lean-forward="true" selection-start-line="817" selection-start-column="33" selection-end-line="817" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="page-newdetails.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="page-newdetails.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-newdetails.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="71" column="31" lean-forward="false" selection-start-line="71" selection-start-column="31" selection-end-line="71" selection-end-column="31" />
+            <state relative-caret-position="-304">
+              <caret line="117" column="54" lean-forward="false" selection-start-line="117" selection-start-column="54" selection-end-line="117" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -66,8 +66,8 @@
       <file leaf-file-name="page-home.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/www/pages/page-home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+            <state relative-caret-position="421">
+              <caret line="31" column="32" lean-forward="false" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -127,13 +127,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>modal-overlay</find>
-      <find>loadingInfiniteScrollHomeNews</find>
-      <find>tabsportdetai</find>
-      <find>subnavbarSportDetails1</find>
-      <find>tabSportDetails1</find>
-      <find>contentTabSportDetails2</find>
-      <find>tabSportDetails2</find>
       <find>loadSportDetails</find>
       <find>lbltab</find>
       <find>builderNewsSportDetails</find>
@@ -157,6 +150,13 @@
       <find>reload</find>
       <find>localsto</find>
       <find>json.parse</find>
+      <find>builderHomePage</find>
+      <find>arraySportsHomeWS</find>
+      <find>newsListHome</find>
+      <find>builderHomeDetails2</find>
+      <find>areContentTabSucesosHomeDetailsBuilder</find>
+      <find>last-news-list-block</find>
+      <find>strBuilderLastNewsContent</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -2373,8 +2373,8 @@
         <option value="$PROJECT_DIR$/assets/www/js/pages/login/page-emailregister.js" />
         <option value="$PROJECT_DIR$/assets/www/js/common.js" />
         <option value="$PROJECT_DIR$/assets/www/pages/page-home.html" />
-        <option value="$PROJECT_DIR$/assets/www/js/pages/page-home.js" />
         <option value="$PROJECT_DIR$/assets/www/js/pages/page-newdetails.js" />
+        <option value="$PROJECT_DIR$/assets/www/js/pages/page-home.js" />
       </list>
     </option>
   </component>
@@ -3001,14 +3001,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/pages/page-home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3315">
@@ -3049,18 +3041,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-home.js">
+    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-newdetails.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="652" column="7" lean-forward="false" selection-start-line="652" selection-start-column="7" selection-end-line="652" selection-end-column="7" />
+        <state relative-caret-position="-304">
+          <caret line="117" column="54" lean-forward="false" selection-start-line="117" selection-start-column="54" selection-end-line="117" selection-end-column="54" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-newdetails.js">
+    <entry file="file://$PROJECT_DIR$/assets/www/pages/page-home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="71" column="31" lean-forward="false" selection-start-line="71" selection-start-column="31" selection-end-line="71" selection-end-column="31" />
+        <state relative-caret-position="421">
+          <caret line="31" column="32" lean-forward="false" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="817" column="33" lean-forward="true" selection-start-line="817" selection-start-column="33" selection-end-line="817" selection-end-column="33" />
           <folding />
         </state>
       </provider>

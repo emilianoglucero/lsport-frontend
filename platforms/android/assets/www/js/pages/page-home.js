@@ -6,6 +6,10 @@ var unreadNotifications = 0;
 var itemsPage = 15;
 
 var areContentTabSucesosHomeDetailsBuilder = false;
+//var areContentTabSucesosHomeDetailsBuilder = false;
+
+var homeDetails2List;
+var homeDetails3List;
 
 var newsListHome = [];
 var nextPageNumberHomeNews = 1;
@@ -87,17 +91,18 @@ myApp.onPageInit('home', function (page)
 		}
 	});
 	$$('#tabHomeDetails2').on('show', function () {
-	    if (areContentTabSucesosHomeDetailsBuilder == false){
-	    	builderNewsSportDetails();
-	    	areContentTabNewsSportDetailsBuilder  = true;
-	    }
-	    alert('22');
+	    //if (areContentTabSucesosHomeDetailsBuilder == false){
+	    	builderHomeDetails2();
+	    	//areContentTabHomeDetails2Builder  = true;
+	    //}
+	    //alert('22');
 	});
 	$$('#tabHomeDetails3').on('show', function () {
-	    if (areContentTabSucesosHomeDetailsBuilder == false){
-	    	builderTournamentsSportDetails();
+	    if (areContentTabHomeDetails3Builder == false){
+	    	builderHomeDetails2();
+	    	areContentTabHomeDetails3Builder  = true;
 	    }
-	    alert('33');
+	    //alert('33');
 	});
 
 	//admob settings
@@ -253,9 +258,11 @@ function loadContentHomePage(){
             return;
         }*/
         newsListHome = response.sucesosPanel.sucesos;
-        calendarListHome = response.calendarioPanel;
-        tournamentListHome = response.torneoPanel;
         console.log(newsListHome);
+        homeDetails2List = response.torneoPanel;
+        homeDetails3List = response.calendarioPanel;
+        console.log(homeDetails2List);
+        console.log(homeDetails3List);
 
         currentPageNumberHomeNews = parseInt(response.sucesosPanel.paginaActual);
         currentTotalPageHomeNews = parseInt(response.sucesosPanel.paginasTotal);
@@ -648,10 +655,6 @@ console.log('arranca builder de los suceso');
 	var strBuilderLastNewsContent = [];
 	console.log(newsListHome);
 	console.log(newsListHome.length);
-	var resultSearch = newsListHome.filter(function( obj ) {
-      return obj.id == 48;
-    });
-    console.log(resultSearch);
 	if(newsListHome.length == 0){
 			strBuilderLastNewsContent.push('<div class="divNotLastestNews">'+divNotLastestNews+'</div>');
 	}
@@ -805,4 +808,30 @@ function showPageNews(){
 
 function showPageSettings(){
 	mainView.router.load({pageName: 'settings'});
+}
+
+/**** builder de la 2da tab ****/
+
+function builderHomeDetails2() {
+console.log(homeDetails2List);
+var strBuilderTab2Content = [];
+//$('#tabHomeDetails2').html('');
+            	if(newsListHome.length == 0){
+            			strBuilderTab2Content.push('<div class="divNotLastestNews">'+divNotLastestNews+'</div>');
+            	}
+            	else{
+            	    $.each(homeDetails2List, function(i, homeDetails2List) {
+            	    console.log(homeDetails2List);
+                        strBuilderTab2Content.push('<p">'+homeDetails2List.id+'</p>');
+                        strBuilderTab2Content.push('<p">'+homeDetails2List.nombre+'</p>');
+                        strBuilderTab2Content.push('<p">'+homeDetails2List.tipoObjeto+'</p>');
+                        strBuilderTab2Content.push('<p">'+homeDetails2List.deporte.nombre+'</p>');
+                        //strBuilderTab2Content.push('<p">'+homeDetails2List.organizador.direccion+'</p>');
+                    });
+
+                }
+                //return(strBuilderLastNewsContent.join(""));
+                $('#tabHomeDetails2').append(strBuilderTab2Content.join(""));
+
+
 }
