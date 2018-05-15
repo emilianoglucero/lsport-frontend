@@ -660,7 +660,7 @@ console.log('arranca builder de los suceso');
 	}
 	else{
 		strBuilderLastNewsContent.push('<div class="list-block list-block-home media-list">');
-		strBuilderLastNewsContent.push('<ul>');
+		//strBuilderLastNewsContent.push('<ul>');
 		$.each( newsListHome, function( i, item ){
 		console.log(item);
             if(item.tipoObjeto == "banner"){
@@ -668,6 +668,49 @@ console.log('arranca builder de los suceso');
                             strBuilderLastNewsContent.push(builderBannerPublicityList(item.urlAdBanner,item.linkAdBanner));
                         strBuilderLastNewsContent.push('</div>');
             } else if (item.tipoObjeto == "noticia") {
+                strBuilderLastNewsContent.push('<div class="card card-news"><div class="card-content"><div class="list-block list-block-about media-list">');
+                strBuilderLastNewsContent.push('<a onclick="loadNewDetails('+item.id+')" href="#" class="item-link item-content">');
+                    strBuilderLastNewsContent.push('<ul class="cardHomeRow"><li class="item-content">');
+                        //strBuilderLastNewsContent.push('<a onclick="loadNewDetails('+item.id+')" href="#" class="item-link item-content">');
+                        strBuilderLastNewsContent.push('<div class="chipHomeContainer"><div class="chip chipHomeDate"><div class="media"><img src="../img/template/icon-fixture.png"></div>');
+                        strBuilderLastNewsContent.push('<div class="chip-label chipHomeDateLabel">'+item.fecha.fecha+'</div></div>');
+                        strBuilderLastNewsContent.push('<div class="chip chipHomeTags"><div class="media"><img src="../img/template/icon-fixture.png"></div>');
+                        strBuilderLastNewsContent.push('<div class="chip-label chipHomeSportLabel">Futbol Primera</div></div></li>');
+                        strBuilderLastNewsContent.push('<li class="item-content cardNewsContainerInfo">');
+
+                            strBuilderLastNewsContent.push('<div class="item-media cardNewsImageContainer">');
+                            var urlImgNewsList = getDefaultImageNewsList();
+                            if(item.urlImgMin != ""){
+                                urlImgNewsList = item.urlImgMin;
+                            }
+                            strBuilderLastNewsContent.push('<img class="lazy lazy-fadeIn cardNewsImage" data-src="'+item.imagenPrincipalMin+'" alt="'+urlImgNewsList+'" />');
+                            strBuilderLastNewsContent.push('</div>');
+
+                            strBuilderLastNewsContent.push('<div class="item-inner cardNewsInfo">');
+                            strBuilderLastNewsContent.push('<div class="item-title-row">');
+                            strBuilderLastNewsContent.push('<div class="item-title item-title-new">'+item.titulo+'</div>');
+                            strBuilderLastNewsContent.push('</div>');
+                                strBuilderLastNewsContent.push('<div class="item-subContent-news">');
+                                    //strBuilderLastNewsContent.push('<span class="item-date">'+item.fecha.fecha+'</span>');
+                                    strBuilderLastNewsContent.push('<span class="item-shortContent">'+item.detalle+'</span>');
+                                strBuilderLastNewsContent.push('</div>');
+                            strBuilderLastNewsContent.push('</div>');
+
+                        //strBuilderLastNewsContent.push('</a>');
+                    strBuilderLastNewsContent.push('</li></ul>');
+                    strBuilderLastNewsContent.push('</a>');
+                strBuilderLastNewsContent.push('</div></div></div>');
+
+
+
+
+
+
+
+
+
+
+                  /*
                     strBuilderLastNewsContent.push('<li>');
                     strBuilderLastNewsContent.push('<a onclick="loadNewDetails('+item.id+')" href="#" class="item-link item-content">');
                         var urlImgNewsList = getDefaultImageNewsList();
@@ -685,7 +728,7 @@ console.log('arranca builder de los suceso');
                     strBuilderLastNewsContent.push('</div>');
                         strBuilderLastNewsContent.push('</div>');
                     strBuilderLastNewsContent.push('</a>');
-                    strBuilderLastNewsContent.push('</li>');
+                    strBuilderLastNewsContent.push('</li>');*/
 
                     //almaceno en un objeto toda la info de la noticia
 

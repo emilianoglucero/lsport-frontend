@@ -76,7 +76,7 @@
 }
 
 .list-block.list-block-home .item-content {
-    padding-left: 10px;
+    padding-left: 7.5px;
 }
 
 .list-block.media-list .item-text .item-date {
@@ -252,4 +252,54 @@
 	/*box-shadow: 0 2px 4px rgba(0,0,0,.4) !important;*/
 	width: 100%;
 	height: 100%;
+}
+
+.cardHomeRow{
+    width: 100%;
+}
+
+.chipHomeContainer{
+    width: 100%;
+    overflow: hidden;
+}
+
+.chipHomeDate{
+    float: left;
+    width: 45%;
+}
+
+.chipHomeTags{
+    float: right;
+}
+
+.chipHomeTags{
+    margin-right: 15px;
+    width: 48%;
+}
+
+.chipHomeSportLabel{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.chipHomeDateLabel{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cardNewsImageContainer{
+    width: 45%;
+}
+
+.cardNewsImage{
+    width: 100%;
+    height: 100%;
+}
+
+.cardNewsInfo{
+    width: 55%;
+}
+
+.cardNewsContainerInfo {
+    padding-bottom: 5px;
 }
