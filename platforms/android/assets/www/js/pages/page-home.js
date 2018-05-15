@@ -672,9 +672,9 @@ console.log('arranca builder de los suceso');
                 strBuilderLastNewsContent.push('<a onclick="loadNewDetails('+item.id+')" href="#" class="item-link item-content">');
                     strBuilderLastNewsContent.push('<ul class="cardHomeRow"><li class="item-content">');
                         //strBuilderLastNewsContent.push('<a onclick="loadNewDetails('+item.id+')" href="#" class="item-link item-content">');
-                        strBuilderLastNewsContent.push('<div class="chipHomeContainer"><div class="chip chipHomeDate"><div class="media"><img src="../img/template/icon-fixture.png"></div>');
-                        strBuilderLastNewsContent.push('<div class="chip-label chipHomeDateLabel">'+item.fecha.fecha+'</div></div>');
-                        strBuilderLastNewsContent.push('<div class="chip chipHomeTags"><div class="media"><img src="../img/template/icon-fixture.png"></div>');
+                        strBuilderLastNewsContent.push('<div class="chipHomeContainer"><div class="chip chipHomeDate"><div class="media"><i class="icon icon-date-home"></i></div>');
+                        strBuilderLastNewsContent.push('<div class="chip-label chipHomeDateLabel">'+formatDateSucesos(item.fecha.fecha)+'</div></div>');
+                        strBuilderLastNewsContent.push('<div class="chip chipHomeTags"><div class="media"><i class="icon icon-home-tiposuceso"></i></div>');
                         strBuilderLastNewsContent.push('<div class="chip-label chipHomeSportLabel">Futbol Primera</div></div></li>');
                         strBuilderLastNewsContent.push('<li class="item-content cardNewsContainerInfo">');
 
@@ -875,6 +875,26 @@ var strBuilderTab2Content = [];
                 }
                 //return(strBuilderLastNewsContent.join(""));
                 $('#tabHomeDetails2').append(strBuilderTab2Content.join(""));
+
+
+}
+
+function formatDateSucesos(dateNew) {
+    var dateEvent = dateNew;
+    var datearray = dateEvent.split("/");
+
+    var newdate = datearray[1] + '/' + datearray[0] + '/' + datearray[2];
+
+        var date = new Date(newdate);
+        //console.log(date)
+
+        var options = {
+            year: "numeric",
+            month: "short",
+            day: "numeric"
+        };
+
+        return date.toLocaleDateString("es", options) //en is language option, you may specify..
 
 
 }

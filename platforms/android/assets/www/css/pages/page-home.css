@@ -303,3 +303,17 @@
 .cardNewsContainerInfo {
     padding-bottom: 5px;
 }
+
+.icon-date-home {
+    width: 16px;
+    height: 16px;
+    background-image: url(../../img/template/icon-date-event.png);
+    border-radius: 3px;
+}
+
+.icon-home-tiposuceso {
+    width: 16px;
+    height: 16px;
+    background-image: url(../../img/template/icon-sports.png);
+    border-radius: 3px;
+}
