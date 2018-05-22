@@ -23,11 +23,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="page-home.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="page-home.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="881" column="0" lean-forward="false" selection-start-line="881" selection-start-column="0" selection-end-line="899" selection-end-column="1" />
+            <state relative-caret-position="-157">
+              <caret line="891" column="18" lean-forward="false" selection-start-line="891" selection-start-column="18" selection-end-line="891" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="page-home.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/www/pages/page-home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="276">
+              <caret line="35" column="51" lean-forward="false" selection-start-line="35" selection-start-column="51" selection-end-line="35" selection-end-column="51" />
+              <folding>
+                <element signature="e#1934#1983#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="page-login.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/www/pages/login/page-login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="89" lean-forward="false" selection-start-line="14" selection-start-column="63" selection-end-line="14" selection-end-column="89" />
               <folding />
             </state>
           </provider>
@@ -36,8 +58,8 @@
       <file leaf-file-name="page-home.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/www/css/pages/page-home.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="533">
-              <caret line="318" column="1" lean-forward="false" selection-start-line="318" selection-start-column="1" selection-end-line="318" selection-end-column="1" />
+            <state relative-caret-position="443">
+              <caret line="320" column="17" lean-forward="false" selection-start-line="320" selection-start-column="17" selection-end-line="320" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -76,18 +98,8 @@
       <file leaf-file-name="page-newdetails.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-newdetails.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-304">
+            <state relative-caret-position="-528">
               <caret line="117" column="54" lean-forward="false" selection-start-line="117" selection-start-column="54" selection-end-line="117" selection-end-column="54" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="page-home.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/www/pages/page-home.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="31" column="32" lean-forward="false" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -98,16 +110,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="497">
               <caret line="221" column="26" lean-forward="false" selection-start-line="221" selection-start-column="26" selection-end-line="221" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="page-emailregister.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/www/js/pages/login/page-emailregister.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2055">
-              <caret line="137" column="22" lean-forward="false" selection-start-line="137" selection-start-column="22" selection-end-line="137" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -127,12 +129,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>areContentTabNewsSportDetailsBuilder</find>
-      <find>recentNewsListSporDetails</find>
-      <find>subnavbarSportDetails</find>
-      <find>areContentTabInformationSportDetailsBuilder</find>
-      <find>page-content-home</find>
-      <find>errorcode</find>
       <find>aEventDetails</find>
       <find>footer</find>
       <find>cardlastest</find>
@@ -149,14 +145,20 @@
       <find>builderHomePage</find>
       <find>arraySportsHomeWS</find>
       <find>newsListHome</find>
-      <find>builderHomeDetails2</find>
-      <find>areContentTabSucesosHomeDetailsBuilder</find>
-      <find>last-news-list-block</find>
-      <find>strBuilderLastNewsContent</find>
       <find>icon-fix</find>
       <find>icon</find>
       <find>icon-ev</find>
       <find>icon-date</find>
+      <find>tabHomeDetails1</find>
+      <find>homeDetails2List</find>
+      <find>strBuilderLastNewsContent</find>
+      <find>builderNewsHomeDetails</find>
+      <find>last-news-list-block</find>
+      <find>builderWeekEvents</find>
+      <find>selectsport</find>
+      <find>areContentTab2HomeDetailsBuilder</find>
+      <find>builderHomeDetails2</find>
+      <find>areContentTabSucesosHomeDetailsBuilder</find>
     </findStrings>
     <replaceStrings>
       <replace>strBuilderLastNewsContent</replace>
@@ -2374,10 +2376,10 @@
         <option value="$PROJECT_DIR$/assets/www/js/pages/login/page-emailsignup.js" />
         <option value="$PROJECT_DIR$/assets/www/js/pages/login/page-emailregister.js" />
         <option value="$PROJECT_DIR$/assets/www/js/common.js" />
-        <option value="$PROJECT_DIR$/assets/www/pages/page-home.html" />
         <option value="$PROJECT_DIR$/assets/www/js/pages/page-newdetails.js" />
         <option value="$PROJECT_DIR$/assets/www/js/pages/page-news.js" />
         <option value="$PROJECT_DIR$/assets/www/css/pages/page-home.css" />
+        <option value="$PROJECT_DIR$/assets/www/pages/page-home.html" />
         <option value="$PROJECT_DIR$/assets/www/js/pages/page-home.js" />
       </list>
     </option>
@@ -2427,15 +2429,15 @@
               <item name="android" type="feadf853:AndroidModuleNode" />
               <item name="assets" type="edd41e36:AndroidSourceTypeNode" />
               <item name="www" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="android" type="1abcf292:AndroidViewProjectNode" />
               <item name="android" type="feadf853:AndroidModuleNode" />
               <item name="assets" type="edd41e36:AndroidSourceTypeNode" />
               <item name="www" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -2723,7 +2725,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="885">
           <caret line="59" column="4" lean-forward="false" selection-start-line="59" selection-start-column="4" selection-end-line="59" selection-end-column="4" />
-          <folding />
+          <folding>
+            <element signature="e#1934#1983#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2789,7 +2793,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="30" column="9" lean-forward="false" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
-          <folding />
+          <folding>
+            <element signature="e#1934#1983#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2853,7 +2859,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#1934#1983#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3017,34 +3025,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/pages/page-home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="31" column="32" lean-forward="false" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-news.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="117" column="68" lean-forward="false" selection-start-line="117" selection-start-column="68" selection-end-line="117" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/www/css/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
           <caret line="149" column="21" lean-forward="false" selection-start-line="149" selection-start-column="21" selection-end-line="149" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-newdetails.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-304">
-          <caret line="117" column="54" lean-forward="false" selection-start-line="117" selection-start-column="54" selection-end-line="117" selection-end-column="54" />
           <folding />
         </state>
       </provider>
@@ -3057,19 +3041,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-news.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="117" column="68" lean-forward="false" selection-start-line="117" selection-start-column="68" selection-end-line="117" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-newdetails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-528">
+          <caret line="117" column="54" lean-forward="false" selection-start-line="117" selection-start-column="54" selection-end-line="117" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/www/css/pages/page-home.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="318" column="1" lean-forward="false" selection-start-line="318" selection-start-column="1" selection-end-line="318" selection-end-column="1" />
+        <state relative-caret-position="443">
+          <caret line="320" column="17" lean-forward="false" selection-start-line="320" selection-start-column="17" selection-end-line="320" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/pages/login/page-login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="89" lean-forward="false" selection-start-line="14" selection-start-column="63" selection-end-line="14" selection-end-column="89" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="881" column="0" lean-forward="false" selection-start-line="881" selection-start-column="0" selection-end-line="899" selection-end-column="1" />
+        <state relative-caret-position="-157">
+          <caret line="891" column="18" lean-forward="false" selection-start-line="891" selection-start-column="18" selection-end-line="891" selection-end-column="18" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/pages/page-home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="35" column="51" lean-forward="false" selection-start-line="35" selection-start-column="51" selection-end-line="35" selection-end-column="51" />
+          <folding>
+            <element signature="e#1934#1983#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

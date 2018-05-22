@@ -317,3 +317,7 @@
     background-image: url(../../img/template/icon-sports.png);
     border-radius: 3px;
 }
+
+#calendarTypeView {
+    margin-top: 50px;
+}

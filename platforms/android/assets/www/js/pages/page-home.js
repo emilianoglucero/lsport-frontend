@@ -6,7 +6,10 @@ var unreadNotifications = 0;
 var itemsPage = 15;
 
 var areContentTabSucesosHomeDetailsBuilder = false;
-//var areContentTabSucesosHomeDetailsBuilder = false;
+var areContentTab2HomeDetailsBuilder = false;
+var areContentTab3HomeDetailsBuilder = false;
+
+var calendarInline;
 
 var homeDetails2List;
 var homeDetails3List;
@@ -91,15 +94,15 @@ myApp.onPageInit('home', function (page)
 		}
 	});
 	$$('#tabHomeDetails2').on('show', function () {
-	    //if (areContentTabSucesosHomeDetailsBuilder == false){
+	    console.log(areContentTab2HomeDetailsBuilder);
+	    if (areContentTab2HomeDetailsBuilder == false){
 	    	builderHomeDetails2();
-	    	//areContentTabHomeDetails2Builder  = true;
-	    //}
-	    //alert('22');
+	    	areContentTab2HomeDetailsBuilder  = true;
+	    }
 	});
 	$$('#tabHomeDetails3').on('show', function () {
-	    if (areContentTabHomeDetails3Builder == false){
-	    	builderHomeDetails2();
+	    if (areContentTab3HomeDetailsBuilder == false){
+	    	//builderHomeDetails2();
 	    	areContentTabHomeDetails3Builder  = true;
 	    }
 	    //alert('33');
@@ -162,6 +165,9 @@ myApp.onPageInit('home', function (page)
               // When loading done, we need to reset it
               myApp.pullToRefreshDone();
       });
+      //pull to refresh finishes
+
+
 
 });
 
@@ -856,25 +862,92 @@ function showPageSettings(){
 /**** builder de la 2da tab ****/
 
 function builderHomeDetails2() {
-console.log(homeDetails2List);
+console.log('builderhomedetails222222222');
+//areContentTabSucesosHomeDetailsBuilder = true;
+var yearCalendar = 2018;
+var monthCalendar = 5;
+var dayCalendar = 25;
+
 var strBuilderTab2Content = [];
 //$('#tabHomeDetails2').html('');
-            	if(newsListHome.length == 0){
-            			strBuilderTab2Content.push('<div class="divNotLastestNews">'+divNotLastestNews+'</div>');
-            	}
-            	else{
-            	    $.each(homeDetails2List, function(i, homeDetails2List) {
-            	    console.log(homeDetails2List);
-                        strBuilderTab2Content.push('<p">'+homeDetails2List.id+'</p>');
-                        strBuilderTab2Content.push('<p">'+homeDetails2List.nombre+'</p>');
-                        strBuilderTab2Content.push('<p">'+homeDetails2List.tipoObjeto+'</p>');
-                        strBuilderTab2Content.push('<p">'+homeDetails2List.deporte.nombre+'</p>');
-                        //strBuilderTab2Content.push('<p">'+homeDetails2List.organizador.direccion+'</p>');
-                    });
 
+            //funcion para esconder y mostrar el div con la vista que corresponda
+            $('#timeLineView').hide();
+            $('#calendarView').show();
+            $('#selectTypeView').change(function(){
+                if($('#selectTypeView').val() == 'calendar') {
+                    $('#calendarView').show();
+                    $('#timeLineView').hide();
+                } else {
+                    $('#calendarView').hide();
+                    $('#timeLineView').show();
                 }
-                //return(strBuilderLastNewsContent.join(""));
-                $('#tabHomeDetails2').append(strBuilderTab2Content.join(""));
+            });
+
+         var monthNames = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto' , 'Septiembre' , 'Octubre', 'Noviembre', 'Diciembre'];
+         calendarInline = myApp.calendar({
+         container: '#calendar-inline-container',
+         value: [new Date()],
+         weekHeader: false,
+         events: [
+               new Date(2018,4,23),
+               new Date(2018,5,23),
+               new Date(2018,7,31),
+               new Date(yearCalendar,monthCalendar,dayCalendar)
+             ],
+         toolbarTemplate:
+             '<div class="toolbar calendar-custom-toolbar">' +
+                 '<div class="toolbar-inner">' +
+                     '<div class="left">' +
+                         '<a href="#" class="link icon-only"><i class="icon icon-back"></i></a>' +
+                     '</div>' +
+                     '<div class="center"></div>' +
+                     '<div class="right">' +
+                         '<a href="#" class="link icon-only"><i class="icon icon-forward"></i></a>' +
+                     '</div>' +
+                 '</div>' +
+             '</div>',
+         onOpen: function (p) {
+             $$('.calendar-custom-toolbar .center').text(monthNames[p.currentMonth] +', ' + p.currentYear);
+             $$('.calendar-custom-toolbar .left .link').on('click', function () {
+                 calendarInline.prevMonth();
+             });
+             $$('.calendar-custom-toolbar .right .link').on('click', function () {
+                 calendarInline.nextMonth();
+             });
+         },
+         onMonthYearChangeStart: function (p) {
+             $$('.calendar-custom-toolbar .center').text(monthNames[p.currentMonth] +', ' + p.currentYear);
+         },
+         onDayClick: function (p, dayContainer, year, month, day) {
+                //construir un builder
+                 console.log(year, month, day);
+                 console.log(calendarInline.events);
+                 //mostrar semana
+                 builderWeekEvents();
+         }
+
+        });
+        console.log(calendarInline);
+
+
+}
+
+function builderWeekEvents() {
+    $('#calendarEventsView').html("");
+    var strBuilderCalendarContent = [];
+    strBuilderCalendarContent.push('<div class="timeline">');
+    strBuilderCalendarContent.push('<div class="timeline-item">');
+    strBuilderCalendarContent.push('<div class="timeline-item-date">27 <small>DEC</small></div>');
+    strBuilderCalendarContent.push('<div class="timeline-item-divider"></div>');
+    strBuilderCalendarContent.push('<div class="timeline-item-content card">');
+    strBuilderCalendarContent.push('<div class="card-header">Card header</div>');
+    strBuilderCalendarContent.push('<div class="card-content">');
+    strBuilderCalendarContent.push('<div class="card-content-inner">Card content</div>');
+    strBuilderCalendarContent.push('</div>');
+    strBuilderCalendarContent.push('<div class="card-footer">Card footer</div></div></div></div>');
+
+    $('#calendarEventsView').append(strBuilderCalendarContent.join(""));
 
 
 }
