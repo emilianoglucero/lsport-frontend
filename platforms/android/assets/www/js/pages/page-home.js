@@ -706,38 +706,6 @@ console.log('arranca builder de los suceso');
                     strBuilderLastNewsContent.push('</li></ul>');
                     strBuilderLastNewsContent.push('</a>');
                 strBuilderLastNewsContent.push('</div></div></div>');
-
-
-
-
-
-
-
-
-
-
-                  /*
-                    strBuilderLastNewsContent.push('<li>');
-                    strBuilderLastNewsContent.push('<a onclick="loadNewDetails('+item.id+')" href="#" class="item-link item-content">');
-                        var urlImgNewsList = getDefaultImageNewsList();
-                        if(item.urlImgMin != ""){
-                            urlImgNewsList = item.urlImgMin;
-                        }
-                        strBuilderLastNewsContent.push('<div class="item-media"><img alt="'+item.imagenPrincipalMin+'" data-src="'+urlImgNewsList+'" class="lazy lazy-fadeIn imgNewsSportDetails"></img></div>');
-                        strBuilderLastNewsContent.push('<div class="item-inner">');
-                            strBuilderLastNewsContent.push('<div class="item-title-row">');
-                                strBuilderLastNewsContent.push('<div class="item-title">'+item.titulo+'</div>');
-                            strBuilderLastNewsContent.push('</div>');
-                            strBuilderLastNewsContent.push('<div class="item-text">');
-                        strBuilderLastNewsContent.push('<span class="item-date">'+item.fecha.fecha+'</span>');
-                        strBuilderLastNewsContent.push('<span class="item-shortContent">'+item.detalle+'</span>');
-                    strBuilderLastNewsContent.push('</div>');
-                        strBuilderLastNewsContent.push('</div>');
-                    strBuilderLastNewsContent.push('</a>');
-                    strBuilderLastNewsContent.push('</li>');*/
-
-                    //almaceno en un objeto toda la info de la noticia
-
             } else if (item.tipoObjeto == "evento") {
                     strBuilderLastNewsContent.push('<a href="#" class="aEventDetails" onclick="loadEventDetails('+item.id+')">');
                         strBuilderLastNewsContent.push('<div class="card card-event-home">');
@@ -871,16 +839,18 @@ var dayCalendar = 25;
 var strBuilderTab2Content = [];
 //$('#tabHomeDetails2').html('');
 
+builderTimeLineEventsHome();
+
             //funcion para esconder y mostrar el div con la vista que corresponda
-            $('#timeLineView').hide();
-            $('#calendarView').show();
+            $('#timeLineView').show();
+            $('#calendarView').hide();
             $('#selectTypeView').change(function(){
-                if($('#selectTypeView').val() == 'calendar') {
-                    $('#calendarView').show();
-                    $('#timeLineView').hide();
-                } else {
+                if($('#selectTypeView').val() == 'timeline') {
                     $('#calendarView').hide();
                     $('#timeLineView').show();
+                } else {
+                    $('#calendarView').show();
+                    $('#timeLineView').hide();
                 }
             });
 
@@ -920,35 +890,144 @@ var strBuilderTab2Content = [];
              $$('.calendar-custom-toolbar .center').text(monthNames[p.currentMonth] +', ' + p.currentYear);
          },
          onDayClick: function (p, dayContainer, year, month, day) {
-                //construir un builder
+                //construye la fecha seleccionada en el calendario
                  console.log(year, month, day);
-                 console.log(calendarInline.events);
-                 //mostrar semana
-                 builderWeekEvents();
+                 var monthFinal = parseInt(month) + 1;
+                 if (month.length == 1) {
+                  monthFinal = '0' + monthFinal
+                 }
+                 var eventDay = day + '/' + monthFinal + '/' + year;
+                 console.log(eventDay);
+
+                 //mostrar eventos del dia
+                 builderDayEvents(eventDay);
+
          }
 
         });
-        console.log(calendarInline);
+
+
 
 
 }
 
-function builderWeekEvents() {
+function builderDayEvents(eventDay) {
+var strBuilderCalendarContent = [];
+var arrayEvents = [];
+console.log(newsListHome);
+//$('#calendarEventsView').html("");
+
+$.each( newsListHome, function( i, item ){
+
+
+    if (item.tipoObjeto == "noticia"){
+    console.log(eventDay);
+    console.log(item.fecha.fecha);
+    arrayEvents.push(item.fecha.fecha);
+        if (item.fecha.fecha == eventDay) {
+        console.log(item.id);
+
+        console.log('evento coincideee');
+        $('#calendarEventsView').html("");
+        //poner aca el builder que esta mas abajo para construir
+        strBuilderCalendarContent.push('<div class="timeline-item">');
+        strBuilderCalendarContent.push('<div class="timeline-item-date">'+item.fecha.fecha+' <small>'+item.fecha.fecha+'</small></div>');
+        strBuilderCalendarContent.push('<div class="timeline-item-divider"></div>');
+            strBuilderCalendarContent.push('<a href="#" class="aEventDetails" onclick="loadEventDetails('+item.id+')">');
+                strBuilderCalendarContent.push('<div class="timeline-item-content card" id="cardHomeTimeLine">');
+                    strBuilderCalendarContent.push('<div class="card card-event-home">');
+                    strBuilderCalendarContent.push('<div class="card-header-home">'+item.titulo+'</div>');
+                        strBuilderCalendarContent.push('<div class="card-event-home-content">');
+                            strBuilderCalendarContent.push('<div class="card-content card-content-event">');
+                                strBuilderCalendarContent.push('<div class="content-block">');
+                                    strBuilderCalendarContent.push('<div class="row row-events-page">');
+                                        strBuilderCalendarContent.push('<div class="col-100">');
+                                            strBuilderCalendarContent.push('<img data-src="'+item.imagenPrincipalMin+'" alt="'+item.titulo+'" class="lazy lazy-fadeIn imgCardEvent"/>');
+                                        strBuilderCalendarContent.push('</div>');
+                                        strBuilderCalendarContent.push('<div class="col-100">');
+                                            strBuilderCalendarContent.push('<table class="table-events-page">');
+                                                strBuilderCalendarContent.push('<tr><td><i class="icon icon-date-event"></i></td><td><span>'+item.fecha.fecha+'</span></td></tr>');
+                                                strBuilderCalendarContent.push('<tr><td><i class="icon icon-hour-event"></i></td><td><span>'+item.fecha.hora+'</span></td></tr>');
+                                            strBuilderCalendarContent.push('</table>');
+                                        strBuilderCalendarContent.push('</div>');
+                                    strBuilderCalendarContent.push('</div>');
+                                strBuilderCalendarContent.push('</div>');
+                            strBuilderCalendarContent.push('</div>');
+                        strBuilderCalendarContent.push('</div>');
+                    strBuilderCalendarContent.push('</div>');
+                strBuilderCalendarContent.push('</div>');
+            strBuilderCalendarContent.push('</a>');
+        strBuilderCalendarContent.push('</div>');
+        $('#calendarEventsView').append(strBuilderCalendarContent.join(""));
+
+        }
+
+    }
+});
+console.log(arrayEvents);
+
+//si la fecha del evento no se encuentra en el array con todas las fechas, muestro que no existen eventos
+if (!arrayEvents.includes(eventDay)){
     $('#calendarEventsView').html("");
-    var strBuilderCalendarContent = [];
-    strBuilderCalendarContent.push('<div class="timeline">');
-    strBuilderCalendarContent.push('<div class="timeline-item">');
-    strBuilderCalendarContent.push('<div class="timeline-item-date">27 <small>DEC</small></div>');
-    strBuilderCalendarContent.push('<div class="timeline-item-divider"></div>');
-    strBuilderCalendarContent.push('<div class="timeline-item-content card">');
-    strBuilderCalendarContent.push('<div class="card-header">Card header</div>');
-    strBuilderCalendarContent.push('<div class="card-content">');
-    strBuilderCalendarContent.push('<div class="card-content-inner">Card content</div>');
-    strBuilderCalendarContent.push('</div>');
-    strBuilderCalendarContent.push('<div class="card-footer">Card footer</div></div></div></div>');
-
+    console.log('no existen eventos');
+    strBuilderCalendarContent.push('<p> No existen eventos para este dia </p>');
     $('#calendarEventsView').append(strBuilderCalendarContent.join(""));
+}
 
+
+
+}
+
+function builderTimeLineEventsHome() {
+console.log(newsListHome);
+
+var strBuilderTimeLineContent = [];
+    strBuilderTimeLineContent.push('<div class="timeline">');
+
+    $.each( newsListHome, function( i, item ){
+        if (item.tipoObjeto == 'noticia') {
+
+            //funcion para recortar la fecha
+            var dateTimeLineEvents = item.fecha.fecha;
+            var dateTimeLineEventsSplited = dateTimeLineEvents.split("/");
+            console.log(dateTimeLineEventsSplited);
+            console.log(dateTimeLineEvents);
+            console.log(dateTimeLineEventsSplited[0]);
+
+                strBuilderTimeLineContent.push('<div class="timeline-item">');
+                strBuilderTimeLineContent.push('<div class="timeline-item-date">'+dateTimeLineEventsSplited[1]+' <small>'+dateTimeLineEventsSplited[0]+'</small></div>');
+                strBuilderTimeLineContent.push('<div class="timeline-item-divider"></div>');
+                    strBuilderTimeLineContent.push('<a href="#" class="aEventDetails" onclick="loadEventDetails('+item.id+')">');
+                        strBuilderTimeLineContent.push('<div class="timeline-item-content card" id="cardHomeTimeLine">');
+                            strBuilderTimeLineContent.push('<div class="card card-event-home">');
+                            strBuilderTimeLineContent.push('<div class="card-header-home">'+item.titulo+'</div>');
+                                strBuilderTimeLineContent.push('<div class="card-event-home-content">');
+                                    strBuilderTimeLineContent.push('<div class="card-content card-content-event">');
+                                        strBuilderTimeLineContent.push('<div class="content-block">');
+                                            strBuilderTimeLineContent.push('<div class="row row-events-page">');
+                                                strBuilderTimeLineContent.push('<div class="col-100">');
+                                                    strBuilderTimeLineContent.push('<img data-src="'+item.imagenPrincipalMin+'" alt="'+item.titulo+'" class="lazy lazy-fadeIn imgCardEvent"/>');
+                                                strBuilderTimeLineContent.push('</div>');
+                                                strBuilderTimeLineContent.push('<div class="col-100">');
+                                                    strBuilderTimeLineContent.push('<table class="table-events-page">');
+                                                        strBuilderTimeLineContent.push('<tr><td><i class="icon icon-date-event"></i></td><td><span>'+item.fecha.fecha+'</span></td></tr>');
+                                                        strBuilderTimeLineContent.push('<tr><td><i class="icon icon-hour-event"></i></td><td><span>'+item.fecha.hora+'</span></td></tr>');
+                                                    strBuilderTimeLineContent.push('</table>');
+                                                strBuilderTimeLineContent.push('</div>');
+                                            strBuilderTimeLineContent.push('</div>');
+                                        strBuilderTimeLineContent.push('</div>');
+                                    strBuilderTimeLineContent.push('</div>');
+                                strBuilderTimeLineContent.push('</div>');
+                            strBuilderTimeLineContent.push('</div>');
+                        strBuilderTimeLineContent.push('</div>');
+                    strBuilderTimeLineContent.push('</a>');
+                strBuilderTimeLineContent.push('</div>');
+        }
+
+    });
+
+    strBuilderTimeLineContent.push('</div>');
+    $('#timeLineView').append(strBuilderTimeLineContent.join(""));
 
 }
 
@@ -968,6 +1047,30 @@ function formatDateSucesos(dateNew) {
         };
 
         return date.toLocaleDateString("es", options) //en is language option, you may specify..
+
+
+}
+
+function formatDateMonthSucesos(dateNew) {
+    var dateEvent = dateNew;
+    var datearray = dateEvent.split("/");
+
+    var newdate = datearray[1] + '/' + datearray[0] + '/' + datearray[2];
+
+        var date = new Date(newdate);
+        //console.log(date)
+
+        var options = {
+            year: "numeric",
+            month: "short",
+            day: "numeric"
+        };
+
+        var newdateFormated = date.toLocaleDateString("es", options) //en is language option, you may specify..
+        console.log(newdateFormated);
+        var newdateArray = dateEvent.split("/");
+        var newdateEventFormated = datearray[1];
+        console.log(newdateEventFormated);
 
 
 }

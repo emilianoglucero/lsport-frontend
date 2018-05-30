@@ -321,3 +321,9 @@
 #calendarTypeView {
     margin-top: 50px;
 }
+
+
+/***timeline view***/
+#cardHomeTimeLine {
+ width: 15em;
+}
