@@ -327,3 +327,10 @@
 #cardHomeTimeLine {
  width: 15em;
 }
+
+/***calendar view***/
+.noEventsCalendarMsg {
+    font-text: 20px;
+    text-align: center;
+    margin-top: 20px;
+}

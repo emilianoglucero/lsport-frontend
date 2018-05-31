@@ -829,6 +829,13 @@ function showPageSettings(){
 
 /**** builder de la 2da tab ****/
 
+function convert(d){
+console.log(d)
+  var w = d.split("/");
+  console.log(w[0], w[1], w[2]);
+  return new Date(w[2],w[1],w[0]);
+}
+
 function builderHomeDetails2() {
 console.log('builderhomedetails222222222');
 //areContentTabSucesosHomeDetailsBuilder = true;
@@ -838,6 +845,17 @@ var dayCalendar = 25;
 
 var strBuilderTab2Content = [];
 //$('#tabHomeDetails2').html('');
+var events = [];
+for(var k in newsListHome){
+//console.log(newsListHome[k])
+//console.log(newsListHome[k].tipoObjeto);
+    if(newsListHome[k].tipoObjeto == 'noticia'){
+    console.log(newsListHome[k].fecha.fecha);
+    events.push(convert(newsListHome[k].fecha.fecha));
+    console.log(events);
+    }
+}
+console.log(events);
 
 builderTimeLineEventsHome();
 
@@ -855,16 +873,30 @@ builderTimeLineEventsHome();
             });
 
          var monthNames = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto' , 'Septiembre' , 'Octubre', 'Noviembre', 'Diciembre'];
+
          calendarInline = myApp.calendar({
          container: '#calendar-inline-container',
          value: [new Date()],
          weekHeader: false,
-         events: [
+         events: [],
+
+         /*events: [
                new Date(2018,4,23),
                new Date(2018,5,23),
                new Date(2018,7,31),
+               $.each( newsListHome, function( i, item ){
+                if (item.tipoObjeto == "noticia") {
+                    var dateEvent = item.fecha.fecha;
+                    var datearray = dateEvent.split("/");
+                    var newdate = datearray[1] + '/' + datearray[0] + '/' + datearray[2];
+                    console.log(datearray[0]);
+                    new Date(datearray[2],datearray[0],datearray[1]),
+                }
+               });
+
                new Date(yearCalendar,monthCalendar,dayCalendar)
              ],
+             console.log(events);*/
          toolbarTemplate:
              '<div class="toolbar calendar-custom-toolbar">' +
                  '<div class="toolbar-inner">' +
@@ -907,6 +939,11 @@ builderTimeLineEventsHome();
         });
 
 
+console.log(calendarInline.params.events);
+console.log(events);
+calendarInline.params.events.push(events);
+//calendarInline.update();
+console.log(calendarInline);
 
 
 }
@@ -970,8 +1007,11 @@ console.log(arrayEvents);
 if (!arrayEvents.includes(eventDay)){
     $('#calendarEventsView').html("");
     console.log('no existen eventos');
-    strBuilderCalendarContent.push('<p> No existen eventos para este dia </p>');
+    strBuilderCalendarContent.push('<div class="content-block content-block-information">');
+    strBuilderCalendarContent.push('<div class="noEventsCalendarMsg"> No existen eventos para este dia </div>');
+    strBuilderCalendarContent.push('</div>');
     $('#calendarEventsView').append(strBuilderCalendarContent.join(""));
+
 }
 
 
