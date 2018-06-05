@@ -832,45 +832,39 @@ function showPageSettings(){
 function convert(d){
 console.log(d)
   var w = d.split("/");
-  console.log(w[0], w[1], w[2]);
-  return new Date(w[2],w[1],w[0]);
+  console.log(w[2], w[1]-1, w[0]);
+  return new Date(w[2],w[1]-1,w[0]);
 }
 
 function builderHomeDetails2() {
 console.log('builderhomedetails222222222');
 //areContentTabSucesosHomeDetailsBuilder = true;
-var yearCalendar = 2018;
-var monthCalendar = 5;
-var dayCalendar = 25;
+
 
 var strBuilderTab2Content = [];
 //$('#tabHomeDetails2').html('');
 var events = [];
 for(var k in newsListHome){
-//console.log(newsListHome[k])
-//console.log(newsListHome[k].tipoObjeto);
     if(newsListHome[k].tipoObjeto == 'noticia'){
-    console.log(newsListHome[k].fecha.fecha);
-    events.push(convert(newsListHome[k].fecha.fecha));
-    console.log(events);
+        events.push(convert(newsListHome[k].fecha.fecha));
     }
 }
 console.log(events);
 
 builderTimeLineEventsHome();
 
-            //funcion para esconder y mostrar el div con la vista que corresponda
-            $('#timeLineView').show();
-            $('#calendarView').hide();
-            $('#selectTypeView').change(function(){
-                if($('#selectTypeView').val() == 'timeline') {
-                    $('#calendarView').hide();
-                    $('#timeLineView').show();
-                } else {
-                    $('#calendarView').show();
-                    $('#timeLineView').hide();
-                }
-            });
+        //funcion para esconder y mostrar el div con la vista que corresponda
+        $('#timeLineView').show();
+        $('#calendarView').hide();
+        $('#selectTypeView').change(function(){
+            if($('#selectTypeView').val() == 'timeline') {
+                $('#calendarView').hide();
+                $('#timeLineView').show();
+            } else {
+                $('#calendarView').show();
+                $('#timeLineView').hide();
+            }
+        });
 
          var monthNames = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto' , 'Septiembre' , 'Octubre', 'Noviembre', 'Diciembre'];
 
@@ -878,25 +872,7 @@ builderTimeLineEventsHome();
          container: '#calendar-inline-container',
          value: [new Date()],
          weekHeader: false,
-         events: [],
-
-         /*events: [
-               new Date(2018,4,23),
-               new Date(2018,5,23),
-               new Date(2018,7,31),
-               $.each( newsListHome, function( i, item ){
-                if (item.tipoObjeto == "noticia") {
-                    var dateEvent = item.fecha.fecha;
-                    var datearray = dateEvent.split("/");
-                    var newdate = datearray[1] + '/' + datearray[0] + '/' + datearray[2];
-                    console.log(datearray[0]);
-                    new Date(datearray[2],datearray[0],datearray[1]),
-                }
-               });
-
-               new Date(yearCalendar,monthCalendar,dayCalendar)
-             ],
-             console.log(events);*/
+         events,
          toolbarTemplate:
              '<div class="toolbar calendar-custom-toolbar">' +
                  '<div class="toolbar-inner">' +
@@ -928,7 +904,11 @@ builderTimeLineEventsHome();
                  if (month.length == 1) {
                   monthFinal = '0' + monthFinal
                  }
-                 var eventDay = day + '/' + monthFinal + '/' + year;
+                 var dayFinal = parseInt(day);
+                 if (day.length == 1) {
+                   dayFinal = '0' + dayFinal
+                  }
+                 var eventDay = dayFinal + '/' + monthFinal + '/' + year;
                  console.log(eventDay);
 
                  //mostrar eventos del dia
@@ -940,9 +920,6 @@ builderTimeLineEventsHome();
 
 
 console.log(calendarInline.params.events);
-console.log(events);
-calendarInline.params.events.push(events);
-//calendarInline.update();
 console.log(calendarInline);
 
 
