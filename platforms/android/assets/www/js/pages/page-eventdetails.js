@@ -53,6 +53,22 @@ function loadEventDetails(idEvent){
 		});
 }
 
+function loadEventDetails1(idNew){
+	        showLoadSpinnerWS();
+	        //console.log(idNew);
+
+	        	var eventDetails = homeDetails2List.calendario.filter(function( obj ) {
+                  return obj.id == idNew;
+                });
+                eventDetailsHome = eventDetails[0];
+
+
+			// averiguar como hacer esto builderNewBanner(response.banner);
+			builderEventDetails(eventDetailsHome);
+			hideLoadSpinnerWS();
+
+}
+
 
 function builderEventDetails(eventDetailsItem){
 
@@ -61,17 +77,17 @@ function builderEventDetails(eventDetailsItem){
 
 	$('#containerImgHeaderEventDetail').html('<img data-src="'+eventDetailsItem.urlImg+'" alt="'+eventDetailsItem.altImg+'" class="lazy lazy-fadeIn" id="imgHeaderEventDetails" />');
 	
-	$('#dateEventDetails').html(eventDetailsItem.eventDate);
-	$('#hourEventDetails').html(eventDetailsItem.eventHour);
-	$('#placeTextEventDetails').html(eventDetailsItem.place);
+	$('#dateEventDetails').html(eventDetailsItem.fecha.fecha);
+	$('#hourEventDetails').html(eventDetailsItem.fecha.hora);
+	$('#placeTextEventDetails').html(eventDetailsItem.lugarDesarrollo);
 	
-	$('#descriptionEventDetails').html(eventDetailsItem.description);
+	$('#descriptionEventDetails').html(eventDetailsItem.bajada);
 	
 	
 	$('#divContentPhotoGalleryEvent').html('');
 	var centerSwiperPhotos = false;
-	if(eventDetailsItem.galleryImages != ""){
-		if(eventDetailsItem.galleryImages.length == 1){
+	if(eventDetailsItem.imagenes != ""){
+		if(eventDetailsItem.imagenes.length == 1){
 			centerSwiperPhotos = true;
 		}
 		var strBuilderPhotogallery = [];
@@ -79,7 +95,7 @@ function builderEventDetails(eventDetailsItem){
 		strBuilderPhotogallery.push('<div id="swiper-container-photogallery-event" class="swiper-container swiper-container-gallery-min swiper-container-horizontal">');
 			strBuilderPhotogallery.push('<div class="swiper-wrapper">');
 				listPhotosBrowserEvent = [];
-				$.each(eventDetailsItem.galleryImages, function(index, item) {
+				$.each(eventDetailsItem.imagenes, function(index, item) {
 				    
 				    listPhotosBrowserEvent.push(item.urlImg);
 					strBuilderPhotogallery.push('<div class="swiper-slide">');
@@ -96,8 +112,8 @@ function builderEventDetails(eventDetailsItem){
 	}
 	$('#divContentVideoGalleryEvent').html('');
 	var centerSwiperVideos = false;
-	if(eventDetailsItem.galleryVideos != ""){
-		if (eventDetailsItem.galleryVideos.length == 1){
+	if(eventDetailsItem.audiovisuales != ""){
+		if (eventDetailsItem.audiovisuales.length == 1){
 			centerSwiperVideos = true;
 		}
 		var strBuilderVideogallery = [];
@@ -159,9 +175,9 @@ function builderEventDetails(eventDetailsItem){
 	
 	myApp.initImagesLazyLoad(mainView.activePage.container);
 	
-	$('#shareEventWhatsapp').attr("onclick","shareEventWhatsapp('"+eventDetailsItem.title+"','"+eventDetailsItem.eventDate+"','"+eventDetailsItem.eventHour+"','"+eventDetailsItem.place+"','"+eventDetailsItem.urlImg+"','"+eventDetailsItem.urlShare+"')");
-	$('#shareEventFacebook').attr("onclick","shareEventFacebook('"+eventDetailsItem.title+"','"+eventDetailsItem.urlImg+"','"+eventDetailsItem.urlShare+"')");
-	$('#shareEventTwitter').attr("onclick","shareEventTwitter('"+eventDetailsItem.title+"','"+eventDetailsItem.eventDate+"','"+eventDetailsItem.eventHour+"','"+eventDetailsItem.place+"','"+eventDetailsItem.urlShare+"')");
+	$('#shareEventWhatsapp').attr("onclick","shareEventWhatsapp('"+eventDetailsItem.titulo+"','"+eventDetailsItem.fecha.fecha+"','"+eventDetailsItem.fecha.hora+"','"+eventDetailsItem.lugarDesarrollo+"','"+eventDetailsItem.imagenPrincipal+"','"+eventDetailsItem.imagenPrincipalMin+"')");
+	$('#shareEventFacebook').attr("onclick","shareEventFacebook('"+eventDetailsItem.titulo+"','"+eventDetailsItem.imagenPrincipal+"','"+eventDetailsItem.imagenPrincipalMin+"')");
+	$('#shareEventTwitter').attr("onclick","shareEventTwitter('"+eventDetailsItem.titulo+"','"+eventDetailsItem.fecha.fecha+"','"+eventDetailsItem.fecha.hora+"','"+eventDetailsItem.lugarDesarrollo+"','"+eventDetailsItem.imagenPrincipalMin+"')");
 }
 
 function openPhotoBrowserEvent(idPhoto){

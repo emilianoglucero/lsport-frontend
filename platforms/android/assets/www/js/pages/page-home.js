@@ -265,8 +265,8 @@ function loadContentHomePage(){
         }*/
         newsListHome = response.sucesosPanel.sucesos;
         console.log(newsListHome);
-        homeDetails2List = response.torneoPanel;
-        homeDetails3List = response.calendarioPanel;
+        homeDetails3List = response.torneoPanel;
+        homeDetails2List = response.calendarioPanel;
         console.log(homeDetails2List);
         console.log(homeDetails3List);
 
@@ -707,7 +707,7 @@ console.log('arranca builder de los suceso');
                     strBuilderLastNewsContent.push('</a>');
                 strBuilderLastNewsContent.push('</div></div></div>');
             } else if (item.tipoObjeto == "evento") {
-                    strBuilderLastNewsContent.push('<a href="#" class="aEventDetails" onclick="loadEventDetails('+item.id+')">');
+                    strBuilderLastNewsContent.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
                         strBuilderLastNewsContent.push('<div class="card card-event-home">');
                         strBuilderLastNewsContent.push('<div class="card-header-home">'+item.titulo+'</div>');
                         strBuilderLastNewsContent.push('<div class="card-event-home-content">');
@@ -844,10 +844,8 @@ console.log('builderhomedetails222222222');
 var strBuilderTab2Content = [];
 //$('#tabHomeDetails2').html('');
 var events = [];
-for(var k in newsListHome){
-    if(newsListHome[k].tipoObjeto == 'noticia'){
-        events.push(convert(newsListHome[k].fecha.fecha));
-    }
+for(var k in homeDetails2List.calendario){
+            events.push(convert(newsListHome[k].fecha.fecha));
 }
 console.log(events);
 
@@ -919,22 +917,18 @@ builderTimeLineEventsHome();
         });
 
 
-console.log(calendarInline.params.events);
-console.log(calendarInline);
-
-
 }
 
 function builderDayEvents(eventDay) {
 var strBuilderCalendarContent = [];
 var arrayEvents = [];
-console.log(newsListHome);
+console.log(homeDetails2List);
 //$('#calendarEventsView').html("");
 
-$.each( newsListHome, function( i, item ){
+$.each( homeDetails2List.calendario, function( i, item ){
 
 
-    if (item.tipoObjeto == "noticia"){
+    //if (item.tipoObjeto == "noticia"){
     console.log(eventDay);
     console.log(item.fecha.fecha);
     arrayEvents.push(item.fecha.fecha);
@@ -945,9 +939,9 @@ $.each( newsListHome, function( i, item ){
         $('#calendarEventsView').html("");
         //poner aca el builder que esta mas abajo para construir
         strBuilderCalendarContent.push('<div class="timeline-item">');
-        strBuilderCalendarContent.push('<div class="timeline-item-date">'+item.fecha.fecha+' <small>'+item.fecha.fecha+'</small></div>');
+        strBuilderCalendarContent.push('<div class="timeline-item-date">'+dateTimeLineEventsSplitedFormat(item.fecha.fecha, 0)+' <small>'+dateTimeLineEventsSplitedFormat(item.fecha.fecha, 1)+'</small></div>');
         strBuilderCalendarContent.push('<div class="timeline-item-divider"></div>');
-            strBuilderCalendarContent.push('<a href="#" class="aEventDetails" onclick="loadEventDetails('+item.id+')">');
+            strBuilderCalendarContent.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
                 strBuilderCalendarContent.push('<div class="timeline-item-content card" id="cardHomeTimeLine">');
                     strBuilderCalendarContent.push('<div class="card card-event-home">');
                     strBuilderCalendarContent.push('<div class="card-header-home">'+item.titulo+'</div>');
@@ -976,9 +970,8 @@ $.each( newsListHome, function( i, item ){
 
         }
 
-    }
+    //}
 });
-console.log(arrayEvents);
 
 //si la fecha del evento no se encuentra en el array con todas las fechas, muestro que no existen eventos
 if (!arrayEvents.includes(eventDay)){
@@ -994,27 +987,29 @@ if (!arrayEvents.includes(eventDay)){
 
 
 }
+function dateTimeLineEventsSplitedFormat(date, n){
+//funcion para recortar la fecha
+    var dateTimeLineEvents = date;
+    var dateTimeLineEventsSplited = dateTimeLineEvents.split("/");
+    //console.log(dateTimeLineEventsSplited);
+    //console.log(dateTimeLineEvents);
+    return dateTimeLineEventsSplited[n];
+}
 
 function builderTimeLineEventsHome() {
-console.log(newsListHome);
+console.log(homeDetails2List)
+//console.log(newsListHome);
 
 var strBuilderTimeLineContent = [];
     strBuilderTimeLineContent.push('<div class="timeline">');
 
-    $.each( newsListHome, function( i, item ){
-        if (item.tipoObjeto == 'noticia') {
-
-            //funcion para recortar la fecha
-            var dateTimeLineEvents = item.fecha.fecha;
-            var dateTimeLineEventsSplited = dateTimeLineEvents.split("/");
-            console.log(dateTimeLineEventsSplited);
-            console.log(dateTimeLineEvents);
-            console.log(dateTimeLineEventsSplited[0]);
+    $.each( homeDetails2List.calendario, function( i, item ){
+        //if (item.tipoObjeto == 'noticia') {
 
                 strBuilderTimeLineContent.push('<div class="timeline-item">');
-                strBuilderTimeLineContent.push('<div class="timeline-item-date">'+dateTimeLineEventsSplited[1]+' <small>'+dateTimeLineEventsSplited[0]+'</small></div>');
+                strBuilderTimeLineContent.push('<div class="timeline-item-date">'+dateTimeLineEventsSplitedFormat(item.fecha.fecha, 0)+' <small>'+dateTimeLineEventsSplitedFormat(item.fecha.fecha, 1)+'</small></div>');
                 strBuilderTimeLineContent.push('<div class="timeline-item-divider"></div>');
-                    strBuilderTimeLineContent.push('<a href="#" class="aEventDetails" onclick="loadEventDetails('+item.id+')">');
+                    strBuilderTimeLineContent.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
                         strBuilderTimeLineContent.push('<div class="timeline-item-content card" id="cardHomeTimeLine">');
                             strBuilderTimeLineContent.push('<div class="card card-event-home">');
                             strBuilderTimeLineContent.push('<div class="card-header-home">'+item.titulo+'</div>');
@@ -1039,7 +1034,7 @@ var strBuilderTimeLineContent = [];
                         strBuilderTimeLineContent.push('</div>');
                     strBuilderTimeLineContent.push('</a>');
                 strBuilderTimeLineContent.push('</div>');
-        }
+       // }
 
     });
 
