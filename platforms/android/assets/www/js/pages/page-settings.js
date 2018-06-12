@@ -77,7 +77,8 @@ function loadSettingNotificationsList(checkFavourites)
 	$('#settingsnotifications-list').html('');
 	$.ajax({
 		// URL del Web Service
-		url: getPathWS() + 'getNotificationsPreferences',
+		//url: getPathWS() + 'getNotificationsPreferences',
+		url: 'http://clubes.lenguajesport.com/webservice/getNotificationsPreferences',
 		dataType: 'jsonp',
 		data: {
 			'idClub': idClub,

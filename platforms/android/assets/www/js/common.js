@@ -297,6 +297,7 @@ function loadPageInit()
 var userName;
 var userLastName;
 var userFullName;
+var userEmail;
 
 function loadPageLogin()
 {
@@ -308,6 +309,7 @@ function loadPageLogin()
                         console.log('Email is verified or has phone or logged by facebook');
 
                         userFullName = user.displayName;
+                        userEmail = user.email;
                         /*firebase.auth().currentUser.getIdToken(true).then(function(idToken) {
                           console.log(idToken);
                           tokenUser = idToken;
@@ -342,30 +344,64 @@ function loadPageLogin()
                                   console.log(deviceID);
                                   console.log(window.localStorage.getItem("TOKEN"+idClub));
                                   console.log(platform);
+                                  console.log(userEmail);
+                                     	/*$.ajax({
+                                     			// URL del Web Service
+                                     			url: getPathWS() + 'registrarUsuario',
+                                     			dataType: 'json',
+                                     			type: 'POST',
+                                     			contentType: 'application/json',
+                                     			data: { 'grant_type': "urn:ietf:params:oauth:grant-type:jwt-bearer",
+                                     			        'assertion': tokenUser,
+                                     			        'dispositivoId': "fb9b38277c7910aa",
+                                                        'tokenNotificacion': "dUhVJBMJk3w:APA91bHa64MboeL1L55RMjKNUB9pxCWy2euNHdhC8qR8CQIzxvhYtkLx2qcD0w3Hs0dvg45TFxHYoOVZ-lJ6bNBjE2cd_rRrmr6ykPX4IC1Ag5O9b48XiKt3LPPgeZ5-JDtgk9F9jfVe",
+                                                        'platforma': "Android",
+                                                        'nombre': "emi",
+                                                        'apellido': "lucero",
+                                                        'correo': itemsPage
+                                                 },
+                                                 //beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer Bearer dcce59676c43e1c54a342e5207dfce0dc00fd502' ); }, //set tokenString before send
+                                     			timeout: timeOut,
+                                     			success: function(response){
+                                     				console.log(response);
 
-                                  	/*$.ajax({
-                                  	// URL del Web Service
-                                    url: getPathWS() + 'getHome',
-                                    dataType: 'json',
-                                    timeout: timeOut,
-                                    data: { 'grant_type': nextPageNumberHomeNews,
-                                            'assertion': tokenUser,
-                                            'dispositivoId': deviceID,
-                                            'tokenNotificacion': window.localStorage.getItem("TOKEN"+idClub),
-                                            'plataforma': platform
-                                    },
-                                    success: function(response){
-                                        console.log(response);
-                                        mainView.router.load({pageName: 'home'});
-                                        reloadContentHomePage();
+                                     			},
+                                     			error: function (data, status, error){
+                                                    console.log(data);
+                                                    console.log(status);
+                                                    console.log(error);
+                                                }
+                                     		   //beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer dcce59676c43e1c54a342e5207dfce0dc00fd502' ); } //set tokenString before send
 
-                                    },
-                                    error: function (data, status, error){
-                                        console.log(data);
-                                        console.log(status);
-                                        console.log(error);
-                                    }
-                                  	});*/
+                                     	});*/
+                                  	$.ajax({
+                                        // URL del Web Service
+                                        url: getPathWS() + 'registrarUsuario',
+                                        type: 'POST',
+                                        contentType: 'application/json',
+                                        dataType: 'json',
+                                        timeout: timeOut,
+                                        data: { 'grant_type': 'urn:ietf:params:oauth:grant-type:jwt-bearer',
+                                                'assertion': 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjE1ZjUyYTRhNGE5Y2MzNmZjOGEyNWZmMmQ0NzY4NmE0OGM2YjcxZWQifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vbGVuZ3VhamUtc3BvcnQiLCJuYW1lIjoiRW1pICBMdWNlcm8gIiwiYXVkIjoibGVuZ3VhamUtc3BvcnQiLCJhdXRoX3RpbWUiOjE1Mjg0MDExMDcsInVzZXJfaWQiOiJiTW54aHUzRHc4VXRQU1B4c1N5enBNa3JSYTEyIiwic3ViIjoiYk1ueGh1M0R3OFV0UFNQeHNTeXpwTWtyUmExMiIsImlhdCI6MTUyODQ3NjY5MCwiZXhwIjoxNTI4NDgwMjkwLCJwaG9uZV9udW1iZXIiOiIrNTI5ODQyMDk1MDM3IiwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJwaG9uZSI6WyIrNTI5ODQyMDk1MDM3Il19LCJzaWduX2luX3Byb3ZpZGVyIjoicGhvbmUifX0.VpCcyZSXsF8Gx0-KcbEorizT8kut7cJ0C1YE2sPQkw-THa-VOdjR6jisevDY24sDVSJa3m7glRjeQaMow0jejpvK0fPybSwXVfC3gkOsAvsb07XL4pQlBTTlDJVcnXQGhPBpulFDsq4SLgMrg9gMX6a5iUGfsSr3AyXFZxagpnJeQU2XoVhEQAOylLHtD56MIWPYEKcJHwp06jB3IrRKr8BAnIUNIkXGD-wL5nnNar8o46D6OnYoUwr4-L63GoewUAnZjUS3HRy1N7YKKDOl2cFpqtxRf7VwQ-B-CAChYhblPffRx9WY8446S6eoOyAyLmVSXGf-9Hs8y-ND4EkSqQ',
+                                                'dispositivoId': 'fb9b38277c7910aa',
+                                                'tokenNotificacion': 'dUhVJBMJk3w:APA91bHa64MboeL1L55RMjKNUB9pxCWy2euNHdhC8qR8CQIzxvhYtkLx2qcD0w3Hs0dvg45TFxHYoOVZ-lJ6bNBjE2cd_rRrmr6ykPX4IC1Ag5O9b48XiKt3LPPgeZ5-JDtgk9F9jfVe',
+                                                'plataforma': 'Android',
+                                                'nombre' : 'emi',
+                                                'apellido' : 'lucero',
+                                                'correo' : 'correo-1@example.com'
+                                        },
+                                        success: function(response){
+                                            console.log(response);
+                                            //mainView.router.load({pageName: 'home'});
+                                            //reloadContentHomePage();
+
+                                        },
+                                        error: function (data, status, error){
+                                            console.log(data);
+                                            console.log(status);
+                                            console.log(error);
+                                        }
+                                  	});
 
 
                                   mainView.router.load({pageName: 'home'});

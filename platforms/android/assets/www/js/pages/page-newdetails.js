@@ -22,7 +22,7 @@ myApp.onPageBeforeAnimation('newdetails', function (page)
 
 function loadNewDetails(idNew){
 	        showLoadSpinnerWS();
-	        //console.log(idNew);
+	        console.log(idNew);
 
 	        	var newsDetails = newsListHome.filter(function( obj ) {
                   return obj.id == idNew;

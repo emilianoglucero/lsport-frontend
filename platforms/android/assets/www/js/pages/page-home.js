@@ -668,12 +668,102 @@ console.log('arranca builder de los suceso');
 		strBuilderLastNewsContent.push('<div class="list-block list-block-home media-list">');
 		//strBuilderLastNewsContent.push('<ul>');
 		$.each( newsListHome, function( i, item ){
+		console.log(item.id);
 		console.log(item);
             if(item.tipoObjeto == "banner"){
                         strBuilderLastNewsContent.push('<div class="item-list-banner">');
                             strBuilderLastNewsContent.push(builderBannerPublicityList(item.urlAdBanner,item.linkAdBanner));
                         strBuilderLastNewsContent.push('</div>');
             } else if (item.tipoObjeto == "noticia") {
+
+                        if (item.id == 46){
+                        	if (item == "")
+                        	{
+                        		strBuilderLastNewsContent.push('');
+                        	}
+                        	else
+                        	{
+
+                        			/*if(lastMatch.liveMatch == true)
+                        			{
+                        				strBuilderLastNewsContent.push('<div class="card">');
+                        					idLiveMatchSportDetails = lastMatch.idMatch;
+                        					strBuilderLastNewsContent.push('<div class="card-header card-header-center animated infinite pulse">');
+                        					strBuilderLastNewsContent.push(lblLiveMatchTournaments);
+                        					strBuilderLastNewsContent.push('</div>');
+                        			}
+                        			else
+                        			{*/
+                        				idLiveMatchSportDetails = null;
+                        				strBuilderLastNewsContent.push('<div class="card">');
+                        					strBuilderLastNewsContent.push('<div class="card-header card-header-center">');
+                        					strBuilderLastNewsContent.push(lblLastMatchTournaments);
+                        					strBuilderLastNewsContent.push('</div>');
+                        			//}
+
+                        			strBuilderLastNewsContent.push('<div onclick="loadMatchDetails1('+item.id+')" class="card-content">');
+                        				strBuilderLastNewsContent.push('<div class="card-content-inner">');
+                        					strBuilderLastNewsContent.push('<div class="list-block lastmatch-tournaments">');
+                        						strBuilderLastNewsContent.push('<div class="item-content">');
+                        							strBuilderLastNewsContent.push('<div class="row" id="row-lastmatch-tournament">');
+                        								strBuilderLastNewsContent.push('<div class="col-33 col-lastmatch-tournament">');
+                        									strBuilderLastNewsContent.push('<div class="col-lastmatch-tournament-team">'+item.titulo+'</div>');
+                        									/*if(lastMatch.local.urlShield != ""){
+                        									strBuilderLastNewsContent.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+lastMatch.local.urlShield+'" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+                        									}
+                        									else{*/
+                        										strBuilderLastNewsContent.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+                        									//}
+                        								strBuilderLastNewsContent.push('</div>');
+                        								/*if(lastMatch.liveMatch == true){
+                        									strBuilderLastNewsContent.push('<div class="col-33 col-lastmatch-tournament col-lastmatch-tournament-middle">');
+                        										strBuilderLastNewsContent.push('<div class="col-lastmatch-tournament-nametournament">'+lastMatch.date.tournamentName+'</div>');
+                        										strBuilderLastNewsContent.push('<div class="col-lastmatch-tournament-name">'+item.fecha.fecha+'</div>');
+                        										strBuilderLastNewsContent.push('<div class="col-lastmatch-tournament-result"><p>1 - 0</p></div>');
+                        										if(lastMatch.actualClock != "")
+                        										{
+                        											strBuilderLastNewsContent.push('<div class="col-lastmatch-tournament-date">'+messageLastEvent+' '+item.fecha.hora+'</div>');
+                        										}
+
+                        									strBuilderLastNewsContent.push('</div>');
+                        								} else{*/
+                        									strBuilderLastNewsContent.push('<div class="col-33 col-lastmatch-tournament col-lastmatch-tournament-middle">');
+                        										strBuilderLastNewsContent.push('<div class="col-lastmatch-tournament-nametournament">'+item.titulo+'</div>');
+                        										strBuilderLastNewsContent.push('<div class="col-lastmatch-tournament-name">'+item.titulo+'</div>');
+                        										strBuilderLastNewsContent.push('<div class="col-lastmatch-tournament-result"><p>1 - 0</p></div>');
+                        										strBuilderLastNewsContent.push('<div class="col-lastmatch-tournament-date">'+item.fecha.fecha+'</div>');
+                        									strBuilderLastNewsContent.push('</div>');
+                        								//}
+
+                        							strBuilderLastNewsContent.push('<div class="col-33 col-lastmatch-tournament">');
+                        								strBuilderLastNewsContent.push('<div class="col-lastmatch-tournament-team">'+item.titulo+'</div>');
+                        								/*if(lastMatch.visit.urlShield != ""){
+                        									strBuilderLastNewsContent.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+lastMatch.visit.urlShield+'" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+                        								}
+                        								else{*/
+                        									strBuilderLastNewsContent.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+                        								//}
+                        							strBuilderLastNewsContent.push('</div>');
+                        						strBuilderLastNewsContent.push('</div>');
+                        						strBuilderLastNewsContent.push('</div>');
+                        						strBuilderLastNewsContent.push('<div class="description-lastmatch-tournament">');
+                        							strBuilderLastNewsContent.push(item.bajada);
+                        						strBuilderLastNewsContent.push('</div>');
+                        					strBuilderLastNewsContent.push('</div>');
+                        				strBuilderLastNewsContent.push('</div>');
+                        			strBuilderLastNewsContent.push('</div>');
+                        		strBuilderLastNewsContent.push('</div>');
+                        	}
+
+
+
+
+
+                        }
+
+
+
+
                 strBuilderLastNewsContent.push('<div class="card card-news"><div class="card-content"><div class="list-block list-block-about media-list">');
                 strBuilderLastNewsContent.push('<a onclick="loadNewDetails('+item.id+')" href="#" class="item-link item-content">');
                     strBuilderLastNewsContent.push('<ul class="cardHomeRow"><li class="item-content">');
@@ -730,7 +820,6 @@ console.log('arranca builder de los suceso');
                     strBuilderLastNewsContent.push('</div>');
             console.log('evento');
             console.log(item);
-
 
             } else {
             console.log(item);
