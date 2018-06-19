@@ -18,11 +18,14 @@ myApp.onPageBack('matchdetails', function (page){
 function loadMatchDetails1(idNew){
 	        showLoadSpinnerWS();
 	        console.log(idNew);
+	        console.log(homeDetails2List);
+	        var homeDetails2ListCalendario = homeDetails2List.calendario;
 
-	        	var matchDetailsHome = newsListHome.filter(function( obj ) {
+	        	var matchDetailsHome = homeDetails2ListCalendario.filter(function( obj ) {
                   return obj.id == idNew;
                 });
                 matchDetailsHome = matchDetailsHome[0];
+                console.log(matchDetailsHome);
 
 
 			/*if(response.errorCode != 0)
@@ -162,6 +165,7 @@ function builderMatchDetails(match){
 }
 
 function builderDetailsMatchDetails(match){
+console.log(match);
 	var strBuilderLastMatch = [];
 		strBuilderLastMatch.push('<div class="card">');
 			
@@ -184,7 +188,7 @@ function builderDetailsMatchDetails(match){
 							strBuilderLastMatch.push('<div class="row" id="row-lastmatch-tournament">');
 								strBuilderLastMatch.push('<div class="col-33 col-lastmatch-tournament">');
 								
-									strBuilderLastMatch.push('<div class="col-lastmatch-tournament-team">'+match.titulo+'</div>');
+									strBuilderLastMatch.push('<div class="col-lastmatch-tournament-team">'+match.local.nombre+'</div>');
 									/*if(match.local.urlShield != ""){
 										strBuilderLastMatch.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+match.local.urlShield+'" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
 									}
@@ -193,21 +197,21 @@ function builderDetailsMatchDetails(match){
 									//}
 								strBuilderLastMatch.push('</div>');
 								strBuilderLastMatch.push('<div class="col-33 col-lastmatch-tournament col-lastmatch-tournament.middle">');
-									strBuilderLastMatch.push('<div class="col-lastmatch-tournament-nametournament">'+match.titulo+'</div>');
-									strBuilderLastMatch.push('<div class="col-lastmatch-tournament-name">'+match.fecha.fecha+'</div>');
-									strBuilderLastMatch.push('<div class="col-lastmatch-tournament-result"><p>1 - 2</p></div>');
+									strBuilderLastMatch.push('<div class="col-lastmatch-tournament-nametournament">'+match.torneo.deporteCategoria.nombreCorto+'</div>');
+									strBuilderLastMatch.push('<div class="col-lastmatch-tournament-name">'+match.fechaEncuentro.fecha+'</div>');
+									strBuilderLastMatch.push('<div class="col-lastmatch-tournament-result"><p>VS</p></div>');
 									/*if(match.liveMatch == true){
 										if(match.actualClock != "")
 										{
 											strBuilderLastMatch.push('<div class="col-lastmatch-tournament-date">'+messageLastEvent+' '+match.actualClock+'</div>');
 										}
 									} else{*/
-										strBuilderLastMatch.push('<div class="col-lastmatch-tournament-date">'+match.fecha.fecha+'</div>');
+										strBuilderLastMatch.push('<div class="col-lastmatch-tournament-date">'+match.fechaEncuentro.fecha+'</div>');
 									//}
 									
 								strBuilderLastMatch.push('</div>');
 								strBuilderLastMatch.push('<div class="col-33 col-lastmatch-tournament">');
-									strBuilderLastMatch.push('<div class="col-lastmatch-tournament-team">'+match.titulo+'</div>');
+									strBuilderLastMatch.push('<div class="col-lastmatch-tournament-team">'+match.visitante.nombre+'</div>');
 									/*if(match.visit.urlShield != ""){
 										strBuilderLastMatch.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+match.visit.urlShield+'" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
 									}
@@ -218,7 +222,7 @@ function builderDetailsMatchDetails(match){
 								strBuilderLastMatch.push('</div>');
 							strBuilderLastMatch.push('</div>');
 							strBuilderLastMatch.push('<div class="description-lastmatch-tournament">');
-								strBuilderLastMatch.push(match.bajada);
+								strBuilderLastMatch.push(match.visitante.nombre);
 							strBuilderLastMatch.push('</div>');
 					strBuilderLastMatch.push('</div>');
 				strBuilderLastMatch.push('</div>');

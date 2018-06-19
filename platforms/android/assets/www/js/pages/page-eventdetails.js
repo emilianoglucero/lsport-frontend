@@ -55,16 +55,17 @@ function loadEventDetails(idEvent){
 
 function loadEventDetails1(idNew){
 	        showLoadSpinnerWS();
-	        //console.log(idNew);
+	        var itemsArrayEvents = homeDetails2List.calendario;
+	        console.log(itemsArrayEvents);
 
-	        	var eventDetails = homeDetails2List.calendario.filter(function( obj ) {
+	        	var eventDetails = itemsArrayEvents.filter(function( obj ) {
                   return obj.id == idNew;
                 });
-                eventDetailsHome = eventDetails[0];
+                eventDetails = eventDetails[0];
 
 
 			// averiguar como hacer esto builderNewBanner(response.banner);
-			builderEventDetails(eventDetailsHome);
+			builderEventDetails(eventDetails);
 			hideLoadSpinnerWS();
 
 }

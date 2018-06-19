@@ -339,3 +339,85 @@
 .aEventDetails {
     margin-bottom: 15px;
 }
+
+#selectTypeView {
+    border: 0;
+    color: black;
+    width: 97%;
+    font-size: 19px;
+    background: transparent url("../../img/template/icon-down.png") no-repeat scroll right 4px;
+    background-size: 20px 20px;
+}
+
+.calendar-input-select {
+    margin: 8px 0;
+    display: inline-block;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: center;
+    padding-left: 32%;
+}
+
+/***timeline view***/
+
+#row-lastmatch-tournament-calendar{
+	width: 100%;
+	padding: 7px;
+	margin-right: 11px;
+}
+
+#row-lastmatch-tournament-calendar .col-lastmatch-tournament .col-lastmatch-tournament-team{
+	padding-bottom: 5px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	font-size: 11px;
+	font-weight: 700;
+}
+
+#row-lastmatch-tournament-calendar .col-lastmatch-tournament-middle{
+	margin-top: 7px;
+	margin-left: 7px;
+}
+
+#row-lastmatch-tournament-calendar .col-lastmatch-tournament .col-lastmatch-tournament-nametournament{
+	font-size: 10px;
+    margin-left: 6px;
+}
+
+#row-lastmatch-tournament-calendar .col-lastmatch-tournament .col-lastmatch-tournament-name{
+    font-size: 10px;
+    font-weight: 700;
+    text-align: center;
+    margin-left: 5px;
+}
+
+#row-lastmatch-tournament-calendar .col-lastmatch-tournament .col-lastmatch-tournament-result{
+	border: 3px solid rgb(0, 0, 0);
+    color: #FFFFFF;
+    background-color: #108342;
+    margin-left: 9px;
+}
+
+#row-lastmatch-tournament-calendar .col-lastmatch-tournament .col-lastmatch-tournament-result p{
+	margin-top: 0px;
+	margin-bottom: 0px;
+	font-size: 12px;
+	font-weight: 700;
+	text-align: center;
+}
+
+#row-lastmatch-tournament-calendar .col-lastmatch-tournament .col-lastmatch-tournament-date{
+	font-size: 10px;
+    text-align: center;
+}
+
+#row-lastmatch-tournament-calendar .col-lastmatch-tournament .col-lastmatch-tournament-team{
+    padding-bottom: 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 11px;
+    font-weight: 700;
+    width: 130%;
+}

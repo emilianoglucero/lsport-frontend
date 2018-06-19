@@ -442,7 +442,7 @@ function setPushConfigurations()
         if(window.localStorage.getItem("TOKEN"+idClub) != token || window.localStorage.getItem("CLIENTID"+idClub) == null){
             		window.localStorage.setItem("TOKEN"+idClub, token);
             		if(window.localStorage.getItem("TOKEN"+idClub)){
-            		registerNewClient();
+            		//registerNewClient();
             		}
          }
     }, function(error) {
@@ -455,7 +455,7 @@ function setPushConfigurations()
         if(window.localStorage.getItem("TOKEN"+idClub) != token || window.localStorage.getItem("CLIENTID"+idClub) == null){
             		window.localStorage.setItem("TOKEN"+idClub, token);
             		if(window.localStorage.getItem("TOKEN"+idClub)){
-            		registerNewClient();
+            		//registerNewClient();
             		}
          }
     }, function(error) {
