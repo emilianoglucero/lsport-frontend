@@ -323,6 +323,17 @@
     margin-top: 50px;
 }
 
+.tr-body-home {
+    font-size: 13px;
+    width: 10%;
+}
+.tr-body-home td-10-tournament td-8-tournament{
+    text-align: center;
+}
+
+.td-50-tournaments-more {
+    padding-left: 15px;
+}
 
 /***timeline view***/
 #cardHomeTimeLine {
@@ -421,3 +432,4 @@
     font-weight: 700;
     width: 130%;
 }
+

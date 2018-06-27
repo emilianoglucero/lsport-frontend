@@ -19,7 +19,7 @@ function loadMatchDetails1(idNew){
 	        showLoadSpinnerWS();
 	        console.log(idNew);
 	        console.log(homeDetails2List);
-	        var homeDetails2ListCalendario = homeDetails2List.calendario;
+	        var homeDetails2ListCalendario = newsListHome;
 
 	        	var matchDetailsHome = homeDetails2ListCalendario.filter(function( obj ) {
                   return obj.id == idNew;
