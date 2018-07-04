@@ -72,8 +72,9 @@ function loadEventDetails1(idNew){
 
 
 function builderEventDetails(eventDetailsItem){
+console.log(eventDetailsItem);
 
-	$('#pNameEventDetails').html(eventDetailsItem.title);
+	$('#pNameEventDetails').html(eventDetailsItem.titulo);
 
 
 	$('#containerImgHeaderEventDetail').html('<img data-src="'+eventDetailsItem.urlImg+'" alt="'+eventDetailsItem.altImg+'" class="lazy lazy-fadeIn" id="imgHeaderEventDetails" />');

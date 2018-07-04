@@ -923,8 +923,8 @@ console.log('arranca builder de los suceso');
             $('#positionstable-list').html('');
             //var strBuilderLastNewsContent = [];
             //$.each(positionTables, function(n, table) {
-                strBuilderLastNewsContent.push('<div class="card card-table-tournaments onclick="loadEventDetails1('+item.id+')">');
-                strBuilderLastNewsContent.push('<a href="#" onclick="loadEventDetails1('+item.id+')">');
+                strBuilderLastNewsContent.push('<div class="card card-table-tournaments>');
+                strBuilderLastNewsContent.push('<a href="#" onclick="loadPositionsTableDetails('+item.id+')">');
                 strBuilderLastNewsContent.push('<div class="card card-table-tournaments');
                 strBuilderLastNewsContent.push('<div class="card-header card-header-center card-header-positionstable">'+item.tablaGeneral.titulo+'</div>');
                 //strBuilderLastNewsContent.push('<div class="card-header card-header-center">'+item.titulo+'</div>');
@@ -1076,8 +1076,14 @@ console.log('builderhomedetails222222222');
 var strBuilderTab2Content = [];
 //$('#tabHomeDetails2').html('');
 var events = [];
+console.log(homeDetails2List.calendario);
+console.log(newsListHome)
 for(var k in homeDetails2List.calendario){
-            events.push(convert(newsListHome[k].fecha.fecha));
+            //console.log(newsListHome[k].fecha.fecha);
+            //console.log(homeDetails2List.calendario[k]);
+            //console.log(homeDetails2List.calendario[k].fechaOcurrencia.fecha);
+            //events.push(convert(newsListHome[k].fecha.fecha));
+            events.push(convert(homeDetails2List.calendario[k].fechaOcurrencia.fecha));
 }
 console.log(events);
 
@@ -1163,48 +1169,144 @@ $.each( homeDetails2List.calendario, function( i, item ){
     //if (item.tipoObjeto == "noticia"){
     console.log(eventDay);
     //console.log(item.fecha.fecha);
-    if (item.tipoObjeto == 'torneo-encuentro'){
-    arrayEvents.push(item.fechaEncuentro.fecha);
-    } else {
-    arrayEvents.push(item.fecha.fecha);
-    }
-        if (item.fecha.fecha == eventDay || item.fechaEncuentro.fecha == eventDay ) {
+    //if (item.tipoObjeto == 'torneo-encuentro'){
+    //arrayEvents.push(item.fechaEncuentro.fecha);
+    //} else {
+    arrayEvents.push(item.fechaOcurrencia.fecha);
+    //}
+        if (item.fechaOcurrencia.fecha == eventDay) {
         console.log(item.id);
         //console.log(item.fecha.fecha);
 
         console.log('evento coincideee');
-        $('#calendarEventsView').html("");
-        //poner aca el builder que esta mas abajo para construir
-        strBuilderCalendarContent.push('<div class="timeline-item">');
-        strBuilderCalendarContent.push('<div class="timeline-item-date">'+dateTimeLineEventsSplitedFormat(item.fecha.fecha, 0)+' <small>'+dateTimeLineEventsSplitedFormat(item.fecha.fecha, 1)+'</small></div>');
-        strBuilderCalendarContent.push('<div class="timeline-item-divider"></div>');
-            //strBuilderCalendarContent.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
-                strBuilderCalendarContent.push('<div class="timeline-item-content card" id="cardHomeTimeLine">');
-                strBuilderCalendarContent.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
-                    strBuilderCalendarContent.push('<div class="card card-event-home">');
-                    strBuilderCalendarContent.push('<div class="card-header-home">'+item.titulo+'</div>');
-                        strBuilderCalendarContent.push('<div class="card-event-home-content">');
-                            strBuilderCalendarContent.push('<div class="card-content card-content-event">');
-                                strBuilderCalendarContent.push('<div class="content-block">');
-                                    strBuilderCalendarContent.push('<div class="row row-events-page">');
-                                        strBuilderCalendarContent.push('<div class="col-100">');
-                                            strBuilderCalendarContent.push('<img data-src="'+item.imagenPrincipalMin+'" alt="'+item.titulo+'" class="lazy lazy-fadeIn imgCardEvent"/>');
-                                        strBuilderCalendarContent.push('</div>');
-                                        strBuilderCalendarContent.push('<div class="col-100">');
-                                            strBuilderCalendarContent.push('<table class="table-events-page">');
-                                                strBuilderCalendarContent.push('<tr><td><i class="icon icon-date-event"></i></td><td><span>'+item.fecha.fecha+'</span></td></tr>');
-                                                strBuilderCalendarContent.push('<tr><td><i class="icon icon-hour-event"></i></td><td><span>'+item.fecha.hora+'</span></td></tr>');
-                                            strBuilderCalendarContent.push('</table>');
+            if (item.tipoObjeto == "evento"){
+            $('#calendarEventsView').html("");
+            //poner aca el builder que esta mas abajo para construir
+            strBuilderCalendarContent.push('<div class="timeline-item">');
+            strBuilderCalendarContent.push('<div class="timeline-item-date">'+dateTimeLineEventsSplitedFormat(item.fechaOcurrencia.fecha, 0)+' <small>'+dateTimeLineEventsSplitedFormat(item.fecha.fecha, 1)+'</small></div>');
+            strBuilderCalendarContent.push('<div class="timeline-item-divider"></div>');
+                //strBuilderCalendarContent.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
+                    strBuilderCalendarContent.push('<div class="timeline-item-content card" id="cardHomeTimeLine">');
+                    strBuilderCalendarContent.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
+                        strBuilderCalendarContent.push('<div class="card card-event-home">');
+                        strBuilderCalendarContent.push('<div class="card-header-home">'+item.titulo+'</div>');
+                            strBuilderCalendarContent.push('<div class="card-event-home-content">');
+                                strBuilderCalendarContent.push('<div class="card-content card-content-event">');
+                                    strBuilderCalendarContent.push('<div class="content-block">');
+                                        strBuilderCalendarContent.push('<div class="row row-events-page">');
+                                            strBuilderCalendarContent.push('<div class="col-100">');
+                                                strBuilderCalendarContent.push('<img data-src="'+item.imagenPrincipalMin+'" alt="'+item.titulo+'" class="lazy lazy-fadeIn imgCardEvent"/>');
+                                            strBuilderCalendarContent.push('</div>');
+                                            strBuilderCalendarContent.push('<div class="col-100">');
+                                                strBuilderCalendarContent.push('<table class="table-events-page">');
+                                                    strBuilderCalendarContent.push('<tr><td><i class="icon icon-date-event"></i></td><td><span>'+item.fecha.fecha+'</span></td></tr>');
+                                                    strBuilderCalendarContent.push('<tr><td><i class="icon icon-hour-event"></i></td><td><span>'+item.fecha.hora+'</span></td></tr>');
+                                                strBuilderCalendarContent.push('</table>');
+                                            strBuilderCalendarContent.push('</div>');
                                         strBuilderCalendarContent.push('</div>');
                                     strBuilderCalendarContent.push('</div>');
                                 strBuilderCalendarContent.push('</div>');
                             strBuilderCalendarContent.push('</div>');
                         strBuilderCalendarContent.push('</div>');
                     strBuilderCalendarContent.push('</div>');
-                strBuilderCalendarContent.push('</div>');
-            //strBuilderCalendarContent.push('</a>');
-        strBuilderCalendarContent.push('</div>');
-        $('#calendarEventsView').append(strBuilderCalendarContent.join(""));
+                //strBuilderCalendarContent.push('</a>');
+            strBuilderCalendarContent.push('</div>');
+            $('#calendarEventsView').append(strBuilderCalendarContent.join(""));
+            } else if (item.tipoObjeto == 'torneo-encuentro') {
+            $('#calendarEventsView').html("");
+            console.log(item);
+
+                if (item == "")
+                {
+                    strBuilderCalendarContent.push('');
+                }
+                else
+                {
+
+                        /*if(lastMatch.liveMatch == true)
+                        {
+                            strBuilderLastNewsContent.push('<div class="card">');
+                                idLiveMatchSportDetails = lastMatch.idMatch;
+                                strBuilderLastNewsContent.push('<div class="card-header card-header-center animated infinite pulse">');
+                                strBuilderLastNewsContent.push(lblLiveMatchTournaments);
+                                strBuilderLastNewsContent.push('</div>');
+                        }
+                        else
+                        {*/
+                            idLiveMatchSportDetails = null;
+                            strBuilderCalendarContent.push('<div class="timeline-item">');
+                                strBuilderCalendarContent.push('<div class="timeline-item-date">'+dateTimeLineEventsSplitedFormat(item.fechaEncuentro.fecha, 0)+' <small>'+dateTimeLineEventsSplitedFormat(item.fechaEncuentro.fecha, 1)+'</small></div>');
+                                strBuilderCalendarContent.push('<div class="timeline-item-divider"></div>');
+                                    strBuilderCalendarContent.push('<div class="card card-event-home">');
+                                        strBuilderCalendarContent.push('<div class="timeline-item-content card" id="cardHomeTimeLine">')
+
+                                            strBuilderCalendarContent.push('<div class="card-header card-header-center">'+item.torneo.nombre+'</div>');
+                        //}
+
+                                                strBuilderCalendarContent.push('<div onclick="loadMatchDetails1('+item.id+')" class="card-content">');
+                                                    strBuilderCalendarContent.push('<div class="card-content-inner">');
+                                                        strBuilderCalendarContent.push('<div class="list-block lastmatch-tournaments">');
+                                                            strBuilderCalendarContent.push('<div class="item-content">');
+                                                                strBuilderCalendarContent.push('<div class="row" id="row-lastmatch-tournament-calendar">');
+                                                                        strBuilderCalendarContent.push('<div class="col-33 col-lastmatch-tournament">');
+                                                                            strBuilderCalendarContent.push('<div class="col-lastmatch-tournament-team">'+item.local.nombre+'</div>');
+                                                                            /*if(lastMatch.local.urlShield != ""){
+                                                                            strBuilderCalendarContent.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+lastMatch.local.urlShield+'" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+                                                                            }
+                                                                            else{*/
+                                                                                strBuilderCalendarContent.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch"/></div>');
+                                                                            //}
+                                                                        strBuilderCalendarContent.push('</div>');
+                                                                        /*if(lastMatch.liveMatch == true){
+                                                                            strBuilderCalendarContent.push('<div class="col-33 col-lastmatch-tournament col-lastmatch-tournament-middle">');
+                                                                                strBuilderCalendarContent.push('<div class="col-lastmatch-tournament-nametournament">'+lastMatch.date.tournamentName+'</div>');
+                                                                                strBuilderCalendarContent.push('<div class="col-lastmatch-tournament-name">'+item.fecha.fecha+'</div>');
+                                                                                strBuilderCalendarContent.push('<div class="col-lastmatch-tournament-result"><p>1 - 0</p></div>');
+                                                                                if(lastMatch.actualClock != "")
+                                                                                {
+                                                                                    strBuilderCalendarContent.push('<div class="col-lastmatch-tournament-date">'+messageLastEvent+' '+item.fecha.hora+'</div>');
+                                                                                }
+
+                                                                            strBuilderCalendarContent.push('</div>');
+                                                                        } else{*/
+                                                                            strBuilderCalendarContent.push('<div class="col-33 col-lastmatch-tournament col-lastmatch-tournament-middle">');
+                                                                                strBuilderCalendarContent.push('<div class="col-lastmatch-tournament-nametournament">'+item.torneo.deporteCategoria.nombreCorto+'</div>');
+                                                                                strBuilderCalendarContent.push('<div class="col-lastmatch-tournament-name">'+item.fechaEncuentro.hora+'</div>');
+                                                                                strBuilderCalendarContent.push('<div class="col-lastmatch-tournament-result"><p>VS</p></div>');
+                                                                                strBuilderCalendarContent.push('<div class="col-lastmatch-tournament-date">'+item.fechaEncuentro.fecha+'</div>');
+                                                                            strBuilderCalendarContent.push('</div>');
+                                                                        //}
+
+                                                                    strBuilderCalendarContent.push('<div class="col-33 col-lastmatch-tournament">');
+                                                                        strBuilderCalendarContent.push('<div class="col-lastmatch-tournament-team">'+item.visitante.nombre+'</div>');
+                                                                        /*if(lastMatch.visit.urlShield != ""){
+                                                                            strBuilderCalendarContent.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+lastMatch.visit.urlShield+'" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+                                                                        }
+                                                                        else{*/
+                                                                            strBuilderCalendarContent.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+                                                                        //}
+                                                                    strBuilderCalendarContent.push('</div>');
+                                                                strBuilderCalendarContent.push('</div>');
+                                                            strBuilderCalendarContent.push('</div>');
+                                                            strBuilderCalendarContent.push('<div class="description-lastmatch-tournament">');
+                                                                strBuilderCalendarContent.push(item.visitante.nombe);
+                                                            strBuilderCalendarContent.push('</div>');
+                                                        strBuilderCalendarContent.push('</div>');
+                                                    strBuilderCalendarContent.push('</div>');
+                                                strBuilderCalendarContent.push('</div>');
+
+
+                                        strBuilderCalendarContent.push('</div>');
+                                    strBuilderCalendarContent.push('</div>');
+                                strBuilderCalendarContent.push('</div>');
+                            //strBuilderCalendarContent.push('</div>');
+                            $('#calendarEventsView').append(strBuilderCalendarContent.join(""));
+                }
+
+
+            } else {
+            console.log('otro tipo de evento');
+            }
 
         }
 

@@ -75,7 +75,7 @@ function loadSettingNotificationsList(checkFavourites)
 		registerNewClient();
 	}
 	$('#settingsnotifications-list').html('');
-	$.ajax({
+	/*$.ajax({
 		// URL del Web Service
 		//url: getPathWS() + 'getNotificationsPreferences',
 		url: 'http://clubes.lenguajesport.com/webservice/getNotificationsPreferences',
@@ -109,6 +109,37 @@ function loadSettingNotificationsList(checkFavourites)
 	          hideLoadSpinnerWS();
 	          showMessageToast(messageConexionError);
 	   }
+	});*/
+	$.ajax({
+	// URL del Web Service
+    		url: getPathWS() + 'setPreferenciasPrincipales',
+    		dataType: 'json',
+    		timeout: timeOut,
+    		success: function(response){
+    			/*if(response.errorCode != 0)
+    			{
+    				hideLoadSpinnerWS();
+    			    filterCodeErrorWS(response);
+    			    $('#iconHeaderFavouritesHome .icon').removeClass('animation-preloader');
+    			    return;
+    			}
+    			if(isAppUpdate(response.serverVersion) == false){
+    				hideLoadSpinnerWS();
+    				mainView.router.load({pageName: 'update'});
+    				return;
+    			}*/
+
+    			initSettingsFavouritesList = response.notificationsPreferences;
+                builderSettingsPage();
+                checkedElementsSettingsList(checkFavourites);
+                hideLoadSpinnerWS();
+
+    		},
+    		error: function (data, status, error){
+    			showMessageToast(messageConexionError);
+    			$('#iconHeaderFavouritesHome .icon').removeClass('animation-preloader');
+    	   },
+           beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer dcce59676c43e1c54a342e5207dfce0dc00fd502' ); } //set tokenString before send
 	});
 }
 
@@ -117,7 +148,7 @@ function builderSettingsPage()
 	$('#page-content-settings').html('');
 	var strBuilderLastList  = [];
 	
-	if(initSettingsFavouritesList.sports == "" && initSettingsFavouritesList.activitiesList == ""){
+	if(initSettingsFavouritesList.deportes == "" && initSettingsFavouritesList.actividades == ""){
 		strBuilderLastList.push('<div>'+lblEmptySportsActivities+'</div>')
 		$('#page-content-settings').html(strBuilderLastList.join(""));
 	}
@@ -125,8 +156,8 @@ function builderSettingsPage()
 	{
 		strBuilderLastList.push('<div id="div-choosenot-initsettings">'+lblSettingsFavAndNot+'</div>');
 			strBuilderLastList.push('<div class="disciplines-list" id="notifitacions-list-initsettings">');
-				strBuilderLastList.push(builderSportsListNotificationsSettings(initSettingsFavouritesList.sports));
-				strBuilderLastList.push(builderActivitiesListNotificationsSettings(initSettingsFavouritesList.activitiesList));
+				strBuilderLastList.push(builderSportsListNotificationsSettings(initSettingsFavouritesList.deportes));
+				strBuilderLastList.push(builderActivitiesListNotificationsSettings(initSettingsFavouritesList.actividades));
 				
 				
 				
@@ -227,7 +258,7 @@ function builderSportsListNotificationsSettings(sportsList)
 		strBuilderSportsList.push('<div class="list-block"><ul>');
 
 			$.each( sportsList, function( i, item ){
-				var categoriesSportList = item.categories;
+				var categoriesSportList = item.categorias;
 				
 				if(categoriesSportList != ""){
 					strBuilderSportsList.push('<li>');
@@ -236,7 +267,7 @@ function builderSportsListNotificationsSettings(sportsList)
 									strBuilderSportsList.push('<i style="background-image: url('+item.urlImgContent+');" class="icon icon-list-header"></i>');
 								strBuilderSportsList.push('</div>');
 								strBuilderSportsList.push('<div class="item-inner">');
-									strBuilderSportsList.push('<div class="item-title item-title-sport">'+item.name+'</div>');
+									strBuilderSportsList.push('<div class="item-title item-title-sport">'+item.nombre+'</div>');
 								strBuilderSportsList.push('</div>');
 							strBuilderSportsList.push('</div>');
 							
@@ -244,7 +275,7 @@ function builderSportsListNotificationsSettings(sportsList)
 											strBuilderSportsList.push('<li class="item-content item-content-checkbox">');
 												
 												strBuilderSportsList.push('<div class="item-inner">');
-													strBuilderSportsList.push('<div class="checkbox-sports-text item-title item-title-2">'+cat.categoryName+'</div>');
+													strBuilderSportsList.push('<div class="checkbox-sports-text item-title item-title-2">'+cat.nombre+'</div>');
 													
 													strBuilderSportsList.push('<div class="item-after item-after-2">');
 														strBuilderSportsList.push('<label class="label-checkbox label-checkbox-star label-ckeckbox-half">');
@@ -252,9 +283,9 @@ function builderSportsListNotificationsSettings(sportsList)
 														strBuilderSportsList.push('</label>');
 														strBuilderSportsList.push('<label class="label-checkbox label-checkbox-volume label-ckeckbox-half">');
 															var isChecked = '';
-															if(cat.value == true){
-																isChecked = "checked=\"checked\"";
-															}
+															//if(cat.value == true){
+															//	isChecked = "checked=\"checked\"";
+															//}
 															strBuilderSportsList.push('<input type="checkbox" name="checkbox-sports-nots-notifications-initsettings" '+isChecked+' class="checkbox-nots-notifications-initsettings checkbox-notifications-settings" textSportActivityCheck="'+item.name+' - '+cat.categoryName+'" nameSportActivityCheck="'+item.name+'" value="'+item.idSport+','+cat.idCategory+'"><i class="icon icon-volume-cbx icon-cbx-left"></i>');
 														strBuilderSportsList.push('</label>');
 													strBuilderSportsList.push('</div>');
@@ -299,7 +330,7 @@ function builderActivitiesListNotificationsSettings(activitiesList)
 									strBuilderActivitiesList.push('<i style="background-image: url('+act.urlImgContent+');" class="icon icon-list-header"></i>');
 								strBuilderActivitiesList.push('</div>');
 							strBuilderActivitiesList.push('<div class="item-inner">');
-								strBuilderActivitiesList.push('<div class="checkbox-sports-text item-title item-title-2">'+act.name+'</div>');
+								strBuilderActivitiesList.push('<div class="checkbox-sports-text item-title item-title-2">'+act.nombre+'</div>');
 								
 								strBuilderActivitiesList.push('<div class="item-after item-after-2">');
 									strBuilderActivitiesList.push('<label class="label-checkbox label-checkbox-star label-ckeckbox-half">');
