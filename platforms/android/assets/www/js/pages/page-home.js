@@ -760,100 +760,7 @@ console.log('arranca builder de los suceso');
 
 
                         }
-                        if (item.id == 32) {
 
-                        //$.each( fixturesList, function( i, item ){
-                        		//$.each( item.dates, function( n, date ){
-                        				//if (date.idDate == idDateSelected){
-                        					//$('#lblHeaderDatesList').text(item.tableTitle);
-                        					strBuilderLastNewsContent.push('<div class="card card-table-tournaments">');
-                        					strBuilderLastNewsContent.push('<div class="card-header card-header-center card-header-datelist">Torneo primera</div>');
-                        					strBuilderLastNewsContent.push('<div class="card-header card-header-center card-header-datelist">primera division</div>');
-                        					strBuilderLastNewsContent.push('<div class="card-header card-header-center">nameDateSelected</div>');
-                        					strBuilderLastNewsContent.push('<div class="card-content">');
-                        					strBuilderLastNewsContent.push('<div class="card-content-inner">');
-                        					strBuilderLastNewsContent.push('<div class="list-block lastmatch-tournaments">');
-                        					strBuilderLastNewsContent.push('<div class="item-content" style="overflow-x:auto;">');
-                        					strBuilderLastNewsContent.push('<table class="table-tournaments table-datelist">');
-
-                        					//$.each( date.matches, function( n, match ){
-                        						/*if(match.interzonal == true){
-                        				                            strBuilderLastNewsContent.push('<tr class="interzonal-datelist">');
-                        				                            strBuilderLastNewsContent.push('<td class="td-35-tournaments">');
-                        				                            strBuilderLastNewsContent.push('<div>'+match.local.name+'</div>');
-                        				                            if (match.local.urlShield != ""){
-                        				                                strBuilderLastNewsContent.push('<div><img data-src="'+match.local.urlShield+'" class="lazy lazy-fadeIn img-shield-datelist" ></div>');
-                        				                            }
-                        				                            else{
-                        				                                strBuilderLastNewsContent.push('<div><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-datelist" ></div>');
-                        				                                }
-                        				                                strBuilderLastNewsContent.push('</td>');
-                        				                                strBuilderLastNewsContent.push('<td class="td-30-tournaments">');
-                        				                                strBuilderLastNewsContent.push('<table>');
-                        				                            if (match.local.score != "" || match.visit.score != ""){
-                        				                                strBuilderLastNewsContent.push('<td class="td-35-tournaments td-scrore-datelist">'+match.local.score+'</td>');
-                        				                                strBuilderLastNewsContent.push('<td class="td-30-tournaments"><div class="interzonal-label-datelist">'+lblInterzonal+'</div><a onclick="loadMatchDetails('+match.idMatch+')" href="#" class="button">'+lblSeeMoreDatesList+'</a></td>');
-                        				                                strBuilderLastNewsContent.push('<td class="td-35-tournaments td-scrore-datelist">'+match.visit.score+'</td>');
-                        				                            } else {
-                        				                                strBuilderLastNewsContent.push('<td><div class="interzonal-label-datelist">'+lblInterzonal+'</div><div>'+match.matchDate+'</div></td>');
-                        				                            }
-
-                        						 }else{*/
-                        				                            strBuilderLastNewsContent.push('<tr>');
-                        				                            strBuilderLastNewsContent.push('<td class="td-35-tournaments">');
-                        				                            strBuilderLastNewsContent.push('<div>match.local.name+</div>');
-                        				                            //if (match.local.urlShield != ""){
-                        				                                strBuilderLastNewsContent.push('<div><img data-src="+match.local.urlShield+" class="lazy lazy-fadeIn img-shield-datelist" ></div>');
-                        				                            /*}
-                        				                            else{
-                        				                                strBuilderLastNewsContent.push('<div><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-datelist" ></div>');
-                        				                            }*/
-                        				                            strBuilderLastNewsContent.push('</td>');
-                        				                            strBuilderLastNewsContent.push('<td class="td-30-tournaments">');
-                        				                            strBuilderLastNewsContent.push('<table>');
-                        				                            //if (match.local.score != "" || match.visit.score != ""){
-                        				                                strBuilderLastNewsContent.push('<td class="td-35-tournaments td-scrore-datelist">+match.local.score+</td>');
-                        				                                strBuilderLastNewsContent.push('<td class="td-30-tournaments"><a onclick="loadMatchDetails(+match.idMatch+)" href="#" class="button">+lblSeeMoreDatesList+</a></td>');
-                        				                                strBuilderLastNewsContent.push('<td class="td-35-tournaments td-scrore-datelist">+match.visit.score+</td>');
-                        				                            /*} else {
-                        				                                strBuilderLastNewsContent.push('<td>'+match.matchDate+'</td>');
-
-                        				                            }*/
-
-                        				                        //}
-                        						strBuilderLastNewsContent.push('</tr>');
-                        						strBuilderLastNewsContent.push('</table>');
-                        						strBuilderLastNewsContent.push('</td>');
-                        						strBuilderLastNewsContent.push('<td class="td-35-tournaments">');
-                        							strBuilderLastNewsContent.push('<div>+match.visit.name+</div>');
-                        							//if (match.visit.urlShield != ""){
-                        								strBuilderLastNewsContent.push('<div><img data-src="+match.visit.urlShield+" class="lazy lazy-fadeIn img-shield-datelist" ></div>');
-                        							//}
-                        							//else{
-                        								//strBuilderLastNewsContent.push('<div><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-datelist" ></div>');
-                        							//}
-                        						strBuilderLastNewsContent.push('</td>');
-                        						strBuilderLastNewsContent.push('</tr>');
-                        					//});
-
-                        					strBuilderLastNewsContent.push('</table>');
-                        					strBuilderLastNewsContent.push('</div>');
-                        					//if(date.freeTeam != ""){
-                        						strBuilderLastNewsContent.push('<div class="description-lastmatch-tournament">+lblFreeTeam++date.freeTeam+</div>');
-                        					//}
-                        					strBuilderLastNewsContent.push('</div>');
-                        					strBuilderLastNewsContent.push('</div>');
-                        					strBuilderLastNewsContent.push('</div>');
-                        					strBuilderLastNewsContent.push('</div>');
-                        				//}
-                        		//});
-                        	//});
-
-
-
-
-
-                        }
 
 
 
@@ -1040,9 +947,102 @@ console.log('arranca builder de los suceso');
             //mainView.router.load({pageName: 'positionstable'});
             //myApp.initImagesLazyLoad(mainView.activePage.container);
 
-        } else {
-        console.log('nada de lo anterior');
-        }
+        } else if (item.tipoObjeto == "torneo-fecha") {
+          console.log(item.id);
+          //$.each( fixturesList, function( i, item ){
+                //$.each( item.dates, function( n, date ){
+                        //if (date.idDate == idDateSelected){
+                            //$('#lblHeaderDatesList').text(item.tableTitle);
+                            strBuilderLastNewsContent.push('<div class="card card-table-tournaments"> <a onclick="loadMatchDetailsFixture('+item.id+')" href="#">');
+                            //strBuilderLastNewsContent.push('<div class="card-header card-header-center card-header-datelist">'+item.nombre'</div>');
+                            //strBuilderLastNewsContent.push('<div class="card-header card-header-center card-header-datelist">primera division</div>');
+                            strBuilderLastNewsContent.push('<div class="card-header card-header-center">'+item.nombre+'</div>');
+                            strBuilderLastNewsContent.push('<div class="card-content">');
+                            strBuilderLastNewsContent.push('<div class="card-content-inner">');
+                            strBuilderLastNewsContent.push('<div class="list-block lastmatch-tournaments">');
+                            strBuilderLastNewsContent.push('<div class="item-content" style="overflow-x:auto;">');
+                            strBuilderLastNewsContent.push('<table class="table-tournaments table-datelist">');
+
+                            $.each( item.encuentros, function( n, match ){
+                                /*if(match.interzonal == true){
+                                                    strBuilderLastNewsContent.push('<tr class="interzonal-datelist">');
+                                                    strBuilderLastNewsContent.push('<td class="td-35-tournaments">');
+                                                    strBuilderLastNewsContent.push('<div>'+match.local.name+'</div>');
+                                                    if (match.local.urlShield != ""){
+                                                        strBuilderLastNewsContent.push('<div><img data-src="'+match.local.urlShield+'" class="lazy lazy-fadeIn img-shield-datelist" ></div>');
+                                                    }
+                                                    else{
+                                                        strBuilderLastNewsContent.push('<div><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-datelist" ></div>');
+                                                        }
+                                                        strBuilderLastNewsContent.push('</td>');
+                                                        strBuilderLastNewsContent.push('<td class="td-30-tournaments">');
+                                                        strBuilderLastNewsContent.push('<table>');
+                                                    if (match.local.score != "" || match.visit.score != ""){
+                                                        strBuilderLastNewsContent.push('<td class="td-35-tournaments td-scrore-datelist">'+match.local.score+'</td>');
+                                                        strBuilderLastNewsContent.push('<td class="td-30-tournaments"><div class="interzonal-label-datelist">'+lblInterzonal+'</div><a onclick="loadMatchDetails('+match.idMatch+')" href="#" class="button">'+lblSeeMoreDatesList+'</a></td>');
+                                                        strBuilderLastNewsContent.push('<td class="td-35-tournaments td-scrore-datelist">'+match.visit.score+'</td>');
+                                                    } else {
+                                                        strBuilderLastNewsContent.push('<td><div class="interzonal-label-datelist">'+lblInterzonal+'</div><div>'+match.matchDate+'</div></td>');
+                                                    }
+
+                                 }else{*/
+                                                    strBuilderLastNewsContent.push('<tr>');
+                                                    strBuilderLastNewsContent.push('<td class="td-35-tournaments">');
+                                                    strBuilderLastNewsContent.push('<div>'+match.local.nombre+'</div>');
+                                                    if (match.local.imagenPrincipalMin != ""){
+                                                        strBuilderLastNewsContent.push('<div><img data-src="'+match.local.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-datelist" ></div>');
+                                                    }
+                                                    else{
+                                                        strBuilderLastNewsContent.push('<div><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-datelist" ></div>');
+                                                    }
+                                                    strBuilderLastNewsContent.push('</td>');
+                                                    strBuilderLastNewsContent.push('<td class="td-30-tournaments">');
+                                                    strBuilderLastNewsContent.push('<table>');
+                                                    if (match.local.tantos != "" || match.visit.tantos != ""){
+                                                        strBuilderLastNewsContent.push('<td class="td-35-tournaments td-scrore-datelist">'+match.local.tantos+'</td>');
+                                                        strBuilderLastNewsContent.push('<td class="td-30-tournaments"><a href="#" class="button">'+lblSeeMoreDatesList+'</a></td>');
+                                                        strBuilderLastNewsContent.push('<td class="td-35-tournaments td-scrore-datelist">'+match.visitante.tantos+'</td>');
+                                                    } else {
+                                                        strBuilderLastNewsContent.push('<td>'+match.getFechaOcurrencia.fecha+'</td>');
+
+                                                    }
+
+                                                //}
+                                                    strBuilderLastNewsContent.push('</tr>');
+                                                    strBuilderLastNewsContent.push('</table>');
+                                                    strBuilderLastNewsContent.push('</td>');
+                                                    strBuilderLastNewsContent.push('<td class="td-35-tournaments">');
+                                                        strBuilderLastNewsContent.push('<div>'+match.visitante.nombre+'</div>');
+                                                        //if (match.visit.urlShield != ""){
+                                                            strBuilderLastNewsContent.push('<div><img data-src="'+match.visitante.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-datelist" ></div>');
+                                                        //}
+                                                        //else{
+                                                            //strBuilderLastNewsContent.push('<div><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-datelist" ></div>');
+                                                        //}
+                                                    strBuilderLastNewsContent.push('</td>');
+                                                    strBuilderLastNewsContent.push('</tr>');
+                            });
+
+                            strBuilderLastNewsContent.push('</table>');
+                            strBuilderLastNewsContent.push('</div>');
+                            //if(date.freeTeam != ""){
+                                //strBuilderLastNewsContent.push('<div class="description-lastmatch-tournament">'+lblFreeTeam++match.fecha.freeTeam+'</div>');
+                            //}
+                            strBuilderLastNewsContent.push('</div>');
+                            strBuilderLastNewsContent.push('</div>');
+                            strBuilderLastNewsContent.push('</div>');
+                            strBuilderLastNewsContent.push('</div>');
+                        //}
+                //});
+                        //});
+
+
+
+
+
+          } else {
+          console.log('nada del resto');
+          }
     });
     strBuilderLastNewsContent.push('</ul>');
     strBuilderLastNewsContent.push('</div>');

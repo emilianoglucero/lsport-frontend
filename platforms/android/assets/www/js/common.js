@@ -129,6 +129,11 @@ jQuery(document).ready(function ()
 	xhReq.open("GET", "pages/tournaments/page-matchdetails.html", false);
 	xhReq.send(null);
 	document.getElementById("page-matchdetails").innerHTML=xhReq.responseText;
+
+	// TORNEO - DETALLE DE LOS PARTIDOS
+    xhReq.open("GET", "pages/tournaments/page-matchdetailsfixture.html", false);
+    xhReq.send(null);
+    document.getElementById("page-matchdetailsfixture").innerHTML=xhReq.responseText;
 	
 	// TORNEO - FIXTURE - FECHAS
 	xhReq.open("GET", "pages/tournaments/page-dateslist.html", false);

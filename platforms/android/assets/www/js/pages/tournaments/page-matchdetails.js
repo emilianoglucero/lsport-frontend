@@ -15,10 +15,13 @@ myApp.onPageBack('matchdetails', function (page){
 	idLiveMatchActivePage=null;
 });
 
-function loadMatchDetails1(idNew){
+function loadMatchDetails1(idNew, state){
 	        showLoadSpinnerWS();
 	        console.log(idNew);
 	        console.log(homeDetails2List);
+	        console.log(newsListHome);
+	        console.log(state);
+	        if (state == true) { //significa que viene desde la home o cualquier pantalla que no sea calendario
 	        var homeDetails2ListCalendario = newsListHome;
 
 	        	var matchDetailsHome = homeDetails2ListCalendario.filter(function( obj ) {
@@ -26,7 +29,16 @@ function loadMatchDetails1(idNew){
                 });
                 matchDetailsHome = matchDetailsHome[0];
                 console.log(matchDetailsHome);
+            } else { //significa que viene desde el calendario
+                var homeDetails2ListCalendario = homeDetails2List;
 
+                var matchDetailsHome = homeDetails2ListCalendario.filter(function( obj ) {
+                  return obj.id == idNew;
+                });
+                matchDetailsHome = matchDetailsHome[0];
+                console.log(matchDetailsHome);
+
+            }
 
 			/*if(response.errorCode != 0)
             {
@@ -51,6 +63,30 @@ function loadMatchDetails1(idNew){
                 idLiveMatchActivePage = idMatch;
             }*/
             builderMatchDetails(matchDetailsHome);
+			hideLoadSpinnerWS();
+
+}
+
+function loadMatchDetailsFromFixture(id, idPartido){
+	        showLoadSpinnerWS();
+	        console.log(id);
+	        console.log(idPartido);
+	        console.log(newsListHome);
+
+	        	var matchDetailsHome = newsListHome.filter(function( obj ) {
+                  return obj.id == id;
+                });
+                matchDetailsHome = matchDetailsHome[0];
+                matchDetailsHome = matchDetailsHome.encuentros;
+                console.log(matchDetailsHome);
+
+                var matchDetailsHomeMatch = matchDetailsHome.filter(function( obj ) {
+                  return obj.id == idPartido;
+                });
+                matchDetailsHomeMatch = matchDetailsHomeMatch[0];
+                console.log(matchDetailsHomeMatch);
+
+            builderMatchDetails(matchDetailsHomeMatch);
 			hideLoadSpinnerWS();
 
 }
@@ -167,6 +203,8 @@ function builderMatchDetails(match){
 function builderDetailsMatchDetails(match){
 console.log(match);
 	var strBuilderLastMatch = [];
+	//$.each(match.encuentros, function(i, match) {
+	//console.log(match);
 		strBuilderLastMatch.push('<div class="card">');
 			
 				/*if(match.liveMatch == true){
@@ -189,17 +227,27 @@ console.log(match);
 								strBuilderLastMatch.push('<div class="col-33 col-lastmatch-tournament">');
 								
 									strBuilderLastMatch.push('<div class="col-lastmatch-tournament-team">'+match.local.nombre+'</div>');
-									/*if(match.local.urlShield != ""){
-										strBuilderLastMatch.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+match.local.urlShield+'" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+									if(match.local.imagenPrincipalMin != ""){
+										strBuilderLastMatch.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+match.local.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
 									}
-									else{*/
+									else{
 										strBuilderLastMatch.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
-									//}
+									}
 								strBuilderLastMatch.push('</div>');
 								strBuilderLastMatch.push('<div class="col-33 col-lastmatch-tournament col-lastmatch-tournament.middle">');
 									strBuilderLastMatch.push('<div class="col-lastmatch-tournament-nametournament">'+match.torneo.deporteCategoria.nombreCorto+'</div>');
-									strBuilderLastMatch.push('<div class="col-lastmatch-tournament-name">'+match.fechaEncuentro.fecha+'</div>');
-									strBuilderLastMatch.push('<div class="col-lastmatch-tournament-result"><p>VS</p></div>');
+									strBuilderLastMatch.push('<div class="col-lastmatch-tournament-name">'+match.torneo.nombre+'</div>');
+									if (match.local.tantos != "" || match.visit.tantos != ""){
+                                        //strBuilderLastMatch.push('<td class="td-50-tournaments td-scrore-datelist">'+match.local.tantos+'</td>');
+                                        strBuilderLastMatch.push('<div class="col-lastmatch-tournament-result"><p>'+match.local.tantos+' - '+match.visitante.tantos+'</p></div>');
+                                        //strBuilderLastMatch.push('<div class="col-lastmatch-tournament-result"><p>'+match.visitante.tantos+'</p></div>');
+                                        //strBuilderLastMatch.push('<td class="td-30-tournaments"><a onclick="loadMatchDetailsFromFixture('+mainId+','+match.id+')" href="#" class="button">'+lblSeeMoreDatesList+'</a></td>');
+                                        //strBuilderLastMatch.push('<td class="td-35-tournaments td-scrore-datelist">'+match.visitante.tantos+'</td>');
+                                    } else {
+                                        strBuilderLastMatch.push('<div class="col-lastmatch-tournament-result"><p>VS</p></div>');
+
+                                    }
+
 									/*if(match.liveMatch == true){
 										if(match.actualClock != "")
 										{
@@ -212,12 +260,12 @@ console.log(match);
 								strBuilderLastMatch.push('</div>');
 								strBuilderLastMatch.push('<div class="col-33 col-lastmatch-tournament">');
 									strBuilderLastMatch.push('<div class="col-lastmatch-tournament-team">'+match.visitante.nombre+'</div>');
-									/*if(match.visit.urlShield != ""){
-										strBuilderLastMatch.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+match.visit.urlShield+'" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+									if(match.visitante.imagenPrincipalMin != ""){
+										strBuilderLastMatch.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+match.visitante.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
 									}
-									else{*/
+									else{
 										strBuilderLastMatch.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
-									//}
+									}
 									strBuilderLastMatch.push('</div>');
 								strBuilderLastMatch.push('</div>');
 							strBuilderLastMatch.push('</div>');
@@ -275,6 +323,7 @@ console.log(match);
 				strBuilderLastMatch.push('</div>');
 			strBuilderLastMatch.push('</div>');
 		}*/
+	//});
 	return(strBuilderLastMatch.join(""));
 }
 
