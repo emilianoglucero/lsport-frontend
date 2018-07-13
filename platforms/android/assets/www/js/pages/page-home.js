@@ -52,7 +52,7 @@ $(document).ready(function(){
 
         $('#subnavbarHomeDetails1').text(lblTabHome1);
         $('#subnavbarHomeDetails2').text(lblTabHome2);
-        $('#subnavbarHomeDetails3').text(lblTabHome3);
+        //$('#subnavbarHomeDetails3').text(lblTabHome3);
 
 	    //INIT LBL MENU
 	    $('#lblMnuTitle').text(lblMnuTitle);
@@ -100,13 +100,13 @@ myApp.onPageInit('home', function (page)
 	    	areContentTab2HomeDetailsBuilder  = true;
 	    }
 	});
-	$$('#tabHomeDetails3').on('show', function () {
+	/*$$('#tabHomeDetails3').on('show', function () {
 	    if (areContentTab3HomeDetailsBuilder == false){
 	    	//builderHomeDetails2();
 	    	areContentTabHomeDetails3Builder  = true;
 	    }
 	    //alert('33');
-	});
+	});*/
 
 	//admob settings
 	// place our admob ad unit id here
@@ -798,7 +798,7 @@ console.log('arranca builder de los suceso');
                     strBuilderLastNewsContent.push('</a>');
                 strBuilderLastNewsContent.push('</div></div></div>');
             } else if (item.tipoObjeto == "evento") {
-                    strBuilderLastNewsContent.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
+                    strBuilderLastNewsContent.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+','+false+')">');
                         strBuilderLastNewsContent.push('<div class="card card-event-home">');
                         strBuilderLastNewsContent.push('<div class="card-header-home">'+item.titulo+'</div>');
                         strBuilderLastNewsContent.push('<div class="card-event-home-content">');
@@ -963,7 +963,12 @@ console.log('arranca builder de los suceso');
                             strBuilderLastNewsContent.push('<div class="item-content" style="overflow-x:auto;">');
                             strBuilderLastNewsContent.push('<table class="table-tournaments table-datelist">');
 
+                            var verMasFecha = false;
+
                             $.each( item.encuentros, function( n, match ){
+                                var encuentroFecha = i+1;
+                                console.log(encuentroFecha);
+                                if (encuentroFecha < 3){
                                 /*if(match.interzonal == true){
                                                     strBuilderLastNewsContent.push('<tr class="interzonal-datelist">');
                                                     strBuilderLastNewsContent.push('<td class="td-35-tournaments">');
@@ -1021,6 +1026,13 @@ console.log('arranca builder de los suceso');
                                                         //}
                                                     strBuilderLastNewsContent.push('</td>');
                                                     strBuilderLastNewsContent.push('</tr>');
+                                                    } else {
+                                                        if (verMasFecha == false){
+                                                        strBuilderLastNewsContent.push('<td class="td-50-tournaments-more">Ver mas...</th>');
+                                                        verMasFecha = true;
+                                                        }
+
+                                                    }
                             });
 
                             strBuilderLastNewsContent.push('</table>');
@@ -1187,7 +1199,7 @@ $.each( homeDetails2List.calendario, function( i, item ){
             strBuilderCalendarContent.push('<div class="timeline-item-divider"></div>');
                 //strBuilderCalendarContent.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
                     strBuilderCalendarContent.push('<div class="timeline-item-content card" id="cardHomeTimeLine">');
-                    strBuilderCalendarContent.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
+                    strBuilderCalendarContent.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+','+true+')">');
                         strBuilderCalendarContent.push('<div class="card card-event-home">');
                         strBuilderCalendarContent.push('<div class="card-header-home">'+item.titulo+'</div>');
                             strBuilderCalendarContent.push('<div class="card-event-home-content">');
@@ -1351,7 +1363,7 @@ var strBuilderTimeLineContent = [];
                 strBuilderTimeLineContent.push('<div class="timeline-item">');
                 strBuilderTimeLineContent.push('<div class="timeline-item-date">'+dateTimeLineEventsSplitedFormat(item.fecha.fecha, 0)+' <small>'+dateTimeLineEventsSplitedFormat(item.fecha.fecha, 1)+'</small></div>');
                 strBuilderTimeLineContent.push('<div class="timeline-item-divider"></div>');
-                    strBuilderTimeLineContent.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
+                    strBuilderTimeLineContent.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+','+true+')">');
                      strBuilderTimeLineContent.push('<div class="card card-event-home">');
                         strBuilderTimeLineContent.push('<div class="timeline-item-content card" id="cardHomeTimeLine">');
                             //strBuilderTimeLineContent.push('<div class="card card-event-home">');

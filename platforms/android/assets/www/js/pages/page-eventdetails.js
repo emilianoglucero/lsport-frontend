@@ -53,16 +53,27 @@ function loadEventDetails(idEvent){
 		});
 }
 
-function loadEventDetails1(idNew){
+function loadEventDetails1(idNew, state){
+            console.log(idNew);
 	        showLoadSpinnerWS();
-	        var itemsArrayEvents = homeDetails2List.calendario;
-	        console.log(itemsArrayEvents);
+	        if (state == true) { //significa que el usuario llega por el calendario
+	            var itemsArrayEvents = homeDetails2List.calendario;
+	            console.log(itemsArrayEvents);
 
 	        	var eventDetails = itemsArrayEvents.filter(function( obj ) {
                   return obj.id == idNew;
                 });
                 eventDetails = eventDetails[0];
+            } else {
+                var itemsArrayEvents = newsListHome;
+                console.log(itemsArrayEvents);
 
+                var eventDetails = itemsArrayEvents.filter(function( obj ) {
+                  return obj.id == idNew;
+                });
+                eventDetails = eventDetails[0];
+
+            }
 
 			// averiguar como hacer esto builderNewBanner(response.banner);
 			builderEventDetails(eventDetails);

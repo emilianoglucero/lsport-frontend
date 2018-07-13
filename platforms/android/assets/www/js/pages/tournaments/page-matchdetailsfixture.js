@@ -1,18 +1,18 @@
-var idLiveMatchActivePage = null;
-myApp.onPageInit('matchdetails', function (page)
+//var idLiveMatchActivePage = null;
+myApp.onPageInit('matchdetailsfixture', function (page)
 {
-    
+    $('#lblHeaderMatchDetailsFixture').text(lblHeaderMatchDetailsFixture);
 });
 
-myApp.onPageBeforeAnimation('matchdetails', function (page)
+myApp.onPageBeforeAnimation('matchdetailsfixture', function (page)
 {
 	myApp.params.swipePanel = false;
-	$$('#page-matchdetails .page-content').scrollTop(0);
-	trackPageGA("Detalle Partido");
+	$$('#page-matchdetailsfixture .page-content').scrollTop(0);
+	//trackPageGA("Detalle Partido");
 });
 
-myApp.onPageBack('matchdetails', function (page){
-	idLiveMatchActivePage=null;
+myApp.onPageBack('matchdetailsfixture', function (page){
+	//idLiveMatchActivePage=null;
 });
 
 function loadMatchDetailsFixture(idNew){
@@ -28,80 +28,15 @@ function loadMatchDetailsFixture(idNew){
                 console.log(matchDetailsHomeDate);
 
 
-			/*if(response.errorCode != 0)
-            {
-                hideLoadSpinnerWS();
-                filterCodeErrorWS(response);
-                return;
-            }
-            if(isAppUpdate(response.serverVersion) == false){
-                hideLoadSpinnerWS();
-                mainView.router.load({pageName: 'update'});
-                return;
-            }
-            if (response.matchDetail == "" || response.matchDetail == undefined){
-                hideLoadSpinnerWS();
-                showMessage(messageConexionError);
-                return;
-            }*/
-
-            /*if(idLiveMatchActivePage != idMatch){
-                $('#lblHeaderMatchDetails').text(response.matchDetail.shortCategoryName);
-                $('.icon-sportDetails').css('background-image','url("'+response.matchDetail.urlImgHeader+'")');
-                idLiveMatchActivePage = idMatch;
-            }*/
             builderDetailsMatchDetailsFixture(matchDetailsHomeDate);
+            mainView.router.load({pageName: 'matchdetailsfixture'});
+            myApp.initImagesLazyLoad(mainView.activePage.container);
 			hideLoadSpinnerWS();
 
 }
 
-function loadMatchDetails(idMatch){
-	$('#matchdetails-list').html('');
-	$('#icon-refresh-matchdetails').hide();
-	showLoadSpinnerWS();
-	$.ajax({
-		// URL del Web Service
-		url: getPathWS() + 'getMatchDetail',
-		dataType: 'jsonp',
-		data: { 'idClub': idClub,
-				'idMatch': idMatch
-		 },
-		timeout: timeOut,
-		success: function(response){
-			if(response.errorCode != 0)
-			{
-			    hideLoadSpinnerWS();
-			    filterCodeErrorWS(response);
-			    return;
-			}
-			if(isAppUpdate(response.serverVersion) == false){
-				hideLoadSpinnerWS();
-				mainView.router.load({pageName: 'update'});
-				return;
-			}
-			if (response.matchDetail == "" || response.matchDetail == undefined){
-				hideLoadSpinnerWS();
-			    showMessage(messageConexionError);
-			    return;
-			}
-			
-			if(idLiveMatchActivePage != idMatch){
-				$('#lblHeaderMatchDetails').text(response.matchDetail.shortCategoryName);
-				$('.icon-sportDetails').css('background-image','url("'+response.matchDetail.urlImgHeader+'")');
-				idLiveMatchActivePage = idMatch;
-			}
-			builderMatchDetails(response.matchDetail,response.banner);
-			hideLoadSpinnerWS();
-		},
-		error: function (data, status, error){
-	          builderErrorMatchDetails(idMatch);
-	          hideLoadSpinnerWS();
-		}
-	});
 
-}
-
-function refreshMatchDetails(idMatch){
+/*function refreshMatchDetails(idMatch){
 	$('#icon-refresh-matchdetails').hide();
 	//showLoadSpinnerWS();
 	$.ajax({
@@ -146,7 +81,7 @@ function refreshMatchDetails(idMatch){
 		}
 	});
 
-}
+}*/
 
 
 /*function builderMatchDetails(match){
@@ -255,11 +190,11 @@ var mainId = item.id;
                                 strBuilderMatchDetailsDate.push('</div>');
                                 strBuilderMatchDetailsDate.push('</div>');
                                 $('#matchdetailsfixture-list').append(strBuilderMatchDetailsDate.join(""));
-                                mainView.router.load({pageName: 'matchdetailsfixture'});
-                                myApp.initImagesLazyLoad(mainView.activePage.container);
+                                //mainView.router.load({pageName: 'matchdetailsfixture'});
+                                //myApp.initImagesLazyLoad(mainView.activePage.container);
 }
 
-function builderErrorMatchDetails(idMatch){
+/*function builderErrorMatchDetails(idMatch){
 	$('#matchdetails-list').html('');
 	$('#lblHeaderMatchDetails').text(lblDetailsMatchDetails);
 	$('.icon-sportDetails').css('background-image','url("img/template/icon-sports.png")');
@@ -273,4 +208,4 @@ function builderErrorMatchDetails(idMatch){
 	strBuilderMatchDetailsContent.push('</div>');
 	$('#matchdetails-list').append(strBuilderMatchDetailsContent.join(""));
 	mainView.router.load({pageName: 'matchdetails'});
-}
+}*/
