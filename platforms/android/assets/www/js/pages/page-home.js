@@ -701,7 +701,7 @@ console.log('arranca builder de los suceso');
                         					strBuilderLastNewsContent.push('</div>');
                         			//}
 
-                        			strBuilderLastNewsContent.push('<div onclick="loadMatchDetails1('+item.id+')" class="card-content">');
+                        			strBuilderLastNewsContent.push('<div onclick="loadMatchDetails1('+item.id+', '+true+')" class="card-content">');
                         				strBuilderLastNewsContent.push('<div class="card-content-inner">');
                         					strBuilderLastNewsContent.push('<div class="list-block lastmatch-tournaments">');
                         						strBuilderLastNewsContent.push('<div class="item-content">');

@@ -42,7 +42,8 @@ myApp.onPageBeforeAnimation('news', function (page)
 
 function loadNews(){
 	showLoadSpinnerWS();
-	$.ajax({
+	console.log(nextPageNumberNews);
+	/*$.ajax({
 			// URL del Web Service
 			url: getPathWS() + 'getNews',
 			dataType: 'jsonp',
@@ -87,7 +88,62 @@ function loadNews(){
 		          	areAccessedServerNews = true;
 		          }
 		   }
-	});
+	});*/
+	console.log(nextPageNumberNews);
+    $.ajax({
+    	// URL del Web Service
+            url: getPathWS() + 'getNoticias',
+            dataType: 'json',
+            data: { 'idClub': idClub,
+                    'paginaActual': nextPageNumberNews
+            },
+            timeout: timeOut,
+            success: function(response){
+            console.log(response);
+
+                /*if(response.errorCode != 0)
+                {
+                    hideLoadSpinnerWS();
+                    filterCodeErrorWS(response);
+                    return;
+                }
+                if(isAppUpdate(response.serverVersion) == false){
+                    mainView.router.load({pageName: 'update'});
+                    return;
+                }*/
+                nextPageNumberNews = parseInt(response.paginaActual) + 1;
+                console.log(response.paginaActual);
+                if( response.paginaActual == 1 ){
+                    $('#news-content-block').html('');
+                }
+                recentNewsList = [];
+                recentNewsList = response.noticias;
+                builderNewsList();
+                hideLoadSpinnerWS();
+                console.log(response.paginasTotal);
+                console.log(nextPageNumberNews);
+                if( response.paginasTotal < nextPageNumberNews ){
+                    myApp.detachInfiniteScroll('.infinite-scroll-news');
+                }
+                loadingInfiniteScrollNews = false;
+                areAccessedServerNews = false;
+                $('#noConnection-content-block-news').hide();
+
+            },
+            error: function (data, status, error){
+                if( nextPageNumberNews == 1 ){
+                    builderErrorNews();
+                    hideLoadSpinnerWS();
+                  } else {
+                    hideLoadSpinnerWS();
+                    showMessageToast(messageCanNotRefresh);
+                    loadingInfiniteScrollNews = false;
+                    areAccessedServerNews = true;
+                  }
+           },
+           beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer dcce59676c43e1c54a342e5207dfce0dc00fd502' ); } //set tokenString before send
+    });
+
 }
 
 function reloadNews(){
@@ -106,7 +162,7 @@ function builderNewsList(){
 		strBuilderNewsContent.push('</div>');
 	}else{
 		$.each( recentNewsList, function( i, item ){
-			if(item.type == "banner"){
+			if(item.tipoObjeto == "banner"){
 				/*strBuilderNewsContent.push('<div class="item-list-banner">'); ERASE
 					strBuilderNewsContent.push(builderBannerPublicityList(item.urlAdBanner,item.linkAdBanner));
 				strBuilderNewsContent.push('</div>');*/
@@ -120,16 +176,16 @@ function builderNewsList(){
 							if(item.urlImgMin != ""){
 								urlImgNewsList = item.urlImgMin; 
 							}
-							strBuilderNewsContent.push('<img class="lazy lazy-fadeIn imgCardNew" data-src="'+urlImgNewsList+'" alt="'+item.altImg+'" />');
+							strBuilderNewsContent.push('<img class="lazy lazy-fadeIn imgCardNew" data-src="'+urlImgNewsList+'" alt="'+item.imagenPrincipalMin+'" />');
 							strBuilderNewsContent.push('</div>');
 							
 							strBuilderNewsContent.push('<div class="item-inner">');
 							strBuilderNewsContent.push('<div class="item-title-row">');
-							strBuilderNewsContent.push('<div class="item-title item-title-new">'+item.title+'</div>');
+							strBuilderNewsContent.push('<div class="item-title item-title-new">'+item.titulo+'</div>');
 							strBuilderNewsContent.push('</div>');
 								strBuilderNewsContent.push('<div class="item-subContent-news">');
-									strBuilderNewsContent.push('<span class="item-date">'+item.publishDate+'</span>');
-									strBuilderNewsContent.push('<span class="item-shortContent">'+item.shortContent+'</span>');
+									strBuilderNewsContent.push('<span class="item-date">'+item.fecha.fecha+'</span>');
+									strBuilderNewsContent.push('<span class="item-shortContent">'+item.bajada+'</span>');
 								strBuilderNewsContent.push('</div>');
 							strBuilderNewsContent.push('</div>');
 							

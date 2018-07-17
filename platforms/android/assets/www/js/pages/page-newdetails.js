@@ -24,7 +24,7 @@ function loadNewDetails(idNew){
 	        showLoadSpinnerWS();
 	        console.log(idNew);
 
-	        	var newsDetails = newsListHome.filter(function( obj ) {
+	        	var newsDetails = recentNewsList.filter(function( obj ) {
                   return obj.id == idNew;
                 });
                 newsDetailsHome = newsDetails[0];
