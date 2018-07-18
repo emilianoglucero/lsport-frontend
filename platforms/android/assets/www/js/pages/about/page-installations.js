@@ -19,45 +19,26 @@ myApp.onPageBeforeAnimation('installations', function (page)
 	trackPageGA("Instalaciones");
 });
 
-function loadInstallations(){
+/*function loadInstallations(){
 	showLoadSpinnerWS();
-	$.ajax({
-			// URL del Web Service
-			url: getPathWS() + 'getInstallations',
-			dataType: 'jsonp',
-			data: { 'idClub': idClub },
-			timeout: timeOut,
-			success: function(response){
-				// Response:
-				if(response.errorCode != 0)
-				{
-				    hideLoadSpinnerWS();
-				    filterCodeErrorWS(response);
-				    return;
-				}
-				if(isAppUpdate(response.serverVersion) == false){
-					hideLoadSpinnerWS();
-					mainView.router.load({pageName: 'update'});
-					return;
-				}
-				installationsList = response.installations;
-				
-				bannerInstallations = response.banner;
-				areInstallationsLoaded = true;
-				builderInstallationsList();
-				hideLoadSpinnerWS();
-			},
-			error: function (data, status, error){
-		          hideLoadSpinnerWS();
-		          showMessage(messageConexionError);
-		   }
-		});
-}
+    //bannerInstallations = response.banner;
+    //installationsList = response;
+    console.log(installationsList);
+    //if (installationsList){
+    //console.log('areInstallationsLoaded set to true');
+    //    areInstallationsLoaded = true;
+    //}
+    builderInstallationsList();
+    hideLoadSpinnerWS();
+}*/
 
-function builderInstallationsList(){
-	
+function builderInstallationsList(response){
+	installationsList = response;
+	console.log(installationsList);
+	console.log(areInstallationsLoaded);
+	console.log(arePageInstallationsBuild);
 	var strBuilderInstallationsContent = [];
-	if(areInstallationsLoaded == true){
+	//if(areInstallationsLoaded == true){
 		if(installationsList.length == 0){
 				showMessage(messageNotInstallations);
 		}
@@ -69,14 +50,14 @@ function builderInstallationsList(){
 							strBuilderInstallationsContent.push('<a onclick="builderInstallationDetails('+item.id+')" href="#" class="item-link item-content">');
 							
 								strBuilderInstallationsContent.push('<div class="item-media">');
-								strBuilderInstallationsContent.push('<img class="lazy lazy-fadeIn imgCardInstallation" data-src="'+item.urlImg+'" alt="'+item.altImg+'" />');
+								strBuilderInstallationsContent.push('<img class="lazy lazy-fadeIn imgCardInstallation" data-src="'+item.imagenPrincipalMin+'" alt="'+item.imagenPrincipalMin+'" />');
 								strBuilderInstallationsContent.push('</div>');
 								
 								strBuilderInstallationsContent.push('<div class="item-inner">');
 								strBuilderInstallationsContent.push('<div class="item-title-row">');
-								strBuilderInstallationsContent.push('<div class="item-title">'+item.name+'</div>');
+								strBuilderInstallationsContent.push('<div class="item-title">'+item.nombre+'</div>');
 								strBuilderInstallationsContent.push('</div>');
-								strBuilderInstallationsContent.push('<div class="item-text">'+item.shortDesc+'</div>');
+								strBuilderInstallationsContent.push('<div class="item-text">'+item.descripcion+'</div>');
 								strBuilderInstallationsContent.push('</div>');
 								
 							strBuilderInstallationsContent.push('</a>');
@@ -93,7 +74,7 @@ function builderInstallationsList(){
 		} else {
 			mainView.router.load({pageName: 'installations'});
 		}
-	} else {
+	/*} else {
 		loadInstallations();
-	}
+	}*/
 }
