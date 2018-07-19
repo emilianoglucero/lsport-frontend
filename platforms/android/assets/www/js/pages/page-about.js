@@ -1,5 +1,8 @@
 var aboutPage;
 var installationPage;
+var achievementsList;
+var managersList;
+
 myApp.onPageInit('about', function (page)
 {
 	myApp.initImagesLazyLoad(mainView.activePage.container);
@@ -48,7 +51,9 @@ function loadPageAbout(){
                 aboutPage = response;
                 console.log(aboutPage);
                 installationPage = response.instalalciones;
+                achievementsList = response.titulos;
                 console.log(installationPage);
+                managersList = response.directivos;
 
 
             },

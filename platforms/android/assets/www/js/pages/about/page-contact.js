@@ -56,7 +56,7 @@ function loadContact(){
 function builderContactList(){
 	
 	var strBuilderContactContent = [];
-	if(areContactLoaded == true){
+	//if(areContactLoaded == true){
 	
 		if(contactList.length == 0){
 			showMessage(messageNotContact);
@@ -132,8 +132,8 @@ function builderContactList(){
 			mainView.router.load({pageName: 'contact'});
 		}
 	
-	} else {
+	/*} else {
 		loadContact();
-	}
+	}*/
 	
 }

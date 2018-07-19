@@ -3,6 +3,7 @@ var bannerAchievements = [];
 var areAchievementsLoaded = false;
 var arePageAchievementsBuild = false;
 
+var achievementDetailsItem;
 
 myApp.onPageInit('achievements', function (page)
 {
@@ -52,32 +53,34 @@ function loadAchievements(){
 		});
 }
 
-function builderAchievementsList(){
+
+function builderAchievementsList(response){
 	
 	var strBuilderAchievementsContent = [];
-	if(areAchievementsLoaded == true){
+	//if(areAchievementsLoaded == true){
 		if(achievementsList.length == 0){
 				showMessage(messageNotTitles);
 		}
 		else if(arePageAchievementsBuild == false){
 			$('#achievements-list').html('');
-			$.each( achievementsList, function( i, item ){
+			//$.each( achievementsList, function( i, item ){
 				
-				strBuilderAchievementsContent.push('<div class="content-block-title content-block-title-achievements">'+item.year+'</div>');
-					$.each(item.achievements, function(index, achiev) {
+
+					$.each(response, function(index, achiev) {
+					strBuilderAchievementsContent.push('<div class="content-block-title content-block-title-achievements">'+achiev.fecha.fecha+'</div>');
 						strBuilderAchievementsContent.push('<div class="card card-achievements"><div class="card-content"><div class="list-block list-block-about media-list">');
 							strBuilderAchievementsContent.push('<ul><li class="item-content">');
-									strBuilderAchievementsContent.push('<a onclick="builderAchievementDetails('+achiev.id+')" href="#" class="item-link item-content">');
+									strBuilderAchievementsContent.push('<a onclick="loadAchievementdetails('+achiev.id+')" href="#" class="item-link item-content">');
 									
 										strBuilderAchievementsContent.push('<div class="item-media">');
-										strBuilderAchievementsContent.push('<img class="lazy lazy-fadeIn imgCardAchievement" data-src="'+achiev.urlImgMin+'" alt="'+item.altImg+'" />');
+										strBuilderAchievementsContent.push('<img class="lazy lazy-fadeIn imgCardAchievement" data-src="'+achiev.imagenPrincipalMin+'" alt="'+achiev.descripcion+'" />');
 										strBuilderAchievementsContent.push('</div>');
 										
 										strBuilderAchievementsContent.push('<div class="item-inner">');
 										strBuilderAchievementsContent.push('<div class="item-title-row">');
-										strBuilderAchievementsContent.push('<div class="item-title">'+achiev.title+'</div>');
+										strBuilderAchievementsContent.push('<div class="item-title">'+achiev.titulo+'</div>');
 										strBuilderAchievementsContent.push('</div>');
-										strBuilderAchievementsContent.push('<div class="item-text">'+achiev.shortDesc+'</div>');
+										strBuilderAchievementsContent.push('<div class="item-text">'+achiev.descripcion+'</div>');
 										strBuilderAchievementsContent.push('</div>');
 										
 									strBuilderAchievementsContent.push('</a>');
@@ -85,7 +88,7 @@ function builderAchievementsList(){
 						strBuilderAchievementsContent.push('</div></div></div>');
 					});
 				
-			});
+			//});
 			
 			$('#achievements-list').append(strBuilderAchievementsContent.join(""));
 			mainView.router.load({pageName: 'achievements'});
@@ -97,7 +100,7 @@ function builderAchievementsList(){
 			mainView.router.load({pageName: 'achievements'});
 		}
 	
-	} else {
+	/*} else {
 		loadAchievements();
-	}
+	}*/
 }
