@@ -1,4 +1,4 @@
-var milestonesList = [];
+//var milestonesList = [];
 var bannerMilestones = [];
 var areMilestonesLoaded = false;
 var arePageMilestonesBuild = false;
@@ -50,38 +50,42 @@ function loadMilestones(){
 		});
 }
 
-function builderMilestonesList(){
-	
+function builderMilestonesList(milestonesList){
+	//console.log(milestonesList);
+	//console.log(milestonesList[0]);
+	//milestonesList = milestonesList[0];
+	console.log(milestonesList);
 	var strBuilderMilestonesContent = [];
-	if(areMilestonesLoaded == true){
+	//if(areMilestonesLoaded == true){
 		if(milestonesList.length == 0){
 			showMessage(messageNotMilestones);
 		}
 		else if(arePageMilestonesBuild == false){
 			$('#milestones-list').html('');
 			$.each( milestonesList, function( i, item ){
+			console.log(item);
 				
-				strBuilderMilestonesContent.push('<div class="content-block-title content-block-title-milestones">'+item.year+'</div>');
-					$.each(item.milestones, function(index, achiev) {
+				strBuilderMilestonesContent.push('<div class="content-block-title content-block-title-milestones">'+item.fecha.fecha+'</div>');
+					//$.each(item.milestones, function(index, achiev) {
 						strBuilderMilestonesContent.push('<div class="card card-milestones"><div class="card-content"><div class="list-block list-block-about media-list">');
 							strBuilderMilestonesContent.push('<ul><li class="item-content">');
-									strBuilderMilestonesContent.push('<a onclick="builderMilestoneDetails('+achiev.id+')" href="#" class="item-link item-content">');
+									strBuilderMilestonesContent.push('<a onclick="loadMilestoneDetails('+item.id+')" href="#" class="item-link item-content">');
 									
 										strBuilderMilestonesContent.push('<div class="item-media">');
-										strBuilderMilestonesContent.push('<img class="lazy lazy-fadeIn imgCardMilestone" data-src="'+achiev.urlImgMin+'" alt="'+item.altImg+'" />');
+										strBuilderMilestonesContent.push('<img class="lazy lazy-fadeIn imgCardMilestone" data-src="'+item.imagenPrincipalMin+'" alt="'+item.descripcion+'" />');
 										strBuilderMilestonesContent.push('</div>');
 										
 										strBuilderMilestonesContent.push('<div class="item-inner">');
 										strBuilderMilestonesContent.push('<div class="item-title-row">');
-										strBuilderMilestonesContent.push('<div class="item-title">'+achiev.title+'</div>');
+										strBuilderMilestonesContent.push('<div class="item-title">'+item.nombre+'</div>');
 										strBuilderMilestonesContent.push('</div>');
-										strBuilderMilestonesContent.push('<div class="item-text">'+achiev.shortDesc+'</div>');
+										strBuilderMilestonesContent.push('<div class="item-text">'+item.detalle+'</div>');
 										strBuilderMilestonesContent.push('</div>');
 										
 									strBuilderMilestonesContent.push('</a>');
 							strBuilderMilestonesContent.push('</li></ul>');
 						strBuilderMilestonesContent.push('</div></div></div>');
-					});
+					//});
 			});
 			
 			$('#milestones-list').append(strBuilderMilestonesContent.join(""));
@@ -94,7 +98,7 @@ function builderMilestonesList(){
 			mainView.router.load({pageName: 'milestones'});
 		}
 	
-	} else {
+	/*} else {
 		loadMilestones();
-	}
+	}*/
 }

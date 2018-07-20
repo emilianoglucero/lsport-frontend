@@ -2,6 +2,7 @@ var aboutPage;
 var installationPage;
 var achievementsList;
 var managersList;
+var milestonesList;
 
 myApp.onPageInit('about', function (page)
 {
@@ -54,6 +55,7 @@ function loadPageAbout(){
                 achievementsList = response.titulos;
                 console.log(installationPage);
                 managersList = response.directivos;
+                milestonesList = response.hitos;
 
 
             },

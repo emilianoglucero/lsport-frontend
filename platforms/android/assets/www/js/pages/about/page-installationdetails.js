@@ -25,6 +25,7 @@ myApp.onPageBeforeAnimation('installationdetails', function (page)
 	trackPageGA("Detalle Instalacion");
 });
 
+
 function builderInstallationDetails(idItem){
 	
 	var installationDetailsItem;
