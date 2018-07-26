@@ -36,18 +36,18 @@
       <file leaf-file-name="page-about.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-about.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="57" column="48" lean-forward="false" selection-start-line="57" selection-start-column="48" selection-end-line="57" selection-end-column="48" />
+            <state relative-caret-position="120">
+              <caret line="8" column="60" lean-forward="false" selection-start-line="8" selection-start-column="60" selection-end-line="8" selection-end-column="60" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="page-news.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-news.js">
+      <file leaf-file-name="page-home.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-189">
-              <caret line="171" column="78" lean-forward="false" selection-start-line="171" selection-start-column="64" selection-end-line="171" selection-end-column="78" />
+            <state relative-caret-position="1354">
+              <caret line="768" column="89" lean-forward="false" selection-start-line="768" selection-start-column="89" selection-end-line="768" selection-end-column="89" />
               <folding />
             </state>
           </provider>
@@ -73,11 +73,51 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="page-milestonedetails.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="page-milestonedetails.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/www/js/pages/about/page-milestonedetails.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
               <caret line="31" column="62" lean-forward="false" selection-start-line="31" selection-start-column="59" selection-end-line="31" selection-end-column="62" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="page-newdetails.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-newdetails.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="233">
+              <caret line="27" column="34" lean-forward="false" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="page-news.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-news.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="134" column="49" lean-forward="false" selection-start-line="134" selection-start-column="49" selection-end-line="134" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/www/js/common.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-4854">
+              <caret line="7" column="16" lean-forward="false" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="page-initsettings.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-initsettings.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="66">
+              <caret line="203" column="55" lean-forward="false" selection-start-line="203" selection-start-column="28" selection-end-line="203" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -93,46 +133,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="page-installations.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/www/js/pages/about/page-installations.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="735">
-              <caret line="49" column="103" lean-forward="false" selection-start-line="49" selection-start-column="77" selection-end-line="49" selection-end-column="103" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="page-managers.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/www/js/pages/about/page-managers.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="59" column="47" lean-forward="false" selection-start-line="59" selection-start-column="47" selection-end-line="59" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="page-installationdetails.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/www/js/pages/about/page-installationdetails.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>loadMatchDetails1</find>
-      <find>builderDetailsMatchDetailsFixture</find>
-      <find>&lt;a</find>
-      <find>equipoTabla</find>
-      <find>idLiveMatchActivePage</find>
-      <find>loadeventdeta</find>
       <find>icon-refresh-matchdetails</find>
       <find>matchdet</find>
       <find>icon-sportDetails</find>
@@ -144,7 +148,6 @@
       <find>pagin</find>
       <find>pag</find>
       <find>nextPageNumberNews</find>
-      <find>recentNewsList</find>
       <find>getPathWS()</find>
       <find>page-about</find>
       <find>areInstallationsLoaded</find>
@@ -153,10 +156,17 @@
       <find>arePageInstallationsBuild</find>
       <find>installationPage</find>
       <find>news</find>
-      <find>loadNewDetails</find>
       <find>arePageManagersBuild</find>
       <find>milestonesYearList</find>
       <find>[0]</find>
+      <find>loadNewDetails</find>
+      <find>recentNewsList</find>
+      <find>'+false+'</find>
+      <find>getpath</find>
+      <find>noticias</find>
+      <find>bearer</find>
+      <find>sloga</find>
+      <find>tokenUser</find>
     </findStrings>
     <replaceStrings>
       <replace>strBuilderTimeLineContent</replace>
@@ -166,8 +176,8 @@
       <replace>strBuilderCalendarContent</replace>
     </replaceStrings>
     <dirStrings>
-      <dir>$PROJECT_DIR$/assets/www</dir>
       <dir>$PROJECT_DIR$</dir>
+      <dir>$PROJECT_DIR$/assets/www</dir>
       <dir>$PROJECT_DIR$/assets</dir>
     </dirStrings>
   </component>
@@ -2380,7 +2390,6 @@
         <option value="$PROJECT_DIR$/assets/www/css/pages/page-home.css" />
         <option value="$PROJECT_DIR$/assets/www/js/pages/tournaments/page-positionstable.js" />
         <option value="$PROJECT_DIR$/assets/www/pages/tournaments/page-matchdetailsDate.html" />
-        <option value="$PROJECT_DIR$/assets/www/js/common.js" />
         <option value="$PROJECT_DIR$/assets/www/js/pages/tournaments/page-dateslist.js" />
         <option value="$PROJECT_DIR$/assets/www/js/pages/tournaments/page-matchdetailsDate.js" />
         <option value="$PROJECT_DIR$/assets/www/pages/tournaments/page-matchdetailsfixture.html" />
@@ -2389,11 +2398,8 @@
         <option value="$PROJECT_DIR$/assets/www/js/pages/tournaments/page-matchdetailsfixture.js" />
         <option value="$PROJECT_DIR$/assets/www/language/Messages_es.properties" />
         <option value="$PROJECT_DIR$/assets/www/js/pages/page-eventdetails.js" />
-        <option value="$PROJECT_DIR$/assets/www/js/pages/page-home.js" />
         <option value="$PROJECT_DIR$/assets/www/index.html" />
         <option value="$PROJECT_DIR$/assets/www/css/index.css" />
-        <option value="$PROJECT_DIR$/assets/www/js/pages/page-news.js" />
-        <option value="$PROJECT_DIR$/assets/www/js/pages/page-newdetails.js" />
         <option value="$PROJECT_DIR$/assets/www/js/pages/about/page-installations.js" />
         <option value="$PROJECT_DIR$/assets/www/js/pages/about/page-contact.js" />
         <option value="$PROJECT_DIR$/assets/www/js/pages/about/page-achievements.js" />
@@ -2401,9 +2407,13 @@
         <option value="$PROJECT_DIR$/assets/www/js/pages/about/page-managers.js" />
         <option value="$PROJECT_DIR$/assets/www/js/pages/about/page-installationdetails.js" />
         <option value="$PROJECT_DIR$/assets/www/js/pages/about/page-milestones.js" />
-        <option value="$PROJECT_DIR$/assets/www/js/pages/page-about.js" />
         <option value="$PROJECT_DIR$/assets/www/pages/page-about.html" />
         <option value="$PROJECT_DIR$/assets/www/js/pages/about/page-milestonedetails.js" />
+        <option value="$PROJECT_DIR$/assets/www/js/pages/page-home.js" />
+        <option value="$PROJECT_DIR$/assets/www/js/pages/page-newdetails.js" />
+        <option value="$PROJECT_DIR$/assets/www/js/common.js" />
+        <option value="$PROJECT_DIR$/assets/www/js/pages/page-about.js" />
+        <option value="$PROJECT_DIR$/assets/www/js/pages/page-news.js" />
       </list>
     </option>
   </component>
@@ -2470,6 +2480,21 @@
               <item name="assets" type="edd41e36:AndroidSourceTypeNode" />
               <item name="www" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="about" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="android" type="1abcf292:AndroidViewProjectNode" />
+              <item name="android" type="feadf853:AndroidModuleNode" />
+              <item name="assets" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="www" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="android" type="1abcf292:AndroidViewProjectNode" />
+              <item name="android" type="feadf853:AndroidModuleNode" />
+              <item name="assets" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="www" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="about" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -2593,6 +2618,18 @@
       <module name="" />
       <envs />
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <module name="CordovaLib" />
+      <envs />
+    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -2687,7 +2724,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.503231" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994923" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -2696,7 +2733,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.49676898" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2871,14 +2908,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-initsettings.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1725">
-          <caret line="115" column="44" lean-forward="false" selection-start-line="115" selection-start-column="44" selection-end-line="115" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/www/css/pages/page-sportdetails.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
@@ -2919,14 +2948,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="895">
           <caret line="70" column="43" lean-forward="false" selection-start-line="70" selection-start-column="43" selection-end-line="70" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/js/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="132" column="36" lean-forward="false" selection-start-line="132" selection-start-column="36" selection-end-line="132" selection-end-column="36" />
           <folding />
         </state>
       </provider>
@@ -3053,30 +3074,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6907">
-          <caret line="768" column="74" lean-forward="false" selection-start-line="768" selection-start-column="60" selection-end-line="768" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-newdetails.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="22" column="31" lean-forward="false" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-news.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-189">
-          <caret line="171" column="78" lean-forward="false" selection-start-line="171" selection-start-column="64" selection-end-line="171" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/www/js/pages/about/page-installations.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="735">
@@ -3109,14 +3106,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-about.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="57" column="48" lean-forward="false" selection-start-line="57" selection-start-column="48" selection-end-line="57" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/www/js/pages/about/page-achievements.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -3145,6 +3134,54 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="31" column="62" lean-forward="false" selection-start-line="31" selection-start-column="59" selection-end-line="31" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1354">
+          <caret line="768" column="89" lean-forward="false" selection-start-line="768" selection-start-column="89" selection-end-line="768" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-initsettings.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="203" column="55" lean-forward="false" selection-start-line="203" selection-start-column="28" selection-end-line="203" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4854">
+          <caret line="7" column="16" lean-forward="false" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-about.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="60" lean-forward="false" selection-start-line="8" selection-start-column="60" selection-end-line="8" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-newdetails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="27" column="34" lean-forward="false" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-news.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="134" column="49" lean-forward="false" selection-start-line="134" selection-start-column="49" selection-end-line="134" selection-end-column="49" />
           <folding />
         </state>
       </provider>

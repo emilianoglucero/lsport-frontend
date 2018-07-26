@@ -307,7 +307,7 @@ function loadContentHomePage(){
         hideLoadSpinnerWS();
         showMessageToast(messageConexionError);
         },
-      beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer dcce59676c43e1c54a342e5207dfce0dc00fd502' ); } //set tokenString before send
+      beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer ' + accessToken ); } //set tokenString before send
     });
     /*
     	$.ajax({
@@ -422,7 +422,7 @@ function reloadContentHomePage(){
     			showMessageToast(messageConexionError);
     			$('#iconHeaderFavouritesHome .icon').removeClass('animation-preloader');
     	   },
-           beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer dcce59676c43e1c54a342e5207dfce0dc00fd502' ); } //set tokenString before send
+           beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer ' + accessToken ); } //set tokenString before send
 	});
 }
 
@@ -574,7 +574,7 @@ console.log(nextPageNumberHomeNews);
 		          	areAccessedServerHomeNews = true;
 		          }
 		   },
-		   beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer dcce59676c43e1c54a342e5207dfce0dc00fd502' ); } //set tokenString before send
+		   beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer ' + accessToken ); } //set tokenString before send
 
 	});
 }
@@ -766,7 +766,7 @@ console.log('arranca builder de los suceso');
 
 
                 strBuilderLastNewsContent.push('<div class="card card-news"><div class="card-content"><div class="list-block list-block-about media-list">');
-                strBuilderLastNewsContent.push('<a onclick="loadNewDetails('+item.id+')" href="#" class="item-link item-content">');
+                strBuilderLastNewsContent.push('<a onclick="loadNewDetails('+item.id+','+false+')" href="#" class="item-link item-content">');
                     strBuilderLastNewsContent.push('<ul class="cardHomeRow"><li class="item-content">');
                         //strBuilderLastNewsContent.push('<a onclick="loadNewDetails('+item.id+')" href="#" class="item-link item-content">');
                         strBuilderLastNewsContent.push('<div class="chipHomeContainer"><div class="chip chipHomeDate"><div class="media"><i class="icon icon-date-home"></i></div>');

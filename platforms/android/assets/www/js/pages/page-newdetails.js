@@ -20,14 +20,22 @@ myApp.onPageBeforeAnimation('newdetails', function (page)
 	trackPageGA("Detalle Noticia");
 });
 
-function loadNewDetails(idNew){
+function loadNewDetails(idNew, state){
 	        showLoadSpinnerWS();
 	        console.log(idNew);
-
+	        console.log(recentNewsList);
+	        console.log(state);
+            if (state == 'false'){
 	        	var newsDetails = recentNewsList.filter(function( obj ) {
                   return obj.id == idNew;
                 });
                 newsDetailsHome = newsDetails[0];
+            } else {
+                var newsDetails = newsListHome.filter(function( obj ) {
+                  return obj.id == idNew;
+                });
+                newsDetailsHome = newsDetails[0];
+            }
 
 
 			// averiguar como hacer esto builderNewBanner(response.banner);

@@ -139,7 +139,7 @@ function loadSettingNotificationsList(checkFavourites)
     			showMessageToast(messageConexionError);
     			$('#iconHeaderFavouritesHome .icon').removeClass('animation-preloader');
     	   },
-           beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer dcce59676c43e1c54a342e5207dfce0dc00fd502' ); } //set tokenString before send
+           beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer ' + accessToken ); } //set tokenString before send
 	});
 }
 

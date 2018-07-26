@@ -7,7 +7,6 @@ var milestonesList;
 myApp.onPageInit('about', function (page)
 {
 	myApp.initImagesLazyLoad(mainView.activePage.container);
-	$('#lblClubSlogan').text(lblClubSlogan);
 	$('#lblMenuItemAboutContact').text(lblHeaderContact);
 	$('#lblMenuItemAboutManagers').text(lblHeaderManagers);
 	$('#lblMenuItemAboutAchievements').text(lblHeaderAchievements);
@@ -57,12 +56,14 @@ function loadPageAbout(){
                 managersList = response.directivos;
                 milestonesList = response.hitos;
 
+                $('#lblClubSlogan').text(aboutPage.eslogan);
+
 
             },
             error: function (data, status, error){
                 console.log(data, status, error);
            },
-           beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer dcce59676c43e1c54a342e5207dfce0dc00fd502' ); } //set tokenString before send
+           beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer ' + accessToken ); } //set tokenString before send
     });
     hideLoadSpinnerWS();
 }

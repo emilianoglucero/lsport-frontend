@@ -3,6 +3,8 @@ var nextPageNumberNews = 1;
 var loadingInfiniteScrollNews = false;
 var areAccessedServerNews = false;
 
+var allNewsPageList = [];
+
 myApp.onPageInit('news', function (page)
 {
     //$('#').text();
@@ -90,6 +92,7 @@ function loadNews(){
 		   }
 	});*/
 	console.log(nextPageNumberNews);
+	    console.log(accessToken);
     $.ajax({
     	// URL del Web Service
             url: getPathWS() + 'getNoticias',
@@ -122,6 +125,16 @@ function loadNews(){
                 hideLoadSpinnerWS();
                 console.log(response.paginasTotal);
                 console.log(nextPageNumberNews);
+
+                if (allNewsPageList == ""){
+                console.log('no agrega y es la primera');
+                    allNewsPageList = response.noticias;
+                } else {
+                console.log('agrega news');
+                    allNewsPageList.push(response.noticias);
+                    console.log(allNewsPageList);
+                }
+
                 if( response.paginasTotal < nextPageNumberNews ){
                     myApp.detachInfiniteScroll('.infinite-scroll-news');
                 }
@@ -141,7 +154,7 @@ function loadNews(){
                     areAccessedServerNews = true;
                   }
            },
-           beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer dcce59676c43e1c54a342e5207dfce0dc00fd502' ); } //set tokenString before send
+           beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer ' + accessToken ); } //set tokenString before send
     });
 
 }
@@ -169,7 +182,7 @@ function builderNewsList(){
 			} else{
 				strBuilderNewsContent.push('<div class="card card-news"><div class="card-content"><div class="list-block list-block-about media-list">');
 					strBuilderNewsContent.push('<ul><li class="item-content">');
-						strBuilderNewsContent.push('<a onclick="loadNewDetails('+item.id+')" href="#" class="item-link item-content">');
+						strBuilderNewsContent.push('<a onclick="loadNewDetails('+item.id+','+true+')" href="#" class="item-link item-content">');
 						
 							strBuilderNewsContent.push('<div class="item-media">');
 							var urlImgNewsList = getDefaultImageNewsList();
