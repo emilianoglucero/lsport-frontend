@@ -21,10 +21,9 @@ function loadMatchDetails1(idNew, state){
 	        console.log(homeDetails2List);
 	        console.log(newsListHome);
 	        console.log(state);
-	        if (state == true) { //significa que viene desde la home o cualquier pantalla que no sea calendario
-	        var homeDetails2ListCalendario = newsListHome;
+	        if (state) { //significa que viene desde la home o cualquier pantalla que no sea calendario
 
-	        	var matchDetailsHome = homeDetails2ListCalendario.filter(function( obj ) {
+	        	var matchDetailsHome = allSucesosPageList.filter(function( obj ) {
                   return obj.id == idNew;
                 });
                 matchDetailsHome = matchDetailsHome[0];

@@ -53,7 +53,7 @@ function loadPositionsTableDetails(idTournament){
         console.log(idTournament);
         console.log(newsDetailsHome);
 
-        var newsDetailsHome = newsListHome.filter(function( obj ) {
+        var newsDetailsHome = allSucesosPageList.filter(function( obj ) {
           return obj.id == idTournament;
         });
         newsDetailsHome = newsDetailsHome[0];

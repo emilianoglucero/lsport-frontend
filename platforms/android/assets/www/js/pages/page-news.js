@@ -126,12 +126,20 @@ function loadNews(){
                 console.log(response.paginasTotal);
                 console.log(nextPageNumberNews);
 
+                //logica para almacenar todas las noticias, y así poder acceder al detalle de todas
                 if (allNewsPageList == ""){
-                console.log('no agrega y es la primera');
+                //console.log('no agrega y es la primera');
                     allNewsPageList = response.noticias;
                 } else {
-                console.log('agrega news');
-                    allNewsPageList.push(response.noticias);
+                //console.log('agrega news');
+                //console.log(allNewsPageList.length);
+                var allNewsPageListLength = recentNewsList.length - 1;
+                console.log(allNewsPageListLength);
+                    for (i = 0; i <= allNewsPageListLength ; i++) {
+                        console.log(recentNewsList[i]);
+                        allNewsPageList.push(recentNewsList[i]);
+                    }
+                    //allNewsPageList.push(response.noticias);
                     console.log(allNewsPageList);
                 }
 

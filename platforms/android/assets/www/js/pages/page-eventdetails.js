@@ -56,7 +56,7 @@ function loadEventDetails(idEvent){
 function loadEventDetails1(idNew, state){
             console.log(idNew);
 	        showLoadSpinnerWS();
-	        if (state == true) { //significa que el usuario llega por el calendario
+	        if (state) { //significa que el usuario llega por el calendario
 	            var itemsArrayEvents = homeDetails2List.calendario;
 	            console.log(itemsArrayEvents);
 
@@ -65,10 +65,8 @@ function loadEventDetails1(idNew, state){
                 });
                 eventDetails = eventDetails[0];
             } else {
-                var itemsArrayEvents = newsListHome;
-                console.log(itemsArrayEvents);
 
-                var eventDetails = itemsArrayEvents.filter(function( obj ) {
+                var eventDetails = allSucesosPageList.filter(function( obj ) {
                   return obj.id == idNew;
                 });
                 eventDetails = eventDetails[0];

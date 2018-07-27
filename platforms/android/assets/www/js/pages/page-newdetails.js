@@ -23,15 +23,16 @@ myApp.onPageBeforeAnimation('newdetails', function (page)
 function loadNewDetails(idNew, state){
 	        showLoadSpinnerWS();
 	        console.log(idNew);
-	        console.log(recentNewsList);
+	        console.log(allNewsPageList);
 	        console.log(state);
-            if (state == 'false'){
-	        	var newsDetails = recentNewsList.filter(function( obj ) {
+            if (state){
+	        	var newsDetails = allNewsPageList.filter(function( obj ) {
                   return obj.id == idNew;
                 });
                 newsDetailsHome = newsDetails[0];
+                console.log(newsDetailsHome);
             } else {
-                var newsDetails = newsListHome.filter(function( obj ) {
+                var newsDetails = allSucesosPageList.filter(function( obj ) {
                   return obj.id == idNew;
                 });
                 newsDetailsHome = newsDetails[0];

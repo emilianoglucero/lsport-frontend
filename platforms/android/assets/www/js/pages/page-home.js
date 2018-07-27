@@ -5,6 +5,9 @@ var unreadNotifications = 0;
 //cuantos suscesos por pagina se cargan
 var itemsPage = 15;
 
+//variable que almacena todos los sucesos
+var allSucesosPageList = [];
+
 var areContentTabSucesosHomeDetailsBuilder = false;
 var areContentTab2HomeDetailsBuilder = false;
 var areContentTab3HomeDetailsBuilder = false;
@@ -269,6 +272,11 @@ function loadContentHomePage(){
         homeDetails2List = response.calendarioPanel;
         console.log(homeDetails2List);
         console.log(homeDetails3List);
+
+        if (allSucesosPageList == ""){
+            console.log('no agrega y es la primera');
+            allSucesosPageList = response.sucesosPanel.sucesos;
+        }
 
         currentPageNumberHomeNews = parseInt(response.sucesosPanel.paginaActual);
         currentTotalPageHomeNews = parseInt(response.sucesosPanel.paginasTotal);
@@ -551,6 +559,22 @@ console.log(nextPageNumberHomeNews);
 					builderNewsHomeDetails();
 					//$('#last-news-list-block').append(builderNewsHomeDetails());
 					//hideLoadSpinnerWS();
+					//logica para almacenar todas las noticias, y así poder acceder al detalle de todas
+                            //if (allSucesosPageList == ""){
+                            //console.log('no agrega y es la primera');
+                                //allSucesosPageList = response.sucesosPanel.sucesos;
+                            //} else {
+                            //console.log('agrega sucesos');
+                            console.log(allSucesosPageList.length);
+                            var allSucesosPageListLength = newsListHome.length - 1;
+                            console.log(allSucesosPageListLength);
+                                for (i = 0; i <= allSucesosPageListLength ; i++) {
+                                    console.log(newsListHome[i]);
+                                    allSucesosPageList.push(newsListHome[i]);
+                                }
+                                //allNewsPageList.push(response.noticias);
+                                console.log(allSucesosPageList);
+
 				}
 
 				if( response.paginasTotal < nextPageNumberHomeNews ){

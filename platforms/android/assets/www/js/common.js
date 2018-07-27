@@ -370,8 +370,8 @@ function loadPageLogin()
                                         success: function(response){
                                             console.log(response.access_token);
                                             accessToken = response.access_token;
-                                            //mainView.router.load({pageName: 'home'});
-                                            //reloadContentHomePage();
+                                            mainView.router.load({pageName: 'home'});
+                                            reloadContentHomePage();
 
                                         },
                                         error: function (data, status, error){
@@ -384,8 +384,8 @@ function loadPageLogin()
                                     });
 
 
-                                      mainView.router.load({pageName: 'home'});
-                                      reloadContentHomePage();
+                                      //mainView.router.load({pageName: 'home'});
+                                      //reloadContentHomePage();
                                   }).catch(function(error) {
                                     console.log(error);
                                   });
