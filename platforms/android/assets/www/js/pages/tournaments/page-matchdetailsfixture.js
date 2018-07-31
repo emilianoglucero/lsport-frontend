@@ -18,10 +18,10 @@ myApp.onPageBack('matchdetailsfixture', function (page){
 function loadMatchDetailsFixture(idNew){
 	        showLoadSpinnerWS();
 	        console.log(idNew);
-	        console.log(newsListHome);
+	        console.log(allSucesosFechaTorneoList);
 	        //var homeDetails2ListCalendario = newsListHome;
 
-	        	var matchDetailsHomeDate = newsListHome.filter(function( obj ) {
+	        	var matchDetailsHomeDate = allSucesosFechaTorneoList.filter(function( obj ) {
                   return obj.id == idNew;
                 });
                 matchDetailsHomeDate = matchDetailsHomeDate[0];

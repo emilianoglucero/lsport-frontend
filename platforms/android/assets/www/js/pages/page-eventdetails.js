@@ -66,7 +66,7 @@ function loadEventDetails1(idNew, state){
                 eventDetails = eventDetails[0];
             } else {
 
-                var eventDetails = allSucesosPageList.filter(function( obj ) {
+                var eventDetails = allSucesosEventsList.filter(function( obj ) {
                   return obj.id == idNew;
                 });
                 eventDetails = eventDetails[0];

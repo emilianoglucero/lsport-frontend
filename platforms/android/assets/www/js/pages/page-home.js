@@ -7,6 +7,12 @@ var itemsPage = 15;
 
 //variable que almacena todos los sucesos
 var allSucesosPageList = [];
+//variable que almacena todos los sucesos separados por tipo
+var allSucesosEventsList = [];
+var allSucesosFechaTorneoList = [];
+var allSucesosNewsList = [];
+var allSucesosEncuentroList = [];
+var allSucesosTorneoTablaPosicionList = [];
 
 var areContentTabSucesosHomeDetailsBuilder = false;
 var areContentTab2HomeDetailsBuilder = false;
@@ -274,9 +280,46 @@ function loadContentHomePage(){
         console.log(homeDetails3List);
 
         if (allSucesosPageList == ""){
-            console.log('no agrega y es la primera');
+            console.log('es la primera');
             allSucesosPageList = response.sucesosPanel.sucesos;
+            var allSucesosPageListLength = allSucesosPageList.length - 1;
+
+            for (i = 0; i <= allSucesosPageListLength ; i++) {
+                console.log(allSucesosPageList[i]);
+                console.log(allSucesosPageList[i].id);
+                console.log(allSucesosPageList[i].tipoObjeto);
+                //allSucesosPageList.push(newsListHome[i]);
+                if (allSucesosPageList[i].tipoObjeto === 'evento'){
+                console.log('agrego evento');
+                    allSucesosEventsList.push(allSucesosPageList[i]);
+                }
+                if (allSucesosPageList[i].tipoObjeto === 'noticia'){
+                 console.log('agrego noticia');
+                     allSucesosNewsList.push(allSucesosPageList[i]);
+                }
+                if (allSucesosPageList[i].tipoObjeto === 'torneo-tabla-posicion'){
+                 console.log('agrego evento');
+                     allSucesosTorneoTablaPosicionList.push(allSucesosPageList[i]);
+                }
+                if (allSucesosPageList[i].tipoObjeto === 'torneo-fecha'){
+                 console.log('agrego evento');
+                     allSucesosFechaTorneoList.push(allSucesosPageList[i]);
+                }
+                /*if (allSucesosPageList[i].tipoObjeto === 'evento'){
+                 console.log('agrego evento');
+                     allSucesosEventsList.push(newsListHome[i]);
+                }*/
+                console.log(allSucesosEventsList);
+                console.log(allSucesosNewsList);
+                console.log(allSucesosFechaTorneoList);
+                console.log(allSucesosTorneoTablaPosicionList);
+                /*if (newsListHome[i].tipoObjeto === 'evento'){
+                    allSucesosEventsList.push(newsListHome[i]);
+                }*/
+            }
         }
+        console.log(allSucesosEventsList);
+
 
         currentPageNumberHomeNews = parseInt(response.sucesosPanel.paginaActual);
         currentTotalPageHomeNews = parseInt(response.sucesosPanel.paginasTotal);
@@ -570,10 +613,29 @@ console.log(nextPageNumberHomeNews);
                             console.log(allSucesosPageListLength);
                                 for (i = 0; i <= allSucesosPageListLength ; i++) {
                                     console.log(newsListHome[i]);
+                                    console.log(newsListHome[i].id);
+                                    console.log(newsListHome[i].tipoObjeto);
                                     allSucesosPageList.push(newsListHome[i]);
+                                    if (newsListHome[i].tipoObjeto === 'evento'){
+                                        allSucesosEventsList.push(newsListHome[i]);
+                                    }
+                                    if (newsListHome[i].tipoObjeto === 'noticia'){
+                                     console.log('agrego noticia');
+                                         allSucesosNewsList.push(newsListHome[i]);
+                                    }
+                                    if (newsListHome[i].tipoObjeto === 'torneo-tabla-posicion'){
+                                     console.log('agrego fecha del torneo');
+                                         allSucesosTorneoTablaPosicionList.push(newsListHome[i]);
+                                    }
+                                    console.log(allSucesosNewsList);
+                                    /*if (newsListHome[i].tipoObjeto === 'evento'){
+                                        allSucesosEventsList.push(newsListHome[i]);
+                                    }*/
                                 }
                                 //allNewsPageList.push(response.noticias);
-                                console.log(allSucesosPageList);
+                                console.log(allSucesosEventsList);
+                                console.log(allSucesosFechaTorneoList);
+                                console.log(allSucesosNewsList);
 
 				}
 

@@ -51,9 +51,9 @@ function loadPositionsTable(idTournament, nameTournamentSelected){
 function loadPositionsTableDetails(idTournament){
      showLoadSpinnerWS();
         console.log(idTournament);
-        console.log(newsDetailsHome);
+        console.log(allSucesosTorneoTablaPosicionList);
 
-        var newsDetailsHome = allSucesosPageList.filter(function( obj ) {
+        var newsDetailsHome = allSucesosTorneoTablaPosicionList.filter(function( obj ) {
           return obj.id == idTournament;
         });
         newsDetailsHome = newsDetailsHome[0];

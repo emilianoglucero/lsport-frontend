@@ -71,8 +71,9 @@ function loadMatchDetailsFromFixture(id, idPartido){
 	        console.log(id);
 	        console.log(idPartido);
 	        console.log(newsListHome);
+	        console.log(allSucesosNewsList);
 
-	        	var matchDetailsHome = newsListHome.filter(function( obj ) {
+	        	var matchDetailsHome = allSucesosFechaTorneoList.filter(function( obj ) {
                   return obj.id == id;
                 });
                 matchDetailsHome = matchDetailsHome[0];
