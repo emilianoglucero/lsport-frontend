@@ -1035,6 +1035,53 @@ console.log('arranca builder de los suceso');
 
         } else if (item.tipoObjeto == "torneo-fecha") {
           console.log(item.id);
+          strBuilderLastNewsContent.push('<div class="card tournament-matches"> <a onclick="loadMatchDetailsFixture('+item.id+')" href="#">');
+          strBuilderLastNewsContent.push('<div id="tournament-matches-header" class="card-header no-border">');
+          strBuilderLastNewsContent.push('<div class="tournament-matches-icon"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-tournament" ></div>');
+          strBuilderLastNewsContent.push('<div class="tournament-matches-name">'+item.nombre+'</div>');
+          strBuilderLastNewsContent.push('<div class="tournament-matches-division">', item.nombre);
+          strBuilderLastNewsContent.push('<div class="tournament-matches-matchday">'+item.nombre+'</div></div></div>');
+          strBuilderLastNewsContent.push('<div class="card-content tournament-matches-content">');
+          strBuilderLastNewsContent.push('<div class="card-content-inner">');
+          var verMasFecha = false;
+
+          $.each( item.encuentros, function( n, match ){
+              var encuentroFecha = i+1;
+              console.log(encuentroFecha);
+              if (encuentroFecha < 3){
+                  strBuilderLastNewsContent.push('<div class="row row-tournament-matches">');
+                  strBuilderLastNewsContent.push('<div class="col-30">'+match.local.nombre+'</div>');
+                  if (match.local.imagenPrincipalMin != ""){
+                    strBuilderLastNewsContent.push('<div class="col-10"><img data-src="'+match.local.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-team"></div>');
+                  } else {
+                    strBuilderLastNewsContent.push('<div class="col-10"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-team"></div>');
+                  }
+                  if (match.local.tantos != "" || match.visit.tantos != ""){
+                    strBuilderLastNewsContent.push('<div class="col-20 match-scorer">'+match.local.tantos+' - '+match.visitante.tantos+'</div>');
+                  }
+                  else {
+                    strBuilderLastNewsContent.push('<div class="col-20 match-scorer">'+match.getFechaOcurrencia.fecha+'</div>');
+                  }
+                  strBuilderLastNewsContent.push('<div class="col-10"><img data-src="'+match.visitante.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-team"></div>');
+                  strBuilderLastNewsContent.push('<div class="col-30">'+match.visitante.nombre+'</div></div>');
+              }
+          });
+          strBuilderLastNewsContent.push('</div></div>');
+          strBuilderLastNewsContent.push('<div class="card-footer tournament-matches-footer">Ver más...</div></div>');
+
+
+
+
+
+
+
+
+
+
+
+
+
+            /*
           //$.each( fixturesList, function( i, item ){
                 //$.each( item.dates, function( n, date ){
                         //if (date.idDate == idDateSelected){
@@ -1076,7 +1123,7 @@ console.log('arranca builder de los suceso');
                                                         strBuilderLastNewsContent.push('<td><div class="interzonal-label-datelist">'+lblInterzonal+'</div><div>'+match.matchDate+'</div></td>');
                                                     }
 
-                                 }else{*/
+                                 }else{
                                                     strBuilderLastNewsContent.push('<tr>');
                                                     strBuilderLastNewsContent.push('<td class="td-35-tournaments">');
                                                     strBuilderLastNewsContent.push('<div>'+match.local.nombre+'</div>');
@@ -1137,7 +1184,7 @@ console.log('arranca builder de los suceso');
 
 
 
-
+*/
           } else {
           console.log('nada del resto');
           }

@@ -433,3 +433,61 @@
     width: 130%;
 }
 
+/* SUCESOS*/
+
+/* SUCESO FECHA TORNEO */
+
+.card .tournament-matches{
+    border: 11px solid #e6e6e6;
+}
+#page-home #cardLastestNewsHome #tournament-matches-header {
+    background-color: #e6e6e6;
+    display: block;
+}
+
+.card .tournament-matches-icon{
+    float:  left;
+    margin-left: 5px;
+}
+
+.card .img-shield-tournament{
+    height:  30px;
+    width: 30px;
+}
+
+.card .tournament-matches-name{
+    text-align:  left;
+    margin-left: 44px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.card .tournament-matches-division{
+    margin-left: 44px;
+    font-size: 13px;
+    color: #8e8e93;
+    text-align:  left;
+}
+.card .tournament-matches-matchday{
+    float:  right;
+    font-size: 13px
+}
+
+.tournament-matches-content .row-tournament-matches{
+    margin-top: 13px;
+    margin-bottom: 13px;
+    font-size: 13px;
+}
+
+.card-content .tournament-matches-content .match-scorer{
+    text-align:  center;
+    background-color: #e6e6e6;
+}
+.tournament-matches-footer{
+    background-color: #e6e6e6;
+    font-weight:  500;
+}
+
+.card-content .img-shield-team {
+    height: 20px;
+    width: 20px;
+}
