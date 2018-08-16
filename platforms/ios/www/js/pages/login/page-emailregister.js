@@ -134,7 +134,8 @@ function confirmRegister() {
                     displayName: userFullName
                   }).then(function() {
                     // Update successful.
-                    loadPageInit();
+                    console.log('email succes');
+                    //loadPageInit();
                   }).catch(function(error) {
                     // An error happened.
                   });

@@ -12,8 +12,8 @@ $(document).ready(
 
 function confirmSignUp() {
 
-    var email = document.getElementById('user-signemail').value;;
-    var password = document.getElementById('user-signpassword').value;;
+    var email = document.getElementById('user-signemail').value;
+    var password = document.getElementById('user-signpassword').value;
 
     firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
       // Handle Errors here.

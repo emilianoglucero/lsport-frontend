@@ -5,31 +5,37 @@
 .navbar::after,
 .navbar 
 {
-    background-color: #D71921;
+    background-color: #108342;
 }
 
 .theme-lenguajesport a {
     color: #000000;
 }
 
+.swiper-pagination.color-blue .swiper-pagination-bullet-active, 
+.theme-lenguajesport .swiper-pagination .swiper-pagination-bullet-active 
+{
+    background-color: #108342;
+}
+
 .photo-browser .navbar 
 {
-    background: #D71921 none repeat scroll 0 0;
+    background: #108342 none repeat scroll 0 0;
 }
 
 .modal-title
 {
-	color: #D71921;
+	color: #108342;
 }
 
 .modal-button
 {
-	color: #D71921;
+	color: #108342;
 }
 
 .popover-inner ul li a .row
 {
-	color: #D71921;
+	color: #108342;
 }
 
 
@@ -39,18 +45,18 @@
 
 .panel.panel-left
 {
-	background-color: #333333;
+	background-color: #108342;
 }
 
 .activeStateMenu {
-    background: rgb(94, 96, 105) !important;
+    background: black !important;
 }
 
 .panel.panel-left .list-block ul::before,
 .panel.panel-left .list-block ul::after,
 .panel.panel-left .list-block .item-inner::after
 {
-	background-color: #D71921;
+	background-color: black;
 }
 
 #lblMnuTitle
@@ -67,18 +73,18 @@
 
 #page-home #divExistConnectionHome .content-block-title-home-fav 
 {
-    color: white;
+    color: black;
     font-size: 20px;
     margin: 0px;
     padding: 8px;
-    background-color: black;
+    background-color: white;
 }
 
 #page-home #cardLastestNewsHome .card-header,
 #page-home #cardLastestNewsHome .card-header #divLastestNewsHome
 {
-	background-color: black;
-	color: white;
+	background-color: white;
+	color: black;
     font-size: 20px;
     margin: 0;
     padding: 5px;
@@ -86,7 +92,7 @@
 
 #page-home #last-news-list-block ul li .item-title
 {
-	color: #D71921;
+	color: #108342;
 }
 
 #page-home #last-news-list-block ul li .item-title-row
@@ -94,32 +100,26 @@
 	/* background-image:none; */
 }
 
-#page-home #content-block-favourites-home .row-home-page .col-50 .text-row-home-page{
-	background: RGBA(0, 0, 0, 0) none repeat scroll 0% 0%;
-}
-
 #page-home #last-news-list-block .list-block .item-inner::after 
 {
-    background-color: #D71921;
+    background-color: #108342;
 }
 
 #page-home .row-home-page .col-50 
 {
+	background: RGBA(0, 0, 0, 0.78) none repeat scroll 0% 0%;
 	color: #FFFFFF;
 }
 
-/* ******************************************************* */
-/* ******************* Page: #page-notifications ****************** */
-/* ******************************************************* */
-
-#page-notifications #list-block-notifications li.notificationNoRead {
-    background: #FEE;
-}
-
-#page-notifications #list-block-notifications .item-title{
-	color: #D71921;
-}
-
+/*#divLastestNewsHome
+{
+    color: #1a9ad9;
+    font-size: 15px;
+    font-weight: 900;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.32);
+}*/
+    
     
 /* ******************************************************* */
 /* ******************* Page: #page-news ****************** */
@@ -127,7 +127,23 @@
 
 #page-news ul li a .item-title.item-title-new
 {
-	color: #D71921;
+	color: #108342;
+}
+
+
+.card-header-home{
+	display: block !important;
+	text-align: center;
+	color: #108342;
+	font-size: 16px;
+
+    min-height: 44px;
+    position: relative;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
 }
 
 
@@ -137,7 +153,7 @@
 
 #page-newdetails #titleNewDetails
 {
-	color: #D71921;
+	color: #108342;
 }
 
 
@@ -147,23 +163,35 @@
 
 #subnavbarSportDetails.subnavbar
 {
-    background: #D71921; none repeat scroll 0 0;
+    background: #108342; none repeat scroll 0 0;
 }
 
 #subnavbarSportDetails .buttons-row a.button.active:not(.button-fill) 
 {
-    color: black;
-    background-color:#FFFFFF;
+    color: white;
+    background-color:#108342;
+}
+#subnavbarHomeDetails.subnavbar
+{
+    background: #108342; none repeat scroll 0 0;
+}
+
+#subnavbarHomeDetails .buttons-row a.button.active:not(.button-fill)
+{
+    color: white;
+    background-color:#108342;
 }
 
 #page-sportdetails #tabs-sportdetails ul li a div.item-subtitle,
-#page-sportdetails #tabs-sportdetails ul li a div.item-title,
-#page-fixtures ul li a div.item-title
+#page-sportdetails #tabs-sportdetails ul li a div.item-title
 {
-	color: #D71921;
+	color: #108342;
 }
 
 #subnavbarSportDetails .buttons-row .button {
+    border-radius: 0;
+}
+#subnavbarHomeDetails .buttons-row .button {
     border-radius: 0;
 }
 
@@ -171,7 +199,15 @@
 #subnavbarSportDetails .buttons-row .buttons-row .button, 
 #subnavbarSportDetails .buttons-row .button:not(.button-fill) 
 {
-    border-color: #FFFFFF !important;
+    border-color: black !important;
+    background-color: black;
+}
+#subnavbarHomeDetails .buttons-row .button:not(.button-fill),
+#subnavbarHomeDetails .buttons-row .buttons-row .button,
+#subnavbarHomeDetails .buttons-row .button:not(.button-fill)
+{
+    border-color: black !important;
+    background-color: black;
 }
 
 #tabSportDetails1 .card-header::after 
@@ -191,13 +227,13 @@
 
 #page-activities #activities-list .card-activity-content .card-header.card-header-title
 {
-	color: #D71921;
+	color: #108342;
 }
 
 #page-activities #activities-list  .card-header::after 
 {
-    background-color: #d71921;
-    border: 1px solid;
+    background-color: black;
+    border: 1px solid black;
 }
 
 /* *********************************************************************** */
@@ -206,19 +242,19 @@
 
 #subnavbarActivityDetails.subnavbar
 {
-    background: #D71921; none repeat scroll 0 0;
+    background: #108342; none repeat scroll 0 0;
 }
 
 #subnavbarActivityDetails .buttons-row a.button.active:not(.button-fill) 
 {
-    color: black;
-    background-color:#FFFFFF;
+    color: white;
+    background-color: #108342;
 }
 
 #page-activitydetails .tabs ul li a div.item-subtitle,
 #page-activitydetails .tabs ul li a div.item-title
 {
-	color: #D71921;
+	color: #108342;
 }
 
 .color-blue i.icon, 
@@ -226,13 +262,14 @@
 i.icon.color-blue, 
 i.icon.theme-lenguajesport 
 {
-    color: #D71921;
+    color: #108342;
 }
 
 .navbar-inner-activitydetails .buttons-row .button
 {
     border-radius: 0;
-    border-color: #FFFFFF;
+    border-color: black;
+   /* background-color: black;*/
 }
 
 #tabs-activitydetails .card-header::after 
@@ -252,12 +289,12 @@ i.icon.theme-lenguajesport
 
 #page-events a.aEventDetails .card-footer.card-footer-event
 {
-	color: #D71921;
+	color: #108342;
 }
 
 #page-events a.aEventDetails .card-footer::before
 {
-	background-color: #D71921;
+	background-color: #108342;
 }
 
 #page-events a.aEventDetails .table-events-page
@@ -285,10 +322,13 @@ i.icon.theme-lenguajesport
     padding-right: 7px;
 }
 
-#page-eventdetails .content-block #placeTextEventDetails{
-    background-color: black;
-    color: white;
+#page-eventdetails .content-block #placeTextEventDetails,
+/*#page-eventdetails div.content-block-title.content-block-title-custom.lblPhotoGallery,
+#page-eventdetails div.content-block-title.content-block-title-custom.lblVideoGallery*/
+{
+    color: #108342;
 }
+
 #page-eventdetails .table-eventdetails-page tr td
 {
 	background-color: black;
@@ -302,7 +342,7 @@ i.icon.theme-lenguajesport
 
 #page-about .list-block ul
 {
-	background-color: black;
+	background-color: #108342;
 }
 
 #page-about .list-block ul li
@@ -312,12 +352,12 @@ i.icon.theme-lenguajesport
 
 #page-about .list-block ul li a:active
 {
-	background-color: #D71921;
+	background-color: #108342;
 }
 
 #page-about .list-block .item-inner::after 
 {
-    background-color: #D71921;
+    background-color: black;
 }
 
 /* *********************************************************************** */
@@ -326,30 +366,18 @@ i.icon.theme-lenguajesport
 
 #page-installations #installations-list .card.card-installations .card-content .item-title
 {
-	color: #D71921;
-}
-
-/* *********************************************************************** */
-/* ******************** Galerias de imágenes ****************** */
-/* *********************************************************************** */
-
-.content-block-title.content-block-title-custom.lblPhotoGallery,
-.content-block-title.content-block-title-custom.lblVideoGallery
-{
-	color: #D71921;
-}
-
-.swiper-pagination.color-blue .swiper-pagination-bullet-active, 
-.theme-lenguajesport .swiper-pagination .swiper-pagination-bullet-active 
-{
-    background-color: #D71921;
+	color: #108342;
 }
 
 /* *********************************************************************** */
 /* ******************** Page: #page-installationdetails ****************** */
 /* *********************************************************************** */
 
-
+#page-installationdetails .content-block-title.content-block-title-custom.lblPhotoGallery,
+#page-installationdetails .content-block-title.content-block-title-custom.lblVideoGallery
+{
+	color: #108342;
+}
 
 
 /* *********************************************************************** */
@@ -358,13 +386,18 @@ i.icon.theme-lenguajesport
 
 #page-milestones #milestones-list .card.card-milestones ul li a .item-title
 {
-	color: #D71921;
+	color: #108342;
 }
 
 /* *********************************************************************** */
 /* ********************* Page: #page-milestonedetails ******************** */
 /* *********************************************************************** */
 
+#page-milestonedetails .content-block-title.content-block-title-custom.lblPhotoGallery,
+#page-milestonedetails .content-block-title.content-block-title-custom.lblVideoGallery
+{
+	color: #108342;
+}
 
 /* *********************************************************************** */
 /* ************************ Page: #page-achievements ********************* */
@@ -372,12 +405,18 @@ i.icon.theme-lenguajesport
 
 #page-achievements #achievements-list .card.card-achievements ul li a .item-title
 {
-	color: #D71921;
+	color: #108342;
 }
 
 /* *********************************************************************** */
 /* ********************* Page: #page-achievementdetails ****************** */
 /* *********************************************************************** */
+
+#page-achievementdetails .content-block-title.content-block-title-custom.lblPhotoGallery,
+#page-achievementdetails .content-block-title.content-block-title-custom.lblVideoGallery
+{
+	color: #108342;
+}
 
 /* *********************************************************************** */
 /* ************************* Page: #page-managers ************************ */
@@ -385,7 +424,7 @@ i.icon.theme-lenguajesport
 
 #page-managers #managers-list .card-managers-content a
 {
-	color: #D71921;
+	color: #108342;
 }
 
 /* *********************************************************************** */
@@ -394,7 +433,7 @@ i.icon.theme-lenguajesport
 
 #page-contact #list-block-contact ul li .item-title.label
 {
-	color: #D71921;
+	color: #108342;
 }
 
 /* *********************************************************************** */
@@ -402,7 +441,7 @@ i.icon.theme-lenguajesport
 /* *********************************************************************** */
 #page-sports  #sports-list .list-block .item-inner::after 
 {
-    background-color: #D71921;
+    background-color: #108342;
 }
 
 #page-sports  #sports-list .list-block ul::before 
@@ -414,37 +453,49 @@ i.icon.theme-lenguajesport
     background-color: #EFEFF4;
 }
 
+/*
+MODIFICAR CON LOS COLORES CORRESPONDIENTES
+*/
+
 #row-lastmatch-tournament .col-lastmatch-tournament .col-lastmatch-tournament-result{
-	border: 3px solid rgb(0, 0, 0);
-	color: #FFFFFF;
-	background-color: #D71921;
+    border: 3px solid rgb(0, 0, 0);
+    color: #FFFFFF;
+    background-color: #108342;
 }
 
 .table-tournaments .tr-header{
-	background-color: #D71921;
-	color: #FFFFFF;
+    background-color: #108342;
+    color: #FFFFFF;
 }
+
+.tr-header-home{
+    background-color: #108342;
+    color: #FFFFFF;
+    font-size: 14px;
+}
+
+
 
 /* *********************************************************************** */
 /* ************************* Page: #page-dateslist *********************** */
 /* *********************************************************************** */
 #page-dateslist .button{
-	border: 1px solid #D71921;
-	color: #D71921;
-	background-color: #FFFFFF;
+    border: 1px solid #108342;
+    color: #108342;
+    background-color: #FFFFFF;
 }
 
 #page-dateslist .table-datelist tr {
-    border-bottom: 1px solid #D71921;
+    border-bottom: 1px solid #108342;
 }
 
 .interzonal-datelist {
-	background: #F8E0E6;
+    background: #F8E0E6;
 }
 
 .interzonal-label-datelist{
-	color: red;
-	font-weight: bold;
+    color: blue;
+    font-weight: bold;
 }
 
 /* *********************************************************************** */
@@ -452,7 +503,7 @@ i.icon.theme-lenguajesport
 /* *********************************************************************** */
 
 #page-positionstable .table-positionstable tr {
-    border-bottom: 1px solid #D71921;
+    border-bottom: 1px solid #108342;
 }
 
 /* *********************************************************************** */
@@ -460,7 +511,79 @@ i.icon.theme-lenguajesport
 /* *********************************************************************** */
 
 #page-shooterstable .table-shooterstable tr {
-    border-bottom: 1px solid #D71921;
+    border-bottom: 1px solid #108342;
+}
+
+/*MODIFICAR HASTA ACA ARRIBA*/
+/* *********************************************************************** */
+/* ************************** Page: #page-settings ************************ */
+/* *********************************************************************** */
+
+#page-settings .list-block .item-inner::after 
+{
+    background-color: #108342;
+}
+
+#page-settings .list-block ul::before 
+{
+    background-color: #108342;
+}
+
+
+/* *********************************************************************** */
+/* ********************* Page: #page-settingsfavourites ******************* */
+/* *********************************************************************** */
+
+label.label-checkbox input[type="checkbox"]:checked + .item-media i.icon-form-checkbox, label.label-checkbox input[type="radio"]:checked + .item-media i.icon-form-checkbox {
+    background-color: #000000 !important;
+}
+
+#page-settingsfavourites #title-settings-favourites
+{
+	color: #108342;
+}
+
+#page-settingsfavourites  #settingsfavourites-list .list-block .item-inner::after 
+{
+    background-color: #108342;
+}
+
+#page-settingsfavourites  #settingsfavourites-list .list-block ul::before 
+{
+    background-color: #EFEFF4;
+}
+
+#page-settingsfavourites  #settingsfavourites-list .list-block ul::after 
+{
+    background-color: #EFEFF4;
+}
+
+.label-switch input[type="checkbox"]:checked + .checkbox {
+    background: #108342;
+}
+
+/* *********************************************************************** */
+/* ****************** Page: #page-settingsnotifications ***************** */
+/* *********************************************************************** */
+
+#page-settingsnotifications #title-settings-notifications
+{
+	color: #108342;
+}
+
+#page-settingsnotifications  #settingsnotifications-list .list-block .item-inner::after 
+{
+    background-color: #108342;
+}
+
+#page-settingsnotifications  #settingsnotifications-list .list-block ul::before 
+{
+    background-color: #EFEFF4;
+}
+
+#page-settingsnotifications  #settingsnotifications-list .list-block ul::after 
+{
+    background-color: #EFEFF4;
 }
 
 /* *********************************************************************** */
@@ -468,24 +591,31 @@ i.icon.theme-lenguajesport
 /* *********************************************************************** */
 
 #lblLogoutButton {
-	color: #D71921;
+    color: #108342;
 }
 
 #lblSendButtonLogin {
-	color: #D71921;
+    color: #108342;
 }
 
 #resend-smscode {
-	color: #D71921;
+    color: #108342;
+    font-size: 12px;
 }
 
 #lblSendSmsCodeButton{
-	color: #D71921;
+    color: #108342;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 20px;
 }
 
 #lblSendButtonProfile {
-	color: #D71921;
+    color: #108342;
 }
-
 
 

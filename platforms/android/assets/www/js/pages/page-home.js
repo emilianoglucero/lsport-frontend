@@ -143,8 +143,8 @@ myApp.onPageInit('home', function (page)
       // preppare and load ad resource in background, e.g. at begining of game level
         AdMob.prepareInterstitial({
         adId: admobid.interstitial,
-        isTesting: false,
-        autoShow: true
+        isTesting: true,
+        autoShow: false
       });
 
 
@@ -152,8 +152,8 @@ myApp.onPageInit('home', function (page)
       AdMob.createBanner({
       	adId: admobid.banner,
       	position: AdMob.AD_POSITION.BOTTOM_CENTER,
-      	autoShow: true,
-      	isTesting: false,
+      	autoShow: false,
+      	isTesting: true,
       	success: function(){
       	},
       	error: function(){

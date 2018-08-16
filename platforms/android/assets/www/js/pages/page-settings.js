@@ -111,7 +111,7 @@ function loadSettingNotificationsList(checkFavourites)
 	   }
 	});*/
 	$.ajax({
-	// URL del Web Service
+	// URL del Web Service, en este ws no hace falta enviar datos, con el bearer identifica el usuario
     		url: getPathWS() + 'setPreferenciasPrincipales',
     		dataType: 'json',
     		timeout: timeOut,

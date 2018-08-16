@@ -50,10 +50,10 @@ function loadManagers(){
 		});
 }
 
-function builderManagersList(){
-	
+function builderManagersList(managersList){
+	console.log(managersList);
 	var strBuilderManagersContent = [];
-	if(areManagersLoaded == true){
+	//if(areManagersLoaded == true){
 		if(managersList.length == 0){
 				showMessage(messageNotManagers);
 		}
@@ -63,26 +63,26 @@ function builderManagersList(){
 				
 				strBuilderManagersContent.push('<div class="card card-managers">');
 					strBuilderManagersContent.push('<div class="card-managers-content">');
-					strBuilderManagersContent.push('<div class="card-header">'+item.role+'</div>');
+					strBuilderManagersContent.push('<div class="card-header">'+item.cargo.nombre+'</div>');
 
-					$.each(item.managers, function(index, value) {
+					//$.each(item.managers, function(index, value) {
 						strBuilderManagersContent.push('<div class="card-content">');
 							strBuilderManagersContent.push('<div class="card-content-inner">');
 								strBuilderManagersContent.push('<div class="manager-avatar">');
 									var urlImgProfile = getDefaultImageProfile();
-									if(value.imgProfile != ""){
-										urlImgProfile = value.imgProfile; 
+									if(item.imgProfile != ""){
+										urlImgProfile = item.persona.imagenPrincipalMin;
 									}
-									strBuilderManagersContent.push('<img data-src="'+urlImgProfile+'" alt="'+value.altImg+'" class="lazy lazy-fedeIn" />');
+									strBuilderManagersContent.push('<img data-src="'+urlImgProfile+'" alt="'+item.persona.imagenPrincipalMin+'" class="lazy lazy-fedeIn" />');
 								strBuilderManagersContent.push('</div>');
-							strBuilderManagersContent.push('<div class="manager-name">'+value.name+'</div>');
-							strBuilderManagersContent.push('<div class="manager-date">'+value.from+'</div>');
-							strBuilderManagersContent.push('<div class="manager-date"><a href="#" onclick="openPhoneCaller(\''+value.phone+'\')">'+value.phone+'</a></div>');
-							strBuilderManagersContent.push('<div class="manager-date"><a href="#" onclick="openMailer(\''+lblSubjectEmail+'\',\''+value.email+'\')">'+value.email+'</a></div>');
-							strBuilderManagersContent.push('<p>'+value.desc+'</p>');
+							strBuilderManagersContent.push('<div class="manager-name">'+item.persona.nombre+'</div>');
+							strBuilderManagersContent.push('<div class="manager-date">'+item.fechaDesde+'</div>');
+							strBuilderManagersContent.push('<div class="manager-date"><a href="#" onclick="openPhoneCaller(\''+item.phone+'\')">'+item.phone+'</a></div>');
+							strBuilderManagersContent.push('<div class="manager-date"><a href="#" onclick="openMailer(\''+lblSubjectEmail+'\',\''+item.persona.correo+'\')">'+item.persona.correo+'</a></div>');
+							strBuilderManagersContent.push('<p>'+item.observaciones+'</p>');
 						strBuilderManagersContent.push('</div>');
 						strBuilderManagersContent.push('</div>');
-					});
+					//});
 				strBuilderManagersContent.push('</div>');
 				strBuilderManagersContent.push('</div>');
 			});
@@ -96,7 +96,7 @@ function builderManagersList(){
 		}  else {
 			mainView.router.load({pageName: 'managers'});
 		}
-	} else {
+	/*} else {
 		loadManagers();
-	}
+	}*/
 }

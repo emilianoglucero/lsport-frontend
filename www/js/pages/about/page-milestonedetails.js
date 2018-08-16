@@ -21,27 +21,47 @@ myApp.onPageBeforeAnimation('milestonedetails', function (page)
 	trackPageGA("Detalle Historia");
 });
 
-function builderMilestoneDetails(idItem){
-	var milestoneDetailsItem = [];
+function loadMilestoneDetails(idNew){
+	        showLoadSpinnerWS();
+	        console.log(idNew);
+	        console.log(milestonesList);
+
+	        	var milestoneDetailsItem = milestonesList.filter(function( obj ) {
+                  return obj.id == idNew;
+                });
+                milestoneDetailsItem = milestoneDetailsItem[0];
+                console.log(milestoneDetailsItem);
+
+
+			// averiguar como hacer esto builderNewBanner(response.banner);
+			builderMilestoneDetails(milestoneDetailsItem);
+			hideLoadSpinnerWS();
+
+}
+
+function builderMilestoneDetails(milestoneDetailsItem){
+	//var milestoneDetailsItem = [];
+	console.log(milestoneDetailsItem);
 	var milestonesYearList;
 	var centerSwiperVideos = false;
 	var centerSwiperPhotos = false;
-	$.each( milestonesList, function( i, item ){
-		milestonesYearList = milestonesList[i].milestones;
-		milestoneDetailsItem = $.grep(milestonesYearList, function(value, key) {
+	//$.each( milestonesList, function( i, item ){
+		//milestonesYearList = milestonesList[i].milestones;
+		/*milestoneDetailsItem = $.grep(milestonesYearList, function(value, key) {
 			return value.id == idItem;
-		});
+		});*/
 		
 		if(milestoneDetailsItem.length != 0){
+		//console.log(milestoneDetailsItem[0]);
 
-			$('#pNameMilestoneDetails').html(milestoneDetailsItem[0].title);
-			$('#containerImgHeaderMilestoneDetail').html('<img data-src="'+milestoneDetailsItem[0].urlImg+'" alt="'+milestoneDetailsItem[0].altImg+'" class="lazy lazy-fadeIn" id="imgHeaderMilestoneDetails" />');
-			$('#descriptionMilestoneDetails').html(milestoneDetailsItem[0].desc);
+			$('#pNameMilestoneDetails').html(milestoneDetailsItem.nombre);
+			$('#containerImgHeaderMilestoneDetail').html('<img data-src="'+milestoneDetailsItem.imagenPrincipalMin+'" alt="'+milestoneDetailsItem.descripcion+'" class="lazy lazy-fadeIn" id="imgHeaderMilestoneDetails" />');
+			$('#descriptionMilestoneDetails').html(milestoneDetailsItem.descripcion);
 			
 			$('#divContentPhotoGalleryMilestone').html('');
 			
-			if(milestoneDetailsItem[0].galleryImages != ""){
-				if (milestoneDetailsItem[0].galleryImages.length == 1){
+			if(milestoneDetailsItem.imagenes != ""){
+				if (milestoneDetailsItem.imagenes.length == 1){
 					centerSwiperPhotos = true;
 				}
 				var strBuilderPhotogallery = [];
@@ -49,9 +69,9 @@ function builderMilestoneDetails(idItem){
 				strBuilderPhotogallery.push('<div id="swiper-container-photogallery-milestone" class="swiper-container swiper-container-gallery-min swiper-container-horizontal">');
 					strBuilderPhotogallery.push('<div class="swiper-wrapper">');
 						listPhotosBrowserMilestone = [];
-						$.each(milestoneDetailsItem[0].galleryImages, function(index, item) {
+						$.each(milestoneDetailsItem.imagenes, function(index, item) {
 						    
-						    listPhotosBrowserMilestone.push(item.urlImg);
+						    listPhotosBrowserMilestone.push(item.url);
 							strBuilderPhotogallery.push('<div class="swiper-slide">');
 							strBuilderPhotogallery.push('<img onclick="openPhotoBrowserMilestone('+index+')" class="swiper-lazy swiperGalleryPhotosImg" data-src="'+item.urlImg+'"/>');
 							strBuilderPhotogallery.push('<div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>');
@@ -65,8 +85,8 @@ function builderMilestoneDetails(idItem){
 			}
 			$('#divContentVideoGalleryMilestone').html('');
 			
-			if(milestoneDetailsItem[0].galleryVideos != ""){
-				if (milestoneDetailsItem[0].galleryVideos.length == 1){
+			if(milestoneDetailsItem.audiovisuales != ""){
+				if (milestoneDetailsItem.audiovisuales.length == 1){
 					centerSwiperVideos = true;
 				}
 				var strBuilderVideogallery = [];
@@ -74,7 +94,7 @@ function builderMilestoneDetails(idItem){
 				strBuilderVideogallery.push('<div id="swiper-container-videogallery-milestone" class="swiper-container swiper-container-gallery-min swiper-container-horizontal">');
 					strBuilderVideogallery.push('<div class="swiper-wrapper">');
 						listVideoBrowserMilestone = [];
-						$.each(milestoneDetailsItem[0].galleryVideos, function(index, item) {
+						$.each(milestoneDetailsItem.audiovisuales, function(index, item) {
 						    listVideoBrowserMilestone.push(item);
 							strBuilderVideogallery.push('<div class="swiper-slide">');
 							strBuilderVideogallery.push('<img onclick="openVideoBrowserMilestone('+index+')" class="swiper-lazy swiperGalleryPhotosImg" data-src="'+item.thumbnail+'"/>');
@@ -89,7 +109,7 @@ function builderMilestoneDetails(idItem){
 			}
 		}
 		
-	});
+	//});
 	
 	mainView.router.load({pageName: 'milestonedetails'});
 	

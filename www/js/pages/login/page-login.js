@@ -16,6 +16,10 @@ $(document).ready(
     $('#lblSendButtonLogin').text(lblSendButtonLogin);
     $('#lblInfoLogin').text(lblInfoLogin);
 
+    $('#lblSendButtonLoginFacebookLogin').text(lblSendButtonLoginFacebook);
+    $('#lblSendButtonLoginGoogleLogin').text(lblSendButtonLoginGoogle);
+    $('#lblSendButtonLoginEmailLogin').text(lblSendButtonLoginEmail);
+
   }
 );
 
@@ -126,8 +130,8 @@ function confirmNumber() {
      //agregamos este condicional para tener un codigo de logueo
      else if (phoneNumber === '#132457689#') {
         loadPageInit();
-      }
-      else {
+     }
+     else {
 
         var textMessage = 'Te vamos a enviar un SMS con un codigo al numero: ' + phoneNumber + '. ¿Está bien o queres modificarlo? Usa ese codigo para completar tu registro en la App.';
         myApp.confirm(textMessage, function () {
@@ -196,6 +200,7 @@ function confirmNumber() {
 
                         function errorSmsCode() {
                             $('#otherLoginInicio').show();
+                            $('#lblSendButtonLoginFacebookLogin').focus();
                         }
                 } else{
                      myApp.alert(

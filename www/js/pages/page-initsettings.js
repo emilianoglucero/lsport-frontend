@@ -167,7 +167,8 @@ function loadInitSettignsList()
 	//showLoadSpinnerWS();
 	$.ajax({
 		// URL del Web Service
-		url: getPathWS() + 'getSettingList',
+		//url: getPathWS() + 'getSettingList',
+		url: 'http://clubes.lenguajesport.com/webservice/getSettingList',
 		dataType: 'jsonp',
 		data: { 'idClub': idClub },
 		timeout: timeOut,
@@ -196,6 +197,8 @@ function loadInitSettignsList()
 
 function getNotificationsPreferencesInitsettings()
 {
+console.log(idClub);
+console.log(window.localStorage.getItem("CLIENTID"+idClub));
 	$.ajax({
 		// URL del Web Service
 		url: getPathWS() + 'getNotificationsPreferences',

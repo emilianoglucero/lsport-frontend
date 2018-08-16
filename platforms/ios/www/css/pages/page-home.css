@@ -1,4 +1,4 @@
-#page-content-home{
+#tabHomeDetails1{
 	/*padding-top: 0px;
 	padding-bottom: 0px;*/
 	margin-top: 0px;
@@ -76,7 +76,7 @@
 }
 
 .list-block.list-block-home .item-content {
-    padding-left: 10px;
+    padding-left: 7.5px;
 }
 
 .list-block.media-list .item-text .item-date {
@@ -98,6 +98,7 @@
 
 #divExistConnectionHome{
 	display: block;
+	margin-top: 50px;
 }
 
 .imgNoConnection {
@@ -223,4 +224,270 @@
 #footer.toolbar::before 
 {
     height: 0;
+}
+
+
+/*sucesos del home
+
+.card-header-home{
+	display: block !important;
+	text-align: center;
+	color: #1A9AD9;
+	font-size: 16px;
+
+    min-height: 44px;
+    position: relative;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+}*/
+
+.card-event-home {
+   /* box-shadow: none;*/
+    box-shadow: 0 2px 4px rgba(0,0,0,.4) !important;
+}
+
+.card-event-home-content{
+	/*box-shadow: 0 2px 4px rgba(0,0,0,.4) !important;*/
+	width: 100%;
+	height: 100%;
+}
+
+.cardHomeRow{
+    width: 100%;
+}
+
+.chipHomeContainer{
+    width: 100%;
+    overflow: hidden;
+}
+
+.chipHomeDate{
+    float: left;
+    width: 45%;
+}
+
+.chipHomeTags{
+    float: right;
+}
+
+.chipHomeTags{
+    margin-right: 15px;
+    width: 48%;
+}
+
+.chipHomeSportLabel{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.chipHomeDateLabel{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cardNewsImageContainer{
+    width: 45%;
+}
+
+.cardNewsImage{
+    width: 100%;
+    height: 100%;
+}
+
+.cardNewsInfo{
+    width: 55%;
+}
+
+.cardNewsContainerInfo {
+    padding-bottom: 5px;
+}
+
+.icon-date-home {
+    width: 16px;
+    height: 16px;
+    background-image: url(../../img/template/icon-date-event.png);
+    border-radius: 3px;
+}
+
+.icon-home-tiposuceso {
+    width: 16px;
+    height: 16px;
+    background-image: url(../../img/template/icon-sports.png);
+    border-radius: 3px;
+}
+
+#calendarTypeView {
+    margin-top: 50px;
+}
+
+.tr-body-home {
+    font-size: 13px;
+    width: 10%;
+}
+.tr-body-home td-10-tournament td-8-tournament{
+    text-align: center;
+}
+
+.td-50-tournaments-more {
+    padding-left: 15px;
+}
+
+/***timeline view***/
+#cardHomeTimeLine {
+ width: 15em;
+}
+
+/***calendar view***/
+.noEventsCalendarMsg {
+    font-text: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.aEventDetails {
+    margin-bottom: 15px;
+}
+
+#selectTypeView {
+    border: 0;
+    color: black;
+    width: 97%;
+    font-size: 19px;
+    background: transparent url("../../img/template/icon-down.png") no-repeat scroll right 4px;
+    background-size: 20px 20px;
+}
+
+.calendar-input-select {
+    margin: 8px 0;
+    display: inline-block;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: center;
+    padding-left: 32%;
+}
+
+/***timeline view***/
+
+#row-lastmatch-tournament-calendar{
+	width: 100%;
+	padding: 7px;
+	margin-right: 11px;
+}
+
+#row-lastmatch-tournament-calendar .col-lastmatch-tournament .col-lastmatch-tournament-team{
+	padding-bottom: 5px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	font-size: 11px;
+	font-weight: 700;
+}
+
+#row-lastmatch-tournament-calendar .col-lastmatch-tournament-middle{
+	margin-top: 7px;
+	margin-left: 7px;
+}
+
+#row-lastmatch-tournament-calendar .col-lastmatch-tournament .col-lastmatch-tournament-nametournament{
+	font-size: 10px;
+    margin-left: 6px;
+}
+
+#row-lastmatch-tournament-calendar .col-lastmatch-tournament .col-lastmatch-tournament-name{
+    font-size: 10px;
+    font-weight: 700;
+    text-align: center;
+    margin-left: 5px;
+}
+
+#row-lastmatch-tournament-calendar .col-lastmatch-tournament .col-lastmatch-tournament-result{
+	border: 3px solid rgb(0, 0, 0);
+    color: #FFFFFF;
+    background-color: #108342;
+    margin-left: 9px;
+}
+
+#row-lastmatch-tournament-calendar .col-lastmatch-tournament .col-lastmatch-tournament-result p{
+	margin-top: 0px;
+	margin-bottom: 0px;
+	font-size: 12px;
+	font-weight: 700;
+	text-align: center;
+}
+
+#row-lastmatch-tournament-calendar .col-lastmatch-tournament .col-lastmatch-tournament-date{
+	font-size: 10px;
+    text-align: center;
+}
+
+#row-lastmatch-tournament-calendar .col-lastmatch-tournament .col-lastmatch-tournament-team{
+    padding-bottom: 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 11px;
+    font-weight: 700;
+    width: 130%;
+}
+
+/* SUCESOS*/
+
+/* SUCESO FECHA TORNEO */
+
+.card .tournament-matches{
+    border: 11px solid #e6e6e6;
+}
+#page-home #cardLastestNewsHome #tournament-matches-header {
+    background-color: #e6e6e6;
+    display: block;
+}
+
+.card .tournament-matches-icon{
+    float:  left;
+    margin-left: 5px;
+}
+
+.card .img-shield-tournament{
+    height:  30px;
+    width: 30px;
+}
+
+.card .tournament-matches-name{
+    text-align:  left;
+    margin-left: 44px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.card .tournament-matches-division{
+    margin-left: 44px;
+    font-size: 13px;
+    color: #8e8e93;
+    text-align:  left;
+}
+.card .tournament-matches-matchday{
+    float:  right;
+    font-size: 13px
+}
+
+.tournament-matches-content .row-tournament-matches{
+    margin-top: 13px;
+    margin-bottom: 13px;
+    font-size: 13px;
+}
+
+.card-content .tournament-matches-content .match-scorer{
+    text-align:  center;
+    background-color: #e6e6e6;
+}
+.tournament-matches-footer{
+    background-color: #e6e6e6;
+    font-weight:  500;
+}
+
+.card-content .img-shield-team {
+    height: 20px;
+    width: 20px;
 }

@@ -6,6 +6,8 @@ var listVideoBrowserAchievement = [];
 var myPhotoBrowserPhotoGalleryAchievement = myApp.photoBrowser();
 var myPhotoBrowserVideoGalleryAchievement = myApp.photoBrowser();
 
+
+
 myApp.onPageInit('achievementdetails', function (page)
 {
     myApp.initImagesLazyLoad(mainView.activePage.container);
@@ -22,29 +24,53 @@ myApp.onPageBeforeAnimation('achievementdetails', function (page)
 	
 });
 
-function builderAchievementDetails(idItem){
+function loadAchievementdetails(idNew){
+	        showLoadSpinnerWS();
+	        console.log(idNew);
 
-	var achievementDetailsItem = [];
+	        	var achievementDetailsItem = achievementsList.filter(function( obj ) {
+                  return obj.id == idNew;
+                });
+                achievementDetailsItem = achievementDetailsItem[0];
+                console.log(achievementDetailsItem);
 
+
+			// averiguar como hacer esto builderNewBanner(response.banner);
+			builderAchievementDetails(achievementDetailsItem);
+			hideLoadSpinnerWS();
+
+}
+
+function builderAchievementDetails(achievementDetailsItem){
+
+	//var achievementDetailsItem = [];
+console.log(achievementDetailsItem);
 	var achievementsYearList;
 	var centerSwiperPhotos = false;
 	var centerSwiperVideos = false;
-	$.each( achievementsList, function( i, item ){
-		achievementsYearList = achievementsList[i].achievements;
-		achievementDetailsItem = $.grep(achievementsYearList, function(value, key) {
+	//console.log(idItem);
+	//$.each( achievementsList, function( i, item ){
+	//console.log(item);
+		//achievementsYearList = achievementsList[i].achievements;
+		//achievementsYearList = achievementsList[i];
+		/*achievementDetailsItem = $.grep(achievementsYearList, function(value, key) {
 			return value.id == idItem;
-		});
-		
-		if(achievementDetailsItem.length != 0){
+		});*/
+		/*var achievementDetailsItem = achievementsYearList.filter(function( obj ) {
+          return obj.id == idItem;
+        });*/
 
-			$('#pNameAchievementDetails').html(achievementDetailsItem[0].title);
-			$('#containerImgHeaderAchievementDetail').html('<img data-src="'+achievementDetailsItem[0].urlImg+'" alt="'+achievementDetailsItem[0].altImg+'" class="lazy lazy-fadeIn" id="imgHeaderAchievementDetails" />');
-			$('#descriptionAchievementDetails').html(achievementDetailsItem[0].desc);
+		//console.log(achievementDetailsItem);
+		//if(achievementDetailsItem.length != 0){
+
+			$('#pNameAchievementDetails').html(achievementDetailsItem.nombre);
+			$('#containerImgHeaderAchievementDetail').html('<img data-src="'+achievementDetailsItem.imagenPrincipalMin+'" alt="'+achievementDetailsItem.descripcion+'" class="lazy lazy-fadeIn" id="imgHeaderAchievementDetails" />');
+			$('#descriptionAchievementDetails').html(achievementDetailsItem.detalle);
 			
 			$('#divContentPhotoGalleryAchievement').html('');
 			
-			if(achievementDetailsItem[0].galleryImages != ""){
-				if(achievementDetailsItem[0].galleryImages.length == 1){
+			if(achievementDetailsItem.imagenes != ""){
+				if(achievementDetailsItem.imagenes.length == 1){
 					centerSwiperPhotos = true;
 				}
 				var strBuilderPhotogallery = [];
@@ -52,11 +78,11 @@ function builderAchievementDetails(idItem){
 				strBuilderPhotogallery.push('<div id="swiper-container-photogallery-achievement" class="swiper-container swiper-container-gallery-min swiper-container-horizontal">');
 					strBuilderPhotogallery.push('<div class="swiper-wrapper">');
 						listPhotosBrowserAchievement = [];
-						$.each(achievementDetailsItem[0].galleryImages, function(index, item) {
+						$.each(achievementDetailsItem.imagenes, function(index, item) {
 						    
-						    listPhotosBrowserAchievement.push(item.urlImg);
+						    listPhotosBrowserAchievement.push(item.imagenMin);
 							strBuilderPhotogallery.push('<div class="swiper-slide">');
-							strBuilderPhotogallery.push('<img onclick="openPhotoBrowserAchievement('+index+')" class="swiper-lazy swiperGalleryPhotosImg" data-src="'+item.urlImg+'"/>');
+							strBuilderPhotogallery.push('<img onclick="openPhotoBrowserAchievement('+index+')" class="swiper-lazy swiperGalleryPhotosImg" data-src="'+item.imagenMin+'"/>');
 							strBuilderPhotogallery.push('<div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>');
 							strBuilderPhotogallery.push('</div>');
 						});
@@ -69,8 +95,8 @@ function builderAchievementDetails(idItem){
 			}
 			$('#divContentVideoGalleryAchievement').html('');
 			
-			if(achievementDetailsItem[0].galleryVideos != ""){
-				if(achievementDetailsItem[0].galleryVideos.length == 1){
+			if(achievementDetailsItem.audiovisuales != ""){
+				if(achievementDetailsItem.audiovisuales.length == 1){
 					centerSwiperVideos = true;
 				}
 				var strBuilderVideogallery = [];
@@ -78,10 +104,10 @@ function builderAchievementDetails(idItem){
 				strBuilderVideogallery.push('<div id="swiper-container-videogallery-achievement" class="swiper-container swiper-container-gallery-min swiper-container-horizontal">');
 					strBuilderVideogallery.push('<div class="swiper-wrapper">');
 						listVideoBrowserAchievement = [];
-						$.each(achievementDetailsItem[0].galleryVideos, function(index, item) {
+						$.each(achievementDetailsItem.audiovisuales, function(index, item) {
 						    listVideoBrowserAchievement.push(item);
 							strBuilderVideogallery.push('<div class="swiper-slide">');
-							strBuilderVideogallery.push('<img onclick="openVideoBrowserAchievement('+index+')" class="swiper-lazy swiperGalleryPhotosImg" data-src="'+item.thumbnail+'"/>');
+							strBuilderVideogallery.push('<img onclick="openVideoBrowserAchievement('+index+')" class="swiper-lazy swiperGalleryPhotosImg" data-src="'+item.url+'"/>');
 							strBuilderVideogallery.push('<div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>');
 							strBuilderVideogallery.push('</div>');
 						});
@@ -92,8 +118,8 @@ function builderAchievementDetails(idItem){
 				$('#divContentVideoGalleryAchievement').append(strBuilderVideogallery.join(""));
 				$('.lblVideoGallery').text(lblVideoGallery);
 			}
-		}
-	});
+		//}
+	//});
 
 	mainView.router.load({pageName: 'achievementdetails'});
 	

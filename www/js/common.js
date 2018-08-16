@@ -1,6 +1,12 @@
 var $$ = Dom7;
 var timeOut = 12000;
 
+//token que se le asigna al usuario cuando se registra y que necesitamos para hacer las llamadas ajax
+var tokenUser;
+
+//token que obtenemos luego del login del usuario contra el backend
+var accessToken;
+
 var mainView = myApp.addView('.view-main', {
     dynamicNavbar: true,
     domCache: true,
@@ -126,6 +132,11 @@ jQuery(document).ready(function ()
 	xhReq.open("GET", "pages/tournaments/page-matchdetails.html", false);
 	xhReq.send(null);
 	document.getElementById("page-matchdetails").innerHTML=xhReq.responseText;
+
+	// TORNEO - DETALLE DE LOS PARTIDOS
+    xhReq.open("GET", "pages/tournaments/page-matchdetailsfixture.html", false);
+    xhReq.send(null);
+    document.getElementById("page-matchdetailsfixture").innerHTML=xhReq.responseText;
 	
 	// TORNEO - FIXTURE - FECHAS
 	xhReq.open("GET", "pages/tournaments/page-dateslist.html", false);
@@ -294,6 +305,7 @@ function loadPageInit()
 var userName;
 var userLastName;
 var userFullName;
+var userEmail;
 
 function loadPageLogin()
 {
@@ -305,6 +317,14 @@ function loadPageLogin()
                         console.log('Email is verified or has phone or logged by facebook');
 
                         userFullName = user.displayName;
+                        userEmail = user.email;
+                        /*firebase.auth().currentUser.getIdToken(true).then(function(idToken) {
+                          console.log(idToken);
+                          tokenUser = idToken;
+                        }).catch(function(error) {
+                          console.log(error);
+                        });*/
+
 
                         if (userFullName == null) {
 
@@ -314,9 +334,125 @@ function loadPageLogin()
 
                             if(window.localStorage.getItem("PAGEINITCONFIG"+idClub) != null)
                             {
+                                  //me conecto con el ws de login y le paso todos los datos necesarios
+                                  /*firebase.auth().currentUser.getIdToken(true).then(function(idToken) {
+                                    console.log(idToken);
+                                    tokenUser = idToken;
+                                  }).catch(function(error) {
+                                    console.log(error);
+                                  });*/
+                                  firebase.auth().currentUser.getIdToken(true).then(function(idToken) {
+                                    //console.log(idToken);
+                                    tokenUser = idToken;
+                                    console.log(userFullName); //nombre y apellido del usuario
+                                    console.log(tokenUser);
+                                    console.log(deviceID);
+                                    console.log(window.localStorage.getItem("TOKEN"+idClub));
+                                    console.log(platform);
+                                    console.log(userEmail);
+
+                                    $.ajax({
+                                        // URL del Web Service
+                                        url: getPathWS() + 'registrarUsuario',
+                                        type: 'POST',
+                                        //contentType: 'application/json',
+                                        dataType: 'json',
+                                        timeout: timeOut,
+                                        data:  JSON.stringify({"grant_type": "urn:ietf:params:oauth:grant-type:jwt-bearer",
+                                                      "assertion": tokenUser,
+                                                      "dispositivoId": deviceID,
+                                                      "tokenNotificacion": window.localStorage.getItem("TOKEN"+idClub),
+                                                      "platforma": platform,
+                                                      "nombre" : userFullName,
+                                                      "apellido" : "lucero",
+                                                      "correo" : "correo@mail.com"
+                                        }),
+                                        success: function(response){
+                                            console.log(response.access_token);
+                                            accessToken = response.access_token;
+                                            mainView.router.load({pageName: 'home'});
+                                            reloadContentHomePage();
+
+                                        },
+                                        error: function (data, status, error){
+                                            console.log(data);
+                                            console.log(status);
+                                            console.log(error);
+                                        },
+                                        beforeSend: function(xhr, settings) { xhr.setRequestHeader('Content-Type','application/json' ); } //set tokenString before send
+
+                                    });
+
+
+                                      //mainView.router.load({pageName: 'home'});
+                                      //reloadContentHomePage();
+                                  }).catch(function(error) {
+                                    console.log(error);
+                                  });
+
+                                     	/*$.ajax({
+                                     			// URL del Web Service
+                                     			url: getPathWS() + 'registrarUsuario',
+                                     			dataType: 'json',
+                                     			type: 'POST',
+                                     			contentType: 'application/json',
+                                     			data: { 'grant_type': "urn:ietf:params:oauth:grant-type:jwt-bearer",
+                                     			        'assertion': tokenUser,
+                                     			        'dispositivoId': "fb9b38277c7910aa",
+                                                        'tokenNotificacion': "dUhVJBMJk3w:APA91bHa64MboeL1L55RMjKNUB9pxCWy2euNHdhC8qR8CQIzxvhYtkLx2qcD0w3Hs0dvg45TFxHYoOVZ-lJ6bNBjE2cd_rRrmr6ykPX4IC1Ag5O9b48XiKt3LPPgeZ5-JDtgk9F9jfVe",
+                                                        'platforma': "Android",
+                                                        'nombre': "emi",
+                                                        'apellido': "lucero",
+                                                        'correo': itemsPage
+                                                 },
+                                                 //beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer Bearer dcce59676c43e1c54a342e5207dfce0dc00fd502' ); }, //set tokenString before send
+                                     			timeout: timeOut,
+                                     			success: function(response){
+                                     				console.log(response);
+
+                                     			},
+                                     			error: function (data, status, error){
+                                                    console.log(data);
+                                                    console.log(status);
+                                                    console.log(error);
+                                                }
+                                     		   //beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer dcce59676c43e1c54a342e5207dfce0dc00fd502' ); } //set tokenString before send
+
+                                     	});*/
+                                  	/*$.ajax({
+                                        // URL del Web Service
+                                        url: getPathWS() + 'registrarUsuario',
+                                        type: 'POST',
+                                        //contentType: 'application/json',
+                                        dataType: 'json',
+                                        timeout: timeOut,
+                                        data:  JSON.stringify({"grant_type": "urn:ietf:params:oauth:grant-type:jwt-bearer",
+                                                      "assertion": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImI4OWY3MzQ2YTA5ODVmNDIxZGNkOGQzMGMwYjMwZWViZmFlMTlhMWUifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vbGVuZ3VhamUtc3BvcnQiLCJuYW1lIjoiRW1pICBMdWNlcm8gIiwiYXVkIjoibGVuZ3VhamUtc3BvcnQiLCJhdXRoX3RpbWUiOjE1Mjg0MDExMDcsInVzZXJfaWQiOiJiTW54aHUzRHc4VXRQU1B4c1N5enBNa3JSYTEyIiwic3ViIjoiYk1ueGh1M0R3OFV0UFNQeHNTeXpwTWtyUmExMiIsImlhdCI6MTUzMjQ2MzkxMywiZXhwIjoxNTMyNDY3NTEzLCJwaG9uZV9udW1iZXIiOiIrNTI5ODQyMDk1MDM3IiwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJwaG9uZSI6WyIrNTI5ODQyMDk1MDM3Il19LCJzaWduX2luX3Byb3ZpZGVyIjoicGhvbmUifX0.Iz39HWo7pcxFi6lSv7gCdpIGI_VE0pGbb_-U7qjkzCQKBffghKsUsptICGRVoBPbWr969F-waQEHHNhtdc8UIHAaIcO7f2iB1j-t0g2iq3z0NXYwqKh-8KUA07BdrC9X42EgJls-WsGDz7ZELwFXAudStOusF5s0mM1dUfSrkdOiBbsgwSVz2d_wyns6z2ChlxKtndwhrraDF7bsl3DWaVhGLf8IHbAV9JMeD-n2Zjlcj2fBfMS3Kb-sP8A4E6It5gUycScwfk0EnZZTg9xhHbjx1TjYnvFGZKR7YRgoTbT0-GsO1S-M-SbuVRhc9thQEFfrc32qormrV-kmb6oTqA",
+                                                      "dispositivoId": "8192312312312321",
+                                                      "tokenNotificacion": "TokenFcm",
+                                                      "platforma": "Android 7.0 Nougat",
+                                                      "nombre" : "Nombre",
+                                                      "apellido" : "lucero",
+                                                      "correo" : "correo-1@example.com"
+                                        }),
+                                        success: function(response){
+                                            console.log(response);
+                                            //mainView.router.load({pageName: 'home'});
+                                            //reloadContentHomePage();
+
+                                        },
+                                        error: function (data, status, error){
+                                            console.log(data);
+                                            console.log(status);
+                                            console.log(error);
+                                        },
+                                        beforeSend: function(xhr, settings) { xhr.setRequestHeader('Content-Type','application/json' ); } //set tokenString before send
+
+                                  	});
+
 
                                   mainView.router.load({pageName: 'home'});
-                                  reloadContentHomePage();
+                                  reloadContentHomePage();*/
 
                             }
                             else
@@ -336,7 +472,7 @@ function loadPageLogin()
                   mainView.router.load({pageName: 'login'});
               }
 
-       });
+        });
 
 }
 
@@ -348,11 +484,12 @@ function setPushConfigurations()
 
 
 	window.FirebasePlugin.getToken(function(token) {
+	console.log(token);
         // save this server-side and use it to push notifications to this device
         if(window.localStorage.getItem("TOKEN"+idClub) != token || window.localStorage.getItem("CLIENTID"+idClub) == null){
             		window.localStorage.setItem("TOKEN"+idClub, token);
             		if(window.localStorage.getItem("TOKEN"+idClub)){
-            		registerNewClient();
+            		//registerNewClient();
             		}
          }
     }, function(error) {
@@ -360,16 +497,18 @@ function setPushConfigurations()
     });
 
     window.FirebasePlugin.onTokenRefresh(function(token) {
+    console.log(token);
         // save this server-side and use it to push notifications to this device
         if(window.localStorage.getItem("TOKEN"+idClub) != token || window.localStorage.getItem("CLIENTID"+idClub) == null){
             		window.localStorage.setItem("TOKEN"+idClub, token);
             		if(window.localStorage.getItem("TOKEN"+idClub)){
-            		registerNewClient();
+            		//registerNewClient();
             		}
          }
     }, function(error) {
         console.error(error);
     });
+
 
 
    window.FirebasePlugin.onNotificationOpen(function(notification) {
@@ -696,14 +835,15 @@ function vibrate()
 function getPathWS(){
 	//return wsUrl;
     //return 'http://testing.lenguajesport.com/webservice/';
-    return 'http://clubes.lenguajesport.com/webservice/';
-}   //return 'http://lsport.fabi/webservice/';
+    //return 'http://clubes.lenguajesport.com/webservice/';
+   return 'http://clubes.lenguajefutbol.com/9/api/';
+}
 
 function getPathMobile(){
 	//return mobileUrl;
     //return 'http://testing.lenguajesport.com/movil/';
-    return 'http://clubes.lenguajesport.com/movil/';
-    //return 'http://lsport.fabi/movil/';
+    //return 'http://clubes.lenguajesport.com/movil/';
+    return 'http://clubes.lenguajefutbol.com/9/api/';
 }
 
 function showMessage(message){

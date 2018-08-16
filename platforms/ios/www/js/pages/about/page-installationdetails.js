@@ -25,6 +25,7 @@ myApp.onPageBeforeAnimation('installationdetails', function (page)
 	trackPageGA("Detalle Instalacion");
 });
 
+
 function builderInstallationDetails(idItem){
 	
 	var installationDetailsItem;
@@ -39,7 +40,7 @@ function builderInstallationDetails(idItem){
 	$('#divContentPhotoGalleryInstallation').html('');
 	var centerSwiperPhotos = false;
 	if(installationDetailsItem[0].galleryImages != ""){
-		if(installationDetailsItem[0].galleryImages.length == 1){
+		if(installationDetailsItem[0].imagenes.length == 1){
 			centerSwiperPhotos = true;
 		}
 		var strBuilderPhotogallery = [];
@@ -47,9 +48,9 @@ function builderInstallationDetails(idItem){
 		strBuilderPhotogallery.push('<div id="swiper-container-photogallery-installation" class="swiper-container swiper-container-gallery-min swiper-container-horizontal">');
 			strBuilderPhotogallery.push('<div class="swiper-wrapper">');
 				listPhotosBrowserInstallation = [];
-				$.each(installationDetailsItem[0].galleryImages, function(index, item) {
+				$.each(installationDetailsItem[0].imagenes, function(index, item) {
 				    
-				    listPhotosBrowserInstallation.push(item.urlImg);
+				    listPhotosBrowserInstallation.push(item.imagenMin);
 					strBuilderPhotogallery.push('<div class="swiper-slide">');
 					strBuilderPhotogallery.push('<img onclick="openPhotoBrowserIntallation('+index+')" class="swiper-lazy swiperGalleryPhotosImg" data-src="'+item.urlImg+'"/>');
 					strBuilderPhotogallery.push('<div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>');
@@ -67,7 +68,7 @@ function builderInstallationDetails(idItem){
 	
 	var centerSwiperVideos = false;
 	if(installationDetailsItem[0].galleryVideos != ""){
-		if(installationDetailsItem[0].galleryImages.length == 1){
+		if(installationDetailsItem[0].imagenes.length == 1){
 			centerSwiperVideos = true;
 		}
 		var strBuilderVideogallery = [];
@@ -75,7 +76,7 @@ function builderInstallationDetails(idItem){
 		strBuilderVideogallery.push('<div id="swiper-container-videogallery-installation" class="swiper-container swiper-container-gallery-min swiper-container-horizontal">');
 			strBuilderVideogallery.push('<div class="swiper-wrapper">');
 				listVideoBrowserInstallation = [];
-				$.each(installationDetailsItem[0].galleryVideos, function(index, item) {
+				$.each(installationDetailsItem[0].audiovisuales, function(index, item) {
 				    listVideoBrowserInstallation.push(item);
 					strBuilderVideogallery.push('<div class="swiper-slide">');
 					strBuilderVideogallery.push('<img onclick="openVideoBrowserInstallation('+index+')" class="swiper-lazy swiperGalleryPhotosImg" data-src="'+item.thumbnail+'"/>');

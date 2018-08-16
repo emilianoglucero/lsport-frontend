@@ -202,6 +202,7 @@ function resendSmsCode() {
 
         function showOtherLogin() {
             $('#otherLogin').show();
+            $('#lblSendButtonLoginFacebook').focus();
         }
 
 

@@ -79,6 +79,13 @@ i.icon.icon-sportDetails {
     border-radius: 0px;
 }
 
+i.icon.icon-sportDetailsFixture {
+    width: 29px;
+    height: 29px;
+    background-image: url("../img/template/icon-sportsFixture.png");
+    border-radius: 0px;
+}
+
 i.icon.icon-activities {
     width: 29px;
     height: 29px;

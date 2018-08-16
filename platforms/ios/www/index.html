@@ -57,6 +57,8 @@
             <link rel="stylesheet" type="text/css" href="css/pages/login/page-login.css">
             <link rel="stylesheet" type="text/css" href="css/pages/login/page-smscode.css">
         <link rel="stylesheet" type="text/css" href="css/pages/login/page-emailregister.css">
+
+         <link href="css/font-awesome.min.css" rel="stylesheet" >
 	</head>
 	<body>
 	    <!-- Status bar overlay for full screen mode (PhoneGap) -->
@@ -155,6 +157,14 @@
 							<i class="icon icon-home"></i>
 			            	<span id="lblHeaderHome" class="spnHeader"></span>
 						</div>
+						<div id="subnavbarHomeDetails" class="subnavbar sliding">
+							<div class="buttons-row">
+								<a href="#tabHomeDetails1" id="subnavbarHomeDetails1" class="button active tab-link"></a>
+								<a href="#tabHomeDetails2" id="subnavbarHomeDetails2" class="button tab-link"></a>
+								<!--<a href="#tabHomeDetails3" id="subnavbarHomeDetails3" class="button tab-link"></a>-->
+							</div>
+						</div>
+
 						<div class="right">
 							<!-- Right link contains only icon - additional "icon-only" class-->
 							<a href="" id="icon-settings-favourites-notifications" class="link icon-only"><i  class="icon icon-settings-favourites-notifications"></i></a>
@@ -274,6 +284,21 @@
 						<div class="center sliding">
 							<i class="icon icon-sportDetails"></i>
 							<span id="lblHeaderMatchDetails" class="spnHeader lblHeaderTournaments"></span>
+						</div>
+						<div class="right sliding animated infinite pulse">
+							<!-- Right link contains only icon - additional "icon-only" class-->
+							<a href="#" class="link icon-only"><i id="icon-refresh-matchdetails" class="icon icon-refresh-matchdetails"></i></a>
+						</div>
+					</div>
+
+					<!-- Navbar for Detalle de Partidos de Fecha page -->
+					<div data-page="matchdetailsfixture" class="navbar-inner cached">
+						<div class="left sliding">
+							<a href="#" class="back link"> <i class="icon icon-back"></i></a>
+						</div>
+						<div class="center sliding">
+							<i class="icon icon-sportDetailsFixture"></i>
+							<span id="lblHeaderMatchDetailsFixture" class="spnHeader lblHeaderTournaments"></span>
 						</div>
 						<div class="right sliding animated infinite pulse">
 							<!-- Right link contains only icon - additional "icon-only" class-->
@@ -523,6 +548,7 @@
 				  			<div data-page="positionstable" id="page-positionstable" class="page cached"></div>
 				  			<div data-page="shooterstable" id="page-shooterstable" class="page cached"></div>
 				  			<div data-page="matchdetails" id="page-matchdetails" class="page cached"></div>
+							<div data-page="matchdetailsfixture" id="page-matchdetailsfixture" class="page cached"></div>
 				  			<div data-page="dateslist" id="page-dateslist" class="page cached"></div>
 				  	<div data-page="activities" id="page-activities" class="page cached"></div>
 				  		<div data-page="activitydetails" id="page-activitydetails" class="page with-subnavbar cached"></div>
@@ -674,6 +700,7 @@
 	    		<script type="text/javascript" src="js/pages/tournaments/page-fixtures.js"></script>
 	    		<script type="text/javascript" src="js/pages/tournaments/page-shooterstable.js"></script>
 	    		<script type="text/javascript" src="js/pages/tournaments/page-matchdetails.js"></script>
+				<script type="text/javascript" src="js/pages/tournaments/page-matchdetailsfixture.js"></script>
 	    		<script type="text/javascript" src="js/pages/tournaments/page-dateslist.js"></script>
 	    <script type="text/javascript" src="js/pages/page-events.js"></script>
 	    	<script type="text/javascript" src="js/pages/page-eventdetails.js"></script>

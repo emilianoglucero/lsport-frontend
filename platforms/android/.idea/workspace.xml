@@ -4,16 +4,601 @@
     <list default="true" id="61d7db02-8111-47f3-96d0-faa85811d084" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/resourceHashesCache.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/resourceHashesCache.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/jarAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/jarAnalysis.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskJars.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskJars.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/CordovaLib/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/CordovaLib/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" />
+      <change beforePath="$PROJECT_DIR$/android.iml" afterPath="$PROJECT_DIR$/android.iml" />
+      <change beforePath="$PROJECT_DIR$/assets/www/css/animate.min.css" afterPath="$PROJECT_DIR$/assets/www/css/animate.min.css" />
+      <change beforePath="$PROJECT_DIR$/assets/www/css/common.css" afterPath="$PROJECT_DIR$/assets/www/css/common.css" />
+      <change beforePath="$PROJECT_DIR$/assets/www/css/index.css" afterPath="$PROJECT_DIR$/assets/www/css/index.css" />
+      <change beforePath="$PROJECT_DIR$/assets/www/css/pages/about/page-achievementdetails.css" afterPath="$PROJECT_DIR$/assets/www/css/pages/about/page-achievementdetails.css" />
+      <change beforePath="$PROJECT_DIR$/assets/www/css/pages/about/page-achievements.css" afterPath="$PROJECT_DIR$/assets/www/css/pages/about/page-achievements.css" />
+      <change beforePath="$PROJECT_DIR$/assets/www/css/pages/about/page-contact.css" afterPath="$PROJECT_DIR$/assets/www/css/pages/about/page-contact.css" />
+      <change beforePath="$PROJECT_DIR$/assets/www/css/pages/about/page-installationdetails.css" afterPath="$PROJECT_DIR$/assets/www/css/pages/about/page-installationdetails.css" />
+      <change beforePath="$PROJECT_DIR$/assets/www/css/pages/about/page-installations.css" afterPath="$PROJECT_DIR$/assets/www/css/pages/about/page-installations.css" />
+      <change beforePath="$PROJECT_DIR$/assets/www/css/pages/about/page-managers.css" afterPath="$PROJECT_DIR$/assets/www/css/pages/about/page-managers.css" />
+      <change beforePath="$PROJECT_DIR$/assets/www/css/pages/about/page-milestonedetails.css" afterPath="$PROJECT_DIR$/assets/www/css/pages/about/page-milestonedetails.css" />
+      <change beforePath="$PROJECT_DIR$/assets/www/css/pages/about/page-milestones.css" afterPath="$PROJECT_DIR$/assets/www/css/pages/about/page-milestones.css" />
+      <change beforePath="$PROJECT_DIR$/assets/www/css/pages/login/page-emailregister.css" afterPath="$PROJECT_DIR$/assets/www/css/pages/login/page-emailregister.css" />
+      <change beforePath="$PROJECT_DIR$/assets/www/css/pages/login/page-login.css" afterPath="$PROJECT_DIR$/assets/www/css/pages/login/page-login.css" />
+      <change beforePath="$PROJECT_DIR$/assets/www/css/pages/login/page-smscode.css" afterPath="$PROJECT_DIR$/assets/www/css/pages/login/page-smscode.css" />
+      <change beforePath="$PROJECT_DIR$/assets/www/css/pages/page-about.css" afterPath="$PROJECT_DIR$/assets/www/css/pages/page-about.css" />
+      <change beforePath="$PROJECT_DIR$/assets/www/css/pages/page-activities.css" afterPath="$PROJECT_DIR$/assets/www/css/pages/page-activities.css" />
+      <change beforePath="$PROJECT_DIR$/assets/www/css/pages/page-activitydetails.css" afterPath="$PROJECT_DIR$/assets/www/css/pages/page-activitydetails.css" />
+      <change beforePath="$PROJECT_DIR$/assets/www/css/pages/page-eventdetails.css" afterPath="$PROJECT_DIR$/assets/www/css/pages/page-eventdetails.css" />
+      <change beforePath="$PROJECT_DIR$/assets/www/css/pages/page-events.css" afterPath="$PROJECT_DIR$/assets/www/css/pages/page-events.css" />
       <change beforePath="$PROJECT_DIR$/assets/www/css/pages/page-home.css" afterPath="$PROJECT_DIR$/assets/www/css/pages/page-home.css" />
+      <change beforePath="$PROJECT_DIR$/assets/www/css/pages/page-initintermediate.css" afterPath="$PROJECT_DIR$/assets/www/css/pages/page-initintermediate.css" />
+      <change beforePath="$PROJECT_DIR$/assets/www/css/pages/page-initsettings.css" afterPath="$PROJECT_DIR$/assets/www/css/pages/page-initsettings.css" />
+      <change beforePath="$PROJECT_DIR$/assets/www/css/pages/page-newdetails.css" afterPath="$PROJECT_DIR$/assets/www/css/pages/page-newdetails.css" />
+      <change beforePath="$PROJECT_DIR$/assets/www/css/pages/page-news.css" afterPath="$PROJECT_DIR$/assets/www/css/pages/page-news.css" />
+      <change beforePath="$PROJECT_DIR$/assets/www/css/pages/page-notifications.css" afterPath="$PROJECT_DIR$/assets/www/css/pages/page-notifications.css" />
+      <change beforePath="$PROJECT_DIR$/assets/www/css/pages/page-settings.css" afterPath="$PROJECT_DIR$/assets/www/css/pages/page-settings.css" />
+      <change beforePath="$PROJECT_DIR$/assets/www/css/pages/page-sportdetails.css" afterPath="$PROJECT_DIR$/assets/www/css/pages/page-sportdetails.css" />
+      <change beforePath="$PROJECT_DIR$/assets/www/css/pages/page-sports.css" afterPath="$PROJECT_DIR$/assets/www/css/pages/page-sports.css" />
+      <change beforePath="$PROJECT_DIR$/assets/www/css/pages/page-unsupported.css" afterPath="$PROJECT_DIR$/assets/www/css/pages/page-unsupported.css" />
+      <change beforePath="$PROJECT_DIR$/assets/www/css/pages/page-update.css" afterPath="$PROJECT_DIR$/assets/www/css/pages/page-update.css" />
+      <change beforePath="$PROJECT_DIR$/assets/www/css/pages/popup-settingsfavourites.css" afterPath="$PROJECT_DIR$/assets/www/css/pages/popup-settingsfavourites.css" />
+      <change beforePath="$PROJECT_DIR$/assets/www/css/pages/tournaments/page-dateslist.css" afterPath="$PROJECT_DIR$/assets/www/css/pages/tournaments/page-dateslist.css" />
+      <change beforePath="$PROJECT_DIR$/assets/www/css/pages/tournaments/page-fixtures.css" afterPath="$PROJECT_DIR$/assets/www/css/pages/tournaments/page-fixtures.css" />
+      <change beforePath="$PROJECT_DIR$/assets/www/css/pages/tournaments/page-matchdetails.css" afterPath="$PROJECT_DIR$/assets/www/css/pages/tournaments/page-matchdetails.css" />
+      <change beforePath="$PROJECT_DIR$/assets/www/css/pages/tournaments/page-positionstable.css" afterPath="$PROJECT_DIR$/assets/www/css/pages/tournaments/page-positionstable.css" />
+      <change beforePath="$PROJECT_DIR$/assets/www/css/pages/tournaments/page-shooterstable.css" afterPath="$PROJECT_DIR$/assets/www/css/pages/tournaments/page-shooterstable.css" />
+      <change beforePath="$PROJECT_DIR$/assets/www/css/publicities.css" afterPath="$PROJECT_DIR$/assets/www/css/publicities.css" />
+      <change beforePath="$PROJECT_DIR$/assets/www/css/template-club.css" afterPath="$PROJECT_DIR$/assets/www/css/template-club.css" />
+      <change beforePath="$PROJECT_DIR$/assets/www/css/toast/toast.css" afterPath="$PROJECT_DIR$/assets/www/css/toast/toast.css" />
+      <change beforePath="$PROJECT_DIR$/assets/www/fonts/OpenSans-Bold.ttf" afterPath="$PROJECT_DIR$/assets/www/fonts/OpenSans-Bold.ttf" />
+      <change beforePath="$PROJECT_DIR$/assets/www/fonts/OpenSans-Regular.ttf" afterPath="$PROJECT_DIR$/assets/www/fonts/OpenSans-Regular.ttf" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/advertising_01.jpg" afterPath="$PROJECT_DIR$/assets/www/img/advertising_01.jpg" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/background-lazy.png" afterPath="$PROJECT_DIR$/assets/www/img/background-lazy.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/banner-publicidad.png" afterPath="$PROJECT_DIR$/assets/www/img/banner-publicidad.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/club/background-about.png" afterPath="$PROJECT_DIR$/assets/www/img/club/background-about.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/club/background-initsettings.png" afterPath="$PROJECT_DIR$/assets/www/img/club/background-initsettings.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/default-event.png" afterPath="$PROJECT_DIR$/assets/www/img/default-event.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/default-new-details.png" afterPath="$PROJECT_DIR$/assets/www/img/default-new-details.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/default-news-list.png" afterPath="$PROJECT_DIR$/assets/www/img/default-news-list.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/icon-cloud-update.png" afterPath="$PROJECT_DIR$/assets/www/img/icon-cloud-update.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/icon-left-dark.png" afterPath="$PROJECT_DIR$/assets/www/img/icon-left-dark.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/icon-playstore.png" afterPath="$PROJECT_DIR$/assets/www/img/icon-playstore.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/icon-reload.png" afterPath="$PROJECT_DIR$/assets/www/img/icon-reload.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/icon-rigth-dark.png" afterPath="$PROJECT_DIR$/assets/www/img/icon-rigth-dark.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/icon-shield-default.png" afterPath="$PROJECT_DIR$/assets/www/img/icon-shield-default.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/icon-star-off.png" afterPath="$PROJECT_DIR$/assets/www/img/icon-star-off.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/icon-star-on.png" afterPath="$PROJECT_DIR$/assets/www/img/icon-star-on.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/icon-unsupported.png" afterPath="$PROJECT_DIR$/assets/www/img/icon-unsupported.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/icon-volume-off.png" afterPath="$PROJECT_DIR$/assets/www/img/icon-volume-off.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/icon-volume-on.png" afterPath="$PROJECT_DIR$/assets/www/img/icon-volume-on.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/icon-warning.png" afterPath="$PROJECT_DIR$/assets/www/img/icon-warning.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/logo.png" afterPath="$PROJECT_DIR$/assets/www/img/logo.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/template/default-profile.png" afterPath="$PROJECT_DIR$/assets/www/img/template/default-profile.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/template/home_icon_disabled.png" afterPath="$PROJECT_DIR$/assets/www/img/template/home_icon_disabled.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/template/icon-about.png" afterPath="$PROJECT_DIR$/assets/www/img/template/icon-about.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/template/icon-activities.png" afterPath="$PROJECT_DIR$/assets/www/img/template/icon-activities.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/template/icon-back.png" afterPath="$PROJECT_DIR$/assets/www/img/template/icon-back.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/template/icon-date-event.png" afterPath="$PROJECT_DIR$/assets/www/img/template/icon-date-event.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/template/icon-down.png" afterPath="$PROJECT_DIR$/assets/www/img/template/icon-down.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/template/icon-events.png" afterPath="$PROJECT_DIR$/assets/www/img/template/icon-events.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/template/icon-fixture.png" afterPath="$PROJECT_DIR$/assets/www/img/template/icon-fixture.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/template/icon-form-calendar.png" afterPath="$PROJECT_DIR$/assets/www/img/template/icon-form-calendar.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/template/icon-form-email.png" afterPath="$PROJECT_DIR$/assets/www/img/template/icon-form-email.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/template/icon-form-fb.png" afterPath="$PROJECT_DIR$/assets/www/img/template/icon-form-fb.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/template/icon-form-instagram .png" afterPath="$PROJECT_DIR$/assets/www/img/template/icon-form-instagram .png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/template/icon-form-location.png" afterPath="$PROJECT_DIR$/assets/www/img/template/icon-form-location.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/template/icon-form-price.png" afterPath="$PROJECT_DIR$/assets/www/img/template/icon-form-price.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/template/icon-form-tel.png" afterPath="$PROJECT_DIR$/assets/www/img/template/icon-form-tel.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/template/icon-form-twitter.png" afterPath="$PROJECT_DIR$/assets/www/img/template/icon-form-twitter.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/template/icon-form-url.png" afterPath="$PROJECT_DIR$/assets/www/img/template/icon-form-url.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/template/icon-form-youtube.png" afterPath="$PROJECT_DIR$/assets/www/img/template/icon-form-youtube.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/template/icon-home.png" afterPath="$PROJECT_DIR$/assets/www/img/template/icon-home.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/template/icon-hour-event.png" afterPath="$PROJECT_DIR$/assets/www/img/template/icon-hour-event.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/template/icon-menu.png" afterPath="$PROJECT_DIR$/assets/www/img/template/icon-menu.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/template/icon-news.png" afterPath="$PROJECT_DIR$/assets/www/img/template/icon-news.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/template/icon-notifications.png" afterPath="$PROJECT_DIR$/assets/www/img/template/icon-notifications.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/template/icon-place-event.png" afterPath="$PROJECT_DIR$/assets/www/img/template/icon-place-event.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/template/icon-positionstable.png" afterPath="$PROJECT_DIR$/assets/www/img/template/icon-positionstable.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/template/icon-refresh.png" afterPath="$PROJECT_DIR$/assets/www/img/template/icon-refresh.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/template/icon-settings-favourites-notifications.png" afterPath="$PROJECT_DIR$/assets/www/img/template/icon-settings-favourites-notifications.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/template/icon-settings.png" afterPath="$PROJECT_DIR$/assets/www/img/template/icon-settings.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/template/icon-share-facebook.png" afterPath="$PROJECT_DIR$/assets/www/img/template/icon-share-facebook.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/template/icon-share-instagram.png" afterPath="$PROJECT_DIR$/assets/www/img/template/icon-share-instagram.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/template/icon-share-twitter.png" afterPath="$PROJECT_DIR$/assets/www/img/template/icon-share-twitter.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/template/icon-share-whatsapp.png" afterPath="$PROJECT_DIR$/assets/www/img/template/icon-share-whatsapp.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/template/icon-share.png" afterPath="$PROJECT_DIR$/assets/www/img/template/icon-share.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/template/icon-shooters.png" afterPath="$PROJECT_DIR$/assets/www/img/template/icon-shooters.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/template/icon-sports.png" afterPath="$PROJECT_DIR$/assets/www/img/template/icon-sports.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/template/icon-upload-favourites.png" afterPath="$PROJECT_DIR$/assets/www/img/template/icon-upload-favourites.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/template/icon-upload.png" afterPath="$PROJECT_DIR$/assets/www/img/template/icon-upload.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/img/template/icon-user.png" afterPath="$PROJECT_DIR$/assets/www/img/template/icon-user.png" />
+      <change beforePath="$PROJECT_DIR$/assets/www/index.html" afterPath="$PROJECT_DIR$/assets/www/index.html" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/common.js" afterPath="$PROJECT_DIR$/assets/www/js/common.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/index.js" afterPath="$PROJECT_DIR$/assets/www/js/index.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/lib/hammer.min.js" afterPath="$PROJECT_DIR$/assets/www/js/lib/hammer.min.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/lib/jquery-2.1.4.min.js" afterPath="$PROJECT_DIR$/assets/www/js/lib/jquery-2.1.4.min.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/lib/jquery.hammer.js" afterPath="$PROJECT_DIR$/assets/www/js/lib/jquery.hammer.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/lib/jquery.i18n.properties-min-1.0.9.js" afterPath="$PROJECT_DIR$/assets/www/js/lib/jquery.i18n.properties-min-1.0.9.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/about/page-achievementdetails.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/about/page-achievementdetails.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/about/page-achievements.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/about/page-achievements.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/about/page-contact.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/about/page-contact.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/about/page-installationdetails.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/about/page-installationdetails.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/about/page-installations.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/about/page-installations.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/about/page-managers.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/about/page-managers.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/about/page-milestonedetails.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/about/page-milestonedetails.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/about/page-milestones.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/about/page-milestones.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/login/page-emailregister.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/login/page-emailregister.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/login/page-emailsignup.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/login/page-emailsignup.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/login/page-login.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/login/page-login.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/login/page-passwordrecovery.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/login/page-passwordrecovery.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/login/page-pleaseverify.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/login/page-pleaseverify.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/login/page-setprofile.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/login/page-setprofile.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/login/page-smscode.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/login/page-smscode.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/page-about.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/page-about.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/page-activities.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/page-activities.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/page-activitydetails.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/page-activitydetails.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/page-eventdetails.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/page-eventdetails.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/page-events.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/page-events.js" />
       <change beforePath="$PROJECT_DIR$/assets/www/js/pages/page-home.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/page-home.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/page-initintermediate.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/page-initintermediate.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/page-initsettings.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/page-initsettings.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/page-newdetails.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/page-newdetails.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/page-news.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/page-news.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/page-notifications.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/page-notifications.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/page-settings.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/page-settings.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/page-sportdetails.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/page-sportdetails.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/page-sports.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/page-sports.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/page-unsupported.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/page-unsupported.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/page-update.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/page-update.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/page-user.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/page-user.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/popup-settingsfavourites.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/popup-settingsfavourites.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/tournaments/page-dateslist.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/tournaments/page-dateslist.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/tournaments/page-fixtures.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/tournaments/page-fixtures.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/tournaments/page-matchdetails.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/tournaments/page-matchdetails.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/tournaments/page-matchdetailsfixture.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/tournaments/page-matchdetailsfixture.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/tournaments/page-positionstable.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/tournaments/page-positionstable.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/tournaments/page-shooterstable.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/tournaments/page-shooterstable.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/settings-club.js" afterPath="$PROJECT_DIR$/assets/www/js/settings-club.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/share.js" afterPath="$PROJECT_DIR$/assets/www/js/share.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/toast/toast.js" afterPath="$PROJECT_DIR$/assets/www/js/toast/toast.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/webservices-errors.js" afterPath="$PROJECT_DIR$/assets/www/js/webservices-errors.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/language/Messages.properties" afterPath="$PROJECT_DIR$/assets/www/language/Messages.properties" />
+      <change beforePath="$PROJECT_DIR$/assets/www/language/Messages_es.properties" afterPath="$PROJECT_DIR$/assets/www/language/Messages_es.properties" />
+      <change beforePath="$PROJECT_DIR$/assets/www/language/language.js" afterPath="$PROJECT_DIR$/assets/www/language/language.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/pages/about/page-achievementdetails.html" afterPath="$PROJECT_DIR$/assets/www/pages/about/page-achievementdetails.html" />
+      <change beforePath="$PROJECT_DIR$/assets/www/pages/about/page-achievements.html" afterPath="$PROJECT_DIR$/assets/www/pages/about/page-achievements.html" />
+      <change beforePath="$PROJECT_DIR$/assets/www/pages/about/page-contact.html" afterPath="$PROJECT_DIR$/assets/www/pages/about/page-contact.html" />
+      <change beforePath="$PROJECT_DIR$/assets/www/pages/about/page-installationdetails.html" afterPath="$PROJECT_DIR$/assets/www/pages/about/page-installationdetails.html" />
+      <change beforePath="$PROJECT_DIR$/assets/www/pages/about/page-installations.html" afterPath="$PROJECT_DIR$/assets/www/pages/about/page-installations.html" />
+      <change beforePath="$PROJECT_DIR$/assets/www/pages/about/page-managers.html" afterPath="$PROJECT_DIR$/assets/www/pages/about/page-managers.html" />
+      <change beforePath="$PROJECT_DIR$/assets/www/pages/about/page-milestonedetails.html" afterPath="$PROJECT_DIR$/assets/www/pages/about/page-milestonedetails.html" />
+      <change beforePath="$PROJECT_DIR$/assets/www/pages/about/page-milestones.html" afterPath="$PROJECT_DIR$/assets/www/pages/about/page-milestones.html" />
+      <change beforePath="$PROJECT_DIR$/assets/www/pages/login/page-emailregister.html" afterPath="$PROJECT_DIR$/assets/www/pages/login/page-emailregister.html" />
+      <change beforePath="$PROJECT_DIR$/assets/www/pages/login/page-emailsignup.html" afterPath="$PROJECT_DIR$/assets/www/pages/login/page-emailsignup.html" />
+      <change beforePath="$PROJECT_DIR$/assets/www/pages/login/page-login.html" afterPath="$PROJECT_DIR$/assets/www/pages/login/page-login.html" />
+      <change beforePath="$PROJECT_DIR$/assets/www/pages/login/page-passwordrecovery.html" afterPath="$PROJECT_DIR$/assets/www/pages/login/page-passwordrecovery.html" />
+      <change beforePath="$PROJECT_DIR$/assets/www/pages/login/page-pleaseverify.html" afterPath="$PROJECT_DIR$/assets/www/pages/login/page-pleaseverify.html" />
+      <change beforePath="$PROJECT_DIR$/assets/www/pages/login/page-setprofile.html" afterPath="$PROJECT_DIR$/assets/www/pages/login/page-setprofile.html" />
+      <change beforePath="$PROJECT_DIR$/assets/www/pages/login/page-smscode.html" afterPath="$PROJECT_DIR$/assets/www/pages/login/page-smscode.html" />
+      <change beforePath="$PROJECT_DIR$/assets/www/pages/page-about.html" afterPath="$PROJECT_DIR$/assets/www/pages/page-about.html" />
+      <change beforePath="$PROJECT_DIR$/assets/www/pages/page-activities.html" afterPath="$PROJECT_DIR$/assets/www/pages/page-activities.html" />
+      <change beforePath="$PROJECT_DIR$/assets/www/pages/page-activitydetails.html" afterPath="$PROJECT_DIR$/assets/www/pages/page-activitydetails.html" />
+      <change beforePath="$PROJECT_DIR$/assets/www/pages/page-eventdetails.html" afterPath="$PROJECT_DIR$/assets/www/pages/page-eventdetails.html" />
+      <change beforePath="$PROJECT_DIR$/assets/www/pages/page-events.html" afterPath="$PROJECT_DIR$/assets/www/pages/page-events.html" />
+      <change beforePath="$PROJECT_DIR$/assets/www/pages/page-home.html" afterPath="$PROJECT_DIR$/assets/www/pages/page-home.html" />
+      <change beforePath="$PROJECT_DIR$/assets/www/pages/page-initintermediate.html" afterPath="$PROJECT_DIR$/assets/www/pages/page-initintermediate.html" />
+      <change beforePath="$PROJECT_DIR$/assets/www/pages/page-initsettings.html" afterPath="$PROJECT_DIR$/assets/www/pages/page-initsettings.html" />
+      <change beforePath="$PROJECT_DIR$/assets/www/pages/page-login.html" afterPath="$PROJECT_DIR$/assets/www/pages/page-login.html" />
+      <change beforePath="$PROJECT_DIR$/assets/www/pages/page-newdetails.html" afterPath="$PROJECT_DIR$/assets/www/pages/page-newdetails.html" />
+      <change beforePath="$PROJECT_DIR$/assets/www/pages/page-news.html" afterPath="$PROJECT_DIR$/assets/www/pages/page-news.html" />
+      <change beforePath="$PROJECT_DIR$/assets/www/pages/page-notifications.html" afterPath="$PROJECT_DIR$/assets/www/pages/page-notifications.html" />
+      <change beforePath="$PROJECT_DIR$/assets/www/pages/page-settings.html" afterPath="$PROJECT_DIR$/assets/www/pages/page-settings.html" />
+      <change beforePath="$PROJECT_DIR$/assets/www/pages/page-sportdetails.html" afterPath="$PROJECT_DIR$/assets/www/pages/page-sportdetails.html" />
+      <change beforePath="$PROJECT_DIR$/assets/www/pages/page-sports.html" afterPath="$PROJECT_DIR$/assets/www/pages/page-sports.html" />
+      <change beforePath="$PROJECT_DIR$/assets/www/pages/page-unsupported.html" afterPath="$PROJECT_DIR$/assets/www/pages/page-unsupported.html" />
+      <change beforePath="$PROJECT_DIR$/assets/www/pages/page-update.html" afterPath="$PROJECT_DIR$/assets/www/pages/page-update.html" />
+      <change beforePath="$PROJECT_DIR$/assets/www/pages/page-user.html" afterPath="$PROJECT_DIR$/assets/www/pages/page-user.html" />
+      <change beforePath="$PROJECT_DIR$/assets/www/pages/popup-settingsfavourites.html" afterPath="$PROJECT_DIR$/assets/www/pages/popup-settingsfavourites.html" />
+      <change beforePath="$PROJECT_DIR$/assets/www/pages/tournaments/page-dateslist.html" afterPath="$PROJECT_DIR$/assets/www/pages/tournaments/page-dateslist.html" />
+      <change beforePath="$PROJECT_DIR$/assets/www/pages/tournaments/page-fixtures.html" afterPath="$PROJECT_DIR$/assets/www/pages/tournaments/page-fixtures.html" />
+      <change beforePath="$PROJECT_DIR$/assets/www/pages/tournaments/page-matchdetails.html" afterPath="$PROJECT_DIR$/assets/www/pages/tournaments/page-matchdetails.html" />
+      <change beforePath="$PROJECT_DIR$/assets/www/pages/tournaments/page-matchdetailsfixture.html" afterPath="$PROJECT_DIR$/assets/www/pages/tournaments/page-matchdetailsfixture.html" />
+      <change beforePath="$PROJECT_DIR$/assets/www/pages/tournaments/page-positionstable.html" afterPath="$PROJECT_DIR$/assets/www/pages/tournaments/page-positionstable.html" />
+      <change beforePath="$PROJECT_DIR$/assets/www/pages/tournaments/page-shooterstable.html" afterPath="$PROJECT_DIR$/assets/www/pages/tournaments/page-shooterstable.html" />
       <change beforePath="$PROJECT_DIR$/debug/android-debug.apk" afterPath="$PROJECT_DIR$/debug/android-debug.apk" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/css/animate.min.css" afterPath="$PROJECT_DIR$/../ios/www/css/animate.min.css" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/css/common.css" afterPath="$PROJECT_DIR$/../ios/www/css/common.css" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/css/index.css" afterPath="$PROJECT_DIR$/../ios/www/css/index.css" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/css/pages/about/page-achievementdetails.css" afterPath="$PROJECT_DIR$/../ios/www/css/pages/about/page-achievementdetails.css" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/css/pages/about/page-achievements.css" afterPath="$PROJECT_DIR$/../ios/www/css/pages/about/page-achievements.css" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/css/pages/about/page-contact.css" afterPath="$PROJECT_DIR$/../ios/www/css/pages/about/page-contact.css" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/css/pages/about/page-installationdetails.css" afterPath="$PROJECT_DIR$/../ios/www/css/pages/about/page-installationdetails.css" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/css/pages/about/page-installations.css" afterPath="$PROJECT_DIR$/../ios/www/css/pages/about/page-installations.css" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/css/pages/about/page-managers.css" afterPath="$PROJECT_DIR$/../ios/www/css/pages/about/page-managers.css" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/css/pages/about/page-milestonedetails.css" afterPath="$PROJECT_DIR$/../ios/www/css/pages/about/page-milestonedetails.css" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/css/pages/about/page-milestones.css" afterPath="$PROJECT_DIR$/../ios/www/css/pages/about/page-milestones.css" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/css/pages/login/page-emailregister.css" afterPath="$PROJECT_DIR$/../ios/www/css/pages/login/page-emailregister.css" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/css/pages/login/page-login.css" afterPath="$PROJECT_DIR$/../ios/www/css/pages/login/page-login.css" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/css/pages/login/page-smscode.css" afterPath="$PROJECT_DIR$/../ios/www/css/pages/login/page-smscode.css" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/css/pages/page-about.css" afterPath="$PROJECT_DIR$/../ios/www/css/pages/page-about.css" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/css/pages/page-activities.css" afterPath="$PROJECT_DIR$/../ios/www/css/pages/page-activities.css" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/css/pages/page-activitydetails.css" afterPath="$PROJECT_DIR$/../ios/www/css/pages/page-activitydetails.css" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/css/pages/page-eventdetails.css" afterPath="$PROJECT_DIR$/../ios/www/css/pages/page-eventdetails.css" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/css/pages/page-events.css" afterPath="$PROJECT_DIR$/../ios/www/css/pages/page-events.css" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/css/pages/page-home.css" afterPath="$PROJECT_DIR$/../ios/www/css/pages/page-home.css" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/css/pages/page-initintermediate.css" afterPath="$PROJECT_DIR$/../ios/www/css/pages/page-initintermediate.css" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/css/pages/page-initsettings.css" afterPath="$PROJECT_DIR$/../ios/www/css/pages/page-initsettings.css" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/css/pages/page-newdetails.css" afterPath="$PROJECT_DIR$/../ios/www/css/pages/page-newdetails.css" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/css/pages/page-news.css" afterPath="$PROJECT_DIR$/../ios/www/css/pages/page-news.css" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/css/pages/page-notifications.css" afterPath="$PROJECT_DIR$/../ios/www/css/pages/page-notifications.css" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/css/pages/page-settings.css" afterPath="$PROJECT_DIR$/../ios/www/css/pages/page-settings.css" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/css/pages/page-sportdetails.css" afterPath="$PROJECT_DIR$/../ios/www/css/pages/page-sportdetails.css" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/css/pages/page-sports.css" afterPath="$PROJECT_DIR$/../ios/www/css/pages/page-sports.css" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/css/pages/page-unsupported.css" afterPath="$PROJECT_DIR$/../ios/www/css/pages/page-unsupported.css" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/css/pages/page-update.css" afterPath="$PROJECT_DIR$/../ios/www/css/pages/page-update.css" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/css/pages/popup-settingsfavourites.css" afterPath="$PROJECT_DIR$/../ios/www/css/pages/popup-settingsfavourites.css" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/css/pages/tournaments/page-dateslist.css" afterPath="$PROJECT_DIR$/../ios/www/css/pages/tournaments/page-dateslist.css" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/css/pages/tournaments/page-fixtures.css" afterPath="$PROJECT_DIR$/../ios/www/css/pages/tournaments/page-fixtures.css" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/css/pages/tournaments/page-matchdetails.css" afterPath="$PROJECT_DIR$/../ios/www/css/pages/tournaments/page-matchdetails.css" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/css/pages/tournaments/page-positionstable.css" afterPath="$PROJECT_DIR$/../ios/www/css/pages/tournaments/page-positionstable.css" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/css/pages/tournaments/page-shooterstable.css" afterPath="$PROJECT_DIR$/../ios/www/css/pages/tournaments/page-shooterstable.css" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/css/publicities.css" afterPath="$PROJECT_DIR$/../ios/www/css/publicities.css" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/css/template-club.css" afterPath="$PROJECT_DIR$/../ios/www/css/template-club.css" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/css/toast/toast.css" afterPath="$PROJECT_DIR$/../ios/www/css/toast/toast.css" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/fonts/OpenSans-Bold.ttf" afterPath="$PROJECT_DIR$/../ios/www/fonts/OpenSans-Bold.ttf" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/fonts/OpenSans-Regular.ttf" afterPath="$PROJECT_DIR$/../ios/www/fonts/OpenSans-Regular.ttf" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/advertising_01.jpg" afterPath="$PROJECT_DIR$/../ios/www/img/advertising_01.jpg" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/background-lazy.png" afterPath="$PROJECT_DIR$/../ios/www/img/background-lazy.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/banner-publicidad.png" afterPath="$PROJECT_DIR$/../ios/www/img/banner-publicidad.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/club/background-about.png" afterPath="$PROJECT_DIR$/../ios/www/img/club/background-about.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/club/background-initsettings.png" afterPath="$PROJECT_DIR$/../ios/www/img/club/background-initsettings.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/club/background.png" afterPath="$PROJECT_DIR$/../ios/www/img/club/background.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/club/club-shield.png" afterPath="$PROJECT_DIR$/../ios/www/img/club/club-shield.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/css" afterPath="$PROJECT_DIR$/../ios/www/img/css" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/default-event.png" afterPath="$PROJECT_DIR$/../ios/www/img/default-event.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/default-new-details.png" afterPath="$PROJECT_DIR$/../ios/www/img/default-new-details.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/default-news-list.png" afterPath="$PROJECT_DIR$/../ios/www/img/default-news-list.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/icon-cloud-update.png" afterPath="$PROJECT_DIR$/../ios/www/img/icon-cloud-update.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/icon-left-dark.png" afterPath="$PROJECT_DIR$/../ios/www/img/icon-left-dark.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/icon-playstore.png" afterPath="$PROJECT_DIR$/../ios/www/img/icon-playstore.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/icon-reload.png" afterPath="$PROJECT_DIR$/../ios/www/img/icon-reload.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/icon-rigth-dark.png" afterPath="$PROJECT_DIR$/../ios/www/img/icon-rigth-dark.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/icon-shield-default.png" afterPath="$PROJECT_DIR$/../ios/www/img/icon-shield-default.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/icon-star-off.png" afterPath="$PROJECT_DIR$/../ios/www/img/icon-star-off.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/icon-star-on.png" afterPath="$PROJECT_DIR$/../ios/www/img/icon-star-on.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/icon-unsupported.png" afterPath="$PROJECT_DIR$/../ios/www/img/icon-unsupported.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/icon-volume-off.png" afterPath="$PROJECT_DIR$/../ios/www/img/icon-volume-off.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/icon-volume-on.png" afterPath="$PROJECT_DIR$/../ios/www/img/icon-volume-on.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/icon-warning.png" afterPath="$PROJECT_DIR$/../ios/www/img/icon-warning.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/template/default-profile.png" afterPath="$PROJECT_DIR$/../ios/www/img/template/default-profile.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/template/home_icon_disabled.png" afterPath="$PROJECT_DIR$/../ios/www/img/template/home_icon_disabled.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/template/icon-about.png" afterPath="$PROJECT_DIR$/../ios/www/img/template/icon-about.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/template/icon-activities.png" afterPath="$PROJECT_DIR$/../ios/www/img/template/icon-activities.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/template/icon-back.png" afterPath="$PROJECT_DIR$/../ios/www/img/template/icon-back.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/template/icon-date-event.png" afterPath="$PROJECT_DIR$/../ios/www/img/template/icon-date-event.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/template/icon-down.png" afterPath="$PROJECT_DIR$/../ios/www/img/template/icon-down.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/template/icon-events.png" afterPath="$PROJECT_DIR$/../ios/www/img/template/icon-events.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/template/icon-fixture.png" afterPath="$PROJECT_DIR$/../ios/www/img/template/icon-fixture.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/template/icon-form-calendar.png" afterPath="$PROJECT_DIR$/../ios/www/img/template/icon-form-calendar.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/template/icon-form-email.png" afterPath="$PROJECT_DIR$/../ios/www/img/template/icon-form-email.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/template/icon-form-fb.png" afterPath="$PROJECT_DIR$/../ios/www/img/template/icon-form-fb.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/template/icon-form-location.png" afterPath="$PROJECT_DIR$/../ios/www/img/template/icon-form-location.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/template/icon-form-price.png" afterPath="$PROJECT_DIR$/../ios/www/img/template/icon-form-price.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/template/icon-form-tel.png" afterPath="$PROJECT_DIR$/../ios/www/img/template/icon-form-tel.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/template/icon-form-twitter.png" afterPath="$PROJECT_DIR$/../ios/www/img/template/icon-form-twitter.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/template/icon-form-url.png" afterPath="$PROJECT_DIR$/../ios/www/img/template/icon-form-url.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/template/icon-form-youtube.png" afterPath="$PROJECT_DIR$/../ios/www/img/template/icon-form-youtube.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/template/icon-home.png" afterPath="$PROJECT_DIR$/../ios/www/img/template/icon-home.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/template/icon-hour-event.png" afterPath="$PROJECT_DIR$/../ios/www/img/template/icon-hour-event.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/template/icon-menu.png" afterPath="$PROJECT_DIR$/../ios/www/img/template/icon-menu.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/template/icon-news.png" afterPath="$PROJECT_DIR$/../ios/www/img/template/icon-news.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/template/icon-notifications.png" afterPath="$PROJECT_DIR$/../ios/www/img/template/icon-notifications.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/template/icon-place-event.png" afterPath="$PROJECT_DIR$/../ios/www/img/template/icon-place-event.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/template/icon-positionstable.png" afterPath="$PROJECT_DIR$/../ios/www/img/template/icon-positionstable.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/template/icon-settings.png" afterPath="$PROJECT_DIR$/../ios/www/img/template/icon-settings.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/template/icon-share-facebook.png" afterPath="$PROJECT_DIR$/../ios/www/img/template/icon-share-facebook.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/template/icon-share-instagram.png" afterPath="$PROJECT_DIR$/../ios/www/img/template/icon-share-instagram.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/template/icon-share-twitter.png" afterPath="$PROJECT_DIR$/../ios/www/img/template/icon-share-twitter.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/template/icon-share-whatsapp.png" afterPath="$PROJECT_DIR$/../ios/www/img/template/icon-share-whatsapp.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/template/icon-share.png" afterPath="$PROJECT_DIR$/../ios/www/img/template/icon-share.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/template/icon-shooters.png" afterPath="$PROJECT_DIR$/../ios/www/img/template/icon-shooters.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/template/icon-sports.png" afterPath="$PROJECT_DIR$/../ios/www/img/template/icon-sports.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/template/icon-upload-favourites.png" afterPath="$PROJECT_DIR$/../ios/www/img/template/icon-upload-favourites.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/template/icon-upload.png" afterPath="$PROJECT_DIR$/../ios/www/img/template/icon-upload.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/img/template/screen-720x1280.png" afterPath="$PROJECT_DIR$/../ios/www/img/template/screen-720x1280.png" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/index.html" afterPath="$PROJECT_DIR$/../ios/www/index.html" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/common.js" afterPath="$PROJECT_DIR$/../ios/www/js/common.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/index.js" afterPath="$PROJECT_DIR$/../ios/www/js/index.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/lib/hammer.min.js" afterPath="$PROJECT_DIR$/../ios/www/js/lib/hammer.min.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/lib/jquery-2.1.4.min.js" afterPath="$PROJECT_DIR$/../ios/www/js/lib/jquery-2.1.4.min.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/lib/jquery.hammer.js" afterPath="$PROJECT_DIR$/../ios/www/js/lib/jquery.hammer.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/lib/jquery.i18n.properties-min-1.0.9.js" afterPath="$PROJECT_DIR$/../ios/www/js/lib/jquery.i18n.properties-min-1.0.9.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/about/page-achievementdetails.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/about/page-achievementdetails.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/about/page-achievements.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/about/page-achievements.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/about/page-contact.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/about/page-contact.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/about/page-installationdetails.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/about/page-installationdetails.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/about/page-installations.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/about/page-installations.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/about/page-managers.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/about/page-managers.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/about/page-milestonedetails.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/about/page-milestonedetails.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/about/page-milestones.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/about/page-milestones.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/login/page-emailregister.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/login/page-emailregister.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/login/page-emailsignup.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/login/page-emailsignup.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/login/page-login.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/login/page-login.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/login/page-passwordrecovery.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/login/page-passwordrecovery.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/login/page-pleaseverify.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/login/page-pleaseverify.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/login/page-setprofile.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/login/page-setprofile.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/login/page-smscode.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/login/page-smscode.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/page-about.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/page-about.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/page-activities.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/page-activities.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/page-activitydetails.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/page-activitydetails.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/page-eventdetails.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/page-eventdetails.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/page-events.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/page-events.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/page-home.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/page-home.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/page-initintermediate.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/page-initintermediate.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/page-initsettings.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/page-initsettings.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/page-newdetails.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/page-newdetails.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/page-news.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/page-news.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/page-notifications.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/page-notifications.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/page-settings.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/page-settings.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/page-sportdetails.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/page-sportdetails.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/page-sports.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/page-sports.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/page-unsupported.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/page-unsupported.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/page-update.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/page-update.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/page-user.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/page-user.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/popup-settingsfavourites.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/popup-settingsfavourites.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/tournaments/page-dateslist.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/tournaments/page-dateslist.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/tournaments/page-fixtures.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/tournaments/page-fixtures.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/tournaments/page-matchdetails.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/tournaments/page-matchdetails.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/tournaments/page-positionstable.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/tournaments/page-positionstable.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/tournaments/page-shooterstable.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/tournaments/page-shooterstable.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/settings-club.js" afterPath="$PROJECT_DIR$/../ios/www/js/settings-club.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/share.js" afterPath="$PROJECT_DIR$/../ios/www/js/share.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/toast/toast.js" afterPath="$PROJECT_DIR$/../ios/www/js/toast/toast.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/js/webservices-errors.js" afterPath="$PROJECT_DIR$/../ios/www/js/webservices-errors.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/language/Messages.properties" afterPath="$PROJECT_DIR$/../ios/www/language/Messages.properties" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/language/Messages_es.properties" afterPath="$PROJECT_DIR$/../ios/www/language/Messages_es.properties" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/language/language.js" afterPath="$PROJECT_DIR$/../ios/www/language/language.js" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/pages/about/page-achievementdetails.html" afterPath="$PROJECT_DIR$/../ios/www/pages/about/page-achievementdetails.html" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/pages/about/page-achievements.html" afterPath="$PROJECT_DIR$/../ios/www/pages/about/page-achievements.html" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/pages/about/page-contact.html" afterPath="$PROJECT_DIR$/../ios/www/pages/about/page-contact.html" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/pages/about/page-installationdetails.html" afterPath="$PROJECT_DIR$/../ios/www/pages/about/page-installationdetails.html" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/pages/about/page-installations.html" afterPath="$PROJECT_DIR$/../ios/www/pages/about/page-installations.html" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/pages/about/page-managers.html" afterPath="$PROJECT_DIR$/../ios/www/pages/about/page-managers.html" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/pages/about/page-milestonedetails.html" afterPath="$PROJECT_DIR$/../ios/www/pages/about/page-milestonedetails.html" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/pages/about/page-milestones.html" afterPath="$PROJECT_DIR$/../ios/www/pages/about/page-milestones.html" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/pages/login/page-emailregister.html" afterPath="$PROJECT_DIR$/../ios/www/pages/login/page-emailregister.html" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/pages/login/page-emailsignup.html" afterPath="$PROJECT_DIR$/../ios/www/pages/login/page-emailsignup.html" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/pages/login/page-login.html" afterPath="$PROJECT_DIR$/../ios/www/pages/login/page-login.html" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/pages/login/page-passwordrecovery.html" afterPath="$PROJECT_DIR$/../ios/www/pages/login/page-passwordrecovery.html" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/pages/login/page-pleaseverify.html" afterPath="$PROJECT_DIR$/../ios/www/pages/login/page-pleaseverify.html" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/pages/login/page-setprofile.html" afterPath="$PROJECT_DIR$/../ios/www/pages/login/page-setprofile.html" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/pages/login/page-smscode.html" afterPath="$PROJECT_DIR$/../ios/www/pages/login/page-smscode.html" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/pages/page-about.html" afterPath="$PROJECT_DIR$/../ios/www/pages/page-about.html" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/pages/page-activities.html" afterPath="$PROJECT_DIR$/../ios/www/pages/page-activities.html" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/pages/page-activitydetails.html" afterPath="$PROJECT_DIR$/../ios/www/pages/page-activitydetails.html" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/pages/page-eventdetails.html" afterPath="$PROJECT_DIR$/../ios/www/pages/page-eventdetails.html" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/pages/page-events.html" afterPath="$PROJECT_DIR$/../ios/www/pages/page-events.html" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/pages/page-home.html" afterPath="$PROJECT_DIR$/../ios/www/pages/page-home.html" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/pages/page-initintermediate.html" afterPath="$PROJECT_DIR$/../ios/www/pages/page-initintermediate.html" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/pages/page-initsettings.html" afterPath="$PROJECT_DIR$/../ios/www/pages/page-initsettings.html" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/pages/page-login.html" afterPath="$PROJECT_DIR$/../ios/www/pages/page-login.html" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/pages/page-newdetails.html" afterPath="$PROJECT_DIR$/../ios/www/pages/page-newdetails.html" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/pages/page-news.html" afterPath="$PROJECT_DIR$/../ios/www/pages/page-news.html" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/pages/page-notifications.html" afterPath="$PROJECT_DIR$/../ios/www/pages/page-notifications.html" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/pages/page-settings.html" afterPath="$PROJECT_DIR$/../ios/www/pages/page-settings.html" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/pages/page-sportdetails.html" afterPath="$PROJECT_DIR$/../ios/www/pages/page-sportdetails.html" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/pages/page-sports.html" afterPath="$PROJECT_DIR$/../ios/www/pages/page-sports.html" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/pages/page-unsupported.html" afterPath="$PROJECT_DIR$/../ios/www/pages/page-unsupported.html" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/pages/page-update.html" afterPath="$PROJECT_DIR$/../ios/www/pages/page-update.html" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/pages/page-user.html" afterPath="$PROJECT_DIR$/../ios/www/pages/page-user.html" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/pages/popup-settingsfavourites.html" afterPath="$PROJECT_DIR$/../ios/www/pages/popup-settingsfavourites.html" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/pages/tournaments/page-dateslist.html" afterPath="$PROJECT_DIR$/../ios/www/pages/tournaments/page-dateslist.html" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/pages/tournaments/page-fixtures.html" afterPath="$PROJECT_DIR$/../ios/www/pages/tournaments/page-fixtures.html" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/pages/tournaments/page-matchdetails.html" afterPath="$PROJECT_DIR$/../ios/www/pages/tournaments/page-matchdetails.html" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/pages/tournaments/page-positionstable.html" afterPath="$PROJECT_DIR$/../ios/www/pages/tournaments/page-positionstable.html" />
+      <change beforePath="$PROJECT_DIR$/../ios/www/pages/tournaments/page-shooterstable.html" afterPath="$PROJECT_DIR$/../ios/www/pages/tournaments/page-shooterstable.html" />
+      <change beforePath="$PROJECT_DIR$/../../www/css/animate.min.css" afterPath="$PROJECT_DIR$/../../www/css/animate.min.css" />
+      <change beforePath="$PROJECT_DIR$/../../www/css/common.css" afterPath="$PROJECT_DIR$/../../www/css/common.css" />
+      <change beforePath="$PROJECT_DIR$/../../www/css/index.css" afterPath="$PROJECT_DIR$/../../www/css/index.css" />
+      <change beforePath="$PROJECT_DIR$/../../www/css/pages/about/page-achievementdetails.css" afterPath="$PROJECT_DIR$/../../www/css/pages/about/page-achievementdetails.css" />
+      <change beforePath="$PROJECT_DIR$/../../www/css/pages/about/page-achievements.css" afterPath="$PROJECT_DIR$/../../www/css/pages/about/page-achievements.css" />
+      <change beforePath="$PROJECT_DIR$/../../www/css/pages/about/page-contact.css" afterPath="$PROJECT_DIR$/../../www/css/pages/about/page-contact.css" />
+      <change beforePath="$PROJECT_DIR$/../../www/css/pages/about/page-installationdetails.css" afterPath="$PROJECT_DIR$/../../www/css/pages/about/page-installationdetails.css" />
+      <change beforePath="$PROJECT_DIR$/../../www/css/pages/about/page-installations.css" afterPath="$PROJECT_DIR$/../../www/css/pages/about/page-installations.css" />
+      <change beforePath="$PROJECT_DIR$/../../www/css/pages/about/page-managers.css" afterPath="$PROJECT_DIR$/../../www/css/pages/about/page-managers.css" />
+      <change beforePath="$PROJECT_DIR$/../../www/css/pages/about/page-milestonedetails.css" afterPath="$PROJECT_DIR$/../../www/css/pages/about/page-milestonedetails.css" />
+      <change beforePath="$PROJECT_DIR$/../../www/css/pages/about/page-milestones.css" afterPath="$PROJECT_DIR$/../../www/css/pages/about/page-milestones.css" />
+      <change beforePath="$PROJECT_DIR$/../../www/css/pages/login/page-emailregister.css" afterPath="$PROJECT_DIR$/../../www/css/pages/login/page-emailregister.css" />
+      <change beforePath="$PROJECT_DIR$/../../www/css/pages/login/page-login.css" afterPath="$PROJECT_DIR$/../../www/css/pages/login/page-login.css" />
+      <change beforePath="$PROJECT_DIR$/../../www/css/pages/login/page-smscode.css" afterPath="$PROJECT_DIR$/../../www/css/pages/login/page-smscode.css" />
+      <change beforePath="$PROJECT_DIR$/../../www/css/pages/page-about.css" afterPath="$PROJECT_DIR$/../../www/css/pages/page-about.css" />
+      <change beforePath="$PROJECT_DIR$/../../www/css/pages/page-activities.css" afterPath="$PROJECT_DIR$/../../www/css/pages/page-activities.css" />
+      <change beforePath="$PROJECT_DIR$/../../www/css/pages/page-activitydetails.css" afterPath="$PROJECT_DIR$/../../www/css/pages/page-activitydetails.css" />
+      <change beforePath="$PROJECT_DIR$/../../www/css/pages/page-eventdetails.css" afterPath="$PROJECT_DIR$/../../www/css/pages/page-eventdetails.css" />
+      <change beforePath="$PROJECT_DIR$/../../www/css/pages/page-events.css" afterPath="$PROJECT_DIR$/../../www/css/pages/page-events.css" />
+      <change beforePath="$PROJECT_DIR$/../../www/css/pages/page-home.css" afterPath="$PROJECT_DIR$/../../www/css/pages/page-home.css" />
+      <change beforePath="$PROJECT_DIR$/../../www/css/pages/page-initintermediate.css" afterPath="$PROJECT_DIR$/../../www/css/pages/page-initintermediate.css" />
+      <change beforePath="$PROJECT_DIR$/../../www/css/pages/page-initsettings.css" afterPath="$PROJECT_DIR$/../../www/css/pages/page-initsettings.css" />
+      <change beforePath="$PROJECT_DIR$/../../www/css/pages/page-newdetails.css" afterPath="$PROJECT_DIR$/../../www/css/pages/page-newdetails.css" />
+      <change beforePath="$PROJECT_DIR$/../../www/css/pages/page-news.css" afterPath="$PROJECT_DIR$/../../www/css/pages/page-news.css" />
+      <change beforePath="$PROJECT_DIR$/../../www/css/pages/page-notifications.css" afterPath="$PROJECT_DIR$/../../www/css/pages/page-notifications.css" />
+      <change beforePath="$PROJECT_DIR$/../../www/css/pages/page-settings.css" afterPath="$PROJECT_DIR$/../../www/css/pages/page-settings.css" />
+      <change beforePath="$PROJECT_DIR$/../../www/css/pages/page-sportdetails.css" afterPath="$PROJECT_DIR$/../../www/css/pages/page-sportdetails.css" />
+      <change beforePath="$PROJECT_DIR$/../../www/css/pages/page-sports.css" afterPath="$PROJECT_DIR$/../../www/css/pages/page-sports.css" />
+      <change beforePath="$PROJECT_DIR$/../../www/css/pages/page-unsupported.css" afterPath="$PROJECT_DIR$/../../www/css/pages/page-unsupported.css" />
+      <change beforePath="$PROJECT_DIR$/../../www/css/pages/page-update.css" afterPath="$PROJECT_DIR$/../../www/css/pages/page-update.css" />
+      <change beforePath="$PROJECT_DIR$/../../www/css/pages/popup-settingsfavourites.css" afterPath="$PROJECT_DIR$/../../www/css/pages/popup-settingsfavourites.css" />
+      <change beforePath="$PROJECT_DIR$/../../www/css/pages/tournaments/page-dateslist.css" afterPath="$PROJECT_DIR$/../../www/css/pages/tournaments/page-dateslist.css" />
+      <change beforePath="$PROJECT_DIR$/../../www/css/pages/tournaments/page-fixtures.css" afterPath="$PROJECT_DIR$/../../www/css/pages/tournaments/page-fixtures.css" />
+      <change beforePath="$PROJECT_DIR$/../../www/css/pages/tournaments/page-matchdetails.css" afterPath="$PROJECT_DIR$/../../www/css/pages/tournaments/page-matchdetails.css" />
+      <change beforePath="$PROJECT_DIR$/../../www/css/pages/tournaments/page-positionstable.css" afterPath="$PROJECT_DIR$/../../www/css/pages/tournaments/page-positionstable.css" />
+      <change beforePath="$PROJECT_DIR$/../../www/css/pages/tournaments/page-shooterstable.css" afterPath="$PROJECT_DIR$/../../www/css/pages/tournaments/page-shooterstable.css" />
+      <change beforePath="$PROJECT_DIR$/../../www/css/publicities.css" afterPath="$PROJECT_DIR$/../../www/css/publicities.css" />
+      <change beforePath="$PROJECT_DIR$/../../www/css/template-club.css" afterPath="$PROJECT_DIR$/../../www/css/template-club.css" />
+      <change beforePath="$PROJECT_DIR$/../../www/css/toast/toast.css" afterPath="$PROJECT_DIR$/../../www/css/toast/toast.css" />
+      <change beforePath="$PROJECT_DIR$/../../www/fonts/OpenSans-Bold.ttf" afterPath="$PROJECT_DIR$/../../www/fonts/OpenSans-Bold.ttf" />
+      <change beforePath="$PROJECT_DIR$/../../www/fonts/OpenSans-Regular.ttf" afterPath="$PROJECT_DIR$/../../www/fonts/OpenSans-Regular.ttf" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/advertising_01.jpg" afterPath="$PROJECT_DIR$/../../www/img/advertising_01.jpg" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/background-lazy.png" afterPath="$PROJECT_DIR$/../../www/img/background-lazy.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/banner-publicidad.png" afterPath="$PROJECT_DIR$/../../www/img/banner-publicidad.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/club/background-about.png" afterPath="$PROJECT_DIR$/../../www/img/club/background-about.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/club/background-initsettings.png" afterPath="$PROJECT_DIR$/../../www/img/club/background-initsettings.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/club/background.png" afterPath="$PROJECT_DIR$/../../www/img/club/background.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/club/club-shield.png" afterPath="$PROJECT_DIR$/../../www/img/club/club-shield.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/css" afterPath="$PROJECT_DIR$/../../www/img/css" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/default-event.png" afterPath="$PROJECT_DIR$/../../www/img/default-event.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/default-new-details.png" afterPath="$PROJECT_DIR$/../../www/img/default-new-details.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/default-news-list.png" afterPath="$PROJECT_DIR$/../../www/img/default-news-list.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/icon-cloud-update.png" afterPath="$PROJECT_DIR$/../../www/img/icon-cloud-update.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/icon-left-dark.png" afterPath="$PROJECT_DIR$/../../www/img/icon-left-dark.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/icon-playstore.png" afterPath="$PROJECT_DIR$/../../www/img/icon-playstore.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/icon-reload.png" afterPath="$PROJECT_DIR$/../../www/img/icon-reload.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/icon-rigth-dark.png" afterPath="$PROJECT_DIR$/../../www/img/icon-rigth-dark.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/icon-shield-default.png" afterPath="$PROJECT_DIR$/../../www/img/icon-shield-default.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/icon-star-off.png" afterPath="$PROJECT_DIR$/../../www/img/icon-star-off.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/icon-star-on.png" afterPath="$PROJECT_DIR$/../../www/img/icon-star-on.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/icon-unsupported.png" afterPath="$PROJECT_DIR$/../../www/img/icon-unsupported.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/icon-volume-off.png" afterPath="$PROJECT_DIR$/../../www/img/icon-volume-off.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/icon-volume-on.png" afterPath="$PROJECT_DIR$/../../www/img/icon-volume-on.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/icon-warning.png" afterPath="$PROJECT_DIR$/../../www/img/icon-warning.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/logo.png" afterPath="$PROJECT_DIR$/../../www/img/logo.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/template/default-profile.png" afterPath="$PROJECT_DIR$/../../www/img/template/default-profile.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/template/home_icon_disabled.png" afterPath="$PROJECT_DIR$/../../www/img/template/home_icon_disabled.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/template/icon-about.png" afterPath="$PROJECT_DIR$/../../www/img/template/icon-about.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/template/icon-activities.png" afterPath="$PROJECT_DIR$/../../www/img/template/icon-activities.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/template/icon-back.png" afterPath="$PROJECT_DIR$/../../www/img/template/icon-back.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/template/icon-date-event.png" afterPath="$PROJECT_DIR$/../../www/img/template/icon-date-event.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/template/icon-down.png" afterPath="$PROJECT_DIR$/../../www/img/template/icon-down.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/template/icon-events.png" afterPath="$PROJECT_DIR$/../../www/img/template/icon-events.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/template/icon-fixture.png" afterPath="$PROJECT_DIR$/../../www/img/template/icon-fixture.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/template/icon-form-calendar.png" afterPath="$PROJECT_DIR$/../../www/img/template/icon-form-calendar.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/template/icon-form-email.png" afterPath="$PROJECT_DIR$/../../www/img/template/icon-form-email.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/template/icon-form-fb.png" afterPath="$PROJECT_DIR$/../../www/img/template/icon-form-fb.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/template/icon-form-instagram .png" afterPath="$PROJECT_DIR$/../../www/img/template/icon-form-instagram .png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/template/icon-form-location.png" afterPath="$PROJECT_DIR$/../../www/img/template/icon-form-location.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/template/icon-form-price.png" afterPath="$PROJECT_DIR$/../../www/img/template/icon-form-price.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/template/icon-form-tel.png" afterPath="$PROJECT_DIR$/../../www/img/template/icon-form-tel.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/template/icon-form-twitter.png" afterPath="$PROJECT_DIR$/../../www/img/template/icon-form-twitter.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/template/icon-form-url.png" afterPath="$PROJECT_DIR$/../../www/img/template/icon-form-url.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/template/icon-form-youtube.png" afterPath="$PROJECT_DIR$/../../www/img/template/icon-form-youtube.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/template/icon-home.png" afterPath="$PROJECT_DIR$/../../www/img/template/icon-home.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/template/icon-hour-event.png" afterPath="$PROJECT_DIR$/../../www/img/template/icon-hour-event.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/template/icon-menu.png" afterPath="$PROJECT_DIR$/../../www/img/template/icon-menu.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/template/icon-news.png" afterPath="$PROJECT_DIR$/../../www/img/template/icon-news.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/template/icon-notifications.png" afterPath="$PROJECT_DIR$/../../www/img/template/icon-notifications.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/template/icon-place-event.png" afterPath="$PROJECT_DIR$/../../www/img/template/icon-place-event.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/template/icon-positionstable.png" afterPath="$PROJECT_DIR$/../../www/img/template/icon-positionstable.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/template/icon-refresh.png" afterPath="$PROJECT_DIR$/../../www/img/template/icon-refresh.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/template/icon-settings-favourites-notifications.png" afterPath="$PROJECT_DIR$/../../www/img/template/icon-settings-favourites-notifications.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/template/icon-settings.png" afterPath="$PROJECT_DIR$/../../www/img/template/icon-settings.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/template/icon-share-facebook.png" afterPath="$PROJECT_DIR$/../../www/img/template/icon-share-facebook.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/template/icon-share-instagram.png" afterPath="$PROJECT_DIR$/../../www/img/template/icon-share-instagram.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/template/icon-share-twitter.png" afterPath="$PROJECT_DIR$/../../www/img/template/icon-share-twitter.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/template/icon-share-whatsapp.png" afterPath="$PROJECT_DIR$/../../www/img/template/icon-share-whatsapp.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/template/icon-share.png" afterPath="$PROJECT_DIR$/../../www/img/template/icon-share.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/template/icon-shooters.png" afterPath="$PROJECT_DIR$/../../www/img/template/icon-shooters.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/template/icon-sports.png" afterPath="$PROJECT_DIR$/../../www/img/template/icon-sports.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/template/icon-sportsFixture.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/template/icon-upload-favourites.png" afterPath="$PROJECT_DIR$/../../www/img/template/icon-upload-favourites.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/template/icon-upload.png" afterPath="$PROJECT_DIR$/../../www/img/template/icon-upload.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/template/icon-user.png" afterPath="$PROJECT_DIR$/../../www/img/template/icon-user.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/img/template/screen-720x1280.png" afterPath="$PROJECT_DIR$/../../www/img/template/screen-720x1280.png" />
+      <change beforePath="$PROJECT_DIR$/../../www/index.html" afterPath="$PROJECT_DIR$/../../www/index.html" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/common.js" afterPath="$PROJECT_DIR$/../../www/js/common.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/index.js" afterPath="$PROJECT_DIR$/../../www/js/index.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/lib/hammer.min.js" afterPath="$PROJECT_DIR$/../../www/js/lib/hammer.min.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/lib/jquery-2.1.4.min.js" afterPath="$PROJECT_DIR$/../../www/js/lib/jquery-2.1.4.min.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/lib/jquery.hammer.js" afterPath="$PROJECT_DIR$/../../www/js/lib/jquery.hammer.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/lib/jquery.i18n.properties-min-1.0.9.js" afterPath="$PROJECT_DIR$/../../www/js/lib/jquery.i18n.properties-min-1.0.9.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/pages/about/page-achievementdetails.js" afterPath="$PROJECT_DIR$/../../www/js/pages/about/page-achievementdetails.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/pages/about/page-achievements.js" afterPath="$PROJECT_DIR$/../../www/js/pages/about/page-achievements.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/pages/about/page-contact.js" afterPath="$PROJECT_DIR$/../../www/js/pages/about/page-contact.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/pages/about/page-installationdetails.js" afterPath="$PROJECT_DIR$/../../www/js/pages/about/page-installationdetails.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/pages/about/page-installations.js" afterPath="$PROJECT_DIR$/../../www/js/pages/about/page-installations.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/pages/about/page-managers.js" afterPath="$PROJECT_DIR$/../../www/js/pages/about/page-managers.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/pages/about/page-milestonedetails.js" afterPath="$PROJECT_DIR$/../../www/js/pages/about/page-milestonedetails.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/pages/about/page-milestones.js" afterPath="$PROJECT_DIR$/../../www/js/pages/about/page-milestones.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/pages/login/page-emailregister.js" afterPath="$PROJECT_DIR$/../../www/js/pages/login/page-emailregister.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/pages/login/page-emailsignup.js" afterPath="$PROJECT_DIR$/../../www/js/pages/login/page-emailsignup.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/pages/login/page-login.js" afterPath="$PROJECT_DIR$/../../www/js/pages/login/page-login.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/pages/login/page-passwordrecovery.js" afterPath="$PROJECT_DIR$/../../www/js/pages/login/page-passwordrecovery.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/pages/login/page-pleaseverify.js" afterPath="$PROJECT_DIR$/../../www/js/pages/login/page-pleaseverify.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/pages/login/page-setprofile.js" afterPath="$PROJECT_DIR$/../../www/js/pages/login/page-setprofile.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/pages/login/page-smscode.js" afterPath="$PROJECT_DIR$/../../www/js/pages/login/page-smscode.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/pages/page-about.js" afterPath="$PROJECT_DIR$/../../www/js/pages/page-about.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/pages/page-activities.js" afterPath="$PROJECT_DIR$/../../www/js/pages/page-activities.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/pages/page-activitydetails.js" afterPath="$PROJECT_DIR$/../../www/js/pages/page-activitydetails.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/pages/page-eventdetails.js" afterPath="$PROJECT_DIR$/../../www/js/pages/page-eventdetails.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/pages/page-events.js" afterPath="$PROJECT_DIR$/../../www/js/pages/page-events.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/pages/page-home.js" afterPath="$PROJECT_DIR$/../../www/js/pages/page-home.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/pages/page-initintermediate.js" afterPath="$PROJECT_DIR$/../../www/js/pages/page-initintermediate.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/pages/page-initsettings.js" afterPath="$PROJECT_DIR$/../../www/js/pages/page-initsettings.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/pages/page-newdetails.js" afterPath="$PROJECT_DIR$/../../www/js/pages/page-newdetails.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/pages/page-news.js" afterPath="$PROJECT_DIR$/../../www/js/pages/page-news.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/pages/page-notifications.js" afterPath="$PROJECT_DIR$/../../www/js/pages/page-notifications.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/pages/page-settings.js" afterPath="$PROJECT_DIR$/../../www/js/pages/page-settings.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/pages/page-sportdetails.js" afterPath="$PROJECT_DIR$/../../www/js/pages/page-sportdetails.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/pages/page-sports.js" afterPath="$PROJECT_DIR$/../../www/js/pages/page-sports.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/pages/page-unsupported.js" afterPath="$PROJECT_DIR$/../../www/js/pages/page-unsupported.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/pages/page-update.js" afterPath="$PROJECT_DIR$/../../www/js/pages/page-update.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/pages/page-user.js" afterPath="$PROJECT_DIR$/../../www/js/pages/page-user.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/pages/popup-settingsfavourites.js" afterPath="$PROJECT_DIR$/../../www/js/pages/popup-settingsfavourites.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/pages/tournaments/page-dateslist.js" afterPath="$PROJECT_DIR$/../../www/js/pages/tournaments/page-dateslist.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/pages/tournaments/page-fixtures.js" afterPath="$PROJECT_DIR$/../../www/js/pages/tournaments/page-fixtures.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/pages/tournaments/page-matchdetails.js" afterPath="$PROJECT_DIR$/../../www/js/pages/tournaments/page-matchdetails.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/pages/tournaments/page-positionstable.js" afterPath="$PROJECT_DIR$/../../www/js/pages/tournaments/page-positionstable.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/pages/tournaments/page-shooterstable.js" afterPath="$PROJECT_DIR$/../../www/js/pages/tournaments/page-shooterstable.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/settings-club.js" afterPath="$PROJECT_DIR$/../../www/js/settings-club.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/share.js" afterPath="$PROJECT_DIR$/../../www/js/share.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/toast/toast.js" afterPath="$PROJECT_DIR$/../../www/js/toast/toast.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/js/webservices-errors.js" afterPath="$PROJECT_DIR$/../../www/js/webservices-errors.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/language/Messages.properties" afterPath="$PROJECT_DIR$/../../www/language/Messages.properties" />
+      <change beforePath="$PROJECT_DIR$/../../www/language/Messages_es.properties" afterPath="$PROJECT_DIR$/../../www/language/Messages_es.properties" />
+      <change beforePath="$PROJECT_DIR$/../../www/language/language.js" afterPath="$PROJECT_DIR$/../../www/language/language.js" />
+      <change beforePath="$PROJECT_DIR$/../../www/pages/about/page-achievementdetails.html" afterPath="$PROJECT_DIR$/../../www/pages/about/page-achievementdetails.html" />
+      <change beforePath="$PROJECT_DIR$/../../www/pages/about/page-achievements.html" afterPath="$PROJECT_DIR$/../../www/pages/about/page-achievements.html" />
+      <change beforePath="$PROJECT_DIR$/../../www/pages/about/page-contact.html" afterPath="$PROJECT_DIR$/../../www/pages/about/page-contact.html" />
+      <change beforePath="$PROJECT_DIR$/../../www/pages/about/page-installationdetails.html" afterPath="$PROJECT_DIR$/../../www/pages/about/page-installationdetails.html" />
+      <change beforePath="$PROJECT_DIR$/../../www/pages/about/page-installations.html" afterPath="$PROJECT_DIR$/../../www/pages/about/page-installations.html" />
+      <change beforePath="$PROJECT_DIR$/../../www/pages/about/page-managers.html" afterPath="$PROJECT_DIR$/../../www/pages/about/page-managers.html" />
+      <change beforePath="$PROJECT_DIR$/../../www/pages/about/page-milestonedetails.html" afterPath="$PROJECT_DIR$/../../www/pages/about/page-milestonedetails.html" />
+      <change beforePath="$PROJECT_DIR$/../../www/pages/about/page-milestones.html" afterPath="$PROJECT_DIR$/../../www/pages/about/page-milestones.html" />
+      <change beforePath="$PROJECT_DIR$/../../www/pages/login/page-emailregister.html" afterPath="$PROJECT_DIR$/../../www/pages/login/page-emailregister.html" />
+      <change beforePath="$PROJECT_DIR$/../../www/pages/login/page-emailsignup.html" afterPath="$PROJECT_DIR$/../../www/pages/login/page-emailsignup.html" />
+      <change beforePath="$PROJECT_DIR$/../../www/pages/login/page-login.html" afterPath="$PROJECT_DIR$/../../www/pages/login/page-login.html" />
+      <change beforePath="$PROJECT_DIR$/../../www/pages/login/page-passwordrecovery.html" afterPath="$PROJECT_DIR$/../../www/pages/login/page-passwordrecovery.html" />
+      <change beforePath="$PROJECT_DIR$/../../www/pages/login/page-pleaseverify.html" afterPath="$PROJECT_DIR$/../../www/pages/login/page-pleaseverify.html" />
+      <change beforePath="$PROJECT_DIR$/../../www/pages/login/page-setprofile.html" afterPath="$PROJECT_DIR$/../../www/pages/login/page-setprofile.html" />
+      <change beforePath="$PROJECT_DIR$/../../www/pages/login/page-smscode.html" afterPath="$PROJECT_DIR$/../../www/pages/login/page-smscode.html" />
+      <change beforePath="$PROJECT_DIR$/../../www/pages/page-about.html" afterPath="$PROJECT_DIR$/../../www/pages/page-about.html" />
+      <change beforePath="$PROJECT_DIR$/../../www/pages/page-activities.html" afterPath="$PROJECT_DIR$/../../www/pages/page-activities.html" />
+      <change beforePath="$PROJECT_DIR$/../../www/pages/page-activitydetails.html" afterPath="$PROJECT_DIR$/../../www/pages/page-activitydetails.html" />
+      <change beforePath="$PROJECT_DIR$/../../www/pages/page-eventdetails.html" afterPath="$PROJECT_DIR$/../../www/pages/page-eventdetails.html" />
+      <change beforePath="$PROJECT_DIR$/../../www/pages/page-events.html" afterPath="$PROJECT_DIR$/../../www/pages/page-events.html" />
+      <change beforePath="$PROJECT_DIR$/../../www/pages/page-home.html" afterPath="$PROJECT_DIR$/../../www/pages/page-home.html" />
+      <change beforePath="$PROJECT_DIR$/../../www/pages/page-initintermediate.html" afterPath="$PROJECT_DIR$/../../www/pages/page-initintermediate.html" />
+      <change beforePath="$PROJECT_DIR$/../../www/pages/page-initsettings.html" afterPath="$PROJECT_DIR$/../../www/pages/page-initsettings.html" />
+      <change beforePath="$PROJECT_DIR$/../../www/pages/page-login.html" afterPath="$PROJECT_DIR$/../../www/pages/page-login.html" />
+      <change beforePath="$PROJECT_DIR$/../../www/pages/page-newdetails.html" afterPath="$PROJECT_DIR$/../../www/pages/page-newdetails.html" />
+      <change beforePath="$PROJECT_DIR$/../../www/pages/page-news.html" afterPath="$PROJECT_DIR$/../../www/pages/page-news.html" />
+      <change beforePath="$PROJECT_DIR$/../../www/pages/page-notifications.html" afterPath="$PROJECT_DIR$/../../www/pages/page-notifications.html" />
+      <change beforePath="$PROJECT_DIR$/../../www/pages/page-settings.html" afterPath="$PROJECT_DIR$/../../www/pages/page-settings.html" />
+      <change beforePath="$PROJECT_DIR$/../../www/pages/page-sportdetails.html" afterPath="$PROJECT_DIR$/../../www/pages/page-sportdetails.html" />
+      <change beforePath="$PROJECT_DIR$/../../www/pages/page-sports.html" afterPath="$PROJECT_DIR$/../../www/pages/page-sports.html" />
+      <change beforePath="$PROJECT_DIR$/../../www/pages/page-unsupported.html" afterPath="$PROJECT_DIR$/../../www/pages/page-unsupported.html" />
+      <change beforePath="$PROJECT_DIR$/../../www/pages/page-update.html" afterPath="$PROJECT_DIR$/../../www/pages/page-update.html" />
+      <change beforePath="$PROJECT_DIR$/../../www/pages/page-user.html" afterPath="$PROJECT_DIR$/../../www/pages/page-user.html" />
+      <change beforePath="$PROJECT_DIR$/../../www/pages/popup-settingsfavourites.html" afterPath="$PROJECT_DIR$/../../www/pages/popup-settingsfavourites.html" />
+      <change beforePath="$PROJECT_DIR$/../../www/pages/tournaments/page-dateslist.html" afterPath="$PROJECT_DIR$/../../www/pages/tournaments/page-dateslist.html" />
+      <change beforePath="$PROJECT_DIR$/../../www/pages/tournaments/page-fixtures.html" afterPath="$PROJECT_DIR$/../../www/pages/tournaments/page-fixtures.html" />
+      <change beforePath="$PROJECT_DIR$/../../www/pages/tournaments/page-matchdetails.html" afterPath="$PROJECT_DIR$/../../www/pages/tournaments/page-matchdetails.html" />
+      <change beforePath="$PROJECT_DIR$/../../www/pages/tournaments/page-positionstable.html" afterPath="$PROJECT_DIR$/../../www/pages/tournaments/page-positionstable.html" />
+      <change beforePath="$PROJECT_DIR$/../../www/pages/tournaments/page-shooterstable.html" afterPath="$PROJECT_DIR$/../../www/pages/tournaments/page-shooterstable.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -36,22 +621,64 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="page-news.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-news.js">
+      <file leaf-file-name="page-user.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/www/pages/page-user.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="5" column="25" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="25" />
+            <state relative-caret-position="350">
+              <caret line="28" column="17" lean-forward="false" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="page-settings.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-settings.js">
+      <file leaf-file-name="page-login.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/www/js/pages/login/page-login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-938">
+            <state relative-caret-position="-1723">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="page-user.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-user.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="317" column="68" lean-forward="true" selection-start-line="317" selection-start-column="68" selection-end-line="317" selection-end-column="68" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/www/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="134">
+              <caret line="62" column="10" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="720" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/www/js/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="164">
+              <caret line="25" column="54" lean-forward="false" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="116">
+              <caret line="263" column="34" lean-forward="false" selection-start-line="263" selection-start-column="34" selection-end-line="263" selection-end-column="34" />
+              <folding>
+                <element signature="e#0#858#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -59,38 +686,8 @@
       <file leaf-file-name="page-home.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="1051" column="66" lean-forward="false" selection-start-line="1051" selection-start-column="66" selection-end-line="1051" selection-end-column="66" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="page-home.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assets/www/css/pages/page-home.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="472" column="1" lean-forward="false" selection-start-line="472" selection-start-column="1" selection-end-line="472" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="page-positionstable.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/www/js/pages/tournaments/page-positionstable.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="519">
-              <caret line="53" column="53" lean-forward="false" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="53" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/www/js/common.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5625">
-              <caret line="375" column="42" lean-forward="false" selection-start-line="375" selection-start-column="42" selection-end-line="375" selection-end-column="42" />
+            <state relative-caret-position="309">
+              <caret line="154" column="23" lean-forward="false" selection-start-line="154" selection-start-column="23" selection-end-line="154" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -100,26 +697,40 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>allNewsPageList</find>
-      <find>loadEventDetails1</find>
-      <find>loadposition</find>
-      <find>loadmatchde</find>
-      <find>event</find>
-      <find>reloadContentHomePage</find>
-      <find>get</find>
-      <find>getpath</find>
-      <find>allSucesosEventsList</find>
-      <find>allSucesosNewsListList</find>
-      <find>allSucesosTorneoTablaPosicionList</find>
-      <find>allSucesosNewsList</find>
-      <find>allSucesosPageList</find>
-      <find>matchDetailsHome</find>
-      <find>newslist</find>
       <find>loadmatchdetailsfix</find>
       <find>cardLastestNewsHome</find>
+      <find>loadSettingNotificationsList</find>
+      <find>getnotifi</find>
+      <find>docum</find>
+      <find>body</find>
+      <find>.check_arrow</find>
+      <find>var app</find>
+      <find>document</find>
+      <find>update_tree</find>
+      <find>fa-check</find>
+      <find>page-user</find>
+      <find>data-ch</find>
+      <find>debugc</find>
+      <find>data-che</find>
+      <find>expan</find>
+      <find>data-id</find>
+      <find>convert</find>
+      <find>parent</find>
+      <find>data-l</find>
+      <find>update</find>
+      <find>id</find>
+      <find>this</find>
+      <find>find</find>
+      <find>acti</find>
+      <find>org</find>
+      <find>org-id</find>
+      <find>GetTree</find>
+      <find>activity</find>
+      <find>data-type</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/assets</dir>
+      <dir>$PROJECT_DIR$</dir>
     </dirStrings>
   </component>
   <component name="GenerateSignedApkSettings">
@@ -2329,8 +2940,15 @@
         <option value="$PROJECT_DIR$/assets/www/js/pages/tournaments/page-positionstable.js" />
         <option value="$PROJECT_DIR$/assets/www/js/pages/page-newdetails.js" />
         <option value="$PROJECT_DIR$/assets/www/js/pages/tournaments/page-matchdetails.js" />
-        <option value="$PROJECT_DIR$/assets/www/js/pages/page-home.js" />
+        <option value="$PROJECT_DIR$/assets/www/js/pages/page-settings.js" />
+        <option value="$PROJECT_DIR$/assets/www/css/pages/login/page-login.css" />
+        <option value="$PROJECT_DIR$/assets/www/index.html" />
         <option value="$PROJECT_DIR$/assets/www/css/pages/page-home.css" />
+        <option value="$PROJECT_DIR$/assets/www/css/pages/page-settings.css" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/assets/www/pages/page-user.html" />
+        <option value="$PROJECT_DIR$/assets/www/js/pages/page-home.js" />
+        <option value="$PROJECT_DIR$/assets/www/js/pages/page-user.js" />
       </list>
     </option>
   </component>
@@ -2355,9 +2973,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -2391,22 +3008,30 @@
               <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="android" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="ExportApk.ApkPath" value="$PROJECT_DIR$" />
     <property name="ExportApk.Flavors" value="" />
     <property name="ExportApk.BuildType" value="debug" />
     <property name="ExportApk.SignV1" value="true" />
     <property name="ExportApk.SignV2" value="true" />
+    <property name="device.picker.selection" value="RQ30031TF9" />
+    <property name="android.project.structure.last.selected" value="Project" />
+    <property name="android.project.structure.proportion" value="0.15" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -2444,7 +3069,7 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="android" type="AndroidRunConfigurationType" factoryName="Android App">
+    <configuration name="android" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="android" />
       <option name="DEPLOY" value="true" />
       <option name="ARTIFACT_NAME" value="" />
@@ -2591,7 +3216,7 @@
     <frame x="0" y="23" width="1280" height="709" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2630,73 +3255,63 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/www/js/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5625">
-          <caret line="375" column="42" lean-forward="false" selection-start-line="375" selection-start-column="42" selection-end-line="375" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/tournaments/page-matchdetails.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="75" column="64" lean-forward="false" selection-start-line="75" selection-start-column="64" selection-end-line="75" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/tournaments/page-matchdetailsfixture.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-58">
-          <caret line="23" column="68" lean-forward="false" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-eventdetails.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="66" column="20" lean-forward="false" selection-start-line="66" selection-start-column="20" selection-end-line="66" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-newdetails.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="42" lean-forward="false" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-news.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="75">
           <caret line="5" column="25" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-settings.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-938">
+        <state relative-caret-position="1740">
+          <caret line="116" column="29" lean-forward="false" selection-start-line="116" selection-start-column="29" selection-end-line="116" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/pages/page-initsettings.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/pages/page-user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="6" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="6" lean-forward="false" selection-start-line="36" selection-start-column="6" selection-end-line="36" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/pages/page-settings.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/tournaments/page-positionstable.js">
+    <entry file="file://$PROJECT_DIR$/assets/www/pages/popup-settingsfavourites.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="53" column="53" lean-forward="false" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="53" />
+        <state relative-caret-position="90">
+          <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
+        <state relative-caret-position="15765">
           <caret line="1051" column="66" lean-forward="false" selection-start-line="1051" selection-start-column="66" selection-end-line="1051" selection-end-column="66" />
           <folding />
         </state>
@@ -2704,8 +3319,248 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/www/css/pages/page-home.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
+        <state relative-caret-position="7080">
           <caret line="472" column="1" lean-forward="false" selection-start-line="472" selection-start-column="1" selection-end-line="472" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="6" lean-forward="false" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-news.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="25" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-settings.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1740">
+          <caret line="116" column="29" lean-forward="false" selection-start-line="116" selection-start-column="29" selection-end-line="116" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/pages/page-initsettings.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="40" column="100" lean-forward="false" selection-start-line="40" selection-start-column="100" selection-end-line="40" selection-end-column="100" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/pages/page-settings.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/pages/popup-settingsfavourites.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15765">
+          <caret line="1051" column="66" lean-forward="false" selection-start-line="1051" selection-start-column="66" selection-end-line="1051" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/css/pages/page-home.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7080">
+          <caret line="472" column="1" lean-forward="false" selection-start-line="472" selection-start-column="1" selection-end-line="472" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/pages/page-user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="5" lean-forward="false" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5625">
+          <caret line="375" column="42" lean-forward="false" selection-start-line="375" selection-start-column="42" selection-end-line="375" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/tournaments/page-matchdetails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="75" column="64" lean-forward="false" selection-start-line="75" selection-start-column="64" selection-end-line="75" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/tournaments/page-matchdetailsfixture.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-58">
+          <caret line="23" column="68" lean-forward="false" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-eventdetails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="66" column="20" lean-forward="false" selection-start-line="66" selection-start-column="20" selection-end-line="66" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-newdetails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="42" lean-forward="false" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/tournaments/page-positionstable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="519">
+          <caret line="53" column="53" lean-forward="false" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-news.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="25" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-settings.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1740">
+          <caret line="116" column="29" lean-forward="false" selection-start-line="116" selection-start-column="29" selection-end-line="116" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/pages/page-settings.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/pages/popup-settingsfavourites.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/pages/page-initsettings.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="25" column="54" lean-forward="false" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/css/pages/login/page-login.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="50" column="1" lean-forward="false" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/css/pages/page-home.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="41">
+          <caret line="466" column="19" lean-forward="false" selection-start-line="466" selection-start-column="19" selection-end-line="466" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/css/pages/page-settings.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="183" column="0" lean-forward="false" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="263" column="34" lean-forward="false" selection-start-line="263" selection-start-column="34" selection-end-line="263" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#858#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="62" column="10" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="720" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/pages/page-user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="28" column="17" lean-forward="false" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/login/page-login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1723">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="154" column="23" lean-forward="false" selection-start-line="154" selection-start-column="23" selection-end-line="154" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="317" column="68" lean-forward="true" selection-start-line="317" selection-start-column="68" selection-end-line="317" selection-end-column="68" />
           <folding />
         </state>
       </provider>

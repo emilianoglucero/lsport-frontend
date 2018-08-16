@@ -11,15 +11,11 @@
                     <div class="login-form">
                         <div class="login-input-label" id="lblSmsCode"></div>
                         <input type="tel" class="login-input" id="smscode" placeholder="123456" maxlength="10">
-                        <div class="login-input-label" id="resend-smstime"></div>
-                        <a href="#" onclick="resendSmsCode()" id="resend-smscode"  class="login-button" disabled></a>
+                        <a href="#" onclick="confirmSmsCode()" class="item-link list-button" id="lblSendSmsCodeButton"></a>
                     </div>
                     <div class="list-block">
-                        <ul>
-                            <li>
-                                <a href="#" onclick="confirmSmsCode()" class="item-link list-button" id="lblSendSmsCodeButton"></a>
-                            </li>
-                        </ul>
+                        <div class="login-input-label" id="resend-smstime"></div>
+                        <a href="#" onclick="resendSmsCode()" id="resend-smscode"  class="login-button" disabled></a>
                     <div id= "otherLogin">
                         <ul>
                             <li>
