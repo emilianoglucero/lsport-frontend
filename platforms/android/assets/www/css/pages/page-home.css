@@ -491,3 +491,55 @@
     height: 20px;
     width: 20px;
 }
+
+/*suceso tabla de posiciones de fecha*/
+
+.tournament-father {
+    background-color: #108342;
+    color: #FFFFFF;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.tournament-child {
+    margin-bottom: 5px;
+    border-bottom: solid;
+    border-width: 1px;
+    border-color: #e6e6e6;
+
+}
+
+.tournament-father-team {
+    text-align: center;
+}
+
+.tournament-header-fecha {
+    text-align: left;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.tournament-header-titulo {
+    text-align: left;
+    font-size: 16px;
+    font-weight: 450;
+}
+
+/*termine suceso posiciones de fecha*/
+
+.card-content .news-content {
+    border-top: 11px solid #e6e6e6;
+    border-left:  11px solid #e6e6e6;
+    border-right: 11px solid #e6e6e6;
+}
+
+.chipHomeCategory {
+    width: 45%;
+    position: absolute;
+    bottom: 100px;
+    left: 10px;
+}
+
+.dateTitleNew {
+    font-size: 11px;
+}

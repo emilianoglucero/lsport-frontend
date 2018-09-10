@@ -49,11 +49,12 @@ function GetTree(objs, par, lvl) {
 
     $.each(objs, function(k,ele) {
     console.log(ele);
+    //console.log(elementTosend);
 
            if(ele.parent !== par) return;
            var children = GetTree(objs,  ele.id, lvl+1);
 
-           str += '<div data-lvl="'+lvl+'" data-id="'+ele.id+'" data-type="'+ele.type+'" org-id="'+ele.org_id+'" data-checked="0" '+
+           str += '<div data-lvl="'+lvl+'" data-id="'+ele.id+'" data-type="'+ele.type+'" data-tosend="'+ele.elementTosend+'" org-id="'+ele.org_id+'" data-checked="0" '+
            (lvl == 1 ? 'data-expandlevel="'+ele.expand_level+'" ' : '')
            +'data-enabled="'+ele.enabled+'" data-expanded="1" class="check">' +
            (children == '' ? '' : '<div class="check_arrow"><i class="fa fa-caret-right"></i></div>')
@@ -70,306 +71,353 @@ function GetTree(objs, par, lvl) {
 
 function update_tree() {
     var json = {
-                       "deportes": [
-                                    {
-                                    "id": 8,
-                                    "descripcion": "fútbol",
-                                    "detalle": "fútbol",
-                                    "orden": 0,
-                                    "nombre": "Fútbol",
-                                    "nombreCorto": "Fut",
-                                    "imagenPrincipal": "http://clubes.lenguajefutbol.com/img/archivos/deporte/deporte-imagenPrincipal-8_1000x600xrecortar.png?1517945719",
-                                    "imagenSecundaria": "",
-                                    "imagenPrincipalMin": "http://clubes.lenguajefutbol.com/img/archivos/deporte/deporte-imagenPrincipal-8_160x100xrecortar.png?1517945719",
-                                    "imagenSecundariaMin": "",
-                                    "tipoObjeto": "deporte",
-                                    "showlvl": "2",
-                                    "expand": "2",
-                                    "tipoCategoria": "3",
-                                    "ENAC": [
-                                             {
-                                             "id": 2,
-                                             "descripcion": "",
-                                             "lugar": "",
-                                             "horarioTexto": "",
-                                             "precio": "",
-                                             "correoContacto": "",
-                                             "orden": 0,
-                                             "nombre": "AFA",
-                                             "nombreCorto": "AFA",
-                                             "nombreCompleto": "Asociacion de Futbol Argentino",
-                                             "tipoObjeto": "enac",
-                                             "preferenciaPrincipal": 1,
-                                             "preferenciaNotificacion": 0,
-                                             "categorias": [
-                                                            {
-                                                            "id": 18,
-                                                            "descripcion": "",
-                                                            "lugar": "",
-                                                            "horarioTexto": "",
-                                                            "precio": "",
-                                                            "correoContacto": "",
-                                                            "orden": 0,
-                                                            "nombre": "AFA - Primera",
-                                                            "nombreCorto": "AFA - 1ra",
-                                                            "nombreCompleto": "AFA - Primera",
-                                                            "tipoObjeto": "deporte-categoria",
-                                                            "preferenciaPrincipal": 1,
-                                                            "preferenciaNotificacion": 0
-                                                            },
-                                                            {
-                                                            "id": 19,
-                                                            "descripcion": "",
-                                                            "lugar": "",
-                                                            "horarioTexto": "",
-                                                            "precio": "",
-                                                            "correoContacto": "",
-                                                            "orden": 0,
-                                                            "nombre": "AFA - Reserva",
-                                                            "nombreCorto": "AFA - res",
-                                                            "nombreCompleto": "AFA - Reserva",
-                                                            "tipoObjeto": "deporte-categoria",
-                                                            "preferenciaPrincipal": 0,
-                                                            "preferenciaNotificacion": 0
-                                                            }
-                                                            ]
-                                             },
-                                             {
-                                             "id": 3,
-                                             "descripcion": "",
-                                             "lugar": "",
-                                             "horarioTexto": "",
-                                             "precio": "",
-                                             "correoContacto": "",
-                                             "orden": 0,
-                                             "nombre": "LCF",
-                                             "nombreCorto": "LCF",
-                                             "nombreCompleto": "Liga Cañadense de Futbol",
-                                             "tipoObjeto": "enac",
-                                             "preferenciaPrincipal": 1,
-                                             "preferenciaNotificacion": 0,
-                                             "categorias": [
-                                                            {
-                                                            "id": 20,
-                                                            "descripcion": "",
-                                                            "lugar": "",
-                                                            "horarioTexto": "",
-                                                            "precio": "",
-                                                            "correoContacto": "",
-                                                            "orden": 0,
-                                                            "nombre": "LCF - Primera",
-                                                            "nombreCorto": "LCF - 1ra",
-                                                            "nombreCompleto": "AFA - Primera",
-                                                            "tipoObjeto": "deporte-categoria",
-                                                            "preferenciaPrincipal": 1,
-                                                            "preferenciaNotificacion": 0
-                                                            },
-                                                            {
-                                                            "id": 21,
-                                                            "descripcion": "",
-                                                            "lugar": "",
-                                                            "horarioTexto": "",
-                                                            "precio": "",
-                                                            "correoContacto": "",
-                                                            "orden": 0,
-                                                            "nombre": "LCF - Reserva",
-                                                            "nombreCorto": "LCF - res",
-                                                            "nombreCompleto": "AFA - Reserva",
-                                                            "tipoObjeto": "deporte-categoria",
-                                                            "preferenciaPrincipal": 0,
-                                                            "preferenciaNotificacion": 0
-                                                            }
-                                                            ]
-                                             }
-                                    ]
-                                    },
-                                    {
-                                    "id": 9,
-                                    "descripcion": "Basketball",
-                                    "detalle": "Basketball",
-                                    "orden": 0,
-                                    "nombre": "Basketball",
-                                    "nombreCorto": "Bsk",
-                                    "imagenPrincipal": "http://clubes.lenguajefutbol.com/img/archivos/deporte/deporte-imagenPrincipal-8_1000x600xrecortar.png?1517945719",
-                                    "imagenSecundaria": "",
-                                    "imagenPrincipalMin": "http://clubes.lenguajefutbol.com/img/archivos/deporte/deporte-imagenPrincipal-8_160x100xrecortar.png?1517945719",
-                                    "imagenSecundariaMin": "",
-                                    "tipoObjeto": "deporte",
-                                    "showlvl": "0",
-                                    "expand": "0",
-                                    "tipoCategoria": "1",
-                                    "ENAC": [
-                                             {
-                                             "id": 4,
-                                             "descripcion": "",
-                                             "lugar": "",
-                                             "horarioTexto": "",
-                                             "precio": "",
-                                             "correoContacto": "",
-                                             "orden": 0,
-                                             "nombre": "Liga Default",
-                                             "nombreCorto": "Liga Default",
-                                             "nombreCompleto": "Liga Default",
-                                             "tipoObjeto": "enac",
-                                             "preferenciaPrincipal": 1,
-                                             "preferenciaNotificacion": 0,
-                                             "categorias": [
-                                                            {
-                                                            "id": 19,
-                                                            "descripcion": "",
-                                                            "lugar": "",
-                                                            "horarioTexto": "",
-                                                            "precio": "",
-                                                            "correoContacto": "",
-                                                            "orden": 0,
-                                                            "nombre": "Categoria Default",
-                                                            "nombreCorto": "Categoria Default",
-                                                            "nombreCompleto": "Categoria Default",
-                                                            "tipoObjeto": "deporte-categoria",
-                                                            "preferenciaPrincipal": 1,
-                                                            "preferenciaNotificacion": 0
-                                                            }
-                                             ]
-                                             }
-                                    ]
-                                    },
-                                    {
-                                    "id": 9,
-                                    "descripcion": "Rugby",
-                                    "detalle": "Rugby",
-                                    "orden": 0,
-                                    "nombre": "Rugby",
-                                    "nombreCorto": "Rugby",
-                                    "imagenPrincipal": "http://clubes.lenguajefutbol.com/img/archivos/deporte/deporte-imagenPrincipal-8_1000x600xrecortar.png?1517945719",
-                                    "imagenSecundaria": "",
-                                    "imagenPrincipalMin": "http://clubes.lenguajefutbol.com/img/archivos/deporte/deporte-imagenPrincipal-8_160x100xrecortar.png?1517945719",
-                                    "imagenSecundariaMin": "",
-                                    "tipoObjeto": "deporte",
-                                    "showlvl": "0",
-                                    "expand": "0",
-                                    "tipoCategoria": "1",
-                                    "ENAC": [
-                                             {
-                                             "id": 4,
-                                             "descripcion": "",
-                                             "lugar": "",
-                                             "horarioTexto": "",
-                                             "precio": "",
-                                             "correoContacto": "",
-                                             "orden": 0,
-                                             "nombre": "Liga Default",
-                                             "nombreCorto": "Liga Default",
-                                             "nombreCompleto": "Liga Default",
-                                             "tipoObjeto": "enac",
-                                             "preferenciaPrincipal": 1,
-                                             "preferenciaNotificacion": 0,
-                                             "categorias": [
-                                                            {
-                                                            "id": 19,
-                                                            "descripcion": "",
-                                                            "lugar": "",
-                                                            "horarioTexto": "",
-                                                            "precio": "",
-                                                            "correoContacto": "",
-                                                            "orden": 0,
-                                                            "nombre": "Categoria Default",
-                                                            "nombreCorto": "Categoria Default",
-                                                            "nombreCompleto": "Categoria Default",
-                                                            "tipoObjeto": "deporte-categoria",
-                                                            "preferenciaPrincipal": 1,
-                                                            "preferenciaNotificacion": 0
-                                                            }
-                                                            ]
-                                             }
-                                             ]
-                                    },
-                                   {
-                                    "id": 9,
-                                    "descripcion": "Basketball2",
-                                    "detalle": "Basketball2",
-                                    "orden": 0,
-                                    "nombre": "Basketball2",
-                                    "nombreCorto": "Bsk",
-                                    "imagenPrincipal": "http://clubes.lenguajefutbol.com/img/archivos/deporte/deporte-imagenPrincipal-8_1000x600xrecortar.png?1517945719",
-                                    "imagenSecundaria": "",
-                                    "imagenPrincipalMin": "http://clubes.lenguajefutbol.com/img/archivos/deporte/deporte-imagenPrincipal-8_160x100xrecortar.png?1517945719",
-                                    "imagenSecundariaMin": "",
-                                    "tipoObjeto": "deporte",
-                                    "showlvl": "1",
-                                    "expand": "1",
-                                    "tipoCategoria": "2",
-                                     "categorias": [
-                                                    {
-                                                    "id": 19,
-                                                    "descripcion": "",
-                                                    "lugar": "",
-                                                    "horarioTexto": "",
-                                                    "precio": "",
-                                                    "correoContacto": "",
-                                                    "orden": 0,
-                                                    "nombre": "Futbol 1era",
-                                                    "nombreCorto": "Futbol 1era",
-                                                    "nombreCompleto": "Futbol 1era",
-                                                    "tipoObjeto": "deporte-categoria",
-                                                    "preferenciaPrincipal": 1,
-                                                    "preferenciaNotificacion": 0
-                                                    },
+                  "deportes": [
+                               {
+                                   "id": 8,
+                                   "descripcion": "fútbol",
+                                   "detalle": "fútbol",
+                                   "orden": 0,
+                                   "nombre": "Fútbol",
+                                   "nombreCorto": "Fut",
+                                   "imagenPrincipal": "http://clubes.lenguajefutbol.com/img/archivos/deporte/deporte-imagenPrincipal-8_1000x600xrecortar.png?1517945719",
+                                   "imagenSecundaria": "",
+                                   "imagenPrincipalMin": "http://clubes.lenguajefutbol.com/img/archivos/deporte/deporte-imagenPrincipal-8_160x100xrecortar.png?1517945719",
+                                   "imagenSecundariaMin": "",
+                                   "tipoObjeto": "deporte",
+                                   "tipoRoot": "3",
+                                   "expand": "1",
+                                   "showlvl": "1",
+                                   "ENAC": [
+                                            {
+                                                "id": 2,
+                                                "descripcion": "",
+                                                "lugar": "",
+                                                "horarioTexto": "",
+                                                "precio": "",
+                                                "correoContacto": "",
+                                                "orden": 0,
+                                                "nombre": "AFA",
+                                                "nombreCorto": "AFA",
+                                                "nombreCompleto": "Asociacion de Futbol Argentino",
+                                                "tipoObjeto": "enac",
+                                                "preferenciaPrincipal": 1,
+                                                "preferenciaNotificacion": 0,
+                                                "categorias": [
+                                                               {
+                                                                   "id": 18,
+                                                                   "descripcion": "",
+                                                                   "lugar": "",
+                                                                   "horarioTexto": "",
+                                                                   "precio": "",
+                                                                   "correoContacto": "",
+                                                                   "orden": 0,
+                                                                   "nombre": "AFA - Primera",
+                                                                   "nombreCorto": "AFA - 1ra",
+                                                                   "nombreCompleto": "AFA - Primera",
+                                                                   "tipoObjeto": "deporte-categoria",
+                                                                   "preferenciaPrincipal": 1,
+                                                                   "preferenciaNotificacion": 0,
+                                                                   "tipoCategoria": 3
+                                                               },
+                                                               {
+                                                                   "id": 19,
+                                                                   "descripcion": "",
+                                                                   "lugar": "",
+                                                                   "horarioTexto": "",
+                                                                   "precio": "",
+                                                                   "correoContacto": "",
+                                                                   "orden": 0,
+                                                                   "nombre": "AFA - Reserva",
+                                                                   "nombreCorto": "AFA - res",
+                                                                   "nombreCompleto": "AFA - Reserva",
+                                                                   "tipoObjeto": "deporte-categoria",
+                                                                   "preferenciaPrincipal": 0,
+                                                                   "preferenciaNotificacion": 0,
+                                                                   "tipoCategoria": 3
+                                                               }
+                                                              ]
+                                            },
+                                            {
+                                                "id": 3,
+                                                "descripcion": "",
+                                                "lugar": "",
+                                                "horarioTexto": "",
+                                                "precio": "",
+                                                "correoContacto": "",
+                                                "orden": 0,
+                                                "nombre": "LCF",
+                                                "nombreCorto": "LCF",
+                                                "nombreCompleto": "Liga Cañadense de Futbol",
+                                                "tipoObjeto": "enac",
+                                                "preferenciaPrincipal": 1,
+                                                "preferenciaNotificacion": 0,
+                                                "categorias": [
+                                                               {
+                                                                   "id": 20,
+                                                                   "descripcion": "",
+                                                                   "lugar": "",
+                                                                   "horarioTexto": "",
+                                                                   "precio": "",
+                                                                   "correoContacto": "",
+                                                                   "orden": 0,
+                                                                   "nombre": "LCF - Primera",
+                                                                   "nombreCorto": "LCF - 1ra",
+                                                                   "nombreCompleto": "AFA - Primera",
+                                                                   "tipoObjeto": "deporte-categoria",
+                                                                   "preferenciaPrincipal": 1,
+                                                                   "preferenciaNotificacion": 0,
+                                                                   "tipoCategoria": 3
+                                                               },
+                                                               {
+                                                                   "id": 21,
+                                                                   "descripcion": "",
+                                                                   "lugar": "",
+                                                                   "horarioTexto": "",
+                                                                   "precio": "",
+                                                                   "correoContacto": "",
+                                                                   "orden": 0,
+                                                                   "nombre": "LCF - Reserva",
+                                                                   "nombreCorto": "LCF - res",
+                                                                   "nombreCompleto": "AFA - Reserva",
+                                                                   "tipoObjeto": "deporte-categoria",
+                                                                   "preferenciaPrincipal": 0,
+                                                                   "preferenciaNotificacion": 0,
+                                                                   "tipoCategoria": 3
+                                                               }
+                                                              ]
+                                            },
+                                            {
+                                                "id": 4,
+                                                "descripcion": "",
+                                                "lugar": "",
+                                                "horarioTexto": "",
+                                                "precio": "",
+                                                "correoContacto": "",
+                                                "orden": 0,
+                                                "nombre": "LTF",
+                                                "nombreCorto": "LTF",
+                                                "nombreCompleto": "Liga Totorense de Futbol",
+                                                "tipoObjeto": "enac",
+                                                "preferenciaPrincipal": 1,
+                                                "preferenciaNotificacion": 0,
+                                                "categorias": [
+                                                               {
+                                                                   "id": 22,
+                                                                   "descripcion": "",
+                                                                   "lugar": "",
+                                                                   "horarioTexto": "",
+                                                                   "precio": "",
+                                                                   "correoContacto": "",
+                                                                   "orden": 0,
+                                                                   "nombre": "LCF - Primera",
+                                                                   "nombreCorto": "LCF - 1ra",
+                                                                   "nombreCompleto": "AFA - Primera",
+                                                                   "tipoObjeto": "deporte-categoria",
+                                                                   "preferenciaPrincipal": 1,
+                                                                   "preferenciaNotificacion": 0,
+                                                                   "tipoCategoria": 3
+                                                               },
+                                                               {
+                                                                   "id": 23,
+                                                                   "descripcion": "",
+                                                                   "lugar": "",
+                                                                   "horarioTexto": "",
+                                                                   "precio": "",
+                                                                   "correoContacto": "",
+                                                                   "orden": 0,
+                                                                   "nombre": "LCF - Reserva",
+                                                                   "nombreCorto": "LCF - res",
+                                                                   "nombreCompleto": "AFA - Reserva",
+                                                                   "tipoObjeto": "deporte-categoria",
+                                                                   "preferenciaPrincipal": 0,
+                                                                   "preferenciaNotificacion": 0,
+                                                                   "tipoCategoria": 3
+                                                               }
+                                                              ]
+                                            }
+                                           ],
+                                   "categorias": [
                                                    {
-                                                    "id": 19,
-                                                    "descripcion": "",
-                                                    "lugar": "",
-                                                    "horarioTexto": "",
-                                                    "precio": "",
-                                                    "correoContacto": "",
-                                                    "orden": 0,
-                                                    "nombre": "Futbol 4ta",
-                                                    "nombreCorto": "Futbol 4ta",
-                                                    "nombreCompleto": "Futbol 4ta",
-                                                    "tipoObjeto": "deporte-categoria",
-                                                    "preferenciaPrincipal": 1,
-                                                    "preferenciaNotificacion": 0
-                                                    }
-                                     ]
+                                                       "id": 22,
+                                                       "descripcion": "",
+                                                       "lugar": "",
+                                                       "horarioTexto": "",
+                                                       "precio": "",
+                                                       "correoContacto": "",
+                                                       "orden": 0,
+                                                       "nombre": "Veteranos",
+                                                       "nombreCorto": "Veteranos",
+                                                       "nombreCompleto": "Veteranos",
+                                                       "tipoObjeto": "deporte-categoria",
+                                                       "preferenciaPrincipal": 1,
+                                                       "preferenciaNotificacion": 0,
+                                                       "tipoCategoria": 2
+                                                   },
+                                                   {
+                                                       "id": 23,
+                                                       "descripcion": "",
+                                                       "lugar": "",
+                                                       "horarioTexto": "",
+                                                       "precio": "",
+                                                       "correoContacto": "",
+                                                       "orden": 0,
+                                                       "nombre": "Cebollitas",
+                                                       "nombreCorto": "Cebollitas",
+                                                       "nombreCompleto": "Cebollitas",
+                                                       "tipoObjeto": "deporte-categoria",
+                                                       "preferenciaPrincipal": 1,
+                                                       "preferenciaNotificacion": 0,
+                                                       "tipoCategoria": 2
+                                                   }
+                                                 ]
+                               },
+                               {
+                                   "id": 9,
+                                   "descripcion": "Basketball",
+                                   "detalle": "Basketball",
+                                   "orden": 0,
+                                   "nombre": "Basketball",
+                                   "nombreCorto": "Bsk",
+                                   "imagenPrincipal": "http://clubes.lenguajefutbol.com/img/archivos/deporte/deporte-imagenPrincipal-8_1000x600xrecortar.png?1517945719",
+                                   "imagenSecundaria": "",
+                                   "imagenPrincipalMin": "http://clubes.lenguajefutbol.com/img/archivos/deporte/deporte-imagenPrincipal-8_160x100xrecortar.png?1517945719",
+                                   "imagenSecundariaMin": "",
+                                   "tipoObjeto": "deporte",
+                                   "tipoRoot": "1",
+                                   "expand": "0",
+                                   "showlvl": "0",
+                                   "categorias": [
+                                                   {
+                                                       "id": 24,
+                                                       "descripcion": "",
+                                                       "lugar": "",
+                                                       "horarioTexto": "",
+                                                       "precio": "",
+                                                       "correoContacto": "",
+                                                       "orden": 0,
+                                                       "nombre": "Sin-Categoria",
+                                                       "nombreCorto": "Sin-Categoria",
+                                                       "nombreCompleto": "Sin-Categoria",
+                                                       "tipoObjeto": "deporte-categoria",
+                                                       "preferenciaPrincipal": 1,
+                                                       "preferenciaNotificacion": 0,
+                                                       "tipoCategoria": 1
+                                                   }
+                                                 ]
+                               },
+                               {
+                                   "id": 9,
+                                   "descripcion": "Polideportivo",
+                                   "detalle": "Polidepotivo",
+                                   "orden": 0,
+                                   "nombre": "Polideportivo",
+                                   "nombreCorto": "Polidep",
+                                   "imagenPrincipal": "http://clubes.lenguajefutbol.com/img/archivos/deporte/deporte-imagenPrincipal-8_1000x600xrecortar.png?1517945719",
+                                   "imagenSecundaria": "",
+                                   "imagenPrincipalMin": "http://clubes.lenguajefutbol.com/img/archivos/deporte/deporte-imagenPrincipal-8_160x100xrecortar.png?1517945719",
+                                   "imagenSecundariaMin": "",
+                                   "tipoObjeto": "deporte",
+                                   "tipoRoot": "2",
+                                   "expand": "1",
+                                   "showlvl": "1",
+                                   "categorias": [
+                                                   {
+                                                       "id": 25,
+                                                       "descripcion": "",
+                                                       "lugar": "",
+                                                       "horarioTexto": "",
+                                                       "precio": "",
+                                                       "correoContacto": "",
+                                                       "orden": 0,
+                                                       "nombre": "Hockey",
+                                                       "nombreCorto": "Hockey",
+                                                       "nombreCompleto": "Hockey",
+                                                       "tipoObjeto": "deporte-categoria",
+                                                       "preferenciaPrincipal": 1,
+                                                       "preferenciaNotificacion": 0,
+                                                       "tipoCategoria": 2
+                                                   },
+                                                   {
+                                                       "id": 26,
+                                                       "descripcion": "",
+                                                       "lugar": "",
+                                                       "horarioTexto": "",
+                                                       "precio": "",
+                                                       "correoContacto": "",
+                                                       "orden": 0,
+                                                       "nombre": "Volley",
+                                                       "nombreCorto": "Volley",
+                                                       "nombreCompleto": "Volley",
+                                                       "tipoObjeto": "deporte-categoria",
+                                                       "preferenciaPrincipal": 1,
+                                                       "preferenciaNotificacion": 0,
+                                                       "tipoCategoria": 2
+                                                   },
+                                                   {
+                                                       "id": 27,
+                                                       "descripcion": "",
+                                                       "lugar": "",
+                                                       "horarioTexto": "",
+                                                       "precio": "",
+                                                       "correoContacto": "",
+                                                       "orden": 0,
+                                                       "nombre": "Tenis",
+                                                       "nombreCorto": "Tenis",
+                                                       "nombreCompleto": "Tenis",
+                                                       "tipoObjeto": "deporte-categoria",
+                                                       "preferenciaPrincipal": 1,
+                                                       "preferenciaNotificacion": 0,
+                                                       "tipoCategoria": 2
+                                                   }
+                                                 ]
+                               }
 
-                                    }
-                                    ],
-                       "actividades": [
-                                       {
-                                       "id": 2,
-                                       "nombre": "Yoga",
-                                       "nombreCorto": "Yoga",
-                                       "imagenPrincipal": "",
-                                       "imagenSecundaria": "",
-                                       "lugarDesarrollo": "Club",
-                                       "descripcion": "Yoga Descripcion corta",
-                                       "detalle": "Yoga Detalle",
-                                       "horarioTexto": "Lunes a Viernes",
-                                       "precio": "",
-                                       "imagenPrincipalMin": "",
-                                       "imagenSecundariaMin": "",
-                                       "tipoObjeto": "club-actividad",
-                                       "preferenciaPrincipal": 1,
-                                       "preferenciaNotificacion": 0
-                                       },
-                                       {
-                                       "id": 3,
-                                       "nombre": "Pilates",
-                                       "nombreCorto": "Pilates",
-                                       "imagenPrincipal": "",
-                                       "imagenSecundaria": "",
-                                       "lugarDesarrollo": "Club",
-                                       "descripcion": "Descripcion corta de Pilates",
-                                       "detalle": "Detalle de Pilates",
-                                       "horarioTexto": "Sabados de 20 a 21",
-                                       "precio": "50",
-                                       "imagenPrincipalMin": "",
-                                       "imagenSecundariaMin": "",
-                                       "tipoObjeto": "club-actividad",
-                                       "preferenciaPrincipal": 0,
-                                       "preferenciaNotificacion": 0
-                                       }
-                                       ]
-  };
+                              ],
+                  "actividades": [
+                                  {
+                                      "id": 2,
+                                      "nombre": "Yoga",
+                                      "nombreCorto": "Yoga",
+                                      "imagenPrincipal": "",
+                                      "imagenSecundaria": "",
+                                      "lugarDesarrollo": "Club",
+                                      "descripcion": "Yoga Descripcion corta",
+                                      "detalle": "Yoga Detalle",
+                                      "horarioTexto": "Lunes a Viernes",
+                                      "precio": "",
+                                      "imagenPrincipalMin": "",
+                                      "imagenSecundariaMin": "",
+                                      "tipoObjeto": "club-actividad",
+                                      "preferenciaPrincipal": 1,
+                                      "preferenciaNotificacion": 0,
+                                      "tipoRoot": "1",
+                                      "expand": "0",
+                                      "showlvl": "0",
+                                      "tipoCategoria": 4
+                                  },
+                                  {
+                                      "id": 3,
+                                      "nombre": "Pilates",
+                                      "nombreCorto": "Pilates",
+                                      "imagenPrincipal": "",
+                                      "imagenSecundaria": "",
+                                      "lugarDesarrollo": "Club",
+                                      "descripcion": "Descripcion corta de Pilates",
+                                      "detalle": "Detalle de Pilates",
+                                      "horarioTexto": "Sabados de 20 a 21",
+                                      "precio": "50",
+                                      "imagenPrincipalMin": "",
+                                      "imagenSecundariaMin": "",
+                                      "tipoObjeto": "club-actividad",
+                                      "preferenciaPrincipal": 0,
+                                      "preferenciaNotificacion": 0,
+                                      "tipoRoot": "1",
+                                      "expand": "0",
+                                      "showlvl": "0",
+                                      "tipoCategoria": 4
+                                  }
+                                 ]
+};
     console.log(json);
     //json = JSON.stringify(json);
     //console.log(json);
@@ -494,53 +542,55 @@ function convert_json(json) {
                      // if(ele2.ENAC !== "undefined") {
 
 
-                          if(ele2.tipoCategoria == 3) {
+                          if(ele2.tipoRoot == 3) {
 
                           var par = curr_cnt - 1;
+                              if(ele2.hasOwnProperty('ENAC')){
+                                  $.each(ele2.ENAC, function(k, ele3) {
+                                  console.log(ele3);
+                                         str += '{"id":"'+curr_cnt+'", "org_id":"'+ele3.id+'", "name":"'+ele3.nombre+'", "parent":"'+par+'", "img":"'+ele3.imagenPrincipalMin+'", "enabled":"'+ele2.expand+'"},';
+                                         curr_cnt++;
+                                         console.log(ele3.categorias);
+                                             if(ele3.categorias !== "undefined") {
+                                             var inner_par = curr_cnt - 1;
+                                             $.each(ele3.categorias, function(k, ele4) {
+                                             console.log(ele4);
+                                                    str += '{"id":"'+curr_cnt+'", "org_id":"'+ele4.id+'", "name":"'+ele4.nombre+'", "parent":"'+inner_par+'", "img":"'+ele4.imagenPrincipalMin+'", "elementTosend":"true", "enabled":"'+ele2.expand+'"},';
+                                                    curr_cnt++;
+                                                    });
 
-                              $.each(ele2.ENAC, function(k, ele3) {
-                              console.log(ele3);
-                                     str += '{"id":"'+curr_cnt+'", "org_id":"'+ele3.id+'", "name":"'+ele3.nombre+'", "parent":"'+par+'", "img":"'+ele3.imagenPrincipalMin+'", "enabled":"'+ele2.expand+'"},';
-                                     curr_cnt++;
-                                     console.log(ele3.categorias);
-                                         if(ele3.categorias !== "undefined") {
-                                         var inner_par = curr_cnt - 1;
-                                         $.each(ele3.categorias, function(k, ele4) {
-                                         console.log(ele4);
-                                                str += '{"id":"'+curr_cnt+'", "org_id":"'+ele4.id+'", "name":"'+ele4.nombre+'", "parent":"'+inner_par+'", "img":"'+ele4.imagenPrincipalMin+'", "enabled":"'+ele2.expand+'"},';
-                                                curr_cnt++;
-                                                });
+                                             }
+                                  });
+                              }
+                              if(ele2.hasOwnProperty('categorias')){
+                                  $.each(ele2.categorias, function(k, ele3) {
+                                    console.log(ele3);
+                                           str += '{"id":"'+curr_cnt+'", "org_id":"'+ele3.id+'", "name":"'+ele3.nombre+'", "parent":"'+par+'", "img":"'+ele3.imagenPrincipalMin+'", "elementTosend":"true", "enabled":"'+ele2.expand+'"},';
+                                           curr_cnt++;
+                                           console.log(str);
 
-                                         }
-                              });
+                                  });
+                              }
 
                           }
-                          if(ele2.tipoCategoria == 1) {
+                          if(ele2.tipoRoot == 2) {
 
                             var par = curr_cnt - 1;
 
-                              $.each(ele2.ENAC, function(k, ele3) {
-                              console.log(ele3);
-                                     str += '{"id":"'+curr_cnt+'", "org_id":"'+ele3.id+'", "name":"'+ele3.nombre+'", "parent":"'+par+'", "img":"'+ele3.imagenPrincipalMin+'", "enabled":"'+ele2.expand+'"},';
-                                     curr_cnt++;
-                                     console.log(ele3.categorias);
-                                         if(ele3.categorias !== "undefined") {
-                                         var inner_par = curr_cnt - 1;
-                                         $.each(ele3.categorias, function(k, ele4) {
-                                         console.log(ele4);
-                                                str += '{"id":"'+curr_cnt+'", "org_id":"'+ele4.id+'", "name":"'+ele4.nombre+'", "parent":"'+inner_par+'", "img":"'+ele4.imagenPrincipalMin+'", "enabled":"'+ele2.expand+'"},';
-                                                curr_cnt++;
-                                                });
+                              $.each(ele2.categorias, function(k, ele3) {
+                                console.log(ele3);
+                                       str += '{"id":"'+curr_cnt+'", "org_id":"'+ele3.id+'", "name":"'+ele3.nombre+'", "parent":"'+par+'", "img":"'+ele3.imagenPrincipalMin+'", "elementTosend":"true", "enabled":"'+ele2.expand+'"},';
+                                       curr_cnt++;
+                                       console.log(str);
 
-                                         }
                               });
 
                           }
-                          if(ele2.tipoCategoria == 2) {
+                          if(ele2.tipoRoot == 1) {
                           var par = curr_cnt - 1;
                             $.each(ele2.categorias, function(k, ele3) {
                               console.log(ele3);
-                                     str += '{"id":"'+curr_cnt+'", "org_id":"'+ele3.id+'", "name":"'+ele3.nombre+'", "parent":"'+par+'", "img":"'+ele3.imagenPrincipalMin+'", "enabled":"'+ele2.expand+'"},';
+                                     str += '{"id":"'+curr_cnt+'", "org_id":"'+ele3.id+'", "name":"'+ele3.nombre+'", "parent":"'+par+'", "img":"'+ele3.imagenPrincipalMin+'", "elementTosend":"true", "enabled":"'+ele2.expand+'"},';
                                      curr_cnt++;
                                      console.log(str);
 
@@ -598,32 +648,82 @@ function update_parent(ele) {
 }
 
 function sendPreferences() {
-//console.log($parent);
-var busquedaDeportes = $('.check').filter('[data-checked="1"][data-lvl="3"]');
+//buscs los id de deportes
+var busquedaDeportes = $('.check').filter('[data-checked="1"][data-tosend="true"]');
 console.log(busquedaDeportes);
 //console.log(busqueda[0].[2]);
 console.log(busquedaDeportes[0].getAttribute("org-id"));
 console.log(busquedaDeportes.length);
+
+var settingsToSend = {
+    preferenciasPrincipales: {
+        actividades: [],
+        deportesCategorias: []
+    },
+    preferenciasNotificacion: {
+        actividades: [],
+        deportesCategorias: []
+    }
+};
+
 var i;
-var sportsCategories = [];
+//var sportsPreferenceCategories = [];
 for (i = 0; i < busquedaDeportes.length; i++) {
     busquedaDeportes[i].getAttribute("org-id");
-    sportsCategories.push(busquedaDeportes[i].getAttribute("org-id"));
+    settingsToSend.preferenciasPrincipales.deportesCategorias.push(busquedaDeportes[i].getAttribute("org-id"));
 }
-console.log(sportsCategories);
+//console.log(sportsPreferenceCategories);
+
+//busca los id de actividades
 var busquedaActividades = $('.check').filter('[data-checked="1"][data-lvl="1"][data-type="activity"]');
 console.log(busquedaActividades);
 
-var activitiesCategories = [];
+//var activitiesPreferenceCategories = [];
 for (i = 0; i < busquedaActividades.length; i++) {
     busquedaActividades[i].getAttribute("org-id");
-    activitiesCategories.push(busquedaActividades[i].getAttribute("org-id"));
+    settingsToSend.preferenciasPrincipales.actividades.push(busquedaActividades[i].getAttribute("org-id"));
 }
-console.log(activitiesCategories);
 
-//$test = $(this);
-//result = $test.filter('.check[data-checked="1"]');
-//console.log(result);
+
+
+console.log(settingsToSend);
+var settingsToSendFinal = JSON.stringify(settingsToSend);
+console.log(settingsToSendFinal);
+
+	$.ajax({
+	// URL del Web Service, en este ws no hace falta enviar datos, con el bearer identifica el usuario
+    		url: getPathWS() + 'setPreferencias',
+    		type: "POST",
+    		data: settingsToSendFinal,
+    		contentType: "application/json",
+    		dataType: 'json',
+    		timeout: timeOut,
+    		success: function(response){
+    			/*if(response.errorCode != 0)
+    			{
+    				hideLoadSpinnerWS();
+    			    filterCodeErrorWS(response);
+    			    $('#iconHeaderFavouritesHome .icon').removeClass('animation-preloader');
+    			    return;
+    			}
+    			if(isAppUpdate(response.serverVersion) == false){
+    				hideLoadSpinnerWS();
+    				mainView.router.load({pageName: 'update'});
+    				return;
+    			}*/
+
+    			console.log(response);
+
+    		},
+    		error: function (data, status, error){
+    		    console.log(error);
+    			//showMessageToast(messageConexionError);
+    			//$('#iconHeaderFavouritesHome .icon').removeClass('animation-preloader');
+    	   },
+           beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer ' + accessToken ); } //set tokenString before send
+	});
+
+
 
 
 }
