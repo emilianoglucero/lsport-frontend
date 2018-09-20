@@ -332,8 +332,8 @@ function loadPageLogin()
 
                         } else {
 
-                            if(window.localStorage.getItem("PAGEINITCONFIG"+idClub) != null)
-                            {
+                            //if(window.localStorage.getItem("PAGEINITCONFIG"+idClub) != null)
+                            //{
                                   //me conecto con el ws de login y le paso todos los datos necesarios
                                   /*firebase.auth().currentUser.getIdToken(true).then(function(idToken) {
                                     console.log(idToken);
@@ -390,75 +390,13 @@ function loadPageLogin()
                                     console.log(error);
                                   });
 
-                                     	/*$.ajax({
-                                     			// URL del Web Service
-                                     			url: getPathWS() + 'registrarUsuario',
-                                     			dataType: 'json',
-                                     			type: 'POST',
-                                     			contentType: 'application/json',
-                                     			data: { 'grant_type': "urn:ietf:params:oauth:grant-type:jwt-bearer",
-                                     			        'assertion': tokenUser,
-                                     			        'dispositivoId': "fb9b38277c7910aa",
-                                                        'tokenNotificacion': "dUhVJBMJk3w:APA91bHa64MboeL1L55RMjKNUB9pxCWy2euNHdhC8qR8CQIzxvhYtkLx2qcD0w3Hs0dvg45TFxHYoOVZ-lJ6bNBjE2cd_rRrmr6ykPX4IC1Ag5O9b48XiKt3LPPgeZ5-JDtgk9F9jfVe",
-                                                        'platforma': "Android",
-                                                        'nombre': "emi",
-                                                        'apellido': "lucero",
-                                                        'correo': itemsPage
-                                                 },
-                                                 //beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer Bearer dcce59676c43e1c54a342e5207dfce0dc00fd502' ); }, //set tokenString before send
-                                     			timeout: timeOut,
-                                     			success: function(response){
-                                     				console.log(response);
-
-                                     			},
-                                     			error: function (data, status, error){
-                                                    console.log(data);
-                                                    console.log(status);
-                                                    console.log(error);
-                                                }
-                                     		   //beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer dcce59676c43e1c54a342e5207dfce0dc00fd502' ); } //set tokenString before send
-
-                                     	});*/
-                                  	/*$.ajax({
-                                        // URL del Web Service
-                                        url: getPathWS() + 'registrarUsuario',
-                                        type: 'POST',
-                                        //contentType: 'application/json',
-                                        dataType: 'json',
-                                        timeout: timeOut,
-                                        data:  JSON.stringify({"grant_type": "urn:ietf:params:oauth:grant-type:jwt-bearer",
-                                                      "assertion": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImI4OWY3MzQ2YTA5ODVmNDIxZGNkOGQzMGMwYjMwZWViZmFlMTlhMWUifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vbGVuZ3VhamUtc3BvcnQiLCJuYW1lIjoiRW1pICBMdWNlcm8gIiwiYXVkIjoibGVuZ3VhamUtc3BvcnQiLCJhdXRoX3RpbWUiOjE1Mjg0MDExMDcsInVzZXJfaWQiOiJiTW54aHUzRHc4VXRQU1B4c1N5enBNa3JSYTEyIiwic3ViIjoiYk1ueGh1M0R3OFV0UFNQeHNTeXpwTWtyUmExMiIsImlhdCI6MTUzMjQ2MzkxMywiZXhwIjoxNTMyNDY3NTEzLCJwaG9uZV9udW1iZXIiOiIrNTI5ODQyMDk1MDM3IiwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJwaG9uZSI6WyIrNTI5ODQyMDk1MDM3Il19LCJzaWduX2luX3Byb3ZpZGVyIjoicGhvbmUifX0.Iz39HWo7pcxFi6lSv7gCdpIGI_VE0pGbb_-U7qjkzCQKBffghKsUsptICGRVoBPbWr969F-waQEHHNhtdc8UIHAaIcO7f2iB1j-t0g2iq3z0NXYwqKh-8KUA07BdrC9X42EgJls-WsGDz7ZELwFXAudStOusF5s0mM1dUfSrkdOiBbsgwSVz2d_wyns6z2ChlxKtndwhrraDF7bsl3DWaVhGLf8IHbAV9JMeD-n2Zjlcj2fBfMS3Kb-sP8A4E6It5gUycScwfk0EnZZTg9xhHbjx1TjYnvFGZKR7YRgoTbT0-GsO1S-M-SbuVRhc9thQEFfrc32qormrV-kmb6oTqA",
-                                                      "dispositivoId": "8192312312312321",
-                                                      "tokenNotificacion": "TokenFcm",
-                                                      "platforma": "Android 7.0 Nougat",
-                                                      "nombre" : "Nombre",
-                                                      "apellido" : "lucero",
-                                                      "correo" : "correo-1@example.com"
-                                        }),
-                                        success: function(response){
-                                            console.log(response);
-                                            //mainView.router.load({pageName: 'home'});
-                                            //reloadContentHomePage();
-
-                                        },
-                                        error: function (data, status, error){
-                                            console.log(data);
-                                            console.log(status);
-                                            console.log(error);
-                                        },
-                                        beforeSend: function(xhr, settings) { xhr.setRequestHeader('Content-Type','application/json' ); } //set tokenString before send
-
-                                  	});
 
 
-                                  mainView.router.load({pageName: 'home'});
-                                  reloadContentHomePage();*/
-
-                            }
-                            else
-                            {
-                                  mainView.router.load({pageName: 'initsettings'});
-                            }
+                            //}
+                            //else
+                            //{
+                                 // mainView.router.load({pageName: 'initsettings'});
+                            //}
                         }
 
 

@@ -657,12 +657,12 @@ console.log(busquedaDeportes.length);
 
 var settingsToSend = {
     preferenciasPrincipales: {
-        actividades: [],
-        deportesCategorias: []
+        actividades: [0],
+        deportesCategorias: [0]
     },
     preferenciasNotificacion: {
-        actividades: [],
-        deportesCategorias: []
+        actividades: [0],
+        deportesCategorias: [0]
     }
 };
 
@@ -717,6 +717,8 @@ console.log(settingsToSendFinal);
     		},
     		error: function (data, status, error){
     		    console.log(error);
+    		    console.log(data);
+    		    console.log(status);
     			//showMessageToast(messageConexionError);
     			//$('#iconHeaderFavouritesHome .icon').removeClass('animation-preloader');
     	   },

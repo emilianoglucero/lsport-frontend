@@ -543,3 +543,36 @@
 .dateTitleNew {
     font-size: 11px;
 }
+
+.card-content-inner .homeCardcontent {
+    word-break: break-word;
+}
+
+/* suceso ultimo partido/partido en vivo */
+
+.match-scorer-lastmatch {
+    background-color: #108342;
+    color: white;
+    font-weight: 800;
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 5px;
+    text-align: center;
+}
+
+.team-lastmatch-left {
+ font-size: 15px;
+ text-align: left;
+}
+.team-lastmatch-right {
+ font-size: 15px;
+ text-align: right;
+}
+
+.card-content .img-shield-lastmatch {
+    height: 35px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 35px;
+}
