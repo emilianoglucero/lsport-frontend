@@ -3,6 +3,7 @@ var json;
 var areFavouritesChanged = false;
 myApp.onPageInit('settings', function (page)
 {
+
 	//$('#lblMenuItemSettingsFavourites').text(lblHeaderSettingsFavourites);
 	//$('#lblMenuItemSettingsNotifications').text(lblHeaderSettingsNotifications);
 	$('#buttonSaveFavouritesSettings').text(lblSaveFavouritesSettings);
@@ -11,9 +12,9 @@ myApp.onPageInit('settings', function (page)
 		saveNotificationsSettings();
 	});
 
-	$('#btnBackPageSettings').on('click', function(){
-		confirmChangesFavouritesSettings();
-	});
+	//$('#btnBackPageSettings').on('click', function(){
+		//confirmChangesFavouritesSettings();
+	//});
 	$$('.panel-left').on('open', function () {
 	    if(mainView.activePage.name == "settings"){
 			confirmChangesFavouritesSettingsFromMenu();
@@ -44,6 +45,101 @@ myApp.onPageInit('settings', function (page)
 
                 console.log(response);
                 json = response;
+                showLoadSpinnerWS();
+                update_tree();
+                hideLoadSpinnerWS();
+
+                //$ele1 = $(this);
+                var busquedaChecks = $('.check').filter('[data-favourite="1"]');
+                console.log(busquedaChecks);
+                //var ele2 = $('.custom_check .fa-check');
+                //console.log(ele2);
+                //var ele3 = $('.check').find('.fa-check');
+                //console.log(ele3);
+
+
+                var finalresult = busquedaChecks.find('.custom_check .fa-check');
+                console.log(finalresult);
+                console.log(finalresult[0]);
+                console.log(finalresult[1]);
+                finalresult.css("display", "inline");
+                //var finalresultParents1 = finalresult.parents('.check');
+                //var finalresultParents2 = finalresultParents1.parents('.custom_check');
+                //var finalresultParents2 = finalresultParents1.parent('.custom_check');
+
+
+                var finalresultParents = finalresult.closest('.check');
+                var finalresultParents2 = finalresultParents.closest('.check').closest('.check_container').closest('.check').children( '.custom_check' ).children( '.fa-check' ).css("display", "inline");
+                //console.log(finalresultParents1[0]);
+                //console.log(finalresultParents2[0]);
+                var finalresultParentsContainer = finalresultParents.closest('.check').closest('.check_container');
+                var contCheckNoFavourite = 0;
+                console.log(finalresultParentsContainer.length);
+                console.log(finalresultParentsContainer);
+                console.log(finalresultParentsContainer[0]);
+                console.log(finalresultParentsContainer[1]);
+                console.log(finalresultParentsContainer.eq(1).children('.check'));
+                //console.log(finalresultParentsContainer.eq(1).children());
+                var cantDom;
+                    for (cantDom = 0; cantDom < finalresultParentsContainer.length; cantDom++) {
+                    console.log('for');
+                    console.log(cantDom);
+                    console.log(finalresultParentsContainer.length);
+                    var finalresultParentsContainerCheck = finalresultParentsContainer.eq(cantDom).children('.check');
+                    console.log(finalresultParentsContainerCheck);
+                    //console.log(finalresultParentsContainerCheck.attr('data-favourite'));
+                    var cantCheck;
+                        for (cantCheck = 0; cantCheck < finalresultParentsContainerCheck.length; cantCheck++) {
+                        console.log(finalresultParentsContainerCheck.eq(cantCheck));
+
+                            if (finalresultParentsContainerCheck.eq(cantCheck).attr('data-favourite') == "0" ) {
+                            console.log('datafavourite00');
+                            contCheckNoFavourite = contCheckNoFavourite++;
+                            console.log(finalresultParentsContainerCheck.eq(cantCheck));
+                            //console.log(finalresultParentsContainerCheck[cantCheck]);
+                            finalresultParentsContainerCheck.eq(cantCheck).closest( '.check_container' ).siblings( '.custom_check' ).children( '.fa-check' ).css("display", "none");
+                            var finalresultParentsContainerCheckMinus = finalresultParentsContainerCheck.eq(cantCheck).closest( '.check_container' ).siblings( '.custom_check' ).children( '.fa-minus' ).css("display", "inline");
+                            console.log (finalresultParentsContainerCheckMinus);
+
+                            }
+                        }
+
+
+
+                    }
+
+
+                    //if (contCheckNoFavourite >= 1){
+                        //finalresultParents.closest('.check').closest('.check_container').closest('.check').children( '.custom_check' ).children( '.fa-minus' ).css("display", "inline");
+                    //}
+               /* console.log(finalresultParents2);
+                console.log(finalresultParents2[0]);
+                console.log(finalresultParents2[1]);
+                console.log(finalresultParents);*/
+                //finalresultParents1.css("display", "inline");
+                //console.log(finalresultParents2);
+                //console.log(finalresultParents2);
+                //finalresultParents2.css("display", "inline");
+                //console.log(finalresultParents[0]);
+                //console.log(finalresultParents[1]);
+                //console.log(finalresultParents[2]);
+                //console.log(finalresultParents[3]);
+                //finalresultParents.css("display", "inline");
+                //var finalresult1 = busquedaChecks[0].children('.custom_check');
+                //console.log(finalresult1);*/
+
+
+                //var allTheCustomCheck = $ele1.find('.custom_check');
+                //console.log(allTheCustomCheck);
+
+                /*$ele_par1 = $ele1.closest('.check');
+                console.log($ele_par1);
+                if($ele_par1.attr('data-favourite') == "1") {
+                    console.log('favouriteee');
+                    //state = "1";
+                    //$ele_par.attr('data-checked', "1");
+                    $ele.find('.fa-check').show();
+                }*/
 
 
             },
@@ -56,6 +152,7 @@ myApp.onPageInit('settings', function (page)
            },
            beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer ' + accessToken ); } //set tokenString before send
     });
+
 
 });
 
@@ -119,7 +216,7 @@ function GetTree(objs, par, lvl) {
            if(ele.parent !== par) return;
            var children = GetTree(objs,  ele.id, lvl+1);
 
-           str += '<div data-lvl="'+lvl+'" data-id="'+ele.id+'" data-type="'+ele.type+'" data-tosend="'+ele.elementTosend+'" org-id="'+ele.org_id+'" data-checked="0" '+
+           str += '<div data-lvl="'+lvl+'" data-id="'+ele.id+'" data-type="'+ele.type+'" data-tosend="'+ele.elementTosend+'" data-favourite="'+ele.favourite+'" org-id="'+ele.org_id+'" data-checked="0" '+
            (lvl == 1 ? 'data-expandlevel="'+ele.expand_level+'" ' : '')
            +'data-enabled="'+ele.enabled+'" data-expanded="1" class="check">' +
            (children == '' ? '' : '<div class="check_arrow"><i class="fa fa-caret-right"></i></div>')
@@ -192,8 +289,8 @@ $(document).ready(function() {
 
                   $('body').on('click', '.custom_check', update_ele);
 
-                  $('body').on('click', 'button#create', update_tree);
-                  $('body').on('click', 'button#fill', fill_it);
+                 // $('body').on('click', 'button#create', update_tree);
+                 // $('body').on('click', 'button#fill', fill_it);
                   $('body').on('click', 'button#clear', clear);
 
                   $('body').on('click','.check_title', function() {
@@ -252,7 +349,7 @@ function convert_json(json) {
 
            if(k == "deportes") {
                $.each(ele, function(k, ele2) {
-                      str += '{"id":"'+curr_cnt+'", "org_id":"'+ele2.id+'", "name":"'+ele2.nombre+'", "parent":null, "img":"'+ele2.imagenPrincipalMin+'", "enabled":"'+ele2.expand+'", "expand_level": "'+ele2.showlvl+'"},';
+                      str += '{"id":"'+curr_cnt+'", "org_id":"'+ele2.id+'", "name":"'+ele2.nombre+'", "parent":null, "img":"'+ele2.imagenPrincipalMin+'", "enabled":"'+ele2.expand+'", "favourite":"'+ele2.preferenciaPrincipal+'", "expand_level": "'+ele2.showlvl+'"},';
                       curr_cnt++;
                       console.log(ele2);
                       console.log(ele2.ENAC);
@@ -265,14 +362,14 @@ function convert_json(json) {
                               if(ele2.hasOwnProperty('ENAC')){
                                   $.each(ele2.ENAC, function(k, ele3) {
                                   console.log(ele3);
-                                         str += '{"id":"'+curr_cnt+'", "org_id":"'+ele3.id+'", "name":"'+ele3.nombre+'", "parent":"'+par+'", "img":"'+ele3.imagenPrincipalMin+'", "enabled":"'+ele2.expand+'"},';
+                                         str += '{"id":"'+curr_cnt+'", "org_id":"'+ele3.id+'", "name":"'+ele3.nombre+'", "parent":"'+par+'", "img":"'+ele3.imagenPrincipalMin+'", "favourite":"'+ele3.preferenciaPrincipal+'", "enabled":"'+ele2.expand+'"},';
                                          curr_cnt++;
                                          console.log(ele3.categorias);
                                              if(ele3.categorias !== "undefined") {
                                              var inner_par = curr_cnt - 1;
                                              $.each(ele3.categorias, function(k, ele4) {
                                              console.log(ele4);
-                                                    str += '{"id":"'+curr_cnt+'", "org_id":"'+ele4.id+'", "name":"'+ele4.nombre+'", "parent":"'+inner_par+'", "img":"'+ele4.imagenPrincipalMin+'", "elementTosend":"true", "enabled":"'+ele2.expand+'"},';
+                                                    str += '{"id":"'+curr_cnt+'", "org_id":"'+ele4.id+'", "name":"'+ele4.nombre+'", "parent":"'+inner_par+'", "img":"'+ele4.imagenPrincipalMin+'", "elementTosend":"true", "favourite":"'+ele4.preferenciaPrincipal+'", "enabled":"'+ele2.expand+'"},';
                                                     curr_cnt++;
                                                     });
 
@@ -282,7 +379,7 @@ function convert_json(json) {
                               if(ele2.hasOwnProperty('categorias')){
                                   $.each(ele2.categorias, function(k, ele3) {
                                     console.log(ele3);
-                                           str += '{"id":"'+curr_cnt+'", "org_id":"'+ele3.id+'", "name":"'+ele3.nombre+'", "parent":"'+par+'", "img":"'+ele3.imagenPrincipalMin+'", "elementTosend":"true", "enabled":"'+ele2.expand+'"},';
+                                           str += '{"id":"'+curr_cnt+'", "org_id":"'+ele3.id+'", "name":"'+ele3.nombre+'", "parent":"'+par+'", "img":"'+ele3.imagenPrincipalMin+'", "elementTosend":"true", "favourite":"'+ele3.preferenciaPrincipal+'", "enabled":"'+ele2.expand+'"},';
                                            curr_cnt++;
                                            console.log(str);
 
@@ -296,7 +393,7 @@ function convert_json(json) {
 
                               $.each(ele2.categorias, function(k, ele3) {
                                 console.log(ele3);
-                                       str += '{"id":"'+curr_cnt+'", "org_id":"'+ele3.id+'", "name":"'+ele3.nombre+'", "parent":"'+par+'", "img":"'+ele3.imagenPrincipalMin+'", "elementTosend":"true", "enabled":"'+ele2.expand+'"},';
+                                       str += '{"id":"'+curr_cnt+'", "org_id":"'+ele3.id+'", "name":"'+ele3.nombre+'", "parent":"'+par+'", "img":"'+ele3.imagenPrincipalMin+'", "favourite":"'+ele3.preferenciaPrincipal+'", "elementTosend":"true", "enabled":"'+ele2.expand+'"},';
                                        curr_cnt++;
                                        console.log(str);
 
@@ -307,7 +404,7 @@ function convert_json(json) {
                           var par = curr_cnt - 1;
                             $.each(ele2.categorias, function(k, ele3) {
                               console.log(ele3);
-                                     str += '{"id":"'+curr_cnt+'", "org_id":"'+ele3.id+'", "name":"'+ele3.nombre+'", "parent":"'+par+'", "img":"'+ele3.imagenPrincipalMin+'", "elementTosend":"true", "enabled":"'+ele2.expand+'"},';
+                                     str += '{"id":"'+curr_cnt+'", "org_id":"'+ele3.id+'", "name":"'+ele3.nombre+'", "parent":"'+par+'", "img":"'+ele3.imagenPrincipalMin+'", "favourite":"'+ele3.preferenciaPrincipal+'", "elementTosend":"true", "enabled":"'+ele2.expand+'"},';
                                      curr_cnt++;
                                      console.log(str);
 
@@ -325,7 +422,7 @@ function convert_json(json) {
            if(k == "actividades") {
            console.log("actividades");
            $.each(ele, function(k, ele2) {
-                  str += '{"id":"'+curr_cnt+'", "org_id":"'+ele2.id+'", "name":"'+ele2.nombre+'", "parent":null, "img":"'+ele2.imagenPrincipalMin+'", "enabled":"0", "type": "activity", "expand_level": "0"},';
+                  str += '{"id":"'+curr_cnt+'", "org_id":"'+ele2.id+'", "name":"'+ele2.nombre+'", "parent":null, "img":"'+ele2.imagenPrincipalMin+'", "enabled":"0", "type": "activity", "favourite":"'+ele2.preferenciaPrincipal+'", "expand_level": "0"},';
                   curr_cnt++;
            });
 
@@ -360,7 +457,6 @@ function update_parent(ele) {
     }
     //console.log($parent);
     update_parent($parent);
-
 
 }
 
