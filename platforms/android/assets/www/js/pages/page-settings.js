@@ -9,12 +9,12 @@ myApp.onPageInit('settings', function (page)
 	$('#buttonSaveFavouritesSettings').text(lblSaveFavouritesSettings);
 	$('#buttonSaveFavouritesSettings').on('click', function(){
 		goBack = false;
-		saveNotificationsSettings();
+		sendPreferences();
 	});
 
-	//$('#btnBackPageSettings').on('click', function(){
-		//confirmChangesFavouritesSettings();
-	//});
+	$('#btnBackPageSettings').on('click', function(){
+		confirmChangesFavouritesSettings();
+	});
 	$$('.panel-left').on('open', function () {
 	    if(mainView.activePage.name == "settings"){
 			confirmChangesFavouritesSettingsFromMenu();
@@ -22,6 +22,7 @@ myApp.onPageInit('settings', function (page)
 	});
 
 	//traigo los favoritos
+	showLoadSpinnerWS();
 	$.ajax({
     // URL del Web Service, en este ws no hace falta enviar datos, con el bearer identifica el usuario
             url: getPathWS() + 'setPreferencias',
@@ -45,9 +46,8 @@ myApp.onPageInit('settings', function (page)
 
                 console.log(response);
                 json = response;
-                showLoadSpinnerWS();
                 update_tree();
-                hideLoadSpinnerWS();
+
 
                 //$ele1 = $(this);
                 $('.check').filter('[data-favourite="1"]').attr("data-checked", "1");
@@ -108,7 +108,8 @@ myApp.onPageInit('settings', function (page)
 
 
                     }
-
+                    hideLoadSpinnerWS();
+                    //showMessageToast(messageSettingsNotificationsSuccessfullySaved);
 
 
             },
@@ -430,6 +431,7 @@ function update_parent(ele) {
 }
 
 function sendPreferences() {
+showLoadSpinnerWS();
 //buscs los id de deportes
 var busquedaDeportes = $('.check').filter('[data-checked="1"][data-tosend="true"]');
 //console.log(busquedaDeportes);
@@ -494,7 +496,15 @@ console.log(settingsToSendFinal);
     				return;
     			}*/
 
+    			hideLoadSpinnerWS();
     			console.log(response);
+    			showMessageToast(messageSettingsNotificationsSuccessfullySaved);
+                if( goBack == true){
+                    mainView.router.back({
+                            pageName: 'home',
+                            force: true
+                    });
+                }
 
     		},
     		error: function (data, status, error){
@@ -510,5 +520,36 @@ console.log(settingsToSendFinal);
 
 
 
+}
+
+var goBack = false;
+function confirmChangesFavouritesSettings()
+{
+	goBack = false;
+	if($('#buttonSaveFavouritesSettings').is(':visible') == true){
+		myApp.modal({
+			title:  lblNameClub,
+			text: messageConfirmChangesNotifications,
+			buttons: [{
+				text: lblButtonCancel,
+				onClick: function() {
+					mainView.router.back({
+	    				pageName: 'home',
+	    				force: true
+	    			});
+				}
+				},{
+				text: lblButtonOk,
+				onClick: function() {
+					goBack = true;
+					sendPreferences();
+				}}]});
+	}
+	else{
+		mainView.router.back({
+	    				pageName: 'home',
+	    				force: true
+	    		});
+	}
 }
 

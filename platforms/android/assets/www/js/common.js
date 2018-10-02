@@ -706,8 +706,8 @@ function onBackKeyDown()
 	    				pageName: 'home',
 	    				force: true
 	    		});
-	    //} else if (currentPage == 'settings' ){
-	    	//confirmChangesFavouritesSettings();
+	    } else if (currentPage == 'settings' ){
+	    	confirmChangesFavouritesSettings();
 	    }else if ($('.modal-preloader').hasClass('modal-in') == true){
 	    
 	    }
