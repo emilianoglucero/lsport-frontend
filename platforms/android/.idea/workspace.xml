@@ -11,19 +11,7 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/CordovaLib/CordovaLib.iml" afterPath="$PROJECT_DIR$/CordovaLib/CordovaLib.iml" />
-      <change beforePath="$PROJECT_DIR$/CordovaLib/build/intermediates/extractedTypedefs/debug/typedefs.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/CordovaLib/build/intermediates/incremental/debug-mergeJavaRes/merge-state" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/CordovaLib/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/CordovaLib/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" />
-      <change beforePath="$PROJECT_DIR$/CordovaLib/build/intermediates/packaged-classes/debug/classes.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/CordovaLib/build/intermediates/transforms/mergeJavaRes/debug/0.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/CordovaLib/build/intermediates/transforms/mergeJavaRes/debug/__content__.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/CordovaLib/build/outputs/aar/CordovaLib-debug.aar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/www/js/common.js" afterPath="$PROJECT_DIR$/assets/www/js/common.js" />
       <change beforePath="$PROJECT_DIR$/assets/www/js/pages/page-settings.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/page-settings.js" />
-      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/page-user.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/page-user.js" />
-      <change beforePath="$PROJECT_DIR$/assets/www/pages/page-settings.html" afterPath="$PROJECT_DIR$/assets/www/pages/page-settings.html" />
-      <change beforePath="$PROJECT_DIR$/assets/www/pages/page-user.html" afterPath="$PROJECT_DIR$/assets/www/pages/page-user.html" />
       <change beforePath="$PROJECT_DIR$/debug/android-debug.apk" afterPath="$PROJECT_DIR$/debug/android-debug.apk" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,8 +48,8 @@
       <file leaf-file-name="page-settings.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-settings.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="101" column="80" lean-forward="true" selection-start-line="101" selection-start-column="80" selection-end-line="101" selection-end-column="80" />
+            <state relative-caret-position="6510">
+              <caret line="434" column="2" lean-forward="false" selection-start-line="434" selection-start-column="2" selection-end-line="434" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -131,9 +119,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ajax</find>
-      <find>GetTree</find>
-      <find>update_ele</find>
       <find>convert_json</find>
       <find>update_parent</find>
       <find>create</find>
@@ -157,10 +142,13 @@
       <find>org-id</find>
       <find>fa-</find>
       <find>favouri</find>
-      <find>favourite</find>
       <find>parent</find>
       <find>fa-m</find>
       <find>.attr</find>
+      <find>checked</find>
+      <find>cantDom</find>
+      <find>favourite</find>
+      <find>data-check</find>
     </findStrings>
     <replaceStrings>
       <replace>strBuilderListCards</replace>
@@ -3033,8 +3021,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-settings.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="101" column="80" lean-forward="true" selection-start-line="101" selection-start-column="80" selection-end-line="101" selection-end-column="80" />
+        <state relative-caret-position="6510">
+          <caret line="434" column="2" lean-forward="false" selection-start-line="434" selection-start-column="2" selection-end-line="434" selection-end-column="2" />
           <folding />
         </state>
       </provider>

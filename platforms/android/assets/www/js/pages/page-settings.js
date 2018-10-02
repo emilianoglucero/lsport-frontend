@@ -50,6 +50,7 @@ myApp.onPageInit('settings', function (page)
                 hideLoadSpinnerWS();
 
                 //$ele1 = $(this);
+                $('.check').filter('[data-favourite="1"]').attr("data-checked", "1");
                 var busquedaChecks = $('.check').filter('[data-favourite="1"]');
                 console.log(busquedaChecks);
                 //var ele2 = $('.custom_check .fa-check');
@@ -108,38 +109,6 @@ myApp.onPageInit('settings', function (page)
 
                     }
 
-
-                    //if (contCheckNoFavourite >= 1){
-                        //finalresultParents.closest('.check').closest('.check_container').closest('.check').children( '.custom_check' ).children( '.fa-minus' ).css("display", "inline");
-                    //}
-               /* console.log(finalresultParents2);
-                console.log(finalresultParents2[0]);
-                console.log(finalresultParents2[1]);
-                console.log(finalresultParents);*/
-                //finalresultParents1.css("display", "inline");
-                //console.log(finalresultParents2);
-                //console.log(finalresultParents2);
-                //finalresultParents2.css("display", "inline");
-                //console.log(finalresultParents[0]);
-                //console.log(finalresultParents[1]);
-                //console.log(finalresultParents[2]);
-                //console.log(finalresultParents[3]);
-                //finalresultParents.css("display", "inline");
-                //var finalresult1 = busquedaChecks[0].children('.custom_check');
-                //console.log(finalresult1);*/
-
-
-                //var allTheCustomCheck = $ele1.find('.custom_check');
-                //console.log(allTheCustomCheck);
-
-                /*$ele_par1 = $ele1.closest('.check');
-                console.log($ele_par1);
-                if($ele_par1.attr('data-favourite') == "1") {
-                    console.log('favouriteee');
-                    //state = "1";
-                    //$ele_par.attr('data-checked', "1");
-                    $ele.find('.fa-check').show();
-                }*/
 
 
             },
@@ -463,10 +432,10 @@ function update_parent(ele) {
 function sendPreferences() {
 //buscs los id de deportes
 var busquedaDeportes = $('.check').filter('[data-checked="1"][data-tosend="true"]');
-console.log(busquedaDeportes);
+//console.log(busquedaDeportes);
 //console.log(busqueda[0].[2]);
-console.log(busquedaDeportes[0].getAttribute("org-id"));
-console.log(busquedaDeportes.length);
+//console.log(busquedaDeportes[0].getAttribute("org-id"));
+//console.log(busquedaDeportes.length);
 
 var settingsToSend = {
     preferenciasPrincipales: {
