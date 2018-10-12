@@ -270,7 +270,7 @@ dependencies {
     compile "com.google.firebase:firebase-config:+"
     compile "com.google.android.gms:play-services-analytics:+"
     compile "com.android.support:support-v4:24.1.1+"
-    compile "com.google.android.gms:play-services-ads:+"
+    compile "com.google.android.gms:play-services-ads:16.0.0"
     compile "com.android.support:customtabs:23.3.0"
     // SUB-PROJECT DEPENDENCIES END
 }

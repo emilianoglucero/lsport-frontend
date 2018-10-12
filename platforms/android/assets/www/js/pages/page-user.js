@@ -1,10 +1,12 @@
 
 
-//$(document).ready(function(){
+$(document).ready(function(){
 
+    $('#lblTitleUser').text(lblTitleUser);
+    $('#lblNameUser').text(lblNameUser);
+    $('#lblLogoutButton').text(lblLogoutButton);
 
-
-//});
+});
 
 myApp.onPageInit('user', function (page)
 {
@@ -14,7 +16,7 @@ myApp.onPageInit('user', function (page)
 
 myApp.onPageBeforeAnimation('user', function (page)
 {
-    //document.getElementById("user-profile-name").placeholder = userFullName;
+    document.getElementById("user-profile-name").placeholder = userFullName;
 });
 
 function logOutUser() {

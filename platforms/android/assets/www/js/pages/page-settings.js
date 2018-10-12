@@ -3,7 +3,7 @@ var json;
 var areFavouritesChanged = false;
 myApp.onPageInit('settings', function (page)
 {
-
+    $('#buttonSaveFavouritesSettings').hide();
 	//$('#lblMenuItemSettingsFavourites').text(lblHeaderSettingsFavourites);
 	//$('#lblMenuItemSettingsNotifications').text(lblHeaderSettingsNotifications);
 	$('#buttonSaveFavouritesSettings').text(lblSaveFavouritesSettings);
@@ -124,6 +124,11 @@ myApp.onPageInit('settings', function (page)
     });
 
 
+});
+myApp.onPageReinit('settings', function (page)
+{
+console.log('reinittt');
+$('#buttonSaveFavouritesSettings').hide();
 });
 
 myApp.onPageBeforeAnimation('settings', function (page)
@@ -247,25 +252,25 @@ function clear() {
 $(document).ready(function() {
 
 
+      $('#buttonSaveFavouritesSettings').hide();
+      $('body').on('click', '.check_arrow', function() {
+                   var x = $(this).closest('.check').attr('data-expanded');
+                   if(parseInt(x) == 1){
+                    $(this).closest('.check').attr('data-expanded', "0");
+                   } else{
+                    $(this).closest('.check').attr('data-expanded', "1");
+                   }
+      });
 
-                  $('body').on('click', '.check_arrow', function() {
-                               var x = $(this).closest('.check').attr('data-expanded');
-                               if(parseInt(x) == 1){
-                                $(this).closest('.check').attr('data-expanded', "0");
-                               } else{
-                                $(this).closest('.check').attr('data-expanded', "1");
-                               }
-                  });
+      $('body').on('click', '.custom_check', update_ele);
 
-                  $('body').on('click', '.custom_check', update_ele);
+     // $('body').on('click', 'button#create', update_tree);
+     // $('body').on('click', 'button#fill', fill_it);
+      $('body').on('click', 'button#clear', clear);
 
-                 // $('body').on('click', 'button#create', update_tree);
-                 // $('body').on('click', 'button#fill', fill_it);
-                  $('body').on('click', 'button#clear', clear);
-
-                  $('body').on('click','.check_title', function() {
-                               $(this).closest('.check').find('.check_arrow:first').click()
-                  })
+      $('body').on('click','.check_title', function() {
+                   $(this).closest('.check').find('.check_arrow:first').click()
+      })
 
 
 
@@ -273,6 +278,9 @@ $(document).ready(function() {
 
 
 function update_ele() {
+    //muestro el boton "Salvar"
+    $('#buttonSaveFavouritesSettings').show();
+
     $ele = $(this);
     $ele_par = $ele.closest('.check');
     var state;
@@ -322,17 +330,17 @@ function convert_json(json) {
                       str += '{"id":"'+curr_cnt+'", "org_id":"'+ele2.id+'", "name":"'+ele2.nombre+'", "parent":null, "img":"'+ele2.imagenPrincipalMin+'", "enabled":"'+ele2.expand+'", "favourite":"'+ele2.preferenciaPrincipal+'", "expand_level": "'+ele2.showlvl+'"},';
                       curr_cnt++;
                       console.log(ele2);
-                      console.log(ele2.ENAC);
+                      console.log(ele2.enac);
                      // if(ele2.ENAC !== "undefined") {
 
 
                           if(ele2.tipoRoot == 3) {
 
                           var par = curr_cnt - 1;
-                              if(ele2.hasOwnProperty('ENAC')){
-                                  $.each(ele2.ENAC, function(k, ele3) {
+                              if(ele2.hasOwnProperty('enac')){
+                                  $.each(ele2.enac, function(k, ele3) {
                                   console.log(ele3);
-                                         str += '{"id":"'+curr_cnt+'", "org_id":"'+ele3.id+'", "name":"'+ele3.nombre+'", "parent":"'+par+'", "img":"'+ele3.imagenPrincipalMin+'", "favourite":"'+ele3.preferenciaPrincipal+'", "enabled":"'+ele2.expand+'"},';
+                                         str += '{"id":"'+curr_cnt+'", "org_id":"'+ele3.id+'", "name":"'+ele3.nombreCorto+'", "parent":"'+par+'", "img":"'+ele3.imagenPrincipalMin+'", "favourite":"'+ele3.preferenciaPrincipal+'", "enabled":"'+ele2.expand+'"},';
                                          curr_cnt++;
                                          console.log(ele3.categorias);
                                              if(ele3.categorias !== "undefined") {
@@ -499,6 +507,7 @@ console.log(settingsToSendFinal);
     			hideLoadSpinnerWS();
     			console.log(response);
     			showMessageToast(messageSettingsNotificationsSuccessfullySaved);
+    			$('#buttonSaveFavouritesSettings').hide();
                 if( goBack == true){
                     mainView.router.back({
                             pageName: 'home',
@@ -511,8 +520,9 @@ console.log(settingsToSendFinal);
     		    console.log(error);
     		    console.log(data);
     		    console.log(status);
-    			//showMessageToast(messageConexionError);
-    			//$('#iconHeaderFavouritesHome .icon').removeClass('animation-preloader');
+    			showMessageToast(messageConexionError);
+    			$('#iconHeaderFavouritesHome .icon').removeClass('animation-preloader');
+    			hideLoadSpinnerWS();
     	   },
            beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer ' + accessToken ); } //set tokenString before send
 	});
