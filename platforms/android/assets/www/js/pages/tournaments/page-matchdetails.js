@@ -39,6 +39,14 @@ function loadMatchDetails1(idNew, state){
 
             }
 
+            if(idLiveMatchActivePage != idNew){
+                $('#lblHeaderMatchDetails').text(response.matchDetail.shortCategoryName);
+                $('.icon-sportDetails').css('background-image','url("'+response.matchDetail.urlImgHeader+'")');
+                idLiveMatchActivePage = idNew;
+            }
+
+
+
 			/*if(response.errorCode != 0)
             {
                 hideLoadSpinnerWS();
@@ -85,6 +93,8 @@ function loadMatchDetailsFromFixture(id, idPartido){
                 });
                 matchDetailsHomeMatch = matchDetailsHomeMatch[0];
                 console.log(matchDetailsHomeMatch);
+
+
 
             builderMatchDetails(matchDetailsHomeMatch);
 			hideLoadSpinnerWS();
@@ -184,6 +194,39 @@ function refreshMatchDetails(idMatch){
 
 }
 
+function refreshMatchDetails1(idMatch){
+	$('#icon-refresh-matchdetails').hide();
+	//showLoadSpinnerWS();
+		$.ajax({
+    	// URL del Web Service
+        		url: getPathWS() + 'getHome',
+        		dataType: 'json',
+        		timeout: timeOut,
+        		success: function(response){
+        		console.log(response);
+        		allSucesosPageList = response.sucesosPanel.sucesos;
+                    var matchDetailsHome = allSucesosPageList.filter(function( obj ) {
+                      return obj.id == idMatch;
+                    });
+                    matchDetailsHome = matchDetailsHome[0];
+                    console.log(matchDetailsHome);
+        			builderMatchDetails(matchDetailsHome);
+
+        		},
+        		error: function (data, status, error){
+        			 //hideLoadSpinnerWS();
+                      showMessage(messageConexionError);
+                      $("#icon-refresh-matchdetails").off("click");
+                      $('#icon-refresh-matchdetails').show();
+                      $('#icon-refresh-matchdetails').click(function (){
+                        refreshMatchDetails(idMatch);
+                      });
+        	   },
+               beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer ' + accessToken ); } //set tokenString before send
+    	});
+
+}
+
 
 function builderMatchDetails(match){
 	
@@ -277,6 +320,8 @@ console.log(match);
 			strBuilderLastMatch.push('</div>');
 		strBuilderLastMatch.push('</div>');
 		if (match.tipoObjeto == "torneo-encuentro") {
+		var equipoLocal = match.local.nombre;
+		var equipoVisitante = match.visitante.nombre;
 
 		var timelieSide = true;
 		    if (match.eventos.todos.length !== 0){
@@ -371,7 +416,7 @@ console.log(match);
                         strBuilderLastMatch.push('</div>');
                         strBuilderLastMatch.push('<div class="matchdetails-events-comments">');
                             strBuilderLastMatch.push('<div class="content-block-title">Terminó el partido!</div>');
-                            strBuilderLastMatch.push('<div class="timeline-item-time"">'+item.tanteadorLocal+' - '+item.tanteadorVisitante+'</div>');
+                            strBuilderLastMatch.push('<div class="timeline-item-time"">'+equipoLocal+' '+item.tanteadorLocal+' - '+item.tanteadorVisitante+' '+equipoVisitante+'</div>');
                         strBuilderLastMatch.push('</div>');
                         timelieSide = false;
 

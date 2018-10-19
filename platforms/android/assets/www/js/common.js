@@ -450,10 +450,12 @@ function setPushConfigurations()
 
 
    window.FirebasePlugin.onNotificationOpen(function(notification) {
+   console.log(notification);
    var user = firebase.auth().currentUser;
 
     var params = JSON.parse(notification.wsParams);
     var ids = JSON.parse(params.params);
+
     //alert(ids);
 
 
@@ -472,32 +474,40 @@ function setPushConfigurations()
     	    /*
     	    ('¿La app se inició haciendo touch en la PUSH sobre la barra de Notificaciones?: ' +
            	(data.additionalData.coldstart === undefined ? false : true));*/
-           	if(notification.pageName == 'matchdetails'){
+           	if(notification.pageName == 'encuentro-vivo'){
+           	console.log('encuentro vivo');
            		if (notification.tap == true){
            		    if (user == null) {
            		        mainView.router.load({pageName: 'login'});
                         window.location.reload(true);
            		    } else{
-    		    	loadMatchDetails(ids.id);
+           		    //loadPageLogin();
+    		    	refreshMatchDetails1(ids.id);
     		    	}
     		    }
     		    else{
+    		    console.log('tap false');
                     if (user == null) {
                         alert('Acaba de llegar una notificacion, pero debes loguearte primero para visualizarla');
                         mainView.router.load({pageName: 'login'});
                         window.location.reload(true);
                     } else{
+                    console.log('tap false registrado');
                         if(notification.title != undefined){
+                        console.log(idLiveMatchActivePage);
+                        console.log(idLiveMatchSportDetails);
 
                             if(idLiveMatchActivePage == ids.id || idLiveMatchSportDetails == ids.id)
                             {
                                 if(idLiveMatchActivePage == ids.id)
                                 {
-                                    refreshMatchDetails(ids.id);
+                                    refreshMatchDetails1(ids.id);
+
                                 }
                                 else
                                 {
-                                    refreshLiveMatchSportDetails(ids.id);
+                                    refreshMatchDetails1(ids.id);
+
                                 }
 
                             } else{
@@ -513,7 +523,8 @@ function setPushConfigurations()
                                     },{
                                         text: lblButtonOk,
                                         onClick: function() {
-                                            loadMatchDetails(ids.id);
+                                            refreshMatchDetails1(ids.id);
+
                                         }
                                     }]
                                 });
@@ -524,11 +535,13 @@ function setPushConfigurations()
                             if(idLiveMatchActivePage == ids.id || idLiveMatchSportDetails == ids.id){
                                 if(idLiveMatchActivePage == ids.id)
                                 {
-                                    refreshMatchDetails(ids.id);
+                                    refreshMatchDetails1(ids.id);
+
                                 }
                                 else
                                 {
                                     refreshLiveMatchSportDetails(ids.id);
+
                                 }
                             }
                         }
@@ -767,7 +780,7 @@ function playVideo(urlVideo)
 
 function vibrate()
 {
-	navigator.notification.vibrate(50);	
+	navigator.vibrate(50);
 }
 
 function getPathWS(){

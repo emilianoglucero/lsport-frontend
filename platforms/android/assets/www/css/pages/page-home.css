@@ -469,7 +469,13 @@
 }
 .card .tournament-matches-matchday{
     float:  right;
-    font-size: 13px
+    font-size: 13px;
+}
+
+.card .tournament-matches-matchday-live{
+    float:  right;
+    font-size: 13px;
+    color: red;
 }
 
 .tournament-matches-content .row-tournament-matches{

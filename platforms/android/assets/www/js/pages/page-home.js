@@ -23,6 +23,9 @@ var calendarInline;
 var homeDetails2List;
 var homeDetails3List;
 
+var sportsList = [];
+var activitiesList = [];
+
 var newsListHome = [];
 var nextPageNumberHomeNews = 1;
 var loadingInfiniteScrollHomeNews = false;
@@ -90,9 +93,9 @@ myApp.onPageInit('home', function (page)
 	myApp.initImagesLazyLoad(mainView.activePage.container);
 	loadContentHomePage();
 
-	$('#icon-settings-favourites-notifications').on('click', function(){
+	/*$('#icon-settings-favourites-notifications').on('click', function(){
 		mainView.router.load({pageName: 'settings'});
-	});
+	});*/
 
     $$('#tabHomeDetails1').on('show', function () {
     console.log(areContentTabSucesosHomeDetailsBuilder);
@@ -278,6 +281,8 @@ function loadContentHomePage(){
         homeDetails2List = response.calendarioPanel;
         console.log(homeDetails2List);
         console.log(homeDetails3List);
+        sportsList = response.menu.deportes;
+        activitiesList = response.menu.actividades;
 
         if (allSucesosPageList == ""){
             console.log('es la primera');
@@ -885,7 +890,11 @@ console.log('arranca builder de los suceso');
                     strBuilderLastNewsContent.push('<div class="tournament-matches-icon"><img data-src='+item.torneo.organizador.imagenPrincipalMin+' class="lazy lazy-fadeIn img-shield-tournament" ></div>');
                     strBuilderLastNewsContent.push('<div class="tournament-matches-name">'+item.torneo.nombre+'</div>');
                     strBuilderLastNewsContent.push('<div class="tournament-matches-division">'+item.torneo.deporteCategoria.nombreCorto+'');
-                    strBuilderLastNewsContent.push('<div class="tournament-matches-matchday">'+item.fechaEncuentro.fecha+'</div></div></div>');
+                    if (item.vivo == "true") {
+                        strBuilderLastNewsContent.push('<div class="tournament-matches-matchday-live animated infinite pulse">PARTIDO EN VIVO</div></div></div>');
+                    } else {
+                        strBuilderLastNewsContent.push('<div class="tournament-matches-matchday">'+item.fechaEncuentro.fecha+'</div></div></div>');
+                    }
                     strBuilderLastNewsContent.push('<div class="card-content tournament-matches-content">');
                     strBuilderLastNewsContent.push('<div class="card-content-inner">');
                     //var verMasFecha = false;
