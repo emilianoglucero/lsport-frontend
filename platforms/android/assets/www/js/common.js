@@ -499,18 +499,22 @@ function setPushConfigurations()
 
                             if(idLiveMatchActivePage == ids.id || idLiveMatchSportDetails == ids.id)
                             {
+                            console.log('idlivee');
                                 if(idLiveMatchActivePage == ids.id)
                                 {
+                                console.log('idlivee2');
                                     refreshMatchDetails1(ids.id);
 
                                 }
                                 else
                                 {
+                                console.log('idlivee3');
                                     refreshMatchDetails1(ids.id);
 
                                 }
 
                             } else{
+                            console.log('not id livee');
                                 vibrate();
                                 var textNotification = notification.message + messageNotificationLiveMatchConfirm;
                                 myApp.modal({

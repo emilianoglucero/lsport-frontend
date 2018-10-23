@@ -7,24 +7,17 @@
     <list default="true" id="61d7db02-8111-47f3-96d0-faa85811d084" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/resourceHashesCache.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/resourceHashesCache.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/jarAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/jarAnalysis.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskJars.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskJars.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/assets/www/css/index.css" afterPath="$PROJECT_DIR$/assets/www/css/index.css" />
-      <change beforePath="$PROJECT_DIR$/assets/www/css/pages/page-home.css" afterPath="$PROJECT_DIR$/assets/www/css/pages/page-home.css" />
-      <change beforePath="$PROJECT_DIR$/assets/www/index.html" afterPath="$PROJECT_DIR$/assets/www/index.html" />
       <change beforePath="$PROJECT_DIR$/assets/www/js/common.js" afterPath="$PROJECT_DIR$/assets/www/js/common.js" />
-      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/page-home.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/page-home.js" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/page-sportdetails.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/page-sportdetails.js" />
       <change beforePath="$PROJECT_DIR$/assets/www/js/pages/page-sports.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/page-sports.js" />
       <change beforePath="$PROJECT_DIR$/assets/www/js/pages/tournaments/page-matchdetails.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/tournaments/page-matchdetails.js" />
-      <change beforePath="$PROJECT_DIR$/assets/www/language/Messages_es.properties" afterPath="$PROJECT_DIR$/assets/www/language/Messages_es.properties" />
       <change beforePath="$PROJECT_DIR$/debug/android-debug.apk" afterPath="$PROJECT_DIR$/debug/android-debug.apk" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,18 +44,18 @@
       <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/www/js/common.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7416">
-              <caret line="495" column="60" lean-forward="false" selection-start-line="495" selection-start-column="60" selection-end-line="495" selection-end-column="60" />
+            <state relative-caret-position="476">
+              <caret line="515" column="35" lean-forward="false" selection-start-line="515" selection-start-column="35" selection-end-line="515" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="page-sports.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="page-sports.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-sports.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="518">
-              <caret line="75" column="38" lean-forward="true" selection-start-line="75" selection-start-column="38" selection-end-line="75" selection-end-column="38" />
+            <state relative-caret-position="820">
+              <caret line="66" column="14" lean-forward="false" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -71,18 +64,18 @@
       <file leaf-file-name="page-sportdetails.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-sportdetails.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="856">
-              <caret line="60" column="41" lean-forward="true" selection-start-line="60" selection-start-column="41" selection-end-line="60" selection-end-column="41" />
+            <state relative-caret-position="590">
+              <caret line="754" column="72" lean-forward="false" selection-start-line="754" selection-start-column="72" selection-end-line="754" selection-end-column="72" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="page-matchdetails.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="page-matchdetails.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/www/js/pages/tournaments/page-matchdetails.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="44" column="45" lean-forward="false" selection-start-line="44" selection-start-column="45" selection-end-line="44" selection-end-column="45" />
+            <state relative-caret-position="367">
+              <caret line="240" column="36" lean-forward="true" selection-start-line="240" selection-start-column="0" selection-end-line="241" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -114,8 +107,8 @@
       <file leaf-file-name="page-home.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
-              <caret line="26" column="18" lean-forward="false" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="18" />
+            <state relative-caret-position="-2446">
+              <caret line="357" column="46" lean-forward="false" selection-start-line="357" selection-start-column="46" selection-end-line="357" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -135,21 +128,9 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>implementa</find>
-      <find>play-services</find>
-      <find>play</find>
-      <find>each</find>
-      <find>timelieSide</find>
-      <find>comentar</find>
-      <find>matchd</find>
-      <find>detail</find>
-      <find>icon-settings-favourites-notifications</find>
-      <find>id</find>
-      <find>loadMatchDetailsFromFixture</find>
       <find>torneo-en</find>
       <find>tournament-matches-matchday</find>
       <find>comm</find>
-      <find>refresh</find>
       <find>builderDetailsMatchDetails</find>
       <find>refreshMatchDetails</find>
       <find>loadmat</find>
@@ -159,12 +140,24 @@
       <find>reload</find>
       <find>allSucesosPageList</find>
       <find>idMatch</find>
+      <find>builderSportsList</find>
+      <find>loadSportDetailsFromSelect</find>
+      <find>categoriesSportList</find>
+      <find>sportDetails</find>
+      <find>currentLastMatch</find>
+      <find>recentNewsListSporDetails</find>
+      <find>builderInformationSportDetails</find>
+      <find>categorieDetailsHome</find>
+      <find>builderTournamentsSportDetails</find>
+      <find>currentTournaments</find>
+      <find>builderLastMatchTournamentsSportDetails</find>
+      <find>gethom</find>
+      <find>loadspo</find>
+      <find>idNew</find>
       <find>idLiveMatchActivePage</find>
       <find>builderMatchDetails</find>
-      <find>builderSportsList</find>
       <find>getPathWS</find>
-      <find>gethom</find>
-      <find>categoriesSportList</find>
+      <find>refresh</find>
     </findStrings>
     <replaceStrings>
       <replace>strBuilderListCards</replace>
@@ -2394,10 +2387,11 @@
         <option value="$PROJECT_DIR$/assets/www/css/pages/tournaments/page-matchdetails.css" />
         <option value="$PROJECT_DIR$/assets/www/language/Messages_es.properties" />
         <option value="$PROJECT_DIR$/assets/www/css/pages/page-home.css" />
-        <option value="$PROJECT_DIR$/assets/www/js/pages/tournaments/page-matchdetails.js" />
-        <option value="$PROJECT_DIR$/assets/www/js/common.js" />
         <option value="$PROJECT_DIR$/assets/www/js/pages/page-home.js" />
         <option value="$PROJECT_DIR$/assets/www/js/pages/page-sports.js" />
+        <option value="$PROJECT_DIR$/assets/www/js/pages/page-sportdetails.js" />
+        <option value="$PROJECT_DIR$/assets/www/js/common.js" />
+        <option value="$PROJECT_DIR$/assets/www/js/pages/tournaments/page-matchdetails.js" />
       </list>
     </option>
   </component>
@@ -2702,6 +2696,37 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32994923" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994923" sideWeight="0.50646204" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994923" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994923" sideWeight="0.49353796" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994923" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994923" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994923" sideWeight="0.49676898" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994923" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -3050,42 +3075,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/tournaments/page-matchdetails.js">
+    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-sportdetails.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="44" column="45" lean-forward="false" selection-start-line="44" selection-start-column="45" selection-end-line="44" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/js/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7416">
-          <caret line="495" column="60" lean-forward="false" selection-start-line="495" selection-start-column="60" selection-end-line="495" selection-end-column="60" />
+        <state relative-caret-position="590">
+          <caret line="754" column="72" lean-forward="false" selection-start-line="754" selection-start-column="72" selection-end-line="754" selection-end-column="72" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="26" column="18" lean-forward="false" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-sportdetails.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="856">
-          <caret line="60" column="41" lean-forward="true" selection-start-line="60" selection-start-column="41" selection-end-line="60" selection-end-column="41" />
+        <state relative-caret-position="-2446">
+          <caret line="357" column="46" lean-forward="false" selection-start-line="357" selection-start-column="46" selection-end-line="357" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-sports.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="75" column="38" lean-forward="true" selection-start-line="75" selection-start-column="38" selection-end-line="75" selection-end-column="38" />
+        <state relative-caret-position="820">
+          <caret line="66" column="14" lean-forward="false" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="515" column="35" lean-forward="false" selection-start-line="515" selection-start-column="35" selection-end-line="515" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/tournaments/page-matchdetails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="240" column="36" lean-forward="true" selection-start-line="240" selection-start-column="0" selection-end-line="241" selection-end-column="0" />
           <folding />
         </state>
       </provider>

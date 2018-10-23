@@ -14,6 +14,9 @@ var builderSelectHeader = true;
 
 var areAccessedServerNewsSportDetails = false;
 
+var categoriesSportList = [];
+var sportDetailsHome;
+
 
 myApp.onPageInit('sportdetails', function (page)
 {
@@ -114,6 +117,63 @@ function loadSportDetails(idSport,idCat){
 		});
 }
 
+function loadSportDetails1(idSport,idEnac,idCat){
+	idSportSelected = idSport;
+	idCategorySelected = idCat;
+	idEnacSelected = idEnac;
+
+	console.log(idSportSelected);
+	console.log(idCategorySelected);
+	console.log(sportsList);
+	showLoadSpinnerWS();
+	$('#tabSportDetails1').html("");
+	$('#contentTabSportDetails2').html("");
+	$('#tabSportDetails3').html("");
+	$('#noConnection-content-block-sportdetails').hide();
+	builderSelectHeader = true;
+	areSportDetailsLoaded = false;
+	areContentTabInformationSportDetailsBuilder = false;
+	areContentTabNewsSportDetailsBuilder = false;
+	areContentTabTournamentsSportDetailsBuilder = false;
+
+            sportDetailsHome = sportsList.filter(function( obj ) {
+              return obj.id == idSportSelected;
+            });
+            sportDetailsHome = sportDetailsHome[0];
+            console.log(sportDetailsHome);
+
+
+            var enacDetailsHome = sportDetailsHome.enac.filter(function( obj ) {
+              return obj.id == idEnacSelected;
+            });
+            enacDetailsHome = enacDetailsHome[0];
+            console.log(enacDetailsHome);
+
+            categoriesSportList = enacDetailsHome.categorias;
+
+            var categorieDetailsHome = enacDetailsHome.categorias.filter(function( obj ) {
+              return obj.id == idCategorySelected;
+            });
+            categorieDetailsHome = categorieDetailsHome[0];
+            console.log(categorieDetailsHome);
+
+			/*sportDetails = response.categorySport;
+			bannerSportDetails = response.banner;
+			recentNewsListSporDetails = response.news;
+			currentLastMatch = response.lastMatch;
+			currentTournaments = response.tournaments;
+			bannerTournaments = response.banner;*/
+
+			currentPageNumberSportDetails = parseInt(response.pageNumber);
+			currentTotalPageSportDetails = parseInt(response.totalPage);
+			nextPageNumberSportDetails = parseInt(response.pageNumber) + 1;
+
+			areSportDetailsLoaded = true;
+			builderSportDetails();
+			hideLoadSpinnerWS();
+
+}
+
 function loadSportDetailsFromSelect(idSport,idCat){
 	showLoadSpinnerWS();
 	idSportSelected = idSport;
@@ -181,7 +241,7 @@ var areContentTabTournamentsSportDetailsBuilder = false;
 var idSportSelected;
 var idCategorySelected;
 
-function builderSportDetails(){
+/*function builderSportDetails(){
 	if(areSportDetailsLoaded == true){
 		if (sportDetails == ""){
 			hideLoadSpinnerWS();
@@ -190,7 +250,7 @@ function builderSportDetails(){
 		else{
 			if(builderSelectHeader == true){
 				/*## INIT Build Header SportDetails##*/
-				var categoriesSportList = sportDetails.categories;
+				/*var categoriesSportList = sportDetails.categories;
 				
 				$('#selectSportDetails').empty();
 				$('#selectSportDetails').attr("onchange","loadSportDetailsFromSelect("+idSportSelected+",this.value)");
@@ -206,7 +266,7 @@ function builderSportDetails(){
 				
 				$('.icon-sportDetails').css('background-image','url("'+sportDetails.urlImgHeader+'")');
 				/*## END Build Header SportDetails##*/
-			}
+			/*}
 			$$('#contentTabSportDetails2').scrollTop(0);
 			$('#tabSportDetails1').html("");
 			$('#contentTabSportDetails2').html("");
@@ -252,15 +312,89 @@ function builderSportDetails(){
 		}
 		} else {
 	}
+}*/
+
+function builderSportDetails1(){
+console.log(categoriesSportList);
+	if(areSportDetailsLoaded == true){
+		if (sportDetails == ""){
+			hideLoadSpinnerWS();
+			showMessage(messageConexionError);
+		}
+		else{
+			if(builderSelectHeader == true){
+				/*## INIT Build Header SportDetails##*/
+				//var categoriesSportList = sportDetails.categories;
+
+				$('#selectSportDetails').empty();
+				$('#selectSportDetails').attr("onchange","loadSportDetailsFromSelect("+idSportSelected+",this.value)");
+				$.each(categoriesSportList , function( key, item ) {
+					if(item.idCategory == idCategorySelected){
+						$('#selectSportDetails').append('<option selected value="'+item.id+'">'+item.nombreCorto+'</option>');
+						$('.lblHeaderTournaments').text(item.nombreCorto);
+					} else {
+						$('#selectSportDetails').append('<option value="'+item.id+'">'+item.nombreCorto+'</option>');
+					}
+
+				});
+
+				$('.icon-sportDetails').css('background-image','url("'+sportDetailsHome.imagenPrincipalMin+'")');
+				/*## END Build Header SportDetails##*/
+			}
+			$$('#contentTabSportDetails2').scrollTop(0);
+			$('#tabSportDetails1').html("");
+			$('#contentTabSportDetails2').html("");
+			$('#tabSportDetails3').html("");
+
+			if(currentPageNumberSportDetails < currentTotalPageSportDetails){
+				myApp.attachInfiniteScroll('.infinite-scroll-sportdetails');
+				$$('.infinite-scroll-sportdetails').on('infinite', function () {
+
+					if (loadingInfiniteScrollSportDetails){
+						return;
+					}
+					loadingInfiniteScrollSportDetails = true;
+
+					if (areAccessedServerNewsSportDetails == false){
+						loadNewsSportDetails(idSportSelected,idCategorySelected);
+					} else {
+						$('#noConnection-content-block-sportdetails').show();
+					}
+				});
+			}
+			else{
+				myApp.detachInfiniteScroll('.infinite-scroll-sportdetails');
+			}
+
+			if(currentLastMatch.liveMatch == true){
+				areContentTabTournamentsSportDetailsBuilder = true;
+				myApp.showTab("#tabSportDetails3");
+				builderTournamentsSportDetails();
+			}else if(recentNewsListSporDetails != "")
+			{
+				areContentTabNewsSportDetailsBuilder = true;
+				myApp.showTab("#tabSportDetails2");
+				builderNewsSportDetails();
+			}
+			else{
+				areContentTabInformationSportDetailsBuilder = true;
+				myApp.showTab("#tabSportDetails1");
+				builderInformationSportDetails();
+			}
+
+			mainView.router.load({pageName: 'sportdetails'});
+		}
+		} else {
+	}
 }
 
 function builderInformationSportDetails(){
-	
+	console.log(categorieDetailsHome);
 	var strBuildetTabSportDetails1 = [];
 	strBuildetTabSportDetails1.push(builderCoordinatorsSport(sportDetails.arrayCoordinators));
 	
-	strBuildetTabSportDetails1.push(builderGeneralInformationSport(sportDetails.schedule, sportDetails.location, sportDetails.mailContact));
-	strBuildetTabSportDetails1.push(builderPriceDetails(sportDetails.price));
+	strBuildetTabSportDetails1.push(builderGeneralInformationSport(categorieDetailsHome.horarioTexto, categorieDetailsHome.lugar, categorieDetailsHome.correoContacto));
+	strBuildetTabSportDetails1.push(builderPriceDetails(categorieDetailsHome.precio));
 	
 	$('#tabSportDetails1').html(strBuildetTabSportDetails1.join(""));
 	

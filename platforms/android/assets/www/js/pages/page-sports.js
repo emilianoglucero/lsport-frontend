@@ -19,7 +19,7 @@ myApp.onPageBeforeAnimation('sports', function (page)
 	activateStateItemMenu(myApp.getCurrentView().activePage.name);
 	trackPageGA("Deportes");
 });
-
+/*
 function loadSports(){
 	showLoadSpinnerWS();
 	$('#sports-list').html('');
@@ -52,7 +52,7 @@ function loadSports(){
 		          hideLoadSpinnerWS();
 		   }
 		});
-}
+}*/
 
 function builderSportsList(){
 	$('#sports-list').html('');
@@ -104,7 +104,7 @@ function builderSportsList(){
                                                     $.each( enac.categorias, function( i, cat ){
                                                     console.log(cat);
                                                         strBuilderSportsContent.push('<li class="item-content">');
-                                                            strBuilderSportsContent.push('<a href="#" onclick="loadSportDetails('+enac.id+','+cat.id+')" class="item-link item-content">');
+                                                            strBuilderSportsContent.push('<a href="#" onclick="loadSportDetails1('+item.id+','+enac.id+','+cat.id+')" class="item-link item-content">');
                                                                 strBuilderSportsContent.push('<div class="item-inner">');
                                                                     strBuilderSportsContent.push('<div class="item-title">'+cat.nombreCorto+'</div>');
                                                                 strBuilderSportsContent.push('</div>');

@@ -40,8 +40,9 @@ function loadMatchDetails1(idNew, state){
             }
 
             if(idLiveMatchActivePage != idNew){
-                $('#lblHeaderMatchDetails').text(response.matchDetail.shortCategoryName);
-                $('.icon-sportDetails').css('background-image','url("'+response.matchDetail.urlImgHeader+'")');
+            console.log('idnew es igual a idlivematch');
+                $('#lblHeaderMatchDetails').text(matchDetailsHome.torneo.deporteCategoria.nombreCorto);
+                $('.icon-sportDetails').css('background-image','url("'+matchDetailsHome.torneo.deporte.imagenPrincipalMin+'")');
                 idLiveMatchActivePage = idNew;
             }
 
@@ -196,7 +197,7 @@ function refreshMatchDetails(idMatch){
 
 function refreshMatchDetails1(idMatch){
 	$('#icon-refresh-matchdetails').hide();
-	//showLoadSpinnerWS();
+	showLoadSpinnerWS();
 		$.ajax({
     	// URL del Web Service
         		url: getPathWS() + 'getHome',
@@ -210,11 +211,17 @@ function refreshMatchDetails1(idMatch){
                     });
                     matchDetailsHome = matchDetailsHome[0];
                     console.log(matchDetailsHome);
+                    if(idLiveMatchActivePage != idMatch){
+                        $('#lblHeaderMatchDetails').text(matchDetailsHome.torneo.deporteCategoria.nombreCorto);
+                        $('.icon-sportDetails').css('background-image','url("'+matchDetailsHome.torneo.deporte.imagenPrincipalMin+'")');
+                        idLiveMatchActivePage = idMatch;
+                    }
+                    hideLoadSpinnerWS();
         			builderMatchDetails(matchDetailsHome);
 
         		},
         		error: function (data, status, error){
-        			 //hideLoadSpinnerWS();
+        			  hideLoadSpinnerWS();
                       showMessage(messageConexionError);
                       $("#icon-refresh-matchdetails").off("click");
                       $('#icon-refresh-matchdetails').show();
