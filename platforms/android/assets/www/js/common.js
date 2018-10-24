@@ -261,7 +261,7 @@ function onDeviceReady()
      //ejecutamos la funcion de la push notification despues para evitar conflictos con el observer de OnAuthStateChange
      setTimeout(function(){
      		setPushConfigurations();
-     }, 300);
+     }, 2600);
      //loadPageLogin();
     //Start Tracker Google Analytics
     window.analytics.startTrackerWithId('UA-77665142-1');
@@ -480,9 +480,14 @@ function setPushConfigurations()
            		    if (user == null) {
            		        mainView.router.load({pageName: 'login'});
                         window.location.reload(true);
-           		    } else{
-           		    //loadPageLogin();
-    		    	refreshMatchDetails1(ids.id);
+           		    } else {
+                        //loadPageLogin();
+                        console.log('refreshss');
+                        //mainView.router.load({pageName: 'home'});
+                        //showLoadSpinnerWS();
+                        refreshMatchDetails1(ids.id);
+                        //hideLoadSpinnerWS();
+                        //refreshMatchDetails1(ids.id);
     		    	}
     		    }
     		    else{
@@ -600,7 +605,6 @@ function setPushConfigurations()
    }, function(error) {
        console.error(error);
    });
-
 
 }
   

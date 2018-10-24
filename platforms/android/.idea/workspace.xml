@@ -15,9 +15,6 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/assets/www/js/common.js" afterPath="$PROJECT_DIR$/assets/www/js/common.js" />
-      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/page-sportdetails.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/page-sportdetails.js" />
-      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/page-sports.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/page-sports.js" />
-      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/tournaments/page-matchdetails.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/tournaments/page-matchdetails.js" />
       <change beforePath="$PROJECT_DIR$/debug/android-debug.apk" afterPath="$PROJECT_DIR$/debug/android-debug.apk" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,11 +38,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="common.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/www/js/common.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="515" column="35" lean-forward="false" selection-start-line="515" selection-start-column="35" selection-end-line="515" selection-end-column="35" />
+            <state relative-caret-position="230">
+              <caret line="260" column="120" lean-forward="false" selection-start-line="260" selection-start-column="103" selection-end-line="260" selection-end-column="120" />
               <folding />
             </state>
           </provider>
@@ -71,11 +68,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="page-matchdetails.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="page-matchdetails.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/www/js/pages/tournaments/page-matchdetails.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="240" column="36" lean-forward="true" selection-start-line="240" selection-start-column="0" selection-end-line="241" selection-end-column="0" />
+            <state relative-caret-position="-39">
+              <caret line="197" column="17" lean-forward="false" selection-start-line="197" selection-start-column="9" selection-end-line="197" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -128,8 +125,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>torneo-en</find>
-      <find>tournament-matches-matchday</find>
       <find>comm</find>
       <find>builderDetailsMatchDetails</find>
       <find>refreshMatchDetails</find>
@@ -158,6 +153,8 @@
       <find>builderMatchDetails</find>
       <find>getPathWS</find>
       <find>refresh</find>
+      <find>refreshm</find>
+      <find>setPushConfigurations</find>
     </findStrings>
     <replaceStrings>
       <replace>strBuilderListCards</replace>
@@ -2390,8 +2387,8 @@
         <option value="$PROJECT_DIR$/assets/www/js/pages/page-home.js" />
         <option value="$PROJECT_DIR$/assets/www/js/pages/page-sports.js" />
         <option value="$PROJECT_DIR$/assets/www/js/pages/page-sportdetails.js" />
-        <option value="$PROJECT_DIR$/assets/www/js/common.js" />
         <option value="$PROJECT_DIR$/assets/www/js/pages/tournaments/page-matchdetails.js" />
+        <option value="$PROJECT_DIR$/assets/www/js/common.js" />
       </list>
     </option>
   </component>
@@ -3099,18 +3096,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/js/common.js">
+    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/tournaments/page-matchdetails.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="515" column="35" lean-forward="false" selection-start-line="515" selection-start-column="35" selection-end-line="515" selection-end-column="35" />
+        <state relative-caret-position="-39">
+          <caret line="197" column="17" lean-forward="false" selection-start-line="197" selection-start-column="9" selection-end-line="197" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/tournaments/page-matchdetails.js">
+    <entry file="file://$PROJECT_DIR$/assets/www/js/common.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="240" column="36" lean-forward="true" selection-start-line="240" selection-start-column="0" selection-end-line="241" selection-end-column="0" />
+        <state relative-caret-position="230">
+          <caret line="260" column="120" lean-forward="false" selection-start-line="260" selection-start-column="103" selection-end-line="260" selection-end-column="120" />
           <folding />
         </state>
       </provider>
