@@ -195,7 +195,7 @@ function refreshMatchDetails(idMatch){
 
 }
 
-function refreshMatchDetails1(idMatch){
+function refreshMatchDetails1(idMatch){f
 	$('#icon-refresh-matchdetails').hide();
 	showLoadSpinnerWS();
 		$.ajax({

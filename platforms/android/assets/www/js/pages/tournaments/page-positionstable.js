@@ -48,8 +48,10 @@ function loadPositionsTable(idTournament, nameTournamentSelected){
 	});
 }
 
-function loadPositionsTableDetails(idTournament){
+function loadPositionsTableDetails(idTournament, state){
+console.log(state);
      showLoadSpinnerWS();
+     if (state == false) {
         console.log(idTournament);
         console.log(allSucesosTorneoTablaPosicionList);
 
@@ -57,11 +59,21 @@ function loadPositionsTableDetails(idTournament){
           return obj.id == idTournament;
         });
         newsDetailsHome = newsDetailsHome[0];
+     } else {
+         console.log(idTournament);
+         console.log(positionTablesList);
+
+         var newsDetailsHome = positionTablesList.filter(function( obj ) {
+           return obj.id == idTournament;
+         });
+         newsDetailsHome = newsDetailsHome[0];
+
+     }
 
 
         // averiguar como hacer esto builderNewBanner(response.banner);
         builderPositionsTableDetails(newsDetailsHome);
-     hideLoadSpinnerWS();
+        hideLoadSpinnerWS();
 
 
 }

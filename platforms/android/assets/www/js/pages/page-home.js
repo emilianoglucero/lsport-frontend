@@ -980,7 +980,7 @@ console.log('arranca builder de los suceso');
             //var strBuilderLastNewsContent = [];
             //$.each(positionTables, function(n, table) {
                 console.log(item.id);
-                      strBuilderLastNewsContent.push('<div class="card tournament-matches"> <a onclick="loadPositionsTableDetails('+item.id+')" href="#">');
+                      strBuilderLastNewsContent.push('<div class="card tournament-matches"> <a onclick="loadPositionsTableDetails('+item.id+', '+false+')" href="#">');
                       strBuilderLastNewsContent.push('<div id="tournament-matches-header" class="card-header no-border">');
 
                       strBuilderLastNewsContent.push('<div class="tournament-header-titulo">'+item.titulo+'</div>');

@@ -1,5 +1,6 @@
 //var sportsList = [];
 //var areSportsLoaded = false;
+var categoriesSportList = [];
 
 
 myApp.onPageInit('sports', function (page)
@@ -88,7 +89,8 @@ function builderSportsList(){
 								strBuilderSportsContent.push('<ul>');
 									$.each( item.enac, function( i, enac ){
 									//var categoriesSportList = enac.categorias;
-									console.log(enac.categorias);
+									//console.log(enac.categorias);
+									categoriesSportList = enac.categorias;
 									strBuilderSportsContent.push('<li class="accordion-item androidFix_4_1">');
 										strBuilderSportsContent.push('<a href="#" class="item-content item-link">');
                                             strBuilderSportsContent.push('<div class="item-media">');
@@ -104,7 +106,7 @@ function builderSportsList(){
                                                     $.each( enac.categorias, function( i, cat ){
                                                     console.log(cat);
                                                         strBuilderSportsContent.push('<li class="item-content">');
-                                                            strBuilderSportsContent.push('<a href="#" onclick="loadSportDetails1('+item.id+','+enac.id+','+cat.id+')" class="item-link item-content">');
+                                                            strBuilderSportsContent.push('<a href="#" onclick="loadSportDetails('+cat.id+')" class="item-link item-content">');
                                                                 strBuilderSportsContent.push('<div class="item-inner">');
                                                                     strBuilderSportsContent.push('<div class="item-title">'+cat.nombreCorto+'</div>');
                                                                 strBuilderSportsContent.push('</div>');
