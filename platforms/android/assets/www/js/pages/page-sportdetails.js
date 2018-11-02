@@ -63,10 +63,11 @@ myApp.onPageBack('sportdetails', function (page){
 	idLiveMatchSportDetails=null;
 });
 
-function loadSportDetails(idCategorySelected){
+function loadSportDetails(idCategorySelectedFromLoad){
 	//idSportSelected = idSport;
 	//idCategorySelected = idCat;
-	console.log(idCategorySelected);
+	console.log(idCategorySelectedFromLoad);
+	idCategorySelected = idCategorySelectedFromLoad;
 	showLoadSpinnerWS();
 	$('#tabSportDetails1').html("");
 	$('#contentTabSportDetails2').html("");
@@ -107,6 +108,7 @@ function loadSportDetails(idCategorySelected){
                     currentTournaments = response.torneosPanel;
                     console.log(currentTournaments);
                     //bannerTournaments = response.banner;
+                    categoriesSportList = response.categoriasHermanas;
 
                     currentPageNumberSportDetails = parseInt(response.sucesosPanel.paginaActual);
                     currentTotalPageSportDetails = parseInt(response.sucesosPanel.paginasTotal);
@@ -418,14 +420,18 @@ var idCategorySelected;
 function builderSportDetails1(){
 //console.log(categoriesSportList);
 	if(areSportDetailsLoaded == true){
+	console.log('aresportdetalsloaded');
 		if (sportDetails == ""){
+		console.log('error');
 			hideLoadSpinnerWS();
 			showMessage(messageConexionError);
 		}
 		else{
+		console.log('elsenoerror');
 			if(builderSelectHeader == true){
 				/*## INIT Build Header SportDetails##*/
-				//var categoriesSportList = sportDetails.categories;
+				//console.log(sportDetails);
+			    //categoriesSportList = sportDetails.categoriasHermanas;
 
 				$('#selectSportDetails').empty();
 				$('#selectSportDetails').attr("onchange","loadSportDetailsFromSelect(this.value)");
@@ -449,18 +455,25 @@ function builderSportDetails1(){
 			$('#contentTabSportDetails2').html("");
 			$('#tabSportDetails3').html("");
 
+            console.log(currentPageNumberSportDetails);
+            console.log(currentTotalPageSportDetails);
 			if(currentPageNumberSportDetails < currentTotalPageSportDetails){
 				myApp.attachInfiniteScroll('.infinite-scroll-sportdetails');
 				$$('.infinite-scroll-sportdetails').on('infinite', function () {
+				console.log('infinitesc');
+				console.log(loadingInfiniteScrollSportDetails);
 
 					if (loadingInfiniteScrollSportDetails){
+					console.log('loadinginfinite');
 						return;
 					}
 					loadingInfiniteScrollSportDetails = true;
 
 					if (areAccessedServerNewsSportDetails == false){
+					console.log('arreacced');
 						loadNewsSportDetails(idCategorySelected);
 					} else {
+					console.log('elseareacced');
 						$('#noConnection-content-block-sportdetails').show();
 					}
 				});
@@ -541,13 +554,12 @@ function loadNewsSportDetails(idCat){
 console.log(idCat);
 	showLoadSpinnerWS();
 	console.log(nextPageNumberSportDetails);
-	$.ajax({
+	/*$.ajax({
 			// URL del Web Service
-			url: getPathWS() + 'getDeporteCategoriaDetalle',
+			url: getPathWS() + 'getSucesosPorDeporteCategoria',
 			dataType: 'jsonp',
 			data: { 'deporteCategoriaId': idCat,
-			        'sucesosItemsPorPagina': 20,
-					'sucesosPaginaActual': nextPageNumberSportDetails
+					'paginaActual': nextPageNumberSportDetails
 				 },
 			timeout: timeOut,
 			success: function(response){
@@ -564,22 +576,26 @@ console.log(idCat);
 					return;
 				}*/
 				
-				nextPageNumberSportDetails = parseInt(response.sucesosPanel.paginaActual) + 1;
+				/*nextPageNumberSportDetails = parseInt(response.paginaActual) + 1;
 				
-				if( response.sucesosPanel.paginaActual == 1 ){
+				if( response.paginaActual == 1 ){
+				console.log('pagina 1');
 					$('#contentTabSportDetails2').html("");
 					recentNewsListSporDetails = [];
-					recentNewsListSporDetails = response.sucesosPanel.sucesos;
+					recentNewsListSporDetails = response.sucesos;
 					builderNewsSportDetails();
 					hideLoadSpinnerWS();
 				} else {
+				console.log('pagina 1787887');
 					recentNewsListSporDetails = [];
-					recentNewsListSporDetails = response.sucesosPanel.sucesos;
+					recentNewsListSporDetails = response.sucesos;
 					builderNewsSportDetails();
 					hideLoadSpinnerWS();
 				}
-				
-				if( response.sucesosPanel.paginasTotal < nextPageNumberSportDetails ){
+				console.log(response.sucesosPanel.paginasTotal);
+				console.log(nextPageNumberSportDetails);
+				if( response.paginasTotal < nextPageNumberSportDetails ){
+				console.log('detach');
 					myApp.detachInfiniteScroll('.infinite-scroll-sportdetails');
 				}
 				
@@ -588,7 +604,10 @@ console.log(idCat);
 				$('#noConnection-content-block-sportdetails').hide();
 				
 			},
-			error: function (data, status, error){		          
+			error: function (data, status, error){
+			console.log(error);
+			console.log(status);
+			console.log(data);
 		          if( nextPageNumberSportDetails == 1 ){
 		          	builderErrorNewsSportDetails();
 		          	hideLoadSpinnerWS();
@@ -598,8 +617,78 @@ console.log(idCat);
 		          	loadingInfiniteScrollSportDetails = false;
 		          	areAccessedServerNewsSportDetails = true;
 		          }
-		   }
-	});
+		   },
+           beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer ' + accessToken ); } //set tokenString before send
+    });*/
+
+
+    $.ajax({
+    // URL del Web Service
+            url: getPathWS() + 'getSucesosPorDeporteCategoria',
+            dataType: 'json',
+            data: {
+                'deporteCategoriaId': idCategorySelected,
+                'paginaActual': nextPageNumberSportDetails
+            },
+            timeout: timeOut,
+            success: function(response){
+                console.log(response);
+                /*if(response.errorCode != 0)
+                {
+                    hideLoadSpinnerWS();
+                    filterCodeErrorWS(response);
+                    return;
+                }
+                if(isAppUpdate(response.serverVersion) == false){
+                    hideLoadSpinnerWS();
+                    mainView.router.load({pageName: 'update'});
+                    return;
+                }*/
+
+                nextPageNumberSportDetails = parseInt(response.paginaActual) + 1;
+
+                if( response.paginaActual == 1 ){
+                console.log('pagina 1');
+                    $('#contentTabSportDetails2').html("");
+                    recentNewsListSporDetails = [];
+                    recentNewsListSporDetails = response.sucesos;
+                    builderNewsSportDetails();
+                    hideLoadSpinnerWS();
+                } else {
+                console.log('pagina 1787887');
+                    recentNewsListSporDetails = [];
+                    recentNewsListSporDetails = response.sucesos;
+                    builderNewsSportDetails();
+                    hideLoadSpinnerWS();
+                }
+                console.log(response.sucesosPanel.paginasTotal);
+                console.log(nextPageNumberSportDetails);
+                if( response.paginasTotal < nextPageNumberSportDetails ){
+                console.log('detach');
+                    myApp.detachInfiniteScroll('.infinite-scroll-sportdetails');
+                }
+
+                loadingInfiniteScrollSportDetails = false;
+                areAccessedServerNewsSportDetails = false;
+                $('#noConnection-content-block-sportdetails').hide();
+
+            },
+            error: function (data, status, error){
+                console.log(error);
+                console.log(status);
+                console.log(data);
+                      if( nextPageNumberSportDetails == 1 ){
+                        builderErrorNewsSportDetails();
+                        hideLoadSpinnerWS();
+                      } else {
+                        hideLoadSpinnerWS();
+                        showMessageToast(messageCanNotRefresh);
+                        loadingInfiniteScrollSportDetails = false;
+                        areAccessedServerNewsSportDetails = true;
+                      }
+           },
+           beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer ' + accessToken ); } //set tokenString before send
+    });
 }
 
 function reloadNewsSportDetails(){

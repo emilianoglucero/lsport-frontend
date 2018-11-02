@@ -7,21 +7,15 @@
     <list default="true" id="61d7db02-8111-47f3-96d0-faa85811d084" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/resourceHashesCache.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/resourceHashesCache.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/jarAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/jarAnalysis.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskJars.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskJars.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/page-home.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/page-home.js" />
       <change beforePath="$PROJECT_DIR$/assets/www/js/pages/page-sportdetails.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/page-sportdetails.js" />
       <change beforePath="$PROJECT_DIR$/assets/www/js/pages/page-sports.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/page-sports.js" />
-      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/tournaments/page-matchdetails.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/tournaments/page-matchdetails.js" />
-      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/tournaments/page-positionstable.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/tournaments/page-positionstable.js" />
       <change beforePath="$PROJECT_DIR$/debug/android-debug.apk" afterPath="$PROJECT_DIR$/debug/android-debug.apk" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,7 +42,7 @@
       <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/www/js/common.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="3765">
               <caret line="251" column="1" lean-forward="false" selection-start-line="251" selection-start-column="1" selection-end-line="251" selection-end-column="1" />
               <folding />
             </state>
@@ -58,8 +52,8 @@
       <file leaf-file-name="page-sports.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-sports.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="92" column="36" lean-forward="false" selection-start-line="92" selection-start-column="36" selection-end-line="92" selection-end-column="36" />
+            <state relative-caret-position="213">
+              <caret line="89" column="75" lean-forward="false" selection-start-line="89" selection-start-column="75" selection-end-line="89" selection-end-column="75" />
               <folding />
             </state>
           </provider>
@@ -68,18 +62,8 @@
       <file leaf-file-name="page-sportdetails.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-sportdetails.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="601">
-              <caret line="84" column="60" lean-forward="false" selection-start-line="84" selection-start-column="42" selection-end-line="84" selection-end-column="60" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="page-positionstable.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/www/js/pages/tournaments/page-positionstable.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="65" column="49" lean-forward="false" selection-start-line="65" selection-start-column="49" selection-end-line="65" selection-end-column="49" />
+            <state relative-caret-position="-1707">
+              <caret line="552" column="37" lean-forward="false" selection-start-line="552" selection-start-column="37" selection-end-line="552" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -97,14 +81,14 @@
       </file>
       <file leaf-file-name="Messages_es.properties" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/www/language/Messages_es.properties">
-          <provider editor-type-id="ResourceBundle">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="3405">
               <caret line="227" column="0" lean-forward="false" selection-start-line="227" selection-start-column="0" selection-end-line="227" selection-end-column="0" />
               <folding />
             </state>
+          </provider>
+          <provider editor-type-id="ResourceBundle">
+            <state />
           </provider>
         </entry>
       </file>
@@ -121,7 +105,7 @@
       <file leaf-file-name="page-home.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
+            <state relative-caret-position="14730">
               <caret line="982" column="152" lean-forward="false" selection-start-line="982" selection-start-column="152" selection-end-line="982" selection-end-column="152" />
               <folding />
             </state>
@@ -152,11 +136,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>scrol</find>
-      <find>loadNewsSportDetails1</find>
-      <find>loadNewsSportDetails</find>
-      <find>nextPageNumberSportDetails</find>
-      <find>sucesosItemsPorPagina</find>
       <find>selectspo</find>
       <find>idSportSelected</find>
       <find>fromsele</find>
@@ -166,7 +145,6 @@
       <find>builderSportDetails1</find>
       <find>builderSportDetails</find>
       <find>select</find>
-      <find>categoriesSportList</find>
       <find>loadsportde</find>
       <find>loadfrom</find>
       <find>loadSportDetailsFromSelect</find>
@@ -180,8 +158,14 @@
       <find>push</find>
       <find>detac</find>
       <find>detachinfi</find>
-      <find>getDeporteCategoriaDetalle</find>
       <find>idCategorySelected</find>
+      <find>loadingInfiniteScrollSportDetails</find>
+      <find>categoriessport</find>
+      <find>categoriesSportList</find>
+      <find>getDeporteCategoriaDetalle</find>
+      <find>infinite</find>
+      <find>infinitesc</find>
+      <find>loadNewsSportDetails</find>
     </findStrings>
     <replaceStrings>
       <replace>strBuilderListCards</replace>
@@ -2414,9 +2398,9 @@
         <option value="$PROJECT_DIR$/assets/www/css/pages/page-home.css" />
         <option value="$PROJECT_DIR$/assets/www/js/common.js" />
         <option value="$PROJECT_DIR$/assets/www/js/pages/tournaments/page-matchdetails.js" />
-        <option value="$PROJECT_DIR$/assets/www/js/pages/page-sports.js" />
         <option value="$PROJECT_DIR$/assets/www/js/pages/page-home.js" />
         <option value="$PROJECT_DIR$/assets/www/js/pages/tournaments/page-positionstable.js" />
+        <option value="$PROJECT_DIR$/assets/www/js/pages/page-sports.js" />
         <option value="$PROJECT_DIR$/assets/www/js/pages/page-sportdetails.js" />
       </list>
     </option>
@@ -2442,9 +2426,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -2505,7 +2488,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2731,7 +2715,6 @@
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994923" sideWeight="0.49353796" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -2744,6 +2727,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32994923" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -3013,14 +2997,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
           <caret line="12" column="67" lean-forward="false" selection-start-line="12" selection-start-column="67" selection-end-line="12" selection-end-column="67" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-manifest">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/www/pages/page-user.html">
@@ -3034,7 +3018,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3870">
           <caret line="275" column="1" lean-forward="false" selection-start-line="258" selection-start-column="0" selection-end-line="275" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3070,33 +3053,62 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1222">
           <caret line="5" column="25" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="25" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/tournaments/page-matchdetails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3589">
+          <caret line="273" column="30" lean-forward="false" selection-start-line="273" selection-start-column="23" selection-end-line="273" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/tournaments/page-positionstable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="65" column="49" lean-forward="false" selection-start-line="65" selection-start-column="49" selection-end-line="65" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/www/js/common.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="3765">
           <caret line="251" column="1" lean-forward="false" selection-start-line="251" selection-start-column="1" selection-end-line="251" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/language/Messages_es.properties">
-      <provider editor-type-id="ResourceBundle">
-        <state />
+    <entry file="file://$PROJECT_DIR$/assets/www/pages/page-sportdetails.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/language/Messages_es.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3405">
           <caret line="227" column="0" lean-forward="false" selection-start-line="227" selection-start-column="0" selection-end-line="227" selection-end-column="0" />
           <folding />
         </state>
       </provider>
+      <provider editor-type-id="ResourceBundle">
+        <state />
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/www/css/pages/tournaments/page-matchdetails.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="780">
           <caret line="52" column="33" lean-forward="false" selection-start-line="52" selection-start-column="33" selection-end-line="52" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14730">
+          <caret line="982" column="152" lean-forward="false" selection-start-line="982" selection-start-column="152" selection-end-line="982" selection-end-column="152" />
           <folding />
         </state>
       </provider>
@@ -3117,50 +3129,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/tournaments/page-matchdetails.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3589">
-          <caret line="273" column="30" lean-forward="false" selection-start-line="273" selection-start-column="23" selection-end-line="273" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/pages/page-sportdetails.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-sports.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="92" column="36" lean-forward="false" selection-start-line="92" selection-start-column="36" selection-end-line="92" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="982" column="152" lean-forward="false" selection-start-line="982" selection-start-column="152" selection-end-line="982" selection-end-column="152" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/tournaments/page-positionstable.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="65" column="49" lean-forward="false" selection-start-line="65" selection-start-column="49" selection-end-line="65" selection-end-column="49" />
+        <state relative-caret-position="213">
+          <caret line="89" column="75" lean-forward="false" selection-start-line="89" selection-start-column="75" selection-end-line="89" selection-end-column="75" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-sportdetails.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="601">
-          <caret line="84" column="60" lean-forward="false" selection-start-line="84" selection-start-column="42" selection-end-line="84" selection-end-column="60" />
+        <state relative-caret-position="-1707">
+          <caret line="552" column="37" lean-forward="false" selection-start-line="552" selection-start-column="37" selection-end-line="552" selection-end-column="37" />
           <folding />
         </state>
       </provider>
