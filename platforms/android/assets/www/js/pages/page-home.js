@@ -1089,7 +1089,7 @@ console.log('arranca builder de los suceso');
         } else if (item.tipoObjeto == "torneo-fecha") {
           var encuentroFecha = 0;
           console.log(item.id);
-          strBuilderLastNewsContent.push('<div class="card tournament-matches"> <a onclick="loadMatchDetailsFixture('+item.id+')" href="#">');
+          strBuilderLastNewsContent.push('<div class="card tournament-matches"> <a onclick="loadMatchDetailsFixture('+item.id+','+true+')" href="#">');
           strBuilderLastNewsContent.push('<div id="tournament-matches-header" class="card-header no-border">');
           strBuilderLastNewsContent.push('<div class="tournament-matches-icon"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-tournament" ></div>');
           strBuilderLastNewsContent.push('<div class="tournament-matches-name">'+item.nombre+'</div>');

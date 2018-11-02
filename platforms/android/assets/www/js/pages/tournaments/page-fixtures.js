@@ -1,4 +1,5 @@
 var fixturesList = [];
+var datesTournaments = [];
 
 myApp.onPageInit('fixtures', function (page)
 {
@@ -12,7 +13,7 @@ myApp.onPageBeforeAnimation('fixtures', function (page)
 	trackPageGA("Fixtures");
 });
 
-function loadFixtures(idTournament,nameTournamentSelected){
+function loadFixturesOld(idTournament,nameTournamentSelected){
 	showLoadSpinnerWS();
 	$.ajax({
 		// URL del Web Service
@@ -51,32 +52,66 @@ function loadFixtures(idTournament,nameTournamentSelected){
 	});
 }
 
-function builderFixturesDetails(nameTournamentSelected,banner){
+function loadFixtures(idTournament){
+	showLoadSpinnerWS();
+
+			//if (state){
+			console.log(currentTournaments);
+                var tournamentFixture = currentTournaments.filter(function( obj ) {
+                  return obj.id == idTournament;
+                });
+                tournamentFixture = tournamentFixture[0];
+                console.log(tournamentFixture.fechas);
+           /* } else {
+                var newsDetails = allSucesosNewsList.filter(function( obj ) {
+                  return obj.id == idNew;
+                });
+                newsDetailsHome = newsDetails[0];
+            }*/
+
+
+			if (tournamentFixture.fechas == ""){
+				hideLoadSpinnerWS();
+			    showMessage(messageNotDates);
+			    return;
+			}
+			//fixturesList = response.fixtures;
+			builderFixturesDetails(tournamentFixture);
+			hideLoadSpinnerWS();
+
+
+
+}
+
+
+function builderFixturesDetails(fixturesList){
 	//$('#lblHeaderFixtures').text(nameTournamentSelected);
+	console.log(fixturesList);
+	datesTournaments = fixturesList.fechas;
 	$('#fixtures-list').html('');
 	var strBuilderListCards = [];
 	if (fixturesList == ""){
 		strBuilderListCards.push('');
 	} else {
-		$.each( fixturesList, function( i, item ){
+		//$.each( fixturesList, function( i, item ){
 			strBuilderListCards.push('<div class="card">');
-			strBuilderListCards.push('<div class="card-header card-header-center card-header-fixtures">'+nameTournamentSelected+'</div>');
-			strBuilderListCards.push('<div class="card-header card-header-center">'+item.tableTitle+'</div>');
+			strBuilderListCards.push('<div class="card-header card-header-center card-header-fixtures">'+fixturesList.deporteCategoria.nombreCorto+'</div>');
+			strBuilderListCards.push('<div class="card-header card-header-center">'+fixturesList.nombre+'</div>');
 			strBuilderListCards.push('<div class="card-content">');
 			strBuilderListCards.push('<div class="card-content-inner">');
 			strBuilderListCards.push('<div class="list-block general-information">');
 			strBuilderListCards.push('<ul>');
-			if(item.dates != ""){
-				$.each( item.dates, function( n, date ){
-					if(date.matches != ""){
+			if(fixturesList.fechas != ""){
+				$.each( fixturesList.fechas, function( n, date ){
+					//if(date.fechas != ""){
 						strBuilderListCards.push('<li>');
-						strBuilderListCards.push('<a href="#" onclick="builderDatesList('+date.idDate+',\''+date.dateName+'\')" class="item-link item-content">');
+						strBuilderListCards.push('<a href="#" onclick="loadMatchDetailsFixture('+date.id+','+false+')" class="item-link item-content">');
 						strBuilderListCards.push('<div class="item-inner">');
-						strBuilderListCards.push('<div class="item-title">'+date.dateName+'</div>');
+						strBuilderListCards.push('<div class="item-title">'+date.nombre+'</div>');
 						strBuilderListCards.push('</div>');
 						strBuilderListCards.push('</a>');
 						strBuilderListCards.push('</li>');
-					}
+					//}
 				});
 			}
 			strBuilderListCards.push('</ul>');
@@ -84,7 +119,7 @@ function builderFixturesDetails(nameTournamentSelected,banner){
 			strBuilderListCards.push('</div>');
 			strBuilderListCards.push('</div>');
 			strBuilderListCards.push('</div>');
-		});
+		//});
 			
 	}
 

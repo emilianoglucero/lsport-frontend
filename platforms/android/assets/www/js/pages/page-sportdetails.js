@@ -246,49 +246,6 @@ console.log(idCat);
 	areContentTabNewsSportDetailsBuilder = false;
 	areContentTabTournamentsSportDetailsBuilder = false;
 	console.log('loadfromdetails');
-	/*$.ajax({
-        	// URL del Web Service
-            url: getPathWS() + 'getDeporteCategoriaDetalle',
-            dataType: 'json',
-            data: {
-                'deporteCategoriaId': idCategorySelected,
-                'sucesosItemsPorPagina': 20
-            },
-            timeout: timeOut,
-            success: function(response){
-                console.log(response);
-			/*if(response.errorCode != 0)
-			{
-			    hideLoadSpinnerWS();
-			    filterCodeErrorWS(response);
-			    return;
-			}
-			if(isAppUpdate(response.serverVersion) == false){
-				hideLoadSpinnerWS();
-				mainView.router.load({pageName: 'update'});
-				return;
-			}*/
-			/*$('.lblHeaderTournaments').text(response.categorySport.shortCategoryName);
-			sportDetails = response.deporteCategoria;
-			//bannerSportDetails = response.banner;
-			recentNewsListSporDetails = response.sucesosPanel.sucesos;
-			currentPageNumberSportDetails = response.sucesosPanel.paginaActual;
-			nextPageNumberSportDetails = parseInt(response.sucesosPanel.paginaActual) + 1;
-			currentTotalPageSportDetails = response.sucesosPanel.paginasTotal;
-			currentLastMatch = response.encuentroCercano;
-			currentTournaments = response.torneosPanel;
-			//bannerTournaments = response.banner;
-			areSportDetailsLoaded = true;
-			builderSportDetails1();
-			hideLoadSpinnerWS();
-
-		},
-		error: function (data, status, error){
-			areSportDetailsLoaded = false;
-			builderErrorConnectionSportDetails();
-			hideLoadSpinnerWS();
-	   }
-	});*/
 		$.ajax({
         	// URL del Web Service
             		url: getPathWS() + 'getDeporteCategoriaDetalle',
@@ -321,6 +278,8 @@ console.log(idCat);
                         currentLastMatch = response.encuentroCercano;
                         currentTournaments = response.torneosPanel;
                         //bannerTournaments = response.banner;
+
+
                         areSportDetailsLoaded = true;
                         builderSportDetails1();
                         hideLoadSpinnerWS();
@@ -1393,7 +1352,7 @@ positionTablesList = [];
                 });
 			}
 				strBuilderTournaments.push('<li>');
-				strBuilderTournaments.push('<a href="#" onclick="loadFixtures('+item.id+',\''+item.nombre+'\')" class="item-link item-content">');
+				strBuilderTournaments.push('<a href="#" onclick="loadFixtures('+item.id+')" class="item-link item-content">');
 				strBuilderTournaments.push('<div class="item-media"><i class="icon icon-fixture"></i></div>');
 				strBuilderTournaments.push('<div class="item-inner">');
 				strBuilderTournaments.push('<div class="item-title">'+lblFixtures+'</div>');
