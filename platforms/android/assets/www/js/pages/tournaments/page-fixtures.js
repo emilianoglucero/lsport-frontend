@@ -118,8 +118,8 @@ console.log(item);
 	} else {
 		//$.each( fixturesList, function( i, item ){
 			strBuilderListCards.push('<div class="card">');
-			strBuilderListCards.push('<div class="card-header card-header-center card-header-fixtures">'+fixturesList.deporteCategoria.nombreCorto+'</div>');
-			strBuilderListCards.push('<div class="card-header card-header-center">'+fixturesList.nombre+'</div>');
+			//strBuilderListCards.push('<div class="card-header card-header-center card-header-fixtures">'+fixturesList.deporteCategoria.nombreCorto+'</div>');
+			strBuilderListCards.push('<div class="card-header card-header-center">'+lblTournamentNameFixture+'</div>');
 			strBuilderListCards.push('<div class="card-content">');
 			strBuilderListCards.push('<div class="card-content-inner">');
 			strBuilderListCards.push('<div class="list-block general-information">');
@@ -127,64 +127,65 @@ console.log(item);
 			if(fixturesList.fechaActual !== ""){
 				$.each( fixturesList.fechaActual.encuentros, function( n, match ){
 					console.log(match.id);
-					//var strBuilderMatchDetailsDate = [];
-                    /*if(match.interzonal == true){
-                                        strBuilderMatchDetailsDate.push('<tr class="interzonal-datelist">');
-                                        strBuilderMatchDetailsDate.push('<td class="td-35-tournaments">');
-                                        strBuilderMatchDetailsDate.push('<div>'+match.local.name+'</div>');
-                                        if (match.local.urlShield != ""){
-                                            strBuilderMatchDetailsDate.push('<div><img data-src="'+match.local.urlShield+'" class="lazy lazy-fadeIn img-shield-datelist" ></div>');
-                                        }
-                                        else{
-                                            strBuilderMatchDetailsDate.push('<div><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-datelist" ></div>');
-                                            }
-                                            strBuilderMatchDetailsDate.push('</td>');
-                                            strBuilderMatchDetailsDate.push('<td class="td-30-tournaments">');
-                                            strBuilderMatchDetailsDate.push('<table>');
-                                        if (match.local.score != "" || match.visit.score != ""){
-                                            strBuilderMatchDetailsDate.push('<td class="td-35-tournaments td-scrore-datelist">'+match.local.score+'</td>');
-                                            strBuilderMatchDetailsDate.push('<td class="td-30-tournaments"><div class="interzonal-label-datelist">'+lblInterzonal+'</div><a onclick="loadMatchDetails('+match.idMatch+')" href="#" class="button">'+lblSeeMoreDatesList+'</a></td>');
-                                            strBuilderMatchDetailsDate.push('<td class="td-35-tournaments td-scrore-datelist">'+match.visit.score+'</td>');
-                                        } else {
-                                            strBuilderMatchDetailsDate.push('<td><div class="interzonal-label-datelist">'+lblInterzonal+'</div><div>'+match.matchDate+'</div></td>');
-                                        }
+                    console.log(match);
+					//strBuilderListCards.push('<div class="card-content">');
+                            //strBuilderListCards.push('<div class="card-content-inner">');
+                                //strBuilderListCards.push('<div class="list-block lastmatch-tournaments">');
+                                    strBuilderListCards.push('<div class="item-content">');
+                                        strBuilderListCards.push('<div class="row" id="row-lastmatch-tournament">');
+                                            strBuilderListCards.push('<div class="col-33 col-lastmatch-tournament">');
 
-                     }else{*/
-                                        strBuilderListCards.push('<tr>');
-                                        strBuilderListCards.push('<td class="td-35-tournaments">');
-                                        strBuilderListCards.push('<div>'+match.local.nombre+'</div>');
-                                        if (match.local.imagenPrincipalMin != ""){
-                                            strBuilderListCards.push('<div><img data-src="'+match.local.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-datelist" ></div>');
-                                        }
-                                        else{
-                                            strBuilderListCards.push('<div><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-datelist" ></div>');
-                                        }
-                                        strBuilderListCards.push('</td>');
-                                        strBuilderListCards.push('<td class="td-30-tournaments">');
-                                        strBuilderListCards.push('<table>');
-                                        if (match.local.tantos != "" || match.visit.tantos != ""){
-                                            strBuilderListCards.push('<td class="td-35-tournaments td-scrore-datelist">'+match.local.tantos+'</td>');
-                                            strBuilderListCards.push('<td class="td-30-tournaments"><a onclick="loadMatchDetailsFromFixture('+match.id+')" href="#" class="button">'+lblSeeMoreDatesList+'</a></td>');
-                                            strBuilderListCards.push('<td class="td-35-tournaments td-scrore-datelist">'+match.visitante.tantos+'</td>');
-                                        } else {
-                                            strBuilderListCards.push('<td>'+match.getFechaOcurrencia.fecha+'</td>');
+                                                strBuilderListCards.push('<div class="col-lastmatch-tournament-team">'+match.local.nombre+'</div>');
+                                                if(match.local.imagenPrincipalMin != ""){
+                                                    strBuilderListCards.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+match.local.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+                                                }
+                                                else{
+                                                    strBuilderListCards.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+                                                }
+                                            strBuilderListCards.push('</div>');
+                                            strBuilderListCards.push('<div class="col-33 col-lastmatch-tournament col-lastmatch-tournament.middle">');
+                                                //strBuilderListCards.push('<div class="col-lastmatch-tournament-nametournament">'+match.torneo.deporteCategoria.nombreCorto+'</div>');
+                                                //strBuilderListCards.push('<div class="col-lastmatch-tournament-name">'+match.torneo.nombre+'</div>');
+                                                if (match.local.tantos != "" || match.visitante.tantos != ""){
+                                                    //strBuilderListCards.push('<td class="td-50-tournaments td-scrore-datelist">'+match.local.tantos+'</td>');
+                                                    strBuilderListCards.push('<div class="col-lastmatch-tournament-result"><p>'+match.local.tantos+' - '+match.visitante.tantos+'</p></div>');
+                                                    //strBuilderListCards.push('<div class="col-lastmatch-tournament-result"><p>'+match.visitante.tantos+'</p></div>');
+                                                    //strBuilderListCards.push('<td class="td-30-tournaments"><a onclick="loadMatchDetailsFromFixture('+mainId+','+match.id+')" href="#" class="button">'+lblSeeMoreDatesList+'</a></td>');
+                                                    //strBuilderListCards.push('<td class="td-35-tournaments td-scrore-datelist">'+match.visitante.tantos+'</td>');
+                                                } else {
+                                                    strBuilderListCards.push('<div class="col-lastmatch-tournament-result"><p>VS</p></div>');
 
-                                        }
+                                                }
 
-                                    //}
-                                        strBuilderListCards.push('</tr>');
-                                        strBuilderListCards.push('</table>');
-                                        strBuilderListCards.push('</td>');
-                                        strBuilderListCards.push('<td class="td-35-tournaments">');
-                                            strBuilderListCards.push('<div>'+match.visitante.nombre+'</div>');
-                                            //if (match.visit.urlShield != ""){
-                                                strBuilderListCards.push('<div><img data-src="'+match.visitante.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-datelist" ></div>');
-                                            //}
-                                            //else{
-                                                //strBuilderListCards.push('<div><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-datelist" ></div>');
-                                            //}
-                                        strBuilderListCards.push('</td>');
-                                        strBuilderListCards.push('</tr>');
+                                                /*if(match.liveMatch == true){
+                                                    if(match.actualClock != "")
+                                                    {
+                                                        strBuilderListCards.push('<div class="col-lastmatch-tournament-date">'+messageLastEvent+' '+match.actualClock+'</div>');
+                                                    }
+                                                } else{*/
+                                                    //strBuilderListCards.push('<div class="col-lastmatch-tournament-date">'+match.fechaEncuentro.fecha+'</div>');
+                                                //}
+
+                                            strBuilderListCards.push('</div>');
+                                            strBuilderListCards.push('<div class="col-33 col-lastmatch-tournament">');
+                                                strBuilderListCards.push('<div class="col-lastmatch-tournament-team">'+match.visitante.nombre+'</div>');
+                                                if(match.visitante.imagenPrincipalMin != ""){
+                                                    strBuilderListCards.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+match.visitante.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+                                                }
+                                                else{
+                                                    strBuilderListCards.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+                                                }
+                                                //strBuilderListCards.push('</div>');
+                                            strBuilderListCards.push('</div>');
+                                        strBuilderListCards.push('</div>');
+                                        /*strBuilderListCards.push('<div class="description-lastmatch-tournament">');
+                                            strBuilderListCards.push(match.visitante.nombre);
+                                        strBuilderListCards.push('</div>');*/
+                                    strBuilderListCards.push('</div>');
+                            //strBuilderListCards.push('</div>');
+                        //strBuilderListCards.push('</div>');
+                    //strBuilderListCards.push('</div>');
+
 				});
 			}
 			strBuilderListCards.push('</ul>');
@@ -227,73 +228,74 @@ function builderFixturesDetailsFromSelect(idDate){
 	//} else {
 		//$.each( fixturesList, function( i, item ){
 			strBuilderListCards.push('<div class="card">');
-			strBuilderListCards.push('<div class="card-header card-header-center card-header-fixtures">'+lblTournamentNameFixture+'</div>');
-			strBuilderListCards.push('<div class="card-header card-header-center">'+matchFixture.nombre+'</div>');
+			//strBuilderListCards.push('<div class="card-header card-header-center card-header-fixtures">'+lblTournamentNameFixture+'</div>');
+			strBuilderListCards.push('<div class="card-header card-header-center">'+lblTournamentNameFixture+'</div>');
 			strBuilderListCards.push('<div class="card-content">');
 			strBuilderListCards.push('<div class="card-content-inner">');
-			strBuilderListCards.push('<div class="list-block general-information">');
+			strBuilderListCards.push('<div class="list-block lastmatch-tournaments">');
 			strBuilderListCards.push('<ul>');
 			//if(fixturesList.fechaActual !== ""){
-				$.each( matchFixture.encuentros, function( n, matchFixture ){
-					console.log(matchFixture.id);
-					//var strBuilderMatchDetailsDate = [];
-                    /*if(match.interzonal == true){
-                                        strBuilderMatchDetailsDate.push('<tr class="interzonal-datelist">');
-                                        strBuilderMatchDetailsDate.push('<td class="td-35-tournaments">');
-                                        strBuilderMatchDetailsDate.push('<div>'+match.local.name+'</div>');
-                                        if (match.local.urlShield != ""){
-                                            strBuilderMatchDetailsDate.push('<div><img data-src="'+match.local.urlShield+'" class="lazy lazy-fadeIn img-shield-datelist" ></div>');
-                                        }
-                                        else{
-                                            strBuilderMatchDetailsDate.push('<div><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-datelist" ></div>');
-                                            }
-                                            strBuilderMatchDetailsDate.push('</td>');
-                                            strBuilderMatchDetailsDate.push('<td class="td-30-tournaments">');
-                                            strBuilderMatchDetailsDate.push('<table>');
-                                        if (match.local.score != "" || match.visit.score != ""){
-                                            strBuilderMatchDetailsDate.push('<td class="td-35-tournaments td-scrore-datelist">'+match.local.score+'</td>');
-                                            strBuilderMatchDetailsDate.push('<td class="td-30-tournaments"><div class="interzonal-label-datelist">'+lblInterzonal+'</div><a onclick="loadMatchDetails('+match.idMatch+')" href="#" class="button">'+lblSeeMoreDatesList+'</a></td>');
-                                            strBuilderMatchDetailsDate.push('<td class="td-35-tournaments td-scrore-datelist">'+match.visit.score+'</td>');
-                                        } else {
-                                            strBuilderMatchDetailsDate.push('<td><div class="interzonal-label-datelist">'+lblInterzonal+'</div><div>'+match.matchDate+'</div></td>');
-                                        }
+				$.each( matchFixture.encuentros, function( n, match ){
+					console.log(match);
+					//strBuilderListCards.push('<div class="card-content">');
+                            //strBuilderListCards.push('<div class="card-content-inner">');
+                                //strBuilderListCards.push('<div class="list-block lastmatch-tournaments">');
+                                    strBuilderListCards.push('<div class="item-content">');
+                                        strBuilderListCards.push('<div class="row" id="row-lastmatch-tournament">');
+                                            strBuilderListCards.push('<div class="col-33 col-lastmatch-tournament">');
 
-                     }else{*/
-                                        strBuilderListCards.push('<tr>');
-                                        strBuilderListCards.push('<td class="td-35-tournaments">');
-                                        strBuilderListCards.push('<div>'+matchFixture.local.nombre+'</div>');
-                                        if (matchFixture.local.imagenPrincipalMin != ""){
-                                            strBuilderListCards.push('<div><img data-src="'+matchFixture.local.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-datelist" ></div>');
-                                        }
-                                        else{
-                                            strBuilderListCards.push('<div><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-datelist" ></div>');
-                                        }
-                                        strBuilderListCards.push('</td>');
-                                        strBuilderListCards.push('<td class="td-30-tournaments">');
-                                        strBuilderListCards.push('<table>');
-                                        if (matchFixture.local.tantos != "" || matchFixture.visit.tantos != ""){
-                                            strBuilderListCards.push('<td class="td-35-tournaments td-scrore-datelist">'+matchFixture.local.tantos+'</td>');
-                                            strBuilderListCards.push('<td class="td-30-tournaments"><a onclick="loadMatchDetailsFromFixture('+matchFixture.id+')" href="#" class="button">'+lblSeeMoreDatesList+'</a></td>');
-                                            strBuilderListCards.push('<td class="td-35-tournaments td-scrore-datelist">'+matchFixture.visitante.tantos+'</td>');
-                                        } else {
-                                            strBuilderListCards.push('<td>'+matchFixture.getFechaOcurrencia.fecha+'</td>');
+                                                strBuilderListCards.push('<div class="col-lastmatch-tournament-team">'+match.local.nombre+'</div>');
+                                                if(match.local.imagenPrincipalMin != ""){
+                                                    strBuilderListCards.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+match.local.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+                                                }
+                                                else{
+                                                    strBuilderListCards.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+                                                }
+                                            strBuilderListCards.push('</div>');
+                                            strBuilderListCards.push('<div class="col-33 col-lastmatch-tournament col-lastmatch-tournament.middle">');
+                                                //strBuilderListCards.push('<div class="col-lastmatch-tournament-nametournament">'+match.torneo.deporteCategoria.nombreCorto+'</div>');
+                                                //strBuilderListCards.push('<div class="col-lastmatch-tournament-name">'+match.torneo.nombre+'</div>');
+                                                if (match.local.tantos != "" || match.visitante.tantos != ""){
+                                                    //strBuilderListCards.push('<td class="td-50-tournaments td-scrore-datelist">'+match.local.tantos+'</td>');
+                                                    strBuilderListCards.push('<div class="col-lastmatch-tournament-result"><p>'+match.local.tantos+' - '+match.visitante.tantos+'</p></div>');
+                                                    //strBuilderListCards.push('<div class="col-lastmatch-tournament-result"><p>'+match.visitante.tantos+'</p></div>');
+                                                    //strBuilderListCards.push('<td class="td-30-tournaments"><a onclick="loadMatchDetailsFromFixture('+mainId+','+match.id+')" href="#" class="button">'+lblSeeMoreDatesList+'</a></td>');
+                                                    //strBuilderListCards.push('<td class="td-35-tournaments td-scrore-datelist">'+match.visitante.tantos+'</td>');
+                                                } else {
+                                                    strBuilderListCards.push('<div class="col-lastmatch-tournament-result"><p>VS</p></div>');
 
-                                        }
+                                                }
 
-                                    //}
-                                        strBuilderListCards.push('</tr>');
-                                        strBuilderListCards.push('</table>');
-                                        strBuilderListCards.push('</td>');
-                                        strBuilderListCards.push('<td class="td-35-tournaments">');
-                                            strBuilderListCards.push('<div>'+matchFixture.visitante.nombre+'</div>');
-                                            //if (match.visit.urlShield != ""){
-                                                strBuilderListCards.push('<div><img data-src="'+matchFixture.visitante.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-datelist" ></div>');
-                                            //}
-                                            //else{
-                                                //strBuilderListCards.push('<div><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-datelist" ></div>');
-                                            //}
-                                        strBuilderListCards.push('</td>');
-                                        strBuilderListCards.push('</tr>');
+                                                /*if(match.liveMatch == true){
+                                                    if(match.actualClock != "")
+                                                    {
+                                                        strBuilderListCards.push('<div class="col-lastmatch-tournament-date">'+messageLastEvent+' '+match.actualClock+'</div>');
+                                                    }
+                                                } else{*/
+                                                    //strBuilderListCards.push('<div class="col-lastmatch-tournament-date">'+match.fechaEncuentro.fecha+'</div>');
+                                                //}
+
+                                            strBuilderListCards.push('</div>');
+                                            strBuilderListCards.push('<div class="col-33 col-lastmatch-tournament">');
+                                                strBuilderListCards.push('<div class="col-lastmatch-tournament-team">'+match.visitante.nombre+'</div>');
+                                                if(match.visitante.imagenPrincipalMin != ""){
+                                                    strBuilderListCards.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+match.visitante.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+                                                }
+                                                else{
+                                                    strBuilderListCards.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+                                                }
+                                                //strBuilderListCards.push('</div>');
+                                            strBuilderListCards.push('</div>');
+                                        strBuilderListCards.push('</div>');
+                                        /*strBuilderListCards.push('<div class="description-lastmatch-tournament">');
+                                            strBuilderListCards.push(match.visitante.nombre);
+                                        strBuilderListCards.push('</div>');*/
+                                    strBuilderListCards.push('</div>');
+                            //strBuilderListCards.push('</div>');
+                        //strBuilderListCards.push('</div>');
+                    //strBuilderListCards.push('</div>');
+
+
 				});
 			//}
 			strBuilderListCards.push('</ul>');

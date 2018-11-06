@@ -327,10 +327,10 @@ console.log(match);
 			strBuilderLastMatch.push('</div>');
 		strBuilderLastMatch.push('</div>');
 		if (match.tipoObjeto == "torneo-encuentro") {
-		var equipoLocal = match.local.nombre;
-		var equipoVisitante = match.visitante.nombre;
+		    var equipoLocal = match.local.nombre;
+		    var equipoVisitante = match.visitante.nombre;
 
-		var timelieSide = true;
+		    var timelieSide = true;
 		    if (match.eventos.todos.length !== 0){
 
 		    strBuilderLastMatch.push('<div class="timeline timeline-sides">');
