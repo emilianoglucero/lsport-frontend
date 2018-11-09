@@ -71,12 +71,20 @@ function builderSportsList(){
 			console.log('lista deportes');
 			console.log(item);
 			console.log(item.enac);
+			var sportEnacs = item.enac;
+			console.log(sportEnacs.length);
 
 				//var enacsSportList = item.enac;
 				//console.log(enacsSportList);
 				//if(item.enac != ""){
 					strBuilderSportsContent.push('<li class="accordion-item androidFix_4_1">');
-						strBuilderSportsContent.push('<a href="#" class="item-content item-link">');
+					if (sportEnacs.length !== 0) {
+					console.log('tiene enacss');
+					    strBuilderSportsContent.push('<a href="#" class="item-content item-link">');
+					} else {
+					console.log(item.id)
+					    strBuilderSportsContent.push('<a href="#" onclick="loadSportDetails('+item.id+')" class="item-link item-content">');
+					}
 							strBuilderSportsContent.push('<div class="item-media">');
 								strBuilderSportsContent.push('<i style="background-image: url('+item.imagenPrincipalMin+');" class="icon icon-list-header"></i>');
 							strBuilderSportsContent.push('</div>');
@@ -87,6 +95,7 @@ function builderSportsList(){
 						strBuilderSportsContent.push('<div class="accordion-item-content accordion-item-content-sport">');
 							strBuilderSportsContent.push('<div class="list-block">');
 								strBuilderSportsContent.push('<ul>');
+								if (item.sportEnacs != 0) {
 									$.each( item.enac, function( i, enac ){
 									//var categoriesSportList = enac.categorias;
 									//console.log(enac.categorias);
@@ -118,6 +127,9 @@ function builderSportsList(){
                                         strBuilderSportsContent.push('</div>');
 										strBuilderSportsContent.push('</li>');
 									});
+								} else {
+
+								}
 								strBuilderSportsContent.push('</ul>');
 							strBuilderSportsContent.push('</div>');
 						strBuilderSportsContent.push('</div>');

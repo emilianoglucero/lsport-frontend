@@ -5,7 +5,7 @@ var lblTournamentNameFixture;
 
 myApp.onPageInit('fixtures', function (page)
 {
-    
+
 });
 
 myApp.onPageBeforeAnimation('fixtures', function (page)
@@ -91,6 +91,8 @@ function loadFixtures(idTournament){
 
 function builderFixturesDetails(fixturesList){
 
+
+
 $('#selectFixtureDetails').empty();
 $('#selectFixtureDetails').attr("onchange","builderFixturesDetailsFromSelect(this.value)");
 console.log(fixturesList);
@@ -98,7 +100,7 @@ $.each(fixturesList.fechas , function( key, item ) {
 console.log(item);
     if(item.id == fixturesList.fechaActual.id){
         $('#selectFixtureDetails').append('<option selected value="'+fixturesList.fechaActual.id+'">'+fixturesList.fechaActual.nombre+'</option>');
-        $('.lblHeaderTournaments').text(fixturesList.fechaActual.nombre);
+        $('.lblHeaderTournaments').text(lblHeaderMatchDetailsFixture);
     } else {
         $('#selectFixtureDetails').append('<option value="'+item.id+'">'+item.nombre+'</option>');
     }
@@ -111,12 +113,14 @@ console.log(item);
 	console.log(fixturesList);
 	datesTournaments = fixturesList.fechas;
 	lblTournamentNameFixture = fixturesList.deporteCategoria.nombre;
-	$('#fixtures-list').html('');
+	//$('#fixtures-content').html('');
 	var strBuilderListCards = [];
+	$('#fixture-content').html('');
 	if (fixturesList == ""){
 		strBuilderListCards.push('');
 	} else {
 		//$.each( fixturesList, function( i, item ){
+
 			strBuilderListCards.push('<div class="card">');
 			//strBuilderListCards.push('<div class="card-header card-header-center card-header-fixtures">'+fixturesList.deporteCategoria.nombreCorto+'</div>');
 			strBuilderListCards.push('<div class="card-header card-header-center">'+lblTournamentNameFixture+'</div>');
@@ -137,13 +141,14 @@ console.log(item);
 
                                                 strBuilderListCards.push('<div class="col-lastmatch-tournament-team">'+match.local.nombre+'</div>');
                                                 if(match.local.imagenPrincipalMin != ""){
-                                                    strBuilderListCards.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+match.local.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+                                                    strBuilderListCards.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+match.local.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-lastmatch-fixtures" /></div>');
                                                 }
                                                 else{
-                                                    strBuilderListCards.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+                                                    strBuilderListCards.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch-fixtures" /></div>');
                                                 }
                                             strBuilderListCards.push('</div>');
                                             strBuilderListCards.push('<div class="col-33 col-lastmatch-tournament col-lastmatch-tournament.middle">');
+                                                strBuilderListCards.push('<div class="col-lastmatch-tournament-date"><p>18/10/18</p></div>');
                                                 //strBuilderListCards.push('<div class="col-lastmatch-tournament-nametournament">'+match.torneo.deporteCategoria.nombreCorto+'</div>');
                                                 //strBuilderListCards.push('<div class="col-lastmatch-tournament-name">'+match.torneo.nombre+'</div>');
                                                 if (match.local.tantos != "" || match.visitante.tantos != ""){
@@ -170,10 +175,10 @@ console.log(item);
                                             strBuilderListCards.push('<div class="col-33 col-lastmatch-tournament">');
                                                 strBuilderListCards.push('<div class="col-lastmatch-tournament-team">'+match.visitante.nombre+'</div>');
                                                 if(match.visitante.imagenPrincipalMin != ""){
-                                                    strBuilderListCards.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+match.visitante.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+                                                    strBuilderListCards.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+match.visitante.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-lastmatch-fixtures" /></div>');
                                                 }
                                                 else{
-                                                    strBuilderListCards.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+                                                    strBuilderListCards.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch-fixtures" /></div>');
                                                 }
                                                 //strBuilderListCards.push('</div>');
                                             strBuilderListCards.push('</div>');
@@ -198,7 +203,7 @@ console.log(item);
 	}
 
 	
-	$('#fixtures-list').append(strBuilderListCards.join(""));
+	$('#fixture-content').append(strBuilderListCards.join(""));
 	mainView.router.load({pageName: 'fixtures'});
 	myApp.initImagesLazyLoad(mainView.activePage.container);
 	
@@ -221,7 +226,7 @@ function builderFixturesDetailsFromSelect(idDate){
     matchFixture = matchFixture[0];
     console.log(matchFixture);
 	//datesTournaments = fixturesList.fechas;
-	$('#fixtures-list').html('');
+	$('#fixture-content').html('');
 	var strBuilderListCards = [];
 	//if (fixturesList == ""){
 		strBuilderListCards.push('');
@@ -246,13 +251,14 @@ function builderFixturesDetailsFromSelect(idDate){
 
                                                 strBuilderListCards.push('<div class="col-lastmatch-tournament-team">'+match.local.nombre+'</div>');
                                                 if(match.local.imagenPrincipalMin != ""){
-                                                    strBuilderListCards.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+match.local.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+                                                    strBuilderListCards.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+match.local.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-lastmatch-fixtures" /></div>');
                                                 }
                                                 else{
-                                                    strBuilderListCards.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+                                                    strBuilderListCards.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch-fixtures" /></div>');
                                                 }
                                             strBuilderListCards.push('</div>');
                                             strBuilderListCards.push('<div class="col-33 col-lastmatch-tournament col-lastmatch-tournament.middle">');
+                                                strBuilderListCards.push('<div class="col-lastmatch-tournament-date"><p>18/10/18</p></div>');
                                                 //strBuilderListCards.push('<div class="col-lastmatch-tournament-nametournament">'+match.torneo.deporteCategoria.nombreCorto+'</div>');
                                                 //strBuilderListCards.push('<div class="col-lastmatch-tournament-name">'+match.torneo.nombre+'</div>');
                                                 if (match.local.tantos != "" || match.visitante.tantos != ""){
@@ -279,10 +285,10 @@ function builderFixturesDetailsFromSelect(idDate){
                                             strBuilderListCards.push('<div class="col-33 col-lastmatch-tournament">');
                                                 strBuilderListCards.push('<div class="col-lastmatch-tournament-team">'+match.visitante.nombre+'</div>');
                                                 if(match.visitante.imagenPrincipalMin != ""){
-                                                    strBuilderListCards.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+match.visitante.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+                                                    strBuilderListCards.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+match.visitante.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-lastmatch-fixtures" /></div>');
                                                 }
                                                 else{
-                                                    strBuilderListCards.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+                                                    strBuilderListCards.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch-fixtures" /></div>');
                                                 }
                                                 //strBuilderListCards.push('</div>');
                                             strBuilderListCards.push('</div>');
@@ -308,7 +314,7 @@ function builderFixturesDetailsFromSelect(idDate){
 	//}
 
 
-	$('#fixtures-list').append(strBuilderListCards.join(""));
+	$('#fixture-content').append(strBuilderListCards.join(""));
 	mainView.router.load({pageName: 'fixtures'});
 	myApp.initImagesLazyLoad(mainView.activePage.container);
 

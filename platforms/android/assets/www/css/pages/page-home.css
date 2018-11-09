@@ -575,6 +575,14 @@
  text-align: right;
 }
 
+.card-content .img-shield-lastmatch-fixtures {
+    height: 55px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 55px;
+}
+
 .card-content .img-shield-lastmatch {
     height: 35px;
     display: block;
