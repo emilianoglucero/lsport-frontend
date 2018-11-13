@@ -71,7 +71,10 @@ function builderSportsList(){
 			console.log('lista deportes');
 			console.log(item);
 			console.log(item.enac);
+			console.log(item.categorias);
 			var sportEnacs = item.enac;
+			var sportCategories = item.categorias;
+			sportCategories.id;
 			console.log(sportEnacs.length);
 
 				//var enacsSportList = item.enac;
@@ -82,8 +85,9 @@ function builderSportsList(){
 					console.log('tiene enacss');
 					    strBuilderSportsContent.push('<a href="#" class="item-content item-link">');
 					} else {
-					console.log(item.id)
-					    strBuilderSportsContent.push('<a href="#" onclick="loadSportDetails('+item.id+')" class="item-link item-content">');
+					console.log(sportCategories[0])
+					console.log(sportCategories[0].id);
+					    strBuilderSportsContent.push('<a href="#" onclick="loadSportDetails('+sportCategories[0].id+')" class="item-link item-content">');
 					}
 							strBuilderSportsContent.push('<div class="item-media">');
 								strBuilderSportsContent.push('<i style="background-image: url('+item.imagenPrincipalMin+');" class="icon icon-list-header"></i>');
@@ -95,7 +99,7 @@ function builderSportsList(){
 						strBuilderSportsContent.push('<div class="accordion-item-content accordion-item-content-sport">');
 							strBuilderSportsContent.push('<div class="list-block">');
 								strBuilderSportsContent.push('<ul>');
-								if (item.sportEnacs != 0) {
+								if (sportEnacs.length != 0) {
 									$.each( item.enac, function( i, enac ){
 									//var categoriesSportList = enac.categorias;
 									//console.log(enac.categorias);

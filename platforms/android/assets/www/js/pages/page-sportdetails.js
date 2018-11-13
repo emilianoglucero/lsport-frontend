@@ -3,6 +3,7 @@ var idLiveMatchSportDetails = null;
 var sportDetails = [];
 var bannerSportDetails = [];
 var currentLastMatch = [];
+var currentLastMatchVivo;
 var currentTournaments = [];
 var bannerTournaments = [];
 
@@ -276,6 +277,11 @@ console.log(idCat);
                         nextPageNumberSportDetails = parseInt(response.sucesosPanel.paginaActual) + 1;
                         currentTotalPageSportDetails = response.sucesosPanel.paginasTotal;
                         currentLastMatch = response.encuentroCercano;
+                        if (currentLastMatch == null){
+                            currentLastMatchVivo = false;
+                        } else {
+                            currentLastMatchVivo = currentLastMatch.vivo;
+                        }
                         currentTournaments = response.torneosPanel;
                         //bannerTournaments = response.banner;
 
@@ -441,7 +447,7 @@ function builderSportDetails1(){
 				myApp.detachInfiniteScroll('.infinite-scroll-sportdetails');
 			}
 
-			if(currentLastMatch.vivo == true){
+			if(currentLastMatchVivo == true){
 				areContentTabTournamentsSportDetailsBuilder = true;
 				myApp.showTab("#tabSportDetails3");
 				builderTournamentsSportDetails();
@@ -1123,12 +1129,12 @@ console.log(currentTournaments);
 	if (currentLastMatch == "" && currentTournaments == ""){
 		strBuilderTournamentsSportDetails.push(builderTournamentsEmptySportDetails());
 	} else{
-		if(currentLastMatch.vivo == true)
+		if(currentLastMatchVivo == true)
 		{
 			strBuilderTournamentsSportDetails.push('<div id="card-livematch-sportdetails">');
 		}
-			strBuilderTournamentsSportDetails.push(builderLastMatchTournamentsSportDetails(currentLastMatch));
-		if(currentLastMatch.vivo == true)
+			strBuilderTournamentsSportDetails.push(builderLastMatchTournamentsSportDetails(currentLastMatchVivo));
+		if(currentLastMatch == true)
 		{
 			strBuilderTournamentsSportDetails.push('</div>');
 		}
