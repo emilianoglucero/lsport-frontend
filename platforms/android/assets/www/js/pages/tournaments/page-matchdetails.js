@@ -20,6 +20,8 @@ function loadMatchDetails1(idNew, state){
 	        console.log(idNew);
 	        console.log(homeDetails2List);
 	        console.log(newsListHome);
+	        console.log(allSucesosPageList);
+	        console.log(tournamentFixtureFechas);
 	        console.log(state);
 	        if (state) { //significa que viene desde la home o cualquier pantalla que no sea calendario
 
@@ -72,6 +74,35 @@ function loadMatchDetails1(idNew, state){
             }*/
             builderMatchDetails(matchDetailsHome);
 			hideLoadSpinnerWS();
+
+}
+
+function loadMatchDetailsFromFechas(idFechas, idPartido){
+	        showLoadSpinnerWS();
+            console.log(idFechas);
+            console.log(idPartido);
+            console.log(newsListHome);
+            console.log(allSucesosNewsList);
+            console.log(datesTournaments);
+
+                var matchDetailsHome = datesTournaments.filter(function( obj ) {
+                  return obj.id == idFechas;
+                });
+                matchDetailsHome = matchDetailsHome[0];
+                matchDetailsHome = matchDetailsHome.encuentros;
+                console.log(matchDetailsHome);
+
+                var matchDetailsHomeMatch = matchDetailsHome.filter(function( obj ) {
+                  return obj.id == idPartido;
+                });
+                matchDetailsHomeMatch = matchDetailsHomeMatch[0];
+                console.log(matchDetailsHomeMatch);
+
+
+
+            builderMatchDetails(matchDetailsHomeMatch);
+            hideLoadSpinnerWS();
+
 
 }
 
@@ -286,7 +317,9 @@ console.log(match);
 								strBuilderLastMatch.push('</div>');
 								strBuilderLastMatch.push('<div class="col-33 col-lastmatch-tournament col-lastmatch-tournament.middle">');
 									strBuilderLastMatch.push('<div class="col-lastmatch-tournament-nametournament">'+match.torneo.deporteCategoria.nombreCorto+'</div>');
+									//strBuilderLastMatch.push('<div class="col-lastmatch-tournament-nametournament">match.torneo.deporteCategoria.nombreCorto</div>');
 									strBuilderLastMatch.push('<div class="col-lastmatch-tournament-name">'+match.torneo.nombre+'</div>');
+									//strBuilderLastMatch.push('<div class="col-lastmatch-tournament-name">match.torneo.nombre</div>');
 									if (match.local.tantos != "" || match.visitante.tantos != ""){
                                         //strBuilderLastMatch.push('<td class="td-50-tournaments td-scrore-datelist">'+match.local.tantos+'</td>');
                                         strBuilderLastMatch.push('<div class="col-lastmatch-tournament-result"><p>'+match.local.tantos+' - '+match.visitante.tantos+'</p></div>');

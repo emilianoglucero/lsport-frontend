@@ -2,6 +2,7 @@ var fixturesList = [];
 var datesTournaments = [];
 var tournamentFixture;
 var lblTournamentNameFixture;
+var tournamentFixtureFechas = [];
 
 myApp.onPageInit('fixtures', function (page)
 {
@@ -120,7 +121,7 @@ console.log(item);
 		strBuilderListCards.push('');
 	} else {
 		//$.each( fixturesList, function( i, item ){
-
+            var idFechaActual = fixturesList.fechaActual.id;
 			strBuilderListCards.push('<div class="card">');
 			//strBuilderListCards.push('<div class="card-header card-header-center card-header-fixtures">'+fixturesList.deporteCategoria.nombreCorto+'</div>');
 			strBuilderListCards.push('<div class="card-header card-header-center">'+lblTournamentNameFixture+'</div>');
@@ -132,6 +133,7 @@ console.log(item);
 				$.each( fixturesList.fechaActual.encuentros, function( n, match ){
 					console.log(match.id);
                     console.log(match);
+                    strBuilderListCards.push('<a onclick="loadMatchDetailsFromFechas('+idFechaActual+', '+match.id+')" href="#">');
 					//strBuilderListCards.push('<div class="card-content">');
                             //strBuilderListCards.push('<div class="card-content-inner">');
                                 //strBuilderListCards.push('<div class="list-block lastmatch-tournaments">');
@@ -217,7 +219,8 @@ function builderFixturesDetailsFromSelect(idDate){
 
 	//$('#lblHeaderFixtures').text(nameTournamentSelected);
 	console.log(tournamentFixture.fechas);
-	var tournamentFixtureFechas = tournamentFixture.fechas;
+	tournamentFixtureFechas = tournamentFixture.fechas;
+	console.log(tournamentFixtureFechas);
 	console.log(idDate);
 
 	var matchFixture = tournamentFixtureFechas.filter(function( obj ) {
@@ -225,6 +228,7 @@ function builderFixturesDetailsFromSelect(idDate){
     });
     matchFixture = matchFixture[0];
     console.log(matchFixture);
+    console.log(matchFixture.id);
 	//datesTournaments = fixturesList.fechas;
 	$('#fixture-content').html('');
 	var strBuilderListCards = [];
@@ -242,6 +246,7 @@ function builderFixturesDetailsFromSelect(idDate){
 			//if(fixturesList.fechaActual !== ""){
 				$.each( matchFixture.encuentros, function( n, match ){
 					console.log(match);
+					strBuilderListCards.push('<a onclick="loadMatchDetailsFromFechas('+matchFixture.id+', '+match.id+')" href="#">');
 					//strBuilderListCards.push('<div class="card-content">');
                             //strBuilderListCards.push('<div class="card-content-inner">');
                                 //strBuilderListCards.push('<div class="list-block lastmatch-tournaments">');
