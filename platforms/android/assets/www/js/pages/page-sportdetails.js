@@ -23,6 +23,7 @@ var positionTablesList = [];
 
 myApp.onPageInit('sportdetails', function (page)
 {
+
 	$('#subnavbarSportDetails1').text(lblTabInformation);
 	$('#subnavbarSportDetails2').text(lblTabNews);
 	$('#subnavbarSportDetails3').text(lblTabTournaments);
@@ -745,7 +746,7 @@ console.log(recentNewsListSporDetails);
 
                                      // var encuentroFecha = 0;
                                    console.log(item.id);
-                                    strBuilderNewsSportDetailsContent.push('<div class="card tournament-matches"><a onclick="loadMatchDetails1('+item.id+', '+true+')" href="#">');
+                                    strBuilderNewsSportDetailsContent.push('<div class="card tournament-matches"><a onclick="loadMatchDetails1('+item.id+',\''+matchDetailFromSports+'\')" href="#">');
                                     strBuilderNewsSportDetailsContent.push('<div id="tournament-matches-header" class="card-header no-border">');
                                     strBuilderNewsSportDetailsContent.push('<div class="tournament-matches-icon"><img data-src='+item.torneo.organizador.imagenPrincipalMin+' class="lazy lazy-fadeIn img-shield-tournament" ></div>');
                                     strBuilderNewsSportDetailsContent.push('<div class="tournament-matches-name">'+item.torneo.nombre+'</div>');

@@ -34,6 +34,13 @@ var currentPageNumberHomeNews, currentTotalPageHomeNews;
 var areAccessedServerHomeNews = false;
 var areHomeNewsLoaded = false;
 
+var torneoEncuentroState;
+
+var matchDetailFromHome = "home";
+var matchDetailFromCalendar = "calendar";
+var matchDetailFromSports = "sports";
+//var matchDetailFromCalendar = "calendar";
+
 $(document).ready(function(){
 	//INIT HEADERS
 	    $('.lblNameClub').text(lblNameClub);
@@ -90,6 +97,8 @@ $(document).ready(function(){
 
 myApp.onPageInit('home', function (page)
 {
+    //se usa para configurar el boton "fixture" en la pantalla de detalles de partido
+    //torneoEncuentroState = true;
 	myApp.initImagesLazyLoad(mainView.activePage.container);
 	loadContentHomePage();
 
@@ -287,6 +296,7 @@ function loadContentHomePage(){
         if (allSucesosPageList == ""){
             console.log('es la primera');
             allSucesosPageList = response.sucesosPanel.sucesos;
+            console.log(allSucesosPageList);
             var allSucesosPageListLength = allSucesosPageList.length - 1;
 
             for (i = 0; i <= allSucesosPageListLength ; i++) {
@@ -885,7 +895,7 @@ console.log('arranca builder de los suceso');
 
                      // var encuentroFecha = 0;
                    console.log(item.id);
-                    strBuilderLastNewsContent.push('<div class="card tournament-matches"><a onclick="loadMatchDetails1('+item.id+', '+true+')" href="#">');
+                    strBuilderLastNewsContent.push('<div class="card tournament-matches"><a onclick="loadMatchDetails1('+item.id+', \''+matchDetailFromHome+'\')" href="#">');
                     strBuilderLastNewsContent.push('<div id="tournament-matches-header" class="card-header no-border">');
                     strBuilderLastNewsContent.push('<div class="tournament-matches-icon"><img data-src='+item.torneo.organizador.imagenPrincipalMin+' class="lazy lazy-fadeIn img-shield-tournament" ></div>');
                     strBuilderLastNewsContent.push('<div class="tournament-matches-name">'+item.torneo.nombre+'</div>');
@@ -1431,7 +1441,7 @@ $.each( homeDetails2List.calendario, function( i, item ){
                                             strBuilderCalendarContent.push('<div class="card-header card-header-center">'+item.torneo.nombre+'</div>');
                         //}
 
-                                                strBuilderCalendarContent.push('<div onclick="loadMatchDetails1('+item.id+')" class="card-content">');
+                                                strBuilderCalendarContent.push('<div onclick="loadMatchDetails1('+item.id+', \''+matchDetailFromCalendar+'\')" class="card-content">');
                                                     strBuilderCalendarContent.push('<div class="card-content-inner">');
                                                         strBuilderCalendarContent.push('<div class="list-block lastmatch-tournaments">');
                                                             strBuilderCalendarContent.push('<div class="item-content">');
@@ -1596,7 +1606,7 @@ var strBuilderTimeLineContent = [];
                                         strBuilderTimeLineContent.push('<div class="card-header card-header-center">'+item.torneo.nombre+'</div>');
                     //}
 
-                                            strBuilderTimeLineContent.push('<div onclick="loadMatchDetails1('+item.id+')" class="card-content">');
+                                            strBuilderTimeLineContent.push('<div onclick="loadMatchDetails1('+item.id+', \''+matchDetailFromCalendar+'\')" class="card-content">');
                                                 strBuilderTimeLineContent.push('<div class="card-content-inner">');
                                                     strBuilderTimeLineContent.push('<div class="list-block lastmatch-tournaments">');
                                                         strBuilderTimeLineContent.push('<div class="item-content">');

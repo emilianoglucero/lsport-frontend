@@ -27,12 +27,16 @@ function loadMatchDetailsFixture(idNew, state){
                 });
                 matchDetailsHomeDate = matchDetailsHomeDate[0];
                 console.log(matchDetailsHomeDate);
+
+                torneoEncuentroState = false;
             } else {
                 var matchDetailsHomeDate = datesTournaments.filter(function( obj ) {
                   return obj.id == idNew;
                 });
                 matchDetailsHomeDate = matchDetailsHomeDate[0];
                 console.log(matchDetailsHomeDate);
+
+                torneoEncuentroState = true;
             }
 
 

@@ -2,6 +2,7 @@ var fixturesList = [];
 var datesTournaments = [];
 var tournamentFixture;
 var lblTournamentNameFixture;
+var lblTournamentCategorieFixture;
 var tournamentFixtureFechas = [];
 
 myApp.onPageInit('fixtures', function (page)
@@ -113,7 +114,8 @@ console.log(item);
 	//$('#lblHeaderFixtures').text(nameTournamentSelected);
 	console.log(fixturesList);
 	datesTournaments = fixturesList.fechas;
-	lblTournamentNameFixture = fixturesList.deporteCategoria.nombre;
+	lblTournamentCategorieFixture = fixturesList.deporteCategoria.nombre;
+	lblTournamentNameFixture = fixturesList.nombre;
 	//$('#fixtures-content').html('');
 	var strBuilderListCards = [];
 	$('#fixture-content').html('');
@@ -124,7 +126,7 @@ console.log(item);
             var idFechaActual = fixturesList.fechaActual.id;
 			strBuilderListCards.push('<div class="card">');
 			//strBuilderListCards.push('<div class="card-header card-header-center card-header-fixtures">'+fixturesList.deporteCategoria.nombreCorto+'</div>');
-			strBuilderListCards.push('<div class="card-header card-header-center">'+lblTournamentNameFixture+'</div>');
+			strBuilderListCards.push('<div class="card-header card-header-center">'+lblTournamentCategorieFixture+'</div>');
 			strBuilderListCards.push('<div class="card-content">');
 			strBuilderListCards.push('<div class="card-content-inner">');
 			strBuilderListCards.push('<div class="list-block general-information">');

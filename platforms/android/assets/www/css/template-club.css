@@ -181,6 +181,16 @@
     color: white;
     background-color:#108342;
 }
+#subnavbarMatchDetails.subnavbar
+{
+    background: #108342; none repeat scroll 0 0;
+}
+
+#subnavbarMatchDetails .buttons-row a.button.active:not(.button-fill)
+{
+    color: white;
+    background-color:#108342;
+}
 
 #page-sportdetails #tabs-sportdetails ul li a div.item-subtitle,
 #page-sportdetails #tabs-sportdetails ul li a div.item-title
@@ -194,6 +204,9 @@
 #subnavbarHomeDetails .buttons-row .button {
     border-radius: 0;
 }
+#subnavbarMatchDetails .buttons-row .button {
+    border-radius: 0;
+}
 
 #subnavbarSportDetails .buttons-row .button:not(.button-fill), 
 #subnavbarSportDetails .buttons-row .buttons-row .button, 
@@ -205,6 +218,13 @@
 #subnavbarHomeDetails .buttons-row .button:not(.button-fill),
 #subnavbarHomeDetails .buttons-row .buttons-row .button,
 #subnavbarHomeDetails .buttons-row .button:not(.button-fill)
+{
+    border-color: black !important;
+    background-color: black;
+}
+#subnavbarMatchDetails .buttons-row .button:not(.button-fill),
+#subnavbarMatchDetails .buttons-row .buttons-row .button,
+#subnavbarMatchDetails .buttons-row .button:not(.button-fill)
 {
     border-color: black !important;
     background-color: black;
