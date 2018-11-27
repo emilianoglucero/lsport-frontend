@@ -73,7 +73,7 @@ console.log(newDetailsItem);
 	$('#shareNewFacebook').attr("onclick","shareNewFacebook('"+newDetailsItem.titulo+"','"+pathImgShare+"','"+newDetailsItem.imagenPrincipal+"')");
 	$('#shareNewTwitter').attr("onclick","shareNewTwitter('"+newDetailsItem.titulo+"','"+newDetailsItem.imagenPrincipal+"')");
 	
-	$('#divContentPhotoGalleryNewDetails').html(builderPhotoGalleryNewDetails(newDetailsItem.audiovisuales));
+	$('#divContentPhotoGalleryNewDetails').html(builderPhotoGalleryNewDetails(newDetailsItem.imagenes));
 	$('#divContentVideoGalleryNewDetails').html(builderVideoGalleryNewDetails(newDetailsItem.audiovisuales));
 	
 	mainView.router.load({pageName: 'newdetails'});
@@ -136,14 +136,11 @@ console.log(imagesGallery.tipo);
 			strBuilderPhotogallery.push('<div class="swiper-wrapper">');
 				listPhotosBrowserNewDetails = [];
 				$.each(imagesGallery, function(index, item) {
-				console.log(item);
-                    if(item.tipo == "imagen"){
-                        listPhotosBrowserNewDetails.push(item.urlImg);
-                        strBuilderPhotogallery.push('<div class="swiper-slide">');
-                        strBuilderPhotogallery.push('<img onclick="openPhotoBrowserNewDetails('+index+')" class="swiper-lazy swiperGalleryPhotosImg" data-src="'+item.url+'"/>');
-                        strBuilderPhotogallery.push('<div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>');
-                        strBuilderPhotogallery.push('</div>');
-                    }
+                    listPhotosBrowserNewDetails.push(item.imagenMin);
+                    strBuilderPhotogallery.push('<div class="swiper-slide">');
+                    strBuilderPhotogallery.push('<img onclick="openPhotoBrowserNewDetails('+index+')" class="swiper-lazy swiperGalleryPhotosImg" data-src="'+item.imagenMin+'"/>');
+                    strBuilderPhotogallery.push('<div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>');
+                    strBuilderPhotogallery.push('</div>');
 				});
 			strBuilderPhotogallery.push('</div>');
 			strBuilderPhotogallery.push('<div class="swiper-pagination swiper-pagination-photogallery"></div>');
@@ -164,13 +161,11 @@ console.log(videosGallery.tipo);
 				listVideoBrowserNewDetails = [];
 				$.each(videosGallery, function(index, item) {
 				console.log(item);
-                    if(item.tipo == "youtube"){
-                        listVideoBrowserNewDetails.push(item);
-                        strBuilderVideoGallery.push('<div class="swiper-slide">');
-                        strBuilderVideoGallery.push('<img onclick="openVideoBrowserNewDetails('+index+')" class="swiper-lazy swiperGalleryPhotosImg" data-src="'+item.imagen+'"/>');
-                        strBuilderVideoGallery.push('<div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>');
-                        strBuilderVideoGallery.push('</div>');
-                    }
+                    listVideoBrowserNewDetails.push(item);
+                    strBuilderVideoGallery.push('<div class="swiper-slide">');
+                    strBuilderVideoGallery.push('<img onclick="openVideoBrowserNewDetails('+index+')" class="swiper-lazy swiperGalleryPhotosImg" data-src="'+item.imagen+'"/>');
+                    strBuilderVideoGallery.push('<div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>');
+                    strBuilderVideoGallery.push('</div>');
 				});
 				console.log(listVideoBrowserNewDetails);
 			strBuilderVideoGallery.push('</div>');
@@ -181,6 +176,7 @@ console.log(videosGallery.tipo);
 }
 
 function openPhotoBrowserNewDetails(idPhoto){
+console.log(idPhoto);
 	myPhotoBrowserPhotoGalleryNewDetails.open(idPhoto);
 	$('.lblHeaderClose').text(lblHeaderClose);
 	$('.lblHeaderOfPhotoBrowser').text(lblHeaderOfPhotoBrowser);
@@ -188,6 +184,8 @@ function openPhotoBrowserNewDetails(idPhoto){
 
 
 function openVideoBrowserNewDetails(idVideo){
+console.log(idVideo);
+listVideoBrowserNewDetails[idVideo].url
 	var video = [
 		{
 			html: '<iframe src="'+listVideoBrowserNewDetails[idVideo].url+'" frameborder="0" allowfullscreen></iframe>'
