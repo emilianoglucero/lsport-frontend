@@ -37,6 +37,7 @@ function loadNewDetails(idNew, state){
                 });
                 newsDetailsHome = newsDetails[0];
             }
+            newsDetailsHome.audiovisuales
 
 
 			// averiguar como hacer esto builderNewBanner(response.banner);
@@ -125,6 +126,8 @@ console.log(newDetailsItem);
 }
 
 function builderPhotoGalleryNewDetails(imagesGallery){
+console.log(imagesGallery);
+console.log(imagesGallery.tipo);
 	var strBuilderPhotogallery = [];
 	strBuilderPhotogallery.push('');
 	if(imagesGallery != ""){
@@ -133,12 +136,14 @@ function builderPhotoGalleryNewDetails(imagesGallery){
 			strBuilderPhotogallery.push('<div class="swiper-wrapper">');
 				listPhotosBrowserNewDetails = [];
 				$.each(imagesGallery, function(index, item) {
-				    
-				    listPhotosBrowserNewDetails.push(item.urlImg);
-					strBuilderPhotogallery.push('<div class="swiper-slide">');
-					strBuilderPhotogallery.push('<img onclick="openPhotoBrowserNewDetails('+index+')" class="swiper-lazy swiperGalleryPhotosImg" data-src="'+item.urlImg+'"/>');
-					strBuilderPhotogallery.push('<div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>');
-					strBuilderPhotogallery.push('</div>');
+				console.log(item);
+                    if(item.tipo == "imagen"){
+                        listPhotosBrowserNewDetails.push(item.urlImg);
+                        strBuilderPhotogallery.push('<div class="swiper-slide">');
+                        strBuilderPhotogallery.push('<img onclick="openPhotoBrowserNewDetails('+index+')" class="swiper-lazy swiperGalleryPhotosImg" data-src="'+item.url+'"/>');
+                        strBuilderPhotogallery.push('<div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>');
+                        strBuilderPhotogallery.push('</div>');
+                    }
 				});
 			strBuilderPhotogallery.push('</div>');
 			strBuilderPhotogallery.push('<div class="swiper-pagination swiper-pagination-photogallery"></div>');
@@ -148,6 +153,8 @@ function builderPhotoGalleryNewDetails(imagesGallery){
 }
 
 function builderVideoGalleryNewDetails(videosGallery){
+console.log(videosGallery);
+console.log(videosGallery.tipo);
 	var strBuilderVideoGallery = [];
 	strBuilderVideoGallery.push('');
 	if(videosGallery != ""){
@@ -156,12 +163,16 @@ function builderVideoGalleryNewDetails(videosGallery){
 			strBuilderVideoGallery.push('<div class="swiper-wrapper">');
 				listVideoBrowserNewDetails = [];
 				$.each(videosGallery, function(index, item) {
-				    listVideoBrowserNewDetails.push(item);
-					strBuilderVideoGallery.push('<div class="swiper-slide">');
-					strBuilderVideoGallery.push('<img onclick="openVideoBrowserNewDetails('+index+')" class="swiper-lazy swiperGalleryPhotosImg" data-src="'+item.thumbnail+'"/>');
-					strBuilderVideoGallery.push('<div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>');
-					strBuilderVideoGallery.push('</div>');
+				console.log(item);
+                    if(item.tipo == "youtube"){
+                        listVideoBrowserNewDetails.push(item);
+                        strBuilderVideoGallery.push('<div class="swiper-slide">');
+                        strBuilderVideoGallery.push('<img onclick="openVideoBrowserNewDetails('+index+')" class="swiper-lazy swiperGalleryPhotosImg" data-src="'+item.imagen+'"/>');
+                        strBuilderVideoGallery.push('<div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>');
+                        strBuilderVideoGallery.push('</div>');
+                    }
 				});
+				console.log(listVideoBrowserNewDetails);
 			strBuilderVideoGallery.push('</div>');
 			strBuilderVideoGallery.push('<div class="swiper-pagination swiper-pagination-videogallery"></div>');
 		strBuilderVideoGallery.push('</div>');
@@ -179,7 +190,7 @@ function openPhotoBrowserNewDetails(idPhoto){
 function openVideoBrowserNewDetails(idVideo){
 	var video = [
 		{
-			html: '<iframe src="'+listVideoBrowserNewDetails[idVideo].urlVideo+'" frameborder="0" allowfullscreen></iframe>'
+			html: '<iframe src="'+listVideoBrowserNewDetails[idVideo].url+'" frameborder="0" allowfullscreen></iframe>'
 	    }
 	];
 
@@ -198,7 +209,9 @@ function openVideoBrowserNewDetails(idVideo){
 	});
 	myPhotoBrowserVideoGalleryNewDetails.open();
 	$('.lblHeaderClose').text(lblHeaderClose);
-	$('.lblHeaderOfVideoBrowser').text(listVideoBrowserNewDetails[idVideo].caption);
+	console.log(listVideoBrowserNewDetails);
+	console.log(listVideoBrowserNewDetails[idVideo]);
+	$('.lblHeaderOfVideoBrowser').text(listVideoBrowserNewDetails[idVideo].titulo);
 }
 
 

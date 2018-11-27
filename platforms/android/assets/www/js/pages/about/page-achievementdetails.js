@@ -189,5 +189,5 @@ function openVideoBrowserAchievement(idVideo){
 	});
 	myPhotoBrowserVideoGalleryAchievement.open();
 	$('.lblHeaderClose').text(lblHeaderClose);
-	$('.lblHeaderOfVideoBrowser').text(listVideoBrowserAchievement[idVideo].caption);
+	$('.lblHeaderOfVideoBrowser').text(listVideoBrowserAchievement[idVideo].titulo);
 }

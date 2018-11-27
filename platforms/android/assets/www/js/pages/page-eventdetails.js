@@ -220,7 +220,7 @@ function openVideoBrowserEvent(idVideo){
 	});
 	myPhotoBrowserVideoGalleryEvent.open();
 	$('.lblHeaderClose').text(lblHeaderClose);
-	$('.lblHeaderOfVideoBrowser').text(listVideoBrowserEvent[idVideo].caption);
+	$('.lblHeaderOfVideoBrowser').text(listVideoBrowserEvent[idVideo].titulo);
 }
 
 
