@@ -711,11 +711,6 @@ console.log(recentNewsListSporDetails);
 
 				if (item.tipoObjeto == "noticia") {
 
-
-
-
-
-
                                 strBuilderNewsSportDetailsContent.push('<div class="card demo-card-header-pic"><div style="background-image:url(http://clubes.lenguajefutbol.com/img/archivos/evento/evento-imagen-3_160x100xrecortar.jpg?1529080539); height:150px;" valign="bottom" class="card-header color-white no-border">');
                                 strBuilderNewsSportDetailsContent.push('<a onclick="loadNewDetails('+item.id+','+false+')" href="#" class="item-link item-content">');
                                     strBuilderNewsSportDetailsContent.push('<div class="chipHomeContainer">');

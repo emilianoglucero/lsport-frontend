@@ -271,6 +271,18 @@
     background-color: #108342;
 }
 
+#subnavbarActivityDetails .buttons-row .button {
+    border-radius: 0;
+}
+
+#subnavbarActivityDetails .buttons-row .button:not(.button-fill),
+#subnavbarActivityDetails .buttons-row .buttons-row .button,
+#subnavbarActivityDetails .buttons-row .button:not(.button-fill)
+{
+    border-color: black !important;
+    background-color: black;
+}
+
 #page-activitydetails .tabs ul li a div.item-subtitle,
 #page-activitydetails .tabs ul li a div.item-title
 {
