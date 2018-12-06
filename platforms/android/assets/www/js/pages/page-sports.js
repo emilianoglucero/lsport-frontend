@@ -81,7 +81,7 @@ function builderSportsList(){
 				//console.log(enacsSportList);
 				//if(item.enac != ""){
 					strBuilderSportsContent.push('<li class="accordion-item androidFix_4_1">');
-					if (sportEnacs.length !== 0) {
+					if (item.showlvl >= 1) {
 					console.log('tiene enacss');
 					    strBuilderSportsContent.push('<a href="#" class="item-content item-link">');
 					} else {
@@ -99,40 +99,87 @@ function builderSportsList(){
 						strBuilderSportsContent.push('<div class="accordion-item-content accordion-item-content-sport">');
 							strBuilderSportsContent.push('<div class="list-block">');
 								strBuilderSportsContent.push('<ul>');
-								if (sportEnacs.length != 0) {
-									$.each( item.enac, function( i, enac ){
-									//var categoriesSportList = enac.categorias;
-									//console.log(enac.categorias);
-									//categoriesSportList = enac.categorias;
-									strBuilderSportsContent.push('<li class="accordion-item androidFix_4_1">');
-										strBuilderSportsContent.push('<a href="#" class="item-content item-link">');
-                                            strBuilderSportsContent.push('<div class="item-media">');
-                                                strBuilderSportsContent.push('<i style="background-image: url('+enac.imagenPrincipalMin+');" class="icon icon-list-header"></i>');
+								console.log(item.tipoRoot);
+								if (item.tipoRoot == 3) {
+								    if (item.enac != 0) {
+                                        $.each( item.enac, function( i, enac ){
+                                        //var categoriesSportList = enac.categorias;
+                                        //console.log(enac.categorias);
+                                        //categoriesSportList = enac.categorias;
+                                        strBuilderSportsContent.push('<li class="accordion-item androidFix_4_1">');
+                                            strBuilderSportsContent.push('<a href="#" class="item-content item-link">');
+                                                strBuilderSportsContent.push('<div class="item-media">');
+                                                    strBuilderSportsContent.push('<i style="background-image: url('+enac.imagenPrincipalMin+');" class="icon icon-list-header"></i>');
+                                                strBuilderSportsContent.push('</div>');
+                                                strBuilderSportsContent.push('<div class="item-inner">');
+                                                    strBuilderSportsContent.push('<div class="item-title">'+enac.nombreCorto+'</div>');
+                                                strBuilderSportsContent.push('</div>');
+                                            strBuilderSportsContent.push('</a>');
+                                            strBuilderSportsContent.push('<div class="accordion-item-content accordion-item-content-sport">');
+                                                strBuilderSportsContent.push('<div class="list-block">');
+                                                    strBuilderSportsContent.push('<ul>');
+                                                        $.each( enac.categorias, function( i, cat ){
+                                                        console.log(cat);
+                                                            strBuilderSportsContent.push('<li class="item-content">');
+                                                                strBuilderSportsContent.push('<a href="#" onclick="loadSportDetails('+cat.id+')" class="item-link item-content">');
+                                                                    strBuilderSportsContent.push('<div class="item-inner">');
+                                                                        strBuilderSportsContent.push('<div class="item-title">'+cat.nombreCorto+'</div>');
+                                                                    strBuilderSportsContent.push('</div>');
+                                                                strBuilderSportsContent.push('</a>');
+                                                            strBuilderSportsContent.push('</li>');
+                                                        });
+                                                    strBuilderSportsContent.push('</ul>');
+                                                strBuilderSportsContent.push('</div>');
                                             strBuilderSportsContent.push('</div>');
-                                            strBuilderSportsContent.push('<div class="item-inner">');
-                                                strBuilderSportsContent.push('<div class="item-title">'+enac.nombreCorto+'</div>');
-                                            strBuilderSportsContent.push('</div>');
-                                        strBuilderSportsContent.push('</a>');
-                                        strBuilderSportsContent.push('<div class="accordion-item-content accordion-item-content-sport">');
-                                            strBuilderSportsContent.push('<div class="list-block">');
-                                                strBuilderSportsContent.push('<ul>');
-                                                    $.each( enac.categorias, function( i, cat ){
-                                                    console.log(cat);
-                                                        strBuilderSportsContent.push('<li class="item-content">');
-                                                            strBuilderSportsContent.push('<a href="#" onclick="loadSportDetails('+cat.id+')" class="item-link item-content">');
-                                                                strBuilderSportsContent.push('<div class="item-inner">');
-                                                                    strBuilderSportsContent.push('<div class="item-title">'+cat.nombreCorto+'</div>');
-                                                                strBuilderSportsContent.push('</div>');
-                                                            strBuilderSportsContent.push('</a>');
-                                                        strBuilderSportsContent.push('</li>');
-                                                    });
-                                                strBuilderSportsContent.push('</ul>');
-                                            strBuilderSportsContent.push('</div>');
-                                        strBuilderSportsContent.push('</div>');
-										strBuilderSportsContent.push('</li>');
-									});
-								} else {
-
+                                            strBuilderSportsContent.push('</li>');
+                                        });
+									}
+									if (item.categorias != 0) {
+									    $.each( item.categorias, function( i, enac ){
+									    console.log
+                                        //var categoriesSportList = enac.categorias;
+                                        //console.log(enac.categorias);
+                                        //categoriesSportList = enac.categorias;
+                                        strBuilderSportsContent.push('<li class="accordion-item androidFix_4_1">');
+                                            strBuilderSportsContent.push('<a href="#" onclick="loadSportDetails('+enac.id+')" class="item-link item-content">');
+                                                strBuilderSportsContent.push('<div class="item-media">');
+                                                    strBuilderSportsContent.push('<i style="background-image: url('+enac.imagenPrincipalMin+');" class="icon icon-list-header"></i>');
+                                                strBuilderSportsContent.push('</div>');
+                                                strBuilderSportsContent.push('<div class="item-inner">');
+                                                    strBuilderSportsContent.push('<div class="item-title">'+enac.nombreCorto+'</div>');
+                                                strBuilderSportsContent.push('</div>');
+                                            strBuilderSportsContent.push('</a>');
+                                            /*strBuilderSportsContent.push('<div class="accordion-item-content accordion-item-content-sport">');
+                                                strBuilderSportsContent.push('<div class="list-block">');
+                                                    strBuilderSportsContent.push('<ul>');
+                                                        $.each( enac.categorias, function( i, cat ){
+                                                        console.log(cat);
+                                                            strBuilderSportsContent.push('<li class="item-content">');
+                                                                strBuilderSportsContent.push('<a href="#" onclick="loadSportDetails('+cat.id+')" class="item-link item-content">');
+                                                                    strBuilderSportsContent.push('<div class="item-inner">');
+                                                                        strBuilderSportsContent.push('<div class="item-title">'+cat.nombreCorto+'</div>');
+                                                                    strBuilderSportsContent.push('</div>');
+                                                                strBuilderSportsContent.push('</a>');
+                                                            strBuilderSportsContent.push('</li>');
+                                                        });
+                                                    strBuilderSportsContent.push('</ul>');
+                                                strBuilderSportsContent.push('</div>');
+                                            strBuilderSportsContent.push('</div>');*/
+                                            strBuilderSportsContent.push('</li>');
+                                        });
+									}
+								} else if (item.tipoRoot == 2) {
+								console.log(item.categorias);
+                                    $.each( item.categorias, function( i, cat ){
+                                    console.log(cat);
+                                        strBuilderSportsContent.push('<li class="item-content">');
+                                            strBuilderSportsContent.push('<a href="#" onclick="loadSportDetails('+cat.id+')" class="item-link item-content">');
+                                                strBuilderSportsContent.push('<div class="item-inner">');
+                                                    strBuilderSportsContent.push('<div class="item-title">'+cat.nombreCorto+'</div>');
+                                                strBuilderSportsContent.push('</div>');
+                                            strBuilderSportsContent.push('</a>');
+                                        strBuilderSportsContent.push('</li>');
+                                    });
 								}
 								strBuilderSportsContent.push('</ul>');
 							strBuilderSportsContent.push('</div>');

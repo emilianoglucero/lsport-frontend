@@ -231,6 +231,18 @@ myApp.onPageBeforeAnimation('home', function (page)
 	}
 });
 
+function truncateNoticia(string){
+console.log(string);
+console.log(string.length);
+   if (string.length > 280) {
+   console.log('string is biig');
+      return string.substring(0,280)+'...';
+   } else {
+   console.log('string is shoort');
+      return string;
+   }
+};
+
 function reloadPageHome(){
 	if (existInternetConnection() == true){
 		loadContentHomePage();
@@ -864,7 +876,8 @@ console.log('arranca builder de los suceso');
 
 
 
-
+                var noticiaTruncada = truncateNoticia(item.detalle);
+                console.log(noticiaTruncada);
                 strBuilderLastNewsContent.push('<div class="card demo-card-header-pic"><div style="background-image:url(http://clubes.lenguajefutbol.com/img/archivos/evento/evento-imagen-3_160x100xrecortar.jpg?1529080539); height:150px;" valign="bottom" class="card-header color-white no-border">');
                 strBuilderLastNewsContent.push('<a onclick="loadNewDetails('+item.id+','+false+')" href="#" class="item-link item-content">');
                     strBuilderLastNewsContent.push('<div class="chipHomeContainer">');
@@ -881,7 +894,7 @@ console.log('arranca builder de los suceso');
                             }
                             strBuilderLastNewsContent.push('<div class="row"><div class="col-70"><div class="">'+item.titulo+'</div></div>');
                             strBuilderLastNewsContent.push('<div class="col-30"><div class="dateTitleNew color-gray">15/09/2018</div></div></div>');
-                             strBuilderLastNewsContent.push('<div class="row"><div class="col-100"><div class="color-gray homeCardcontent">'+item.detalle+'</div></div></div>');
+                             strBuilderLastNewsContent.push('<div class="row"><div class="col-100"><div class="color-gray homeCardcontent">'+noticiaTruncada+'</div></div></div>');
 
                             strBuilderLastNewsContent.push('</div></div>');
                             strBuilderLastNewsContent.push('<div class="card-footer tournament-matches-footer">Ver más...</div></a>');
@@ -935,6 +948,8 @@ console.log('arranca builder de los suceso');
 
 
             } else if (item.tipoObjeto == "evento") {
+                            var noticiaTruncada = truncateNoticia(item.detalle);
+                            console.log(noticiaTruncada);
                             strBuilderLastNewsContent.push('<div class="card demo-card-header-pic"><div style="background-image:url(http://clubes.lenguajefutbol.com/img/archivos/evento/evento-imagen-3_160x100xrecortar.jpg?1529080539); height:150px;" valign="bottom" class="card-header color-white no-border">');
                             strBuilderLastNewsContent.push('<a onclick="loadEventDetails1('+item.id+','+false+')" href="#" class="item-link item-content">');
                                 strBuilderLastNewsContent.push('<div class="chipHomeContainer">');
@@ -951,7 +966,7 @@ console.log('arranca builder de los suceso');
                                             urlImgNewsList = item.urlImgMin;
                                         }
                                         strBuilderLastNewsContent.push('<div class="">'+item.titulo+'</div>');
-                                        strBuilderLastNewsContent.push('<div class="color-gray homeCardcontent">'+item.detalle+'</div>');
+                                        strBuilderLastNewsContent.push('<div class="color-gray homeCardcontent">'+noticiaTruncada+'</div>');
 
                                         strBuilderLastNewsContent.push('</div></div>');
                                         strBuilderLastNewsContent.push('<div class="card-footer tournament-matches-footer">Ver más...</div>');
