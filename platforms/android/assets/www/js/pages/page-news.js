@@ -184,7 +184,7 @@ function builderNewsList(){
 		strBuilderNewsContent.push('</div>');
 	}else{
 		$.each( recentNewsList, function( i, item ){
-		var noticiaTruncada = truncateNoticia(item.detalle);
+		var noticiaTruncada = truncateNoticia(item.detalleTxt);
 			if(item.tipoObjeto == "banner"){
 				/*strBuilderNewsContent.push('<div class="item-list-banner">'); ERASE
 					strBuilderNewsContent.push(builderBannerPublicityList(item.urlAdBanner,item.linkAdBanner));
