@@ -47,12 +47,12 @@ i.icon.icon-notifications.icon-notifications-home:after{
     border: 1px solid #000000;
 }
 
-i.icon.icon-settings-favourites-notifications {
+/*i.icon.icon-settings-favourites-notifications {
     width: 29px;
     height: 29px;
     background-image: url("../img/template/icon-settings-favourites-notifications.png");
     border-radius: 0px;
-}
+}*/
 
 #icon-settings-favourites-notifications{
 	display: none;

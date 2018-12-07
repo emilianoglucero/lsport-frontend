@@ -23,6 +23,9 @@ var calendarInline;
 var homeDetails2List;
 var homeDetails3List;
 
+var sportsList = [];
+var activitiesList = [];
+
 var newsListHome = [];
 var nextPageNumberHomeNews = 1;
 var loadingInfiniteScrollHomeNews = false;
@@ -30,6 +33,13 @@ var currentPageNumberHomeNews, currentTotalPageHomeNews;
 
 var areAccessedServerHomeNews = false;
 var areHomeNewsLoaded = false;
+
+var torneoEncuentroState;
+
+var matchDetailFromHome = "home";
+var matchDetailFromCalendar = "calendar";
+var matchDetailFromSports = "sports";
+//var matchDetailFromCalendar = "calendar";
 
 $(document).ready(function(){
 	//INIT HEADERS
@@ -87,12 +97,14 @@ $(document).ready(function(){
 
 myApp.onPageInit('home', function (page)
 {
+    //se usa para configurar el boton "fixture" en la pantalla de detalles de partido
+    //torneoEncuentroState = true;
 	myApp.initImagesLazyLoad(mainView.activePage.container);
 	loadContentHomePage();
 
-	$('#icon-settings-favourites-notifications').on('click', function(){
+	/*$('#icon-settings-favourites-notifications').on('click', function(){
 		mainView.router.load({pageName: 'settings'});
-	});
+	});*/
 
     $$('#tabHomeDetails1').on('show', function () {
     console.log(areContentTabSucesosHomeDetailsBuilder);
@@ -143,8 +155,8 @@ myApp.onPageInit('home', function (page)
       // preppare and load ad resource in background, e.g. at begining of game level
         AdMob.prepareInterstitial({
         adId: admobid.interstitial,
-        isTesting: false,
-        autoShow: true
+        isTesting: true,
+        autoShow: false
       });
 
 
@@ -152,8 +164,8 @@ myApp.onPageInit('home', function (page)
       AdMob.createBanner({
       	adId: admobid.banner,
       	position: AdMob.AD_POSITION.BOTTOM_CENTER,
-      	autoShow: true,
-      	isTesting: false,
+      	autoShow: false,
+      	isTesting: true,
       	success: function(){
       	},
       	error: function(){
@@ -219,6 +231,18 @@ myApp.onPageBeforeAnimation('home', function (page)
 	}
 });
 
+function truncateNoticia(string){
+console.log(string);
+console.log(string.length);
+   if (string.length > 280) {
+   console.log('string is biig');
+      return string.substring(0,280)+'...';
+   } else {
+   console.log('string is shoort');
+      return string;
+   }
+};
+
 function reloadPageHome(){
 	if (existInternetConnection() == true){
 		loadContentHomePage();
@@ -278,10 +302,13 @@ function loadContentHomePage(){
         homeDetails2List = response.calendarioPanel;
         console.log(homeDetails2List);
         console.log(homeDetails3List);
+        sportsList = response.menu.deportes;
+        activitiesList = response.menu.actividades;
 
         if (allSucesosPageList == ""){
             console.log('es la primera');
             allSucesosPageList = response.sucesosPanel.sucesos;
+            console.log(allSucesosPageList);
             var allSucesosPageListLength = allSucesosPageList.length - 1;
 
             for (i = 0; i <= allSucesosPageListLength ; i++) {
@@ -762,130 +789,191 @@ console.log('arranca builder de los suceso');
                         strBuilderLastNewsContent.push('</div>');
             } else if (item.tipoObjeto == "noticia") {
 
-                        if (item.id == 46){
-                        	if (item == "")
-                        	{
-                        		strBuilderLastNewsContent.push('');
-                        	}
-                        	else
-                        	{
+                        /*if (item.id == 46){
 
-                        			/*if(lastMatch.liveMatch == true)
-                        			{
-                        				strBuilderLastNewsContent.push('<div class="card">');
-                        					idLiveMatchSportDetails = lastMatch.idMatch;
-                        					strBuilderLastNewsContent.push('<div class="card-header card-header-center animated infinite pulse">');
-                        					strBuilderLastNewsContent.push(lblLiveMatchTournaments);
-                        					strBuilderLastNewsContent.push('</div>');
-                        			}
-                        			else
-                        			{*/
-                        				idLiveMatchSportDetails = null;
-                        				strBuilderLastNewsContent.push('<div class="card">');
-                        					strBuilderLastNewsContent.push('<div class="card-header card-header-center">');
-                        					strBuilderLastNewsContent.push(lblLastMatchTournaments);
-                        					strBuilderLastNewsContent.push('</div>');
-                        			//}
 
-                        			strBuilderLastNewsContent.push('<div onclick="loadMatchDetails1('+item.id+', '+true+')" class="card-content">');
-                        				strBuilderLastNewsContent.push('<div class="card-content-inner">');
-                        					strBuilderLastNewsContent.push('<div class="list-block lastmatch-tournaments">');
-                        						strBuilderLastNewsContent.push('<div class="item-content">');
-                        							strBuilderLastNewsContent.push('<div class="row" id="row-lastmatch-tournament">');
-                        								strBuilderLastNewsContent.push('<div class="col-33 col-lastmatch-tournament">');
-                        									strBuilderLastNewsContent.push('<div class="col-lastmatch-tournament-team">'+item.titulo+'</div>');
-                        									/*if(lastMatch.local.urlShield != ""){
-                        									strBuilderLastNewsContent.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+lastMatch.local.urlShield+'" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
-                        									}
-                        									else{*/
-                        										strBuilderLastNewsContent.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
-                        									//}
-                        								strBuilderLastNewsContent.push('</div>');
-                        								/*if(lastMatch.liveMatch == true){
-                        									strBuilderLastNewsContent.push('<div class="col-33 col-lastmatch-tournament col-lastmatch-tournament-middle">');
-                        										strBuilderLastNewsContent.push('<div class="col-lastmatch-tournament-nametournament">'+lastMatch.date.tournamentName+'</div>');
-                        										strBuilderLastNewsContent.push('<div class="col-lastmatch-tournament-name">'+item.fecha.fecha+'</div>');
-                        										strBuilderLastNewsContent.push('<div class="col-lastmatch-tournament-result"><p>1 - 0</p></div>');
-                        										if(lastMatch.actualClock != "")
-                        										{
-                        											strBuilderLastNewsContent.push('<div class="col-lastmatch-tournament-date">'+messageLastEvent+' '+item.fecha.hora+'</div>');
-                        										}
+                                  console.log(item.id);
+                                  /*strBuilderLastNewsContent.push('<div class="card tournament-matches"> <a onclick="loadMatchDetails1('+item.id+', '+true+')" href="#">');
+                                  strBuilderLastNewsContent.push('<div id="tournament-matches-header" class="card-header no-border">');
+                                  strBuilderLastNewsContent.push('<div class="tournament-matches-icon"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-tournament"></div>');
+                                  strBuilderLastNewsContent.push('<div class="tournament-matches-name">'+item.titulo+'</div>');
+                                  strBuilderLastNewsContent.push('<div class="tournament-matches-division">', item.titulo);
+                                  strBuilderLastNewsContent.push('<div class="tournament-matches-matchday">'+item.titulo+'</div></div></div>');
+                                  strBuilderLastNewsContent.push('<div class="card-content tournament-matches-content">');
+                                  strBuilderLastNewsContent.push('<div class="card-content-inner">');
+                                  //var verMasFecha = false;
 
-                        									strBuilderLastNewsContent.push('</div>');
-                        								} else{*/
-                        									strBuilderLastNewsContent.push('<div class="col-33 col-lastmatch-tournament col-lastmatch-tournament-middle">');
-                        										strBuilderLastNewsContent.push('<div class="col-lastmatch-tournament-nametournament">'+item.titulo+'</div>');
-                        										strBuilderLastNewsContent.push('<div class="col-lastmatch-tournament-name">'+item.titulo+'</div>');
-                        										strBuilderLastNewsContent.push('<div class="col-lastmatch-tournament-result"><p>1 - 0</p></div>');
-                        										strBuilderLastNewsContent.push('<div class="col-lastmatch-tournament-date">'+item.fecha.fecha+'</div>');
-                        									strBuilderLastNewsContent.push('</div>');
-                        								//}
+                                 // $.each( item.encuentros, function( n, match ){
+                                     // encuentroFecha = encuentroFecha+1;
+                                      console.log(encuentroFecha);
+                                      //if (encuentroFecha < 3){
+                                          strBuilderLastNewsContent.push('<div class="row row-tournament-matches">');
+                                          strBuilderLastNewsContent.push('<div class="col-30">Rosario Central</div>');
+                                          //if (match.local.imagenPrincipalMin != ""){
+                                            strBuilderLastNewsContent.push('<div class="col-10"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-team"></div>');
+                                          //} else {
+                                            //strBuilderLastNewsContent.push('<div class="col-10"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-team"></div>');
+                                         // }
+                                          //if (match.local.tantos != "" || match.visit.tantos != ""){
+                                            strBuilderLastNewsContent.push('<div class="col-20 match-scorer">2 - 1</div>');
+                                          //}
+                                          //else {
+                                            //strBuilderLastNewsContent.push('<div class="col-20 match-scorer">'+item.fecha.fecha+'</div>');
+                                          //}
+                                          strBuilderLastNewsContent.push('<div class="col-10"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-team"></div>');
+                                          strBuilderLastNewsContent.push('<div class="col-30">'+item.titulo+'</div></div>');
+                                      //}
+                                  //});
+                                  strBuilderLastNewsContent.push('</div></div>');
+                                  strBuilderLastNewsContent.push('<div class="card-footer tournament-matches-footer">Ver más...</div></div>');
+                                  */
 
-                        							strBuilderLastNewsContent.push('<div class="col-33 col-lastmatch-tournament">');
-                        								strBuilderLastNewsContent.push('<div class="col-lastmatch-tournament-team">'+item.titulo+'</div>');
-                        								/*if(lastMatch.visit.urlShield != ""){
-                        									strBuilderLastNewsContent.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+lastMatch.visit.urlShield+'" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
-                        								}
-                        								else{*/
-                        									strBuilderLastNewsContent.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
-                        								//}
-                        							strBuilderLastNewsContent.push('</div>');
-                        						strBuilderLastNewsContent.push('</div>');
-                        						strBuilderLastNewsContent.push('</div>');
-                        						strBuilderLastNewsContent.push('<div class="description-lastmatch-tournament">');
-                        							strBuilderLastNewsContent.push(item.bajada);
-                        						strBuilderLastNewsContent.push('</div>');
-                        					strBuilderLastNewsContent.push('</div>');
-                        				strBuilderLastNewsContent.push('</div>');
-                        			strBuilderLastNewsContent.push('</div>');
-                        		strBuilderLastNewsContent.push('</div>');
-                        	}
+
+                                 // var encuentroFecha = 0;
+                                /*console.log(item.id);
+                                strBuilderLastNewsContent.push('<div class="card tournament-matches">');
+                                strBuilderLastNewsContent.push('<div id="tournament-matches-header" class="card-header no-border">');
+                                strBuilderLastNewsContent.push('<div class="tournament-matches-icon"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-tournament" ></div>');
+                                strBuilderLastNewsContent.push('<div class="tournament-matches-name">Ultimo Partido</div>');
+                                strBuilderLastNewsContent.push('<div class="tournament-matches-division">Primera Division');
+                                strBuilderLastNewsContent.push('<div class="tournament-matches-matchday">5ta Fecha</div></div></div>');
+                                strBuilderLastNewsContent.push('<div class="card-content tournament-matches-content">');
+                                strBuilderLastNewsContent.push('<div class="card-content-inner">');
+                                //var verMasFecha = false;
+
+                                //$.each( item.encuentros, function( n, match ){
+                                   // encuentroFecha = encuentroFecha+1;
+                                    console.log(encuentroFecha);
+                                    //if (encuentroFecha < 3){
+                                        strBuilderLastNewsContent.push('<div class="row no-gutter row-tournament-matches">');
+                                        strBuilderLastNewsContent.push('<div class="col-25 team-lastmatch-left">'+item.nombre+'</div>');
+                                        //if (match.local.imagenPrincipalMin != ""){
+                                          //strBuilderLastNewsContent.push('<div class="col-10"><img data-src="'+match.local.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-team"></div>');
+                                        //} else {
+                                          strBuilderLastNewsContent.push('<div class="col-15" img-lastmatch><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch"></div>');
+                                        //}
+                                        //if (match.local.tantos != "" || match.visit.tantos != ""){
+                                          //strBuilderLastNewsContent.push('<div class="col-20 match-scorer">'+match.local.tantos+' - '+match.visitante.tantos+'</div>');
+                                        //}
+                                        //else {
+                                          strBuilderLastNewsContent.push('<div class="col-20 match-scorer-lastmatch">2 - 1</div>');
+                                        //}
+                                        strBuilderLastNewsContent.push('<div class="col-15 img-lastmatch"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch"></div>');
+                                        strBuilderLastNewsContent.push('<div class="col-25 team-lastmatch-right">'+item.nombre+'</div></div>');
+                                   // }
+                               // });
+                                strBuilderLastNewsContent.push('</div></div>');
+                                strBuilderLastNewsContent.push('<div class="card-footer tournament-matches-footer">Ver más...</div></div>');
 
 
 
 
 
-                        }
+
+
+                        } else {*/
 
 
 
 
-
-                strBuilderLastNewsContent.push('<div class="card card-news"><div class="card-content"><div class="list-block list-block-about media-list">');
+                var noticiaTruncada = truncateNoticia(item.detalle);
+                console.log(noticiaTruncada);
+                strBuilderLastNewsContent.push('<div class="card demo-card-header-pic"><div style="background-image:url(http://clubes.lenguajefutbol.com/img/archivos/evento/evento-imagen-3_160x100xrecortar.jpg?1529080539); height:150px;" valign="bottom" class="card-header color-white no-border">');
                 strBuilderLastNewsContent.push('<a onclick="loadNewDetails('+item.id+','+false+')" href="#" class="item-link item-content">');
-                    strBuilderLastNewsContent.push('<ul class="cardHomeRow"><li class="item-content">');
+                    strBuilderLastNewsContent.push('<div class="chipHomeContainer">');
                         //strBuilderLastNewsContent.push('<a onclick="loadNewDetails('+item.id+')" href="#" class="item-link item-content">');
-                        strBuilderLastNewsContent.push('<div class="chipHomeContainer"><div class="chip chipHomeDate"><div class="media"><i class="icon icon-date-home"></i></div>');
-                        strBuilderLastNewsContent.push('<div class="chip-label chipHomeDateLabel">'+formatDateSucesos(item.fecha.fecha)+'</div></div>');
-                        strBuilderLastNewsContent.push('<div class="chip chipHomeTags"><div class="media"><i class="icon icon-home-tiposuceso"></i></div>');
-                        strBuilderLastNewsContent.push('<div class="chip-label chipHomeSportLabel">Futbol Primera</div></div></li>');
-                        strBuilderLastNewsContent.push('<li class="item-content cardNewsContainerInfo">');
+                        strBuilderLastNewsContent.push('<div class="chip chipHomeDate"><div class="media"><i class="icon icon-date-home"></i></div><div class="chip-label chipHomeDateLabel">'+formatDateSucesos(item.fecha.fecha)+'</div></div>');
+                        strBuilderLastNewsContent.push('<div class="chip chipHomeTags"><div class="media"><i class="icon icon-home-tiposuceso"></i></div><div class="chip-label chipHomeSportLabel">Futbol Primera</div></div>');
+                        strBuilderLastNewsContent.push('</div></div>');
+                        strBuilderLastNewsContent.push('<div class="card-content news-content">');
 
-                            strBuilderLastNewsContent.push('<div class="item-media cardNewsImageContainer">');
+                            strBuilderLastNewsContent.push('<div class="card-content-inner">');
                             var urlImgNewsList = getDefaultImageNewsList();
                             if(item.urlImgMin != ""){
                                 urlImgNewsList = item.urlImgMin;
                             }
-                            strBuilderLastNewsContent.push('<img class="lazy lazy-fadeIn cardNewsImage" data-src="'+item.imagenPrincipalMin+'" alt="'+urlImgNewsList+'" />');
+                            strBuilderLastNewsContent.push('<div class="row"><div class="col-70"><div class="">'+item.titulo+'</div></div>');
+                            strBuilderLastNewsContent.push('<div class="col-30"><div class="dateTitleNew color-gray">15/09/2018</div></div></div>');
+                             strBuilderLastNewsContent.push('<div class="row"><div class="col-100"><div class="color-gray homeCardcontent">'+noticiaTruncada+'</div></div></div>');
+
+                            strBuilderLastNewsContent.push('</div></div>');
+                            strBuilderLastNewsContent.push('<div class="card-footer tournament-matches-footer">Ver más...</div></a>');
                             strBuilderLastNewsContent.push('</div>');
 
-                            strBuilderLastNewsContent.push('<div class="item-inner cardNewsInfo">');
-                            strBuilderLastNewsContent.push('<div class="item-title-row">');
-                            strBuilderLastNewsContent.push('<div class="item-title item-title-new">'+item.titulo+'</div>');
-                            strBuilderLastNewsContent.push('</div>');
-                                strBuilderLastNewsContent.push('<div class="item-subContent-news">');
-                                    //strBuilderLastNewsContent.push('<span class="item-date">'+item.fecha.fecha+'</span>');
-                                    strBuilderLastNewsContent.push('<span class="item-shortContent">'+item.detalle+'</span>');
-                                strBuilderLastNewsContent.push('</div>');
-                            strBuilderLastNewsContent.push('</div>');
+                //}
+            } else if (item.tipoObjeto == "torneo-encuentro") {
 
-                        //strBuilderLastNewsContent.push('</a>');
-                    strBuilderLastNewsContent.push('</li></ul>');
-                    strBuilderLastNewsContent.push('</a>');
-                strBuilderLastNewsContent.push('</div></div></div>');
+                console.log(item.id);
+
+
+                     // var encuentroFecha = 0;
+                   console.log(item.id);
+                    strBuilderLastNewsContent.push('<div class="card tournament-matches"><a onclick="loadMatchDetails1('+item.id+', \''+matchDetailFromHome+'\')" href="#">');
+                    strBuilderLastNewsContent.push('<div id="tournament-matches-header" class="card-header no-border">');
+                    strBuilderLastNewsContent.push('<div class="tournament-matches-icon"><img data-src='+item.torneo.organizador.imagenPrincipalMin+' class="lazy lazy-fadeIn img-shield-tournament" ></div>');
+                    strBuilderLastNewsContent.push('<div class="tournament-matches-name">'+item.torneo.nombre+'</div>');
+                    strBuilderLastNewsContent.push('<div class="tournament-matches-division">'+item.torneo.deporteCategoria.nombreCorto+'');
+                    if (item.vivo == "true") {
+                        strBuilderLastNewsContent.push('<div class="tournament-matches-matchday-live animated infinite pulse">PARTIDO EN VIVO</div></div></div>');
+                    } else {
+                        strBuilderLastNewsContent.push('<div class="tournament-matches-matchday">'+item.fechaEncuentro.fecha+'</div></div></div>');
+                    }
+                    strBuilderLastNewsContent.push('<div class="card-content tournament-matches-content">');
+                    strBuilderLastNewsContent.push('<div class="card-content-inner">');
+                    //var verMasFecha = false;
+
+                    //$.each( item.encuentros, function( n, match ){
+                       // encuentroFecha = encuentroFecha+1;
+                        console.log(encuentroFecha);
+                        //if (encuentroFecha < 3){
+                            strBuilderLastNewsContent.push('<div class="row no-gutter row-tournament-matches">');
+                            strBuilderLastNewsContent.push('<div class="col-25 team-lastmatch-left">'+item.local.nombre+'</div>');
+                            //if (match.local.imagenPrincipalMin != ""){
+                              //strBuilderLastNewsContent.push('<div class="col-10"><img data-src="'+match.local.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-team"></div>');
+                            //} else {
+                              strBuilderLastNewsContent.push('<div class="col-15" img-lastmatch><img data-src='+item.local.imagenPrincipalMin+' class="lazy lazy-fadeIn img-shield-lastmatch"></div>');
+                            //}
+                            //if (match.local.tantos != "" || match.visit.tantos != ""){
+                              //strBuilderLastNewsContent.push('<div class="col-20 match-scorer">'+match.local.tantos+' - '+match.visitante.tantos+'</div>');
+                            //}
+                            //else {
+                              strBuilderLastNewsContent.push('<div class="col-20 match-scorer-lastmatch">'+item.local.tantos+' - '+item.visitante.tantos+'</div>');
+                            //}
+                            strBuilderLastNewsContent.push('<div class="col-15 img-lastmatch"><img data-src='+item.visitante.imagenPrincipalMin+' class="lazy lazy-fadeIn img-shield-lastmatch"></div>');
+                            strBuilderLastNewsContent.push('<div class="col-25 team-lastmatch-right">'+item.visitante.nombre+'</div></div>');
+                       // }
+                   // });
+                    strBuilderLastNewsContent.push('</div></div>');
+                    strBuilderLastNewsContent.push('<div class="card-footer tournament-matches-footer">Ver más...</div></a></div>');
+
+
             } else if (item.tipoObjeto == "evento") {
-                    strBuilderLastNewsContent.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+','+false+')">');
-                        strBuilderLastNewsContent.push('<div class="card card-event-home">');
+                            var noticiaTruncada = truncateNoticia(item.detalle);
+                            console.log(noticiaTruncada);
+                            strBuilderLastNewsContent.push('<div class="card demo-card-header-pic"><div style="background-image:url(http://clubes.lenguajefutbol.com/img/archivos/evento/evento-imagen-3_160x100xrecortar.jpg?1529080539); height:150px;" valign="bottom" class="card-header color-white no-border">');
+                            strBuilderLastNewsContent.push('<a onclick="loadEventDetails1('+item.id+','+false+')" href="#" class="item-link item-content">');
+                                strBuilderLastNewsContent.push('<div class="chipHomeContainer">');
+                                    //strBuilderLastNewsContent.push('<a onclick="loadNewDetails('+item.id+')" href="#" class="item-link item-content">');
+                                    strBuilderLastNewsContent.push('<div class="chip chipHomeCategory"><div class="media"><i class="icon icon-date-home"></i></div><div class="chip-label chipHomeCategoryLabel">Liga Totorense</div></div>');
+                                    strBuilderLastNewsContent.push('<div class="chip chipHomeDate"><div class="media"><i class="icon icon-date-home"></i></div><div class="chip-label chipHomeDateLabel">'+formatDateSucesos(item.fecha.fecha)+'</div></div>');
+                                    strBuilderLastNewsContent.push('<div class="chip chipHomeTags"><div class="media"><i class="icon icon-home-tiposuceso"></i></div><div class="chip-label chipHomeSportLabel">El canducho</div></div>');
+                                    strBuilderLastNewsContent.push('</div></div>');
+                                    strBuilderLastNewsContent.push('<div class="card-content news-content">');
+
+                                        strBuilderLastNewsContent.push('<div class="card-content-inner">');
+                                        var urlImgNewsList = getDefaultImageNewsList();
+                                        if(item.urlImgMin != ""){
+                                            urlImgNewsList = item.urlImgMin;
+                                        }
+                                        strBuilderLastNewsContent.push('<div class="">'+item.titulo+'</div>');
+                                        strBuilderLastNewsContent.push('<div class="color-gray homeCardcontent">'+noticiaTruncada+'</div>');
+
+                                        strBuilderLastNewsContent.push('</div></div>');
+                                        strBuilderLastNewsContent.push('<div class="card-footer tournament-matches-footer">Ver más...</div>');
+                                        strBuilderLastNewsContent.push('</div>');
+
+                    //strBuilderLastNewsContent.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+','+false+')">');
+                        /*strBuilderLastNewsContent.push('<div class="card card-event-home">');
                         strBuilderLastNewsContent.push('<div class="card-header-home">'+item.titulo+'</div>');
                         strBuilderLastNewsContent.push('<div class="card-event-home-content">');
                             strBuilderLastNewsContent.push('<div class="card-content card-content-event">');
@@ -906,7 +994,7 @@ console.log('arranca builder de los suceso');
                         strBuilderLastNewsContent.push('</div>');
                     strBuilderLastNewsContent.push('</div>');
             console.log('evento');
-            console.log(item);
+            console.log(item);*/
 
             } else if (item.tipoObjeto == "torneo-tabla-posicion") {
             console.log(item);
@@ -916,67 +1004,64 @@ console.log('arranca builder de los suceso');
             $('#positionstable-list').html('');
             //var strBuilderLastNewsContent = [];
             //$.each(positionTables, function(n, table) {
-                strBuilderLastNewsContent.push('<div class="card card-table-tournaments>');
-                strBuilderLastNewsContent.push('<a href="#" onclick="loadPositionsTableDetails('+item.id+')">');
-                strBuilderLastNewsContent.push('<div class="card card-table-tournaments');
-                strBuilderLastNewsContent.push('<div class="card-header card-header-center card-header-positionstable">'+item.tablaGeneral.titulo+'</div>');
-                //strBuilderLastNewsContent.push('<div class="card-header card-header-center">'+item.titulo+'</div>');
-                strBuilderLastNewsContent.push('<div class="card-content">');
-                strBuilderLastNewsContent.push('<div class="card-content-inner">');
-                strBuilderLastNewsContent.push('<div class="list-block">');
-                strBuilderLastNewsContent.push('<div style="overflow-x:auto;">');
-                strBuilderLastNewsContent.push('<table class="table-tournaments-home table-positionstable">');
-                strBuilderLastNewsContent.push('<tr class="tr-header-home">');
+                console.log(item.id);
+                      strBuilderLastNewsContent.push('<div class="card tournament-matches"> <a onclick="loadPositionsTableDetails('+item.id+', '+false+')" href="#">');
+                      strBuilderLastNewsContent.push('<div id="tournament-matches-header" class="card-header no-border">');
+
+                      strBuilderLastNewsContent.push('<div class="tournament-header-titulo">'+item.titulo+'</div>');
+                      strBuilderLastNewsContent.push('<div class="tournament-header-fecha">'+item.titulo+'</div>');
+
+                      strBuilderLastNewsContent.push('</div>');
+                      strBuilderLastNewsContent.push('<div class="card-content tournament-matches-content">');
+                      strBuilderLastNewsContent.push('<div class="card-content-inner">');
+                      var verMasFecha = false;
                 //console.log(item);
                 //console.log(item.tablaGeneral.cabecera);
+                strBuilderLastNewsContent.push('<div class="row tournament-father no-gutter">');
                 $.each(item.tablaGeneral.cabecera, function(i, item) {
                 //console.log(item.nombreCorto);
                 //console.log(item.columna);
                     if (item.columna == 'eq'){
                         if(item.columna != "" && item.columna != undefined){
-                            strBuilderLastNewsContent.push('<th class="th-40-tournaments">'+item.nombreCorto+'</th>');
+                            strBuilderLastNewsContent.push('<div class="col-40 tournament-father-team">'+item.nombreCorto+'</div>');
                         }
                     } else if (item.columna == 'pt'){
                         if(item.columna != "" && item.columna != undefined){
-                            strBuilderLastNewsContent.push('<th class="th-10-tournaments">'+item.nombreCorto+'</th>');
+                            strBuilderLastNewsContent.push('<div class="col-10 tournament-father-numbers">'+item.nombreCorto+'</div>');
                         }
                     } else if (item.columna == 'pj'){
                         if(item.columna != "" && item.columna != undefined){
-                            strBuilderLastNewsContent.push('<th class="th-10-tournaments">'+item.nombreCorto+'</th>');
+                            strBuilderLastNewsContent.push('<div class="col-8 tournament-father-numbers">'+item.nombreCorto+'</div>');
                         }
                     } else if (item.columna == 'pe'){
                         if(item.columna != "" && item.columna != undefined){
-                            strBuilderLastNewsContent.push('<th class="th-8-tournaments">'+item.nombreCorto+'</th>');
+                            strBuilderLastNewsContent.push('<div class="col-8 tournament-father-numbers">'+item.nombreCorto+'</div>');
                         }
                     } else if (item.columna == 'pp'){
                         if(item.columna != "" && item.columna != undefined){
-                            strBuilderLastNewsContent.push('<th class="th-8-tournaments">'+item.nombreCorto+'</th>');
+                            strBuilderLastNewsContent.push('<div class="col-8 tournament-father-numbers">'+item.nombreCorto+'</div>');
                         }
                     } else if (item.columna == 'tf'){
                         if(item.columna != "" && item.columna != undefined){
-                            strBuilderLastNewsContent.push('<th class="th-8-tournaments">'+item.nombreCorto+'</th>');
+                            strBuilderLastNewsContent.push('<div class="col-8 tournament-father-numbers">'+item.nombreCorto+'</div>');
                         }
                     } else if (item.columna == 'tc'){
                         if(item.columna != "" && item.columna != undefined){
-                            strBuilderLastNewsContent.push('<th class="th-8-tournaments">'+item.nombreCorto+'</th>');
+                            strBuilderLastNewsContent.push('<div class="col-8 tournament-father-numbers">'+item.nombreCorto+'</div>');
                         }
                     } else if (item.columna == 'td'){
                         if(item.columna != "" && item.columna != undefined){
-                            strBuilderLastNewsContent.push('<th class="th-8-tournaments">'+item.nombreCorto+'</th>');
-                        }
-                    } else if (item.columna == 'pt'){
-                        if(item.columna != "" && item.columna != undefined){
-                            strBuilderLastNewsContent.push('<th class="th-8-tournaments">'+item.nombreCorto+'</th>');
+                            strBuilderLastNewsContent.push('<div class="col-10 tournament-father-numbers">'+item.nombreCorto+'</div>');
                         }
                     }
 
 
                     //}
                 });
-                strBuilderLastNewsContent.push('</tr>');
+                strBuilderLastNewsContent.push('</div>');
                 var verMas = false;
                 $.each(item.tablaGeneral.cuerpo, function(i, item) {
-                    strBuilderLastNewsContent.push('<tr class="tr-body-home">');
+                    strBuilderLastNewsContent.push('<div class="row tournament-child no-gutter">');
                     var pos = i+1;
                     var equipoTabla = i+1;
 
@@ -985,57 +1070,51 @@ console.log('arranca builder de los suceso');
                     console.log(verMas);
                     if (equipoTabla < 5){
                         if(item.eq.nombre !== "" && item.eq.nombre !== undefined){
-                            strBuilderLastNewsContent.push('<td class="td-40-tournaments"><span class="td-span-team-pos">'+pos+'</span><span class="td-span-team-name">'+item.eq.nombre+'</span></th>');
+                            strBuilderLastNewsContent.push('<div class="col-40 tournament-child-team"><span class="td-span-team-pos">'+pos+'</span><span class="td-span-team-name">'+item.eq.nombre+'</span></div>');
                         }
                         if(item.pt !== "" && item.pt !== undefined){
-                            strBuilderLastNewsContent.push('<td class="td-10-tournaments">'+item.pt+'</th>');
+                            strBuilderLastNewsContent.push('<div class="col-10 tournament-child-numbers">'+item.pt+'</div>');
                         }
                         if(item.pj !== "" && item.pj !== undefined){
-                            strBuilderLastNewsContent.push('<td class="td-10-tournaments">'+item.pj+'</th>');
+                            strBuilderLastNewsContent.push('<div class="col-8 tournament-child-numbers">'+item.pj+'</div>');
                         }
                         if(item.pe !== "" && item.pe !== undefined){
-                            strBuilderLastNewsContent.push('<td class="td-8-tournaments">'+item.pe+'</th>');
+                            strBuilderLastNewsContent.push('<div class="col-8 tournament-child-numbers">'+item.pe+'</div>');
                         }
                         if(item.pp !== "" && item.pp !== undefined){
-                            strBuilderLastNewsContent.push('<td class="td-8-tournaments">'+item.pp+'</th>');
+                            strBuilderLastNewsContent.push('<div class="col-8 tournament-child-numbers">'+item.pp+'</div>');
                         }
                         if(item.tf !== "" && item.tf !== undefined){
-                            strBuilderLastNewsContent.push('<td class="td-8-tournaments">'+item.tf+'</th>');
+                            strBuilderLastNewsContent.push('<div class="col-8 tournament-child-numbers">'+item.tf+'</div>');
                         }
                         if(item.tc !== "" && item.tc !== undefined){
-                            strBuilderLastNewsContent.push('<td class="td-8-tournaments">'+item.tc+'</th>');
+                            strBuilderLastNewsContent.push('<div class="col-8 tournament-child-numbers">'+item.tc+'</div>');
                         }
                         if(item.td  !== "" && item.td !== undefined){
-                            strBuilderLastNewsContent.push('<td class="td-8-tournaments">'+item.td+'</th>');
+                            strBuilderLastNewsContent.push('<div class="col-10 tournament-child-numbers">'+item.td+'</div>');
                         }
                     } else{
 
                         if (verMas == false){
-                        strBuilderLastNewsContent.push('<td class="td-50-tournaments-more">Ver mas...</th>');
+                        strBuilderLastNewsContent.push('<div class="col-50"> ...</div>');
                         verMas = true;
                         }
 
                     }
-                    strBuilderLastNewsContent.push('</tr>');
+                    strBuilderLastNewsContent.push('</div>');
                 });
 
-                strBuilderLastNewsContent.push('</table>');
-                strBuilderLastNewsContent.push('</div>');
-                /*if(table.tableNotes != "" || table.tableNotes != undefined){
-                    strBuilderLastNewsContent.push('<div class="description-table-tournament">'+table.tableNotes+'</div>');
-                }*/
-                strBuilderLastNewsContent.push('</div>');
-                strBuilderLastNewsContent.push('</div>');
-                strBuilderLastNewsContent.push('</div>');
-                strBuilderLastNewsContent.push('</div>');
+                strBuilderLastNewsContent.push('</div></div>');
+                strBuilderLastNewsContent.push('<div class="card-footer tournament-matches-footer">Ver más...</div></div>');
 
             //$('#positionstable-list').append(strBuilderListCards.join(""));
             //mainView.router.load({pageName: 'positionstable'});
             //myApp.initImagesLazyLoad(mainView.activePage.container);
 
         } else if (item.tipoObjeto == "torneo-fecha") {
+          var encuentroFecha = 0;
           console.log(item.id);
-          strBuilderLastNewsContent.push('<div class="card tournament-matches"> <a onclick="loadMatchDetailsFixture('+item.id+')" href="#">');
+          strBuilderLastNewsContent.push('<div class="card tournament-matches"> <a onclick="loadMatchDetailsFixture('+item.id+','+true+')" href="#">');
           strBuilderLastNewsContent.push('<div id="tournament-matches-header" class="card-header no-border">');
           strBuilderLastNewsContent.push('<div class="tournament-matches-icon"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-tournament" ></div>');
           strBuilderLastNewsContent.push('<div class="tournament-matches-name">'+item.nombre+'</div>');
@@ -1046,7 +1125,7 @@ console.log('arranca builder de los suceso');
           var verMasFecha = false;
 
           $.each( item.encuentros, function( n, match ){
-              var encuentroFecha = i+1;
+              encuentroFecha = encuentroFecha+1;
               console.log(encuentroFecha);
               if (encuentroFecha < 3){
                   strBuilderLastNewsContent.push('<div class="row row-tournament-matches">');
@@ -1068,17 +1147,6 @@ console.log('arranca builder de los suceso');
           });
           strBuilderLastNewsContent.push('</div></div>');
           strBuilderLastNewsContent.push('<div class="card-footer tournament-matches-footer">Ver más...</div></div>');
-
-
-
-
-
-
-
-
-
-
-
 
 
             /*
@@ -1186,7 +1254,7 @@ console.log('arranca builder de los suceso');
 
 */
           } else {
-          console.log('nada del resto');
+
           }
     });
     strBuilderLastNewsContent.push('</ul>');
@@ -1388,7 +1456,7 @@ $.each( homeDetails2List.calendario, function( i, item ){
                                             strBuilderCalendarContent.push('<div class="card-header card-header-center">'+item.torneo.nombre+'</div>');
                         //}
 
-                                                strBuilderCalendarContent.push('<div onclick="loadMatchDetails1('+item.id+')" class="card-content">');
+                                                strBuilderCalendarContent.push('<div onclick="loadMatchDetails1('+item.id+', \''+matchDetailFromCalendar+'\')" class="card-content">');
                                                     strBuilderCalendarContent.push('<div class="card-content-inner">');
                                                         strBuilderCalendarContent.push('<div class="list-block lastmatch-tournaments">');
                                                             strBuilderCalendarContent.push('<div class="item-content">');
@@ -1553,7 +1621,7 @@ var strBuilderTimeLineContent = [];
                                         strBuilderTimeLineContent.push('<div class="card-header card-header-center">'+item.torneo.nombre+'</div>');
                     //}
 
-                                            strBuilderTimeLineContent.push('<div onclick="loadMatchDetails1('+item.id+')" class="card-content">');
+                                            strBuilderTimeLineContent.push('<div onclick="loadMatchDetails1('+item.id+', \''+matchDetailFromCalendar+'\')" class="card-content">');
                                                 strBuilderTimeLineContent.push('<div class="card-content-inner">');
                                                     strBuilderTimeLineContent.push('<div class="list-block lastmatch-tournaments">');
                                                         strBuilderTimeLineContent.push('<div class="item-content">');

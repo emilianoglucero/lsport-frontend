@@ -159,5 +159,5 @@ function openVideoBrowserInstallation(idVideo){
 	});
 	myPhotoBrowserVideoGalleryInstallation.open();
 	$('.lblHeaderClose').text(lblHeaderClose);
-	$('.lblHeaderOfVideoBrowser').text(listVideoBrowserInstallation[idVideo].caption);
+	$('.lblHeaderOfVideoBrowser').text(listVideoBrowserInstallation[idVideo].titulo);
 }

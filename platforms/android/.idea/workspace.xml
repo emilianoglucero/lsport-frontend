@@ -5,25 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61d7db02-8111-47f3-96d0-faa85811d084" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/resourceHashesCache.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/resourceHashesCache.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/jarAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/jarAnalysis.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskJars.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskJars.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/page-activitydetails.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/page-activitydetails.js" />
-      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/page-home.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/page-home.js" />
-      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/page-news.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/page-news.js" />
-      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/page-sportdetails.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/page-sportdetails.js" />
-      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/page-sports.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/page-sports.js" />
-      <change beforePath="$PROJECT_DIR$/debug/android-debug.apk" afterPath="$PROJECT_DIR$/debug/android-debug.apk" />
+      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/login/page-login.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/login/page-login.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -106,11 +88,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="page-home.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="page-home.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-home.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="47">
               <caret line="878" column="66" lean-forward="false" selection-start-line="878" selection-start-column="54" selection-end-line="878" selection-end-column="66" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="page-login.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/www/js/pages/login/page-login.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="103">
+              <caret line="135" column="48" lean-forward="false" selection-start-line="135" selection-start-column="32" selection-end-line="135" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -129,8 +121,8 @@
       <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/www/js/common.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="11700">
-              <caret line="780" column="24" lean-forward="false" selection-start-line="780" selection-start-column="24" selection-end-line="780" selection-end-column="24" />
+            <state relative-caret-position="-3">
+              <caret line="353" column="36" lean-forward="false" selection-start-line="353" selection-start-column="36" selection-end-line="383" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -140,9 +132,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>listVideoBrowserNewDetails</find>
-      <find>myPhotoBrowserVideoGalleryNewDetails</find>
-      <find>urlVideo</find>
       <find>caption</find>
       <find>events</find>
       <find>builderPhotoGalleryNewDetails</find>
@@ -170,6 +159,9 @@
       <find>truncate</find>
       <find>item.detalle</find>
       <find>#13</find>
+      <find>registr</find>
+      <find>tokenUser</find>
+      <find>registrar</find>
     </findStrings>
     <replaceStrings>
       <replace>strBuilderLastMatch</replace>
@@ -2420,6 +2412,7 @@
         <option value="$PROJECT_DIR$/assets/www/js/pages/page-sports.js" />
         <option value="$PROJECT_DIR$/assets/www/js/pages/page-news.js" />
         <option value="$PROJECT_DIR$/assets/www/js/pages/page-home.js" />
+        <option value="$PROJECT_DIR$/assets/www/js/pages/login/page-login.js" />
       </list>
     </option>
   </component>
@@ -3110,26 +3103,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/js/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11700">
-          <caret line="780" column="24" lean-forward="false" selection-start-line="780" selection-start-column="24" selection-end-line="780" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-user.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="21" column="23" lean-forward="false" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/login/page-login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="681">
-          <caret line="223" column="0" lean-forward="false" selection-start-line="223" selection-start-column="0" selection-end-line="223" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -3146,6 +3123,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="47">
           <caret line="878" column="66" lean-forward="false" selection-start-line="878" selection-start-column="54" selection-end-line="878" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3">
+          <caret line="353" column="36" lean-forward="false" selection-start-line="353" selection-start-column="36" selection-end-line="383" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/login/page-login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="135" column="48" lean-forward="false" selection-start-line="135" selection-start-column="32" selection-end-line="135" selection-end-column="48" />
           <folding />
         </state>
       </provider>

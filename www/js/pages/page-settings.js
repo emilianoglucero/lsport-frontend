@@ -1,12 +1,15 @@
+var json;
+
 var areFavouritesChanged = false;
 myApp.onPageInit('settings', function (page)
 {
+    $('#buttonSaveFavouritesSettings').hide();
 	//$('#lblMenuItemSettingsFavourites').text(lblHeaderSettingsFavourites);
 	//$('#lblMenuItemSettingsNotifications').text(lblHeaderSettingsNotifications);
 	$('#buttonSaveFavouritesSettings').text(lblSaveFavouritesSettings);
 	$('#buttonSaveFavouritesSettings').on('click', function(){
 		goBack = false;
-		saveNotificationsSettings();
+		sendPreferences();
 	});
 
 	$('#btnBackPageSettings').on('click', function(){
@@ -18,6 +21,114 @@ myApp.onPageInit('settings', function (page)
 	    }
 	});
 
+	//traigo los favoritos
+	showLoadSpinnerWS();
+	$.ajax({
+    // URL del Web Service, en este ws no hace falta enviar datos, con el bearer identifica el usuario
+            url: getPathWS() + 'setPreferencias',
+            type: "GET",
+            contentType: "application/json",
+            dataType: 'json',
+            timeout: timeOut,
+            success: function(response){
+                /*if(response.errorCode != 0)
+                {
+                    hideLoadSpinnerWS();
+                    filterCodeErrorWS(response);
+                    $('#iconHeaderFavouritesHome .icon').removeClass('animation-preloader');
+                    return;
+                }
+                if(isAppUpdate(response.serverVersion) == false){
+                    hideLoadSpinnerWS();
+                    mainView.router.load({pageName: 'update'});
+                    return;
+                }*/
+
+                console.log(response);
+                json = response;
+                update_tree();
+
+
+                //$ele1 = $(this);
+                $('.check').filter('[data-favourite="1"]').attr("data-checked", "1");
+                var busquedaChecks = $('.check').filter('[data-favourite="1"]');
+                console.log(busquedaChecks);
+                //var ele2 = $('.custom_check .fa-check');
+                //console.log(ele2);
+                //var ele3 = $('.check').find('.fa-check');
+                //console.log(ele3);
+
+
+                var finalresult = busquedaChecks.find('.custom_check .fa-check');
+                console.log(finalresult);
+                console.log(finalresult[0]);
+                console.log(finalresult[1]);
+                finalresult.css("display", "inline");
+                //var finalresultParents1 = finalresult.parents('.check');
+                //var finalresultParents2 = finalresultParents1.parents('.custom_check');
+                //var finalresultParents2 = finalresultParents1.parent('.custom_check');
+
+
+                var finalresultParents = finalresult.closest('.check');
+                var finalresultParents2 = finalresultParents.closest('.check').closest('.check_container').closest('.check').children( '.custom_check' ).children( '.fa-check' ).css("display", "inline");
+                //console.log(finalresultParents1[0]);
+                //console.log(finalresultParents2[0]);
+                var finalresultParentsContainer = finalresultParents.closest('.check').closest('.check_container');
+                var contCheckNoFavourite = 0;
+                console.log(finalresultParentsContainer.length);
+                console.log(finalresultParentsContainer);
+                console.log(finalresultParentsContainer[0]);
+                console.log(finalresultParentsContainer[1]);
+                console.log(finalresultParentsContainer.eq(1).children('.check'));
+                //console.log(finalresultParentsContainer.eq(1).children());
+                var cantDom;
+                    for (cantDom = 0; cantDom < finalresultParentsContainer.length; cantDom++) {
+                    console.log('for');
+                    console.log(cantDom);
+                    console.log(finalresultParentsContainer.length);
+                    var finalresultParentsContainerCheck = finalresultParentsContainer.eq(cantDom).children('.check');
+                    console.log(finalresultParentsContainerCheck);
+                    //console.log(finalresultParentsContainerCheck.attr('data-favourite'));
+                    var cantCheck;
+                        for (cantCheck = 0; cantCheck < finalresultParentsContainerCheck.length; cantCheck++) {
+                        console.log(finalresultParentsContainerCheck.eq(cantCheck));
+
+                            if (finalresultParentsContainerCheck.eq(cantCheck).attr('data-favourite') == "0" ) {
+                            console.log('datafavourite00');
+                            contCheckNoFavourite = contCheckNoFavourite++;
+                            console.log(finalresultParentsContainerCheck.eq(cantCheck));
+                            //console.log(finalresultParentsContainerCheck[cantCheck]);
+                            finalresultParentsContainerCheck.eq(cantCheck).closest( '.check_container' ).siblings( '.custom_check' ).children( '.fa-check' ).css("display", "none");
+                            var finalresultParentsContainerCheckMinus = finalresultParentsContainerCheck.eq(cantCheck).closest( '.check_container' ).siblings( '.custom_check' ).children( '.fa-minus' ).css("display", "inline");
+                            console.log (finalresultParentsContainerCheckMinus);
+
+                            }
+                        }
+
+
+
+                    }
+                    hideLoadSpinnerWS();
+                    //showMessageToast(messageSettingsNotificationsSuccessfullySaved);
+
+
+            },
+            error: function (data, status, error){
+                console.log(error);
+                console.log(data);
+                console.log(status);
+                //showMessageToast(messageConexionError);
+                //$('#iconHeaderFavouritesHome .icon').removeClass('animation-preloader');
+           },
+           beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer ' + accessToken ); } //set tokenString before send
+    });
+
+
+});
+myApp.onPageReinit('settings', function (page)
+{
+console.log('reinittt');
+$('#buttonSaveFavouritesSettings').hide();
 });
 
 myApp.onPageBeforeAnimation('settings', function (page)
@@ -26,7 +137,7 @@ myApp.onPageBeforeAnimation('settings', function (page)
 	activateStateItemMenu(myApp.getCurrentView().activePage.name);
 	trackPageGA("Configuraciones");
 
-	if(page.fromPage.name == "initsettings")
+	/*if(page.fromPage.name == "initsettings")
 	{
 		loadSettingNotificationsList(true);
 		myApp.params.swipePanel = false;
@@ -63,56 +174,320 @@ myApp.onPageBeforeAnimation('settings', function (page)
 	{
 		var count = parseInt(window.localStorage.getItem("COUNTERACCESSSETTINGS"+idClub)) + 1;
 		window.localStorage.setItem("COUNTERACCESSSETTINGS"+idClub,count);
-	}
+	}*/
 
 });
 
-function loadSettingNotificationsList(checkFavourites)
-{
-	$('#page-content-settings').html('');
-	showLoadSpinnerWS();
-	if(window.localStorage.getItem("CLIENTID"+idClub) == null){
-		registerNewClient();
-	}
-	$('#settingsnotifications-list').html('');
-	/*$.ajax({
-		// URL del Web Service
-		//url: getPathWS() + 'getNotificationsPreferences',
-		url: 'http://clubes.lenguajesport.com/webservice/getNotificationsPreferences',
-		dataType: 'jsonp',
-		data: {
-			'idClub': idClub,
-			'clientId': window.localStorage.getItem("CLIENTID"+idClub)
-		},
-		timeout: timeOut,
-		success: function(response){
-			if(response.errorCode != 0)
-			{
-			    hideLoadSpinnerWS();
-			    builderSettingsNotificationsError(checkFavourites);
-			    showMessageToast(messageConexionError);
-			    return;
-			}
-			if(isAppUpdate(response.serverVersion) == false){
-				hideLoadSpinnerWS();
-				mainView.router.load({pageName: 'update'});
-				return;
-			}
+function GetTree(objs, par, lvl) {
+    var str = '';
 
-			initSettingsFavouritesList = response.notificationsPreferences;
-			builderSettingsPage();
-			checkedElementsSettingsList(checkFavourites);
-			hideLoadSpinnerWS();
-		},
-		error: function (data, status, error){
-	          builderSettingsNotificationsError(checkFavourites);
-	          hideLoadSpinnerWS();
-	          showMessageToast(messageConexionError);
-	   }
-	});*/
+    if(typeof lvl == "undefined") lvl = 1;
+    if(lvl > 3) return str;
+
+    $.each(objs, function(k,ele) {
+    console.log(ele);
+    //console.log(elementTosend);
+
+           if(ele.parent !== par) return;
+           var children = GetTree(objs,  ele.id, lvl+1);
+
+           str += '<div data-lvl="'+lvl+'" data-id="'+ele.id+'" data-type="'+ele.type+'" data-tosend="'+ele.elementTosend+'" data-favourite="'+ele.favourite+'" org-id="'+ele.org_id+'" data-checked="0" '+
+           (lvl == 1 ? 'data-expandlevel="'+ele.expand_level+'" ' : '')
+           +'data-enabled="'+ele.enabled+'" data-expanded="1" class="check">' +
+           (children == '' ? '' : '<div class="check_arrow"><i class="fa fa-caret-right"></i></div>')
+           + '<div class="custom_check"><i class="fa fa-check"></i><i class="fa fa-minus"></i></div>\
+           <div class="check_title"><img src="'+ele.img+'" alt="">'+ ele.name +'</div>\
+           <div class="check_container">'+children+'</div>\
+           </div>';
+
+
+           });
+
+    return str;
+}
+
+function update_tree() {
+    console.log(json);
+    //json = JSON.stringify(json);
+    //console.log(json);
+
+    var json1 = $('#txt').text();
+    console.log(json1);
+
+
+
+    //json1 = convert_json(json1);
+    console.log(json1);
+    json = convert_json(json);
+    console.log(json);
+    var obj = JSON.parse(json);
+    //json = json1;
+    //var obj = json;
+    console.log(obj);
+    var htm = GetTree(obj, null);
+    $('#container').html(htm);
+    $.each($('.check[data-expandlevel]'), function(k,ele) {
+           $ele = $(ele);
+           $ele.find('.check').attr('data-expanded', '0');
+           lvl = $ele.attr('data-expandlevel');
+           if(lvl == 0) $ele.attr('data-expanded', '0');
+           if(lvl>0)$ele.attr('data-enabled', '1');
+           while(lvl > 0) {
+           $ele.find('.check[data-lvl='+lvl+']').attr('data-expanded', '1');
+           $ele.find('.check[data-lvl='+lvl+']').attr('data-enabled', '1');
+           lvl--;
+           }
+    })
+
+}
+
+function fill_it() {
+    $('#txt').text('[{"id":0,"name":"Hockey","level":1,"parent":null,"img": "img/logo.png", "enabled":1,"expand_level":0},{"id":1,"name":"Dutch League","level":2,"parent":0,"img": "img/logo.png", "enabled":1,"expand_level":0},{"id":2,"name":"Ajax","level":3,"parent":1,"img": "img/logo.png", "enabled":1,"expand_level":0},{"id":3,"name":"Amsterdam Sport","level":3,"parent":1,"img": "img/logo.png", "enabled":1,"expand_level":0},{"id":4,"name":"Argentinean League","level":2,"parent":0,"img": "img/img.png", "enabled":1,"expand_level":0},{"id":5,"name":"Boca","level":3,"parent":4,"img": "img/img.png", "enabled":1,"expand_level":0},{"id":6,"name":"River","level":3,"parent":4,"img": "img/img.png", "enabled":1,"expand_level":0},{"id":7,"name":"Football","level":1,"parent":null,"img": "img/img.png", "enabled":1,"expand_level":0},{"id":8,"name":"Premier League","level":2,"parent":7,"img": "https://image.freepik.com/free-icon/instagram-logo_318-84939.jpg", "enabled":1,"expand_level":0},{"id":9,"name":"Manchester United","level":3,"parent":8,"img": "https://image.freepik.com/free-icon/instagram-logo_318-84939.jpg", "enabled":1,"expand_level":0},{"id":10,"name":"Manchester City","level":3,"parent":8,"img": "https://image.freepik.com/free-icon/instagram-logo_318-84939.jpg", "enabled":1,"expand_level":0},{"id":11,"name":"Liverpool City","level":3,"parent":8,"img": "img/logo.png", "enabled":1,"expand_level":0},{"id":12,"name":"La Liga","level":2,"parent":7,"img": "img/logo.png", "enabled":1,"expand_level":0},{"id":13,"name":"Barcelona","level":3,"parent":12,"img": "img/logo.png", "enabled":1,"expand_level":0},{"id":14,"name":"Real Madrid","level":3,"parent":12,"img": "img/img.png", "enabled":1,"expand_level":0}]');
+
+
+}
+function clear() {
+    $('#txt').text('');
+}
+$(document).ready(function() {
+
+
+      $('#buttonSaveFavouritesSettings').hide();
+      $('body').on('click', '.check_arrow', function() {
+                   var x = $(this).closest('.check').attr('data-expanded');
+                   if(parseInt(x) == 1){
+                    $(this).closest('.check').attr('data-expanded', "0");
+                   } else{
+                    $(this).closest('.check').attr('data-expanded', "1");
+                   }
+      });
+
+      $('body').on('click', '.custom_check', update_ele);
+
+     // $('body').on('click', 'button#create', update_tree);
+     // $('body').on('click', 'button#fill', fill_it);
+      $('body').on('click', 'button#clear', clear);
+
+      $('body').on('click','.check_title', function() {
+                   $(this).closest('.check').find('.check_arrow:first').click()
+      })
+
+
+
+});
+
+
+function update_ele() {
+    //muestro el boton "Salvar"
+    $('#buttonSaveFavouritesSettings').show();
+
+    $ele = $(this);
+    $ele_par = $ele.closest('.check');
+    var state;
+    $ele.find('.fa-minus').hide();
+    if($ele_par.attr('data-checked') == "0") {
+        state = "1";
+        $ele_par.attr('data-checked', "1");
+        $ele.find('.fa-check').show();
+    } else {
+        state = "0";
+        $ele_par.attr('data-checked', "0");
+        $ele.find('.fa-check').hide();
+    }
+
+    $.each($ele_par.find('.check'), function(k, ele) {
+
+           $(ele).find('.custom_check:first .fa-minus').hide();
+           $(ele).attr('data-checked', state);
+           if(state == "1"){
+           $(ele).find('.custom_check:first .fa-check').show();
+           //console.log(ele);
+           }else{
+           $(ele).find('.custom_check:first .fa-check').hide();
+           }
+
+    });
+
+    console.log($ele_par);
+    //console.log($ele_par.attributes);
+    update_parent($ele_par);
+
+
+}
+
+
+function convert_json(json) {
+    console.log(json);
+    //var jas = JSON.parse(json);
+    var jas = json;
+    console.log(jas);
+    var curr_cnt = 0;
+    var str = '[';
+    $.each(jas, function(k, ele) {
+
+           if(k == "deportes") {
+               $.each(ele, function(k, ele2) {
+                      str += '{"id":"'+curr_cnt+'", "org_id":"'+ele2.id+'", "name":"'+ele2.nombre+'", "parent":null, "img":"'+ele2.imagenPrincipalMin+'", "enabled":"'+ele2.expand+'", "favourite":"'+ele2.preferenciaPrincipal+'", "expand_level": "'+ele2.showlvl+'"},';
+                      curr_cnt++;
+                      console.log(ele2);
+                      console.log(ele2.enac);
+                     // if(ele2.ENAC !== "undefined") {
+
+
+                          if(ele2.tipoRoot == 3) {
+
+                          var par = curr_cnt - 1;
+                              if(ele2.hasOwnProperty('enac')){
+                                  $.each(ele2.enac, function(k, ele3) {
+                                  console.log(ele3);
+                                         str += '{"id":"'+curr_cnt+'", "org_id":"'+ele3.id+'", "name":"'+ele3.nombreCorto+'", "parent":"'+par+'", "img":"'+ele3.imagenPrincipalMin+'", "favourite":"'+ele3.preferenciaPrincipal+'", "enabled":"'+ele2.expand+'"},';
+                                         curr_cnt++;
+                                         console.log(ele3.categorias);
+                                             if(ele3.categorias !== "undefined") {
+                                             var inner_par = curr_cnt - 1;
+                                             $.each(ele3.categorias, function(k, ele4) {
+                                             console.log(ele4);
+                                                    str += '{"id":"'+curr_cnt+'", "org_id":"'+ele4.id+'", "name":"'+ele4.nombre+'", "parent":"'+inner_par+'", "img":"'+ele4.imagenPrincipalMin+'", "elementTosend":"true", "favourite":"'+ele4.preferenciaPrincipal+'", "enabled":"'+ele2.expand+'"},';
+                                                    curr_cnt++;
+                                                    });
+
+                                             }
+                                  });
+                              }
+                              if(ele2.hasOwnProperty('categorias')){
+                                  $.each(ele2.categorias, function(k, ele3) {
+                                    console.log(ele3);
+                                           str += '{"id":"'+curr_cnt+'", "org_id":"'+ele3.id+'", "name":"'+ele3.nombre+'", "parent":"'+par+'", "img":"'+ele3.imagenPrincipalMin+'", "elementTosend":"true", "favourite":"'+ele3.preferenciaPrincipal+'", "enabled":"'+ele2.expand+'"},';
+                                           curr_cnt++;
+                                           console.log(str);
+
+                                  });
+                              }
+
+                          }
+                          if(ele2.tipoRoot == 2) {
+
+                            var par = curr_cnt - 1;
+
+                              $.each(ele2.categorias, function(k, ele3) {
+                                console.log(ele3);
+                                       str += '{"id":"'+curr_cnt+'", "org_id":"'+ele3.id+'", "name":"'+ele3.nombre+'", "parent":"'+par+'", "img":"'+ele3.imagenPrincipalMin+'", "favourite":"'+ele3.preferenciaPrincipal+'", "elementTosend":"true", "enabled":"'+ele2.expand+'"},';
+                                       curr_cnt++;
+                                       console.log(str);
+
+                              });
+
+                          }
+                          if(ele2.tipoRoot == 1) {
+                          var par = curr_cnt - 1;
+                            $.each(ele2.categorias, function(k, ele3) {
+                              console.log(ele3);
+                                     str += '{"id":"'+curr_cnt+'", "org_id":"'+ele3.id+'", "name":"'+ele3.nombre+'", "parent":"'+par+'", "img":"'+ele3.imagenPrincipalMin+'", "favourite":"'+ele3.preferenciaPrincipal+'", "elementTosend":"true", "enabled":"'+ele2.expand+'"},';
+                                     curr_cnt++;
+                                     console.log(str);
+
+                            });
+
+
+                          }
+
+               });
+           }
+
+
+
+
+           if(k == "actividades") {
+           console.log("actividades");
+           $.each(ele, function(k, ele2) {
+                  str += '{"id":"'+curr_cnt+'", "org_id":"'+ele2.id+'", "name":"'+ele2.nombre+'", "parent":null, "img":"'+ele2.imagenPrincipalMin+'", "enabled":"0", "type": "activity", "favourite":"'+ele2.preferenciaPrincipal+'", "expand_level": "0"},';
+                  curr_cnt++;
+           });
+
+           }
+
+    });
+    str = str.substr(0, str.length-1);
+
+    str += ']';
+    return str;
+    console.log(str);
+}
+
+function update_parent(ele) {
+    $parent = $(ele).parents('.check');
+    if($parent.length <=0) return;
+    $parent = $($parent[0]);
+    //console.log($parent);
+    $parent.find('.custom_check:first .fa-minus').show();
+
+    $parent.find('.custom_check:first .fa-check').hide();
+    $parent.attr('data-checked', "2");
+    if($parent.find('.check[data-checked="1"]').length == $parent.find('.check').length) {
+        $parent.attr('data-checked', "1");
+        $parent.find('.custom_check:first .fa-minus').hide();
+        $parent.find('.custom_check:first .fa-check').show();
+    }
+    if($parent.find('.check[data-checked="0"]').length == $parent.find('.check').length) {
+        $parent.attr('data-checked', "0");
+        $parent.find('.custom_check:first .fa-minus').hide();
+        $parent.find('.custom_check:first .fa-check').hide();
+    }
+    //console.log($parent);
+    update_parent($parent);
+
+}
+
+function sendPreferences() {
+showLoadSpinnerWS();
+//buscs los id de deportes
+var busquedaDeportes = $('.check').filter('[data-checked="1"][data-tosend="true"]');
+//console.log(busquedaDeportes);
+//console.log(busqueda[0].[2]);
+//console.log(busquedaDeportes[0].getAttribute("org-id"));
+//console.log(busquedaDeportes.length);
+
+var settingsToSend = {
+    preferenciasPrincipales: {
+        actividades: [0],
+        deportesCategorias: [0]
+    },
+    preferenciasNotificacion: {
+        actividades: [0],
+        deportesCategorias: [0]
+    }
+};
+
+var i;
+//var sportsPreferenceCategories = [];
+for (i = 0; i < busquedaDeportes.length; i++) {
+    busquedaDeportes[i].getAttribute("org-id");
+    settingsToSend.preferenciasPrincipales.deportesCategorias.push(busquedaDeportes[i].getAttribute("org-id"));
+}
+//console.log(sportsPreferenceCategories);
+
+//busca los id de actividades
+var busquedaActividades = $('.check').filter('[data-checked="1"][data-lvl="1"][data-type="activity"]');
+console.log(busquedaActividades);
+
+//var activitiesPreferenceCategories = [];
+for (i = 0; i < busquedaActividades.length; i++) {
+    busquedaActividades[i].getAttribute("org-id");
+    settingsToSend.preferenciasPrincipales.actividades.push(busquedaActividades[i].getAttribute("org-id"));
+}
+
+
+
+console.log(settingsToSend);
+var settingsToSendFinal = JSON.stringify(settingsToSend);
+console.log(settingsToSendFinal);
+
 	$.ajax({
 	// URL del Web Service, en este ws no hace falta enviar datos, con el bearer identifica el usuario
-    		url: getPathWS() + 'setPreferenciasPrincipales',
+    		url: getPathWS() + 'setPreferencias',
+    		type: "POST",
+    		data: settingsToSendFinal,
+    		contentType: "application/json",
     		dataType: 'json',
     		timeout: timeOut,
     		success: function(response){
@@ -129,418 +504,32 @@ function loadSettingNotificationsList(checkFavourites)
     				return;
     			}*/
 
-    			initSettingsFavouritesList = response.notificationsPreferences;
-                builderSettingsPage();
-                checkedElementsSettingsList(checkFavourites);
-                hideLoadSpinnerWS();
+    			hideLoadSpinnerWS();
+    			console.log(response);
+    			showMessageToast(messageSettingsNotificationsSuccessfullySaved);
+    			$('#buttonSaveFavouritesSettings').hide();
+                if( goBack == true){
+                    mainView.router.back({
+                            pageName: 'home',
+                            force: true
+                    });
+                }
 
     		},
     		error: function (data, status, error){
+    		    console.log(error);
+    		    console.log(data);
+    		    console.log(status);
     			showMessageToast(messageConexionError);
     			$('#iconHeaderFavouritesHome .icon').removeClass('animation-preloader');
+    			hideLoadSpinnerWS();
     	   },
            beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer ' + accessToken ); } //set tokenString before send
 	});
-}
-
-function builderSettingsPage()
-{
-	$('#page-content-settings').html('');
-	var strBuilderLastList  = [];
-
-	if(initSettingsFavouritesList.deportes == "" && initSettingsFavouritesList.actividades == ""){
-		strBuilderLastList.push('<div>'+lblEmptySportsActivities+'</div>')
-		$('#page-content-settings').html(strBuilderLastList.join(""));
-	}
-	else
-	{
-		strBuilderLastList.push('<div id="div-choosenot-initsettings">'+lblSettingsFavAndNot+'</div>');
-			strBuilderLastList.push('<div class="disciplines-list" id="notifitacions-list-initsettings">');
-				strBuilderLastList.push(builderSportsListNotificationsSettings(initSettingsFavouritesList.deportes));
-				strBuilderLastList.push(builderActivitiesListNotificationsSettings(initSettingsFavouritesList.actividades));
 
 
 
-				strBuilderLastList.push('<div class="list-block"><ul>');
-					strBuilderLastList.push('<li class="item-content item-content-checkbox">');
-						strBuilderLastList.push('<div class="item-inner">');
-							strBuilderLastList.push('<div class="checkbox-sports-text item-title item-title-2">'+lblHeaderEvents+'</div>');
-							strBuilderLastList.push('<div class="item-after item-after-1">');
-								strBuilderLastList.push('<label class="label-checkbox">');
-									var isChecked = "";
-									if(initSettingsFavouritesList.events == true){
-										isChecked = "checked=\"checked\"";
-									}
-									strBuilderLastList.push('<input type="checkbox" name="checkbox-sports-nots-notifications-initsettings" '+isChecked+' id="checkboxnotifications-events" class="checkbox-nots-notifications-initsettings" ><i class="icon icon-volume-cbx icon-cbx-left"></i>');
-								strBuilderLastList.push('</label>');
-							strBuilderLastList.push('</div>');
-						strBuilderLastList.push('</div>');
-					strBuilderLastList.push('</li>');
-				strBuilderLastList.push('</ul></div>');
 
-
-			$('#page-content-settings').html(strBuilderLastList.join(""));
-
-			$(document).on('change' , '.checkbox-favs-notifications-initsettings' , function(){
-
-				var favsChecked = ($("input[class='checkbox-favs-notifications-initsettings checkbox-notifications-settings']:checked").length);
-				if (favsChecked == 4){
-					areFavouritesChanged = true;
-					$('#buttonSaveFavouritesSettings').css("display", "-webkit-box");
-					$('#buttonSaveFavouritesSettings').css("display", "-ms-flexbox");
-					$('#buttonSaveFavouritesSettings').css("display", "-webkit-flex");
-					$('#buttonSaveFavouritesSettings').css("display", "flex");
-
-					if($(this).prop('checked') == true){
-						$("input[class='checkbox-nots-notifications-initsettings checkbox-notifications-settings'][value='"+$(this).val()+"']").prop('checked', true);
-					}
-					//$('#buttonSaveFavouritesSettings').css("display", "flex");
-				} else if (favsChecked > 4){
-					$(this).prop('checked', false);
-					showCurrentSelectionFavsSettingsList();
-				} else{
-					areFavouritesChanged = true;
-					$('#buttonSaveFavouritesSettings').css("display", "none");
-					if($(this).prop('checked') == true){
-						$("input[class='checkbox-nots-notifications-initsettings checkbox-notifications-settings'][value='"+$(this).val()+"']").prop('checked', true);
-					}
-				}
-			});
-
-			$(document).on('change' , '.checkbox-nots-notifications-initsettings' , function(){
-				$('#buttonSaveFavouritesSettings').css("display", "-webkit-box");
-				$('#buttonSaveFavouritesSettings').css("display", "-ms-flexbox");
-				$('#buttonSaveFavouritesSettings').css("display", "-webkit-flex");
-				$('#buttonSaveFavouritesSettings').css("display", "flex");
-			});
-	}
-}
-
-function builderSettingsNotificationsError(checkFavourites)
-{
-	$('#buttonSaveFavouritesSettings').css("display", "none");
-	$('#page-content-settings').html('');
-	var strBuilderSettingsContent  = [];
-
-	strBuilderSettingsContent.push('<div class="content-block content-block-information">');
-		strBuilderSettingsContent.push('<div id="divSettingsErrorHeader">'+divErrorConnectionHeader+'</div>');
-		strBuilderSettingsContent.push('<div id="divSettingsErrorText">'+divErrorConnectionText+'</div>');
-		strBuilderSettingsContent.push('<div onclick="loadSettingNotificationsList('+checkFavourites+')" id="divImgSettingsError" class="link">');
-			strBuilderSettingsContent.push('<img id="imgSettingsUpload" src="img/template/icon-upload.png" alt="Reload Page Settings"/>');
-		strBuilderSettingsContent.push('</div>');
-	strBuilderSettingsContent.push('</div>');
-
-	$('#page-content-settings').html(strBuilderSettingsContent.join(""));
-}
-
-
-// funcion que construye la lista de deportes con iconos de configuracion de
-// favoritos y notificaciones
-function builderSportsListNotificationsSettings(sportsList)
-{
-	var strBuilderSportsList = [];
-	if (sportsList == "") {
-		strBuilderSportsList.push('');
-	}
-	else {
-		strBuilderSportsList.push('<div class="content-block-title" >');
-			strBuilderSportsList.push('<div class="content-block-title-70" >');
-			strBuilderSportsList.push(lblHeaderSportDetails);
-			strBuilderSportsList.push('</div>');
-			strBuilderSportsList.push('<div class="content-block-title-15" >');
-			strBuilderSportsList.push(lblFav);
-			strBuilderSportsList.push('</div>');
-			strBuilderSportsList.push('<div class="content-block-title-15" >');
-			strBuilderSportsList.push(lblNot);
-			strBuilderSportsList.push('</div>');
-		strBuilderSportsList.push('</div>');
-
-		strBuilderSportsList.push('<div class="list-block"><ul>');
-
-			$.each( sportsList, function( i, item ){
-				var categoriesSportList = item.categorias;
-
-				if(categoriesSportList != ""){
-					strBuilderSportsList.push('<li>');
-							strBuilderSportsList.push('<div class="item-content">');
-								strBuilderSportsList.push('<div class="item-media">');
-									strBuilderSportsList.push('<i style="background-image: url('+item.urlImgContent+');" class="icon icon-list-header"></i>');
-								strBuilderSportsList.push('</div>');
-								strBuilderSportsList.push('<div class="item-inner">');
-									strBuilderSportsList.push('<div class="item-title item-title-sport">'+item.nombre+'</div>');
-								strBuilderSportsList.push('</div>');
-							strBuilderSportsList.push('</div>');
-
-										$.each( categoriesSportList, function( i, cat ){
-											strBuilderSportsList.push('<li class="item-content item-content-checkbox">');
-
-												strBuilderSportsList.push('<div class="item-inner">');
-													strBuilderSportsList.push('<div class="checkbox-sports-text item-title item-title-2">'+cat.nombre+'</div>');
-
-													strBuilderSportsList.push('<div class="item-after item-after-2">');
-														strBuilderSportsList.push('<label class="label-checkbox label-checkbox-star label-ckeckbox-half">');
-															strBuilderSportsList.push('<input type="checkbox" name="checkbox-sports-favs-notifications-initsettings" class="checkbox-favs-notifications-initsettings checkbox-notifications-settings" textSportActivityCheck="'+item.name+' - '+cat.categoryName+'" nameSportActivityCheck="'+item.name+'" value="'+item.idSport+','+cat.idCategory+'"><i class="icon icon-star-cbx icon-cbx-left"></i>');
-														strBuilderSportsList.push('</label>');
-														strBuilderSportsList.push('<label class="label-checkbox label-checkbox-volume label-ckeckbox-half">');
-															var isChecked = '';
-															//if(cat.value == true){
-															//	isChecked = "checked=\"checked\"";
-															//}
-															strBuilderSportsList.push('<input type="checkbox" name="checkbox-sports-nots-notifications-initsettings" '+isChecked+' class="checkbox-nots-notifications-initsettings checkbox-notifications-settings" textSportActivityCheck="'+item.name+' - '+cat.categoryName+'" nameSportActivityCheck="'+item.name+'" value="'+item.idSport+','+cat.idCategory+'"><i class="icon icon-volume-cbx icon-cbx-left"></i>');
-														strBuilderSportsList.push('</label>');
-													strBuilderSportsList.push('</div>');
-												strBuilderSportsList.push('</div>');
-
-											strBuilderSportsList.push('</li>');
-										});
-
-					strBuilderSportsList.push('</li>');
-				}
-			});
-		strBuilderSportsList.push('</ul></div>');
-	}
-	return (strBuilderSportsList.join(""));
-}
-
-// funcion que construye la lista de ACTIVIDADES con los iconos de configuracion de
-// favoritos y notificaciones
-function builderActivitiesListNotificationsSettings(activitiesList)
-{
-	var strBuilderActivitiesList = [];
-	if (activitiesList == "") {
-		strBuilderActivitiesList.push('');
-	}
-	else {
-		strBuilderActivitiesList.push('<div class="content-block-title" >');
-			strBuilderActivitiesList.push('<div class="content-block-title-70" >');
-			strBuilderActivitiesList.push(lblHeaderActivities);
-			strBuilderActivitiesList.push('</div>');
-			strBuilderActivitiesList.push('<div class="content-block-title-15" >');
-			strBuilderActivitiesList.push(lblFav);
-			strBuilderActivitiesList.push('</div>');
-			strBuilderActivitiesList.push('<div class="content-block-title-15" >');
-			strBuilderActivitiesList.push(lblNot);
-			strBuilderActivitiesList.push('</div>');
-		strBuilderActivitiesList.push('</div>');
-			strBuilderActivitiesList.push('<div class="list-block">');
-				strBuilderActivitiesList.push('<ul>');
-					$.each( activitiesList, function( i, act ){
-						strBuilderActivitiesList.push('<li class="item-content">');
-							strBuilderActivitiesList.push('<div class="item-media">');
-									strBuilderActivitiesList.push('<i style="background-image: url('+act.urlImgContent+');" class="icon icon-list-header"></i>');
-								strBuilderActivitiesList.push('</div>');
-							strBuilderActivitiesList.push('<div class="item-inner">');
-								strBuilderActivitiesList.push('<div class="checkbox-sports-text item-title item-title-2">'+act.nombre+'</div>');
-
-								strBuilderActivitiesList.push('<div class="item-after item-after-2">');
-									strBuilderActivitiesList.push('<label class="label-checkbox label-checkbox-star label-ckeckbox-half">');
-										strBuilderActivitiesList.push('<input type="checkbox" name="checkbox-activities-favs-notifications-initsettings" class="checkbox-favs-notifications-initsettings checkbox-notifications-settings" textSportActivityCheck="'+act.name+' - '+act.categoryName+'" nameSportActivityCheck="'+act.name+'" value="'+act.id+'"><i class="icon icon-star-cbx icon-cbx-left"></i>');
-									strBuilderActivitiesList.push('</label>');
-									strBuilderActivitiesList.push('<label class="label-checkbox label-checkbox-volume label-ckeckbox-half">');
-										var isChecked = '';
-										if(act.value == true){
-											isChecked = "checked=\"checked\"";
-										}
-										strBuilderActivitiesList.push('<input type="checkbox" name="checkbox-activities-nots-notifications-initsettings" '+isChecked+' class="checkbox-nots-notifications-initsettings checkbox-notifications-settings" textSportActivityCheck="'+act.name+' - '+act.categoryName+'" nameSportActivityCheck="'+act.name+'" value="'+act.id+'"><i class="icon icon-volume-cbx icon-cbx-left"></i>');
-									strBuilderActivitiesList.push('</label>');
-								strBuilderActivitiesList.push('</div>');
-							strBuilderActivitiesList.push('</div>');
-
-						strBuilderActivitiesList.push('</li>');
-					});
-				strBuilderActivitiesList.push('<ul>');
-			strBuilderActivitiesList.push('</div>');
-	}
-	return (strBuilderActivitiesList.join(""));
-}
-
-
-function saveFavouritesSettings(){
-	if(areFavouritesChanged){
-		var favouritesSelectedList = [];
-		var message = '';
-		var currentOrder = 0;
-
-		$("input[name='checkbox-sports-favs-notifications-initsettings']:checked").each( function ( i, item ) {
-			var recentValue = ($(this).val());
-			var value = recentValue.split(',');
-			var favSelected = new Object();
-			favSelected.id = value[0];
-	    	favSelected.idCategory = value[1];
-	    	favSelected.order = currentOrder;
-	    	currentOrder++;
-	    	favSelected.name = $(this).attr('nameSportActivityCheck');
-	    	favouritesSelectedList.push(favSelected);
-		});
-		$("input[name='checkbox-activities-favs-notifications-initsettings']:checked").each( function ( i, item) {
-			var favSelected = new Object();
-			favSelected.id = $(this).val();
-	    	favSelected.idCategory = null;
-	    	favSelected.order = currentOrder;
-	    	currentOrder++;
-	    	favSelected.name = $(this).attr('nameSportActivityCheck');
-	    	favouritesSelectedList.push(favSelected);
-		});
-		window.localStorage.setItem("FAVS"+idClub, JSON.stringify(favouritesSelectedList));
-	}
-}
-
-function saveNotificationsSettings()
-{
-	saveFavouritesSettings();
-	showLoadSpinnerWS();
-	var notificationsSelectedSports = [];
-	var notificationsSelectedActivities = [];
-	var notificationsSelectedEvents = 0;
-
-
-	$("input[name='checkbox-sports-nots-notifications-initsettings']:checked").each( function ( i, item ) {
-    	if($(this).attr('nameSportActivityCheck')!= undefined)
-    	{
-    		var recentValue = ($(this).val());
-			var value = recentValue.split(',');
-    		notificationsSelectedSports.push(value[1]);
-    	}
-
-	});
-	$("input[name='checkbox-activities-nots-notifications-initsettings']:checked").each( function ( i, item) {
-		if($(this).attr('nameSportActivityCheck')!= undefined)
-		{
-    		notificationsSelectedActivities.push($(this).val());
-    	}
-	});
-	if($("input#checkboxnotifications-events").is(':checked') == true)
-	{
-		notificationsSelectedEvents = 1;
-	}
-
-	$.ajax({
-		// URL del Web Service
-		url: getPathWS() + 'setNotificationsPreferences',
-		dataType: 'jsonp',
-		data: { 'idClub': idClub,
-				'clientId': window.localStorage.getItem("CLIENTID"+idClub),
-				'arrayIdSports' : notificationsSelectedSports.toString(),
-				'arrayIdActivities': notificationsSelectedActivities.toString(),
-				'events': notificationsSelectedEvents
-			 },
-		timeout: timeOut,
-		success: function(response){
-			if(response.errorCode != 0)
-			{
-			    hideLoadSpinnerWS();
-			    filterCodeErrorWS(response);
-			    return;
-			}
-			if(isAppUpdate(response.serverVersion) == false){
-				hideLoadSpinnerWS();
-				mainView.router.load({pageName: 'update'});
-				return;
-			}
-			$('#buttonSaveFavouritesSettings').css('display','none');
-			hideLoadSpinnerWS();
-			showMessageToast(messageSettingsNotificationsSuccessfullySaved);
-			if( goBack == true){
-				mainView.router.back({
-	    				pageName: 'home',
-	    				force: true
-	    		});
-			}
-		},
-		error: function (data, status, error){
-			hideLoadSpinnerWS();
-			showMessage(divErrorConnectionText);
-	   }
-	});
-}
-
-function checkedElementsSettingsList(checkNotifications)
-{
-	var currentFavouritesList = jQuery.parseJSON(window.localStorage.getItem("FAVS"+idClub));
-
-	$("input[class='checkbox-notifications-settings']").each( function () {
-		$(this).prop('checked', false);
-	});
-	var isCheckboxChecked = false;
-
-	if(currentFavouritesList != null){
-		$("input[name='checkbox-sports-favs-notifications-initsettings']").each( function () {
-			var recentValue = ($(this).val());
-			var value = recentValue.split(',');
-			isCheckboxChecked = false
-			$.each( currentFavouritesList, function( i, item ){
-				if(value[0] == item.id && value[1] == item.idCategory){
-					isCheckboxChecked = true;
-				}
-			});
-			if(isCheckboxChecked == true){
-				$(this).prop('checked', true);
-
-			}
-		});
-		$("input[name='checkbox-activities-favs-notifications-initsettings']").each( function () {
-			var recentValue = ($(this).val());
-			var value = recentValue.split(',');
-			isCheckboxChecked = false;
-			$.each( currentFavouritesList, function( i, item ){
-				if(value[0] == item.id && item.idCategory == null){
-					isCheckboxChecked = true;
-				}
-			});
-			if(isCheckboxChecked == true){
-				$(this).prop('checked', true);
-
-			}
-		});
-
-		if(checkNotifications == true)
-		{
-			$("input[name='checkbox-sports-nots-notifications-initsettings']").each( function () {
-				var recentValue = ($(this).val());
-				var value = recentValue.split(',');
-				isCheckboxChecked = false
-				$.each( currentFavouritesList, function( i, item ){
-					if(value[0] == item.id && value[1] == item.idCategory){
-						isCheckboxChecked = true;
-					}
-				});
-				if(isCheckboxChecked == true){
-					$(this).prop('checked', true);
-
-				}
-			});
-			$("input[name='checkbox-activities-nots-notifications-initsettings']").each( function () {
-				var recentValue = ($(this).val());
-				var value = recentValue.split(',');
-				isCheckboxChecked = false;
-				$.each( currentFavouritesList, function( i, item ){
-					if(value[0] == item.id && item.idCategory == null){
-						isCheckboxChecked = true;
-					}
-				});
-				if(isCheckboxChecked == true){
-					$(this).prop('checked', true);
-
-				}
-			});
-		}
-
-	}
-}
-
-function showCurrentSelectionFavsSettingsList(){
-	var strListCheckFavourites = [];
-	strListCheckFavourites.push('<ul style="text-align:left">');
-	$("input[class='checkbox-favs-notifications-initsettings checkbox-notifications-settings']:checked").each( function ( i, item ) {
-		strListCheckFavourites.push('<li>');
-			strListCheckFavourites.push($(this).attr('textSportActivityCheck'));
-		strListCheckFavourites.push('</li>');
-	});
-
-	strListCheckFavourites.push('</ul>');
-	var message = '';
-	message = '<b><i>' + messageSettingsNeedFour+'</b></i><br/>' + messageOneSettingsNeedFour + strListCheckFavourites.join("");
-	showMessage(message);
 }
 
 var goBack = false;
@@ -563,7 +552,7 @@ function confirmChangesFavouritesSettings()
 				text: lblButtonOk,
 				onClick: function() {
 					goBack = true;
-					saveNotificationsSettings();
+					sendPreferences();
 				}}]});
 	}
 	else{
@@ -574,26 +563,3 @@ function confirmChangesFavouritesSettings()
 	}
 }
 
-function confirmChangesFavouritesSettingsFromMenu()
-{
-	if($('#buttonSaveFavouritesSettings').is(':visible') == true){
-		myApp.modal({
-			title:  lblNameClub,
-			text: messageConfirmChangesNotifications,
-			buttons: [{
-				text: lblButtonCancel,
-				onClick: function() {
-					myApp.openPanel("left");
-				}
-				},{
-				text: lblButtonOk,
-				onClick: function() {
-					goBack = false;
-					saveNotificationsSettings();
-					myApp.openPanel("left");
-				}}]});
-	}
-	else{
-		myApp.openPanel("left");
-	}
-}

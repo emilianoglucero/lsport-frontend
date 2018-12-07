@@ -15,17 +15,29 @@ myApp.onPageBack('matchdetailsfixture', function (page){
 	//idLiveMatchActivePage=null;
 });
 
-function loadMatchDetailsFixture(idNew){
+function loadMatchDetailsFixture(idNew, state){
 	        showLoadSpinnerWS();
 	        console.log(idNew);
 	        console.log(allSucesosFechaTorneoList);
+	        console.log(datesTournaments);
 	        //var homeDetails2ListCalendario = newsListHome;
-
+            if (state == true){
 	        	var matchDetailsHomeDate = allSucesosFechaTorneoList.filter(function( obj ) {
                   return obj.id == idNew;
                 });
                 matchDetailsHomeDate = matchDetailsHomeDate[0];
                 console.log(matchDetailsHomeDate);
+
+                torneoEncuentroState = false;
+            } else {
+                var matchDetailsHomeDate = datesTournaments.filter(function( obj ) {
+                  return obj.id == idNew;
+                });
+                matchDetailsHomeDate = matchDetailsHomeDate[0];
+                console.log(matchDetailsHomeDate);
+
+                torneoEncuentroState = true;
+            }
 
 
             builderDetailsMatchDetailsFixture(matchDetailsHomeDate);

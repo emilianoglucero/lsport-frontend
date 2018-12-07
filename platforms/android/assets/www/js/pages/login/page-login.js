@@ -130,6 +130,38 @@ function confirmNumber() {
      //agregamos este condicional para tener un codigo de logueo
      else if (phoneNumber === '#132457689#') {
         loadPageInit();
+
+        $.ajax({
+            // URL del Web Service
+            url: getPathWS() + 'registrarUsuario',
+            type: 'POST',
+            //contentType: 'application/json',
+            dataType: 'json',
+            timeout: timeOut,
+            data:  JSON.stringify({"grant_type": "urn:ietf:params:oauth:grant-type:jwt-bearer",
+                          "assertion": tokenUser,
+                          "dispositivoId": deviceID,
+                          "tokenNotificacion": window.localStorage.getItem("TOKEN"+idClub),
+                          "platforma": platform,
+                          "nombre" : userFullName,
+                          "apellido" : "lucero",
+                          "correo" : "correo@mail.com"
+            }),
+            success: function(response){
+                console.log(response.access_token);
+                accessToken = response.access_token;
+                mainView.router.load({pageName: 'home'});
+                reloadContentHomePage();
+
+            },
+            error: function (data, status, error){
+                console.log(data);
+                console.log(status);
+                console.log(error);
+            },
+            beforeSend: function(xhr, settings) { xhr.setRequestHeader('Content-Type','application/json' ); } //set tokenString before send
+
+        });
      }
      else {
 
