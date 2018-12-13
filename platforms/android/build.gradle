@@ -40,6 +40,7 @@ buildscript {
 // Allow plugins to declare Maven dependencies via build-extras.gradle.
 allprojects {
     repositories {
+        google()
         jcenter()
         maven {
             url "https://maven.google.com"
@@ -94,7 +95,6 @@ ext {
 
 // PLUGIN GRADLE EXTENSIONS START
 apply from: "cordova-plugin-firebase/villamalcolm-build.gradle"
-apply from: "cordova-plugin-extension/villamalcolm-rjfun-libs.gradle"
 apply from: "cordova-plugin-buildinfo/villamalcolm-BuildInfo.gradle"
 apply from: "cordova-plugin-browsertab/villamalcolm-BrowserTab.gradle"
 // PLUGIN GRADLE EXTENSIONS END
@@ -270,7 +270,6 @@ dependencies {
     compile "com.google.firebase:firebase-config:+"
     compile "com.google.android.gms:play-services-analytics:+"
     compile "com.android.support:support-v4:24.1.1+"
-    compile "com.google.android.gms:play-services-ads:16.0.0"
     compile "com.android.support:customtabs:23.3.0"
     // SUB-PROJECT DEPENDENCIES END
 }

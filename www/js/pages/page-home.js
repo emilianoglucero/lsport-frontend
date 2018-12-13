@@ -131,7 +131,7 @@ myApp.onPageInit('home', function (page)
 
 	//admob settings
 	// place our admob ad unit id here
-      var admobid = {};
+      /*var admobid = {};
       if( /(android)/i.test(navigator.userAgent) ) {
         admobid = { // for Android
           banner: 'ca-app-pub-4977768595563395/2701602073',
@@ -171,7 +171,7 @@ myApp.onPageInit('home', function (page)
       	error: function(){
       		alert('failed to create banner');
       	}
-      });
+      });*/
 
       //admob finished
 
@@ -876,9 +876,9 @@ console.log('arranca builder de los suceso');
 
 
 
-                var noticiaTruncada = truncateNoticia(item.detalle);
+                var noticiaTruncada = truncateNoticia(item.detalleTxt);
                 console.log(noticiaTruncada);
-                strBuilderLastNewsContent.push('<div class="card demo-card-header-pic"><div style="background-image:url(http://clubes.lenguajefutbol.com/img/archivos/evento/evento-imagen-3_160x100xrecortar.jpg?1529080539); height:150px;" valign="bottom" class="card-header color-white no-border">');
+                strBuilderLastNewsContent.push('<div class="card demo-card-header-pic"><div style="background-image:url('+item.imagenPrincipalMin+'); height:150px;" valign="bottom" class="card-header color-white no-border">');
                 strBuilderLastNewsContent.push('<a onclick="loadNewDetails('+item.id+','+false+')" href="#" class="item-link item-content">');
                     strBuilderLastNewsContent.push('<div class="chipHomeContainer">');
                         //strBuilderLastNewsContent.push('<a onclick="loadNewDetails('+item.id+')" href="#" class="item-link item-content">');
@@ -948,9 +948,9 @@ console.log('arranca builder de los suceso');
 
 
             } else if (item.tipoObjeto == "evento") {
-                            var noticiaTruncada = truncateNoticia(item.detalle);
+                            var noticiaTruncada = truncateNoticia(item.detalleTxt);
                             console.log(noticiaTruncada);
-                            strBuilderLastNewsContent.push('<div class="card demo-card-header-pic"><div style="background-image:url(http://clubes.lenguajefutbol.com/img/archivos/evento/evento-imagen-3_160x100xrecortar.jpg?1529080539); height:150px;" valign="bottom" class="card-header color-white no-border">');
+                            strBuilderLastNewsContent.push('<div class="card demo-card-header-pic"><div style="background-image:url('+item.imagenPrincipalMin+'); height:150px;" valign="bottom" class="card-header color-white no-border">');
                             strBuilderLastNewsContent.push('<a onclick="loadEventDetails1('+item.id+','+false+')" href="#" class="item-link item-content">');
                                 strBuilderLastNewsContent.push('<div class="chipHomeContainer">');
                                     //strBuilderLastNewsContent.push('<a onclick="loadNewDetails('+item.id+')" href="#" class="item-link item-content">');

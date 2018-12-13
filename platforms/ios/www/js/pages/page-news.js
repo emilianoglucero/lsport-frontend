@@ -176,6 +176,7 @@ function reloadNews(){
 }
 
 function builderNewsList(){
+
 	var strBuilderNewsContent = [];
 	if(recentNewsList.length == 0){
 		strBuilderNewsContent.push('<div class="content-block">');
@@ -183,6 +184,7 @@ function builderNewsList(){
 		strBuilderNewsContent.push('</div>');
 	}else{
 		$.each( recentNewsList, function( i, item ){
+		var noticiaTruncada = truncateNoticia(item.detalleTxt);
 			if(item.tipoObjeto == "banner"){
 				/*strBuilderNewsContent.push('<div class="item-list-banner">'); ERASE
 					strBuilderNewsContent.push(builderBannerPublicityList(item.urlAdBanner,item.linkAdBanner));
@@ -206,7 +208,7 @@ function builderNewsList(){
 							strBuilderNewsContent.push('</div>');
 								strBuilderNewsContent.push('<div class="item-subContent-news">');
 									strBuilderNewsContent.push('<span class="item-date">'+item.fecha.fecha+'</span>');
-									strBuilderNewsContent.push('<span class="item-shortContent">'+item.bajada+'</span>');
+									strBuilderNewsContent.push('<span class="item-shortContent">'+noticiaTruncada+'</span>');
 								strBuilderNewsContent.push('</div>');
 							strBuilderNewsContent.push('</div>');
 							

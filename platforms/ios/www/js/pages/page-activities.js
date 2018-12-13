@@ -5,7 +5,8 @@ var areActivitiesLoaded = false;
 myApp.onPageInit('activities', function (page)
 {
 	myApp.initImagesLazyLoad(mainView.activePage.container);
-	loadActivities();
+	//loadActivities();
+	builderActivitiesList();
 	
 });
 
@@ -16,7 +17,7 @@ myApp.onPageBeforeAnimation('activities', function (page)
 	trackPageGA("Actividades");
 });
 
-function loadActivities(){
+/*function loadActivities(){
 	showLoadSpinnerWS();
 	$('#activities-list').html('');
 	$.ajax({
@@ -47,12 +48,13 @@ function loadActivities(){
 		          hideLoadSpinnerWS();
 		   }
 		});
-}
+}*/
 
 function builderActivitiesList(){
 	$('#activities-list').html('');
+	console.log(activitiesList);
 	var strBuilderActivitiesContent = [];
-	if(areActivitiesLoaded == true){
+	//if(areActivitiesLoaded == true){
 		if(activitiesList.length == 0){
 				strBuilderActivitiesContent.push('<div class="divNotActivities">'+divNotActivities+'</div>');
 		}
@@ -61,19 +63,19 @@ function builderActivitiesList(){
 				strBuilderActivitiesContent.push('<div onclick="loadActivityDetails('+item.id+')" class="card card-activity">');
 				strBuilderActivitiesContent.push('<div class="card-activity-content">');
 					strBuilderActivitiesContent.push('<div valign="bottom" class="card-header card-header-photo color-white no-border">');
-						strBuilderActivitiesContent.push('<img class="lazy lazy-fadeIn imgCardHeaderActivities" data-src="'+item.urlImgContent+'" alt="'+item.altImg+'" />');
+						strBuilderActivitiesContent.push('<img class="lazy lazy-fadeIn imgCardHeaderActivities" data-src="'+item.imagenPrincipalMin+'" alt="'+item.nombre+'" />');
 					strBuilderActivitiesContent.push('</div>');
-					strBuilderActivitiesContent.push('<div class="card-header card-header-title">'+item.name+'</div>');
+					strBuilderActivitiesContent.push('<div class="card-header card-header-title">'+item.nombre+'</div>');
 					strBuilderActivitiesContent.push('<div class="card-content-inner">');
-						strBuilderActivitiesContent.push('<p class="color-gray">'+item.shortDesc+'</p>');
+						strBuilderActivitiesContent.push('<p class="color-gray">'+item.descripcion+'</p>');
 					strBuilderActivitiesContent.push('</div>');
 				strBuilderActivitiesContent.push('</div>');
 				strBuilderActivitiesContent.push('</div>');
 			});
 		}
 	
-	} else {
-		strBuilderActivitiesContent.push('<div class="content-block content-block-information">');
+	//} else {
+		/*strBuilderActivitiesContent.push('<div class="content-block content-block-information">');
 			strBuilderActivitiesContent.push('<div id="divActivitiesErrorHeader">'+divErrorConnectionHeader+'</div>');
 	
 			strBuilderActivitiesContent.push('<div id="divActivitiesErrorText">'+divErrorConnectionText+'</div>');
@@ -82,7 +84,7 @@ function builderActivitiesList(){
 				strBuilderActivitiesContent.push('<img id="imgActivitiesUpload" src="img/template/icon-upload.png" alt="Imagen publicitaria"/>');
 			strBuilderActivitiesContent.push('</div>');
 		strBuilderActivitiesContent.push('</div>');
-	}
+	//}*/
 	$('#activities-list').append(strBuilderActivitiesContent.join(""));
 	
 	myApp.initImagesLazyLoad(mainView.activePage.container);

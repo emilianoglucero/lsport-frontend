@@ -454,7 +454,10 @@ function setPushConfigurations()
    var user = firebase.auth().currentUser;
 
     var params = JSON.parse(notification.wsParams);
-    var ids = JSON.parse(params.params);
+    var paramsId = JSON.parse(params.params);
+    console.log(paramsId);
+    console.log(paramsId.id);
+    //var ids = JSON.parse(params.params);
 
     //alert(ids);
 
@@ -556,7 +559,7 @@ function setPushConfigurations()
                         }
                     }
     		    }
-           	    } else if(notification.pageName == 'newsdetails'){
+           	    } else if(notification.pageName == 'noticia'){
                        		if (notification.tap == true){
                                 if (user == null) {
                                     mainView.router.load({pageName: 'login'});
@@ -589,7 +592,7 @@ function setPushConfigurations()
                                         },{
                                             text: lblButtonOk,
                                             onClick: function() {
-                                                loadNewDetailsNotifications(ids.id, notification.notId,null);
+                                                loadNewDetailsNotifications(paramsId.id, notification.notId,null);
                                             }
                                         }]
                                     });

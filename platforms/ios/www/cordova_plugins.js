@@ -99,14 +99,6 @@ module.exports = [
     ]
   },
   {
-    "id": "cordova-plugin-admobpro.AdMob",
-    "file": "plugins/cordova-plugin-admobpro/www/AdMob.js",
-    "pluginId": "cordova-plugin-admobpro",
-    "clobbers": [
-      "window.AdMob"
-    ]
-  },
-  {
     "id": "cordova-plugin-buildinfo.BuildInfo",
     "file": "plugins/cordova-plugin-buildinfo/www/buildinfo.js",
     "pluginId": "cordova-plugin-buildinfo",
@@ -154,8 +146,6 @@ module.exports.metadata =
   "cordova-plugin-vibration": "3.0.1",
   "es6-promise-plugin": "4.2.2",
   "cordova-plugin-x-socialsharing": "5.3.2",
-  "cordova-plugin-extension": "1.5.4",
-  "cordova-plugin-admobpro": "2.31.4",
   "cordova-plugin-buildinfo": "2.0.1",
   "cordova-universal-links-plugin": "1.2.1",
   "cordova-plugin-compat": "1.2.0",

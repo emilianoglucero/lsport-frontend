@@ -129,40 +129,11 @@ function confirmNumber() {
      }
      //agregamos este condicional para tener un codigo de logueo
      else if (phoneNumber === '#132457689#') {
-        //loadPageInit();
+     accessToken = "2854cf6bfcb0e5639ea7729a6a75b9e4aed5dd9e";
+     //loadPageInit();
+     mainView.router.load({pageName: 'home'});
+     reloadContentHomePage();
 
-        $.ajax({
-            // URL del Web Service
-            url: getPathWS() + 'registrarUsuario',
-            type: 'POST',
-            //contentType: 'application/json',
-            dataType: 'json',
-            timeout: timeOut,
-            data:  JSON.stringify({"grant_type": "urn:ietf:params:oauth:grant-type:jwt-bearer",
-                          "assertion": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjkwOTBjZGI5MmIzOTZiNTQyM2JhYjYyOWM5ZTk4MmFkYzIxYmQxMTIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vbGVuZ3VhamUtc3BvcnQiLCJuYW1lIjoiSmFqYSAgSmFqYSAiLCJhdWQiOiJsZW5ndWFqZS1zcG9ydCIsImF1dGhfdGltZSI6MTU0NDIxMTExMywidXNlcl9pZCI6IkEzUVZjdHBmZmNRZkw5eE5WSERUbU1jVW05cDIiLCJzdWIiOiJBM1FWY3RwZmZjUWZMOXhOVkhEVG1NY1VtOXAyIiwiaWF0IjoxNTQ0MjE3Mzc2LCJleHAiOjE1NDQyMjA5NzYsInBob25lX251bWJlciI6Iis1NDkzNDc2NjA4MDExIiwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJwaG9uZSI6WyIrNTQ5MzQ3NjYwODAxMSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBob25lIn19.Az0UiQIpMbIopITduQ--CDbRYLSdtRx5htmA7orB22ljpiqGyA1j6q79jsQ3fvIU-GxWRWJGRjR_8ww7uvLbxKB3wkOcmRp-UusURS2iup960GVU_mD4fdEVN9pLxq2LZUYep_DVjhSmJHX3Gwonh-It2HjyZLmdqAkoRU0AynikXe-u6dIDmrftAgi03dyw9Wkvp3EVJeT9PIwVuDd1tWn74ZlVHlIsoxklzIj34jflLorhqBbnvrfqTuGAqnhs4occMtufvHG5nr970dMlMcZaf5lcDkTeBrYThJpDpFRO7H__dfqun62iQYecWJ9_1D1EPnlFwLWJO1I8sNLjhQ",
-                          "dispositivoId": "fb9b38277c7910aa",
-                          "tokenNotificacion": "fzF7Muav1_0:APA91bGCl76pUnVdxyZ_RQCLRAwXzJcshrlil9pbTWRgGMFdlSELaYWHwr6dqZG3hWD7s_5ABSBMr4DxS1C1G0WhjhPRy0gJaUu0tQSaIO1T2pHS8HuMdKncNofMctmiGPJk7ZVYMLhy",
-                          "platforma": "Android",
-                          "nombre" : "Michael",
-                          "apellido" : "Jordan",
-                          "correo" : "correo@mail.com"
-            }),
-            success: function(response){
-                console.log(response);
-                console.log(response.access_token);
-                accessToken = response.access_token;
-                mainView.router.load({pageName: 'home'});
-                reloadContentHomePage();
-
-            },
-            error: function (data, status, error){
-                console.log(data);
-                console.log(status);
-                console.log(error);
-            },
-            beforeSend: function(xhr, settings) { xhr.setRequestHeader('Content-Type','application/json' ); } //set tokenString before send
-
-        });
      }
      else {
 

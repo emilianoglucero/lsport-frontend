@@ -40,9 +40,6 @@
     "cordova-plugin-x-socialsharing": {
       "PACKAGE_NAME": "com.lsc.ar.caba.villamalcolm"
     },
-    "cordova-plugin-admobpro": {
-      "PACKAGE_NAME": "com.lsc.ar.caba.villamalcolm"
-    },
     "cordova-plugin-buildinfo": {
       "PACKAGE_NAME": "com.lsc.ar.caba.villamalcolm"
     },
@@ -59,9 +56,6 @@
   },
   "dependent_plugins": {
     "es6-promise-plugin": {
-      "PACKAGE_NAME": "com.lsc.ar.caba.villamalcolm"
-    },
-    "cordova-plugin-extension": {
       "PACKAGE_NAME": "com.lsc.ar.caba.villamalcolm"
     },
     "cordova-plugin-compat": {

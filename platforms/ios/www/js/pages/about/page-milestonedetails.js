@@ -178,5 +178,5 @@ function openVideoBrowserMilestone(idVideo){
 	});
 	myPhotoBrowserVideoGalleryMilestone.open();
 	$('.lblHeaderClose').text(lblHeaderClose);
-	$('.lblHeaderOfVideoBrowser').text(listVideoBrowserMilestone[idVideo].caption);
+	$('.lblHeaderOfVideoBrowser').text(listVideoBrowserMilestone[idVideo].titulo);
 }

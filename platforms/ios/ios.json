@@ -49,10 +49,6 @@
               "count": 1
             },
             {
-              "xml": "<feature name=\"AdMob\"><param name=\"ios-package\" value=\"CDVAdMobPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
-              "count": 1
-            },
-            {
               "xml": "<feature name=\"BuildInfo\"><param name=\"ios-package\" value=\"CDVBuildInfo\" /></feature>",
               "count": 1
             },
@@ -95,12 +91,7 @@
               "count": 1
             }
           ],
-          "NSAppTransportSecurity": [
-            {
-              "xml": "<dict><key>NSAllowsArbitraryLoads</key><true /><key>NSAllowsArbitraryLoadsForMedia</key><true /><key>NSAllowsArbitraryLoadsInWebContent</key><true /></dict>",
-              "count": 1
-            }
-          ],
+          "NSAppTransportSecurity": [],
           "CFBundleURLTypes": [
             {
               "xml": "<array><dict><key>CFBundleURLSchemes</key><array><string>com.lsc.ar.caba.villamalcolm</string></array></dict></array>",
@@ -146,12 +137,6 @@
       "PACKAGE_NAME": "com.lsc.ar.caba.villamalcolm"
     },
     "cordova-plugin-x-socialsharing": {
-      "PACKAGE_NAME": "com.lsc.ar.caba.villamalcolm"
-    },
-    "cordova-plugin-extension": {
-      "PACKAGE_NAME": "com.lsc.ar.caba.villamalcolm"
-    },
-    "cordova-plugin-admobpro": {
       "PACKAGE_NAME": "com.lsc.ar.caba.villamalcolm"
     },
     "cordova-plugin-buildinfo": {
@@ -272,14 +257,6 @@
       ]
     },
     {
-      "id": "cordova-plugin-admobpro.AdMob",
-      "file": "plugins/cordova-plugin-admobpro/www/AdMob.js",
-      "pluginId": "cordova-plugin-admobpro",
-      "clobbers": [
-        "window.AdMob"
-      ]
-    },
-    {
       "id": "cordova-plugin-buildinfo.BuildInfo",
       "file": "plugins/cordova-plugin-buildinfo/www/buildinfo.js",
       "pluginId": "cordova-plugin-buildinfo",
@@ -325,8 +302,6 @@
     "cordova-plugin-vibration": "3.0.1",
     "es6-promise-plugin": "4.2.2",
     "cordova-plugin-x-socialsharing": "5.3.2",
-    "cordova-plugin-extension": "1.5.4",
-    "cordova-plugin-admobpro": "2.31.4",
     "cordova-plugin-buildinfo": "2.0.1",
     "cordova-universal-links-plugin": "1.2.1",
     "cordova-plugin-compat": "1.2.0",
