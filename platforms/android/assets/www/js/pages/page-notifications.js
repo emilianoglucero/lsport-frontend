@@ -171,10 +171,11 @@ console.log(isRead);
             },
             timeout: timeOut,
             success: function(response){
+            console.log(response);
 
-                builderNewDetails(response.newDetails);
+                builderNewDetails(response.noticia);
                 hideLoadSpinnerWS();
-                setNotificationRead(idNotification);
+                //setNotificationRead(idNotification);
                 if((isRead == false && $('#list-block-notifications-id'+idNotification).hasClass("notificationNoRead") == true)||isRead == null){
                     unreadNotifications--;
                     setBadgeIconNotificationsHome();

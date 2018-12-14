@@ -566,7 +566,13 @@ function setPushConfigurations()
                                     window.location.reload(true);
                                 } else{
 
-                                    loadNewDetailsNotifications(ids.id, notification.notId,null);
+                                    //function initPageOnPN() {
+                                        setTimeout(function(){
+                                        console.log('set time function for push not');
+                                            loadNewDetailsNotifications(paramsId.id, notification.notId,null);
+                                        }, 5000);
+
+                                    //loadNewDetailsNotifications(paramsId.id, notification.notId,null);
 
                                 }
                 		    }

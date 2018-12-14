@@ -5,475 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61d7db02-8111-47f3-96d0-faa85811d084" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_customtabs_23_3_0.xml" />
-      <change beforePath="$PROJECT_DIR$/../../config.xml" afterPath="$PROJECT_DIR$/../../config.xml" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/.npmignore" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/LICENSE" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/README.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/docs/README.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/docs/README.zh_cn.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/docs/android.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/docs/android_interstitial.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/docs/good.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/docs/iphone.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/docs/iphone_interstitial.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/docs/trend.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/docs/warning.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/docs/youtube_video.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/docs/youtube_video0.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/package.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/plugin.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/android/AdMobMediation.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/android/AdMobPlugin.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/AdMobMediation.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/AdMobMediation.m" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/CDVAdMobPlugin.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/CDVAdMobPlugin.m" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/GoogleMobileAds" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/DFPBannerView.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/DFPBannerViewOptions.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/DFPCustomRenderedAd.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/DFPCustomRenderedBannerViewDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/DFPCustomRenderedInterstitialDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/DFPInterstitial.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/DFPRequest.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADAdChoicesView.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADAdLoader.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADAdLoaderAdTypes.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADAdLoaderDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADAdNetworkExtras.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADAdReward.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADAdSize.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADAdSizeDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADAppEventDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADAudioVideoManager.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADAudioVideoManagerDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADBannerView.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADBannerViewDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADCorrelator.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADCorrelatorAdLoaderOptions.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADCustomEventBanner.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADCustomEventBannerDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADCustomEventExtras.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADCustomEventInterstitial.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADCustomEventInterstitialDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADCustomEventNativeAd.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADCustomEventNativeAdDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADCustomEventParameters.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADCustomEventRequest.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADDebugOptionsViewController.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADDynamicHeightSearchRequest.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADExtras.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADInAppPurchase.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADInAppPurchaseDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADInterstitial.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADInterstitialDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADMediaView.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADMobileAds.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADMultipleAdsAdLoaderOptions.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADNativeAd.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADNativeAdDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADNativeAdImage+Mediation.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADNativeAdImage.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADNativeAdImageAdLoaderOptions.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADNativeAdViewAdOptions.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADNativeAppInstallAd.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADNativeAppInstallAdAssetIDs.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADNativeContentAd.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADNativeContentAdAssetIDs.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADNativeCustomTemplateAd.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADNativeExpressAdView.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADNativeExpressAdViewDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADRequest.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADRequestError.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADRewardBasedVideoAd.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADRewardBasedVideoAdDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADSearchBannerView.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADSearchRequest.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADUnifiedNativeAd+ConfirmationClick.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADUnifiedNativeAd.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADUnifiedNativeAdAssetIdentifiers.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADUnifiedNativeAdDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADUnifiedNativeAdUnconfirmedClickDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADVideoController.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADVideoControllerDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADVideoOptions.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GoogleMobileAds.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GoogleMobileAdsDefines.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/Mediation/GADMAdNetworkAdapterProtocol.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/Mediation/GADMAdNetworkConnectorProtocol.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/Mediation/GADMEnums.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/Mediation/GADMRewardBasedVideoAdNetworkAdapterProtocol.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/Mediation/GADMRewardBasedVideoAdNetworkConnectorProtocol.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/Mediation/GADMediatedNativeAd.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/Mediation/GADMediatedNativeAdDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/Mediation/GADMediatedNativeAdNotificationSource.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/Mediation/GADMediatedNativeAppInstallAd.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/Mediation/GADMediatedNativeContentAd.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/Mediation/GADMediatedUnifiedNativeAd.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/Mediation/GADMediatedUnifiedNativeAdNotificationSource.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/Mediation/GADMediationAdRequest.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Modules/module.modulemap" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/wp8/AdMobOptions.cs" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/wp8/AdMobPlugin.cs" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/wp8/GoogleAds.XML" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/src/wp8/GoogleAds.dll" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/test/admob_simple.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/test/index.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/test/jquery-1.9.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/typescript/AdMob.d.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-admobpro/www/AdMob.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-extension/.npmignore" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-extension/README.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-extension/cocos2dx/TODO" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-extension/package.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-extension/plugin.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-extension/src/android/CordovaPluginExt.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-extension/src/android/PluginAdapterDelegate.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-extension/src/android/cordova-generic-ad.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-extension/src/android/rjfun-libs.gradle" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-extension/src/ios/CDVPluginExt.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-extension/src/ios/CDVPluginExt.m" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-extension/src/ios/GenericAdPlugin.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-extension/src/ios/PluginAdapterDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-extension/src/ios/libCordovaGenericAd.a" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-extension/unity/PluginAdapterUnity.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-extension/unity/PluginAdapterUnity.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../node_modules/cordova-plugin-extension/unity/PluginAdapterUnity.m" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../package.json" afterPath="$PROJECT_DIR$/../../package.json" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/resourceHashesCache.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/resourceHashesCache.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/jarAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/jarAnalysis.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskJars.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskJars.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars____Users_lenguajesport_Desktop_lsportdesarrollo_InDevelopementProyects_cabavillamalcolm_platforms_android_libs_cordova_generic_ad_jar_unspecified_jar.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_customtabs_26_1_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_ads_16_0_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_ads_base_16_0_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_ads_lite_16_0_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_analytics_16_0_4.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_analytics_impl_16_0_4.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_basement_16_0_1.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_gass_16_0_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_api_16_0_2.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_base_16_0_3.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_tagmanager_16_0_4.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_tagmanager_api_16_0_4.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_tagmanager_v4_impl_16_0_4.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_analytics_16_0_4.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_analytics_impl_16_2_2.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_auth_16_0_4.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_config_16_0_1.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_core_16_0_4.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_iid_17_0_3.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_measurement_connector_impl_17_0_2.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_messaging_17_3_3.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_gms_google_services_4_1_0_jar.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change beforePath="$PROJECT_DIR$/CordovaLib/CordovaLib.iml" afterPath="$PROJECT_DIR$/CordovaLib/CordovaLib.iml" />
-      <change beforePath="$PROJECT_DIR$/CordovaLib/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/CordovaLib/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" />
-      <change beforePath="$PROJECT_DIR$/android.iml" afterPath="$PROJECT_DIR$/android.iml" />
-      <change beforePath="$PROJECT_DIR$/android.json" afterPath="$PROJECT_DIR$/android.json" />
-      <change beforePath="$PROJECT_DIR$/assets/www/cordova_plugins.js" afterPath="$PROJECT_DIR$/assets/www/cordova_plugins.js" />
       <change beforePath="$PROJECT_DIR$/assets/www/js/common.js" afterPath="$PROJECT_DIR$/assets/www/js/common.js" />
-      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/login/page-login.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/login/page-login.js" />
-      <change beforePath="$PROJECT_DIR$/assets/www/js/pages/page-home.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/page-home.js" />
       <change beforePath="$PROJECT_DIR$/assets/www/js/pages/page-notifications.js" afterPath="$PROJECT_DIR$/assets/www/js/pages/page-notifications.js" />
-      <change beforePath="$PROJECT_DIR$/assets/www/plugins/cordova-plugin-admobpro/www/AdMob.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change beforePath="$PROJECT_DIR$/cordova-plugin-extension/villamalcolm-rjfun-libs.gradle" afterPath="" />
       <change beforePath="$PROJECT_DIR$/debug/android-debug.apk" afterPath="$PROJECT_DIR$/debug/android-debug.apk" />
-      <change beforePath="$PROJECT_DIR$/libs/cordova-generic-ad.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/platform_www/cordova_plugins.js" afterPath="$PROJECT_DIR$/platform_www/cordova_plugins.js" />
-      <change beforePath="$PROJECT_DIR$/platform_www/plugins/cordova-plugin-admobpro/www/AdMob.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/project.properties" afterPath="$PROJECT_DIR$/project.properties" />
-      <change beforePath="$PROJECT_DIR$/res/xml/config.xml" afterPath="$PROJECT_DIR$/res/xml/config.xml" />
-      <change beforePath="$PROJECT_DIR$/src/com/rjfun/cordova/admob/AdMobMediation.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/rjfun/cordova/admob/AdMobPlugin.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/rjfun/cordova/ext/CordovaPluginExt.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/rjfun/cordova/ext/PluginAdapterDelegate.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/../ios/CSD Villa Malcolm.xcodeproj/project.pbxproj" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/AdMobMediation.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/AdMobMediation.m" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/CDVAdMobPlugin.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/CDVAdMobPlugin.m" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/GoogleMobileAds" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/DFPBannerView.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/DFPBannerViewOptions.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/DFPCustomRenderedAd.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/DFPCustomRenderedBannerViewDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/DFPCustomRenderedInterstitialDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/DFPInterstitial.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/DFPRequest.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADAdChoicesView.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADAdLoader.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADAdLoaderAdTypes.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADAdLoaderDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADAdNetworkExtras.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADAdReward.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADAdSize.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADAdSizeDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADAppEventDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADAudioVideoManager.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADAudioVideoManagerDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADBannerView.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADBannerViewDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADCorrelator.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADCorrelatorAdLoaderOptions.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADCustomEventBanner.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADCustomEventBannerDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADCustomEventExtras.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADCustomEventInterstitial.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADCustomEventInterstitialDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADCustomEventNativeAd.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADCustomEventNativeAdDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADCustomEventParameters.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADCustomEventRequest.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADDebugOptionsViewController.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADDynamicHeightSearchRequest.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADExtras.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADInAppPurchase.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADInAppPurchaseDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADInterstitial.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADInterstitialDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADMediaView.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADMobileAds.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADMultipleAdsAdLoaderOptions.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADNativeAd.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADNativeAdDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADNativeAdImage+Mediation.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADNativeAdImage.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADNativeAdImageAdLoaderOptions.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADNativeAdViewAdOptions.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADNativeAppInstallAd.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADNativeAppInstallAdAssetIDs.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADNativeContentAd.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADNativeContentAdAssetIDs.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADNativeCustomTemplateAd.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADNativeExpressAdView.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADNativeExpressAdViewDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADRequest.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADRequestError.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADRewardBasedVideoAd.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADRewardBasedVideoAdDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADSearchBannerView.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADSearchRequest.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADUnifiedNativeAd+ConfirmationClick.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADUnifiedNativeAd.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADUnifiedNativeAdAssetIdentifiers.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADUnifiedNativeAdDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADUnifiedNativeAdUnconfirmedClickDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADVideoController.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADVideoControllerDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GADVideoOptions.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GoogleMobileAds.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/GoogleMobileAdsDefines.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/Mediation/GADMAdNetworkAdapterProtocol.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/Mediation/GADMAdNetworkConnectorProtocol.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/Mediation/GADMEnums.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/Mediation/GADMRewardBasedVideoAdNetworkAdapterProtocol.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/Mediation/GADMRewardBasedVideoAdNetworkConnectorProtocol.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/Mediation/GADMediatedNativeAd.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/Mediation/GADMediatedNativeAdDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/Mediation/GADMediatedNativeAdNotificationSource.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/Mediation/GADMediatedNativeAppInstallAd.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/Mediation/GADMediatedNativeContentAd.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/Mediation/GADMediatedUnifiedNativeAd.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/Mediation/GADMediatedUnifiedNativeAdNotificationSource.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Headers/Mediation/GADMediationAdRequest.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-admobpro/GoogleMobileAds.framework/Modules/module.modulemap" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-extension/CDVPluginExt.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-extension/CDVPluginExt.m" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-extension/GenericAdPlugin.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-extension/PluginAdapterDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/Plugins/cordova-plugin-extension/libCordovaGenericAd.a" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/config.xml" afterPath="$PROJECT_DIR$/../ios/CSD Villa Malcolm/config.xml" />
-      <change beforePath="$PROJECT_DIR$/../ios/ios.json" afterPath="$PROJECT_DIR$/../ios/ios.json" />
-      <change beforePath="$PROJECT_DIR$/../ios/platform_www/cordova_plugins.js" afterPath="$PROJECT_DIR$/../ios/platform_www/cordova_plugins.js" />
-      <change beforePath="$PROJECT_DIR$/../ios/platform_www/plugins/cordova-plugin-admobpro/www/AdMob.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../ios/www/cordova_plugins.js" afterPath="$PROJECT_DIR$/../ios/www/cordova_plugins.js" />
-      <change beforePath="$PROJECT_DIR$/../ios/www/css/index.css" afterPath="$PROJECT_DIR$/../ios/www/css/index.css" />
-      <change beforePath="$PROJECT_DIR$/../ios/www/css/pages/page-home.css" afterPath="$PROJECT_DIR$/../ios/www/css/pages/page-home.css" />
-      <change beforePath="$PROJECT_DIR$/../ios/www/css/pages/page-settings.css" afterPath="$PROJECT_DIR$/../ios/www/css/pages/page-settings.css" />
-      <change beforePath="$PROJECT_DIR$/../ios/www/css/pages/tournaments/page-fixtures.css" afterPath="$PROJECT_DIR$/../ios/www/css/pages/tournaments/page-fixtures.css" />
-      <change beforePath="$PROJECT_DIR$/../ios/www/css/pages/tournaments/page-matchdetails.css" afterPath="$PROJECT_DIR$/../ios/www/css/pages/tournaments/page-matchdetails.css" />
-      <change beforePath="$PROJECT_DIR$/../ios/www/css/template-club.css" afterPath="$PROJECT_DIR$/../ios/www/css/template-club.css" />
-      <change beforePath="$PROJECT_DIR$/../ios/www/img/template/icon-down.png" afterPath="$PROJECT_DIR$/../ios/www/img/template/icon-down.png" />
-      <change beforePath="$PROJECT_DIR$/../ios/www/img/template/icon-form-instagram .png" afterPath="$PROJECT_DIR$/../ios/www/img/template/icon-form-instagram .png" />
-      <change beforePath="$PROJECT_DIR$/../ios/www/img/template/icon-refresh.png" afterPath="$PROJECT_DIR$/../ios/www/img/template/icon-refresh.png" />
-      <change beforePath="$PROJECT_DIR$/../ios/www/img/template/icon-settings-favourites-notifications.png" afterPath="$PROJECT_DIR$/../ios/www/img/template/icon-settings-favourites-notifications.png" />
-      <change beforePath="$PROJECT_DIR$/../ios/www/img/template/icon-user.png" afterPath="$PROJECT_DIR$/../ios/www/img/template/icon-user.png" />
-      <change beforePath="$PROJECT_DIR$/../ios/www/index.html" afterPath="$PROJECT_DIR$/../ios/www/index.html" />
-      <change beforePath="$PROJECT_DIR$/../ios/www/js/common.js" afterPath="$PROJECT_DIR$/../ios/www/js/common.js" />
-      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/about/page-achievementdetails.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/about/page-achievementdetails.js" />
-      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/about/page-installationdetails.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/about/page-installationdetails.js" />
-      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/about/page-milestonedetails.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/about/page-milestonedetails.js" />
-      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/login/page-login.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/login/page-login.js" />
-      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/page-activities.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/page-activities.js" />
-      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/page-activitydetails.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/page-activitydetails.js" />
-      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/page-eventdetails.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/page-eventdetails.js" />
-      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/page-home.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/page-home.js" />
-      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/page-newdetails.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/page-newdetails.js" />
-      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/page-news.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/page-news.js" />
-      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/page-settings.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/page-settings.js" />
-      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/page-sportdetails.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/page-sportdetails.js" />
-      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/page-sports.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/page-sports.js" />
-      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/page-user.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/page-user.js" />
-      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/tournaments/page-fixtures.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/tournaments/page-fixtures.js" />
-      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/tournaments/page-matchdetails.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/tournaments/page-matchdetails.js" />
-      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/tournaments/page-matchdetailsfixture.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/tournaments/page-matchdetailsfixture.js" />
-      <change beforePath="$PROJECT_DIR$/../ios/www/js/pages/tournaments/page-positionstable.js" afterPath="$PROJECT_DIR$/../ios/www/js/pages/tournaments/page-positionstable.js" />
-      <change beforePath="$PROJECT_DIR$/../ios/www/language/Messages_es.properties" afterPath="$PROJECT_DIR$/../ios/www/language/Messages_es.properties" />
-      <change beforePath="$PROJECT_DIR$/../ios/www/pages/page-settings.html" afterPath="$PROJECT_DIR$/../ios/www/pages/page-settings.html" />
-      <change beforePath="$PROJECT_DIR$/../ios/www/pages/page-user.html" afterPath="$PROJECT_DIR$/../ios/www/pages/page-user.html" />
-      <change beforePath="$PROJECT_DIR$/../ios/www/pages/tournaments/page-fixtures.html" afterPath="$PROJECT_DIR$/../ios/www/pages/tournaments/page-fixtures.html" />
-      <change beforePath="$PROJECT_DIR$/../ios/www/pages/tournaments/page-matchdetails.html" afterPath="$PROJECT_DIR$/../ios/www/pages/tournaments/page-matchdetails.html" />
-      <change beforePath="$PROJECT_DIR$/../ios/www/plugins/cordova-plugin-admobpro/www/AdMob.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/android.json" afterPath="$PROJECT_DIR$/../../plugins/android.json" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/LICENSE" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/README.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/docs/README.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/docs/README.zh_cn.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/docs/android.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/docs/android_interstitial.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/docs/good.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/docs/iphone.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/docs/iphone_interstitial.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/docs/trend.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/docs/warning.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/docs/youtube_video.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/docs/youtube_video0.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/package.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/plugin.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/android/AdMobMediation.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/android/AdMobPlugin.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/AdMobMediation.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/AdMobMediation.m" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/CDVAdMobPlugin.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/CDVAdMobPlugin.m" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/GoogleMobileAds" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/DFPBannerView.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/DFPBannerViewOptions.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/DFPCustomRenderedAd.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/DFPCustomRenderedBannerViewDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/DFPCustomRenderedInterstitialDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/DFPInterstitial.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/DFPRequest.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADAdChoicesView.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADAdLoader.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADAdLoaderAdTypes.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADAdLoaderDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADAdNetworkExtras.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADAdReward.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADAdSize.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADAdSizeDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADAppEventDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADAudioVideoManager.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADAudioVideoManagerDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADBannerView.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADBannerViewDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADCorrelator.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADCorrelatorAdLoaderOptions.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADCustomEventBanner.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADCustomEventBannerDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADCustomEventExtras.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADCustomEventInterstitial.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADCustomEventInterstitialDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADCustomEventNativeAd.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADCustomEventNativeAdDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADCustomEventParameters.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADCustomEventRequest.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADDebugOptionsViewController.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADDynamicHeightSearchRequest.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADExtras.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADInAppPurchase.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADInAppPurchaseDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADInterstitial.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADInterstitialDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADMediaView.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADMobileAds.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADMultipleAdsAdLoaderOptions.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADNativeAd.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADNativeAdDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADNativeAdImage+Mediation.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADNativeAdImage.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADNativeAdImageAdLoaderOptions.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADNativeAdViewAdOptions.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADNativeAppInstallAd.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADNativeAppInstallAdAssetIDs.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADNativeContentAd.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADNativeContentAdAssetIDs.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADNativeCustomTemplateAd.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADNativeExpressAdView.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADNativeExpressAdViewDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADRequest.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADRequestError.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADRewardBasedVideoAd.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADRewardBasedVideoAdDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADSearchBannerView.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADSearchRequest.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADUnifiedNativeAd+ConfirmationClick.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADUnifiedNativeAd.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADUnifiedNativeAdAssetIdentifiers.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADUnifiedNativeAdDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADUnifiedNativeAdUnconfirmedClickDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADVideoController.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADVideoControllerDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GADVideoOptions.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GoogleMobileAds.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/GoogleMobileAdsDefines.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/Mediation/GADMAdNetworkAdapterProtocol.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/Mediation/GADMAdNetworkConnectorProtocol.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/Mediation/GADMEnums.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/Mediation/GADMRewardBasedVideoAdNetworkAdapterProtocol.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/Mediation/GADMRewardBasedVideoAdNetworkConnectorProtocol.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/Mediation/GADMediatedNativeAd.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/Mediation/GADMediatedNativeAdDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/Mediation/GADMediatedNativeAdNotificationSource.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/Mediation/GADMediatedNativeAppInstallAd.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/Mediation/GADMediatedNativeContentAd.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/Mediation/GADMediatedUnifiedNativeAd.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/Mediation/GADMediatedUnifiedNativeAdNotificationSource.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Headers/Mediation/GADMediationAdRequest.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/ios/GoogleMobileAds.framework/Modules/module.modulemap" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/wp8/AdMobOptions.cs" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/wp8/AdMobPlugin.cs" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/wp8/GoogleAds.XML" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/src/wp8/GoogleAds.dll" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/test/admob_simple.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/test/index.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/test/jquery-1.9.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/typescript/AdMob.d.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-admobpro/www/AdMob.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-extension/README.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-extension/cocos2dx/TODO" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-extension/package.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-extension/plugin.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-extension/src/android/CordovaPluginExt.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-extension/src/android/PluginAdapterDelegate.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-extension/src/android/cordova-generic-ad.jar" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-extension/src/android/rjfun-libs.gradle" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-extension/src/ios/CDVPluginExt.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-extension/src/ios/CDVPluginExt.m" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-extension/src/ios/GenericAdPlugin.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-extension/src/ios/PluginAdapterDelegate.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-extension/src/ios/libCordovaGenericAd.a" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-extension/unity/PluginAdapterUnity.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-extension/unity/PluginAdapterUnity.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-extension/unity/PluginAdapterUnity.m" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/fetch.json" afterPath="$PROJECT_DIR$/../../plugins/fetch.json" />
-      <change beforePath="$PROJECT_DIR$/../../plugins/ios.json" afterPath="$PROJECT_DIR$/../../plugins/ios.json" />
-      <change beforePath="$PROJECT_DIR$/../../www/js/pages/login/page-login.js" afterPath="$PROJECT_DIR$/../../www/js/pages/login/page-login.js" />
-      <change beforePath="$PROJECT_DIR$/../../www/js/pages/page-home.js" afterPath="$PROJECT_DIR$/../../www/js/pages/page-home.js" />
-      <change beforePath="$PROJECT_DIR$/../../www/js/pages/page-news.js" afterPath="$PROJECT_DIR$/../../www/js/pages/page-news.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -506,26 +49,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/www/img/css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2340">
-              <caret line="156" column="1" lean-forward="false" selection-start-line="156" selection-start-column="1" selection-end-line="156" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="template-club.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/www/css/template-club.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4200">
-              <caret line="280" column="1" lean-forward="false" selection-start-line="280" selection-start-column="1" selection-end-line="280" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="page-fixtures.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/www/pages/tournaments/page-fixtures.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -549,7 +72,7 @@
       <file leaf-file-name="page-home.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
+            <state relative-caret-position="10335">
               <caret line="689" column="109" lean-forward="false" selection-start-line="689" selection-start-column="98" selection-end-line="689" selection-end-column="109" />
               <folding />
             </state>
@@ -559,28 +82,58 @@
       <file leaf-file-name="page-notifications.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-notifications.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="184" column="50" lean-forward="false" selection-start-line="184" selection-start-column="50" selection-end-line="184" selection-end-column="50" />
+            <state relative-caret-position="2625">
+              <caret line="175" column="33" lean-forward="false" selection-start-line="175" selection-start-column="16" selection-end-line="175" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="page-login.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="page-newdetails.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-newdetails.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="720">
+              <caret line="48" column="43" lean-forward="false" selection-start-line="48" selection-start-column="43" selection-end-line="48" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="page-login.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/www/js/pages/login/page-login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="135" column="0" lean-forward="true" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
+            <state relative-caret-position="1950">
+              <caret line="130" column="42" lean-forward="false" selection-start-line="130" selection-start-column="31" selection-end-line="130" selection-end-column="42" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="common.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/www/js/common.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1514">
-              <caret line="458" column="29" lean-forward="false" selection-start-line="458" selection-start-column="29" selection-end-line="458" selection-end-column="29" />
+            <state relative-caret-position="-158">
+              <caret line="561" column="62" lean-forward="true" selection-start-line="561" selection-start-column="62" selection-end-line="561" selection-end-column="62" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="page-emailsignup.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/www/js/pages/login/page-emailsignup.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="615">
+              <caret line="41" column="49" lean-forward="false" selection-start-line="41" selection-start-column="49" selection-end-line="41" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="page-emailregister.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/www/js/pages/login/page-emailregister.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1005">
+              <caret line="67" column="46" lean-forward="false" selection-start-line="67" selection-start-column="46" selection-end-line="67" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -589,7 +142,7 @@
       <file leaf-file-name="page-news.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-news.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
+            <state relative-caret-position="2910">
               <caret line="194" column="78" lean-forward="false" selection-start-line="194" selection-start-column="64" selection-end-line="194" selection-end-column="78" />
               <folding />
             </state>
@@ -600,7 +153,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>http</find>
       <find>coordActivity</find>
       <find>builderCoordinatorsActivity</find>
       <find>strBuilderNewsSportDetailsContent</find>
@@ -624,12 +176,13 @@
       <find>allprojects</find>
       <find>depende</find>
       <find>compile</find>
-      <find>loadNewDetailsNotifications</find>
-      <find>builderNewDetails</find>
-      <find>registrar</find>
-      <find>setNotificationRead</find>
       <find>accesstoken</find>
       <find>loadpageini</find>
+      <find>builderNewDetails</find>
+      <find>setNotificationRead</find>
+      <find>loadNewDetailsNotifications</find>
+      <find>registrar</find>
+      <find>settime</find>
     </findStrings>
     <replaceStrings>
       <replace>strBuilderLastMatch</replace>
@@ -2879,9 +2432,9 @@
         <option value="$PROJECT_DIR$/assets/www/js/pages/page-news.js" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/assets/www/js/pages/page-home.js" />
-        <option value="$PROJECT_DIR$/assets/www/js/common.js" />
-        <option value="$PROJECT_DIR$/assets/www/js/pages/page-notifications.js" />
         <option value="$PROJECT_DIR$/assets/www/js/pages/login/page-login.js" />
+        <option value="$PROJECT_DIR$/assets/www/js/pages/page-notifications.js" />
+        <option value="$PROJECT_DIR$/assets/www/js/common.js" />
       </list>
     </option>
   </component>
@@ -2906,8 +2459,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
+      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -2977,8 +2531,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -3188,7 +2741,7 @@
     <frame x="0" y="23" width="1280" height="713" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32941177" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -3204,7 +2757,6 @@
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3277311" sideWeight="0.49353796" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
@@ -3217,6 +2769,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32994923" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -3258,20 +2811,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-news.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="25" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-settings.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1740">
-          <caret line="116" column="29" lean-forward="false" selection-start-line="116" selection-start-column="29" selection-end-line="116" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/www/pages/page-initsettings.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -3372,14 +2911,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
           <caret line="12" column="67" lean-forward="false" selection-start-line="12" selection-start-column="67" selection-end-line="12" selection-end-column="67" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-manifest">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/www/pages/page-user.html">
@@ -3490,13 +3029,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-newdetails.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2235">
-          <caret line="149" column="1" lean-forward="false" selection-start-line="149" selection-start-column="1" selection-end-line="149" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/www/pages/tournaments/page-matchdetails.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -3515,7 +3047,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1560">
           <caret line="104" column="79" lean-forward="false" selection-start-line="104" selection-start-column="79" selection-end-line="104" selection-end-column="79" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3523,7 +3054,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="915">
           <caret line="61" column="56" lean-forward="false" selection-start-line="61" selection-start-column="56" selection-end-line="61" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3531,7 +3061,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4815">
           <caret line="321" column="29" lean-forward="false" selection-start-line="321" selection-start-column="29" selection-end-line="321" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3539,7 +3068,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="24" column="1" lean-forward="false" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3547,7 +3075,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2340">
           <caret line="156" column="1" lean-forward="false" selection-start-line="156" selection-start-column="1" selection-end-line="156" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3555,6 +3082,31 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4200">
           <caret line="280" column="1" lean-forward="false" selection-start-line="280" selection-start-column="1" selection-end-line="280" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="23" lean-forward="false" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CordovaLib/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="258" column="14" lean-forward="false" selection-start-line="258" selection-start-column="14" selection-end-line="258" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -3575,36 +3127,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-user.js">
+    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="23" lean-forward="false" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+        <state relative-caret-position="10335">
+          <caret line="689" column="109" lean-forward="false" selection-start-line="689" selection-start-column="98" selection-end-line="689" selection-end-column="109" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CordovaLib/AndroidManifest.xml">
+    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-notifications.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="2625">
+          <caret line="175" column="33" lean-forward="false" selection-start-line="175" selection-start-column="16" selection-end-line="175" selection-end-column="33" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="android-manifest">
-        <state />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-newdetails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="48" column="43" lean-forward="false" selection-start-line="48" selection-start-column="43" selection-end-line="48" selection-end-column="43" />
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
+    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/login/page-login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="258" column="14" lean-forward="false" selection-start-line="258" selection-start-column="14" selection-end-line="258" selection-end-column="14" />
+        <state relative-caret-position="1950">
+          <caret line="130" column="42" lean-forward="false" selection-start-line="130" selection-start-column="31" selection-end-line="130" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/login/page-emailsignup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="41" column="49" lean-forward="false" selection-start-line="41" selection-start-column="49" selection-end-line="41" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/login/page-emailregister.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1005">
+          <caret line="67" column="46" lean-forward="false" selection-start-line="67" selection-start-column="46" selection-end-line="67" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-news.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
+        <state relative-caret-position="2910">
           <caret line="194" column="78" lean-forward="false" selection-start-line="194" selection-start-column="64" selection-end-line="194" selection-end-column="78" />
           <folding />
         </state>
@@ -3612,32 +3185,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/www/js/common.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1514">
-          <caret line="458" column="29" lean-forward="false" selection-start-line="458" selection-start-column="29" selection-end-line="458" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-notifications.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="184" column="50" lean-forward="false" selection-start-line="184" selection-start-column="50" selection-end-line="184" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="689" column="109" lean-forward="false" selection-start-line="689" selection-start-column="98" selection-end-line="689" selection-end-column="109" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/login/page-login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="135" column="0" lean-forward="true" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
+        <state relative-caret-position="-158">
+          <caret line="561" column="62" lean-forward="true" selection-start-line="561" selection-start-column="62" selection-end-line="561" selection-end-column="62" />
           <folding />
         </state>
       </provider>
