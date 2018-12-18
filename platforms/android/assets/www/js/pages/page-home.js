@@ -39,6 +39,7 @@ var torneoEncuentroState;
 var matchDetailFromHome = "home";
 var matchDetailFromCalendar = "calendar";
 var matchDetailFromSports = "sports";
+var matchDetailFromNews = "news"
 //var matchDetailFromCalendar = "calendar";
 
 $(document).ready(function(){
@@ -879,7 +880,7 @@ console.log('arranca builder de los suceso');
                 var noticiaTruncada = truncateNoticia(item.detalleTxt);
                 console.log(noticiaTruncada);
                 strBuilderLastNewsContent.push('<div class="card demo-card-header-pic"><div style="background-image:url('+item.imagenPrincipalMin+'); height:150px;" valign="bottom" class="card-header color-white no-border">');
-                strBuilderLastNewsContent.push('<a onclick="loadNewDetails('+item.id+','+false+')" href="#" class="item-link item-content">');
+                strBuilderLastNewsContent.push('<a onclick="loadNewDetails('+item.id+',\''+matchDetailFromHome+'\')" href="#" class="item-link item-content">');
                     strBuilderLastNewsContent.push('<div class="chipHomeContainer">');
                         //strBuilderLastNewsContent.push('<a onclick="loadNewDetails('+item.id+')" href="#" class="item-link item-content">');
                         strBuilderLastNewsContent.push('<div class="chip chipHomeDate"><div class="media"><i class="icon icon-date-home"></i></div><div class="chip-label chipHomeDateLabel">'+formatDateSucesos(item.fecha.fecha)+'</div></div>');

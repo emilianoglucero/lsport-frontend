@@ -86,8 +86,9 @@ function loadMatchDetails1(idNew, state){
 
             } else if (state == "sports")  {
                 //var allSucesosPageList = homeDetails2List;
+                console.log(recentNewsListSporDetails);
 
-                var matchDetailsHome = allSucesosPageList.filter(function( obj ) {
+                var matchDetailsHome = recentNewsListSporDetails.filter(function( obj ) {
                   return obj.id == idNew;
                 });
                 matchDetailsHome = matchDetailsHome[0];
