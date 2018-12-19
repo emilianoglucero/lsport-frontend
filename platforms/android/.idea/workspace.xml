@@ -16,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="page-matchdetails.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="page-matchdetails.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/www/js/pages/tournaments/page-matchdetails.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="86" column="44" lean-forward="false" selection-start-line="86" selection-start-column="44" selection-end-line="86" selection-end-column="44" />
+            <state relative-caret-position="90">
+              <caret line="390" column="60" lean-forward="false" selection-start-line="390" selection-start-column="60" selection-end-line="390" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -36,21 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="page-eventdetails.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-eventdetails.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="110" column="62" lean-forward="false" selection-start-line="110" selection-start-column="62" selection-end-line="110" selection-end-column="62" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="page-home.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="11570">
-              <caret line="882" column="60" lean-forward="false" selection-start-line="882" selection-start-column="60" selection-end-line="882" selection-end-column="60" />
+            <state relative-caret-position="100">
+              <caret line="999" column="55" lean-forward="false" selection-start-line="999" selection-start-column="50" selection-end-line="999" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -60,11 +50,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>loadMatchDetails1</find>
-      <find>fixture</find>
-      <find>loadSportDetails</find>
-      <find>noticiaTruncada</find>
-      <find>item.detalle</find>
       <find>getDeporteCategoriaDetalle</find>
       <find>loadnew</find>
       <find>recentNewsListSporDetails</find>
@@ -78,8 +63,23 @@
       <find>caption</find>
       <find>myPhotoBrowserVideoGallery</find>
       <find>idPhoto</find>
+      <find>homeDetails2List</find>
       <find>openPhotoBrowserEvent</find>
+      <find>builderHomeDetails2</find>
+      <find>eventdetails</find>
+      <find>loadmatchde</find>
+      <find>builderDetailsMatchDetailsInfo</find>
+      <find>aeventdetails</find>
+      <find>aEventDetails</find>
+      <find>card-header</find>
+      <find>card-header card-header-center</find>
+      <find>card card-event-home</find>
+      <find>torneo-encuentro</find>
+      <find>evento</find>
+      <find>loadEventDetails1</find>
       <find>listPhotosBrowser</find>
+      <find>tabla</find>
+      <find>torneoEncuentroState</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -2282,11 +2282,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/assets/www/js/pages/tournaments/page-matchdetails.js" />
         <option value="$PROJECT_DIR$/assets/www/js/pages/page-sportdetails.js" />
-        <option value="$PROJECT_DIR$/assets/www/js/pages/page-home.js" />
         <option value="$PROJECT_DIR$/assets/www/js/pages/page-newdetails.js" />
         <option value="$PROJECT_DIR$/assets/www/js/pages/page-eventdetails.js" />
+        <option value="$PROJECT_DIR$/assets/www/js/pages/page-home.js" />
+        <option value="$PROJECT_DIR$/assets/www/js/pages/tournaments/page-matchdetails.js" />
       </list>
     </option>
   </component>
@@ -2331,21 +2331,6 @@
               <item name="android" type="feadf853:AndroidModuleNode" />
               <item name="assets" type="edd41e36:AndroidSourceTypeNode" />
               <item name="www" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="android" type="1abcf292:AndroidViewProjectNode" />
-              <item name="android" type="feadf853:AndroidModuleNode" />
-              <item name="assets" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="www" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="android" type="1abcf292:AndroidViewProjectNode" />
-              <item name="android" type="feadf853:AndroidModuleNode" />
-              <item name="assets" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="www" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -2601,18 +2586,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/tournaments/page-matchdetails.js">
+    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-eventdetails.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="86" column="44" lean-forward="false" selection-start-line="86" selection-start-column="44" selection-end-line="86" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11570">
-          <caret line="882" column="60" lean-forward="false" selection-start-line="882" selection-start-column="60" selection-end-line="882" selection-end-column="60" />
+        <state relative-caret-position="268">
+          <caret line="110" column="62" lean-forward="false" selection-start-line="110" selection-start-column="62" selection-end-line="110" selection-end-column="62" />
           <folding />
         </state>
       </provider>
@@ -2625,10 +2602,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-eventdetails.js">
+    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/page-home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="110" column="62" lean-forward="false" selection-start-line="110" selection-start-column="62" selection-end-line="110" selection-end-column="62" />
+        <state relative-caret-position="100">
+          <caret line="999" column="55" lean-forward="false" selection-start-line="999" selection-start-column="50" selection-end-line="999" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/pages/tournaments/page-matchdetails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="390" column="60" lean-forward="false" selection-start-line="390" selection-start-column="60" selection-end-line="390" selection-end-column="60" />
           <folding />
         </state>
       </provider>

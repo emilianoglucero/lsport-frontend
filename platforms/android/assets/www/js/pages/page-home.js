@@ -1423,7 +1423,7 @@ $.each( homeDetails2List.calendario, function( i, item ){
                             strBuilderCalendarContent.push('</div>');
                         strBuilderCalendarContent.push('</div>');
                     strBuilderCalendarContent.push('</div>');
-                //strBuilderCalendarContent.push('</a>');
+                    strBuilderCalendarContent.push('</a>');
             strBuilderCalendarContent.push('</div>');
             $('#calendarEventsView').append(strBuilderCalendarContent.join(""));
             } else if (item.tipoObjeto == 'torneo-encuentro') {
@@ -1589,7 +1589,7 @@ var strBuilderTimeLineContent = [];
                                 strBuilderTimeLineContent.push('</div>');
                             strBuilderTimeLineContent.push('</div>');
                         strBuilderTimeLineContent.push('</div>');
-                    //strBuilderTimeLineContent.push('</a>');
+                    strBuilderTimeLineContent.push('</a>');
                 strBuilderTimeLineContent.push('</div>');
                 //strBuilderTimeLineContent.push('</div>');
         } else if (item.tipoObjeto == 'torneo-encuentro') {

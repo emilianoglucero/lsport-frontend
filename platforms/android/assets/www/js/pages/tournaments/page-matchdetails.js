@@ -60,7 +60,7 @@ function loadMatchDetails1(idNew, state){
 
 	        showLoadSpinnerWS();
 	        console.log(idNew);
-	        console.log(homeDetails2ListCalendario);
+	        console.log(homeDetails2List);
 	        console.log(newsListHome);
 	        console.log(allSucesosPageList);
 	        console.log(tournamentFixtureFechas);
@@ -75,14 +75,14 @@ function loadMatchDetails1(idNew, state){
                 torneoEncuentroState = true;
 
             } else if (state == "calendar")  { //significa que viene desde el calendario
-                var homeDetails2ListCalendario = homeDetails2List;
+                var homeDetails2ListCalendario = homeDetails2List.calendario;
 
                 var matchDetailsHome = homeDetails2ListCalendario.filter(function( obj ) {
                   return obj.id == idNew;
                 });
                 matchDetailsHome = matchDetailsHome[0];
                 console.log(matchDetailsHome);
-                torneoEncuentroState = false;
+                torneoEncuentroState = true;
 
             } else if (state == "sports")  {
                 //var allSucesosPageList = homeDetails2List;
@@ -93,6 +93,7 @@ function loadMatchDetails1(idNew, state){
                 });
                 matchDetailsHome = matchDetailsHome[0];
                 console.log(matchDetailsHome);
+                torneoEncuentroState = false;
 
             torneoEncuentroState = false;
 
@@ -573,9 +574,9 @@ console.log(match);
                     }
                     else if (item.tipoEvento == "sustitucion") {
 
-                    if (timelieSide == false) {
-                        strBuilderLastMatch.push('<div class="timeline timeline-sides">');
-                    }
+                        if (timelieSide == false) {
+                            strBuilderLastMatch.push('<div class="timeline timeline-sides">');
+                        }
 
                         if (item.equipo.localia == "local") {
                             strBuilderLastMatch.push('<div class="timeline-item timeline-item-left">');
@@ -757,7 +758,7 @@ console.log(match);
 		strBuilderMatchDetailInfo.push('</div>');
 		//return(strBuilderMatchDetailInfo.join(""));
 
-
+        console.log(strBuilderMatchDetailInfo);
         $('#tabMatchDetails1').append(strBuilderMatchDetailInfo.join(""));
         mainView.router.load({pageName: 'matchdetails'});
         //myApp.initImagesLazyLoad(mainView.activePage.container);
