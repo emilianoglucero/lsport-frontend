@@ -155,7 +155,7 @@ console.log(item);
                                                 strBuilderListCards.push('<div class="col-lastmatch-tournament-date"><p>18/10/18</p></div>');
                                                 //strBuilderListCards.push('<div class="col-lastmatch-tournament-nametournament">'+match.torneo.deporteCategoria.nombreCorto+'</div>');
                                                 //strBuilderListCards.push('<div class="col-lastmatch-tournament-name">'+match.torneo.nombre+'</div>');
-                                                if (match.local.tantos != "" || match.visitante.tantos != ""){
+                                                if (match.local.tantos != null || match.visitante.tantos != null){
                                                     //strBuilderListCards.push('<td class="td-50-tournaments td-scrore-datelist">'+match.local.tantos+'</td>');
                                                     strBuilderListCards.push('<div class="col-lastmatch-tournament-result"><p>'+match.local.tantos+' - '+match.visitante.tantos+'</p></div>');
                                                     //strBuilderListCards.push('<div class="col-lastmatch-tournament-result"><p>'+match.visitante.tantos+'</p></div>');
@@ -268,7 +268,7 @@ function builderFixturesDetailsFromSelect(idDate){
                                                 strBuilderListCards.push('<div class="col-lastmatch-tournament-date"><p>18/10/18</p></div>');
                                                 //strBuilderListCards.push('<div class="col-lastmatch-tournament-nametournament">'+match.torneo.deporteCategoria.nombreCorto+'</div>');
                                                 //strBuilderListCards.push('<div class="col-lastmatch-tournament-name">'+match.torneo.nombre+'</div>');
-                                                if (match.local.tantos != "" || match.visitante.tantos != ""){
+                                                if (match.local.tantos != null || match.visitante.tantos != null){
                                                     //strBuilderListCards.push('<td class="td-50-tournaments td-scrore-datelist">'+match.local.tantos+'</td>');
                                                     strBuilderListCards.push('<div class="col-lastmatch-tournament-result"><p>'+match.local.tantos+' - '+match.visitante.tantos+'</p></div>');
                                                     //strBuilderListCards.push('<div class="col-lastmatch-tournament-result"><p>'+match.visitante.tantos+'</p></div>');

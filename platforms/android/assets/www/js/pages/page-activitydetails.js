@@ -553,7 +553,7 @@ function builderNewsActivityDetails(){
                                       } else {
                                         strBuilderNewsActivityDetailsContent.push('<div class="col-10"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-team"></div>');
                                       }
-                                      if (match.local.tantos != "" || match.visit.tantos != ""){
+                                      if (match.local.tantos != null || match.visit.tantos != null){
                                         strBuilderNewsActivityDetailsContent.push('<div class="col-20 match-scorer">'+match.local.tantos+' - '+match.visitante.tantos+'</div>');
                                       }
                                       else {

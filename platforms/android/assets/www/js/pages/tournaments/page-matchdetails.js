@@ -388,7 +388,7 @@ console.log(match);
 									//strBuilderLastMatch.push('<div class="col-lastmatch-tournament-nametournament">match.torneo.deporteCategoria.nombreCorto</div>');
 									strBuilderLastMatch.push('<div class="col-lastmatch-tournament-name">'+match.torneo.nombre+'</div>');
 									//strBuilderLastMatch.push('<div class="col-lastmatch-tournament-name">match.torneo.nombre</div>');
-									if (match.local.tantos != "" || match.visitante.tantos != ""){
+									if (match.local.tantos != null || match.visitante.tantos != null){
                                         //strBuilderLastMatch.push('<td class="td-50-tournaments td-scrore-datelist">'+match.local.tantos+'</td>');
                                         strBuilderLastMatch.push('<div class="col-lastmatch-tournament-result"><p>'+match.local.tantos+' - '+match.visitante.tantos+'</p></div>');
                                         //strBuilderLastMatch.push('<div class="col-lastmatch-tournament-result"><p>'+match.visitante.tantos+'</p></div>');
@@ -717,7 +717,7 @@ console.log(match);
 									//strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-nametournament">match.torneo.deporteCategoria.nombreCorto</div>');
 									strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-name">'+lblTournamentNameFixture+'</div>');
 									//strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-name">match.torneo.nombre</div>');
-									if (match.local.tantos != "" || match.visitante.tantos != ""){
+									if (match.local.tantos != null || match.visitante.tantos != null){
                                         //strBuilderMatchDetailInfo.push('<td class="td-50-tournaments td-scrore-datelist">'+match.local.tantos+'</td>');
                                         strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-result"><p>'+match.local.tantos+' - '+match.visitante.tantos+'</p></div>');
                                         //strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-result"><p>'+match.visitante.tantos+'</p></div>');
