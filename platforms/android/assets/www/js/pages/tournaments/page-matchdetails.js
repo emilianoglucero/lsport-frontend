@@ -768,10 +768,93 @@ console.log(match);
 function builderDetailsMatchDetailsTimeLine(match) {
 console.log(match);
 myApp.showTab("#tabMatchDetails2");
-
-
 $('#tabMatchDetails2').html('');
 var strBuilderLastMatch = [];
+
+//construyo el card de marcador del partido
+console.log(match);
+	//$.each(match.encuentros, function(i, match) {
+	//console.log(match);
+		strBuilderLastMatch.push('<div class="card">');
+
+				/*if(match.liveMatch == true){
+					strBuilderMatchDetailInfo.push('<div class="card-header card-header-center animated infinite pulse">');
+					strBuilderMatchDetailInfo.push(lblLiveMatchTournaments);
+					strBuilderMatchDetailInfo.push('</div>');
+
+				}
+				else{*/
+					strBuilderLastMatch.push('<div class="card-header card-header-center">');
+					strBuilderLastMatch.push(lblScoreboardMatchDetails);
+					strBuilderLastMatch.push('</div>');
+				//}
+
+			strBuilderLastMatch.push('<div class="card-content">');
+				strBuilderLastMatch.push('<div class="card-content-inner">');
+					strBuilderLastMatch.push('<div class="list-block lastmatch-tournaments">');
+						strBuilderLastMatch.push('<div class="item-content">');
+							strBuilderLastMatch.push('<div class="row" id="row-lastmatch-tournament">');
+								strBuilderLastMatch.push('<div class="col-33 col-lastmatch-tournament">');
+
+									strBuilderLastMatch.push('<div class="col-lastmatch-tournament-team">'+match.local.nombre+'</div>');
+									if(match.local.imagenPrincipalMin != ""){
+										strBuilderLastMatch.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+match.local.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+									}
+									else{
+										strBuilderLastMatch.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+									}
+								strBuilderLastMatch.push('</div>');
+								strBuilderLastMatch.push('<div class="col-33 col-lastmatch-tournament col-lastmatch-tournament.middle">');
+									strBuilderLastMatch.push('<div class="col-lastmatch-tournament-nametournament">'+lblTournamentCategorieFixture+'</div>');
+									//strBuilderLastMatch.push('<div class="col-lastmatch-tournament-nametournament">match.torneo.deporteCategoria.nombreCorto</div>');
+									strBuilderLastMatch.push('<div class="col-lastmatch-tournament-name">'+lblTournamentNameFixture+'</div>');
+									//strBuilderLastMatch.push('<div class="col-lastmatch-tournament-name">match.torneo.nombre</div>');
+									if (match.local.tantos != null || match.visitante.tantos != null){
+                                        //strBuilderLastMatch.push('<td class="td-50-tournaments td-scrore-datelist">'+match.local.tantos+'</td>');
+                                        strBuilderLastMatch.push('<div class="col-lastmatch-tournament-result"><p>'+match.local.tantos+' - '+match.visitante.tantos+'</p></div>');
+                                        //strBuilderLastMatch.push('<div class="col-lastmatch-tournament-result"><p>'+match.visitante.tantos+'</p></div>');
+                                        //strBuilderLastMatch.push('<td class="td-30-tournaments"><a onclick="loadMatchDetailsFromFixture('+mainId+','+match.id+')" href="#" class="button">'+lblSeeMoreDatesList+'</a></td>');
+                                        //strBuilderLastMatch.push('<td class="td-35-tournaments td-scrore-datelist">'+match.visitante.tantos+'</td>');
+                                    } else {
+                                        strBuilderLastMatch.push('<div class="col-lastmatch-tournament-result"><p>VS</p></div>');
+
+                                    }
+
+									/*if(match.liveMatch == true){
+										if(match.actualClock != "")
+										{
+											strBuilderLastMatch.push('<div class="col-lastmatch-tournament-date">'+messageLastEvent+' '+match.actualClock+'</div>');
+										}
+									} else{*/
+										strBuilderLastMatch.push('<div class="col-lastmatch-tournament-date">'+match.fechaEncuentro.fecha+'</div>');
+									//}
+
+								strBuilderLastMatch.push('</div>');
+								strBuilderLastMatch.push('<div class="col-33 col-lastmatch-tournament">');
+									strBuilderLastMatch.push('<div class="col-lastmatch-tournament-team">'+match.visitante.nombre+'</div>');
+									if(match.visitante.imagenPrincipalMin != ""){
+										strBuilderLastMatch.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+match.visitante.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+									}
+									else{
+										strBuilderLastMatch.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+									}
+									strBuilderLastMatch.push('</div>');
+								strBuilderLastMatch.push('</div>');
+							strBuilderLastMatch.push('</div>');
+							strBuilderLastMatch.push('<div class="description-lastmatch-tournament">');
+								strBuilderLastMatch.push(match.visitante.nombre);
+							strBuilderLastMatch.push('</div>');
+					strBuilderLastMatch.push('</div>');
+				strBuilderLastMatch.push('</div>');
+			strBuilderLastMatch.push('</div>');
+		strBuilderLastMatch.push('</div>');
+		//return(strBuilderLastMatch.join(""));
+
+        console.log(strBuilderLastMatch);
+
+
+//$('#tabMatchDetails2').html('');
+//var strBuilderLastMatch = [];
 
     if (match.tipoObjeto == "torneo-encuentro") {
         var equipoLocal = match.local.nombre;
@@ -959,12 +1042,14 @@ var strBuilderLastMatch = [];
 
         strBuilderLastMatch.push('</div>');
 
-        $('#tabMatchDetails2').append(strBuilderLastMatch.join(""));
-        myApp.initImagesLazyLoad(mainView.activePage.container);
+
 
         }
 
     }
+
+    $('#tabMatchDetails2').append(strBuilderLastMatch.join(""));
+    myApp.initImagesLazyLoad(mainView.activePage.container);
 
 
 }
