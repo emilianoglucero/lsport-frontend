@@ -131,7 +131,7 @@ myApp.onPageInit('home', function (page)
 
 	//admob settings
 	// place our admob ad unit id here
-      var admobid = {};
+      /*var admobid = {};
       if( /(android)/i.test(navigator.userAgent) ) {
         admobid = { // for Android
           banner: 'ca-app-pub-4977768595563395/2701602073',
@@ -171,7 +171,7 @@ myApp.onPageInit('home', function (page)
       	error: function(){
       		alert('failed to create banner');
       	}
-      });
+      });*/
 
       //admob finished
 

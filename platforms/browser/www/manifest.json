@@ -1,0 +1,11 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "CSD Villa Malcolm",
+  "short_name": "CSD Villa Malcolm",
+  "version": "com.lsc.ar.caba.villamalcolm",
+  "description": "Aplicación oficial de CSD Villa Malcolm",
+  "author": "Lenguaje Sport",
+  "icons": [],
+  "start_url": "index.html"
+}

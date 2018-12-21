@@ -1,9 +1,11 @@
+
 #tabHomeDetails1{
 	/*padding-top: 0px;
 	padding-bottom: 0px;*/
 	margin-top: 0px;
 	margin-bottom: 0px;
-	background-image: url("../../img/club/background.png");
+    /* background-image: url("../../img/club/background.png"); */
+    background-color: white;
 	background-repeat: no-repeat;
 	background-position: top;
 	background-size: cover;
@@ -11,6 +13,9 @@
 	/*background-position: center center;
 	background-size: cover;*/
 }
+
+.green-white #tabHomeDetails1{ background-color: white; }
+
 
 #backgroundHomeShield{
 	width: 100%;
@@ -76,7 +81,8 @@
 }
 
 .list-block.list-block-home .item-content {
-    padding-left: 7.5px;
+    padding-left: 0px;
+    display: block;
 }
 
 .list-block.media-list .item-text .item-date {
@@ -98,7 +104,7 @@
 
 #divExistConnectionHome{
 	display: block;
-	margin-top: 50px;
+	margin-top: 49px;
 }
 
 .imgNoConnection {
@@ -137,7 +143,8 @@
 }
 
 .list-block {
-    margin: 20px 0px;
+    /* margin: 20px 0px; */
+    margin: 0px;
 }
 
 #divImgLastestNewsError{
@@ -163,9 +170,10 @@
 }
 
 #cardLastestNewsHome .card-header{
-	border-radius: 0px;
-	width: 100%;
-	text-align: center;
+	border-radius: 10px;
+    /* width: 100%; */
+    /* margin: 10px; */
+	/* text-align: center; */
 }
 
 
@@ -173,25 +181,26 @@
 	width: 90%;
 }
 
+.green-white #divLastestNewsHome { color: #585858; background-color: white; height: 44px; }
+
 #divLastestNewsHome {
     /*font-weight: 900;
     font-size: 15px;
     color: #1A9AD9;
     text-align: center;
     width: 100%;*/
+    padding: 0px 20px;
     font-weight: 900;
-    font-size: 20px;
+    font-size: 16px;
     /*color: #1A9AD9;*/
     color: white;
-    text-align: center;
+    /* text-align: center; */
     width: 100%;
     /*border-bottom: thin solid white;*/
 }
 
-#lastNewsHeader{
-	background: rgba(0, 0, 0, 0.8);
-	padding: 1px 1px 1px 1px;
-}
+#lastNewsHeader{ background: rgba(0, 0, 0, 0.8); padding: 1px 1px 1px 1px; }
+.green-white #lastNewsHeader{ background: #00a706; padding: 0px 20px; }
 
 .content-block-title-home-fav {
 	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.32);
@@ -245,8 +254,9 @@
 }*/
 
 .card-event-home {
-   /* box-shadow: none;*/
-    box-shadow: 0 2px 4px rgba(0,0,0,.4) !important;
+    box-shadow: none;
+    margin: 0px;
+    /* box-shadow: 0 2px 4px rgba(0,0,0,.4) !important; */
 }
 
 .card-event-home-content{
@@ -269,23 +279,26 @@
     width: 45%;
 }
 
-.chipHomeTags{
-    float: right;
-}
+.chipHomeTags{ float: right; }
+.green-white .chipHomeTags { background-color: rgba(0, 150, 0, 0.5) }
+.green-white .chipHomeDate { background-color: transparent; }
+
+.chipHomeContainer i.fa{ font-size: 15px; }
 
 .chipHomeTags{
-    margin-right: 15px;
-    width: 48%;
+    margin: 0px;
+    padding-left: 10px;
+    width: 100%;
 }
 
 .chipHomeSportLabel{
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto;
+    margin-right: auto; */
 }
 
 .chipHomeDateLabel{
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto;
+    margin-right: auto; */
 }
 
 .cardNewsImageContainer{
@@ -319,9 +332,8 @@
     border-radius: 3px;
 }
 
-#calendarTypeView {
-    margin-top: 50px;
-}
+#calendarTypeView { margin-top: 49px; text-align: center; background-color: #00a706; }
+.green-white #calendarTypeView { background-color: white; height: 50px;  }
 
 .tr-body-home {
     font-size: 13px;
@@ -336,9 +348,7 @@
 }
 
 /***timeline view***/
-#cardHomeTimeLine {
- width: 15em;
-}
+#cardHomeTimeLine { /* width: 15em; */ align-items: center; }
 
 /***calendar view***/
 .noEventsCalendarMsg {
@@ -348,16 +358,21 @@
 }
 
 .aEventDetails {
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
 }
 
+/* SHADOW MODIFIED*/
 #selectTypeView {
+    background-color: #f6f6f6;
+    height: 30px;
+    border-radius: 15px;
+    padding: 0px 10px;
     border: 0;
     color: black;
-    width: 97%;
+    width: 70%;
     font-size: 19px;
-    background: transparent url("../../img/template/icon-down.png") no-repeat scroll right 4px;
-    background-size: 20px 20px;
+    /* background: transparent url("../../img/template/icon-down.png") no-repeat scroll right 4px; */
+    /* background-size: 20px 20px; */
 }
 
 .calendar-input-select {
@@ -373,8 +388,8 @@
 
 #row-lastmatch-tournament-calendar{
 	width: 100%;
-	padding: 7px;
-	margin-right: 11px;
+	/* padding: 7px; */
+	/* margin-right: 11px; */
 }
 
 #row-lastmatch-tournament-calendar .col-lastmatch-tournament .col-lastmatch-tournament-team{
@@ -387,8 +402,9 @@
 }
 
 #row-lastmatch-tournament-calendar .col-lastmatch-tournament-middle{
-	margin-top: 7px;
-	margin-left: 7px;
+    margin: auto;
+	/* margin-top: 7px;
+	margin-left: 7px; */
 }
 
 #row-lastmatch-tournament-calendar .col-lastmatch-tournament .col-lastmatch-tournament-nametournament{
@@ -404,10 +420,10 @@
 }
 
 #row-lastmatch-tournament-calendar .col-lastmatch-tournament .col-lastmatch-tournament-result{
-	border: 3px solid rgb(0, 0, 0);
+	/* border: 3px solid rgb(0, 0, 0); */
     color: #FFFFFF;
-    background-color: #108342;
-    margin-left: 9px;
+    /* background-color: #00a706; */
+    /* margin-left: 9px; */
 }
 
 #row-lastmatch-tournament-calendar .col-lastmatch-tournament .col-lastmatch-tournament-result p{
@@ -437,32 +453,40 @@
 
 /* SUCESO FECHA TORNEO */
 
-.card .tournament-matches{
-    border: 11px solid #e6e6e6;
+#page-home #divExistConnectionHome > .card{
+    /* border: 11px solid #e6e6e6; */
+    padding: 20px;
 }
 #page-home #cardLastestNewsHome #tournament-matches-header {
     background-color: #e6e6e6;
     display: block;
+    border-radius: 0px;
 }
+.green-white #page-home #cardLastestNewsHome #tournament-matches-header{ background-color: white; margin-bottom: 10px; }
 
+/* .card.tournament-matches{ padding: 10px; } */
+/* #positionstable-list { padding: 10px; } */
 .card .tournament-matches-icon{
     float:  left;
     margin-left: 5px;
+    width: 50px;
+    min-height: 50px;
+    height: 100%;
 }
+#tournament-match-prefix { display: flex; }
 
 .card .img-shield-tournament{
-    height:  30px;
-    width: 30px;
+    height:  50px;
+    width: 50px;
+    vertical-align: middle;
 }
 
 .card .tournament-matches-name{
     text-align:  left;
-    margin-left: 44px;
     font-size: 14px;
     font-weight: 500;
 }
 .card .tournament-matches-division{
-    margin-left: 44px;
     font-size: 13px;
     color: #8e8e93;
     text-align:  left;
@@ -470,13 +494,20 @@
 .card .tournament-matches-matchday{
     float:  right;
     font-size: 13px;
+    margin-right: 10px;
 }
 
 .card .tournament-matches-matchday-live{
     float:  right;
+    margin-right: 10px;
     font-size: 13px;
-    color: red;
+    border-radius: 10px;
+    background-color: red;
+    color: white;
+    padding: 0 10px;
 }
+
+/* .tournament-matches-content{ padding: 15px; } */
 
 .tournament-matches-content .row-tournament-matches{
     margin-top: 13px;
@@ -488,10 +519,14 @@
     text-align:  center;
     background-color: #e6e6e6;
 }
-.tournament-matches-footer{
-    background-color: #e6e6e6;
-    font-weight:  500;
+.green-white .card-content .tournament-matches-content .match-scorer { 
+    background-color: white; 
+    font-size: 15px; 
+    color: gray; 
 }
+
+.tournament-matches-footer{ background-color: #e6e6e6; font-weight:  500; }
+.green-white .tournament-matches-footer{ background-color: white; font-size: 15px; }
 
 .card-content .img-shield-team {
     height: 20px;
@@ -501,11 +536,12 @@
 /*suceso tabla de posiciones de fecha*/
 
 .tournament-father {
-    background-color: #108342;
+    background-color: #00a706;
     color: #FFFFFF;
     font-size: 16px;
     margin-bottom: 5px;
 }
+.green-white .tournament-father{ background-color: #f6f6f6; color: #585858; }
 
 .tournament-child {
     margin-bottom: 5px;
@@ -526,6 +562,7 @@
 }
 
 .tournament-header-titulo {
+    line-height: 1.5;
     text-align: left;
     font-size: 16px;
     font-weight: 450;
@@ -534,16 +571,15 @@
 /*termine suceso posiciones de fecha*/
 
 .card-content .news-content {
-    border-top: 11px solid #e6e6e6;
-    border-left:  11px solid #e6e6e6;
-    border-right: 11px solid #e6e6e6;
+    margin-bottom: 10px;
+    /* box-shadow: 1px 5px 8px lightgrey; */
 }
 
 .chipHomeCategory {
     width: 45%;
     position: absolute;
     bottom: 100px;
-    left: 10px;
+    left: 0px;
 }
 
 .dateTitleNew {
@@ -554,14 +590,15 @@
     word-break: break-word;
 }
 
-/* suceso ultimo partido/partido en vivo */
+/* suceso ultimo partido/En vivo */
 
 .match-scorer-lastmatch {
-    background-color: #108342;
+    background-color: #00a706;
     color: white;
     font-weight: 800;
-    border-radius: 5px;
-    font-size: 15px;
+    border-radius: 15px;
+    height: 30px;
+    font-size: 14px;
     padding: 5px;
     text-align: center;
 }
@@ -584,9 +621,9 @@
 }
 
 .card-content .img-shield-lastmatch {
-    height: 35px;
+    height: 30px;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 35px;
+    width: 30px;
 }

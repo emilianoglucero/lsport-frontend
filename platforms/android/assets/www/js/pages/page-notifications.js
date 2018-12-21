@@ -171,11 +171,10 @@ console.log(isRead);
             },
             timeout: timeOut,
             success: function(response){
-            console.log(response);
 
-                builderNewDetails(response.noticia);
+                builderNewDetails(response.newDetails);
                 hideLoadSpinnerWS();
-                //setNotificationRead(idNotification);
+                setNotificationRead(idNotification);
                 if((isRead == false && $('#list-block-notifications-id'+idNotification).hasClass("notificationNoRead") == true)||isRead == null){
                     unreadNotifications--;
                     setBadgeIconNotificationsHome();
@@ -192,41 +191,7 @@ console.log(isRead);
 
 }
 
-function loadEventDetailsNotifications(idNew,idNotification,isRead){
-console.log(idNew);
-console.log(idNotification);
-console.log(isRead);
-	showLoadSpinnerWS();
-	$.ajax({
-    // URL del Web Service
-            url: getPathWS() + 'getEventoDetalle',
-            dataType: 'json',
-            data: { 'id': idNew
-            },
-            timeout: timeOut,
-            success: function(response){
-            console.log(response);
-
-                builderEventDetails(response.evento);
-                hideLoadSpinnerWS();
-                //setNotificationRead(idNotification);
-                if((isRead == false && $('#list-block-notifications-id'+idNotification).hasClass("notificationNoRead") == true)||isRead == null){
-                    unreadNotifications--;
-                    setBadgeIconNotificationsHome();
-                }
-                $('#list-block-notifications-id'+idNotification).removeClass("notificationNoRead");
-
-            },
-            error: function (data, status, error){
-                hideLoadSpinnerWS();
-                showMessage(messageConexionError);
-           },
-          beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer ' + accessToken ); } //set tokenString before send
-   });
-
-}
-
-/*function loadNewDetailsNotifications1(idNew,idNotification,isRead){
+function loadNewDetailsNotifications1(idNew,idNotification,isRead){
 	showLoadSpinnerWS();
 	$.ajax({
 		// URL del Web Service
@@ -263,7 +228,7 @@ console.log(isRead);
 	          showMessage(messageConexionError);
 	   }
 	});
-}*/
+}
 
 function setNotificationRead(idNotification){
 	$.ajax({

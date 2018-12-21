@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget android-versionCode="42" id="com.lsc.ar.caba.villamalcolm" ios-CFBundleVersion="4.2" version="4.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>CSD Villa Malcolm</name>
+    <description>
+        Aplicación oficial de CSD Villa Malcolm
+    </description>
+    <author email="info@lenguajesport.com" href="http://www.lenguajesport.com">
+        Lenguaje Sport
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <allow-navigation href="*youtube*" />
+    <allow-navigation href="*ytimg*" />
+    <universal-links>
+        <host name="https://yb5mh.app.goo.gl" scheme="https" />
+        <host name="lenguaje-sport.firebaseapp.com" scheme="https">
+            <path url="/__/auth/callback" />
+        </host>
+    </universal-links>
+    <preference name="AllowInlineMediaPlayback" value="true" />
+    <preference name="MediaPlaybackRequiresUserAction" value="false" />
+    <preference name="SplashMaintainAspectRatio" value="true" />
+    <preference name="AndroidLaunchMode" value="singleTask" />
+</widget>

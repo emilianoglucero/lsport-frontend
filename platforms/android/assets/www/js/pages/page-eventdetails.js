@@ -86,7 +86,7 @@ console.log(eventDetailsItem);
 	$('#pNameEventDetails').html(eventDetailsItem.titulo);
 
 
-	$('#containerImgHeaderEventDetail').html('<img data-src="'+eventDetailsItem.imagenPrincipalMin+'" alt="'+eventDetailsItem.titulo+'" class="lazy lazy-fadeIn" id="imgHeaderEventDetails" />');
+	$('#containerImgHeaderEventDetail').html('<img data-src="'+eventDetailsItem.urlImg+'" alt="'+eventDetailsItem.altImg+'" class="lazy lazy-fadeIn" id="imgHeaderEventDetails" />');
 	
 	$('#dateEventDetails').html(eventDetailsItem.fecha.fecha);
 	$('#hourEventDetails').html(eventDetailsItem.fecha.hora);
@@ -108,9 +108,9 @@ console.log(eventDetailsItem);
 				listPhotosBrowserEvent = [];
 				$.each(eventDetailsItem.imagenes, function(index, item) {
 				    
-				    listPhotosBrowserEvent.push(item.imagenMin);
+				    listPhotosBrowserEvent.push(item.urlImg);
 					strBuilderPhotogallery.push('<div class="swiper-slide">');
-					strBuilderPhotogallery.push('<img onclick="openPhotoBrowserEvent('+index+')" class="swiper-lazy swiperGalleryPhotosImg" data-src="'+item.imagen+'"/>');
+					strBuilderPhotogallery.push('<img onclick="openPhotoBrowserEvent('+index+')" class="swiper-lazy swiperGalleryPhotosImg" data-src="'+item.urlImg+'"/>');
 					strBuilderPhotogallery.push('<div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>');
 					strBuilderPhotogallery.push('</div>');
 				});
@@ -135,7 +135,7 @@ console.log(eventDetailsItem);
 				$.each(eventDetailsItem.galleryVideos, function(index, item) {
 				    listVideoBrowserEvent.push(item);
 					strBuilderVideogallery.push('<div class="swiper-slide">');
-					strBuilderVideogallery.push('<img onclick="openVideoBrowserEvent('+index+')" class="swiper-lazy swiperGalleryPhotosImg" data-src="'+item.imagen+'"/>');
+					strBuilderVideogallery.push('<img onclick="openVideoBrowserEvent('+index+')" class="swiper-lazy swiperGalleryPhotosImg" data-src="'+item.thumbnail+'"/>');
 					strBuilderVideogallery.push('<div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>');
 					strBuilderVideogallery.push('</div>');
 				});

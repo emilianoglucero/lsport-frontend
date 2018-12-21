@@ -565,10 +565,9 @@ function setPushConfigurations()
                                     mainView.router.load({pageName: 'login'});
                                     window.location.reload(true);
                                 } else{
-                                    setTimeout(function(){
-                                    console.log('set time function for push not');
-                                        loadNewDetailsNotifications(paramsId.id, notification.notId,null);
-                                    }, 6000);
+
+                                    loadNewDetailsNotifications(ids.id, notification.notId,null);
+
                                 }
                 		    }
                 		    else{
@@ -599,53 +598,6 @@ function setPushConfigurations()
                                     });
                                 }
                 		    }
-                } else if (notification.pageName == 'evento') {
-                    if (notification.tap == true){
-                        if (user == null) {
-                            mainView.router.load({pageName: 'login'});
-                            window.location.reload(true);
-                        } else{
-                            setTimeout(function(){
-                            console.log('set time function for push not evento');
-                                loadEventDetailsNotifications(paramsId.id, notification.notId,null);
-                            }, 6000);
-                        }
-                    }
-                    else{
-                        if (user == null) {
-                            alert('Acaba de llegar una notificacion, pero debes loguearte primero para visualizarla');
-                            mainView.router.load({pageName: 'login'});
-                            window.location.reload(true);
-                        } else{
-                            if(notification.title == undefined){
-                                return;
-                            }
-                            vibrate();
-                            unreadNotifications++;
-                            setBadgeIconNotificationsHome();
-                            myApp.modal({
-                                title:  lblNameClub,
-                                text: messageShowNotification,
-                                buttons:
-                                [{
-                                    text: lblButtonCancel,
-
-                                },{
-                                    text: lblButtonOk,
-                                    onClick: function() {
-                                        loadEventDetailsNotifications(paramsId.id, notification.notId,null);
-                                    }
-                                }]
-                            });
-                        }
-                    }
-
-
-
-
-
-
-
                 }
 
 

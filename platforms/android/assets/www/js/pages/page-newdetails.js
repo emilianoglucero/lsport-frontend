@@ -24,33 +24,20 @@ function loadNewDetails(idNew, state){
 	        showLoadSpinnerWS();
 	        console.log(idNew);
 	        console.log(allSucesosNewsList);
-	        console.log(allNewsPageList);
-	        console.log(recentNewsListSporDetails);
 	        console.log(state);
-	        //si la noticia viene de la pantalla news
-            if (state == "news") {
+            if (state){
 	        	var newsDetails = allNewsPageList.filter(function( obj ) {
                   return obj.id == idNew;
                 });
                 newsDetailsHome = newsDetails[0];
                 console.log(newsDetailsHome);
-            } else if (state == "home") {
-            //si la noticia viene de la pantalla home
+            } else {
                 var newsDetails = allSucesosNewsList.filter(function( obj ) {
                   return obj.id == idNew;
                 });
                 newsDetailsHome = newsDetails[0];
-            } else if (state == "sports") {
-            //si la noticia viene de la pantalla deportes
-                console.log(recentNewsListSporDetails);
-                var newsDetails = recentNewsListSporDetails.filter(function( obj ) {
-                  return obj.id == idNew;
-                });
-                newsDetailsHome = newsDetails[0];
-
             }
-            console.log(newsDetailsHome);
-            //newsDetailsHome.audiovisuales;
+            newsDetailsHome.audiovisuales
 
 
 			// averiguar como hacer esto builderNewBanner(response.banner);
