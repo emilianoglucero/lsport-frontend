@@ -86,10 +86,10 @@ console.log(item);
 	//$.each(positionTables, function(n, table) {
 	//console.log(table);
 	strBuilderListCards.push('<div class="card tournament-matches"> <a onclick="loadPositionsTableDetails('+item.id+')" href="#">');
-                          strBuilderListCards.push('<div id="tournament-matches-header" class="card-header no-border">');
+                          strBuilderListCards.push('<div id="tournament-matches-header" class="row card-header no-border">');
 
-                          strBuilderListCards.push('<div class="tournament-header-titulo">'+item.titulo+'</div>');
-                          strBuilderListCards.push('<div class="tournament-header-fecha">'+item.titulo+'</div>');
+                          strBuilderListCards.push('<div class="col-100 tournament-header-titulo">'+item.titulo+'</div>');
+                          strBuilderListCards.push('<div class="col-100 tournament-header-fecha">'+item.titulo+'</div>');
 
                           strBuilderListCards.push('</div>');
                           strBuilderListCards.push('<div class="card-content tournament-matches-content">');

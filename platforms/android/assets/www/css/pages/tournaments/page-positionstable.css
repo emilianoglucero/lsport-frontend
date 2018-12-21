@@ -32,14 +32,17 @@
 	padding-left: 8px;
 }
 
-.td-span-team-pos{
-	color: rgb(142, 142, 147);
-}
+div.tournament-child .col-40:first-child, div.tournament-father .col-40:first-child{ text-align: left; }
+div.tournament-father .col-40:first-child { padding-left: 15px; }
 
-.td-span-team-name{
-	padding-left: 5px;
-	font-weight: 700;
-}
+div.tournament-child .tournament-child-team{ display: inline-flex; padding-left: 5px; }
+.green-white div.tournament-child{ color: #585858; }
+
+.td-span-team-pos{ color: rgb(142, 142, 147); }
+.green-white .td-span-team-pos { color: #00a706; }
+
+.td-span-team-name{ padding-left: 5px; /*font-weight: 700;*/ }
+.green-white .td-span-team-name{ color: #585858; }
 
 .table-tournaments tr .th-20-tournaments{
 	font-size: 13px;

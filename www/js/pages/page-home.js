@@ -133,47 +133,47 @@ myApp.onPageInit('home', function (page) {
 
     //admob settings
     // place our admob ad unit id here
-    var admobid = {};
-    if (/(android)/i.test(navigator.userAgent)) {
-        admobid = { // for Android
-            banner: 'ca-app-pub-4977768595563395/2701602073',
-            interstitial: 'ca-app-pub-4977768595563395/7133346268',
-            rewardvideo: 'ca-app-pub-3940256099942544/5224354917',
-        };
-    } else if (/(ipod|iphone|ipad)/i.test(navigator.userAgent)) {
-        admobid = { // for iOS
-            banner: 'ca-app-pub-4977768595563395/5628692908',
-            interstitial: 'ca-app-pub-4977768595563395/3493484154',
-            rewardvideo: 'ca-app-pub-3940256099942544/1712485313',
-        };
-    } else {
-        admobid = { // for Windows Phone
-            banner: 'ca-app-pub-6869992474017983/8878394753',
-            interstitial: 'ca-app-pub-6869992474017983/1355127956',
-            rewardvideo: '',
-        };
-    }
+    // var admobid = {};
+    // if (/(android)/i.test(navigator.userAgent)) {
+    //     admobid = { // for Android
+    //         banner: 'ca-app-pub-4977768595563395/2701602073',
+    //         interstitial: 'ca-app-pub-4977768595563395/7133346268',
+    //         rewardvideo: 'ca-app-pub-3940256099942544/5224354917',
+    //     };
+    // } else if (/(ipod|iphone|ipad)/i.test(navigator.userAgent)) {
+    //     admobid = { // for iOS
+    //         banner: 'ca-app-pub-4977768595563395/5628692908',
+    //         interstitial: 'ca-app-pub-4977768595563395/3493484154',
+    //         rewardvideo: 'ca-app-pub-3940256099942544/1712485313',
+    //     };
+    // } else {
+    //     admobid = { // for Windows Phone
+    //         banner: 'ca-app-pub-6869992474017983/8878394753',
+    //         interstitial: 'ca-app-pub-6869992474017983/1355127956',
+    //         rewardvideo: '',
+    //     };
+    // }
 
-    // preppare and load ad resource in background, e.g. at begining of game level
-    AdMob.prepareInterstitial({
-        adId: admobid.interstitial,
-        isTesting: true,
-        autoShow: false
-    });
+    // // preppare and load ad resource in background, e.g. at begining of game level
+    // AdMob.prepareInterstitial({
+    //     adId: admobid.interstitial,
+    //     isTesting: true,
+    //     autoShow: false
+    // });
 
 
-    // it will display smart banner at top center, using the default options
-    AdMob.createBanner({
-        adId: admobid.banner,
-        position: AdMob.AD_POSITION.BOTTOM_CENTER,
-        autoShow: false,
-        isTesting: true,
-        success: function () {
-        },
-        error: function () {
-            console.log('failed to create banner');
-        }
-    });
+    // // it will display smart banner at top center, using the default options
+    // AdMob.createBanner({
+    //     adId: admobid.banner,
+    //     position: AdMob.AD_POSITION.BOTTOM_CENTER,
+    //     autoShow: false,
+    //     isTesting: true,
+    //     success: function () {
+    //     },
+    //     error: function () {
+    //         console.log('failed to create banner');
+    //     }
+    // });
 
     //admob finished
 
@@ -776,7 +776,7 @@ function builderNewsHomeDetails() {
             } else if (item.tipoObjeto == "noticia") {
                 var noticiaTruncada = truncateNoticia(item.detalle);
                 console.log(noticiaTruncada);
-                strBuilderLastNewsContent.push('<div class="card demo-card-header-pic"><div style="background-image:url(http://clubes.lenguajefutbol.com/img/archivos/evento/evento-imagen-3_160x100xrecortar.jpg?1529080539);" valign="bottom" class="card-header color-white no-border">');
+                strBuilderLastNewsContent.push('<div class="card demo-card-header-pic"><div style="background-image:url('+item.imagenPrincipalMin+');" valign="bottom" class="card-header color-white no-border">');
                 strBuilderLastNewsContent.push('<a onclick="loadNewDetails(' + item.id + ',' + false + ')" href="#" class="item-link item-content">');
                 strBuilderLastNewsContent.push('<div class="chipHomeContainer">');
                 //strBuilderLastNewsContent.push('<a onclick="loadNewDetails('+item.id+')" href="#" class="item-link item-content">');
@@ -850,7 +850,7 @@ function builderNewsHomeDetails() {
             } else if (item.tipoObjeto == "evento") {
                 var noticiaTruncada = truncateNoticia(item.detalle);
                 console.log(noticiaTruncada);
-                strBuilderLastNewsContent.push('<div class="card demo-card-header-pic"><div style="background-image:url(http://clubes.lenguajefutbol.com/img/archivos/evento/evento-imagen-3_160x100xrecortar.jpg?1529080539);" valign="bottom" class="card-header color-white no-border">');
+                strBuilderLastNewsContent.push('<div class="card demo-card-header-pic"><div style="background-image:url(' + item.imagenPrincipalMin + ');" valign="bottom" class="card-header color-white no-border">');
                 strBuilderLastNewsContent.push('<a onclick="loadEventDetails1(' + item.id + ',' + false + ')" href="#" class="item-link item-content">');
                 strBuilderLastNewsContent.push('<div class="chipHomeContainer">');
                 //strBuilderLastNewsContent.push('<a onclick="loadNewDetails('+item.id+')" href="#" class="item-link item-content">');

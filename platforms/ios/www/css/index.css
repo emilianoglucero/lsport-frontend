@@ -4,7 +4,7 @@
 }
 
 .activeStateMenu {
-    background: rgb(94, 96, 105) !important;
+    background: rgb(94, 96, 105);
 }
 
 .list-block ul#ulListMenu {
@@ -16,14 +16,43 @@
     border-bottom: 0px none;
 }
 
-i.icon.icon-home {
+i.fa.fa-home { font-size: 24px; }
+i.fa.fa-newspaper { font-size: 24px; }
+i.fa.fa-futbol { font-size: 24px; }
+i.fa.fa-users { font-size: 24px; }
+i.fas.fa-bullhorn { font-size: 24px; }
+i.fa.fa-info-circle { font-size: 24px; }
+i.fa.fa-cogs { font-size: 24px; }
+i.fa.fa-user { font-size: 24px; }
+
+/* i.icon.icon-home {
     width: 29px;
     height: 29px;
     background-image: url("../img/template/icon-home.png");
     border-radius: 0px;
+} */
+
+i.fa.fa-bars { font-size: 24px; }
+i.fa.fa-bell { font-size: 24px; }
+
+i.fa.fa-bell.icon-notifications-home:after{
+    content: attr(data-content);
+    position: absolute;
+    background: #000000;
+    height:1rem;
+    top: -3px;
+    right:-4px;
+    width:1rem;
+    text-align: center;
+    line-height: 1rem;;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 50%;
+    color:white;
+    border: 1px solid #000000;
 }
 
-i.icon.icon-notifications {
+/* i.icon.icon-notifications {
     width: 29px;
     height: 29px;
     background-image: url("../img/template/icon-notifications.png");
@@ -45,7 +74,7 @@ i.icon.icon-notifications.icon-notifications-home:after{
     border-radius: 50%;
     color:white;
     border: 1px solid #000000;
-}
+} */
 
 /*i.icon.icon-settings-favourites-notifications {
     width: 29px;
@@ -332,3 +361,93 @@ a.item-link{
 	-webkit-transform: translate3d(0,0,0);
 	transform: translate3d(0, 0, 0);
 }
+
+
+/* -------------------- ------------------------*/
+.card-content-inner .col-50 > .dateTitleNew > a { width: fit-content; }
+.card-content-inner .col-50 a { font-size: 18px; }
+.card-content-inner .col-50 .dateTitleNew > a > i { margin-right: 5px; }
+
+/* #calendar-inline-container{ padding: 10px; } */
+#calendar-inline-container > .picker-modal.picker-modal-inline{ box-shadow: 1px 5px 8px lightgrey; }
+.green-white .picker-calendar-day.picker-calendar-day-selected span { background: #00a706; }
+
+#calendarEventsView { padding: 10px; }
+.green-white #calendarEventsView { background-color: white; }
+
+#calendarEventsView > .timeline-item{ box-shadow: 1px 5px 8px lightgray; }
+/* .timeline > .timeline-item{ box-shadow: 1px 5px 8px lightgray; } */
+.timeline-item:not(:last-child) { margin-bottom: 60px; margin-top: 60px; }
+
+.timeline-item .timeline-item-date { font-size: 28px; padding-right: 20px; }
+/* .timeline-item .card-event-home { padding: 10px; } */
+
+.green-white .timeline-item div.timeline-item-date > a { color: #00a706; }
+.green-white .timeline-item div.timeline-item-date { color: #00a706; font-size: 15px; } 
+
+.timeline-item-content{ display: inline-flex; /*padding: 5px;*/ }
+
+.timeline-item-content .card-header{ padding: 0px; }
+.timeline-item-content .item-content{ padding: 0px; display: inline-flex;}
+
+.card-content-inner .list-block { display: inline-flex;  }
+
+.timeline-item-content .card-content-inner{ box-shadow: none; }
+.timeline-item-content #timeline-inner-timepanel{ width: fit-content; display: flex; }
+
+.timeline-item .card-event-home .card-content{ width: 100%; }
+
+.card-content-inner #match-datetime { width: fit-content; }
+
+.description-lastmatch-tournament { display: none; }
+
+/* #page-sportdetails #contentTabSportDetails2{ padding: 10px; } */
+#page-positionstable #positionstable-list { padding-top: 44px; }
+/* #positionstable-list > .card.tournament-matches { padding: 10px; } */
+
+#page-home > #tabs-sportdetails #tabHomeDetails2 {padding-left: 20px; padding-right: 20px;}
+.green-white div[id^="page-"] { background-color: white; overflow: visible; }
+div[id^="page-"]:not([id="page-home"]) { padding-left: 20px; padding-right: 20px; }
+div[id="page-home"] { padding-left: 0px; padding-right: 0px; }
+/* #page-matchdetails .page-content { padding-left: 20px; padding-right: 20px; }
+#page-sportdetails > #tabs-sportdetails > .tabs > .page-content.tab { padding-left: 20px; padding-right: 20px; }
+#page-fixtures .page-content { padding-left: 20px; padding-right: 20px; } */
+
+#page-sportdetails > #tabs-sportdetails > .tabs > .page-content .card-header{
+    text-align: left;
+    font-weight: bold;
+    color: gray;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+#page-sportdetails > #tabs-sportdetails > .tabs > .page-content .card-content-inner .list-block { display: block; }
+
+.green-white .timeline-item-divider-inner-circle{ background-color: #f6f6f6; }
+.timeline-item-divider-inner-circle{
+    margin: auto;
+    width: 48px;
+    height: 48px;
+    border: none;
+    display: flex;
+    z-index: 40;
+    border-radius: 24px;
+    text-align: center;
+}
+.timeline-item-divider-inner-circle > span{ margin: auto; vertical-align: middle; color: gray; font-weight: bold; }
+
+.timeline-item-main-content.row > .col-100{ padding-left: 10px; }
+.timeline-item-main-content.row > .timeline-item-date
+{
+    display: inline-flex;
+    text-align: left;
+    color: gray;
+    font-weight: bold;
+    font-size: 18px;
+
+}
+.timeline-item-main-content.row > .timeline-item-date.col-100 > small{ margin: auto; margin-left: 10px; margin-right: 0px; }
+.timeline-item-main-content .timeline-item-inner{ display: inline-flex; padding: 0px; }
+
+.timeline-item.timeline-item-left .timeline-item-main-content.row .col-100{ direction: rtl; padding-right: 10px; padding-left: 0px; }
+.timeline-item.timeline-item-left .timeline-item-main-content.row .col-100 > small{ margin-right: 10px; margin-left: 0px; }
