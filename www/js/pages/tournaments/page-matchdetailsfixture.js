@@ -167,7 +167,7 @@ var mainId = item.id;
                                                         strBuilderMatchDetailsDate.push('</td>');
                                                         strBuilderMatchDetailsDate.push('<td class="td-30-tournaments">');
                                                         strBuilderMatchDetailsDate.push('<table>');
-                                                        if (match.local.tantos != "" || match.visit.tantos != ""){
+                                                        if (match.local.tantos != null || match.visit.tantos != null){
                                                             strBuilderMatchDetailsDate.push('<td class="td-35-tournaments td-scrore-datelist">'+match.local.tantos+'</td>');
                                                             strBuilderMatchDetailsDate.push('<td class="td-30-tournaments"><a onclick="loadMatchDetailsFromFixture('+mainId+','+match.id+')" href="#" class="button">'+lblSeeMoreDatesList+'</a></td>');
                                                             strBuilderMatchDetailsDate.push('<td class="td-35-tournaments td-scrore-datelist">'+match.visitante.tantos+'</td>');

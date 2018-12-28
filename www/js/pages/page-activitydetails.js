@@ -322,7 +322,7 @@ function builderNewsActivityDetails(){
 							*/if (item.tipoObjeto == "noticia") {
 
                                     strBuilderNewsActivityDetailsContent.push('<div class="card demo-card-header-pic"><div style="background-image:url('+item.imagenPrincipalMin+'); height:150px;" valign="bottom" class="card-header color-white no-border">');
-                                    strBuilderNewsActivityDetailsContent.push('<a onclick="loadNewDetails('+item.id+','+false+')" href="#" class="item-link item-content">');
+                                    strBuilderNewsActivityDetailsContent.push('<a onclick="loadNewDetails('+item.id+',\''+matchDetailFromSports+'\')" href="#" class="item-link item-content">');
                                         strBuilderNewsActivityDetailsContent.push('<div class="chipHomeContainer">');
                                             //strBuilderNewsActivityDetailsContent.push('<a onclick="loadNewDetails('+item.id+')" href="#" class="item-link item-content">');
                                             strBuilderNewsActivityDetailsContent.push('<div class="chip chipHomeDate"><div class="media"><i class="icon icon-date-home"></i></div><div class="chip-label chipHomeDateLabel">'+formatDateSucesos(item.fecha.fecha)+'</div></div>');
@@ -553,7 +553,7 @@ function builderNewsActivityDetails(){
                                       } else {
                                         strBuilderNewsActivityDetailsContent.push('<div class="col-10"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-team"></div>');
                                       }
-                                      if (match.local.tantos != "" || match.visit.tantos != ""){
+                                      if (match.local.tantos != null || match.visit.tantos != null){
                                         strBuilderNewsActivityDetailsContent.push('<div class="col-20 match-scorer">'+match.local.tantos+' - '+match.visitante.tantos+'</div>');
                                       }
                                       else {

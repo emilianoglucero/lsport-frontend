@@ -39,6 +39,7 @@ var torneoEncuentroState;
 var matchDetailFromHome = "home";
 var matchDetailFromCalendar = "calendar";
 var matchDetailFromSports = "sports";
+var matchDetailFromNews = "news"
 //var matchDetailFromCalendar = "calendar";
 
 $(document).ready(function(){
@@ -879,7 +880,7 @@ console.log('arranca builder de los suceso');
                 var noticiaTruncada = truncateNoticia(item.detalleTxt);
                 console.log(noticiaTruncada);
                 strBuilderLastNewsContent.push('<div class="card demo-card-header-pic"><div style="background-image:url('+item.imagenPrincipalMin+'); height:150px;" valign="bottom" class="card-header color-white no-border">');
-                strBuilderLastNewsContent.push('<a onclick="loadNewDetails('+item.id+','+false+')" href="#" class="item-link item-content">');
+                strBuilderLastNewsContent.push('<a onclick="loadNewDetails('+item.id+',\''+matchDetailFromHome+'\')" href="#" class="item-link item-content">');
                     strBuilderLastNewsContent.push('<div class="chipHomeContainer">');
                         //strBuilderLastNewsContent.push('<a onclick="loadNewDetails('+item.id+')" href="#" class="item-link item-content">');
                         strBuilderLastNewsContent.push('<div class="chip chipHomeDate"><div class="media"><i class="icon icon-date-home"></i></div><div class="chip-label chipHomeDateLabel">'+formatDateSucesos(item.fecha.fecha)+'</div></div>');
@@ -1135,7 +1136,7 @@ console.log('arranca builder de los suceso');
                   } else {
                     strBuilderLastNewsContent.push('<div class="col-10"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-team"></div>');
                   }
-                  if (match.local.tantos != "" || match.visit.tantos != ""){
+                  if (match.local.tantos != null || match.visit.tantos != null){
                     strBuilderLastNewsContent.push('<div class="col-20 match-scorer">'+match.local.tantos+' - '+match.visitante.tantos+'</div>');
                   }
                   else {
@@ -1422,7 +1423,7 @@ $.each( homeDetails2List.calendario, function( i, item ){
                             strBuilderCalendarContent.push('</div>');
                         strBuilderCalendarContent.push('</div>');
                     strBuilderCalendarContent.push('</div>');
-                //strBuilderCalendarContent.push('</a>');
+                    strBuilderCalendarContent.push('</a>');
             strBuilderCalendarContent.push('</div>');
             $('#calendarEventsView').append(strBuilderCalendarContent.join(""));
             } else if (item.tipoObjeto == 'torneo-encuentro') {
@@ -1588,7 +1589,7 @@ var strBuilderTimeLineContent = [];
                                 strBuilderTimeLineContent.push('</div>');
                             strBuilderTimeLineContent.push('</div>');
                         strBuilderTimeLineContent.push('</div>');
-                    //strBuilderTimeLineContent.push('</a>');
+                    strBuilderTimeLineContent.push('</a>');
                 strBuilderTimeLineContent.push('</div>');
                 //strBuilderTimeLineContent.push('</div>');
         } else if (item.tipoObjeto == 'torneo-encuentro') {

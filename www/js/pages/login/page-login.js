@@ -129,10 +129,10 @@ function confirmNumber() {
      }
      //agregamos este condicional para tener un codigo de logueo
      else if (phoneNumber === '#132457689#') {
-     accessToken = "2854cf6bfcb0e5639ea7729a6a75b9e4aed5dd9e";
+     //accessToken = "2854cf6bfcb0e5639ea7729a6a75b9e4aed5dd9e";
      //loadPageInit();
-     mainView.router.load({pageName: 'home'});
-     reloadContentHomePage();
+     mainView.router.load({pageName: 'emailsignup'});
+     //reloadContentHomePage();
 
      }
      else {
