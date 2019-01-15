@@ -21,22 +21,23 @@ function loadMatchDetailsFixture(idNew, state){
 	        console.log(allSucesosFechaTorneoList);
 	        console.log(datesTournaments);
 	        //var homeDetails2ListCalendario = newsListHome;
-            if (state == true){
+            if (state == "home"){
 	        	var matchDetailsHomeDate = allSucesosFechaTorneoList.filter(function( obj ) {
                   return obj.id == idNew;
                 });
                 matchDetailsHomeDate = matchDetailsHomeDate[0];
                 console.log(matchDetailsHomeDate);
 
-                torneoEncuentroState = false;
-            } else {
-                var matchDetailsHomeDate = datesTournaments.filter(function( obj ) {
-                  return obj.id == idNew;
+                torneoEncuentroState = true;
+            } else if (state == "sports") {
+                console.log(tournamentMatchList);
+                var matchDetailsHomeDate = tournamentMatchList.filter(function( obj ) {
+                return obj.id == idNew;
                 });
                 matchDetailsHomeDate = matchDetailsHomeDate[0];
                 console.log(matchDetailsHomeDate);
 
-                torneoEncuentroState = true;
+                torneoEncuentroState = false;
             }
 
 

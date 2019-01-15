@@ -26,6 +26,7 @@ function loadNewDetails(idNew, state){
 	        console.log(allSucesosNewsList);
 	        console.log(allNewsPageList);
 	        console.log(recentNewsListSporDetails);
+	        console.log(tournamentNewsList);
 	        console.log(state);
 	        //si la noticia viene de la pantalla news
             if (state == "news") {
@@ -42,8 +43,8 @@ function loadNewDetails(idNew, state){
                 newsDetailsHome = newsDetails[0];
             } else if (state == "sports") {
             //si la noticia viene de la pantalla deportes
-                console.log(recentNewsListSporDetails);
-                var newsDetails = recentNewsListSporDetails.filter(function( obj ) {
+                console.log(tournamentNewsList);
+                var newsDetails = tournamentNewsList.filter(function( obj ) {
                   return obj.id == idNew;
                 });
                 newsDetailsHome = newsDetails[0];

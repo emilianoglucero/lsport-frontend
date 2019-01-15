@@ -116,6 +116,45 @@ function loadSportDetails(idCategorySelectedFromLoad){
                     currentTotalPageSportDetails = parseInt(response.sucesosPanel.paginasTotal);
                     nextPageNumberSportDetails = parseInt(response.sucesosPanel.paginaActual) + 1;
 
+                    //vacio los acumuladores por si venian con info de la pantalla de deportes
+                    tournamentNewsList = [];
+                    tournamentEventList = [];
+                    tournamentPositionList = [];
+                    tournamentMatchList = [];
+                    tournamentEncuentroList = [];
+
+                    var tournamentSucesosLenght = recentNewsListSporDetails.length - 1;
+                    console.log(tournamentSucesosLenght);
+                    //clasifico y almaceno los sucesos, para no tener inconvenientes con ids duplicados
+                    for (i = 0; i <= tournamentSucesosLenght; i++) {
+                        console.log(recentNewsListSporDetails[i]);
+                        console.log(recentNewsListSporDetails[i].id);
+                        console.log(recentNewsListSporDetails[i].tipoObjeto);
+                        //allSucesosPageList.push(newsListHome[i]);
+                        if (recentNewsListSporDetails[i].tipoObjeto === 'evento') {
+                            console.log('agrego evento');
+                            tournamentEventList.push(recentNewsListSporDetails[i]);
+                        }
+                        if (recentNewsListSporDetails[i].tipoObjeto === 'noticia') {
+                            console.log('agrego noticia');
+                            tournamentNewsList.push(recentNewsListSporDetails[i]);
+                        }
+                        if (recentNewsListSporDetails[i].tipoObjeto === 'torneo-tabla-posicion') {
+                            console.log('agrego tabla de pos');
+                            tournamentPositionList.push(recentNewsListSporDetails[i]);
+                        }
+                        if (recentNewsListSporDetails[i].tipoObjeto === 'torneo-fecha') {
+                            console.log('agrego torneo fecha');
+                            tournamentMatchList.push(recentNewsListSporDetails[i]);
+                        }
+                        if (recentNewsListSporDetails[i].tipoObjeto === 'torneo-encuentro') {
+                            console.log('agrego encuentro');
+                            tournamentEncuentroList.push(recentNewsListSporDetails[i]);
+                        }
+
+
+                    }
+
                     areSportDetailsLoaded = true;
                     builderSportDetails1();
                     hideLoadSpinnerWS();
@@ -286,6 +325,38 @@ console.log(idCat);
                         currentTournaments = response.torneosPanel;
                         //bannerTournaments = response.banner;
 
+                        var tournamentSucesosLenght = recentNewsListSporDetails.length - 1;
+                        console.log(tournamentSucesosLenght);
+                        //clasifico y almaceno los sucesos, para no tener inconvenientes con ids duplicados
+                        for (i = 0; i <= tournamentSucesosLenght; i++) {
+                            console.log(recentNewsListSporDetails[i]);
+                            console.log(recentNewsListSporDetails[i].id);
+                            console.log(recentNewsListSporDetails[i].tipoObjeto);
+                            //allSucesosPageList.push(newsListHome[i]);
+                            if (recentNewsListSporDetails[i].tipoObjeto === 'evento') {
+                                console.log('agrego evento');
+                                tournamentEventList.push(recentNewsListSporDetails[i]);
+                            }
+                            if (recentNewsListSporDetails[i].tipoObjeto === 'noticia') {
+                                console.log('agrego noticia');
+                                tournamentNewsList.push(recentNewsListSporDetails[i]);
+                            }
+                            if (recentNewsListSporDetails[i].tipoObjeto === 'torneo-tabla-posicion') {
+                                console.log('agrego tabla de pos');
+                                tournamentPositionList.push(recentNewsListSporDetails[i]);
+                            }
+                            if (recentNewsListSporDetails[i].tipoObjeto === 'torneo-fecha') {
+                                console.log('agrego torneo fecha');
+                                tournamentMatchList.push(recentNewsListSporDetails[i]);
+                            }
+                            if (recentNewsListSporDetails[i].tipoObjeto === 'torneo-encuentro') {
+                                console.log('agrego encuentro ');
+                                tournamentEncuentroList.push(recentNewsListSporDetails[i]);
+                            }
+
+
+
+                        }
 
                         areSportDetailsLoaded = true;
                         builderSportDetails1();
@@ -404,7 +475,9 @@ function builderSportDetails1(){
 				console.log(categoriesSportList);
 				$.each(categoriesSportList , function( key, item ) {
 				console.log(item);
-					if(item.idCategory == idCategorySelected){
+					console.log(idCategorySelected);
+                    console.log(item.idCategory);
+                        if(item.id == idCategorySelected){
 						$('#selectSportDetails').append('<option selected value="'+item.id+'">'+item.nombreCorto+'</option>');
 						$('.lblHeaderTournaments').text(item.nombreCorto);
 					} else {
@@ -616,18 +689,83 @@ console.log(idCat);
                 if( response.paginaActual == 1 ){
                 console.log('pagina 1');
                     $('#contentTabSportDetails2').html("");
-                    recentNewsListSporDetails = [];
+                    //recentNewsListSporDetails = [];
                     recentNewsListSporDetails = response.sucesos;
+                    var tournamentSucesosLenght = recentNewsListSporDetails.length - 1;
+                    console.log(tournamentSucesosLenght);
+                    //clasifico y almaceno los sucesos, para no tener inconvenientes con ids duplicados
+                    for (i = 0; i <= tournamentSucesosLenght; i++) {
+                        console.log(allSucesosPageList[i]);
+                        console.log(allSucesosPageList[i].id);
+                        console.log(allSucesosPageList[i].tipoObjeto);
+                        //allSucesosPageList.push(newsListHome[i]);
+                        if (recentNewsListSporDetails[i].tipoObjeto === 'evento') {
+                            console.log('agrego evento');
+                            tournamentEventList.push(allSucesosPageList[i]);
+                        }
+                        if (recentNewsListSporDetails[i].tipoObjeto === 'noticia') {
+                            console.log('agrego noticia');
+                            tournamentNewsList.push(allSucesosPageList[i]);
+                        }
+                        if (recentNewsListSporDetails[i].tipoObjeto === 'torneo-tabla-posicion') {
+                            console.log('agrego tabla de pos');
+                            tournamentPositionList.push(allSucesosPageList[i]);
+                        }
+                        if (recentNewsListSporDetails[i].tipoObjeto === 'torneo-fecha') {
+                            console.log('agrego torneo fecha');
+
+                            tournamentMatchList.push(allSucesosPageList[i]);
+                        }
+                        if (recentNewsListSporDetails[i].tipoObjeto === 'torneo-encuentro') {
+                            console.log('agrego encuentro');
+                            tournamentEncuentroList.push(allSucesosPageList[i]);
+                        }
+
+
+                    }
                     builderNewsSportDetails();
                     hideLoadSpinnerWS();
                 } else {
                 console.log('pagina 1787887');
-                    recentNewsListSporDetails = [];
-                    recentNewsListSporDetails = response.sucesos;
+                //console.log(recentNewsListSporDetails);
+                //console.log(response.sucesos);
+                //recentNewsListSporDetails = [];
+                recentNewsListSporDetails.push(response.sucesos);
+                var tournamentSucesosLenght = recentNewsListSporDetails.length - 1;
+                //clasifico y almaceno los sucesos, para no tener inconvenientes con ids duplicados
+                    for (i = 0; i <= tournamentSucesosLenght; i++) {
+                        console.log(recentNewsListSporDetails[i]);
+                        console.log(recentNewsListSporDetails[i].id);
+                        console.log(recentNewsListSporDetails[i].tipoObjeto);
+                        //allSucesosPageList.push(newsListHome[i]);
+                        if (recentNewsListSporDetails[i].tipoObjeto === 'evento') {
+                            console.log('agrego evento');
+                            tournamentEventList.push(recentNewsListSporDetails[i]);
+                        }
+                        if (recentNewsListSporDetails[i].tipoObjeto === 'noticia') {
+                            console.log('agrego noticia');
+                            tournamentNewsList.push(recentNewsListSporDetails[i]);
+                        }
+                        if (recentNewsListSporDetails[i].tipoObjeto === 'torneo-tabla-posicion') {
+                            console.log('agrego evento');
+                            tournamentPositionList.push(recentNewsListSporDetails[i]);
+                        }
+                        if (recentNewsListSporDetails[i].tipoObjeto === 'torneo-fecha') {
+                            console.log('agrego torneo fecha');
+                            tournamentMatchList.push(recentNewsListSporDetails[i]);
+                        }
+                        if (recentNewsListSporDetails[i].tipoObjeto === 'torneo-encuentro') {
+                            console.log('agrego encuentro ');
+                            tournamentEncuentroList.push(recentNewsListSporDetails[i]);
+                        }
+                    }
+
+                    //recentNewsListSporDetails = [];
+                    //recentNewsListSporDetails = response.sucesos;
                     builderNewsSportDetails();
                     hideLoadSpinnerWS();
                 }
-                console.log(response.sucesosPanel.paginasTotal);
+                console.log(response.paginasTotal);
                 console.log(nextPageNumberSportDetails);
                 if( response.paginasTotal < nextPageNumberSportDetails ){
                 console.log('detach');
@@ -713,7 +851,7 @@ console.log(recentNewsListSporDetails);
 				var noticiaTruncada = truncateNoticia(item.detalleTxt);
 
                 strBuilderNewsSportDetailsContent.push('<div class="card demo-card-header-pic"><div style="background-image:url('+item.imagenPrincipalMin+'); height:150px;" valign="bottom" class="card-header color-white no-border">');
-                strBuilderNewsSportDetailsContent.push('<a onclick="loadNewDetails('+item.id+',\''+matchDetailFromSports+'\')" href="#" class="item-link item-content">');
+                strBuilderNewsSportDetailsContent.push('<a onclick="loadNewDetails('+item.id+',\''+sucesoDetailFromSports+'\')" href="#" class="item-link item-content">');
                     strBuilderNewsSportDetailsContent.push('<div class="chipHomeContainer">');
                         //strBuilderNewsSportDetailsContent.push('<a onclick="loadNewDetails('+item.id+')" href="#" class="item-link item-content">');
                         strBuilderNewsSportDetailsContent.push('<div class="chip chipHomeDate"><div class="media"><i class="icon icon-date-home"></i></div><div class="chip-label chipHomeDateLabel">'+formatDateSucesos(item.fecha.fecha)+'</div></div>');
@@ -742,7 +880,7 @@ console.log(recentNewsListSporDetails);
 
                          // var encuentroFecha = 0;
                        console.log(item.id);
-                        strBuilderNewsSportDetailsContent.push('<div class="card tournament-matches"><a onclick="loadMatchDetails1('+item.id+',\''+matchDetailFromSports+'\')" href="#">');
+                        strBuilderNewsSportDetailsContent.push('<div class="card tournament-matches"><a onclick="loadMatchDetails1('+item.id+',\''+sucesoDetailFromSports+'\')" href="#">');
                         strBuilderNewsSportDetailsContent.push('<div id="tournament-matches-header" class="card-header no-border">');
                         strBuilderNewsSportDetailsContent.push('<div class="tournament-matches-icon"><img data-src='+item.torneo.organizador.imagenPrincipalMin+' class="lazy lazy-fadeIn img-shield-tournament" ></div>');
                         strBuilderNewsSportDetailsContent.push('<div class="tournament-matches-name">'+item.torneo.nombre+'</div>');
@@ -783,7 +921,7 @@ console.log(recentNewsListSporDetails);
 
                 } else if (item.tipoObjeto == "evento") {
                                 strBuilderNewsSportDetailsContent.push('<div class="card demo-card-header-pic"><div style="background-image:url('+item.imagenPrincipalMin+'); height:150px;" valign="bottom" class="card-header color-white no-border">');
-                                strBuilderNewsSportDetailsContent.push('<a onclick="loadEventDetails1('+item.id+','+false+')" href="#" class="item-link item-content">');
+                                strBuilderNewsSportDetailsContent.push('<a onclick="loadEventDetails1('+item.id+',\''+sucesoDetailFromSports+'\')" href="#" class="item-link item-content">');
                                     strBuilderNewsSportDetailsContent.push('<div class="chipHomeContainer">');
                                         //strBuilderNewsSportDetailsContent.push('<a onclick="loadNewDetails('+item.id+')" href="#" class="item-link item-content">');
                                         strBuilderNewsSportDetailsContent.push('<div class="chip chipHomeCategory"><div class="media"><i class="icon icon-date-home"></i></div><div class="chip-label chipHomeCategoryLabel">Liga Totorense</div></div>');
@@ -923,7 +1061,7 @@ console.log(recentNewsListSporDetails);
             } else if (item.tipoObjeto == "torneo-fecha") {
               var encuentroFecha = 0;
               console.log(item.id);
-              strBuilderNewsSportDetailsContent.push('<div class="card tournament-matches"> <a onclick="loadMatchDetailsFixture('+item.id+')" href="#">');
+              strBuilderNewsSportDetailsContent.push('<div class="card tournament-matches"> <a onclick="loadMatchDetailsFixture('+item.id+' ,\''+sucesoDetailFromSports+'\')" href="#">');
               strBuilderNewsSportDetailsContent.push('<div id="tournament-matches-header" class="card-header no-border">');
               strBuilderNewsSportDetailsContent.push('<div class="tournament-matches-icon"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-tournament" ></div>');
               strBuilderNewsSportDetailsContent.push('<div class="tournament-matches-name">'+item.nombre+'</div>');

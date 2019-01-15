@@ -20,7 +20,7 @@ myApp.onPageBeforeAnimation('eventdetails', function (page)
 	trackPageGA("Detalle Evento");
 });
 
-function loadEventDetails(idEvent){
+/*function loadEventDetails(idEvent){
 	showLoadSpinnerWS();
 	$.ajax({
 		// URL del Web Service
@@ -51,12 +51,39 @@ function loadEventDetails(idEvent){
 	          showMessage(messageConexionError);
 	   }
 		});
-}
+}*/
 
 function loadEventDetails1(idNew, state){
             console.log(idNew);
+            console.log(state);
 	        showLoadSpinnerWS();
-	        if (state) { //significa que el usuario llega por el calendario
+            if (state == "calendar") {
+                var itemsArrayEvents = homeDetails2List.calendario;
+                console.log(itemsArrayEvents);
+
+                var eventDetails = itemsArrayEvents.filter(function( obj ) {
+                  return obj.id == idNew;
+                });
+                eventDetails = eventDetails[0];
+            }
+            if (state == "home") {
+            console.log(allSucesosEventsList);
+                var eventDetails = allSucesosEventsList.filter(function( obj ) {
+                return obj.id == idNew;
+                });
+                eventDetails = eventDetails[0];
+            }
+            if (state == "sports") {
+                console.log(tournamentEventList);
+                var eventDetails = tournamentEventList.filter(function( obj ) {
+                return obj.id == idNew;
+                });
+                eventDetails = eventDetails[0];
+
+            }
+
+
+            	/*if (state) { //significa que el usuario llega por el calendario
 	            var itemsArrayEvents = homeDetails2List.calendario;
 	            console.log(itemsArrayEvents);
 
@@ -71,7 +98,7 @@ function loadEventDetails1(idNew, state){
                 });
                 eventDetails = eventDetails[0];
 
-            }
+            }*/
 
 			// averiguar como hacer esto builderNewBanner(response.banner);
 			builderEventDetails(eventDetails);

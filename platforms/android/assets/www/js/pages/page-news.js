@@ -192,7 +192,7 @@ function builderNewsList(){
 			} else{
 				strBuilderNewsContent.push('<div class="card card-news"><div class="card-content"><div class="list-block list-block-about media-list">');
 					strBuilderNewsContent.push('<ul><li class="item-content">');
-						strBuilderNewsContent.push('<a onclick="loadNewDetails('+item.id+',\''+matchDetailFromNews+'\')" href="#" class="item-link item-content">');
+						strBuilderNewsContent.push('<a onclick="loadNewDetails('+item.id+',\''+sucesoDetailFromNews+'\')" href="#" class="item-link item-content">');
 						
 							strBuilderNewsContent.push('<div class="item-media">');
 							var urlImgNewsList = getDefaultImageNewsList();
