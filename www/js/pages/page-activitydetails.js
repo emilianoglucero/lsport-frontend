@@ -84,8 +84,46 @@ function loadActivityDetails(idAct){
 			//$('#contentTabActivityDetails2').html('');
 			recentNewsListActivityDetails = [];
 			recentNewsListActivityDetails = response.sucesosPanel.sucesos;
-			
+
 			activityDetails = response.actividad;
+
+			//vacio los acumuladores por si venian con info de la pantalla de deportes
+            tournamentNewsList = [];
+            tournamentEventList = [];
+            tournamentPositionList = [];
+            tournamentMatchList = [];
+            tournamentEncuentroList = [];
+
+            var tournamentSucesosLenght = recentNewsListActivityDetails.length - 1;
+            console.log(tournamentSucesosLenght);
+            //clasifico y almaceno los sucesos, para no tener inconvenientes con ids duplicados
+            for (i = 0; i <= tournamentSucesosLenght; i++) {
+                console.log(recentNewsListActivityDetails[i]);
+                console.log(recentNewsListActivityDetails[i].id);
+                console.log(recentNewsListActivityDetails[i].tipoObjeto);
+                //allSucesosPageList.push(newsListHome[i]);
+                if (recentNewsListActivityDetails[i].tipoObjeto === 'evento') {
+                    console.log('agrego evento');
+                    tournamentEventList.push(recentNewsListActivityDetails[i]);
+                }
+                if (recentNewsListActivityDetails[i].tipoObjeto === 'noticia') {
+                    console.log('agrego noticia');
+                    tournamentNewsList.push(recentNewsListActivityDetails[i]);
+                }
+                if (recentNewsListActivityDetails[i].tipoObjeto === 'torneo-tabla-posicion') {
+                    console.log('agrego tabla de pos');
+                    tournamentPositionList.push(recentNewsListActivityDetails[i]);
+                }
+                if (recentNewsListActivityDetails[i].tipoObjeto === 'torneo-fecha') {
+                    console.log('agrego torneo fecha');
+                    tournamentMatchList.push(recentNewsListActivityDetails[i]);
+                }
+                if (recentNewsListActivityDetails[i].tipoObjeto === 'torneo-encuentro') {
+                    console.log('agrego encuentro');
+                    tournamentEncuentroList.push(recentNewsListActivityDetails[i]);
+                }
+            }
+
 			//bannerActivityDetails = response.banner;
 			areActivityDetailsLoaded = true;
 			areContentTabNewsActivityDetailsBuilder = true;
@@ -322,7 +360,7 @@ function builderNewsActivityDetails(){
 							*/if (item.tipoObjeto == "noticia") {
 
                                     strBuilderNewsActivityDetailsContent.push('<div class="card demo-card-header-pic"><div style="background-image:url('+item.imagenPrincipalMin+'); height:150px;" valign="bottom" class="card-header color-white no-border">');
-                                    strBuilderNewsActivityDetailsContent.push('<a onclick="loadNewDetails('+item.id+',\''+matchDetailFromSports+'\')" href="#" class="item-link item-content">');
+                                    strBuilderNewsActivityDetailsContent.push('<a onclick="loadNewDetails('+item.id+',\''+sucesoDetailFromSports+'\')" href="#" class="item-link item-content">');
                                         strBuilderNewsActivityDetailsContent.push('<div class="chipHomeContainer">');
                                             //strBuilderNewsActivityDetailsContent.push('<a onclick="loadNewDetails('+item.id+')" href="#" class="item-link item-content">');
                                             strBuilderNewsActivityDetailsContent.push('<div class="chip chipHomeDate"><div class="media"><i class="icon icon-date-home"></i></div><div class="chip-label chipHomeDateLabel">'+formatDateSucesos(item.fecha.fecha)+'</div></div>');
@@ -351,7 +389,7 @@ function builderNewsActivityDetails(){
 
                                          // var encuentroFecha = 0;
                                        console.log(item.id);
-                                        strBuilderNewsActivityDetailsContent.push('<div class="card tournament-matches"><a onclick="loadMatchDetails1('+item.id+',\''+matchDetailFromSports+'\')" href="#">');
+                                        strBuilderNewsActivityDetailsContent.push('<div class="card tournament-matches"><a onclick="loadMatchDetails1('+item.id+',\''+sucesoDetailFromSports+'\')" href="#">');
                                         strBuilderNewsActivityDetailsContent.push('<div id="tournament-matches-header" class="card-header no-border">');
                                         strBuilderNewsActivityDetailsContent.push('<div class="tournament-matches-icon"><img data-src='+item.torneo.organizador.imagenPrincipalMin+' class="lazy lazy-fadeIn img-shield-tournament" ></div>');
                                         strBuilderNewsActivityDetailsContent.push('<div class="tournament-matches-name">'+item.torneo.nombre+'</div>');
@@ -392,7 +430,7 @@ function builderNewsActivityDetails(){
 
                                 } else if (item.tipoObjeto == "evento") {
                                                 strBuilderNewsActivityDetailsContent.push('<div class="card demo-card-header-pic"><div style="background-image:url('+item.imagenPrincipalMin+'); height:150px;" valign="bottom" class="card-header color-white no-border">');
-                                                strBuilderNewsActivityDetailsContent.push('<a onclick="loadEventDetails1('+item.id+','+false+')" href="#" class="item-link item-content">');
+                                                strBuilderNewsActivityDetailsContent.push('<a onclick="loadEventDetails1('+ item.id +' ,\''+sucesoDetailFromSports+'\')" href="#" class="item-link item-content">');
                                                     strBuilderNewsActivityDetailsContent.push('<div class="chipHomeContainer">');
                                                         //strBuilderNewsActivityDetailsContent.push('<a onclick="loadNewDetails('+item.id+')" href="#" class="item-link item-content">');
                                                         strBuilderNewsActivityDetailsContent.push('<div class="chip chipHomeCategory"><div class="media"><i class="icon icon-date-home"></i></div><div class="chip-label chipHomeCategoryLabel">Liga Totorense</div></div>');
@@ -532,7 +570,7 @@ function builderNewsActivityDetails(){
                             } else if (item.tipoObjeto == "torneo-fecha") {
                               var encuentroFecha = 0;
                               console.log(item.id);
-                              strBuilderNewsActivityDetailsContent.push('<div class="card tournament-matches"> <a onclick="loadMatchDetailsFixture('+item.id+')" href="#">');
+                              strBuilderNewsActivityDetailsContent.push('<div class="card tournament-matches"> <a onclick="loadMatchDetailsFixture('+item.id+' ,\''+sucesoDetailFromSports+'\')" href="#">');
                               strBuilderNewsActivityDetailsContent.push('<div id="tournament-matches-header" class="card-header no-border">');
                               strBuilderNewsActivityDetailsContent.push('<div class="tournament-matches-icon"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-tournament" ></div>');
                               strBuilderNewsActivityDetailsContent.push('<div class="tournament-matches-name">'+item.nombre+'</div>');

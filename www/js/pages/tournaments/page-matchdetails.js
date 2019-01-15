@@ -30,7 +30,7 @@ $('#lblHeaderGoToFixture').text(lblHeaderGoToFixture);
 		//}
 	});
 
-	$('#buttonGoToFixture').on('click', function(){
+	$('.buttonGoToFixture').on('click', function(){
 	console.log(torneoEncuentroState);
         if (torneoEncuentroState == true) {
             loadSportDetails(sportIDCategorie);
@@ -65,7 +65,7 @@ function loadMatchDetails1(idNew, state){
 	        console.log(allSucesosPageList);
 	        console.log(tournamentFixtureFechas);
 	        console.log(state);
-	        if (state == "home") { //significa que viene desde la home o cualquier pantalla que no sea calendario
+	        if (state == "home") { //significa que viene desde la home
 
 	        	var matchDetailsHome = allSucesosPageList.filter(function( obj ) {
                   return obj.id == idNew;
@@ -84,7 +84,7 @@ function loadMatchDetails1(idNew, state){
                 console.log(matchDetailsHome);
                 torneoEncuentroState = true;
 
-            } else if (state == "sports")  {
+            } else if (state == "sports")  { //significa que viene desde la pantalla de torneo y deportes
                 //var allSucesosPageList = homeDetails2List;
                 console.log(recentNewsListSporDetails);
 
@@ -170,13 +170,16 @@ function loadMatchDetailsFromFechas(idFechas, idPartido){
 }
 
 function loadMatchDetailsFromFixture(id, idPartido){
+            console.log(torneoEncuentroState);
 	        showLoadSpinnerWS();
 	        console.log(id);
 	        console.log(idPartido);
 	        console.log(newsListHome);
-	        console.log(allSucesosNewsList);
-
-	        	var matchDetailsHome = allSucesosFechaTorneoList.filter(function( obj ) {
+	        console.log(allSucesosFechaTorneoList);
+            console.log(allSucesosEncuentroList);
+            //si es true viene de la home
+            if (torneoEncuentroState == true) {
+                var matchDetailsHome = allSucesosFechaTorneoList.filter(function( obj ) {
                   return obj.id == id;
                 });
                 matchDetailsHome = matchDetailsHome[0];
@@ -188,9 +191,25 @@ function loadMatchDetailsFromFixture(id, idPartido){
                 });
                 matchDetailsHomeMatch = matchDetailsHomeMatch[0];
                 console.log(matchDetailsHomeMatch);
+            }
+            if (torneoEncuentroState == false) {
+                var matchDetailsHome = tournamentMatchList.filter(function( obj ) {
+                  return obj.id == id;
+                });
+                matchDetailsHome = matchDetailsHome[0];
+                matchDetailsHome = matchDetailsHome.encuentros;
+                console.log(matchDetailsHome);
+                 var matchDetailsHomeMatch = matchDetailsHome.filter(function( obj ) {
+                      return obj.id == idPartido;
+                    });
+                    matchDetailsHomeMatch = matchDetailsHomeMatch[0];
+                    console.log(matchDetailsHomeMatch);
+            }
 
-
-            torneoEncuentroState = true;
+                sportIDCategorie = matchDetailsHomeMatch.torneo.deporteCategoria.id;
+                matchDetailsHomeInfo = matchDetailsHomeMatch;
+                console.log(sportIDCategorie);
+                //torneoEncuentroState = true;
             builderDetailsMatchDetailsInfo(matchDetailsHomeMatch);
 			hideLoadSpinnerWS();
 
@@ -450,7 +469,12 @@ console.log(match);
                                 strBuilderLastMatch.push('<div class="timeline-item-divider"></div>');
                                 //strBuilderLastMatch.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
                                     strBuilderLastMatch.push('<div class="timeline-item-content">');
-                                        strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
+                                        //strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
+                                        if (item.detallePrincipal.detalle == null) {
+                                            strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title"></div>');
+                                        } else {
+                                            strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
+                                        }
                                             if (item.comentario !== "") {
                                                 strBuilderLastMatch.push('<div class="match-event-timeline-commentary"><br>'+item.comentario+'</div>');
                                             }
@@ -468,7 +492,11 @@ console.log(match);
                                 strBuilderLastMatch.push('<div class="timeline-item-divider"></div>');
                                 //strBuilderLastMatch.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
                                     strBuilderLastMatch.push('<div class="timeline-item-content">');
-                                        strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
+                                        if (item.detallePrincipal.detalle == null) {
+                                            strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title"></div>');
+                                        } else {
+                                            strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
+                                        }
                                         if (item.comentario !== "") {
                                             strBuilderLastMatch.push('<div class="match-event-timeline-commentary"><br>'+item.comentario+'</div>');
                                         }
@@ -541,7 +569,11 @@ console.log(match);
                                 strBuilderLastMatch.push('<div class="timeline-item-divider"></div>');
                                 //strBuilderLastMatch.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
                                     strBuilderLastMatch.push('<div class="timeline-item-content">');
-                                        strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
+                                        if (item.detallePrincipal.detalle == null) {
+                                            strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title"></div>');
+                                        } else {
+                                            strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
+                                        }
                                         if (item.comentario !== "") {
                                             strBuilderLastMatch.push('<div class="match-event-timeline-commentary"><br>'+item.comentario+'</div>');
                                         }
@@ -559,7 +591,11 @@ console.log(match);
                                 strBuilderLastMatch.push('<div class="timeline-item-divider"></div>');
                                 //strBuilderLastMatch.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
                                     strBuilderLastMatch.push('<div class="timeline-item-content">');
-                                        strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
+                                        if (item.detallePrincipal.detalle == null) {
+                                            strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title"></div>');
+                                        } else {
+                                            strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
+                                        }
                                         if (item.comentario !== "") {
                                             strBuilderLastMatch.push('<div class="match-event-timeline-commentary"><br>'+item.comentario+'</div>');
                                         }
@@ -879,10 +915,14 @@ console.log(match);
                             strBuilderLastMatch.push('<div class="timeline-item-divider"></div>');
                             //strBuilderLastMatch.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
                                 strBuilderLastMatch.push('<div class="timeline-item-content">');
-                                    strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
-                                        if (item.comentario !== "") {
-                                            strBuilderLastMatch.push('<div class="match-event-timeline-commentary"><br>'+item.comentario+'</div>');
-                                        }
+                                    if (item.detallePrincipal.detalle == null) {
+                                        strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title"></div>');
+                                    } else {
+                                        strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
+                                    }
+                                    if (item.comentario !== "") {
+                                        strBuilderLastMatch.push('<div class="match-event-timeline-commentary"><br>'+item.comentario+'</div>');
+                                    }
                                     strBuilderLastMatch.push('</div>');
                                 strBuilderLastMatch.push('</div>');
                         strBuilderLastMatch.push('</div>');
@@ -897,7 +937,11 @@ console.log(match);
                             strBuilderLastMatch.push('<div class="timeline-item-divider"></div>');
                             //strBuilderLastMatch.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
                                 strBuilderLastMatch.push('<div class="timeline-item-content">');
+                                if (item.detallePrincipal.detalle == null) {
+                                    strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title"></div>');
+                                } else {
                                     strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
+                                }
                                     if (item.comentario !== "") {
                                         strBuilderLastMatch.push('<div class="match-event-timeline-commentary"><br>'+item.comentario+'</div>');
                                     }
@@ -970,7 +1014,12 @@ console.log(match);
                             strBuilderLastMatch.push('<div class="timeline-item-divider"></div>');
                             //strBuilderLastMatch.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
                                 strBuilderLastMatch.push('<div class="timeline-item-content">');
-                                    strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
+                                    //strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
+                                    if (item.detallePrincipal.detalle == null) {
+                                        strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title"></div>');
+                                    } else {
+                                        strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
+                                    }
                                     if (item.comentario !== "") {
                                         strBuilderLastMatch.push('<div class="match-event-timeline-commentary"><br>'+item.comentario+'</div>');
                                     }
@@ -988,7 +1037,11 @@ console.log(match);
                             strBuilderLastMatch.push('<div class="timeline-item-divider"></div>');
                             //strBuilderLastMatch.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
                                 strBuilderLastMatch.push('<div class="timeline-item-content">');
-                                    strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
+                                    if (item.detallePrincipal.detalle == null) {
+                                        strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title"></div>');
+                                    } else {
+                                        strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
+                                    }
                                     if (item.comentario !== "") {
                                         strBuilderLastMatch.push('<div class="match-event-timeline-commentary"><br>'+item.comentario+'</div>');
                                     }

@@ -27,19 +27,21 @@ myApp.onPageBeforeAnimation('installationdetails', function (page)
 
 
 function builderInstallationDetails(idItem){
+    console.log (idItem);
 	
 	var installationDetailsItem;
 	installationDetailsItem = $.grep(installationsList, function(item, i) {
 		return item.id == idItem;
 	});
+	console.log(installationDetailsItem);
 	
-	$('#pNameInstallationDetails').html(installationDetailsItem[0].name);
-	$('#containerImgHeaderInstallationDetail').html('<img data-src="'+installationDetailsItem[0].urlImg+'" alt="'+installationDetailsItem[0].altImg+'" class="lazy lazy-fadeIn" id="imgHeaderInstallationDetails" />');
-	$('#descriptionInstallationDetails').html(installationDetailsItem[0].desc);
+	$('#pNameInstallationDetails').html(installationDetailsItem[0].nombre);
+    $('#containerImgHeaderInstallationDetail').html('<img data-src="'+installationDetailsItem[0].imagenPrincipalMin+'" alt="'+installationDetailsItem[0].nombre+'" class="lazy lazy-fadeIn" id="imgHeaderInstallationDetails" />');
+    $('#descriptionInstallationDetails').html(installationDetailsItem[0].descripcion);
 	
 	$('#divContentPhotoGalleryInstallation').html('');
 	var centerSwiperPhotos = false;
-	if(installationDetailsItem[0].galleryImages != ""){
+	if(installationDetailsItem[0].imagenes != ""){
 		if(installationDetailsItem[0].imagenes.length == 1){
 			centerSwiperPhotos = true;
 		}
@@ -52,7 +54,7 @@ function builderInstallationDetails(idItem){
 				    
 				    listPhotosBrowserInstallation.push(item.imagenMin);
 					strBuilderPhotogallery.push('<div class="swiper-slide">');
-					strBuilderPhotogallery.push('<img onclick="openPhotoBrowserIntallation('+index+')" class="swiper-lazy swiperGalleryPhotosImg" data-src="'+item.urlImg+'"/>');
+					strBuilderPhotogallery.push('<img onclick="openPhotoBrowserIntallation('+index+')" class="swiper-lazy swiperGalleryPhotosImg" data-src="'+item.imagenMin+'"/>');
 					strBuilderPhotogallery.push('<div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>');
 					strBuilderPhotogallery.push('</div>');
 				});

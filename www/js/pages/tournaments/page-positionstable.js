@@ -1,5 +1,14 @@
 myApp.onPageInit('positionstable', function (page)
 {
+    $('.buttonGoToFixture').on('click', function(){
+    console.log(torneoEncuentroState);
+        if (torneoEncuentroState == true) {
+            loadSportDetails(sportIDCategorie);
+            mainView.router.load({pageName: 'sportdetails'});
+        } else {
+            mainView.router.load({pageName: 'sportdetails'});
+        }
+    });
     
 });
 
@@ -51,6 +60,7 @@ function loadPositionsTable(idTournament, nameTournamentSelected){
 function loadPositionsTableDetails(idTournament, state){
 console.log(state);
      showLoadSpinnerWS();
+     //si es false viene de la home
      if (state == false) {
         console.log(idTournament);
         console.log(allSucesosTorneoTablaPosicionList);
@@ -59,6 +69,7 @@ console.log(state);
           return obj.id == idTournament;
         });
         newsDetailsHome = newsDetailsHome[0];
+        torneoEncuentroState = true;
      } else {
          console.log(idTournament);
          console.log(positionTablesList);
@@ -67,6 +78,7 @@ console.log(state);
            return obj.id == idTournament;
          });
          newsDetailsHome = newsDetailsHome[0];
+         torneoEncuentroState = false;
 
      }
 
