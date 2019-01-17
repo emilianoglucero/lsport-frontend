@@ -1,0 +1,14 @@
+# Mac
+.DS_Store
+
+# Cordova
+/platforms
+/plugins
+/hooks
+
+# Node
+/node_modules
+/ul_web_hooks
+
+#Firma android de la app
+firmaLenguajeSport

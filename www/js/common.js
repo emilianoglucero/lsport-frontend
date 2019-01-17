@@ -361,11 +361,13 @@ function loadPageLogin()
                                         data:  JSON.stringify({"grant_type": "urn:ietf:params:oauth:grant-type:jwt-bearer",
                                                       "assertion": tokenUser,
                                                       "dispositivoId": deviceID,
+                                                      //"dispositivoId": "3333",
                                                       "tokenNotificacion": window.localStorage.getItem("TOKEN"+idClub),
+                                                      //"tokenNotificacion": "5",
                                                       "platforma": platform,
                                                       "nombre" : userFullName,
-                                                      "apellido" : "lucero",
-                                                      "correo" : "correo@mail.com"
+                                                      "apellido" : "",
+                                                      "correo" : userEmail
                                         }),
                                         success: function(response){
                                             console.log(response.access_token);
@@ -852,7 +854,7 @@ function getPathWS(){
 function getPathMobile(){
 	//return mobileUrl;
     //return 'http://testing.lenguajesport.com/movil/';
-    //return 'http://clubes.lenguajesport.com/movil/';
+    //return 'http://clubes.lenguajesport.com/movil/';	
     return 'https://clubes.lenguajefutbol.com/9/api/';
 }
 
