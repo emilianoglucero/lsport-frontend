@@ -1338,7 +1338,7 @@ $.each( homeDetails2List.calendario, function( i, item ){
             strBuilderCalendarContent.push('<div class="timeline-item-divider"></div>');
                 //strBuilderCalendarContent.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
                     strBuilderCalendarContent.push('<div class="timeline-item-content card" id="cardHomeTimeLine">');
-                    strBuilderCalendarContent.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1(' + item.id + ', \'' + sucesohDetailFromCalendar + '\')">');
+                    strBuilderCalendarContent.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1(' + item.id + ', \'' + sucesoDetailFromCalendar + '\')">');
                         strBuilderCalendarContent.push('<div class="card card-event-home">');
                         strBuilderCalendarContent.push('<div class="card-header-home">'+item.titulo+'</div>');
                             strBuilderCalendarContent.push('<div class="card-event-home-content">');
