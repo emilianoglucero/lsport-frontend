@@ -56,7 +56,12 @@
     height: 100%;
 }
 
-#descriptionEventDetails{
+#descriptionEventDetailsShort{
+	color: #000;
+    text-align: justify;
+}
+
+#descriptionEventDetailsLong{
 	color: #000;
     text-align: justify;
 }

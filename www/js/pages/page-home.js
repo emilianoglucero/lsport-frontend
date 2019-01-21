@@ -1502,7 +1502,7 @@ var strBuilderTimeLineContent = [];
                 strBuilderTimeLineContent.push('<div class="timeline-item">');
                 strBuilderTimeLineContent.push('<div class="timeline-item-date">'+dateTimeLineEventsSplitedFormat(item.fecha.fecha, 0)+' <small>'+dateTimeLineEventsSplitedFormat(item.fecha.fecha, 1)+'</small></div>');
                 strBuilderTimeLineContent.push('<div class="timeline-item-divider"></div>');
-                    strBuilderTimeLineContent.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1(' + item.id + ',\''+sucesoDetailFromHome+'\')">');
+                    strBuilderTimeLineContent.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1(' + item.id + ',\''+sucesoDetailFromCalendar+'\')">');
                      strBuilderTimeLineContent.push('<div class="card card-event-home">');
                         strBuilderTimeLineContent.push('<div class="timeline-item-content card" id="cardHomeTimeLine">');
                             //strBuilderTimeLineContent.push('<div class="card card-event-home">');

@@ -116,10 +116,11 @@ console.log(eventDetailsItem);
 	$('#containerImgHeaderEventDetail').html('<img data-src="'+eventDetailsItem.imagenPrincipalMin+'" alt="'+eventDetailsItem.titulo+'" class="lazy lazy-fadeIn" id="imgHeaderEventDetails" />');
 	
 	$('#dateEventDetails').html(eventDetailsItem.fecha.fecha);
-	$('#hourEventDetails').html(eventDetailsItem.fecha.hora);
+	$('#hourEventDetails').html(eventDetailsItem.hora.hora);
 	$('#placeTextEventDetails').html(eventDetailsItem.lugarDesarrollo);
 	
-	$('#descriptionEventDetails').html(eventDetailsItem.bajada);
+	$('#descriptionEventDetailsShort').html(eventDetailsItem.bajada);
+	$('#descriptionEventDetailsLong').html(eventDetailsItem.detalleTxt);
 	
 	
 	$('#divContentPhotoGalleryEvent').html('');
@@ -213,9 +214,9 @@ console.log(eventDetailsItem);
 	
 	myApp.initImagesLazyLoad(mainView.activePage.container);
 	
-	$('#shareEventWhatsapp').attr("onclick","shareEventWhatsapp('"+eventDetailsItem.titulo+"','"+eventDetailsItem.fecha.fecha+"','"+eventDetailsItem.fecha.hora+"','"+eventDetailsItem.lugarDesarrollo+"','"+eventDetailsItem.imagenPrincipal+"','"+eventDetailsItem.imagenPrincipalMin+"')");
+	$('#shareEventWhatsapp').attr("onclick","shareEventWhatsapp('"+eventDetailsItem.titulo+"','"+eventDetailsItem.fecha.fecha+"','"+eventDetailsItem.hora.hora+"','"+eventDetailsItem.lugarDesarrollo+"','"+eventDetailsItem.imagenPrincipal+"','"+eventDetailsItem.imagenPrincipalMin+"')");
 	$('#shareEventFacebook').attr("onclick","shareEventFacebook('"+eventDetailsItem.titulo+"','"+eventDetailsItem.imagenPrincipal+"','"+eventDetailsItem.imagenPrincipalMin+"')");
-	$('#shareEventTwitter').attr("onclick","shareEventTwitter('"+eventDetailsItem.titulo+"','"+eventDetailsItem.fecha.fecha+"','"+eventDetailsItem.fecha.hora+"','"+eventDetailsItem.lugarDesarrollo+"','"+eventDetailsItem.imagenPrincipalMin+"')");
+	$('#shareEventTwitter').attr("onclick","shareEventTwitter('"+eventDetailsItem.titulo+"','"+eventDetailsItem.fecha.fecha+"','"+eventDetailsItem.hora.hora+"','"+eventDetailsItem.lugarDesarrollo+"','"+eventDetailsItem.imagenPrincipalMin+"')");
 }
 
 function openPhotoBrowserEvent(idPhoto){
