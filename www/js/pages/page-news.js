@@ -196,10 +196,15 @@ function builderNewsList(){
 						
 							strBuilderNewsContent.push('<div class="item-media">');
 							var urlImgNewsList = getDefaultImageNewsList();
-							if(item.urlImgMin != ""){
+							/*if(item.urlImgMin != ""){
 								urlImgNewsList = item.urlImgMin; 
-							}
-							strBuilderNewsContent.push('<img class="lazy lazy-fadeIn imgCardNew" data-src="'+item.imagenPrincipalMin+'" alt="'+item.titulo+'" />');
+							}*/
+							if(item.imagenPrincipalMin != ""){
+                               strBuilderNewsContent.push('<img class="lazy lazy-fadeIn imgCardNew" data-src="'+item.imagenPrincipalMin+'" alt="'+item.titulo+'" />');
+                            } else {
+                               strBuilderNewsContent.push('<img class="lazy lazy-fadeIn imgCardNew" data-src="'+urlImgNewsList+'" alt="'+item.titulo+'" />');
+                            }
+							//strBuilderNewsContent.push('<img class="lazy lazy-fadeIn imgCardNew" data-src="'+item.imagenPrincipalMin+'" alt="'+item.titulo+'" />');
 							strBuilderNewsContent.push('</div>');
 							
 							strBuilderNewsContent.push('<div class="item-inner">');
