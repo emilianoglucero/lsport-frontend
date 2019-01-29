@@ -10,8 +10,12 @@
   "author": "Apache Cordova Team",
   "license": "Apache-2.0",
   "dependencies": {
-    "cordova-android": "^7.0.0",
+    "cordova-android": "^6.4.0",
+    "cordova-android-firebase-gradle-release": "^2.0.0",
+    "cordova-android-play-services-gradle-release": "^2.0.0",
+    "cordova-android-support-gradle-release": "^2.0.1",
     "cordova-ios": "^4.5.4",
+    "cordova-plugin-admobpro": "^2.37.2",
     "cordova-plugin-browsertab": "^0.2.0",
     "cordova-plugin-buildinfo": "^2.0.1",
     "cordova-plugin-compat": "^1.2.0",
@@ -51,11 +55,23 @@
         "ANDROID_SCHEME": " ",
         "ANDROID_HOST": " ",
         "ANDROID_PATHPREFIX": "/"
+      },
+      "cordova-plugin-admobpro": {
+        "PLAY_SERVICES_VERSION": "16.0.0"
+      },
+      "cordova-android-play-services-gradle-release": {
+        "PLAY_SERVICES_VERSION": "15.+"
+      },
+      "cordova-android-support-gradle-release": {
+        "ANDROID_SUPPORT_VERSION": "27.+"
+      },
+      "cordova-android-firebase-gradle-release": {
+        "FIREBASE_VERSION": "15.+"
       }
     },
     "platforms": [
-      "android",
-      "ios"
+      "ios",
+      "android"
     ]
   }
 }
