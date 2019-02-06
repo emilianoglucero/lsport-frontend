@@ -79,54 +79,55 @@ function confirmSmsCode() {
 
 smsCode = document.getElementById('smscode').value;
 
-if (smsCode == "") {
+    if (smsCode == "") {
 
 
-      myApp.alert(
-         'Tenes que ingresar el codigo que recibiste por SMS!',  // message
-          focusSmsCode,         // callback
+          myApp.alert(
+             'Tenes que ingresar el codigo que recibiste por SMS!',  // message
+              focusSmsCode,         // callback
+              'Error',            // title
+              'Ok'                  // buttonName
+            );
+
+            function focusSmsCode() {
+                document.getElementById('smscode').focus();
+                return false;
+            }
+
+
+    }
+
+    //Get the intermediate AuthCredential object
+    var credential = firebase.auth.PhoneAuthProvider.credential(verificationId, smsCode);
+    //Then, you can sign in the user with the credential:
+    //firebase.auth().signInWithCredential(credential);
+
+    firebase.auth().signInWithCredential(credential).catch(function(error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // The email of the user's account used.
+      var email = error.email;
+      // The firebase.auth.AuthCredential type that was used.
+      var credential = error.credential;
+      if (errorCode === 'auth/invalid-verification-code') {
+        myApp.alert(
+         'El codigo que ingresaste es invalido. Por favor revisa que lo hayas escrito correctamente. Reenvia el SMS en caso de que persista el error.',  // message
+          errorSmsCode,         // callback
           'Error',            // title
           'Ok'                  // buttonName
         );
 
-        function focusSmsCode() {
-            document.getElementById('smscode').focus();
+        function errorSmsCode() {
+            //document.getElementById('smscode').focus();
             return false;
         }
+      } else {
+            alert(error);
+            return false;
+      }
+     });
 
-
-}
-
-//Get the intermediate AuthCredential object
-var credential = firebase.auth.PhoneAuthProvider.credential(verificationId, smsCode);
-//Then, you can sign in the user with the credential:
-//firebase.auth().signInWithCredential(credential);
-
-firebase.auth().signInWithCredential(credential).catch(function(error) {
-  // Handle Errors here.
-  var errorCode = error.code;
-  var errorMessage = error.message;
-  // The email of the user's account used.
-  var email = error.email;
-  // The firebase.auth.AuthCredential type that was used.
-  var credential = error.credential;
-  if (errorCode === 'auth/invalid-verification-code') {
-    myApp.alert(
-     'El codigo que ingresaste es invalido. Por favor revisa que lo hayas escrito correctamente. Reenvia el SMS en caso de que persista el error.',  // message
-      errorSmsCode,         // callback
-      'Error',            // title
-      'Ok'                  // buttonName
-    );
-
-    function errorSmsCode() {
-        //document.getElementById('smscode').focus();
-        return false;
-    }
-  } else {
-        alert(error);
-        return false;
-  }
- });
 
 }
 

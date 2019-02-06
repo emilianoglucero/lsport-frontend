@@ -306,6 +306,7 @@ var userName;
 var userLastName;
 var userFullName;
 var userEmail;
+var userPhoneNumber;
 
 function loadPageLogin()
 {
@@ -318,12 +319,7 @@ function loadPageLogin()
 
                         userFullName = user.displayName;
                         userEmail = user.email;
-                        /*firebase.auth().currentUser.getIdToken(true).then(function(idToken) {
-                          console.log(idToken);
-                          tokenUser = idToken;
-                        }).catch(function(error) {
-                          console.log(error);
-                        });*/
+                        userPhoneNumber = user.phoneNumber;
 
 
                         if (userFullName == null) {
@@ -365,13 +361,16 @@ function loadPageLogin()
                                                       "platforma": platform,
                                                       "nombre" : userFullName,
                                                       "apellido" : "",
-                                                      "correo" : userEmail
+                                                      "correo" : userEmail,
+                                                      "telefono"	: userPhoneNumber
                                         }),
                                         success: function(response){
+                                        //showLoadSpinnerWS();
                                             console.log(response.access_token);
                                             accessToken = response.access_token;
                                             mainView.router.load({pageName: 'home'});
                                             reloadContentHomePage();
+                                        //hideLoadSpinnerWS();
 
                                         },
                                         error: function (data, status, error){
@@ -390,13 +389,6 @@ function loadPageLogin()
                                     console.log(error);
                                   });
 
-
-
-                            //}
-                            //else
-                            //{
-                                 // mainView.router.load({pageName: 'initsettings'});
-                            //}
                         }
 
 
