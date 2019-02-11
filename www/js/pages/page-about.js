@@ -50,20 +50,22 @@ function loadPageAbout(){
                 aboutPage = [];
                 aboutPage = response;
                 console.log(aboutPage);
-                installationPage = response.instalalciones;
+                installationPage = response.instalaciones;
                 achievementsList = response.titulos;
                 console.log(installationPage);
                 managersList = response.directivos;
                 milestonesList = response.hitos;
 
                 $('#lblClubSlogan').text(aboutPage.eslogan);
+                hideLoadSpinnerWS();
 
 
             },
             error: function (data, status, error){
                 console.log(data, status, error);
+                hideLoadSpinnerWS();
            },
            beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer ' + accessToken ); } //set tokenString before send
     });
-    hideLoadSpinnerWS();
+
 }

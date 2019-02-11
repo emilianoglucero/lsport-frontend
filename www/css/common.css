@@ -246,3 +246,9 @@ i.icon.icon-close {
 .color-gray {
     color: #6d6d72;
 }
+
+/*chip tag icons*/
+.icon-chiptag-categoria {
+   width: 16px;
+   height: 16px;
+}

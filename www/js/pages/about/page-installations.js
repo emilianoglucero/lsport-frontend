@@ -35,6 +35,7 @@ myApp.onPageBeforeAnimation('installations', function (page)
 function builderInstallationsList(response){
 	installationsList = response;
 	console.log(installationsList);
+	console.log(installationsList.length)
 	console.log(areInstallationsLoaded);
 	console.log(arePageInstallationsBuild);
 	var strBuilderInstallationsContent = [];

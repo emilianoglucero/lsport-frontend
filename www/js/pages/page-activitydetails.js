@@ -363,7 +363,10 @@ function builderNewsActivityDetails(){
                                     strBuilderNewsActivityDetailsContent.push('<a onclick="loadNewDetails('+item.id+',\''+sucesoDetailFromSports+'\')" href="#" class="item-link item-content">');
                                         strBuilderNewsActivityDetailsContent.push('<div class="chipHomeContainer">');
                                             //strBuilderNewsActivityDetailsContent.push('<a onclick="loadNewDetails('+item.id+')" href="#" class="item-link item-content">');
-                                            strBuilderNewsActivityDetailsContent.push('<div class="chip chipHomeDate"><div class="media"><i class="icon icon-date-home"></i></div><div class="chip-label chipHomeDateLabel">'+formatDateSucesos(item.fecha.fecha)+'</div></div>');
+                                            //strBuilderNewsActivityDetailsContent.push('<div class="chip chipHomeDate"><div class="media"><i class="icon icon-date-home"></i></div><div class="chip-label chipHomeDateLabel">'+formatDateSucesos(item.fecha.fecha)+'</div></div>');
+                                            if (item.tags.publicador != "") {
+                                                strBuilderNewsSportDetailsContent.push('<div class="chip chipHomeCategory"><div class="media"><i class="icon icon-date-home"></i></div><div class="chip-label chipHomeCategoryLabel">'+item.tags.publicador+'</div></div>');
+                                            }
                                             strBuilderNewsActivityDetailsContent.push('<div class="chip chipHomeTags"><div class="media"><i class="icon icon-home-tiposuceso"></i></div><div class="chip-label chipHomeCategoryLabel">'+item.tags.categoria+'</div></div>');
                                             strBuilderNewsActivityDetailsContent.push('</div></div>');
                                             strBuilderNewsActivityDetailsContent.push('<div class="card-content news-content">');
@@ -435,7 +438,10 @@ function builderNewsActivityDetails(){
                                                         //strBuilderNewsActivityDetailsContent.push('<a onclick="loadNewDetails('+item.id+')" href="#" class="item-link item-content">');
                                                         strBuilderNewsActivityDetailsContent.push('<div class="chip chipHomeCategory"><div class="media"><i class="icon icon-date-home"></i></div><div class="chip-label chipHomeCategoryLabel">'+item.tags.categoria+'</div></div>');
                                                         strBuilderNewsActivityDetailsContent.push('<div class="chip chipHomeDate"><div class="media"><i class="icon icon-date-home"></i></div><div class="chip-label chipHomeDateLabel">'+formatDateSucesos(item.fecha.fecha)+'</div></div>');
-                                                        strBuilderNewsActivityDetailsContent.push('<div class="chip chipHomeTags"><div class="media"><i class="icon icon-home-tiposuceso"></i></div><div class="chip-label chipHomePublisherLabel">El canducho</div></div>');
+                                                        //strBuilderNewsActivityDetailsContent.push('<div class="chip chipHomeTags"><div class="media"><i class="icon icon-home-tiposuceso"></i></div><div class="chip-label chipHomePublisherLabel">El canducho</div></div>');
+                                                        if (item.tags.publicador != "") {
+                                                            strBuilderNewsActivityDetailsContent.push('<div class="chip chipHomeCategory"><div class="media"><i class="icon icon-date-home"></i></div><div class="chip-label chipHomeCategoryLabel">'+item.tags.publicador+'</div></div>');
+                                                        }
                                                         strBuilderNewsActivityDetailsContent.push('</div></div>');
                                                         strBuilderNewsActivityDetailsContent.push('<div class="card-content news-content">');
 
