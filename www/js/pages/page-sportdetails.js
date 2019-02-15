@@ -856,7 +856,7 @@ console.log(recentNewsListSporDetails);
                         //strBuilderNewsSportDetailsContent.push('<a onclick="loadNewDetails('+item.id+')" href="#" class="item-link item-content">');
                         //strBuilderNewsSportDetailsContent.push('<div class="chip chipHomeDate"><div class="media"><i class="icon icon-date-home"></i></div><div class="chip-label chipHomeDateLabel">'+formatDateSucesos(item.fecha.fecha)+'</div></div>');
                         if (item.tags.publicador != "") {
-                            strBuilderNewsSportDetailsContent.push('<div class="chip chipHomeCategory"><div class="media"><i class="icon icon-date-home"></i></div><div class="chip-label chipHomeCategoryLabel">'+item.tags.publicador+'</div></div>');
+                            strBuilderNewsSportDetailsContent.push('<div class="chip chipHomeCategory"><div class="media"><i style="background-image: url('+item.datosPublicacion.ente.imagenPrincipalMin+');" class="icon icon-chiptag-categoria"></i></div><div class="chip-label chipHomeCategoryLabel">'+item.datosPublicacion.ente.nombre+'</div></div>');
                         }
                         //strBuilderNewsSportDetailsContent.push('<div class="chip chipHomeTags"><div class="media"><i class="icon icon-home-tiposuceso"></i></div><div class="chip-label chipHomeCategoryLabel">'+item.tags.categoria+'</div></div>');
                         strBuilderNewsSportDetailsContent.push('<div class="chip chipHomeTags"><div class="media"><i style="background-image: url('+item.tags.icono+');" class="icon icon-chiptag-categoria"></i></div><div class="chip-label chipHomeCategoryLabel">'+item.tags.categoria+'</div></div>');
@@ -933,7 +933,7 @@ console.log(recentNewsListSporDetails);
                                         strBuilderNewsSportDetailsContent.push('<div class="chip chipHomeDate"><div class="media"><i class="icon icon-date-home"></i></div><div class="chip-label chipHomeDateLabel">'+formatDateSucesos(item.fecha.fecha)+'</div></div>');
                                         //strBuilderNewsSportDetailsContent.push('<div class="chip chipHomeTags"><div class="media"><i class="icon icon-home-tiposuceso"></i></div><div class="chip-label chipHomePublisherLabel">El canducho</div></div>');
                                         if (item.tags.publicador != "") {
-                                            strBuilderNewsSportDetailsContent.push('<div class="chip chipHomeCategory"><div class="media"><i class="icon icon-date-home"></i></div><div class="chip-label chipHomeCategoryLabel">'+item.tags.publicador+'</div></div>');
+                                            strBuilderNewsSportDetailsContent.push('<div class="chip chipHomeCategory"><div class="media"><i style="background-image: url('+item.datosPublicacion.ente.imagenPrincipalMin+');" class="icon icon-chiptag-categoria"></i></div><div class="chip-label chipHomeCategoryLabel">'+item.datosPublicacion.ente.nombre+'</div></div>');
                                         }
                                         strBuilderNewsSportDetailsContent.push('</div></div>');
                                         strBuilderNewsSportDetailsContent.push('<div class="card-content news-content">');
