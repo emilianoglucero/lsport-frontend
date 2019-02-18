@@ -11,6 +11,21 @@ myApp.onPageInit('newdetails', function (page)
     $('.lblShareNewWhatsapp').text(lblShareWhatsapp);
     $('.lblShareNewFacebook').text(lblShareFacebook);
     $('.lblShareNewTwitter').text(lblShareTwitter);
+
+    //function to make the links work well in news
+    $('#contentNewDetails a').on('click', function(e){
+        e.stopPropagation();
+        e.preventDefault();
+        var $a = $(this);
+        var href = $a.attr('href');
+        openBrowser(href);
+        return false;
+    });
+
+    $('#contentNewDetails a').css({
+    	'color': 'blue',
+    	'text-decoration': 'underline blue'
+    });
 });
 
 myApp.onPageBeforeAnimation('newdetails', function (page)
@@ -61,6 +76,7 @@ function loadNewDetails(idNew, state){
 }
 
 function builderNewDetails(newDetailsItem){
+
 console.log(newDetailsItem);
 	
 	$('#backgroundHeaderNewDetails').html('');
@@ -230,6 +246,8 @@ listVideoBrowserNewDetails[idVideo].url
 function builderNewBanner(banner){
 	$('#urlAdBannerNewDetails').html(builderBannerPublicityDetail(banner));
 }
+
+
 
 
 
