@@ -3,7 +3,7 @@
 The Lenguaje Sport front end code (Cordova Apache)
 
 ## Start Coding
-###In a terminal we'll execute the next lines
+### In a terminal we'll execute the next lines
 clone the GitHub repo
 ```
 git clone https://github.com/emilianoglucero/lsport-frontend.git
