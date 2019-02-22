@@ -21,7 +21,7 @@ myApp.onPageInit('newdetails', function (page)
         openBrowser(href);
         return false;
     });
-
+    //added blue color and underline to links
     $('#contentNewDetails a').css({
     	'color': 'blue',
     	'text-decoration': 'underline blue'
