@@ -19,9 +19,9 @@ move into this new proyect
 cd cabavillamalcolm
 ```
 
-We're going to copy from 'lsport-frontd' (the cloned repo) the next 5 files and folders listed in the image, next we'll paste it and the replace it in the cabavillamalcolm project that we have just created.
+We're going to copy from 'lsport-frontd' (the cloned repo) the next 6 files and folders listed in the image, next we'll paste it and the replace it in the cabavillamalcolm project that we have just created.
 
-![alt text](https://user-images.githubusercontent.com/15883174/53269217-1201a400-36c7-11e9-837f-631ce1a5743f.png)
+![alt text]("https://user-images.githubusercontent.com/15883174/53424442-fac1ff80-39c1-11e9-9c26-87540605f409.png")
 
 Remove the platform android
 ```
@@ -90,5 +90,5 @@ Some of requirements check failed
 ```
 
 #### Browser platform
-If you want to run the browser platform, you need to uninstall the admobpro plugin
+If you want to run the browser platform, you need to uninstall the admobpro plugins
 
