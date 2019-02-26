@@ -15,6 +15,7 @@
     "cordova-android-firebase-gradle-release": "^2.0.0",
     "cordova-android-play-services-gradle-release": "^2.0.0",
     "cordova-android-support-gradle-release": "^2.0.1",
+    "cordova-browser": "^5.0.4",
     "cordova-ios": "^4.5.5",
     "cordova-plugin-admobpro": "^2.37.2",
     "cordova-plugin-browsertab": "^0.2.0",
@@ -72,7 +73,8 @@
     },
     "platforms": [
       "ios",
-      "android"
+      "android",
+      "browser"
     ]
   }
 }

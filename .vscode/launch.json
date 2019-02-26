@@ -1,0 +1,36 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Simulate android|ios in browser",
+            "type": "cordova",
+            "request": "launch",
+            "platform": "android|ios",
+            "target": "chrome",
+            "simulatePort": 8000,
+            "livereload": true,
+            "cwd": "${workspaceFolder}",
+            "sourceMaps": true
+        },
+
+        {
+            "name": "Run android on device|emulator",
+            "type": "cordova",
+            "request": "launch",
+            "platform": "android",
+            "target": "device|emulator",
+            "sourceMaps": true,
+            "cwd": "${workspaceFolder}"
+        },
+
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "program": "${workspaceFolder}/index.js"
+        }
+    ]
+}
