@@ -21,7 +21,7 @@ cd cabavillamalcolm
 
 We're going to copy from 'lsport-frontd' (the cloned repo) the next 6 files and folders listed in the image, next we'll paste it and the replace it in the cabavillamalcolm project that we have just created.
 
-![alt text]("https://user-images.githubusercontent.com/15883174/53424442-fac1ff80-39c1-11e9-9c26-87540605f409.png")
+![alt text](https://user-images.githubusercontent.com/15883174/53424442-fac1ff80-39c1-11e9-9c26-87540605f409.png)
 
 Remove the platform android
 ```
