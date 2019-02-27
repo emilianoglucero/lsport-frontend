@@ -33,12 +33,20 @@
 }
 
 .td-span-team-pos{
-	color: rgb(142, 142, 147);
+	color: #00A706;
+	font-family: "Montserrat-Semibold";
+	font-size: 12px;
+	margin: auto;
+	flex: 1;
 }
 
 .td-span-team-name{
 	padding-left: 5px;
-	font-weight: 700;
+	/* font-weight: 700; */
+	font-family: "Montserrat-Semibold";
+	font-size: 12px;
+	color: #585858;
+	flex: 10;
 }
 
 .table-tournaments tr .th-20-tournaments{

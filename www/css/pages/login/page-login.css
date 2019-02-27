@@ -1,3 +1,9 @@
+#lblWellcomeLogin, #lblTitleSignUp {
+    font-family: "Montserrat-Regular";
+    font-size: 28px;
+    color: #585858;
+}
+
 #containerImgLogin {
     text-align: center;
 }
@@ -12,24 +18,57 @@
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 1px solid #fff;
+    border-radius: 50px;
     box-sizing: border-box;
     text-align: center;
     font-size: 15px;
+    box-shadow: 0px 0px 20px #ececec;
+    color: #ADADAD;
+    font-family: "Montserrat-Light";
+    font-size: 14px;
 }
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #ADADAD;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #ADADAD;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: #ADADAD;
+  }
 
 .login-input-select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 1px solid #fff;
+    border-radius: 50px;
     box-sizing: border-box;
     text-align: center;
     font-size: 15px;
     padding-left: 32%;
+    background-color: white;
+    box-shadow: 0px 0px 20px #ececec;
+    color: #ADADAD;
+    font-family: "Montserrat-Light";
+    font-size: 14px;
+}
+
+#lblSendButtonLogin {
+    font-family: "Montserrat-Semibold";
+    font-size: 16px;
+}
+
+#lblInfoLogin {
+    color: #848585;
+    font-family: "Montserrat-Regular";
+    font-size: 14px;
 }
 
 .login-input-label {
@@ -48,4 +87,16 @@
     color: #007aff;
     display: block;
     line-height: 43px;
+}
+
+#lblSendButtonLoginSign, #lblSendButtonResetPassSign {
+    color: #00A706;
+    font-family: "Montserrat-Bold";
+    font-size: 16px;
+}
+
+#lblInfoSignUp {
+    color: #848585;
+    font-family: "Montserrat-Regular";
+    font-size: 14px;
 }

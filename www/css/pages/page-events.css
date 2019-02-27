@@ -96,6 +96,8 @@ i.icon.icon-place-event {
 }
 
 .aEventDetails{
+	width: 100%;
+	/* padding: 5px; */
 	text-decoration: none;
 }
 

@@ -80,10 +80,6 @@ function confirmSetProfile() {
         });
 
         //ejecutar el ws
-
-
-
-
     }
 
 }

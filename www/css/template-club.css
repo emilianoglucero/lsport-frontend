@@ -5,7 +5,7 @@
 .navbar::after,
 .navbar 
 {
-    background-color: #108342;
+    background-color: #00A706;
 }
 
 .theme-lenguajesport a {
@@ -45,18 +45,18 @@
 
 .panel.panel-left
 {
-	background-color: #108342;
+	background-color: white;
 }
 
 .activeStateMenu {
-    background: black !important;
+    background: white !important;
 }
 
 .panel.panel-left .list-block ul::before,
 .panel.panel-left .list-block ul::after,
 .panel.panel-left .list-block .item-inner::after
 {
-	background-color: black;
+	background-color: white;
 }
 
 #lblMnuTitle
@@ -88,6 +88,7 @@
     font-size: 20px;
     margin: 0;
     padding: 5px;
+    border-radius: 15px;
 }
 
 #page-home #last-news-list-block ul li .item-title
@@ -163,33 +164,46 @@
 
 #subnavbarSportDetails.subnavbar
 {
-    background: #108342; none repeat scroll 0 0;
+    background: #00A706 none repeat scroll 0 0;
 }
 
-#subnavbarSportDetails .buttons-row a.button.active:not(.button-fill) 
+#subnavbarSportDetails .buttons-row a.button.active:not(.button-fill)
 {
     color: white;
-    background-color:#108342;
+    background-color: #00a706;
 }
+
 #subnavbarHomeDetails.subnavbar
 {
-    background: #108342; none repeat scroll 0 0;
+    height: 106px;
+    background: #00a706 none repeat scroll 0 0;
+    padding: 0px !important;
+}
+
+#subnavbarHomeDetails.subnavbar > div {
+    margin: 20px 20px 0 20px;
+    height: 100%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px 20px 0 0;
 }
 
 #subnavbarHomeDetails .buttons-row a.button.active:not(.button-fill)
 {
+    line-height: 44px !important;
+    height: 100%;
     color: white;
-    background-color:#108342;
+    background-color:#00A706;
 }
 #subnavbarMatchDetails.subnavbar
 {
-    background: #108342; none repeat scroll 0 0;
+    background: #108342 none repeat scroll 0 0;
 }
 
 #subnavbarMatchDetails .buttons-row a.button.active:not(.button-fill)
 {
     color: white;
-    background-color:#108342;
+    background-color: #108342;
 }
 
 #page-sportdetails #tabs-sportdetails ul li a div.item-subtitle,
@@ -202,7 +216,9 @@
     border-radius: 0;
 }
 #subnavbarHomeDetails .buttons-row .button {
+    height: 100%;
     border-radius: 0;
+    line-height: 44px !important;
 }
 #subnavbarMatchDetails .buttons-row .button {
     border-radius: 0;
@@ -213,14 +229,16 @@
 #subnavbarSportDetails .buttons-row .button:not(.button-fill) 
 {
     border-color: black !important;
-    background-color: black;
+    background-color: #F6F6F6;
+    color: #585858;
 }
 #subnavbarHomeDetails .buttons-row .button:not(.button-fill),
 #subnavbarHomeDetails .buttons-row .buttons-row .button,
 #subnavbarHomeDetails .buttons-row .button:not(.button-fill)
 {
-    border-color: black !important;
-    background-color: black;
+    /* border-color: black !important; */
+    background-color: #F6F6F6;
+    color: #585858;
 }
 #subnavbarMatchDetails .buttons-row .button:not(.button-fill),
 #subnavbarMatchDetails .buttons-row .buttons-row .button,
@@ -650,4 +668,49 @@ label.label-checkbox input[type="checkbox"]:checked + .item-media i.icon-form-ch
     color: #108342;
 }
 
+#subnavbarHomeDetails1 {
+    border-radius: 30px 0 0 30px !important;
+    font-family: "Montserrat-Light";
+}
 
+#subnavbarHomeDetails2 {
+    border-radius: 0 30px 30px 0 !important;
+    font-family: "Montserrat-Light";
+}
+
+.custom-calendar-event-card {
+    text-align: left !important;
+    font-family: "Montserrat-Regular" ;
+    font-size: 18px;
+    color: #585858;
+}
+
+.custom-calendar-match-card::after {
+    content: '';
+    left: 0;
+    bottom: 0;
+    right: auto;
+    top: auto;
+    height: 1px;
+    width: 100%;
+    background-color: #F6F6F6;
+    display: block;
+    z-index: 15;
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+}
+
+#row-lastmatch-tournament-calendar .col-lastmatch-tournament-team {
+    width: 100% !important;
+    text-align: center;
+    padding-top: 5px;
+    font-family: "Montserrat-Regular";
+    font-size: 12px;
+    color: #585858;
+}
+
+#row-lastmatch-tournament-calendar .col-lastmatch-tournament-name {
+    font-family: "Montserrat-Medium";
+    font-size: 20px !important;
+    color: #585858;
+}

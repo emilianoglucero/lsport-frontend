@@ -16,9 +16,13 @@
     border-bottom: 0px none;
 }
 
+.item-inner .item-title {
+    color: #828282;
+}
+
 i.icon.icon-home {
-    width: 29px;
-    height: 29px;
+    width: 22px;
+    height: 22px;
     background-image: url("../img/template/icon-home.png");
     border-radius: 0px;
 }
@@ -59,72 +63,72 @@ i.icon.icon-notifications.icon-notifications-home:after{
 }
 
 i.icon.icon-news {
-    width: 29px;
-    height: 29px;
+    width: 22px;
+    height: 22px;
     background-image: url("../img/template/icon-news.png");
     border-radius: 0px;
 }
 
 i.icon.icon-sports {
-    width: 29px;
-    height: 29px;
+    width: 22px;
+    height: 22px;
     background-image: url("../img/template/icon-sports.png");
     border-radius: 0px;
 }
 
 i.icon.icon-sportDetails {
-    width: 29px;
-    height: 29px;
+    width: 22px;
+    height: 22px;
     background-image: url("../img/template/icon-sports.png");
     border-radius: 0px;
 }
 
 i.icon.icon-sportDetailsFixture {
-    width: 29px;
-    height: 29px;
+    width: 22px;
+    height: 22px;
     background-image: url("../img/template/icon-sportsFixture.png");
     border-radius: 0px;
 }
 
 i.icon.icon-activities {
-    width: 29px;
-    height: 29px;
+    width: 22px;
+    height: 22px;
     background-image: url("../img/template/icon-activities.png");
     border-radius: 0px;
 }
 
 i.icon.icon-activityDetails {
-    width: 29px;
-    height: 29px;
+    width: 22px;
+    height: 22px;
     background-image: url("../img/template/icon-activities.png");
     border-radius: 0px;
 }
 
 i.icon.icon-events {
-    width: 29px;
-    height: 29px;
+    width: 22px;
+    height: 22px;
     background-image: url("../img/template/icon-events.png");
     border-radius: 0px;
 }
 
 
 i.icon.icon-about {
-    width: 29px;
-    height: 29px;
+    width: 22px;
+    height: 22px;
     background-image: url("../img/template/icon-about.png");
     border-radius: 0px;
 }
 
 i.icon.icon-settings {
-    width: 29px;
-    height: 29px;
+    width: 22px;
+    height: 22px;
     background-image: url("../img/template/icon-settings.png");
     border-radius: 0px;
 }
 
 i.icon.icon-user {
-    width: 29px;
-    height: 29px;
+    width: 22px;
+    height: 22px;
     background-image: url("../img/template/icon-user.png");
     border-radius: 0px;
 }
@@ -172,8 +176,8 @@ i.icon.icon-shooters {
 i.icon-bars.color-white,
 i.icon-bars.theme-white{
 	background-image: url("../img/template/icon-menu.png");
-	width: 25px;
-    height: 25px;
+	width: 18px;
+    height: 18px;
 }
 
 .theme-white i.icon-back,
@@ -232,7 +236,7 @@ i.icon.icon-volume-cbx {
 .navbar {
     background: #1A9AD9;
     color: #FFF;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); */
 }
 
 .navbar a {

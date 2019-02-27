@@ -7,9 +7,6 @@ var tokenUser;
 //token que obtenemos luego del login del usuario contra el backend
 var accessToken;
 
-//token que obtenemos de la concatenacion de TOKEN + IdClub
-var tokenNotificacion;
-
 var mainView = myApp.addView(".view-main", {
   dynamicNavbar: true,
   domCache: true
@@ -269,7 +266,7 @@ function onDeviceReady() {
   }, 2600);
   //loadPageLogin();
   //Start Tracker Google Analytics
-  window.analytics.startTrackerWithId("UA-77665142-1");
+  // window.analytics.startTrackerWithId("UA-77665142-1");
 
   // DEVICE ID
   deviceID = device.uuid;
@@ -345,14 +342,6 @@ function loadPageLogin() {
               if (deviceID == null) {
                 deviceID = "null";
               }
-              //we cannot pass tokenNotificacion = null to the server
-              console.log(window.localStorage.getItem("TOKEN" + idClub));
-              if (window.localStorage.getItem("TOKEN" + idClub) == null) {
-                tokenNotificacion = "null";
-              } else {
-                tokenNotificacion = window.localStorage.getItem("TOKEN" + idClub);
-              }
-              console.log(tokenNotificacion);
               console.log(deviceID);
               console.log(window.localStorage.getItem("TOKEN" + idClub));
               console.log(platform);
@@ -372,7 +361,9 @@ function loadPageLogin() {
                   grant_type: "urn:ietf:params:oauth:grant-type:jwt-bearer",
                   assertion: tokenUser,
                   dispositivoId: deviceID,
-                  tokenNotificacion: tokenNotificacion,
+                  tokenNotificacion: window.localStorage.getItem(
+                    "TOKEN" + idClub
+                  ),
                   platforma: platform,
                   nombre: userFullName,
                   apellido: "",
@@ -880,7 +871,7 @@ function getDefaultImageProfile() {
 
 function trackPageGA(pageName) {
   if (isMobile() == true) {
-    window.analytics.trackView(idClub + " - " + lblNameClub + " - " + pageName);
+    // window.analytics.trackView(idClub + " - " + lblNameClub + " - " + pageName);
   }
 }
 

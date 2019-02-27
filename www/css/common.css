@@ -4,6 +4,31 @@
     src: url("../fonts/OpenSans-Regular.ttf");   
 }
 
+@font-face {
+    font-family: "Montserrat-Light";
+    src: url("../fonts/Montserrat-Light.otf");
+}
+
+@font-face {
+    font-family: "Montserrat-Regular";
+    src: url("../fonts/Montserrat-Regular.otf");
+}
+
+@font-face {
+    font-family: "Montserrat-Semibold";
+    src: url("../fonts/Montserrat-SemiBold.otf");
+}
+
+@font-face {
+    font-family: "Montserrat-Bold";
+    src: url("../fonts/Montserrat-Bold.otf");
+}
+
+@font-face {
+    font-family: "Montserrat-Medium";
+    src: url("../fonts/Montserrat-Medium.otf");
+}
+
 .panel-left{
 	color: #FFFFFF !important;
 }
@@ -50,13 +75,19 @@ input
 }
 
 .list-block.media-list .item-subtitle-link-phone {
-    padding-top: 6px;
-	padding-bottom: 3px;
+    color: #DADADA !important;
+    font-family: "Montserrat-Light";
+    font-size: 12px;
+    /* padding-top: 6px;
+	padding-bottom: 3px; */
 }
 
 .list-block.media-list .item-subtitle-link-email {
-    padding-top: 3px;
-	padding-bottom: 3px;
+    color: #008AEF !important;
+    font-family: "Montserrat-Light";
+    font-size: 12px;
+    /* padding-top: 3px;
+	padding-bottom: 3px; */
 }
 
 .list-block .item-title.label {
@@ -80,7 +111,7 @@ i.icon.icon-form-calendar {
 }
 
 i.icon.icon-form-price {
-    width: 29px;
+    width: 10px;
     height: 29px;
     background-image: url("../img/template/icon-form-price.png");
 }
@@ -225,7 +256,9 @@ i.icon.icon-close {
 
 
 .list-block .item-subtitle-name {
-	color: #6d6d72;
+    color: #919191;
+    font-family: "Montserrat-Light";
+    font-size: 12px;
 }
 
 .accordion-item-content {
@@ -251,4 +284,15 @@ i.icon.icon-close {
 .icon-chiptag-categoria {
    width: 16px;
    height: 16px;
+}
+
+.custom-navbar {
+    background-color: #00A706;
+}
+
+.custom-navbar-img {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 32px;
 }

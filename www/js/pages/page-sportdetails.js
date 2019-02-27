@@ -1139,8 +1139,8 @@ function builderCoordinatorsSport(coordSportItem){
 		strBuilderCoordinatorsContent.push('');
 	}
 	else{
+		strBuilderCoordinatorsContent.push('<div id="divCoordinatorsSport">'+divCoordinatorsSport+'</div>');
 		strBuilderCoordinatorsContent.push('<div class="card">');
-		strBuilderCoordinatorsContent.push('<div id="divCoordinatorsSport" class="card-header card-header-center">'+divCoordinatorsSport+'</div>');
 		strBuilderCoordinatorsContent.push('<div class="card-content">');
 		strBuilderCoordinatorsContent.push('<div class="list-block media-list">');
 		strBuilderCoordinatorsContent.push('<ul>');
@@ -1181,20 +1181,20 @@ function builderPriceDetails(price){
 		strBuilderPriceContent.push('');
 	}
 	else{
-		strBuilderPriceContent.push('<div class="card">');
-			strBuilderPriceContent.push('<div class="card-header card-header-center">'+lblPrice+'</div>');
-			strBuilderPriceContent.push('<div class="card-content">');
-				strBuilderPriceContent.push('<div class="card-content-inner">');
+		strBuilderPriceContent.push('<div class="custom-sportdetails-price-card">');
+			strBuilderPriceContent.push('<div class="custom-sportdetails-price-card-header">'+lblPrice+'</div>');
+			strBuilderPriceContent.push('<div class="custom-sportdetails-price-card-content">');
+				strBuilderPriceContent.push('<div class="custom-sportdetails-price-card-inner">');
 					strBuilderPriceContent.push('<div class="list-block general-information">');
 					strBuilderPriceContent.push('<ul>');
 					strBuilderPriceContent.push('<li>');
 					strBuilderPriceContent.push('<div class="item-content">');
-					strBuilderPriceContent.push('<div class="item-media"><i class="icon icon-form-price"></i></div>');
 					strBuilderPriceContent.push('<div class="item-inner">');
-					strBuilderPriceContent.push('<div class="item-title label color-gray">');
+					strBuilderPriceContent.push('<div class="item-title label color-gray" style="text-align: right">');
 					strBuilderPriceContent.push(price);
 					strBuilderPriceContent.push('</div>');
 					strBuilderPriceContent.push('</div>');
+					strBuilderPriceContent.push('<div class="item-media"><i class="icon icon-form-price"></i></div>');
 					strBuilderPriceContent.push('</div>');
 					strBuilderPriceContent.push('</li>');
 					strBuilderPriceContent.push('</ul>');
@@ -1209,8 +1209,8 @@ function builderPriceDetails(price){
 
 function builderGeneralInformationSport(schedule ,location , emailContact){
 	var strBuilderInfoContent = [];
+	strBuilderInfoContent.push('<div id="spnScheduleSportDetails"></div>');
 	strBuilderInfoContent.push('<div class="card">');
-	strBuilderInfoContent.push('<div id="spnScheduleSportDetails" class="card-header card-header-center"></div>');
 	strBuilderInfoContent.push('<div class="card-content">');
 	strBuilderInfoContent.push('<div class="card-content-inner">');
 	strBuilderInfoContent.push('<div class="list-block general-information">');
