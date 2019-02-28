@@ -87,7 +87,7 @@
 	color: black;
     font-size: 20px;
     margin: 0;
-    padding: 5px;
+    /* padding: 5px; */
     border-radius: 15px;
 }
 
@@ -181,7 +181,7 @@
 }
 
 #subnavbarHomeDetails.subnavbar > div {
-    margin: 20px 20px 0 20px;
+    margin: 20px 10px 0 10px;
     height: 100%;
     background-color: white;
     padding: 20px;
@@ -713,4 +713,60 @@ label.label-checkbox input[type="checkbox"]:checked + .item-media i.icon-form-ch
     font-family: "Montserrat-Medium";
     font-size: 20px !important;
     color: #585858;
+}
+
+#tabSportDetails3 .card {
+    background: #fcfcfc;
+    box-shadow: 0 0 0 RGBA(0, 0, 0, 0);
+}
+
+#tabSportDetails3 .card-header::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: auto;
+    top: auto;
+    height: 1px;
+    width: 100%;
+    background-color: #f6f6f6;
+    display: block;
+    z-index: 15;
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+}
+
+#tabSportDetails3 .card .item-title {
+    color: #00A706 !important;
+}
+
+#tabSportDetails3 .item-inner::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: auto;
+    top: auto;
+    height: 1px;
+    width: 100%;
+    background-color: #f6f6f6;
+    display: block;
+    z-index: 15;
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+}
+
+.custom-sportsdetails-card-header {
+    font-family: "Montserrat-Regular";
+    font-size: 16px;
+    color: #585858;
+}
+
+#page-fixtures {
+    background: #fcfcfc !important;
+}
+
+#fixture-content .card {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    background: #fcfcfc !important;
 }

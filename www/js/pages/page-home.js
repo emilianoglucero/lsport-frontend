@@ -736,8 +736,13 @@ function builderNewsHomeDetails() {
 
                 var noticiaTruncada = truncateNoticia(item.detalleTxt);
                 console.log(noticiaTruncada);
-                strBuilderLastNewsContent.push('<div class="card demo-card-header-pic"><div style="background-image:url(' + item.imagenPrincipalMin + '); height:150px;" valign="bottom" class="card-header color-white no-border">');
-                strBuilderLastNewsContent.push('<a onclick="loadNewDetails(' + item.id + ',\'' + sucesoDetailFromHome + '\')" href="#" class="item-link item-content">');
+                strBuilderLastNewsContent.push('<div class="card demo-card-header-pic">');
+                strBuilderLastNewsContent.push('<div class="card-header color-white no-border">');
+                strBuilderLastNewsContent.push('<div style="width: 100%;height: 250px;overflow: hidden;">');
+                strBuilderLastNewsContent.push('<img style=\"width: 100%;\" src=\'' + item.imagenPrincipalMin + '\' >');
+                strBuilderLastNewsContent.push('</div>');
+                strBuilderLastNewsContent.push('</div>');
+
                 strBuilderLastNewsContent.push('<div class="chipHomeContainer">');
                 //strBuilderLastNewsContent.push('<a onclick="loadNewDetails('+item.id+')" href="#" class="item-link item-content">');
                 // strBuilderLastNewsContent.push('<div class="chip chipHomeDate"><div class="media"><i class="icon icon-date-home"></i></div><div class="chip-label chipHomeDateLabel">'+formatDateSucesos(item.fecha.fecha)+'</div></div>');
@@ -746,7 +751,9 @@ function builderNewsHomeDetails() {
                 }
                 //strBuilderLastNewsContent.push('<div class="chip chipHomeTags"><div class="media"><i class="icon icon-home-tiposuceso"></i></div><div class="chip-label chipHomeCategoryLabel">'+item.tags.categoria+'</div></div>');
                 strBuilderLastNewsContent.push('<div class="chip chipHomeTags"><div class="media"><i style="background-image: url(' + item.tags.icono + ');" class="icon icon-chiptag-categoria"></i></div><div class="chip-label chipHomeCategoryLabel">' + item.tags.categoria + '</div></div>');
-                strBuilderLastNewsContent.push('</div></div>');
+                strBuilderLastNewsContent.push('</div>');
+                strBuilderLastNewsContent.push('<a onclick="loadNewDetails(' + item.id + ',\'' + sucesoDetailFromHome + '\')" href="#" class="item-link item-content">');
+
                 strBuilderLastNewsContent.push('<div class="card-content news-content">');
 
                 strBuilderLastNewsContent.push('<div class="card-content-inner">');
@@ -754,12 +761,13 @@ function builderNewsHomeDetails() {
                 if (item.urlImgMin != "") {
                     urlImgNewsList = item.urlImgMin;
                 }
-                strBuilderLastNewsContent.push('<div class="row"><div class="col-70"><div class="">' + item.titulo + '</div></div>');
+                strBuilderLastNewsContent.push('<div class="row"><div class="col-70"><div style="font-family:Montserrat-Regular; font-size: 16px; color: #585858;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">' + item.titulo + '</div></div>');
                 strBuilderLastNewsContent.push('<div class="col-30"><div class="dateTitleNew color-gray">15/09/2018</div></div></div>');
                 strBuilderLastNewsContent.push('<div class="row"><div class="col-100"><div class="color-gray homeCardcontent">' + noticiaTruncada + '</div></div></div>');
 
-                strBuilderLastNewsContent.push('</div></div>');
-                strBuilderLastNewsContent.push('<div class="card-footer tournament-matches-footer">Ver más...</div></a>');
+                strBuilderLastNewsContent.push('</div></div></a>');
+                // strBuilderLastNewsContent.push('<div class="card-footer tournament-matches-footer">Ver más...</div>');
+                strBuilderLastNewsContent.push('</div>');
                 strBuilderLastNewsContent.push('</div>');
 
                 //}
@@ -789,11 +797,15 @@ function builderNewsHomeDetails() {
                 console.log(encuentroFecha);
                 //if (encuentroFecha < 3){
                 strBuilderLastNewsContent.push('<div class="row no-gutter row-tournament-matches">');
-                strBuilderLastNewsContent.push('<div class="col-25 team-lastmatch-left">' + item.local.nombre + '</div>');
+                strBuilderLastNewsContent.push('<div class="col-40">');
+                    strBuilderLastNewsContent.push('<div style="padding: 0 5px;">');
+                        strBuilderLastNewsContent.push('<div><img data-src=' + item.local.imagenPrincipalMin + ' class="lazy lazy-fadeIn img-shield-lastmatch"></div>');
+                        strBuilderLastNewsContent.push('<div style="text-align: center;margin-top: 5px;font-family: Montserrat-Regular;font-size: 12px;color: #585858;">' + item.local.nombreCorto + '</div>');
+                    strBuilderLastNewsContent.push('</div>');
+                strBuilderLastNewsContent.push('</div>');
                 //if (match.local.imagenPrincipalMin != ""){
                 //strBuilderLastNewsContent.push('<div class="col-10"><img data-src="'+match.local.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-team"></div>');
                 //} else {
-                strBuilderLastNewsContent.push('<div class="col-15" img-lastmatch><img data-src=' + item.local.imagenPrincipalMin + ' class="lazy lazy-fadeIn img-shield-lastmatch"></div>');
                 //}
                 //if (match.local.tantos != "" || match.visit.tantos != ""){
                 //strBuilderLastNewsContent.push('<div class="col-20 match-scorer">'+match.local.tantos+' - '+match.visitante.tantos+'</div>');
@@ -801,42 +813,74 @@ function builderNewsHomeDetails() {
                 //else {
                 strBuilderLastNewsContent.push('<div class="col-20 match-scorer-lastmatch">' + item.local.tantos + ' - ' + item.visitante.tantos + '</div>');
                 //}
-                strBuilderLastNewsContent.push('<div class="col-15 img-lastmatch"><img data-src=' + item.visitante.imagenPrincipalMin + ' class="lazy lazy-fadeIn img-shield-lastmatch"></div>');
-                strBuilderLastNewsContent.push('<div class="col-25 team-lastmatch-right">' + item.visitante.nombre + '</div></div>');
+
+                strBuilderLastNewsContent.push('<div class="col-40">');
+                    strBuilderLastNewsContent.push('<div style="padding: 0 5px;">');
+                        strBuilderLastNewsContent.push('<div><img data-src=' + item.visitante.imagenPrincipalMin + ' class="lazy lazy-fadeIn img-shield-lastmatch"></div>');
+                        strBuilderLastNewsContent.push('<div style="text-align: center;margin-top: 5px;font-family: Montserrat-Regular;font-size: 12px;color: #585858;">' + item.visitante.nombreCorto + '</div></div>');
+                    strBuilderLastNewsContent.push('</div>');
+                strBuilderLastNewsContent.push('</div>');
+
                 // }
                 // });
                 strBuilderLastNewsContent.push('</div></div>');
-                strBuilderLastNewsContent.push('<div class="card-footer tournament-matches-footer">Ver más...</div></a></div>');
+                // strBuilderLastNewsContent.push('<div class="card-footer tournament-matches-footer">Ver más...</div>');
+                strBuilderLastNewsContent.push('</a></div>');
 
 
             } else if (item.tipoObjeto == "evento") {
                 var noticiaTruncada = truncateNoticia(item.detalleTxt);
                 console.log(noticiaTruncada);
-                strBuilderLastNewsContent.push('<div class="card demo-card-header-pic"><div style="background-image:url(' + item.imagenPrincipalMin + '); height:150px;" valign="bottom" class="card-header color-white no-border">');
-                strBuilderLastNewsContent.push('<a onclick="loadEventDetails1(' + item.id + ',\'' + sucesoDetailFromHome + '\')" href="#" class="item-link item-content">');
-                strBuilderLastNewsContent.push('<div class="chipHomeContainer">');
-                //strBuilderLastNewsContent.push('<a onclick="loadNewDetails('+item.id+')" href="#" class="item-link item-content">');
-                if (item.tags.publicador != "") {
-                    strBuilderLastNewsContent.push('<div class="chip chipHomeCategory"><div class="media"><i style="background-image: url(' + item.datosPublicacion.ente.imagenPrincipalMin + ');" class="icon icon-chiptag-categoria"></i></div><div class="chip-label chipHomeCategoryLabel">' + item.datosPublicacion.ente.nombre + '</div></div>');
-                }
-                strBuilderLastNewsContent.push('<div class="chip chipHomeDate"><div class="media"><i class="icon icon-date-home"></i></div><div class="chip-label chipHomeDateLabel">' + formatDateSucesos(item.fecha.fecha) + '</div></div>');
-                //strBuilderLastNewsContent.push('<div class="chip chipHomeTags"><div class="media"><i class="icon icon-home-tiposuceso"></i></div><div class="chip-label chipHomePublisherLabel">El canducho</div></div>');
-                strBuilderLastNewsContent.push('<div class="chip chipHomeTags"><div class="media"><i style="background-image: url(' + item.tags.icono + ');" class="icon icon-chiptag-categoria"></i></div><div class="chip-label chipHomeCategoryLabel">' + item.tags.categoria + '</div></div>');
-                strBuilderLastNewsContent.push('</div></div>');
-                strBuilderLastNewsContent.push('<div class="card-content news-content">');
+                strBuilderLastNewsContent.push('<div class="card demo-card-header-pic">');
+                    // -----------> Header
+                    strBuilderLastNewsContent.push('<div class="card-header color-white no-border">');
+                        strBuilderLastNewsContent.push('<div style="width: 100%;height: 250px;overflow: hidden;">');
+                            strBuilderLastNewsContent.push('<img style="width:100%;" src=\'' + item.imagenPrincipalMin + '\' >');
+                        strBuilderLastNewsContent.push('</div>');
+                    strBuilderLastNewsContent.push('</div>');
+                    // <----------- Header
 
-                strBuilderLastNewsContent.push('<div class="card-content-inner">');
-                var urlImgNewsList = getDefaultImageNewsList();
-                if (item.urlImgMin != "") {
-                    urlImgNewsList = item.urlImgMin;
-                }
-                strBuilderLastNewsContent.push('<div class="">' + item.titulo + '</div>');
-                strBuilderLastNewsContent.push('<div class="color-gray homeCardcontent">' + noticiaTruncada + '</div>');
+                    strBuilderLastNewsContent.push('<div class="chipHomeContainer">');
+                        if (item.tags.publicador != "") {
+                            strBuilderLastNewsContent.push('<div class="chip chipHomeCategory">');
+                                strBuilderLastNewsContent.push('<div class="media">');
+                                    strBuilderLastNewsContent.push('<i style="background-image: url(' + item.datosPublicacion.ente.imagenPrincipalMin + ');" class="icon icon-chiptag-categoria"></i>');
+                                strBuilderLastNewsContent.push('</div>');
+                                strBuilderLastNewsContent.push('<div class="chip-label chipHomeCategoryLabel">' + item.datosPublicacion.ente.nombre + '</div>');
+                            strBuilderLastNewsContent.push('</div>');
+                        }
+                            strBuilderLastNewsContent.push('<div class="chip chipHomeDate">');
+                                strBuilderLastNewsContent.push('<div class="media">');
+                                    strBuilderLastNewsContent.push('<i class="icon icon-date-home"></i>');
+                                strBuilderLastNewsContent.push('</div>');
+                                strBuilderLastNewsContent.push('<div class="chip-label chipHomeDateLabel">' + formatDateSucesos(item.fecha.fecha) + '</div>');
+                            strBuilderLastNewsContent.push('</div>');
 
-                strBuilderLastNewsContent.push('</div></div>');
-                strBuilderLastNewsContent.push('<div class="card-footer tournament-matches-footer">Ver más...</div>');
+                        strBuilderLastNewsContent.push('<div class="chip chipHomeTags">');
+                            strBuilderLastNewsContent.push('<div class="media">');
+                                strBuilderLastNewsContent.push('<i style="background-image: url(' + item.tags.icono + ');" class="icon icon-chiptag-categoria"></i>');
+                            strBuilderLastNewsContent.push('</div>');
+                            strBuilderLastNewsContent.push('<div class="chip-label chipHomeCategoryLabel">' + item.tags.categoria + '</div>');
+                            strBuilderLastNewsContent.push('</div>');
+                        strBuilderLastNewsContent.push('</div>');
+                    strBuilderLastNewsContent.push('<a onclick="loadEventDetails1(' + item.id + ',\'' + sucesoDetailFromHome + '\')" href="#" class="item-link item-content">');
+                    strBuilderLastNewsContent.push('</a>');
+
+                // --------------> Content
+                    strBuilderLastNewsContent.push('<div class="card-content news-content">');
+                        strBuilderLastNewsContent.push('<div class="card-content-inner">');
+                        var urlImgNewsList = getDefaultImageNewsList();
+                        if (item.urlImgMin != "") {
+                            urlImgNewsList = item.urlImgMin;
+                        }
+                            strBuilderLastNewsContent.push('<div style="font-family:Montserrat-Regular; font-size: 16px; color: #585858;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">' + item.titulo + '</div>');
+                            strBuilderLastNewsContent.push('<div class="color-gray homeCardcontent">' + noticiaTruncada + '</div>');
+                            strBuilderLastNewsContent.push('</div>');
+                        strBuilderLastNewsContent.push('</div>');
+                    // strBuilderLastNewsContent.push('<div class="card-footer tournament-matches-footer">Ver más...</div>');
                 strBuilderLastNewsContent.push('</div>');
-
+                // <-------------- Content
+            strBuilderLastNewsContent.push('</div>');
 
             } else if (item.tipoObjeto == "torneo-tabla-posicion") {
                 console.log(item);
@@ -971,19 +1015,25 @@ function builderNewsHomeDetails() {
                     console.log(encuentroFecha);
                     if (encuentroFecha < 3) {
                         strBuilderLastNewsContent.push('<div class="row row-tournament-matches">');
-                        strBuilderLastNewsContent.push('<div class="col-30">' + match.local.nombre + '</div>');
-                        if (match.local.imagenPrincipalMin != "") {
-                            strBuilderLastNewsContent.push('<div class="col-10"><img data-src="' + match.local.imagenPrincipalMin + '" class="lazy lazy-fadeIn img-shield-team"></div>');
-                        } else {
-                            strBuilderLastNewsContent.push('<div class="col-10"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-team"></div>');
-                        }
+                        strBuilderLastNewsContent.push('<div class="col-40">');
+                            if (match.local.imagenPrincipalMin != "") {
+                                strBuilderLastNewsContent.push('<div style="text-align: center;"><img data-src="' + match.local.imagenPrincipalMin + '" class="lazy lazy-fadeIn img-shield-team"></div>');
+                            } else {
+                                strBuilderLastNewsContent.push('<div style="text-align: center;"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-team"></div>');
+                            }
+                            strBuilderLastNewsContent.push('<div style="text-align: center;font-family: Montserrat-Regular;font-size: 12px;color: #585858;margin-top: 5px">' + match.local.nombreCorto + '</div>');
+                        strBuilderLastNewsContent.push('</div>');
+
                         if (match.local.tantos != null || match.visit.tantos != null) {
                             strBuilderLastNewsContent.push('<div class="col-20 match-scorer">' + match.local.tantos + ' - ' + match.visitante.tantos + '</div>');
                         } else {
                             strBuilderLastNewsContent.push('<div class="col-20 match-scorer">' + match.getFechaOcurrencia.fecha + '</div>');
                         }
-                        strBuilderLastNewsContent.push('<div class="col-10"><img data-src="' + match.visitante.imagenPrincipalMin + '" class="lazy lazy-fadeIn img-shield-team"></div>');
-                        strBuilderLastNewsContent.push('<div class="col-30">' + match.visitante.nombre + '</div></div>');
+
+                        strBuilderLastNewsContent.push('<div class="col-40">');
+                            strBuilderLastNewsContent.push('<div style="text-align: center;"><img data-src="' + match.visitante.imagenPrincipalMin + '" class="lazy lazy-fadeIn img-shield-team"></div>');
+                            strBuilderLastNewsContent.push('<div style="text-align: center;font-family: Montserrat-Regular;font-size: 12px;color: #585858;margin-top: 5px">' + match.visitante.nombreCorto + '</div></div>');
+                        strBuilderLastNewsContent.push('</div>');
                     }
                 });
                 strBuilderLastNewsContent.push('</div></div>');
@@ -1142,10 +1192,8 @@ function builderDayEvents(eventDay) {
                 $('#calendarEventsView').html("");
                 //poner aca el builder que esta mas abajo para construir
                 strBuilderCalendarContent.push('<div class="timeline-item">');
-                // strBuilderCalendarContent.push('<div class="timeline-item-date">'+dateTimeLineEventsSplitedFormat(item.fechaOcurrencia.fecha, 0)+' <small>'+dateTimeLineEventsSplitedFormat(item.fecha.fecha, 1)+'</small></div>');
-                // strBuilderCalendarContent.push('<div class="timeline-item-divider"></div>');
-                //strBuilderCalendarContent.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
                 strBuilderCalendarContent.push('<div class="timeline-item-content card" id="cardHomeTimeLine">');
+                strBuilderCalendarContent.push('<div style="display:flex;padding-top: 10px;"><div style="flex:1;padding: 10px; margin-left: 10px;"><i class="icon icon-date-event"></i><span style="margin-left: 10px;color: #585858;">' + item.fecha.fecha + '</span></div><div style="flex:1;"><div style="margin-left: 30%;padding:10px;background-color: #F6F6F6;border-radius: 30px 0 0 30px;"><i class="icon icon-hour-event"></i><span style="margin-left: 10px;color: #585858;">' + item.hora.hora + '</span></div></div></div>');
                 strBuilderCalendarContent.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1(' + item.id + ', \'' + sucesoDetailFromCalendar + '\')">');
                 strBuilderCalendarContent.push('<div class="card card-event-home">');
                 strBuilderCalendarContent.push('<div class="card-event-home-content">');
@@ -1155,19 +1203,12 @@ function builderDayEvents(eventDay) {
                 strBuilderCalendarContent.push('<div class="col-100">');
                 strBuilderCalendarContent.push('<img src="' + item.imagenPrincipalMin + '" alt="' + item.titulo + '" class="imgCardEvent"/>');
                 strBuilderCalendarContent.push('</div>');
-                // strBuilderCalendarContent.push('<div class="col-100">');
-                // strBuilderCalendarContent.push('<table class="table-events-page">');
-                // strBuilderCalendarContent.push('<tr><td><i class="icon icon-date-event"></i></td><td><span>' + item.fecha.fecha + '</span></td></tr>');
-                // strBuilderCalendarContent.push('<tr><td><i class="icon icon-hour-event"></i></td><td><span>' + item.hora.hora + '</span></td></tr>');
-                // strBuilderCalendarContent.push('</table>');
-                // strBuilderCalendarContent.push('</div>');
                 strBuilderCalendarContent.push('</div>');
                 strBuilderCalendarContent.push('</div>');
                 strBuilderCalendarContent.push('</div>');
                 strBuilderCalendarContent.push('</div>');
                 strBuilderCalendarContent.push('<div class="card-header-home custom-calendar-event-card">' + item.titulo + '</div>');
                 strBuilderCalendarContent.push('<div style="font-family:Montserrat-Light;color:#919191;text-overflow: ellipsis;height: 4em;overflow: hidden;padding:0 20px;-webkit-line-clamp:3;display:-webkit-box;-webkit-box-orient:vertical;margin-bottom: 10px;">' + item.detalleTxt + '</div>');
-                strBuilderCalendarContent.push('<div style="display:flex;"><div style="flex:1;padding: 10px; margin-left: 10px;"><i class="icon icon-date-event"></i><span style="margin-left: 10px;color: #585858;">' + item.fecha.fecha + '</span></div><div style="flex:1;"><div style="margin-left: 30%;padding:10px;background-color: #F6F6F6;border-radius: 30px 0 0 30px;"><i class="icon icon-hour-event"></i><span style="margin-left: 10px;color: #585858;">' + item.hora.hora + '</span></div></div></div>');
                 strBuilderCalendarContent.push('</div>');
                 strBuilderCalendarContent.push('</div>');
                 strBuilderCalendarContent.push('</a>');
@@ -1314,6 +1355,7 @@ function builderTimeLineEventsHome() {
             strBuilderTimeLineContent.push('<div class="card card-event-home">');
             strBuilderTimeLineContent.push('<div class="timeline-item-content card" id="cardHomeTimeLine">');
             //strBuilderTimeLineContent.push('<div class="card card-event-home">');
+            strBuilderTimeLineContent.push('<div style="display:flex;padding-top: 10px;"><div style="flex:1;padding: 10px; margin-left: 10px;"><i class="icon icon-date-event"></i><span style="margin-left: 10px;color: #585858;">' + item.fecha.fecha + '</span></div><div style="flex:1;"><div style="margin-left: 30%;padding:10px;background-color: #F6F6F6;border-radius: 30px 0 0 30px;"><i class="icon icon-hour-event"></i><span style="margin-left: 10px;color: #585858;">' + item.hora.hora + '</span></div></div></div>');
             strBuilderTimeLineContent.push('<div class="card-event-home-content">');
             strBuilderTimeLineContent.push('<div class="card-content card-content-event">');
             strBuilderTimeLineContent.push('<div class="content-block">');
@@ -1333,7 +1375,6 @@ function builderTimeLineEventsHome() {
             strBuilderTimeLineContent.push('</div>');
             strBuilderTimeLineContent.push('<div class="card-header-home custom-calendar-event-card">' + item.titulo + '</div>');
             strBuilderTimeLineContent.push('<div style="font-family:Montserrat-Light;color:#919191;text-overflow: ellipsis;height: 4em;overflow: hidden;padding:0 20px;-webkit-line-clamp:3;display:-webkit-box;-webkit-box-orient:vertical;margin-bottom: 10px;">' + item.detalleTxt + '</div>');
-            strBuilderTimeLineContent.push('<div style="display:flex;"><div style="flex:1;padding: 10px; margin-left: 10px;"><i class="icon icon-date-event"></i><span style="margin-left: 10px;color: #585858;">' + item.fecha.fecha + '</span></div><div style="flex:1;"><div style="margin-left: 30%;padding:10px;background-color: #F6F6F6;border-radius: 30px 0 0 30px;"><i class="icon icon-hour-event"></i><span style="margin-left: 10px;color: #585858;">' + item.hora.hora + '</span></div></div></div>');
             strBuilderTimeLineContent.push('</div>');
             strBuilderTimeLineContent.push('</div>');
             strBuilderTimeLineContent.push('</a>');

@@ -187,14 +187,14 @@
     text-align: center;
     /* width: 100%; */
     /*border-bottom: thin solid white;*/
-    margin: 0 20px;
+    margin: 0 10px;
     background-color: white;
     font-family: "Montserrat-Regular";
     font-size: 18px;
 }
 
 #lastNewsHeader {
-    background: white;
+    /* background: white; */
     /* padding: 1px 1px 1px 1px; */
     min-height: initial !important;
     padding: 0px !important;
@@ -285,6 +285,7 @@
 .chipHomeDate {
     float: left;
     width: 45%;
+    margin-left: 10px;
 }
 
 .chipHomeTags {
@@ -292,7 +293,7 @@
 }
 
 .chipHomeTags {
-    margin-right: 15px;
+    margin-right: 10px;
     width: 48%;
 }
 
@@ -304,6 +305,10 @@
 .chipHomeDateLabel {
     margin-left: auto;
     margin-right: auto;
+}
+
+.chipHomeDateLabel a, .chipHomeCategoryLabel a {
+    color: white !important;
 }
 
 .cardNewsImageContainer {
@@ -471,13 +476,15 @@
 
 .card .tournament-matches {
     /* border: 11px solid #e6e6e6; */
-    box-shadow: 0 0px 8px #efefef !important;
+    box-shadow: 0 0 8px #d8d8d8 !important;
     border-radius: 4px !important;
 }
 
 #page-home #cardLastestNewsHome #tournament-matches-header {
     background-color: white;
     display: block;
+    min-height: 0 !important;
+    padding: 10px 10px 10px 20px !important;
 }
 
 .card .tournament-matches-icon {
@@ -494,14 +501,20 @@
     text-align: left;
     margin-left: 44px;
     font-size: 14px;
-    font-weight: 500;
+    /* font-weight: 500; */
+    font-family: "Montserrat-Regular";
+    font-size: 16px;
+    color: #585858;
 }
 
 .card .tournament-matches-division {
     margin-left: 44px;
-    font-size: 13px;
+    /* font-size: 13px; */
     color: #8e8e93;
     text-align: left;
+    font-family: "Montserrat-Light";
+    font-size: 11px;
+    color: #919191;
 }
 
 .card .tournament-matches-matchday {
@@ -518,7 +531,11 @@
 .tournament-matches-content .row-tournament-matches {
     margin-top: 13px;
     margin-bottom: 13px;
-    font-size: 13px;
+    /* font-size: 12px; */
+    align-items: center;
+    padding: 0 15px;
+    /* font-family: "Montserrat-Regular";
+    color: #585858; */
 }
 
 .tournament-matches-content .card-content-inner {
@@ -527,7 +544,10 @@
 
 .card-content .tournament-matches-content .match-scorer {
     text-align: center;
-    background-color: #e6e6e6;
+    font-family: "Montserrat-Medium";
+    font-size: 20px;
+    color: #585858;
+    /* background-color: #e6e6e6; */
 }
 
 .tournament-matches-footer::before {
@@ -547,20 +567,28 @@
 }
 
 .card-content .img-shield-team {
-    height: 20px;
-    width: 20px;
+    height: 35px;
+    width: 35px;
 }
 
 /*suceso tabla de posiciones de fecha*/
 
 .tournament-father {
-    background-color: #F6F6F6;
+    background-color: #dadada;
     color: #585858;
     font-size: 14px;
     /* margin-bottom: 5px; */
     padding: 15px 0;
     font-family: "Montserrat-Semibold";
 
+}
+
+.tournament-father-numbers {
+    text-align: center;
+}
+
+.tournament-child-numbers {
+    text-align: center;
 }
 
 .tournament-child {
@@ -605,7 +633,7 @@
 .demo-card-header-pic {
     border-radius: 15px 15px 0 0;
     margin: 20px 10px !important;
-    box-shadow: 0 0 14px #ececec !important;
+    box-shadow: 0 0 8px #d8d8d8 !important;
 }
 
 /*termine suceso posiciones de fecha*/
@@ -618,7 +646,7 @@
 
 .chipHomeCategory {
     width: 45%;
-    position: absolute;
+    /* position: absolute; */
     bottom: 100px;
     left: 10px;
 }
@@ -634,24 +662,32 @@
 /* suceso ultimo partido/partido en vivo */
 
 .match-scorer-lastmatch {
-    background-color: #108342;
+    background-color: #00A706;
     color: white;
     font-weight: 800;
-    border-radius: 5px;
-    font-size: 15px;
+    border-radius: 100px;
     padding: 5px;
     text-align: center;
-}
-
-.team-lastmatch-left {
+    box-shadow: 2px 2px 10px #bbb;
+    font-family: "Montserrat-Medium";
     font-size: 15px;
-    text-align: left;
 }
 
-.team-lastmatch-right {
+.team-lastmatch-left, .team-lastmatch-right {
+    font-size: 12px;
+    text-align: center;
+    font-family: "Montserrat-Regular";
+    color: #585858;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+}
+
+/* .team-lastmatch-right {
     font-size: 15px;
     text-align: right;
-}
+} */
 
 .card-content .img-shield-lastmatch-fixtures {
     height: 55px;
@@ -667,4 +703,8 @@
     margin-left: auto;
     margin-right: auto;
     width: 35px;
+}
+
+#last-news-list-block .item-link {
+    min-height: 0 !important;
 }
