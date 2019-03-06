@@ -81,7 +81,7 @@ $(document).ready(function () {
     $('#lblHeaderMilestones').text(lblHeaderMilestones);
     $('#lblHeaderMilestoneDetails').text(lblHeaderMilestoneDetails);
     $('#lblHeaderNewDetails').text(lblHeaderNewDetails);
-    $('#lblHeaderActivityDetails').text(lblHeaderActivityDetails);
+    // $('#lblHeaderActivityDetails').text(lblHeaderActivityDetails);
     $('#lblHeaderSportDetails').text(lblHeaderSportDetails);
     $('#lblHeaderManagers').text(lblHeaderManagers);
     $('#lblHeaderContact').text(lblHeaderContact);
@@ -1080,7 +1080,7 @@ function builderHomeDetails2() {
     var strBuilderTab2Content = [];
     //$('#tabHomeDetails2').html('');
     var events = [];
-    console.log(homeDetails2List.calendario);
+    // console.log(homeDetails2List.calendario);
     console.log(newsListHome)
     for (var k in homeDetails2List.calendario) {
         //console.log(newsListHome[k].fecha.fecha);

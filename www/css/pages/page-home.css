@@ -253,7 +253,10 @@
 }*/
 
 #timeLineView .timeline-item {
-    padding: 5px !important;
+    /* padding: 5px !important; */
+    padding: 0 !important;
+    margin: 2px 0 15px;
+    box-shadow: 0 0 14px #ececec !important;
 }
 
 #timeLineView .card {

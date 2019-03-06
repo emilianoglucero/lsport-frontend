@@ -3,7 +3,8 @@
 }
 
 #pNameEventDetails {
-    color: #000;
+	font-family: "Montserrat-Semibold";
+    color: #585858;
     font-size: 16px;
     font-weight: bold;
 }
@@ -27,7 +28,7 @@
 }
 
 .table-eventdetails-page tr{
-	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+	box-shadow: 0 0px 16px #f1f1f1;
 	background: #FFF none repeat scroll 0% 0%;
 }
 
@@ -38,7 +39,7 @@
 
 #placeEventDetails{
 	width: 100%;
-	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+	box-shadow: 0 0px 16px #f1f1f1;
 	background: #FFF none repeat scroll 0% 0%;
 	color: #000000;
 	padding: 5px 0px 5px 0px;
@@ -48,6 +49,8 @@
 #placeEventDetails #placeTextEventDetails{
 	padding-left: 5px;
 	padding-right: 5px;
+	color: #585858;
+	font-family: "Montserrat-Regular";
 }
 
 
@@ -57,11 +60,17 @@
 }
 
 #descriptionEventDetailsShort{
-	color: #000;
-    text-align: justify;
+	text-align: justify;
+	font-family: "Montserrat-Regular";
+	color: #919191;
 }
 
 #descriptionEventDetailsLong{
-	color: #000;
+	font-family: "Montserrat-Regular";
+	color: #919191;
     text-align: justify;
+}
+
+#divContentPhotoGalleryEvent .content-block-title {
+	font-family: "Montserrat-Regular";
 }

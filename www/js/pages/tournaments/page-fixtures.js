@@ -141,13 +141,14 @@ function builderFixturesDetails(fixturesList) {
                 strBuilderListCards.push('<div class="row" id="row-lastmatch-tournament">');
                 strBuilderListCards.push('<div class="col-33 col-lastmatch-tournament">');
 
-                strBuilderListCards.push('<div class="col-lastmatch-tournament-team">' + match.local.nombre + '</div>');
                 if (match.local.imagenPrincipalMin != "") {
                     strBuilderListCards.push('<div class="col-lastmatch-tournament-shield"><img data-src="' + match.local.imagenPrincipalMin + '" class="lazy lazy-fadeIn img-shield-lastmatch-fixtures" /></div>');
                 }
                 else {
                     strBuilderListCards.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch-fixtures" /></div>');
                 }
+                strBuilderListCards.push('<div class="col-lastmatch-tournament-team">' + match.local.nombreCorto + '</div>');
+
                 strBuilderListCards.push('</div>');
                 strBuilderListCards.push('<div class="col-33 col-lastmatch-tournament col-lastmatch-tournament.middle">');
                 strBuilderListCards.push('<div class="col-lastmatch-tournament-date"><p>18/10/18</p></div>');
@@ -175,13 +176,15 @@ function builderFixturesDetails(fixturesList) {
 
                 strBuilderListCards.push('</div>');
                 strBuilderListCards.push('<div class="col-33 col-lastmatch-tournament">');
-                strBuilderListCards.push('<div class="col-lastmatch-tournament-team">' + match.visitante.nombre + '</div>');
+
                 if (match.visitante.imagenPrincipalMin != "") {
                     strBuilderListCards.push('<div class="col-lastmatch-tournament-shield"><img data-src="' + match.visitante.imagenPrincipalMin + '" class="lazy lazy-fadeIn img-shield-lastmatch-fixtures" /></div>');
                 }
                 else {
                     strBuilderListCards.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch-fixtures" /></div>');
                 }
+                strBuilderListCards.push('<div class="col-lastmatch-tournament-team">' + match.visitante.nombreCorto + '</div>');
+                
                 //strBuilderListCards.push('</div>');
                 strBuilderListCards.push('</div>');
                 strBuilderListCards.push('</div>');
@@ -254,13 +257,14 @@ function builderFixturesDetailsFromSelect(idDate) {
         strBuilderListCards.push('<div class="row" id="row-lastmatch-tournament">');
         strBuilderListCards.push('<div class="col-33 col-lastmatch-tournament">');
 
-        strBuilderListCards.push('<div class="col-lastmatch-tournament-team">' + match.local.nombre + '</div>');
         if (match.local.imagenPrincipalMin != "") {
             strBuilderListCards.push('<div class="col-lastmatch-tournament-shield"><img data-src="' + match.local.imagenPrincipalMin + '" class="lazy lazy-fadeIn img-shield-lastmatch-fixtures" /></div>');
         }
         else {
             strBuilderListCards.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch-fixtures" /></div>');
         }
+        strBuilderListCards.push('<div class="col-lastmatch-tournament-team">' + match.local.nombreCorto + '</div>');
+        
         strBuilderListCards.push('</div>');
         strBuilderListCards.push('<div class="col-33 col-lastmatch-tournament col-lastmatch-tournament.middle">');
         strBuilderListCards.push('<div class="col-lastmatch-tournament-date"><p>18/10/18</p></div>');
@@ -288,13 +292,15 @@ function builderFixturesDetailsFromSelect(idDate) {
 
         strBuilderListCards.push('</div>');
         strBuilderListCards.push('<div class="col-33 col-lastmatch-tournament">');
-        strBuilderListCards.push('<div class="col-lastmatch-tournament-team">' + match.visitante.nombre + '</div>');
+
         if (match.visitante.imagenPrincipalMin != "") {
             strBuilderListCards.push('<div class="col-lastmatch-tournament-shield"><img data-src="' + match.visitante.imagenPrincipalMin + '" class="lazy lazy-fadeIn img-shield-lastmatch-fixtures" /></div>');
         }
         else {
             strBuilderListCards.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch-fixtures" /></div>');
         }
+        strBuilderListCards.push('<div class="col-lastmatch-tournament-team">' + match.visitante.nombreCorto + '</div>');
+        
         //strBuilderListCards.push('</div>');
         strBuilderListCards.push('</div>');
         strBuilderListCards.push('</div>');

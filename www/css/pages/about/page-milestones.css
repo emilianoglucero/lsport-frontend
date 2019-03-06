@@ -7,7 +7,8 @@
 }
 
 .card-milestones .card-content{
-	box-shadow: 0 2px 4px rgba(0,0,0,.4) !important;
+	box-shadow: 0 0 10px #c1c1c1 !important;
+	border-radius: 6px;
 }
 
 .imgCardMilestone {

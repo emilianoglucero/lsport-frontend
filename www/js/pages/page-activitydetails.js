@@ -362,7 +362,6 @@ function builderNewsActivityDetails() {
 			if (item.tipoObjeto == "noticia") {
 
 				strBuilderNewsActivityDetailsContent.push('<div class="card demo-card-header-pic"><div style="background-image:url(' + item.imagenPrincipalMin + '); height:150px;" valign="bottom" class="card-header color-white no-border">');
-				strBuilderNewsActivityDetailsContent.push('<a onclick="loadNewDetails(' + item.id + ',\'' + sucesoDetailFromSports + '\')" href="#" class="item-link item-content">');
 				strBuilderNewsActivityDetailsContent.push('<div class="chipHomeContainer">');
 				//strBuilderNewsActivityDetailsContent.push('<a onclick="loadNewDetails('+item.id+')" href="#" class="item-link item-content">');
 				//strBuilderNewsActivityDetailsContent.push('<div class="chip chipHomeDate"><div class="media"><i class="icon icon-date-home"></i></div><div class="chip-label chipHomeDateLabel">'+formatDateSucesos(item.fecha.fecha)+'</div></div>');
@@ -370,7 +369,9 @@ function builderNewsActivityDetails() {
 					strBuilderNewsSportDetailsContent.push('<div class="chip chipHomeCategory"><div class="media"><i style="background-image: url(' + item.datosPublicacion.ente.imagenPrincipalMin + ');" class="icon icon-chiptag-categoria"></i></div><div class="chip-label chipHomeCategoryLabel">' + item.datosPublicacion.ente.nombre + '</div></div>');
 				}
 				strBuilderNewsActivityDetailsContent.push('<div class="chip chipHomeTags"><div class="media"><i class="icon icon-home-tiposuceso"></i></div><div class="chip-label chipHomeCategoryLabel">' + item.tags.categoria + '</div></div>');
-				strBuilderNewsActivityDetailsContent.push('</div></div>');
+				strBuilderNewsActivityDetailsContent.push('</div>');
+				strBuilderNewsActivityDetailsContent.push('<a onclick="loadNewDetails(' + item.id + ',\'' + sucesoDetailFromSports + '\')" href="#" class="item-link item-content">');
+				strBuilderNewsActivityDetailsContent.push('</div>');
 				strBuilderNewsActivityDetailsContent.push('<div class="card-content news-content">');
 
 				strBuilderNewsActivityDetailsContent.push('<div class="card-content-inner">');
@@ -649,7 +650,7 @@ function builderScheduleActivityDetails(schedule) {
 		strBuilderScheduleContent.push('');
 	} else {
 		strBuilderScheduleContent.push('<div class="card">');
-		strBuilderScheduleContent.push('<div class="card-header card-header-center">' + lblSchedule + '</div>');
+		strBuilderScheduleContent.push('<div class="card-header">' + lblSchedule + '</div>');
 		strBuilderScheduleContent.push('<div class="card-content">');
 		strBuilderScheduleContent.push('<div class="card-content-inner">');
 		strBuilderScheduleContent.push('<div class="list-block general-information">');

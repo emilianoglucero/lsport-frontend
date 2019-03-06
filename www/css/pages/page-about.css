@@ -14,4 +14,9 @@
 /*ADDED*/
 #page-about {
     background-image: url(../../img/club/background-about.png);
+    background: #FCFCFC;
+}
+
+#page-about .item-inner {
+    background-image: url(../../img/club/icon-left-arrow.png);
 }

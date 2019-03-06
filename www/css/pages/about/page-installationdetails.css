@@ -53,9 +53,9 @@
 }
 
 #pNameInstallationDetails {
-    color: #000;
-    font-size: 16px;
-    font-weight: bold;
+    color: #585858;
+    font-size: 18px;
+    font-family: "Montserrat-Semibold";
 }
 
 #containerImgHeaderInstallationDetail{
@@ -68,8 +68,10 @@
 }
 
 #descriptionInstallationDetails{
-	 color: #000;
+	color: #919191;
     text-align: justify;
+    font-family: Montserrat-Regular;
+    font-size: 14px;
 }
 
 /* ############################################ Media Queries ######################################## */

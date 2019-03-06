@@ -99,10 +99,12 @@
 }
 
 .check_title {
-    font-size: 18px;
+    font-size: 16px;
     vertical-align: top;
     display: inline-block;
     margin-left: 5px;
+    font-family: "Montserrat-Regular";
+    color: #919191;
 }
 
 .check_title div {
@@ -177,6 +179,7 @@
 
 .custom_check .fa {
     display:none;
+    color: #585858;
 }
 [data-enabled="0"] .check_container {
     display: none;

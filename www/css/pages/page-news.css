@@ -11,7 +11,8 @@
 }
 
 .card-news .card-content{
-	box-shadow: 0 2px 4px rgba(0,0,0,.4) !important;
+    box-shadow: 0 0 10px #c1c1c1 !important;
+    border-radius: 6px;
 }
 
 .imgCardNew {
@@ -45,7 +46,7 @@
 	font-size: 13px;
     position: relative;
     overflow: hidden;
-    height: 50px;
+    height: 46px;
     text-overflow: ellipsis;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;

@@ -164,6 +164,8 @@
 	overflow: hidden;
 	font-size: 15px;
 	font-weight: 700;
+	font-family: "Montserrat-Regular";
+	color: #585858;
 }
 
 #row-lastmatch-tournament .col-lastmatch-tournament .col-lastmatch-tournament-result {
@@ -226,8 +228,8 @@
 
 .tabs-sportdetails-header > div:nth-child(2) {
 	background-color: white;
-    margin: 0 10px;
-    padding: 15px 15px 10px 15px;
+    /* margin: 0 10px; */
+    padding: 15px 15px 20px 15px;
     border-radius: 20px 20px 0 0;
 }
 
@@ -314,4 +316,40 @@
 
 .custom-sportdetails-price-card-inner .list-block {
 	margin: 0 !important;
+}
+
+#page-sportdetails #tabSportDetails2 #contentTabSportDetails2 .card-header {
+	padding: 0;
+}
+
+#page-sportdetails #tabSportDetails2 #contentTabSportDetails2 .card-header a {
+	width: 100%;
+}
+
+#page-sportdetails #tabSportDetails2 #contentTabSportDetails2 .card-header a .chipHomeContainer {
+	text-align: center;
+}
+
+#page-sportdetails #tabSportDetails2 #contentTabSportDetails2 .card-header a .chipHomeContainer .chipHomeCategory {
+	margin-left: 10px;
+}
+
+/* #page-sportdetails #tabSportDetails2 #contentTabSportDetails2 .card-content .card-content-inner a {
+	font-family: "Montserrat-Regular";
+	color: #585858;
+} */
+
+#page-sportdetails #tabSportDetails2 #contentTabSportDetails2 .card-content .card-content-inner > div:first-child a {
+	font-family: "Montserrat-Regular";
+	color: #919191;
+}
+
+#page-sportdetails #tabSportDetails2 #contentTabSportDetails2 .card-content .card-content-inner > div:nth-child(2) a {
+	font-family: "Montserrat-Regular";
+	color: #585858;
+}
+
+#page-sportdetails #tabSportDetails2 #contentTabSportDetails2 .card-footer a {
+	font-family: "Montserrat-Regular";
+	color: #919191;
 }

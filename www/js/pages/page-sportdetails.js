@@ -853,8 +853,14 @@ function builderNewsSportDetails() {
 			if (item.tipoObjeto == "noticia") {
 				var noticiaTruncada = truncateNoticia(item.detalleTxt);
 
-				strBuilderNewsSportDetailsContent.push('<div class="card demo-card-header-pic"><div style="background-image:url(' + item.imagenPrincipalMin + '); height:150px;" valign="bottom" class="card-header color-white no-border">');
+				strBuilderNewsSportDetailsContent.push('<div class="card demo-card-header-pic">');
+				strBuilderNewsSportDetailsContent.push('<div style="height: 250px;overflow: hidden;position: relative;">');
+				strBuilderNewsSportDetailsContent.push('<img style="width: 100%;top: 50%;position: absolute;left: 50%;transform: translate(-50%, -50%);" src="' + item.imagenPrincipalMin + '" />');
+				strBuilderNewsSportDetailsContent.push('</div>');
+				strBuilderNewsSportDetailsContent.push('<div class="card-header color-white no-border">');
 				strBuilderNewsSportDetailsContent.push('<a onclick="loadNewDetails(' + item.id + ',\'' + sucesoDetailFromSports + '\')" href="#" class="item-link item-content">');
+				// **************** ChipHomeContainer ****************** //
+
 				strBuilderNewsSportDetailsContent.push('<div class="chipHomeContainer">');
 				//strBuilderNewsSportDetailsContent.push('<a onclick="loadNewDetails('+item.id+')" href="#" class="item-link item-content">');
 				//strBuilderNewsSportDetailsContent.push('<div class="chip chipHomeDate"><div class="media"><i class="icon icon-date-home"></i></div><div class="chip-label chipHomeDateLabel">'+formatDateSucesos(item.fecha.fecha)+'</div></div>');
@@ -862,9 +868,20 @@ function builderNewsSportDetails() {
 					strBuilderNewsSportDetailsContent.push('<div class="chip chipHomeCategory"><div class="media"><i style="background-image: url(' + item.datosPublicacion.ente.imagenPrincipalMin + ');" class="icon icon-chiptag-categoria"></i></div><div class="chip-label chipHomeCategoryLabel">' + item.datosPublicacion.ente.nombre + '</div></div>');
 				}
 				//strBuilderNewsSportDetailsContent.push('<div class="chip chipHomeTags"><div class="media"><i class="icon icon-home-tiposuceso"></i></div><div class="chip-label chipHomeCategoryLabel">'+item.tags.categoria+'</div></div>');
-				strBuilderNewsSportDetailsContent.push('<div class="chip chipHomeTags"><div class="media"><i style="background-image: url(' + item.tags.icono + ');" class="icon icon-chiptag-categoria"></i></div><div class="chip-label chipHomeCategoryLabel">' + item.tags.categoria + '</div></div>');
+
+				// ***************** ChipHomeTags ******************** //
+
+				strBuilderNewsSportDetailsContent.push('<div class="chip chipHomeTags">');
+					strBuilderNewsSportDetailsContent.push('<div class="media">');
+						strBuilderNewsSportDetailsContent.push('<i style="background-image: url(' + item.tags.icono + ');" class="icon icon-chiptag-categoria"></i>');
+					strBuilderNewsSportDetailsContent.push('</div>');
+					strBuilderNewsSportDetailsContent.push('<div class="chip-label chipHomeCategoryLabel">' + item.tags.categoria + '</div>');
+				strBuilderNewsSportDetailsContent.push('</div>');
+
 				strBuilderNewsSportDetailsContent.push('<i style="background-image: url(' + item.tags.icono + ');" class="icon icon-chiptag-categoria"></i>');
-				strBuilderNewsSportDetailsContent.push('</div></div>');
+
+				strBuilderNewsSportDetailsContent.push('</div>');
+				strBuilderNewsSportDetailsContent.push('</div>');
 				strBuilderNewsSportDetailsContent.push('<div class="card-content news-content">');
 
 				strBuilderNewsSportDetailsContent.push('<div class="card-content-inner">');
@@ -928,7 +945,11 @@ function builderNewsSportDetails() {
 
 
 			} else if (item.tipoObjeto == "evento") {
-				strBuilderNewsSportDetailsContent.push('<div class="card demo-card-header-pic"><div style="background-image:url(' + item.imagenPrincipalMin + '); height:150px;" valign="bottom" class="card-header color-white no-border">');
+				strBuilderNewsSportDetailsContent.push('<div class="card demo-card-header-pic">');
+				strBuilderNewsSportDetailsContent.push('<div style="height: 250px;overflow: hidden;position: relative;">');
+				strBuilderNewsSportDetailsContent.push('<img style="width: 100%;top: 50%;position: absolute;left: 50%;transform: translate(-50%, -50%);" src="' + item.imagenPrincipalMin + '" />');
+				strBuilderNewsSportDetailsContent.push('</div>');
+				strBuilderNewsSportDetailsContent.push('<div class="card-header color-white no-border">');
 				strBuilderNewsSportDetailsContent.push('<a onclick="loadEventDetails1(' + item.id + ',\'' + sucesoDetailFromSports + '\')" href="#" class="item-link item-content">');
 				strBuilderNewsSportDetailsContent.push('<div class="chipHomeContainer">');
 				//strBuilderNewsSportDetailsContent.push('<a onclick="loadNewDetails('+item.id+')" href="#" class="item-link item-content">');

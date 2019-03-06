@@ -20,17 +20,25 @@
 
 .photo-browser .navbar 
 {
-    background: #108342 none repeat scroll 0 0;
+    background: #00A706 none repeat scroll 0 0;
 }
 
 .modal-title
 {
-	color: #108342;
+    color: #00A706;
+    font-family: "Montserrat-Regular";
+}
+
+.modal-text {
+    font-family: "Montserrat-Regular";
+    font-size: 14px;
+    color: #585858;
 }
 
 .modal-button
 {
-	color: #108342;
+    color: #00A706;
+    font-family: "Montserrat-Regular";
 }
 
 .popover-inner ul li a .row
@@ -128,7 +136,9 @@
 
 #page-news ul li a .item-title.item-title-new
 {
-	color: #108342;
+	font-family: "Montserrat-Light";
+    color: #00A706;
+    font-size: 14px;
 }
 
 
@@ -152,9 +162,21 @@
 /* ************************ Page: #page-newdetails ****************** */
 /* ****************************************************************** */
 
-#page-newdetails #titleNewDetails
+#page-newdetails #titleNewDetails, #page-newdetails #divContentPhotoGalleryNewDetails > .lblPhotoGallery
 {
-	color: #108342;
+    color: #00A706;
+    font-family: "Montserrat-Semibold";
+}
+
+#page-newdetails #shortContentNewDetails {
+    font-family: "Montserrat-Regular";
+    font-style: normal !important;
+    color: #585858;
+}
+
+#page-newdetails #dateNewDetails, #page-newdetails #contentNewDetails {
+    font-family: "Montserrat-Light";
+    color: #919191;
 }
 
 
@@ -265,40 +287,56 @@
 
 #page-activities #activities-list .card-activity-content .card-header.card-header-title
 {
-	color: #108342;
+    color: #00A706;
+    font-family: "Montserrat-Light";
+    font-size: 16px;
+}
+
+#page-activities #activities-list .card-activity-content .card-content-inner p {
+    font-family: "Montserrat-Light";
+    font-size: 15px;
+    color: #585858;
 }
 
 #page-activities #activities-list  .card-header::after 
 {
-    background-color: black;
-    border: 1px solid black;
+    background-color: #F6F6F6 !important;
 }
 
 /* *********************************************************************** */
 /* ************************ Page: #page-activitydetails ****************** */
 /* *********************************************************************** */
 
+#subnavbarActivityDetails {
+    padding: 0px;
+}
+
 #subnavbarActivityDetails.subnavbar
 {
-    background: #108342; none repeat scroll 0 0;
+    background: #00A706 none repeat scroll 0 0;
+    height: 106px;
 }
 
 #subnavbarActivityDetails .buttons-row a.button.active:not(.button-fill) 
 {
+    line-height: 44px !important;
+    height: 100%;
     color: white;
-    background-color: #108342;
+    background-color: #00A706;
 }
 
 #subnavbarActivityDetails .buttons-row .button {
     border-radius: 0;
+    height: 100%;
+    line-height: 44px !important;
 }
 
 #subnavbarActivityDetails .buttons-row .button:not(.button-fill),
 #subnavbarActivityDetails .buttons-row .buttons-row .button,
 #subnavbarActivityDetails .buttons-row .button:not(.button-fill)
 {
-    border-color: black !important;
-    background-color: black;
+    background-color: #F6F6F6;
+    color: #585858;
 }
 
 #page-activitydetails .tabs ul li a div.item-subtitle,
@@ -325,6 +363,27 @@ i.icon.theme-lenguajesport
 #tabs-activitydetails .card-header::after 
 {
     /*background-color: #FFFFFF;*/
+}
+
+#subnavbarActivityDetails1 {
+    border-radius: 20px 0 0 20px !important;
+}
+
+#subnavbarActivityDetails2 {
+    border-radius: 0 20px 20px 0 !important;
+}
+
+#subnavbarActivityDetails1, #subnavbarActivityDetails2 {
+    border: none;
+}
+
+#page-activitydetails #tabActivityDetails1, #page-activitydetails #tabActivityDetails2 {
+    padding: 0;
+    margin-top: 149px;
+}
+
+#page-activitydetails #tabActivityDetails2 #contentTabActivityDetails2 .demo-card-header-pic {
+    box-shadow: 0 0px 16px #f1f1f1 !important;
 }
 
 /* *********************************************************************** */
@@ -381,8 +440,8 @@ i.icon.theme-lenguajesport
 
 #page-eventdetails .table-eventdetails-page tr td
 {
-	background-color: black;
-	color: white;
+	background-color: white;
+	color: #585858;
 }
 
 
@@ -392,7 +451,7 @@ i.icon.theme-lenguajesport
 
 #page-about .list-block ul
 {
-	background-color: #108342;
+	background-color: #00A706;
 }
 
 #page-about .list-block ul li
@@ -407,7 +466,7 @@ i.icon.theme-lenguajesport
 
 #page-about .list-block .item-inner::after 
 {
-    background-color: black;
+    background-color: white;
 }
 
 /* *********************************************************************** */
@@ -416,7 +475,9 @@ i.icon.theme-lenguajesport
 
 #page-installations #installations-list .card.card-installations .card-content .item-title
 {
-	color: #108342;
+    font-family: "Montserrat-Light";
+    color: #00A706;
+    font-size: 16px;
 }
 
 /* *********************************************************************** */
@@ -426,7 +487,9 @@ i.icon.theme-lenguajesport
 #page-installationdetails .content-block-title.content-block-title-custom.lblPhotoGallery,
 #page-installationdetails .content-block-title.content-block-title-custom.lblVideoGallery
 {
-	color: #108342;
+    color: #00A706;
+    font-family: "Montserrat-Semibold";
+    font-size: 14px;
 }
 
 
@@ -436,7 +499,9 @@ i.icon.theme-lenguajesport
 
 #page-milestones #milestones-list .card.card-milestones ul li a .item-title
 {
-	color: #108342;
+	font-family: "Montserrat-Light";
+    color: #00A706;
+    font-size: 16px;
 }
 
 /* *********************************************************************** */
@@ -455,7 +520,9 @@ i.icon.theme-lenguajesport
 
 #page-achievements #achievements-list .card.card-achievements ul li a .item-title
 {
-	color: #108342;
+	font-family: "Montserrat-Light";
+    color: #00A706;
+    font-size: 16px;
 }
 
 /* *********************************************************************** */
@@ -465,7 +532,9 @@ i.icon.theme-lenguajesport
 #page-achievementdetails .content-block-title.content-block-title-custom.lblPhotoGallery,
 #page-achievementdetails .content-block-title.content-block-title-custom.lblVideoGallery
 {
-	color: #108342;
+	color: #00A706;
+    font-family: "Montserrat-Semibold";
+    font-size: 14px;
 }
 
 /* *********************************************************************** */
@@ -474,7 +543,14 @@ i.icon.theme-lenguajesport
 
 #page-managers #managers-list .card-managers-content a
 {
-	color: #108342;
+    color: #00A706;
+    font-family: "Montserrat-Regular";
+    font-size: 14px;
+}
+
+#page-managers #managers-list .card-managers-content .card-content .card-content-inner > p:last-child {
+    font-family: "Montserrat-Regular";
+    color: #919191;
 }
 
 /* *********************************************************************** */
@@ -494,6 +570,12 @@ i.icon.theme-lenguajesport
     background-color: #108342;
 }
 
+#page-sports #sports-list .list-block ul li .item-content .item-inner .item-title {
+    font-family: "Montserrat-Regular";
+    color: #585858;
+    font-size: 16px;
+}
+
 #page-sports  #sports-list .list-block ul::before 
 {
     background-color: #EFEFF4;
@@ -510,7 +592,7 @@ MODIFICAR CON LOS COLORES CORRESPONDIENTES
 #row-lastmatch-tournament .col-lastmatch-tournament .col-lastmatch-tournament-result{
     border: 3px solid rgb(0, 0, 0);
     color: #FFFFFF;
-    background-color: #108342;
+    background-color: #00A706;
 }
 
 .table-tournaments .tr-header{
@@ -568,6 +650,10 @@ MODIFICAR CON LOS COLORES CORRESPONDIENTES
 /* *********************************************************************** */
 /* ************************** Page: #page-settings ************************ */
 /* *********************************************************************** */
+
+#page-settings {
+    background: #FCFCFC;
+}
 
 #page-settings .list-block .item-inner::after 
 {
@@ -641,7 +727,9 @@ label.label-checkbox input[type="checkbox"]:checked + .item-media i.icon-form-ch
 /* *********************************************************************** */
 
 #lblLogoutButton {
-    color: #108342;
+    color: #00A706;
+    font-family: "Montserrat-Regular";
+    font-size: 16px;
 }
 
 #lblSendButtonLogin {
@@ -762,11 +850,66 @@ label.label-checkbox input[type="checkbox"]:checked + .item-media i.icon-form-ch
     color: #585858;
 }
 
-#page-fixtures {
+#page-fixtures, #page-installationdetails, #page-installations, #page-milestones, #page-milestonedetails, #page-achievements, #page-achievementdetails, #page-managers, #page-activities, #page-activitydetails, #page-sports, #page-news, #page-user, #page-newdetails, #page-matchdetailsfixture, #page-positionstable, #page-eventdetails {
     background: #fcfcfc !important;
+}
+
+#page-user .item-input {
+    font-family: "Montserrat-Regular";
+    font-size: 14px;
+}
+
+#page-user #lblNameUser {
+    font-family: "Montserrat-Regular";
+    font-size: 16px;
+}
+
+#page-user #lblTitleUser {
+    font-family: "Montserrat-Regular";
+    font-size: 16px;
 }
 
 #fixture-content .card {
     box-shadow: 0 0 0 rgba(0, 0, 0, 0);
     background: #fcfcfc !important;
+}
+
+#lblMenuItemAboutInstallations, #lblMenuItemAboutMilestones, #lblMenuItemAboutAchievements, #lblMenuItemAboutManagers, #lblMenuItemAboutContact {
+    color: white;
+    font-family: "Montserrat-Light";
+    font-size: 16px;
+}
+
+#installations-list .item-text, #milestones-list .item-text, #achievements-list .item-text {
+    font-family: "Montserrat-Light";
+}
+
+.lblShareNewWhatsapp, .lblShareNewFacebook, .lblShareNewTwitter {
+    color: #00A706;
+}
+
+#page-news #news-content-block .item-shortContent {
+    font-family: "Montserrat-Regular";
+    color: #585858;
+}
+
+#page-fixtures #fixtures-list > div.card {
+    box-shadow: 0 0px 16px #f1f1f1 !important;
+    border-radius: 40px !important;
+}
+
+#page-fixtures #fixtures-list > div.card .card-header::after {
+    height: 0px !important;
+}
+
+#page-fixtures #fixtures-list #fixture-content .card {
+    box-shadow: 0 0px 16px #f1f1f1 !important;
+}
+
+.lblShareEventWhatsapp, .lblShareEventFacebook, .lblShareEventTwitter {
+    color: #00A706;
+}
+
+.timeline {
+    padding: 0 10px;
 }
