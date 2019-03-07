@@ -120,6 +120,12 @@
 	color: #FFFFFF;
 }
 
+#page-home .card .row-tournament-matches > div:nth-child(2) > div, #page-home .card .row-tournament-matches > div:nth-child(4) > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /*#divLastestNewsHome
 {
     color: #1a9ad9;
@@ -239,6 +245,12 @@
 #page-sportdetails #tabs-sportdetails ul li a div.item-title
 {
 	color: #108342;
+}
+
+#page-sportdetails .card .row-tournament-matches > div:nth-child(2), #page-sportdetails .card .row-tournament-matches > div:nth-child(4) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #subnavbarSportDetails .buttons-row .button {
@@ -385,8 +397,8 @@ i.icon.theme-lenguajesport
 }
 
 #page-activitydetails #tabActivityDetails1, #page-activitydetails #tabActivityDetails2 {
-    padding: 0;
-    margin-top: 149px;
+    /* padding: 0; */
+    padding-top: 149px;
 }
 
 #page-activitydetails #tabActivityDetails2 #contentTabActivityDetails2 .demo-card-header-pic {
@@ -957,3 +969,12 @@ label.label-checkbox input[type="checkbox"]:checked + .item-media i.icon-form-ch
         height: calc(100% - 165px) !important;
     }
 }
+
+#tabs-sportdetails .tabs #tabSportDetails2, #tabs-sportdetails .tabs #tabSportDetails3 {
+    height: calc(100% - 160px) !important;
+}
+
+.chip-label {
+    margin-left: 7px;
+}
+

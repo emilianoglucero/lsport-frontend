@@ -806,7 +806,7 @@ function builderNewsHomeDetails() {
                 strBuilderLastNewsContent.push('<div class="col-40">');
                     strBuilderLastNewsContent.push('<div style="padding: 0 5px;">');
                         strBuilderLastNewsContent.push('<div><img data-src=' + item.local.imagenPrincipalMin + ' class="lazy lazy-fadeIn img-shield-lastmatch"></div>');
-                        strBuilderLastNewsContent.push('<div style="text-align: center;margin-top: 5px;font-family: Montserrat-Regular;font-size: 12px;color: #585858;">' + item.local.nombreCorto + '</div>');
+                        strBuilderLastNewsContent.push('<div style="text-align: center;font-family: Montserrat-Regular;font-size: 12px;color: #585858;">' + item.local.nombreCorto + '</div>');
                     strBuilderLastNewsContent.push('</div>');
                 strBuilderLastNewsContent.push('</div>');
                 //if (match.local.imagenPrincipalMin != ""){
@@ -823,7 +823,7 @@ function builderNewsHomeDetails() {
                 strBuilderLastNewsContent.push('<div class="col-40">');
                     strBuilderLastNewsContent.push('<div style="padding: 0 5px;">');
                         strBuilderLastNewsContent.push('<div><img data-src=' + item.visitante.imagenPrincipalMin + ' class="lazy lazy-fadeIn img-shield-lastmatch"></div>');
-                        strBuilderLastNewsContent.push('<div style="text-align: center;margin-top: 5px;font-family: Montserrat-Regular;font-size: 12px;color: #585858;">' + item.visitante.nombreCorto + '</div></div>');
+                        strBuilderLastNewsContent.push('<div style="text-align: center;font-family: Montserrat-Regular;font-size: 12px;color: #585858;">' + item.visitante.nombreCorto + '</div></div>');
                     strBuilderLastNewsContent.push('</div>');
                 strBuilderLastNewsContent.push('</div>');
 
@@ -1021,10 +1021,10 @@ function builderNewsHomeDetails() {
                     console.log(encuentroFecha);
                     if (encuentroFecha < 3) {
                         strBuilderLastNewsContent.push('<div class="row row-tournament-matches">');
-                        strBuilderLastNewsContent.push('<div class="col-15">');
-                            strBuilderLastNewsContent.push('<div style="text-align: center;font-family: Montserrat-Regular;font-size: 12px;color: #585858;margin-top: 5px">' + match.local.nombreCorto + '</div>');
-                        strBuilderLastNewsContent.push('</div>');
                         strBuilderLastNewsContent.push('<div class="col-25">');
+                            strBuilderLastNewsContent.push('<div style="text-align: right;font-family: Montserrat-Regular;font-size: 12px;color: #585858;">' + match.local.nombreCorto + '</div>');
+                        strBuilderLastNewsContent.push('</div>');
+                        strBuilderLastNewsContent.push('<div class="col-15">');
                         if (match.local.imagenPrincipalMin != "") {
                             strBuilderLastNewsContent.push('<div style="text-align: center;"><img data-src="' + match.local.imagenPrincipalMin + '" class="lazy lazy-fadeIn img-shield-team"></div>');
                         } else {
@@ -1046,11 +1046,11 @@ function builderNewsHomeDetails() {
                             strBuilderLastNewsContent.push('<div class="col-20 match-scorer">' + match.getFechaOcurrencia.fecha + '</div>');
                         }
 
-                        strBuilderLastNewsContent.push('<div class="col-25">');
+                        strBuilderLastNewsContent.push('<div class="col-15">');
                         strBuilderLastNewsContent.push('<div style="text-align: center;"><img data-src="' + match.visitante.imagenPrincipalMin + '" class="lazy lazy-fadeIn img-shield-team"></div>');
                         strBuilderLastNewsContent.push('</div>');
-                        strBuilderLastNewsContent.push('<div class="col-15">');
-                        strBuilderLastNewsContent.push('<div style="text-align: center;font-family: Montserrat-Regular;font-size: 12px;color: #585858;margin-top: 5px">' + match.visitante.nombreCorto + '</div></div>');
+                        strBuilderLastNewsContent.push('<div class="col-25">');
+                        strBuilderLastNewsContent.push('<div style="text-align: left;font-family: Montserrat-Regular;font-size: 12px;color: #585858;">' + match.visitante.nombreCorto + '</div></div>');
                         strBuilderLastNewsContent.push('</div>');
 
                         // strBuilderLastNewsContent.push('<div class="col-40">');
