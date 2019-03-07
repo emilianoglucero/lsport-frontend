@@ -169,7 +169,7 @@
 }
 
 #row-lastmatch-tournament .col-lastmatch-tournament .col-lastmatch-tournament-result {
-	border: 3px solid rgb(0, 0, 0);
+	/* border: 3px solid rgb(0, 0, 0); */
 	color: #000000;
 	background-color: #FFFFFF;
 	margin: 0px auto;

@@ -393,14 +393,13 @@ console.log(match);
 						strBuilderLastMatch.push('<div class="item-content">');
 							strBuilderLastMatch.push('<div class="row" id="row-lastmatch-tournament">');
 								strBuilderLastMatch.push('<div class="col-33 col-lastmatch-tournament">');
-								
-									strBuilderLastMatch.push('<div class="col-lastmatch-tournament-team">'+match.local.nombre+'</div>');
-									if(match.local.imagenPrincipalMin != ""){
-										strBuilderLastMatch.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+match.local.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
-									}
-									else{
-										strBuilderLastMatch.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
-									}
+                                    if(match.local.imagenPrincipalMin != ""){
+                                        strBuilderLastMatch.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+match.local.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+                                    }
+                                    else{
+                                        strBuilderLastMatch.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+                                    }
+									strBuilderLastMatch.push('<div class="col-lastmatch-tournament-team">'+match.local.nombreCorto+'</div>');
 								strBuilderLastMatch.push('</div>');
 								strBuilderLastMatch.push('<div class="col-33 col-lastmatch-tournament col-lastmatch-tournament.middle">');
 									strBuilderLastMatch.push('<div class="col-lastmatch-tournament-nametournament">'+match.torneo.deporteCategoria.nombreCorto+'</div>');
@@ -428,14 +427,14 @@ console.log(match);
 									//}
 									
 								strBuilderLastMatch.push('</div>');
-								strBuilderLastMatch.push('<div class="col-33 col-lastmatch-tournament">');
-									strBuilderLastMatch.push('<div class="col-lastmatch-tournament-team">'+match.visitante.nombre+'</div>');
-									if(match.visitante.imagenPrincipalMin != ""){
-										strBuilderLastMatch.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+match.visitante.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
-									}
-									else{
-										strBuilderLastMatch.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
-									}
+                                strBuilderLastMatch.push('<div class="col-33 col-lastmatch-tournament">');
+                                    if(match.visitante.imagenPrincipalMin != ""){
+                                        strBuilderLastMatch.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+match.visitante.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+                                    }
+                                    else{
+                                        strBuilderLastMatch.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+                                    }
+									strBuilderLastMatch.push('<div class="col-lastmatch-tournament-team">'+match.visitante.nombreCorto+'</div>');
 									strBuilderLastMatch.push('</div>');
 								strBuilderLastMatch.push('</div>');
 							strBuilderLastMatch.push('</div>');
@@ -739,14 +738,13 @@ console.log(match);
 						strBuilderMatchDetailInfo.push('<div class="item-content">');
 							strBuilderMatchDetailInfo.push('<div class="row" id="row-lastmatch-tournament">');
 								strBuilderMatchDetailInfo.push('<div class="col-33 col-lastmatch-tournament">');
-
-									strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-team">'+match.local.nombre+'</div>');
-									if(match.local.imagenPrincipalMin != ""){
-										strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+match.local.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
-									}
-									else{
-										strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
-									}
+                                    if(match.local.imagenPrincipalMin != ""){
+                                        strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+match.local.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+                                    }
+                                    else{
+                                        strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+                                    }
+									strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-team">'+match.local.nombreCorto+'</div>');
 								strBuilderMatchDetailInfo.push('</div>');
 								strBuilderMatchDetailInfo.push('<div class="col-33 col-lastmatch-tournament col-lastmatch-tournament.middle">');
 									strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-nametournament">'+lblTournamentCategorieFixture+'</div>');
@@ -774,14 +772,14 @@ console.log(match);
 									//}
 
 								strBuilderMatchDetailInfo.push('</div>');
-								strBuilderMatchDetailInfo.push('<div class="col-33 col-lastmatch-tournament">');
-									strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-team">'+match.visitante.nombre+'</div>');
-									if(match.visitante.imagenPrincipalMin != ""){
-										strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+match.visitante.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
-									}
-									else{
-										strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
-									}
+                                strBuilderMatchDetailInfo.push('<div class="col-33 col-lastmatch-tournament">');
+                                    if(match.visitante.imagenPrincipalMin != ""){
+                                        strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+match.visitante.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+                                    }
+                                    else{
+                                        strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+                                    }
+									strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-team">'+match.visitante.nombreCorto+'</div>');
 									strBuilderMatchDetailInfo.push('</div>');
 								strBuilderMatchDetailInfo.push('</div>');
 							strBuilderMatchDetailInfo.push('</div>');
@@ -831,14 +829,13 @@ console.log(match);
 						strBuilderLastMatch.push('<div class="item-content">');
 							strBuilderLastMatch.push('<div class="row" id="row-lastmatch-tournament">');
 								strBuilderLastMatch.push('<div class="col-33 col-lastmatch-tournament">');
-
-									strBuilderLastMatch.push('<div class="col-lastmatch-tournament-team">'+match.local.nombre+'</div>');
-									if(match.local.imagenPrincipalMin != ""){
-										strBuilderLastMatch.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+match.local.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
-									}
-									else{
-										strBuilderLastMatch.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
-									}
+                                    if(match.local.imagenPrincipalMin != ""){
+                                        strBuilderLastMatch.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+match.local.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+                                    }
+                                    else{
+                                        strBuilderLastMatch.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+                                    }
+									strBuilderLastMatch.push('<div class="col-lastmatch-tournament-team">'+match.local.nombreCorto+'</div>');
 								strBuilderLastMatch.push('</div>');
 								strBuilderLastMatch.push('<div class="col-33 col-lastmatch-tournament col-lastmatch-tournament.middle">');
 									strBuilderLastMatch.push('<div class="col-lastmatch-tournament-nametournament">'+lblTournamentCategorieFixture+'</div>');
@@ -866,14 +863,14 @@ console.log(match);
 									//}
 
 								strBuilderLastMatch.push('</div>');
-								strBuilderLastMatch.push('<div class="col-33 col-lastmatch-tournament">');
-									strBuilderLastMatch.push('<div class="col-lastmatch-tournament-team">'+match.visitante.nombre+'</div>');
-									if(match.visitante.imagenPrincipalMin != ""){
-										strBuilderLastMatch.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+match.visitante.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
-									}
-									else{
-										strBuilderLastMatch.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
-									}
+                                strBuilderLastMatch.push('<div class="col-33 col-lastmatch-tournament">');
+                                    if(match.visitante.imagenPrincipalMin != ""){
+                                        strBuilderLastMatch.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+match.visitante.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+                                    }
+                                    else{
+                                        strBuilderLastMatch.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+                                    }
+									strBuilderLastMatch.push('<div class="col-lastmatch-tournament-team">'+match.visitante.nombreCorto+'</div>');
 									strBuilderLastMatch.push('</div>');
 								strBuilderLastMatch.push('</div>');
 							strBuilderLastMatch.push('</div>');

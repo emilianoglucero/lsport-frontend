@@ -481,6 +481,7 @@
     /* border: 11px solid #e6e6e6; */
     box-shadow: 0 0 8px #d8d8d8 !important;
     border-radius: 4px !important;
+    margin: 20px 10px !important;
 }
 
 #page-home #cardLastestNewsHome #tournament-matches-header {
@@ -502,22 +503,28 @@
 
 .card .tournament-matches-name {
     text-align: left;
-    margin-left: 44px;
+    /* margin-left: 44px; */
     font-size: 14px;
     /* font-weight: 500; */
     font-family: "Montserrat-Regular";
     font-size: 16px;
     color: #585858;
+    flex: 4;
 }
 
 .card .tournament-matches-division {
-    margin-left: 44px;
+    /* margin-left: 44px; */
     /* font-size: 13px; */
     color: #8e8e93;
     text-align: left;
     font-family: "Montserrat-Light";
     font-size: 11px;
     color: #919191;
+    flex: 3;
+}
+
+.card .tournament-matches-division > div {
+    width: 100%;
 }
 
 .card .tournament-matches-matchday {
@@ -527,7 +534,7 @@
 
 .card .tournament-matches-matchday-live {
     float: right;
-    font-size: 13px;
+    font-size: 11px;
     color: red;
 }
 
@@ -536,7 +543,7 @@
     margin-bottom: 13px;
     /* font-size: 12px; */
     align-items: center;
-    padding: 0 15px;
+    padding: 0 15px 15px 15px;
     /* font-family: "Montserrat-Regular";
     color: #585858; */
 }
