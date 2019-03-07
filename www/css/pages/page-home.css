@@ -672,7 +672,6 @@
 /* suceso ultimo partido/partido en vivo */
 
 .match-scorer-lastmatch {
-    background-color: #00A706;
     color: white;
     font-weight: 800;
     border-radius: 100px;

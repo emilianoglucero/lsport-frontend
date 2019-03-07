@@ -978,3 +978,31 @@ label.label-checkbox input[type="checkbox"]:checked + .item-media i.icon-form-ch
     margin-left: 7px;
 }
 
+.custom-navbar {
+    background-color: #00A706;
+}
+
+#lblSendButtonLoginSign, #lblSendButtonResetPassSign {
+    color: #00A706;
+}
+
+.match-scorer-lastmatch {
+    background-color: #00A706;
+}
+
+.tabs-sportdetails-header {
+    background-color: #00a706;
+}
+
+.custom-sportdetails-price-card-header {
+    border-left: 8px solid #00A706;
+}
+
+#page-fixtures #fixtures-list #fixture-content .card-content #row-lastmatch-tournament .col-lastmatch-tournament-result {
+    background-color: #00A706;
+}
+
+.td-span-team-pos {
+    color: #00A706;
+}
+

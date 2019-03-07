@@ -218,7 +218,6 @@
 
 .tabs-sportdetails-header {
 	margin-top: 44px;
-	background-color: #00a706;
 	padding: 0 10px;
 }
 
@@ -294,7 +293,6 @@
 	flex: 1;
     display: flex;
     align-items: center;
-    border-left: 8px solid #00A706;
 	padding-left: 10px;
 	background-color: white;
 	font-family: "Montserrat-Regular";
