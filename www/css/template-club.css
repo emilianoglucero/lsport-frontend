@@ -1006,3 +1006,7 @@ label.label-checkbox input[type="checkbox"]:checked + .item-media i.icon-form-ch
     color: #00A706;
 }
 
+#row-lastmatch-tournament-calendar .col-lastmatch-tournament .col-lastmatch-tournament-result {
+    background-color: #108342;
+}
+

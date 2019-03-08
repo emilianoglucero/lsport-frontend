@@ -14,43 +14,46 @@
     "cordova-android": "^6.4.0",
     "cordova-android-firebase-gradle-release": "^2.0.0",
     "cordova-android-play-services-gradle-release": "^2.0.0",
-    "cordova-android-support-gradle-release": "^2.0.1",
     "cordova-browser": "^5.0.4",
     "cordova-ios": "^4.5.5",
-    "cordova-plugin-admobpro": "^2.37.2",
+    "cordova-plugin-admobpro-firebase": "^2.37.0",
     "cordova-plugin-browsertab": "^0.2.0",
-    "cordova-plugin-buildinfo": "^2.0.1",
+    "cordova-plugin-buildinfo": "^2.0.2",
     "cordova-plugin-compat": "^1.2.0",
     "cordova-plugin-customurlscheme": "^4.3.0",
-    "cordova-plugin-device": "^2.0.1",
+    "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-dialogs": "^2.0.1",
-    "cordova-plugin-firebase": "^0.1.25",
-    "cordova-plugin-google-analytics": "^1.8.3",
+    "cordova-plugin-extension": "^1.5.4",
+    "cordova-plugin-firebase": "^2.0.5",
+    "cordova-plugin-google-analytics": "^1.8.6",
     "cordova-plugin-inappbrowser": "^2.0.2",
     "cordova-plugin-network-information": "^2.0.1",
     "cordova-plugin-screen-orientation": "^3.0.1",
     "cordova-plugin-splashscreen": "^5.0.2",
-    "cordova-plugin-vibration": "^3.0.1",
+    "cordova-plugin-vibration": "^3.1.0",
     "cordova-plugin-whitelist": "^1.3.3",
-    "cordova-plugin-x-socialsharing": "^5.3.2",
-    "cordova-universal-links-plugin": "^1.2.1",
-    "es6-promise-plugin": "^4.2.2"
+    "cordova-plugin-x-socialsharing": "^5.4.4",
+    "cordova-universal-links-plugin-fix": "^1.2.1",
+    "es6-promise-plugin": "^4.2.2",
+    "cordova-universal-links-plugin": "~1.2.1"
   },
   "cordova": {
     "plugins": {
       "cordova-plugin-whitelist": {},
       "cordova-plugin-device": {},
       "cordova-plugin-dialogs": {},
-      "cordova-plugin-firebase": {},
-      "cordova-plugin-google-analytics": {},
+      "cordova-plugin-google-analytics": {
+        "GMS_VERSION": "11.0.1"
+      },
       "cordova-plugin-inappbrowser": {},
       "cordova-plugin-network-information": {},
       "cordova-plugin-screen-orientation": {},
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-vibration": {},
-      "cordova-plugin-x-socialsharing": {},
+      "cordova-plugin-x-socialsharing": {
+        "ANDROID_SUPPORT_V4_VERSION": "24.1.1+"
+      },
       "cordova-plugin-buildinfo": {},
-      "cordova-universal-links-plugin": {},
       "cordova-plugin-browsertab": {},
       "cordova-plugin-customurlscheme": {
         "URL_SCHEME": "com.lsc.ar.caba.villamalcolm",
@@ -58,23 +61,24 @@
         "ANDROID_HOST": " ",
         "ANDROID_PATHPREFIX": "/"
       },
-      "cordova-plugin-admobpro": {
-        "PLAY_SERVICES_VERSION": "16.0.0"
+      "cordova-universal-links-plugin": {},
+      "cordova-plugin-admobpro-firebase": {
+        "PLAY_SERVICES_VERSION": "+"
+      },
+      "cordova-plugin-firebase": {
+        "PLAY_SERVICES_VERSION": "+"
       },
       "cordova-android-play-services-gradle-release": {
-        "PLAY_SERVICES_VERSION": "15.+"
-      },
-      "cordova-android-support-gradle-release": {
-        "ANDROID_SUPPORT_VERSION": "27.+"
+        "PLAY_SERVICES_VERSION": "+"
       },
       "cordova-android-firebase-gradle-release": {
-        "FIREBASE_VERSION": "15.+"
+        "FIREBASE_VERSION": "+"
       }
     },
     "platforms": [
       "ios",
-      "android",
-      "browser"
+      "browser",
+      "android"
     ]
   }
 }
