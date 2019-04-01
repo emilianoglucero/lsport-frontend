@@ -838,14 +838,14 @@ function getPathWS() {
   //return wsUrl;
   //return 'http://testing.lenguajesport.com/webservice/';
   //return 'http://clubes.lenguajesport.com/webservice/';
-  return "https://clubes.lenguajefutbol.com/9/api/";
+  return "https://clubes.lenguajefutbol.com/15/api/";
 }
 
 function getPathMobile() {
   //return mobileUrl;
   //return 'http://testing.lenguajesport.com/movil/';
   //return 'http://clubes.lenguajesport.com/movil/';
-  return "https://clubes.lenguajefutbol.com/9/api/";
+  return "https://clubes.lenguajefutbol.com/15/api/";
 }
 
 function showMessage(message) {

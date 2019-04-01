@@ -768,7 +768,7 @@ function builderNewsHomeDetails() {
                 strBuilderLastNewsContent.push('</div></div></a>');
                 // strBuilderLastNewsContent.push('<div class="card-footer tournament-matches-footer">Ver más...</div>');
                 strBuilderLastNewsContent.push('</div>');
-                strBuilderLastNewsContent.push('</div>');
+                //strBuilderLastNewsContent.push('</div>');
 
                 //}
             } else if (item.tipoObjeto == "torneo-encuentro") {
@@ -838,6 +838,7 @@ function builderNewsHomeDetails() {
                 var noticiaTruncada = truncateNoticia(item.detalleTxt);
                 console.log(noticiaTruncada);
                 strBuilderLastNewsContent.push('<div class="card demo-card-header-pic">');
+
                     // -----------> Header
                     strBuilderLastNewsContent.push('<div class="card-header color-white no-border">');
                         strBuilderLastNewsContent.push('<div style="width: 100%;height: 250px;overflow: hidden;">');
@@ -869,9 +870,9 @@ function builderNewsHomeDetails() {
                             strBuilderLastNewsContent.push('<div class="chip-label chipHomeCategoryLabel">' + item.tags.categoria + '</div>');
                             strBuilderLastNewsContent.push('</div>');
                         strBuilderLastNewsContent.push('</div>');
-                    strBuilderLastNewsContent.push('<a onclick="loadEventDetails1(' + item.id + ',\'' + sucesoDetailFromHome + '\')" href="#" class="item-link item-content">');
-                    strBuilderLastNewsContent.push('</a>');
-
+                    //strBuilderLastNewsContent.push('<a onclick="loadEventDetails1(' + item.id + ',\'' + sucesoDetailFromHome + '\')" href="#" class="item-link item-content">');
+                    //strBuilderLastNewsContent.push('</a>');
+            strBuilderLastNewsContent.push('<a onclick="loadEventDetails1(' + item.id + ',\'' + sucesoDetailFromHome + '\')" href="#" class="item-link item-content">');
                 // --------------> Content
                     strBuilderLastNewsContent.push('<div class="card-content news-content">');
                         strBuilderLastNewsContent.push('<div class="card-content-inner">');
@@ -885,6 +886,7 @@ function builderNewsHomeDetails() {
                         strBuilderLastNewsContent.push('</div>');
                     // strBuilderLastNewsContent.push('<div class="card-footer tournament-matches-footer">Ver más...</div>');
                 strBuilderLastNewsContent.push('</div>');
+            strBuilderLastNewsContent.push('</a>');
                 // <-------------- Content
             strBuilderLastNewsContent.push('</div>');
 
@@ -998,6 +1000,7 @@ function builderNewsHomeDetails() {
 
                 strBuilderLastNewsContent.push('</div></div>');
                 strBuilderLastNewsContent.push('<div class="card-footer tournament-matches-footer">Ver más...</div></div>');
+                strBuilderLastNewsContent.push('</a>');
 
                 //$('#positionstable-list').append(strBuilderListCards.join(""));
                 //mainView.router.load({pageName: 'positionstable'});
@@ -1067,7 +1070,7 @@ function builderNewsHomeDetails() {
 
             }
         });
-        strBuilderLastNewsContent.push('</ul>');
+        //strBuilderLastNewsContent.push('</ul>');
         strBuilderLastNewsContent.push('</div>');
     }
     //return(strBuilderLastNewsContent.join(""));
