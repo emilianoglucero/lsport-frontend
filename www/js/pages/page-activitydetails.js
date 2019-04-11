@@ -473,7 +473,7 @@ function builderNewsActivityDetails() {
 				strBuilderNewsActivityDetailsContent.push('<div class="card tournament-matches"> <a onclick="loadPositionsTableDetails(' + item.id + ', ' + false + ')" href="#">');
 				strBuilderNewsActivityDetailsContent.push('<div id="tournament-matches-header" class="card-header no-border">');
 
-				strBuilderNewsActivityDetailsContent.push('<div class="tournament-header-titulo">' + item.titulo + '</div>');
+				strBuilderNewsActivityDetailsContent.push('<div class="tournament-header-titulo">' + item.torneo.nombre + '</div>');
 				strBuilderNewsActivityDetailsContent.push('<div class="tournament-header-fecha">' + item.titulo + '</div>');
 
 				strBuilderNewsActivityDetailsContent.push('</div>');
@@ -525,15 +525,16 @@ function builderNewsActivityDetails() {
 				});
 				strBuilderNewsActivityDetailsContent.push('</div>');
 				var verMas = false;
-				$.each(item.tablaGeneral.cuerpo, function (i, item) {
-					strBuilderNewsActivityDetailsContent.push('<div class="row tournament-child no-gutter">');
+				$.each(item.tablaGeneral.cuerpo, function (i, item) {	
 					var pos = i + 1;
 					var equipoTabla = i + 1;
+					if (equipoTabla < 5) {
+					strBuilderNewsActivityDetailsContent.push('<div class="row tournament-child no-gutter">');
 
 					console.log(item);
 					console.log(equipoTabla);
 					console.log(verMas);
-					if (equipoTabla < 5) {
+					
 						if (item.eq.nombre !== "" && item.eq.nombre !== undefined) {
 							strBuilderNewsActivityDetailsContent.push('<div class="col-40 tournament-child-team"><span class="td-span-team-pos">' + pos + '</span><span class="td-span-team-name">' + item.eq.nombre + '</span></div>');
 						}
@@ -603,7 +604,7 @@ function builderNewsActivityDetails() {
 						if (match.local.tantos != null || match.visit.tantos != null) {
 							strBuilderNewsActivityDetailsContent.push('<div class="col-20 match-scorer">' + match.local.tantos + ' - ' + match.visitante.tantos + '</div>');
 						} else {
-							strBuilderNewsActivityDetailsContent.push('<div class="col-20 match-scorer">' + match.getFechaOcurrencia.fecha + '</div>');
+							strBuilderNewsActivityDetailsContent.push('<div class="col-20 match-scorer">' + match.fechaOcurrencia.fecha + '</div>');
 						}
 						strBuilderNewsActivityDetailsContent.push('<div class="col-10"><img data-src="' + match.visitante.imagenPrincipalMin + '" class="lazy lazy-fadeIn img-shield-team"></div>');
 						strBuilderNewsActivityDetailsContent.push('<div class="col-30">' + match.visitante.nombre + '</div></div>');

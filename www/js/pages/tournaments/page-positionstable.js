@@ -100,7 +100,7 @@ console.log(item);
 	strBuilderListCards.push('<div class="card tournament-matches">');
                           strBuilderListCards.push('<div id="tournament-matches-header" class="card-header no-border">');
 
-                          strBuilderListCards.push('<div class="tournament-header-titulo">'+item.titulo+'</div>');
+                          strBuilderListCards.push('<div class="tournament-header-titulo">'+item.torneo.nombre+'</div>');
                           strBuilderListCards.push('<div class="tournament-header-fecha">'+item.titulo+'</div>');
 
                           strBuilderListCards.push('</div>');

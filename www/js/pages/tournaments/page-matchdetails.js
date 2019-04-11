@@ -53,6 +53,301 @@ myApp.onPageBack('matchdetails', function (page){
 	idLiveMatchActivePage=null;
 });
 
+/**** html structure function to insert inside the main builder function ****/
+
+function htmlMatchDetailsCard (match) {
+
+    console.log(match);
+
+    var strBuilderMatchDetailInfo = [];
+
+    strBuilderMatchDetailInfo.push('<div class="card">');
+
+        strBuilderMatchDetailInfo.push('<div class="card-header card-header-center">'+match.torneo.nombre+'</div>');
+
+        strBuilderMatchDetailInfo.push('<div class="card-content">');
+            strBuilderMatchDetailInfo.push('<div class="card-content-inner">');
+                strBuilderMatchDetailInfo.push('<div class="list-block lastmatch-tournaments">');
+                    strBuilderMatchDetailInfo.push('<div class="item-content">');
+                        strBuilderMatchDetailInfo.push('<div class="row" id="row-lastmatch-tournament">');
+                            strBuilderMatchDetailInfo.push('<div class="col-33 col-lastmatch-tournament">');
+                                if(match.local.imagenPrincipalMin != ""){
+                                    strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+match.local.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+                                }
+                                else{
+                                    strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+                                }
+                                strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-team">'+match.local.nombreCorto+'</div>');
+                            strBuilderMatchDetailInfo.push('</div>');
+                            strBuilderMatchDetailInfo.push('<div class="col-33 col-lastmatch-tournament col-lastmatch-tournament.middle">');
+                                //strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-nametournament">'+match.torneo.nombre+'</div>');
+                                //strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-nametournament">match.torneo.deporteCategoria.nombreCorto</div>');
+                                strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-name">'+match.fechaEncuentro.fecha+'</div>');
+                                //strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-name">match.torneo.nombre</div>');
+                                if (match.local.tantos != null || match.visitante.tantos != null){
+                                    //strBuilderMatchDetailInfo.push('<td class="td-50-tournaments td-scrore-datelist">'+match.local.tantos+'</td>');
+                                    strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-result"><p>'+match.local.tantos+' - '+match.visitante.tantos+'</p></div>');
+                                    //strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-result"><p>'+match.visitante.tantos+'</p></div>');
+                                    //strBuilderMatchDetailInfo.push('<td class="td-30-tournaments"><a onclick="loadMatchDetailsFromFixture('+mainId+','+match.id+')" href="#" class="button">'+lblSeeMoreDatesList+'</a></td>');
+                                    //strBuilderMatchDetailInfo.push('<td class="td-35-tournaments td-scrore-datelist">'+match.visitante.tantos+'</td>');
+                                } else {
+                                    strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-result"><p>VS</p></div>');
+
+                                }
+
+                                    strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-date">'+match.fechaEncuentro.hora+'</div>');
+
+                            strBuilderMatchDetailInfo.push('</div>');
+                            strBuilderMatchDetailInfo.push('<div class="col-33 col-lastmatch-tournament">');
+                                if(match.visitante.imagenPrincipalMin != ""){
+                                    strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+match.visitante.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+                                }
+                                else{
+                                    strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
+                                }
+                                strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-team">'+match.visitante.nombreCorto+'</div>');
+                                strBuilderMatchDetailInfo.push('</div>');
+                            strBuilderMatchDetailInfo.push('</div>');
+                        strBuilderMatchDetailInfo.push('</div>');
+                        strBuilderMatchDetailInfo.push('<div class="description-lastmatch-tournament">');
+                            strBuilderMatchDetailInfo.push(match.visitante.nombre);
+                        strBuilderMatchDetailInfo.push('</div>');
+                strBuilderMatchDetailInfo.push('</div>');
+            strBuilderMatchDetailInfo.push('</div>');
+        strBuilderMatchDetailInfo.push('</div>');
+        strBuilderMatchDetailInfo.push('</div>');
+
+        console.log(strBuilderMatchDetailInfo);
+
+        strBuilderMatchDetailInfo.join("");
+        console.log(strBuilderMatchDetailInfo);
+
+        return strBuilderMatchDetailInfo;
+
+}
+/**** final html structure ****/
+
+/**** html structure function of the event part to insert inside the main builder function ****/
+function htmlMatchDetailsEvents (match) {
+
+    console.log(match);
+
+    var strBuilderLastMatch = [];
+
+        if (match.tipoObjeto == "torneo-encuentro") {
+		    var equipoLocal = match.local.nombre;
+		    var equipoVisitante = match.visitante.nombre;
+
+		    var timelineSide = true;
+		    if (match.eventos.todos.length !== 0){
+
+		    strBuilderLastMatch.push('<div class="timeline timeline-sides">');
+
+                $.each( match.eventos.todos, function( i, item ){
+                console.log(item);
+                    if (item.tipoEvento == "anotacion") {
+
+                    if (timelineSide == false) {
+                     strBuilderLastMatch.push('<div class="timeline timeline-sides">');
+                    }
+
+                        if (item.equipo.localia == "local") {
+                            strBuilderLastMatch.push('<div class="timeline-item timeline-item-left">');
+                                strBuilderLastMatch.push('<div class="timeline-item-date">'+item.tiempo.relojEtapa+'<small><img data-src='+item.tipoIncidencia.icono+' class="match-img-events lazy lazy-fadeIn"/></small></div>');
+                                strBuilderLastMatch.push('<div class="timeline-item-divider"></div>');
+                                //strBuilderLastMatch.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
+                                    strBuilderLastMatch.push('<div class="timeline-item-content">');
+                                        //strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
+                                        if (item.detallePrincipal == null) {
+                                            strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title"></div>');
+                                        } else {
+                                            strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
+                                        }
+                                            if (item.comentario !== "") {
+                                                strBuilderLastMatch.push('<div class="match-event-timeline-commentary"><br>'+item.comentario+'</div>');
+                                            }
+                                        strBuilderLastMatch.push('</div>');
+                                    strBuilderLastMatch.push('</div>');
+                            strBuilderLastMatch.push('</div>');
+
+                            timelineSide = true;
+
+                        }
+                        else if (item.equipo.localia == "visitante"){
+
+                            strBuilderLastMatch.push('<div class="timeline-item timeline-item-right">');
+                                strBuilderLastMatch.push('<div class="timeline-item-date">'+item.tiempo.relojEtapa+'<small><img data-src='+item.tipoIncidencia.icono+' class="match-img-events lazy lazy-fadeIn"/></small></div>');
+                                strBuilderLastMatch.push('<div class="timeline-item-divider"></div>');
+                                //strBuilderLastMatch.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
+                                    strBuilderLastMatch.push('<div class="timeline-item-content">');
+                                        if (item.comentario.detalle == null) {
+                                            strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title"></div>');
+                                            //strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
+                                        } else {
+                                            strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
+                                            //strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title"></div>');
+                                        }
+                                        if (item.comentario !== "") {
+                                            strBuilderLastMatch.push('<div class="match-event-timeline-commentary"><br>'+item.comentario+'</div>');
+                                        }
+                                        strBuilderLastMatch.push('</div>');
+                                    strBuilderLastMatch.push('</div>');
+                            strBuilderLastMatch.push('</div>');
+
+                            timelineSide = true;
+
+                        }
+                    } else if (item.tipoEvento == "inicializar") {
+
+                        strBuilderLastMatch.push('</div>');
+                        strBuilderLastMatch.push('<div class="matchdetails-events-comments">');
+                            strBuilderLastMatch.push('<div class="content-block-title">Comenzó el partido!</div>');
+                        strBuilderLastMatch.push('</div>');
+                        timelineSide = false;
+
+
+                    }
+                    else if (item.tipoEvento == "finalizar-etapa") {
+
+                        strBuilderLastMatch.push('</div>');
+                        strBuilderLastMatch.push('<div class="matchdetails-events-comments">');
+                            strBuilderLastMatch.push('<div class="content-block-title">Terminó '+item.tiempo.etapa.nombre+'</div>');
+                        strBuilderLastMatch.push('</div>');
+
+                        timelineSide = false;
+
+                    }
+                    else if (item.tipoEvento == "inicializar-etapa") {
+
+                        strBuilderLastMatch.push('</div>');
+                        strBuilderLastMatch.push('<div class="matchdetails-events-comments">');
+                            strBuilderLastMatch.push('<div class="content-block-title">Comienza '+item.tiempo.etapa.nombre+'</div>');
+                        strBuilderLastMatch.push('</div>');
+                        timelineSide = false;
+
+                    }
+                    else if (item.tipoEvento == "comentario") {
+
+                        strBuilderLastMatch.push('</div>');
+
+                        strBuilderLastMatch.push('<div class="matchdetails-events-comments">');
+                            strBuilderLastMatch.push('<div class="content-block-title">'+item.tiempo.relojEtapa+'</div>');
+                                strBuilderLastMatch.push('<div class="timeline-item-time"">'+item.comentario+'</div>');
+                        strBuilderLastMatch.push('</div>');
+                        timelineSide = false;
+
+                    }
+                    else if (item.tipoEvento == "finalizar") {
+
+                        strBuilderLastMatch.push('</div>');
+                        strBuilderLastMatch.push('<div class="matchdetails-events-comments">');
+                            strBuilderLastMatch.push('<div class="content-block-title">Terminó el partido!</div>');
+                            strBuilderLastMatch.push('<div class="timeline-item-time"">'+equipoLocal+' '+item.tanteadorLocal+' - '+item.tanteadorVisitante+' '+equipoVisitante+'</div>');
+                        strBuilderLastMatch.push('</div>');
+                        timelineSide = false;
+
+                    }
+                    else if (item.tipoEvento == "disciplinario") {
+
+                    if (timelineSide == false) {
+                        strBuilderLastMatch.push('<div class="timeline timeline-sides">');
+                    }
+
+                        if (item.equipo.localia == "local") {
+                            strBuilderLastMatch.push('<div class="timeline-item timeline-item-left">');
+                                strBuilderLastMatch.push('<div class="timeline-item-date">'+item.tiempo.relojEtapa+'<small><img data-src='+item.tipoIncidencia.icono+' class="match-img-events lazy lazy-fadeIn"/></small></div>');
+                                strBuilderLastMatch.push('<div class="timeline-item-divider"></div>');
+                                //strBuilderLastMatch.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
+                                    strBuilderLastMatch.push('<div class="timeline-item-content">');
+                                        if (item.detallePrincipal == null) {
+                                            strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title"></div>');
+                                        } else {
+                                            strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
+                                        }
+                                        if (item.comentario !== "") {
+                                            strBuilderLastMatch.push('<div class="match-event-timeline-commentary"><br>'+item.comentario+'</div>');
+                                        }
+                                        strBuilderLastMatch.push('</div>');
+                                    strBuilderLastMatch.push('</div>');
+                            strBuilderLastMatch.push('</div>');
+
+                            timelineSide = true;
+
+                        }
+                        else if (item.equipo.localia == "visitante"){
+
+                            strBuilderLastMatch.push('<div class="timeline-item timeline-item-right">');
+                                strBuilderLastMatch.push('<div class="timeline-item-date">'+item.tiempo.relojEtapa+'<small><img data-src='+item.tipoIncidencia.icono+' class="match-img-events lazy lazy-fadeIn"/></small></div>');
+                                strBuilderLastMatch.push('<div class="timeline-item-divider"></div>');
+                                //strBuilderLastMatch.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
+                                    strBuilderLastMatch.push('<div class="timeline-item-content">');
+                                        if (item.detallePrincipal == null) {
+                                            strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title"></div>');
+                                        } else {
+                                            strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
+                                        }
+                                        if (item.comentario !== "") {
+                                            strBuilderLastMatch.push('<div class="match-event-timeline-commentary"><br>'+item.comentario+'</div>');
+                                        }
+                                        strBuilderLastMatch.push('</div>');
+                                    strBuilderLastMatch.push('</div>');
+                            strBuilderLastMatch.push('</div>');
+
+                            timelineSide = true;
+
+                        }
+
+                    }
+                    else if (item.tipoEvento == "sustitucion") {
+
+                        if (timelineSide == false) {
+                            strBuilderLastMatch.push('<div class="timeline timeline-sides">');
+                        }
+
+                        if (item.equipo.localia == "local") {
+                            strBuilderLastMatch.push('<div class="timeline-item timeline-item-left">');
+                                strBuilderLastMatch.push('<div class="timeline-item-date">'+item.tiempo.relojEtapa+'<small><img data-src='+item.tipoIncidencia.icono+' class="match-img-events lazy lazy-fadeIn"/></small></div>');
+                                strBuilderLastMatch.push('<div class="timeline-item-divider"></div>');
+                                //strBuilderLastMatch.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
+                                    strBuilderLastMatch.push('<div class="timeline-item-content">');
+                                        strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.label+': '+item.detallePrincipal.detalle+'</div><div class="match-event-timeline-commentary"><br>'+item.detalleSecundario.label+': '+item.detalleSecundario.detalle+'</div>');
+                                        strBuilderLastMatch.push('</div>');
+                                    strBuilderLastMatch.push('</div>');
+                            strBuilderLastMatch.push('</div>');
+
+                            timelineSide = true;
+
+                        }
+                        else if (item.equipo.localia == "visitante"){
+
+                            strBuilderLastMatch.push('<div class="timeline-item timeline-item-right">');
+                                strBuilderLastMatch.push('<div class="timeline-item-date">'+item.tiempo.relojEtapa+'<small><img data-src='+item.tipoIncidencia.icono+' class="match-img-events lazy lazy-fadeIn"/></small></div>');
+                                strBuilderLastMatch.push('<div class="timeline-item-divider"></div>');
+                                //strBuilderLastMatch.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
+                                    strBuilderLastMatch.push('<div class="timeline-item-content">');
+                                        strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.label+': '+item.detallePrincipal.detalle+'</div><div class="match-event-timeline-commentary"><br>'+item.detalleSecundario.label+': '+item.detalleSecundario.detalle+'</div>');
+                                        strBuilderLastMatch.push('</div>');
+                                    strBuilderLastMatch.push('</div>');
+                            strBuilderLastMatch.push('</div>');
+
+                            timelineSide = true;
+                        }
+
+                    }
+
+                });
+
+            strBuilderLastMatch.push('</div>');
+
+		    }
+
+        }
+    console.log(strBuilderLastMatch);
+    return strBuilderLastMatch;
+}
+
+
+
 function loadMatchDetails1(idNew, state){
 
             $('#tabMatchDetails1').html("");
@@ -134,7 +429,8 @@ function loadMatchDetails1(idNew, state){
             console.log(sportIDCategorie);
             matchDetailsHomeInfo = matchDetailsHome;
 
-            builderDetailsMatchDetailsInfo(matchDetailsHome);
+            //builderDetailsMatchDetailsInfo(matchDetailsHome);
+            builderDetailsMatchDetails(matchDetailsHome);
 			hideLoadSpinnerWS();
 
 }
@@ -163,7 +459,7 @@ function loadMatchDetailsFromFechas(idFechas, idPartido){
 
 
             torneoEncuentroState = false;
-            builderDetailsMatchDetailsInfo(matchDetailsHomeInfo);
+            builderDetailsMatchDetails(matchDetailsHomeInfo);
             hideLoadSpinnerWS();
 
 
@@ -210,7 +506,7 @@ function loadMatchDetailsFromFixture(id, idPartido){
                 matchDetailsHomeInfo = matchDetailsHomeMatch;
                 console.log(sportIDCategorie);
                 //torneoEncuentroState = true;
-            builderDetailsMatchDetailsInfo(matchDetailsHomeMatch);
+            builderDetailsMatchDetails(matchDetailsHomeMatch);
 			hideLoadSpinnerWS();
 
 }
@@ -261,7 +557,7 @@ function loadMatchDetailsFromFixture(id, idPartido){
 
 }*/
 
-function refreshMatchDetails(idMatch){
+/*function refreshMatchDetails(idMatch){
 	$('#icon-refresh-matchdetails').hide();
 	//showLoadSpinnerWS();
 	$.ajax({
@@ -273,7 +569,8 @@ function refreshMatchDetails(idMatch){
 		 },
 		timeout: timeOut,
 		success: function(response){
-			if(response.errorCode != 0)
+		console.log(response);
+			/*if(response.errorCode != 0)
 			{
 			    filterCodeErrorWS(response);
 			    return;
@@ -285,14 +582,14 @@ function refreshMatchDetails(idMatch){
 			if (response.matchDetail == "" || response.matchDetail == undefined){
 			    showMessage(messageConexionError);
 			    return;
-			}
+			}*/
 			
-			if(idLiveMatchActivePage != idMatch){
+			/*if(idLiveMatchActivePage != idMatch){
 				$('#lblHeaderMatchDetails').text(response.matchDetail.shortCategoryName);
 				$('.icon-sportDetails').css('background-image','url("'+response.matchDetail.urlImgHeader+'")');
 				idLiveMatchActivePage = idMatch;
-			}
-			builderMatchDetails(response.matchDetail,response.banner);
+			}*/
+			/*builderMatchDetails(response.matchDetail,response.banner);
 			//hideLoadSpinnerWS();
 		},
 		error: function (data, status, error){
@@ -306,9 +603,9 @@ function refreshMatchDetails(idMatch){
 		}
 	});
 
-}
+}*/
 
-function refreshMatchDetails1(idMatch){f
+function refreshMatchDetails1(idMatch){
 	$('#icon-refresh-matchdetails').hide();
 	showLoadSpinnerWS();
 		$.ajax({
@@ -322,15 +619,16 @@ function refreshMatchDetails1(idMatch){f
                     var matchDetailsHome = allSucesosPageList.filter(function( obj ) {
                       return obj.id == idMatch;
                     });
-                    matchDetailsHome = matchDetailsHome[0];
-                    console.log(matchDetailsHome);
-                    if(idLiveMatchActivePage != idMatch){
+                    matchDetailsHomeInfo = matchDetailsHome[0];
+                    console.log(matchDetailsHomeInfo);
+                   /* if(idLiveMatchActivePage != idMatch){
                         $('#lblHeaderMatchDetails').text(matchDetailsHome.torneo.deporteCategoria.nombreCorto);
                         $('.icon-sportDetails').css('background-image','url("'+matchDetailsHome.torneo.deporte.imagenPrincipalMin+'")');
                         idLiveMatchActivePage = idMatch;
-                    }
+                    }*/
                     hideLoadSpinnerWS();
-        			builderMatchDetails(matchDetailsHome);
+        			//builderDetailsMatchDetails(matchDetailsHome);
+        			builderDetailsMatchDetails(matchDetailsHomeInfo);
 
         		},
         		error: function (data, status, error){
@@ -347,766 +645,62 @@ function refreshMatchDetails1(idMatch){f
 
 }
 
-
-/*function builderMatchDetails(match){
-console.log(match);
-
-    myApp.showTab("#tabMatchDetails1");
-	//builderTournamentsSportDetails();
-	
-	$('#tabSportDetails1').html('');
-	var strBuilderMatchDetails = [];
-	
-	strBuilderMatchDetails.push(builderDetailsMatchDetailsInfo(match));
-	console.log(strBuilderMatchDetails);
-	
-	$('#tabSportDetails1').append(strBuilderMatchDetails.join(""));
-	mainView.router.load({pageName: 'matchdetails'});
-	myApp.initImagesLazyLoad(mainView.activePage.container);
-	if(idLiveMatchSportDetails == match.idMatch && $('#card-livematch-sportdetails').length != 0){
-		$('#card-livematch-sportdetails').html(builderLastMatchTournamentsSportDetails(match));
-	}
-}*/
-
+/**** buscar en el futuro la forma de sacar esta funcion, donde la unica diferencia que existe entre
+builderDetailsMatchDetails y builderDetailsMatchDetailsTimeLine es el mainView.router.load({pageName: 'matchdetails'});****/
 function builderDetailsMatchDetails(match){
-console.log(match);
-	var strBuilderLastMatch = [];
-	//$.each(match.encuentros, function(i, match) {
-	//console.log(match);
-		strBuilderLastMatch.push('<div class="card">');
-			
-				/*if(match.liveMatch == true){
-					strBuilderLastMatch.push('<div class="card-header card-header-center animated infinite pulse">');
-					strBuilderLastMatch.push(lblLiveMatchTournaments);
-					strBuilderLastMatch.push('</div>');
-					
-				}
-				else{*/
-					strBuilderLastMatch.push('<div class="card-header card-header-center">');
-					strBuilderLastMatch.push(lblScoreboardMatchDetails);
-					strBuilderLastMatch.push('</div>');
-				//}
-			
-			strBuilderLastMatch.push('<div class="card-content">');
-				strBuilderLastMatch.push('<div class="card-content-inner">');
-					strBuilderLastMatch.push('<div class="list-block lastmatch-tournaments">');
-						strBuilderLastMatch.push('<div class="item-content">');
-							strBuilderLastMatch.push('<div class="row" id="row-lastmatch-tournament">');
-								strBuilderLastMatch.push('<div class="col-33 col-lastmatch-tournament">');
-                                    if(match.local.imagenPrincipalMin != ""){
-                                        strBuilderLastMatch.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+match.local.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
-                                    }
-                                    else{
-                                        strBuilderLastMatch.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
-                                    }
-									strBuilderLastMatch.push('<div class="col-lastmatch-tournament-team">'+match.local.nombreCorto+'</div>');
-								strBuilderLastMatch.push('</div>');
-								strBuilderLastMatch.push('<div class="col-33 col-lastmatch-tournament col-lastmatch-tournament.middle">');
-									strBuilderLastMatch.push('<div class="col-lastmatch-tournament-nametournament">'+match.torneo.deporteCategoria.nombreCorto+'</div>');
-									//strBuilderLastMatch.push('<div class="col-lastmatch-tournament-nametournament">match.torneo.deporteCategoria.nombreCorto</div>');
-									strBuilderLastMatch.push('<div class="col-lastmatch-tournament-name">'+match.torneo.nombre+'</div>');
-									//strBuilderLastMatch.push('<div class="col-lastmatch-tournament-name">match.torneo.nombre</div>');
-									if (match.local.tantos != null || match.visitante.tantos != null){
-                                        //strBuilderLastMatch.push('<td class="td-50-tournaments td-scrore-datelist">'+match.local.tantos+'</td>');
-                                        strBuilderLastMatch.push('<div class="col-lastmatch-tournament-result"><p>'+match.local.tantos+' - '+match.visitante.tantos+'</p></div>');
-                                        //strBuilderLastMatch.push('<div class="col-lastmatch-tournament-result"><p>'+match.visitante.tantos+'</p></div>');
-                                        //strBuilderLastMatch.push('<td class="td-30-tournaments"><a onclick="loadMatchDetailsFromFixture('+mainId+','+match.id+')" href="#" class="button">'+lblSeeMoreDatesList+'</a></td>');
-                                        //strBuilderLastMatch.push('<td class="td-35-tournaments td-scrore-datelist">'+match.visitante.tantos+'</td>');
-                                    } else {
-                                        strBuilderLastMatch.push('<div class="col-lastmatch-tournament-result"><p>VS</p></div>');
+    console.log(match);
 
-                                    }
+    mainView.router.load({pageName: 'matchdetails'});
+    myApp.showTab("#tabMatchDetails2");
+        $('#tabMatchDetails2').html('');
+        var finalInfoStructureMatchDetails = htmlMatchDetailsCard(match);
+    	console.log(finalInfoStructureMatchDetails);
+    	var finalInfoStructureMatchDetailsEvents = htmlMatchDetailsEvents(match);
+    	console.log(finalInfoStructureMatchDetailsEvents);
 
-									/*if(match.liveMatch == true){
-										if(match.actualClock != "")
-										{
-											strBuilderLastMatch.push('<div class="col-lastmatch-tournament-date">'+messageLastEvent+' '+match.actualClock+'</div>');
-										}
-									} else{*/
-										strBuilderLastMatch.push('<div class="col-lastmatch-tournament-date">'+match.fechaEncuentro.fecha+'</div>');
-									//}
-									
-								strBuilderLastMatch.push('</div>');
-                                strBuilderLastMatch.push('<div class="col-33 col-lastmatch-tournament">');
-                                    if(match.visitante.imagenPrincipalMin != ""){
-                                        strBuilderLastMatch.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+match.visitante.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
-                                    }
-                                    else{
-                                        strBuilderLastMatch.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
-                                    }
-									strBuilderLastMatch.push('<div class="col-lastmatch-tournament-team">'+match.visitante.nombreCorto+'</div>');
-									strBuilderLastMatch.push('</div>');
-								strBuilderLastMatch.push('</div>');
-							strBuilderLastMatch.push('</div>');
-							strBuilderLastMatch.push('<div class="description-lastmatch-tournament">');
-								strBuilderLastMatch.push(match.visitante.nombre);
-							strBuilderLastMatch.push('</div>');
-					strBuilderLastMatch.push('</div>');
-				strBuilderLastMatch.push('</div>');
-			strBuilderLastMatch.push('</div>');
-		strBuilderLastMatch.push('</div>');
-		if (match.tipoObjeto == "torneo-encuentro") {
-		    var equipoLocal = match.local.nombre;
-		    var equipoVisitante = match.visitante.nombre;
+    	$('#tabMatchDetails2').append(finalInfoStructureMatchDetails.join(""));
+    	$('#tabMatchDetails2').append(finalInfoStructureMatchDetailsEvents.join(""));
 
-		    var timelieSide = true;
-		    if (match.eventos.todos.length !== 0){
-
-		    strBuilderLastMatch.push('<div class="timeline timeline-sides">');
-
-                $.each( match.eventos.todos, function( i, item ){
-                console.log(item);
-                    if (item.tipoEvento == "anotacion") {
-
-                    if (timelieSide == false) {
-                     strBuilderLastMatch.push('<div class="timeline timeline-sides">');
-                    }
-
-                        if (item.equipo.localia == "local") {
-                            strBuilderLastMatch.push('<div class="timeline-item timeline-item-left">');
-                                strBuilderLastMatch.push('<div class="timeline-item-date">'+item.tiempo.relojEtapa+'<small><img data-src='+item.tipoIncidencia.icono+' class="match-img-events lazy lazy-fadeIn"/></small></div>');
-                                strBuilderLastMatch.push('<div class="timeline-item-divider"></div>');
-                                //strBuilderLastMatch.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
-                                    strBuilderLastMatch.push('<div class="timeline-item-content">');
-                                        //strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
-                                        if (item.detallePrincipal.detalle == null) {
-                                            strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title"></div>');
-                                        } else {
-                                            strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
-                                        }
-                                            if (item.comentario !== "") {
-                                                strBuilderLastMatch.push('<div class="match-event-timeline-commentary"><br>'+item.comentario+'</div>');
-                                            }
-                                        strBuilderLastMatch.push('</div>');
-                                    strBuilderLastMatch.push('</div>');
-                            strBuilderLastMatch.push('</div>');
-
-                            timelieSide = true;
-
-                        }
-                        else if (item.equipo.localia == "visitante"){
-
-                            strBuilderLastMatch.push('<div class="timeline-item timeline-item-right">');
-                                strBuilderLastMatch.push('<div class="timeline-item-date">'+item.tiempo.relojEtapa+'<small><img data-src='+item.tipoIncidencia.icono+' class="match-img-events lazy lazy-fadeIn"/></small></div>');
-                                strBuilderLastMatch.push('<div class="timeline-item-divider"></div>');
-                                //strBuilderLastMatch.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
-                                    strBuilderLastMatch.push('<div class="timeline-item-content">');
-                                        if (item.detallePrincipal.detalle == null) {
-                                            strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title"></div>');
-                                        } else {
-                                            strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
-                                        }
-                                        if (item.comentario !== "") {
-                                            strBuilderLastMatch.push('<div class="match-event-timeline-commentary"><br>'+item.comentario+'</div>');
-                                        }
-                                        strBuilderLastMatch.push('</div>');
-                                    strBuilderLastMatch.push('</div>');
-                            strBuilderLastMatch.push('</div>');
-
-                            timelieSide = true;
-
-                        }
-                    } else if (item.tipoEvento == "inicializar") {
-
-                        strBuilderLastMatch.push('</div>');
-                        strBuilderLastMatch.push('<div class="matchdetails-events-comments">');
-                            strBuilderLastMatch.push('<div class="content-block-title">Comenzó el partido!</div>');
-                        strBuilderLastMatch.push('</div>');
-                        timelieSide = false;
-
-
-                    }
-                    else if (item.tipoEvento == "finalizar-etapa") {
-
-                        strBuilderLastMatch.push('</div>');
-                        strBuilderLastMatch.push('<div class="matchdetails-events-comments">');
-                            strBuilderLastMatch.push('<div class="content-block-title">Terminó '+item.tiempo.etapa.nombre+'</div>');
-                        strBuilderLastMatch.push('</div>');
-
-                        timelieSide = false;
-
-                    }
-                    else if (item.tipoEvento == "inicializar-etapa") {
-
-                        strBuilderLastMatch.push('</div>');
-                        strBuilderLastMatch.push('<div class="matchdetails-events-comments">');
-                            strBuilderLastMatch.push('<div class="content-block-title">Comienza '+item.tiempo.etapa.nombre+'</div>');
-                        strBuilderLastMatch.push('</div>');
-                        timelieSide = false;
-
-                    }
-                    else if (item.tipoEvento == "comentario") {
-
-                        strBuilderLastMatch.push('</div>');
-
-                        strBuilderLastMatch.push('<div class="matchdetails-events-comments">');
-                            strBuilderLastMatch.push('<div class="content-block-title">'+item.tiempo.relojEtapa+'</div>');
-                                strBuilderLastMatch.push('<div class="timeline-item-time"">'+item.comentario+'</div>');
-                        strBuilderLastMatch.push('</div>');
-                        timelieSide = false;
-
-                    }
-                    else if (item.tipoEvento == "finalizar") {
-
-                        strBuilderLastMatch.push('</div>');
-                        strBuilderLastMatch.push('<div class="matchdetails-events-comments">');
-                            strBuilderLastMatch.push('<div class="content-block-title">Terminó el partido!</div>');
-                            strBuilderLastMatch.push('<div class="timeline-item-time"">'+equipoLocal+' '+item.tanteadorLocal+' - '+item.tanteadorVisitante+' '+equipoVisitante+'</div>');
-                        strBuilderLastMatch.push('</div>');
-                        timelieSide = false;
-
-                    }
-                    else if (item.tipoEvento == "disciplinario") {
-
-                    if (timelieSide == false) {
-                        strBuilderLastMatch.push('<div class="timeline timeline-sides">');
-                    }
-
-                        if (item.equipo.localia == "local") {
-                            strBuilderLastMatch.push('<div class="timeline-item timeline-item-left">');
-                                strBuilderLastMatch.push('<div class="timeline-item-date">'+item.tiempo.relojEtapa+'<small><img data-src='+item.tipoIncidencia.icono+' class="match-img-events lazy lazy-fadeIn"/></small></div>');
-                                strBuilderLastMatch.push('<div class="timeline-item-divider"></div>');
-                                //strBuilderLastMatch.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
-                                    strBuilderLastMatch.push('<div class="timeline-item-content">');
-                                        if (item.detallePrincipal.detalle == null) {
-                                            strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title"></div>');
-                                        } else {
-                                            strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
-                                        }
-                                        if (item.comentario !== "") {
-                                            strBuilderLastMatch.push('<div class="match-event-timeline-commentary"><br>'+item.comentario+'</div>');
-                                        }
-                                        strBuilderLastMatch.push('</div>');
-                                    strBuilderLastMatch.push('</div>');
-                            strBuilderLastMatch.push('</div>');
-
-                            timelieSide = true;
-
-                        }
-                        else if (item.equipo.localia == "visitante"){
-
-                            strBuilderLastMatch.push('<div class="timeline-item timeline-item-right">');
-                                strBuilderLastMatch.push('<div class="timeline-item-date">'+item.tiempo.relojEtapa+'<small><img data-src='+item.tipoIncidencia.icono+' class="match-img-events lazy lazy-fadeIn"/></small></div>');
-                                strBuilderLastMatch.push('<div class="timeline-item-divider"></div>');
-                                //strBuilderLastMatch.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
-                                    strBuilderLastMatch.push('<div class="timeline-item-content">');
-                                        if (item.detallePrincipal.detalle == null) {
-                                            strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title"></div>');
-                                        } else {
-                                            strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
-                                        }
-                                        if (item.comentario !== "") {
-                                            strBuilderLastMatch.push('<div class="match-event-timeline-commentary"><br>'+item.comentario+'</div>');
-                                        }
-                                        strBuilderLastMatch.push('</div>');
-                                    strBuilderLastMatch.push('</div>');
-                            strBuilderLastMatch.push('</div>');
-
-                            timelieSide = true;
-
-                        }
-
-                    }
-                    else if (item.tipoEvento == "sustitucion") {
-
-                        if (timelieSide == false) {
-                            strBuilderLastMatch.push('<div class="timeline timeline-sides">');
-                        }
-
-                        if (item.equipo.localia == "local") {
-                            strBuilderLastMatch.push('<div class="timeline-item timeline-item-left">');
-                                strBuilderLastMatch.push('<div class="timeline-item-date">'+item.tiempo.relojEtapa+'<small><img data-src='+item.tipoIncidencia.icono+' class="match-img-events lazy lazy-fadeIn"/></small></div>');
-                                strBuilderLastMatch.push('<div class="timeline-item-divider"></div>');
-                                //strBuilderLastMatch.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
-                                    strBuilderLastMatch.push('<div class="timeline-item-content">');
-                                        strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.label+': '+item.detallePrincipal.detalle+'</div><div class="match-event-timeline-commentary"><br>'+item.detalleSecundario.label+': '+item.detalleSecundario.detalle+'</div>');
-                                        strBuilderLastMatch.push('</div>');
-                                    strBuilderLastMatch.push('</div>');
-                            strBuilderLastMatch.push('</div>');
-
-                            timelieSide = true;
-
-                        }
-                        else if (item.equipo.localia == "visitante"){
-
-                            strBuilderLastMatch.push('<div class="timeline-item timeline-item-right">');
-                                strBuilderLastMatch.push('<div class="timeline-item-date">'+item.tiempo.relojEtapa+'<small><img data-src='+item.tipoIncidencia.icono+' class="match-img-events lazy lazy-fadeIn"/></small></div>');
-                                strBuilderLastMatch.push('<div class="timeline-item-divider"></div>');
-                                //strBuilderLastMatch.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
-                                    strBuilderLastMatch.push('<div class="timeline-item-content">');
-                                        strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.label+': '+item.detallePrincipal.detalle+'</div><div class="match-event-timeline-commentary"><br>'+item.detalleSecundario.label+': '+item.detalleSecundario.detalle+'</div>');
-                                        strBuilderLastMatch.push('</div>');
-                                    strBuilderLastMatch.push('</div>');
-                            strBuilderLastMatch.push('</div>');
-
-                            timelieSide = true;
-                        }
-
-                    }
-
-                });
-
-            strBuilderLastMatch.push('</div>');
-
-		    }
-
-		}
-		/*if(match.matchCourse != ""){
-			strBuilderLastMatch.push('<div class="card">');
-				strBuilderLastMatch.push('<div class="card-header card-header-center">');
-					strBuilderLastMatch.push(lblDevelopmentMatchDetails);
-				strBuilderLastMatch.push('</div>');
-				strBuilderLastMatch.push('<div class="card-content">');
-					strBuilderLastMatch.push('<div class="card-content-inner">');
-						strBuilderLastMatch.push('<div class="list-block lastmatch-tournaments">');
-							strBuilderLastMatch.push('<div class="description-lastmatch-tournament">');
-								strBuilderLastMatch.push(match.detalle);
-							strBuilderLastMatch.push('</div>');
-						strBuilderLastMatch.push('</div>');
-					strBuilderLastMatch.push('</div>');
-				strBuilderLastMatch.push('</div>');
-			strBuilderLastMatch.push('</div>');
-		}
-		if(match.liveDetail != ""){
-			strBuilderLastMatch.push('<div class="card">');
-				strBuilderLastMatch.push('<div class="card-header card-header-center">');
-					strBuilderLastMatch.push(lblLiveMatchEvents);
-				strBuilderLastMatch.push('</div>');
-				strBuilderLastMatch.push('<div class="card-content">');
-					strBuilderLastMatch.push('<div class="card-content-inner">');
-						strBuilderLastMatch.push('<div class="list-block lastmatch-tournaments">');
-						strBuilderLastMatch.push('<div class="list-block">');
-						strBuilderLastMatch.push('<ul>');
-							$.each(match.liveDetail, function (i, event){
-								strBuilderLastMatch.push('<li class="accordion-item androidFix_4_1 accordion-item-event-livematch">');
-								strBuilderLastMatch.push('<a href="#" class="item-content item-link">');
-								strBuilderLastMatch.push('<div class="item-inner">');
-								strBuilderLastMatch.push('<div class="item-title"><span class="spn-event-livematch-minute">'+event.minute+'</span><span>'+event.name+'</span></div>');
-								strBuilderLastMatch.push('</div>');
-								strBuilderLastMatch.push('</a>');
-								strBuilderLastMatch.push('<div class="accordion-item-content">');
-								strBuilderLastMatch.push('<div class="content-block">');
-								strBuilderLastMatch.push('<p>'+event.detail+'</p>');
-								strBuilderLastMatch.push('</div>');
-								strBuilderLastMatch.push('</div>');
-								strBuilderLastMatch.push('</li>');
-							});
-							strBuilderLastMatch.push('</ul>');
-							strBuilderLastMatch.push('</div>');
-						strBuilderLastMatch.push('</div>');
-					strBuilderLastMatch.push('</div>');
-				strBuilderLastMatch.push('</div>');
-			strBuilderLastMatch.push('</div>');
-		}*/
-	//});
-	return(strBuilderLastMatch.join(""));
+        myApp.initImagesLazyLoad(mainView.activePage.container);
+	//mainView.router.load({pageName: 'matchdetails'});
 }
+
 
 function builderDetailsMatchDetailsInfo(match) {
 
- myApp.showTab("#tabMatchDetails1");
-	//builderTournamentsSportDetails();
+    myApp.showTab("#tabMatchDetails1");
 
-	$('#tabMatchDetails1').html('');
-	//var strBuilderMatchDetails = [];
+    $('#tabMatchDetails1').html('');
+    console.log(match);
 
-	//strBuilderMatchDetails.push(builderDetailsMatchDetailsInfo(match));
-	//console.log(strBuilderMatchDetails);
+	var finalInfoStructureMatchDetails = htmlMatchDetailsCard(match);
+	console.log(finalInfoStructureMatchDetails);
+	var finalInfoStructureMatchDetailsEvents = htmlMatchDetailsEvents(match);
+	console.log(finalInfoStructureMatchDetailsEvents);
 
-
-console.log(match);
-	var strBuilderMatchDetailInfo = [];
-	//$.each(match.encuentros, function(i, match) {
-	//console.log(match);
-		strBuilderMatchDetailInfo.push('<div class="card">');
-
-				/*if(match.liveMatch == true){
-					strBuilderMatchDetailInfo.push('<div class="card-header card-header-center animated infinite pulse">');
-					strBuilderMatchDetailInfo.push(lblLiveMatchTournaments);
-					strBuilderMatchDetailInfo.push('</div>');
-
-				}
-				else{*/
-					strBuilderMatchDetailInfo.push('<div class="card-header card-header-center">');
-					strBuilderMatchDetailInfo.push(lblScoreboardMatchDetails);
-					strBuilderMatchDetailInfo.push('</div>');
-				//}
-
-			strBuilderMatchDetailInfo.push('<div class="card-content">');
-				strBuilderMatchDetailInfo.push('<div class="card-content-inner">');
-					strBuilderMatchDetailInfo.push('<div class="list-block lastmatch-tournaments">');
-						strBuilderMatchDetailInfo.push('<div class="item-content">');
-							strBuilderMatchDetailInfo.push('<div class="row" id="row-lastmatch-tournament">');
-								strBuilderMatchDetailInfo.push('<div class="col-33 col-lastmatch-tournament">');
-                                    if(match.local.imagenPrincipalMin != ""){
-                                        strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+match.local.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
-                                    }
-                                    else{
-                                        strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
-                                    }
-									strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-team">'+match.local.nombreCorto+'</div>');
-								strBuilderMatchDetailInfo.push('</div>');
-								strBuilderMatchDetailInfo.push('<div class="col-33 col-lastmatch-tournament col-lastmatch-tournament.middle">');
-									strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-nametournament">'+lblTournamentCategorieFixture+'</div>');
-									//strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-nametournament">match.torneo.deporteCategoria.nombreCorto</div>');
-									strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-name">'+lblTournamentNameFixture+'</div>');
-									//strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-name">match.torneo.nombre</div>');
-									if (match.local.tantos != null || match.visitante.tantos != null){
-                                        //strBuilderMatchDetailInfo.push('<td class="td-50-tournaments td-scrore-datelist">'+match.local.tantos+'</td>');
-                                        strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-result"><p>'+match.local.tantos+' - '+match.visitante.tantos+'</p></div>');
-                                        //strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-result"><p>'+match.visitante.tantos+'</p></div>');
-                                        //strBuilderMatchDetailInfo.push('<td class="td-30-tournaments"><a onclick="loadMatchDetailsFromFixture('+mainId+','+match.id+')" href="#" class="button">'+lblSeeMoreDatesList+'</a></td>');
-                                        //strBuilderMatchDetailInfo.push('<td class="td-35-tournaments td-scrore-datelist">'+match.visitante.tantos+'</td>');
-                                    } else {
-                                        strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-result"><p>VS</p></div>');
-
-                                    }
-
-									/*if(match.liveMatch == true){
-										if(match.actualClock != "")
-										{
-											strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-date">'+messageLastEvent+' '+match.actualClock+'</div>');
-										}
-									} else{*/
-										strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-date">'+match.fechaEncuentro.fecha+'</div>');
-									//}
-
-								strBuilderMatchDetailInfo.push('</div>');
-                                strBuilderMatchDetailInfo.push('<div class="col-33 col-lastmatch-tournament">');
-                                    if(match.visitante.imagenPrincipalMin != ""){
-                                        strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+match.visitante.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
-                                    }
-                                    else{
-                                        strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
-                                    }
-									strBuilderMatchDetailInfo.push('<div class="col-lastmatch-tournament-team">'+match.visitante.nombreCorto+'</div>');
-									strBuilderMatchDetailInfo.push('</div>');
-								strBuilderMatchDetailInfo.push('</div>');
-							strBuilderMatchDetailInfo.push('</div>');
-							strBuilderMatchDetailInfo.push('<div class="description-lastmatch-tournament">');
-								strBuilderMatchDetailInfo.push(match.visitante.nombre);
-							strBuilderMatchDetailInfo.push('</div>');
-					strBuilderMatchDetailInfo.push('</div>');
-				strBuilderMatchDetailInfo.push('</div>');
-			strBuilderMatchDetailInfo.push('</div>');
-		strBuilderMatchDetailInfo.push('</div>');
-		//return(strBuilderMatchDetailInfo.join(""));
-
-        console.log(strBuilderMatchDetailInfo);
-        $('#tabMatchDetails1').append(strBuilderMatchDetailInfo.join(""));
-        mainView.router.load({pageName: 'matchdetails'});
-        //myApp.initImagesLazyLoad(mainView.activePage.container);
+	$('#tabMatchDetails1').append(finalInfoStructureMatchDetails.join(""));
+	myApp.initImagesLazyLoad(mainView.activePage.container);
+	//$('#tabMatchDetails1').append(finalInfoStructureMatchDetailsEvents.join(""));
 
 }
 
 function builderDetailsMatchDetailsTimeLine(match) {
-console.log(match);
-myApp.showTab("#tabMatchDetails2");
-$('#tabMatchDetails2').html('');
-var strBuilderLastMatch = [];
+    console.log(match);
+    //mainView.router.load({pageName: 'matchdetails'});
+    myApp.showTab("#tabMatchDetails2");
+    $('#tabMatchDetails2').html('');
+    var finalInfoStructureMatchDetails = htmlMatchDetailsCard(match);
+	console.log(finalInfoStructureMatchDetails);
+	var finalInfoStructureMatchDetailsEvents = htmlMatchDetailsEvents(match);
+	console.log(finalInfoStructureMatchDetailsEvents);
 
-//construyo el card de marcador del partido
-console.log(match);
-	//$.each(match.encuentros, function(i, match) {
-	//console.log(match);
-		strBuilderLastMatch.push('<div class="card">');
+	$('#tabMatchDetails2').append(finalInfoStructureMatchDetails.join(""));
+	$('#tabMatchDetails2').append(finalInfoStructureMatchDetailsEvents.join(""));
 
-				/*if(match.liveMatch == true){
-					strBuilderMatchDetailInfo.push('<div class="card-header card-header-center animated infinite pulse">');
-					strBuilderMatchDetailInfo.push(lblLiveMatchTournaments);
-					strBuilderMatchDetailInfo.push('</div>');
-
-				}
-				else{*/
-					strBuilderLastMatch.push('<div class="card-header card-header-center">');
-					strBuilderLastMatch.push(lblScoreboardMatchDetails);
-					strBuilderLastMatch.push('</div>');
-				//}
-
-			strBuilderLastMatch.push('<div class="card-content">');
-				strBuilderLastMatch.push('<div class="card-content-inner">');
-					strBuilderLastMatch.push('<div class="list-block lastmatch-tournaments">');
-						strBuilderLastMatch.push('<div class="item-content">');
-							strBuilderLastMatch.push('<div class="row" id="row-lastmatch-tournament">');
-								strBuilderLastMatch.push('<div class="col-33 col-lastmatch-tournament">');
-                                    if(match.local.imagenPrincipalMin != ""){
-                                        strBuilderLastMatch.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+match.local.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
-                                    }
-                                    else{
-                                        strBuilderLastMatch.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
-                                    }
-									strBuilderLastMatch.push('<div class="col-lastmatch-tournament-team">'+match.local.nombreCorto+'</div>');
-								strBuilderLastMatch.push('</div>');
-								strBuilderLastMatch.push('<div class="col-33 col-lastmatch-tournament col-lastmatch-tournament.middle">');
-									strBuilderLastMatch.push('<div class="col-lastmatch-tournament-nametournament">'+lblTournamentCategorieFixture+'</div>');
-									//strBuilderLastMatch.push('<div class="col-lastmatch-tournament-nametournament">match.torneo.deporteCategoria.nombreCorto</div>');
-									strBuilderLastMatch.push('<div class="col-lastmatch-tournament-name">'+lblTournamentNameFixture+'</div>');
-									//strBuilderLastMatch.push('<div class="col-lastmatch-tournament-name">match.torneo.nombre</div>');
-									if (match.local.tantos != null || match.visitante.tantos != null){
-                                        //strBuilderLastMatch.push('<td class="td-50-tournaments td-scrore-datelist">'+match.local.tantos+'</td>');
-                                        strBuilderLastMatch.push('<div class="col-lastmatch-tournament-result"><p>'+match.local.tantos+' - '+match.visitante.tantos+'</p></div>');
-                                        //strBuilderLastMatch.push('<div class="col-lastmatch-tournament-result"><p>'+match.visitante.tantos+'</p></div>');
-                                        //strBuilderLastMatch.push('<td class="td-30-tournaments"><a onclick="loadMatchDetailsFromFixture('+mainId+','+match.id+')" href="#" class="button">'+lblSeeMoreDatesList+'</a></td>');
-                                        //strBuilderLastMatch.push('<td class="td-35-tournaments td-scrore-datelist">'+match.visitante.tantos+'</td>');
-                                    } else {
-                                        strBuilderLastMatch.push('<div class="col-lastmatch-tournament-result"><p>VS</p></div>');
-
-                                    }
-
-									/*if(match.liveMatch == true){
-										if(match.actualClock != "")
-										{
-											strBuilderLastMatch.push('<div class="col-lastmatch-tournament-date">'+messageLastEvent+' '+match.actualClock+'</div>');
-										}
-									} else{*/
-										strBuilderLastMatch.push('<div class="col-lastmatch-tournament-date">'+match.fechaEncuentro.fecha+'</div>');
-									//}
-
-								strBuilderLastMatch.push('</div>');
-                                strBuilderLastMatch.push('<div class="col-33 col-lastmatch-tournament">');
-                                    if(match.visitante.imagenPrincipalMin != ""){
-                                        strBuilderLastMatch.push('<div class="col-lastmatch-tournament-shield"><img data-src="'+match.visitante.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
-                                    }
-                                    else{
-                                        strBuilderLastMatch.push('<div class="col-lastmatch-tournament-shield"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-lastmatch" /></div>');
-                                    }
-									strBuilderLastMatch.push('<div class="col-lastmatch-tournament-team">'+match.visitante.nombreCorto+'</div>');
-									strBuilderLastMatch.push('</div>');
-								strBuilderLastMatch.push('</div>');
-							strBuilderLastMatch.push('</div>');
-							strBuilderLastMatch.push('<div class="description-lastmatch-tournament">');
-								strBuilderLastMatch.push(match.visitante.nombre);
-							strBuilderLastMatch.push('</div>');
-					strBuilderLastMatch.push('</div>');
-				strBuilderLastMatch.push('</div>');
-			strBuilderLastMatch.push('</div>');
-		strBuilderLastMatch.push('</div>');
-		//return(strBuilderLastMatch.join(""));
-
-        console.log(strBuilderLastMatch);
-
-
-//$('#tabMatchDetails2').html('');
-//var strBuilderLastMatch = [];
-
-    if (match.tipoObjeto == "torneo-encuentro") {
-        var equipoLocal = match.local.nombre;
-        var equipoVisitante = match.visitante.nombre;
-
-        var timelieSide = true;
-        if (match.eventos.todos.length !== 0){
-
-        strBuilderLastMatch.push('<div class="timeline timeline-sides">');
-
-            $.each( match.eventos.todos, function( i, item ){
-            console.log(item);
-                if (item.tipoEvento == "anotacion") {
-
-                if (timelieSide == false) {
-                 strBuilderLastMatch.push('<div class="timeline timeline-sides">');
-                }
-
-                    if (item.equipo.localia == "local") {
-                        strBuilderLastMatch.push('<div class="timeline-item timeline-item-left">');
-                            strBuilderLastMatch.push('<div class="timeline-item-date">'+item.tiempo.relojEtapa+'<small><img data-src='+item.tipoIncidencia.icono+' class="match-img-events lazy lazy-fadeIn"/></small></div>');
-                            strBuilderLastMatch.push('<div class="timeline-item-divider"></div>');
-                            //strBuilderLastMatch.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
-                                strBuilderLastMatch.push('<div class="timeline-item-content">');
-                                    if (item.detallePrincipal.detalle == null) {
-                                        strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title"></div>');
-                                    } else {
-                                        strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
-                                    }
-                                    if (item.comentario !== "") {
-                                        strBuilderLastMatch.push('<div class="match-event-timeline-commentary"><br>'+item.comentario+'</div>');
-                                    }
-                                    strBuilderLastMatch.push('</div>');
-                                strBuilderLastMatch.push('</div>');
-                        strBuilderLastMatch.push('</div>');
-
-                        timelieSide = true;
-
-                    }
-                    else if (item.equipo.localia == "visitante"){
-
-                        strBuilderLastMatch.push('<div class="timeline-item timeline-item-right">');
-                            strBuilderLastMatch.push('<div class="timeline-item-date">'+item.tiempo.relojEtapa+'<small><img data-src='+item.tipoIncidencia.icono+' class="match-img-events lazy lazy-fadeIn"/></small></div>');
-                            strBuilderLastMatch.push('<div class="timeline-item-divider"></div>');
-                            //strBuilderLastMatch.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
-                                strBuilderLastMatch.push('<div class="timeline-item-content">');
-                                if (item.detallePrincipal.detalle == null) {
-                                    strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title"></div>');
-                                } else {
-                                    strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
-                                }
-                                    if (item.comentario !== "") {
-                                        strBuilderLastMatch.push('<div class="match-event-timeline-commentary"><br>'+item.comentario+'</div>');
-                                    }
-                                    strBuilderLastMatch.push('</div>');
-                                strBuilderLastMatch.push('</div>');
-                        strBuilderLastMatch.push('</div>');
-
-                        timelieSide = true;
-
-                    }
-                } else if (item.tipoEvento == "inicializar") {
-
-                    strBuilderLastMatch.push('</div>');
-                    strBuilderLastMatch.push('<div class="matchdetails-events-comments">');
-                        strBuilderLastMatch.push('<div class="content-block-title">Comenzó el partido!</div>');
-                    strBuilderLastMatch.push('</div>');
-                    timelieSide = false;
-
-
-                }
-                else if (item.tipoEvento == "finalizar-etapa") {
-
-                    strBuilderLastMatch.push('</div>');
-                    strBuilderLastMatch.push('<div class="matchdetails-events-comments">');
-                        strBuilderLastMatch.push('<div class="content-block-title">Terminó '+item.tiempo.etapa.nombre+'</div>');
-                    strBuilderLastMatch.push('</div>');
-
-                    timelieSide = false;
-
-                }
-                else if (item.tipoEvento == "inicializar-etapa") {
-
-                    strBuilderLastMatch.push('</div>');
-                    strBuilderLastMatch.push('<div class="matchdetails-events-comments">');
-                        strBuilderLastMatch.push('<div class="content-block-title">Comienza '+item.tiempo.etapa.nombre+'</div>');
-                    strBuilderLastMatch.push('</div>');
-                    timelieSide = false;
-
-                }
-                else if (item.tipoEvento == "comentario") {
-
-                    strBuilderLastMatch.push('</div>');
-
-                    strBuilderLastMatch.push('<div class="matchdetails-events-comments">');
-                        strBuilderLastMatch.push('<div class="content-block-title">'+item.tiempo.relojEtapa+'</div>');
-                            strBuilderLastMatch.push('<div class="timeline-item-time"">'+item.comentario+'</div>');
-                    strBuilderLastMatch.push('</div>');
-                    timelieSide = false;
-
-                }
-                else if (item.tipoEvento == "finalizar") {
-
-                    strBuilderLastMatch.push('</div>');
-                    strBuilderLastMatch.push('<div class="matchdetails-events-comments">');
-                        strBuilderLastMatch.push('<div class="content-block-title">Terminó el partido!</div>');
-                        strBuilderLastMatch.push('<div class="timeline-item-time"">'+equipoLocal+' '+item.tanteadorLocal+' - '+item.tanteadorVisitante+' '+equipoVisitante+'</div>');
-                    strBuilderLastMatch.push('</div>');
-                    timelieSide = false;
-
-                }
-                else if (item.tipoEvento == "disciplinario") {
-
-                if (timelieSide == false) {
-                    strBuilderLastMatch.push('<div class="timeline timeline-sides">');
-                }
-
-                    if (item.equipo.localia == "local") {
-                        strBuilderLastMatch.push('<div class="timeline-item timeline-item-left">');
-                            strBuilderLastMatch.push('<div class="timeline-item-date">'+item.tiempo.relojEtapa+'<small><img data-src='+item.tipoIncidencia.icono+' class="match-img-events lazy lazy-fadeIn"/></small></div>');
-                            strBuilderLastMatch.push('<div class="timeline-item-divider"></div>');
-                            //strBuilderLastMatch.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
-                                strBuilderLastMatch.push('<div class="timeline-item-content">');
-                                    //strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
-                                    if (item.detallePrincipal.detalle == null) {
-                                        strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title"></div>');
-                                    } else {
-                                        strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
-                                    }
-                                    if (item.comentario !== "") {
-                                        strBuilderLastMatch.push('<div class="match-event-timeline-commentary"><br>'+item.comentario+'</div>');
-                                    }
-                                    strBuilderLastMatch.push('</div>');
-                                strBuilderLastMatch.push('</div>');
-                        strBuilderLastMatch.push('</div>');
-
-                        timelieSide = true;
-
-                    }
-                    else if (item.equipo.localia == "visitante"){
-
-                        strBuilderLastMatch.push('<div class="timeline-item timeline-item-right">');
-                            strBuilderLastMatch.push('<div class="timeline-item-date">'+item.tiempo.relojEtapa+'<small><img data-src='+item.tipoIncidencia.icono+' class="match-img-events lazy lazy-fadeIn"/></small></div>');
-                            strBuilderLastMatch.push('<div class="timeline-item-divider"></div>');
-                            //strBuilderLastMatch.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
-                                strBuilderLastMatch.push('<div class="timeline-item-content">');
-                                    if (item.detallePrincipal.detalle == null) {
-                                        strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title"></div>');
-                                    } else {
-                                        strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
-                                    }
-                                    if (item.comentario !== "") {
-                                        strBuilderLastMatch.push('<div class="match-event-timeline-commentary"><br>'+item.comentario+'</div>');
-                                    }
-                                    strBuilderLastMatch.push('</div>');
-                                strBuilderLastMatch.push('</div>');
-                        strBuilderLastMatch.push('</div>');
-
-                        timelieSide = true;
-
-                    }
-
-                }
-                else if (item.tipoEvento == "sustitucion") {
-
-                if (timelieSide == false) {
-                    strBuilderLastMatch.push('<div class="timeline timeline-sides">');
-                }
-
-                    if (item.equipo.localia == "local") {
-                        strBuilderLastMatch.push('<div class="timeline-item timeline-item-left">');
-                            strBuilderLastMatch.push('<div class="timeline-item-date">'+item.tiempo.relojEtapa+'<small><img data-src='+item.tipoIncidencia.icono+' class="match-img-events lazy lazy-fadeIn"/></small></div>');
-                            strBuilderLastMatch.push('<div class="timeline-item-divider"></div>');
-                            //strBuilderLastMatch.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
-                                strBuilderLastMatch.push('<div class="timeline-item-content">');
-                                    strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.label+': '+item.detallePrincipal.detalle+'</div><div class="match-event-timeline-commentary"><br>'+item.detalleSecundario.label+': '+item.detalleSecundario.detalle+'</div>');
-                                    strBuilderLastMatch.push('</div>');
-                                strBuilderLastMatch.push('</div>');
-                        strBuilderLastMatch.push('</div>');
-
-                        timelieSide = true;
-
-                    }
-                    else if (item.equipo.localia == "visitante"){
-
-                        strBuilderLastMatch.push('<div class="timeline-item timeline-item-right">');
-                            strBuilderLastMatch.push('<div class="timeline-item-date">'+item.tiempo.relojEtapa+'<small><img data-src='+item.tipoIncidencia.icono+' class="match-img-events lazy lazy-fadeIn"/></small></div>');
-                            strBuilderLastMatch.push('<div class="timeline-item-divider"></div>');
-                            //strBuilderLastMatch.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
-                                strBuilderLastMatch.push('<div class="timeline-item-content">');
-                                    strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.label+': '+item.detallePrincipal.detalle+'</div><div class="match-event-timeline-commentary"><br>'+item.detalleSecundario.label+': '+item.detalleSecundario.detalle+'</div>');
-                                    strBuilderLastMatch.push('</div>');
-                                strBuilderLastMatch.push('</div>');
-                        strBuilderLastMatch.push('</div>');
-
-                        timelieSide = true;
-                    }
-
-                }
-
-            });
-
-        strBuilderLastMatch.push('</div>');
-
-
-
-        }
-
-    }
-
-    $('#tabMatchDetails2').append(strBuilderLastMatch.join(""));
     myApp.initImagesLazyLoad(mainView.activePage.container);
 
 
 }
-
-
-
-
 
 
 function builderErrorMatchDetails(idMatch){

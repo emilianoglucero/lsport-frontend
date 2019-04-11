@@ -478,13 +478,16 @@ function setPushConfigurations() {
             mainView.router.load({ pageName: "login" });
             window.location.reload(true);
           } else {
-            //loadPageLogin();
-            console.log("refreshss");
-            //mainView.router.load({pageName: 'home'});
-            //showLoadSpinnerWS();
-            refreshMatchDetails1(ids.id);
-            //hideLoadSpinnerWS();
-            //refreshMatchDetails1(ids.id);
+              setTimeout(function() {
+                //loadPageLogin();
+                console.log("refreshss");
+                console.log(paramsId.id);
+                //mainView.router.load({pageName: 'home'});
+                //showLoadSpinnerWS();
+                refreshMatchDetails1(paramsId.id);
+                //hideLoadSpinnerWS();
+                //refreshMatchDetails1(ids.id);
+              }, 6000);
           }
         } else {
           console.log("tap false");
@@ -500,10 +503,8 @@ function setPushConfigurations() {
               console.log(idLiveMatchActivePage);
               console.log(idLiveMatchSportDetails);
 
-              if (
-                idLiveMatchActivePage == ids.id ||
-                idLiveMatchSportDetails == ids.id
-              ) {
+              if ( idLiveMatchActivePage == ids.id || idLiveMatchSportDetails == ids.id) {
+              setTimeout(function() {
                 console.log("idlivee");
                 if (idLiveMatchActivePage == ids.id) {
                   console.log("idlivee2");
@@ -512,6 +513,7 @@ function setPushConfigurations() {
                   console.log("idlivee3");
                   refreshMatchDetails1(ids.id);
                 }
+              }, 6000);
               } else {
                 console.log("not id livee");
                 vibrate();
@@ -535,13 +537,13 @@ function setPushConfigurations() {
               }
             } else {
               if (
-                idLiveMatchActivePage == ids.id ||
-                idLiveMatchSportDetails == ids.id
+                idLiveMatchActivePage == paramsId.id ||
+                idLiveMatchSportDetails == paramsId.id
               ) {
-                if (idLiveMatchActivePage == ids.id) {
-                  refreshMatchDetails1(ids.id);
+                if (idLiveMatchActivePage == paramsId.id) {
+                  refreshMatchDetails1(paramsId.id);
                 } else {
-                  refreshLiveMatchSportDetails(ids.id);
+                  refreshLiveMatchSportDetails(paramsId.id);
                 }
               }
             }

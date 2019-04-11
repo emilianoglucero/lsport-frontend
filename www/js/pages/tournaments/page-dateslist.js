@@ -80,7 +80,7 @@ function builderDatesList(idDateSelected, nameDateSelected){
 				                                strBuilderListCards.push('</td>');
 				                                strBuilderListCards.push('<td class="td-30-tournaments">');
 				                                strBuilderListCards.push('<table>');
-				                            if (match.local.score != "" || match.visit.score != ""){
+				                            if (match.local.score != "" || match.visitante.score != ""){
 				                                strBuilderListCards.push('<td class="td-35-tournaments td-scrore-datelist">'+match.local.score+'</td>');
 				                                strBuilderListCards.push('<td class="td-30-tournaments"><div class="interzonal-label-datelist">'+lblInterzonal+'</div><a onclick="loadMatchDetails('+match.idMatch+')" href="#" class="button">'+lblSeeMoreDatesList+'</a></td>');
 				                                strBuilderListCards.push('<td class="td-35-tournaments td-scrore-datelist">'+match.visit.score+'</td>');
@@ -101,7 +101,7 @@ function builderDatesList(idDateSelected, nameDateSelected){
 				                            strBuilderListCards.push('</td>');
 				                            strBuilderListCards.push('<td class="td-30-tournaments">');
 				                            strBuilderListCards.push('<table>');
-				                            if (match.local.score != "" || match.visit.score != ""){
+				                            if (match.local.score != "" || match.visitante.score != ""){
 				                                strBuilderListCards.push('<td class="td-35-tournaments td-scrore-datelist">'+match.local.score+'</td>');
 				                                strBuilderListCards.push('<td class="td-30-tournaments"><a onclick="loadMatchDetails('+match.idMatch+')" href="#" class="button">'+lblSeeMoreDatesList+'</a></td>');
 				                                strBuilderListCards.push('<td class="td-35-tournaments td-scrore-datelist">'+match.visit.score+'</td>');
@@ -115,8 +115,8 @@ function builderDatesList(idDateSelected, nameDateSelected){
 						strBuilderListCards.push('</table>');
 						strBuilderListCards.push('</td>');
 						strBuilderListCards.push('<td class="td-35-tournaments">');
-							strBuilderListCards.push('<div>'+match.visit.name+'</div>');
-							if (match.visit.urlShield != ""){
+							strBuilderListCards.push('<div>'+match.visitante.name+'</div>');
+							if (match.visitante.urlShield != ""){
 								strBuilderListCards.push('<div><img data-src="'+match.visit.urlShield+'" class="lazy lazy-fadeIn img-shield-datelist" ></div>');
 							}
 							else{

@@ -788,11 +788,16 @@ function builderNewsHomeDetails() {
                 tmpMatchname += '</div>';
                 // strBuilderLastNewsContent.push('<div class="tournament-matches-name">' + item.torneo.nombre + '</div>');
                 strBuilderLastNewsContent.push(tmpMatchname);
-                strBuilderLastNewsContent.push('<div class="tournament-matches-division">' + item.torneo.deporteCategoria.nombreCorto + '<span class="tournament-matches-matchday">' + item.fechaEncuentro.fecha + '</span>');
+                if (item.vivo == "false") {
+                    strBuilderLastNewsContent.push('<div class="tournament-matches-division">' + item.torneo.deporteCategoria.nombreCorto + '<span class="tournament-matches-matchday">' + item.fechaEncuentro.fecha + '</span>');
+                }
+                /*** revisar el funcionamiento cuando no hay partido en vivo ***/
+                strBuilderLastNewsContent.push('</div>');
                 if (item.vivo == "true") {
-                    strBuilderLastNewsContent.push('<div></div></div></div>');
+                    //strBuilderLastNewsContent.push('<div></div></div></div>');
+                    //strBuilderLastNewsContent.push('<div></div></div></div>');
                 } else {
-                    strBuilderLastNewsContent.push('</div></div>');
+                    //strBuilderLastNewsContent.push('</div></div>');
                 }
                 strBuilderLastNewsContent.push('<div class="card-content tournament-matches-content">');
                 strBuilderLastNewsContent.push('<div class="card-content-inner">');
@@ -902,7 +907,7 @@ function builderNewsHomeDetails() {
                 strBuilderLastNewsContent.push('<div class="card tournament-matches"> <a onclick="loadPositionsTableDetails(' + item.id + ', ' + false + ')" href="#">');
                 strBuilderLastNewsContent.push('<div id="tournament-matches-header" class="card-header no-border">');
 
-                strBuilderLastNewsContent.push('<div class="tournament-header-titulo">' + item.titulo + '</div>');
+                strBuilderLastNewsContent.push('<div class="tournament-header-titulo">' + item.torneo.nombre + '</div>');
                 strBuilderLastNewsContent.push('<div class="tournament-header-fecha">' + item.titulo + '</div>');
 
                 strBuilderLastNewsContent.push('</div>');
@@ -955,7 +960,7 @@ function builderNewsHomeDetails() {
                 strBuilderLastNewsContent.push('</div>');
                 var verMas = false;
                 $.each(item.tablaGeneral.cuerpo, function (i, item) {
-                    strBuilderLastNewsContent.push('<div class="row tournament-child no-gutter">');
+                    
                     var pos = i + 1;
                     var equipoTabla = i + 1;
 
@@ -963,6 +968,7 @@ function builderNewsHomeDetails() {
                     console.log(equipoTabla);
                     console.log(verMas);
                     if (equipoTabla < 5) {
+                        strBuilderLastNewsContent.push('<div class="row tournament-child no-gutter">');
                         if (item.eq.nombre !== "" && item.eq.nombre !== undefined) {
                             strBuilderLastNewsContent.push('<div class="col-40 tournament-child-team"><span class="td-span-team-pos">' + pos + '</span><span class="td-span-team-name">' + item.eq.nombre + '</span></div>');
                         }
@@ -987,15 +993,17 @@ function builderNewsHomeDetails() {
                         if (item.td !== "" && item.td !== undefined) {
                             strBuilderLastNewsContent.push('<div class="col-10 tournament-child-numbers">' + item.td + '</div>');
                         }
+                        strBuilderLastNewsContent.push('</div>');
                     } else {
 
                         if (verMas == false) {
                             strBuilderLastNewsContent.push('<div class="col-50"> ...</div>');
                             verMas = true;
                         }
+                        //strBuilderLastNewsContent.push('</div>');
 
                     }
-                    strBuilderLastNewsContent.push('</div>');
+                    //strBuilderLastNewsContent.push('</div>');
                 });
 
                 strBuilderLastNewsContent.push('</div></div>');
@@ -1046,7 +1054,7 @@ function builderNewsHomeDetails() {
                         if (match.local.tantos != null || match.visit.tantos != null) {
                             strBuilderLastNewsContent.push('<div class="col-20 match-scorer">' + match.local.tantos + ' - ' + match.visitante.tantos + '</div>');
                         } else {
-                            strBuilderLastNewsContent.push('<div class="col-20 match-scorer">' + match.getFechaOcurrencia.fecha + '</div>');
+                            strBuilderLastNewsContent.push('<div class="col-20 match-scorer">' + match.fechaOcurrencia.fecha + '</div>');
                         }
 
                         strBuilderLastNewsContent.push('<div class="col-15">');
