@@ -293,11 +293,13 @@
 
 .chipHomeTags {
     float: right;
-}
-
-.chipHomeTags {
     margin-right: 10px;
     width: 48%;
+}
+
+.chipHomeTagsLeft {
+    float: left;
+    margin-left: 5%;
 }
 
 .chipHomePublisherLabel {
@@ -389,7 +391,7 @@
     width: 100%;
     font-size: 19px;
     background: transparent url("../../img/template/icon-down.png") no-repeat scroll right;
-    background-size: 20px 20px;
+    background-size: 10px 11px;
     border-radius: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -398,6 +400,8 @@
     background-position: 95% center;
     font-family: "Montserrat-Regular";
     font-size: 16px;
+    /** the native arrow dissapears **/
+    -webkit-appearance: none;
 }
 
 .calendar-input-select {
@@ -666,6 +670,7 @@
 
 .card-content-inner .homeCardcontent {
     word-break: break-word;
+    margin-top: 7px;
 }
 
 /* suceso ultimo partido/partido en vivo */

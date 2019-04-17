@@ -4,22 +4,18 @@
 
 #selectSportDetails {
 	border: 0;
-	color: #FFF;
-	width: auto;
-	font-size: 17px;
-	font-weight: 500;
-	white-space: normal;
-	line-height: 22px;
-	appearance: none;
-	-moz-appearance: none;
-	/* Firefox */
-	-webkit-appearance: none;
-	/* Safari and Chrome */
-	background: transparent url("../../img/template/icon-down.png") no-repeat scroll right 7px;
-	background-size: 18px 18px;
-	width: 120px;
-	padding: 5px;
-	padding-bottom: 2px;
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 500;
+    white-space: normal;
+    line-height: 22px;
+    -webkit-appearance: none;
+    background: transparent url(../../img/template/icon-down.png) no-repeat scroll;
+    background-size: 13px 13px;
+    background-position: 100% 84%;
+    width: 80%;
+    padding: 20px;
+    padding-bottom: 2px;
 }
 
 #imgHeaderSportDetails {

@@ -1,8 +1,8 @@
 {
   "name": "com.lsc.ar.caba.villamalcolm",
-  "displayName": "CSD Villa Malcolm",
+  "displayName": "SG e-sports",
   "version": "1.0.0",
-  "description": "A sample Apache Cordova application that responds to the deviceready event.",
+  "description": "Aplicación oficial de SG e-sports",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

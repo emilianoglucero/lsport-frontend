@@ -57,6 +57,7 @@ function builderMilestoneDetails(milestoneDetailsItem){
 			$('#pNameMilestoneDetails').html(milestoneDetailsItem.nombre);
 			$('#containerImgHeaderMilestoneDetail').html('<img data-src="'+milestoneDetailsItem.imagenPrincipalMin+'" alt="'+milestoneDetailsItem.descripcion+'" class="lazy lazy-fadeIn" id="imgHeaderMilestoneDetails" />');
 			$('#descriptionMilestoneDetails').html(milestoneDetailsItem.descripcion);
+			$('#detaileMilestoneDetails').html(milestoneDetailsItem.detalle);
 			
 			$('#divContentPhotoGalleryMilestone').html('');
 			

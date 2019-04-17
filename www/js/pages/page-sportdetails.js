@@ -855,7 +855,7 @@ function builderNewsSportDetails() {
 
 				strBuilderNewsSportDetailsContent.push('<div class="card demo-card-header-pic">');
 				strBuilderNewsSportDetailsContent.push('<div style="height: 250px;overflow: hidden;position: relative;">');
-				strBuilderNewsSportDetailsContent.push('<img style="width: 100%;top: 50%;position: absolute;left: 50%;transform: translate(-50%, -50%);" src="' + item.imagenPrincipalMin + '" />');
+				strBuilderNewsSportDetailsContent.push('<img style="width: 100%;top: 50%;position: absolute;left: 50%;transform: translate(-50%, -50%);" src="' + item.imagenPrincipal + '" />');
 				strBuilderNewsSportDetailsContent.push('</div>');
 				strBuilderNewsSportDetailsContent.push('<div class="card-header color-white no-border">');
 				strBuilderNewsSportDetailsContent.push('<a onclick="loadNewDetails(' + item.id + ',\'' + sucesoDetailFromSports + '\')" href="#" class="item-link item-content">');
@@ -871,14 +871,14 @@ function builderNewsSportDetails() {
 
 				// ***************** ChipHomeTags ******************** //
 
-				strBuilderNewsSportDetailsContent.push('<div class="chip chipHomeTags">');
+				strBuilderNewsSportDetailsContent.push('<div class="chip chipHomeTags" style="float: left;margin-left: 15px;">');
 					strBuilderNewsSportDetailsContent.push('<div class="media">');
 						strBuilderNewsSportDetailsContent.push('<i style="background-image: url(' + item.tags.icono + ');" class="icon icon-chiptag-categoria"></i>');
 					strBuilderNewsSportDetailsContent.push('</div>');
 					strBuilderNewsSportDetailsContent.push('<div class="chip-label chipHomeCategoryLabel">' + item.tags.categoria + '</div>');
 				strBuilderNewsSportDetailsContent.push('</div>');
 
-				strBuilderNewsSportDetailsContent.push('<i style="background-image: url(' + item.tags.icono + ');" class="icon icon-chiptag-categoria"></i>');
+				//strBuilderNewsSportDetailsContent.push('<i style="background-image: url(' + item.tags.icono + ');" class="icon icon-chiptag-categoria"></i>');
 
 				strBuilderNewsSportDetailsContent.push('</div>');
 				strBuilderNewsSportDetailsContent.push('</div>');
@@ -889,7 +889,7 @@ function builderNewsSportDetails() {
 				if (item.urlImgMin != "") {
 					urlImgNewsList = item.urlImgMin;
 				}
-				strBuilderNewsSportDetailsContent.push('<div class="row"><div class="col-70"><div class="">' + item.titulo + '</div></div>');
+				strBuilderNewsSportDetailsContent.push('<div class="row"><div class="col-70"><div class="" style="font-weight: 700">' + item.titulo + '</div></div>');
 				strBuilderNewsSportDetailsContent.push('<div class="col-30"><div class="dateTitleNew color-gray">15/09/2018</div></div></div>');
 				strBuilderNewsSportDetailsContent.push('<div class="row"><div class="col-100"><div class="color-gray homeCardcontent">' + noticiaTruncada + '</div></div></div>');
 
@@ -900,6 +900,52 @@ function builderNewsSportDetails() {
 				//}
 			} else if (item.tipoObjeto == "torneo-encuentro") {
 
+			console.log(item.id);
+
+
+			// var encuentroFecha = 0;
+			console.log(item.id);
+			strBuilderNewsSportDetailsContent.push('<div class="card tournament-matches"><a onclick="loadMatchDetails1(' + item.id + ',\'' + sucesoDetailFromSports + '\')" href="#">');
+			strBuilderNewsSportDetailsContent.push('<div id="tournament-matches-header" class="card-header no-border">');
+			strBuilderNewsSportDetailsContent.push('<div class="tournament-matches-icon"><img data-src=' + item.torneo.deporte.imagenPrincipalMin + ' class="lazy lazy-fadeIn img-shield-tournament" ></div>');
+			strBuilderNewsSportDetailsContent.push('<div class="tournament-matches-name">' + item.torneo.nombre + '<div style="font-size: 12px;color: #919191;font-family: Montserrat-Light;">' + item.torneo.deporteCategoria.nombreCorto + '</div></div>');
+			strBuilderNewsSportDetailsContent.push('<div class="tournament-matches-division">');
+			if (item.vivo == "true") {
+				strBuilderNewsSportDetailsContent.push('<div class="tournament-matches-matchday-live animated infinite pulse">PARTIDO EN VIVO</div></div></div>');
+			} else {
+				strBuilderNewsSportDetailsContent.push('<div class="tournament-matches-matchday">' + item.fechaEncuentro.fecha + '</div></div></div>');
+			}
+			strBuilderNewsSportDetailsContent.push('<div class="card-content tournament-matches-content">');
+			strBuilderNewsSportDetailsContent.push('<div class="card-content-inner">');
+			//var verMasFecha = false;
+
+			//$.each( item.encuentros, function( n, match ){
+			// encuentroFecha = encuentroFecha+1;
+			console.log(encuentroFecha);
+			//if (encuentroFecha < 3){
+			strBuilderNewsSportDetailsContent.push('<div class="row no-gutter row-tournament-matches">');
+			strBuilderNewsSportDetailsContent.push('<div class="col-25 team-lastmatch-left">' + item.local.nombreCorto + '</div>');
+			//if (match.local.imagenPrincipalMin != ""){
+			//strBuilderNewsSportDetailsContent.push('<div class="col-10"><img data-src="'+match.local.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-team"></div>');
+			//} else {
+			strBuilderNewsSportDetailsContent.push('<div class="col-15" img-lastmatch><img data-src=' + item.local.imagenPrincipalMin + ' class="lazy lazy-fadeIn img-shield-lastmatch"></div>');
+			//}
+			//if (match.local.tantos != "" || match.visit.tantos != ""){
+			//strBuilderNewsSportDetailsContent.push('<div class="col-20 match-scorer">'+match.local.tantos+' - '+match.visitante.tantos+'</div>');
+			//}
+			//else {
+			strBuilderNewsSportDetailsContent.push('<div class="col-20 match-scorer-lastmatch" style="text-align: center;">' + item.local.tantos + ' - ' + item.visitante.tantos + '</div>');
+			//}
+			strBuilderNewsSportDetailsContent.push('<div class="col-15 img-lastmatch"><img data-src=' + item.visitante.imagenPrincipalMin + ' class="lazy lazy-fadeIn img-shield-lastmatch"></div>');
+			strBuilderNewsSportDetailsContent.push('<div class="col-25 team-lastmatch-right">' + item.visitante.nombreCorto + '</div></div>');
+			// }
+			// });
+			strBuilderNewsSportDetailsContent.push('</div></div>');
+			strBuilderNewsSportDetailsContent.push('<div class="card-footer tournament-matches-footer">Ver más...</div></a></div>');
+
+
+		} else if (item.tipoObjeto == "torneo-encuentro") {
+
 				console.log(item.id);
 
 
@@ -907,7 +953,7 @@ function builderNewsSportDetails() {
 				console.log(item.id);
 				strBuilderNewsSportDetailsContent.push('<div class="card tournament-matches"><a onclick="loadMatchDetails1(' + item.id + ',\'' + sucesoDetailFromSports + '\')" href="#">');
 				strBuilderNewsSportDetailsContent.push('<div id="tournament-matches-header" class="card-header no-border">');
-				strBuilderNewsSportDetailsContent.push('<div class="tournament-matches-icon"><img data-src=' + item.torneo.organizador.imagenPrincipalMin + ' class="lazy lazy-fadeIn img-shield-tournament" ></div>');
+				strBuilderNewsSportDetailsContent.push('<div class="tournament-matches-icon"><img data-src=' + item.torneo.deporte.imagenPrincipalMin + ' class="lazy lazy-fadeIn img-shield-tournament" ></div>');
 				strBuilderNewsSportDetailsContent.push('<div class="tournament-matches-name">' + item.torneo.nombre + '<div style="font-size: 12px;color: #919191;font-family: Montserrat-Light;">' + item.torneo.deporteCategoria.nombreCorto + '</div></div>');
 				strBuilderNewsSportDetailsContent.push('<div class="tournament-matches-division">');
 				if (item.vivo == "true") {
@@ -946,8 +992,8 @@ function builderNewsSportDetails() {
 
 			} else if (item.tipoObjeto == "evento") {
 				strBuilderNewsSportDetailsContent.push('<div class="card demo-card-header-pic">');
-				strBuilderNewsSportDetailsContent.push('<div style="height: 250px;overflow: hidden;position: relative;">');
-				strBuilderNewsSportDetailsContent.push('<img style="width: 100%;top: 50%;position: absolute;left: 50%;transform: translate(-50%, -50%);" src="' + item.imagenPrincipalMin + '" />');
+				strBuilderNewsSportDetailsContent.push('<div style="/*height: 100%*/;overflow: hidden;position: relative;">');
+				strBuilderNewsSportDetailsContent.push('<img style="width: 100%;top: 50%;position: absolute;left: 50%;transform: translate(-50%, -50%);" src="' + item.imagenPrincipal + '" />');
 				strBuilderNewsSportDetailsContent.push('</div>');
 				strBuilderNewsSportDetailsContent.push('<div class="card-header color-white no-border">');
 				strBuilderNewsSportDetailsContent.push('<a onclick="loadEventDetails1(' + item.id + ',\'' + sucesoDetailFromSports + '\')" href="#" class="item-link item-content">');
@@ -976,6 +1022,7 @@ function builderNewsSportDetails() {
 
 
 			} else if (item.tipoObjeto == "torneo-tabla-posicion") {
+				if(item.id != 32) {
 				console.log(item);
 				console.log('torneo');
 
@@ -1089,13 +1136,13 @@ function builderNewsSportDetails() {
 				//$('#positionstable-list').append(strBuilderListCards.join(""));
 				//mainView.router.load({pageName: 'positionstable'});
 				//myApp.initImagesLazyLoad(mainView.activePage.container);
-
+			}
 			} else if (item.tipoObjeto == "torneo-fecha") {
 				var encuentroFecha = 0;
 				console.log(item.id);
 				strBuilderNewsSportDetailsContent.push('<div class="card tournament-matches"> <a onclick="loadMatchDetailsFixture(' + item.id + ' ,\'' + sucesoDetailFromSports + '\')" href="#">');
 				strBuilderNewsSportDetailsContent.push('<div id="tournament-matches-header" class="card-header no-border">');
-				strBuilderNewsSportDetailsContent.push('<div class="tournament-matches-icon"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-tournament" ></div>');
+				//strBuilderNewsSportDetailsContent.push('<div class="tournament-matches-icon"><img data-src='+item.torneo.deporte.imagenPrincipalMin+' class="lazy lazy-fadeIn img-shield-tournament" ></div>');
 				strBuilderNewsSportDetailsContent.push('<div class="tournament-matches-name">' + item.nombre + '<div style="font-size: 12px;color: #919191;font-family: Montserrat-Light;">' + item.nombre + '</div></div>');
 				strBuilderNewsSportDetailsContent.push('<div class="tournament-matches-division">');
 				strBuilderNewsSportDetailsContent.push('<div class="tournament-matches-matchday">' + item.nombre + '</div></div></div>');

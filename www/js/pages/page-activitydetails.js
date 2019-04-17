@@ -397,7 +397,7 @@ function builderNewsActivityDetails() {
 				console.log(item.id);
 				strBuilderNewsActivityDetailsContent.push('<div class="card tournament-matches"><a onclick="loadMatchDetails1(' + item.id + ',\'' + sucesoDetailFromSports + '\')" href="#">');
 				strBuilderNewsActivityDetailsContent.push('<div id="tournament-matches-header" class="card-header no-border">');
-				strBuilderNewsActivityDetailsContent.push('<div class="tournament-matches-icon"><img data-src=' + item.torneo.organizador.imagenPrincipalMin + ' class="lazy lazy-fadeIn img-shield-tournament" ></div>');
+				strBuilderNewsActivityDetailsContent.push('<div class="tournament-matches-icon"><img data-src=' + item.torneo.deporte.imagenPrincipalMin + ' class="lazy lazy-fadeIn img-shield-tournament" ></div>');
 				strBuilderNewsActivityDetailsContent.push('<div class="tournament-matches-name">' + item.torneo.nombre + '</div>');
 				strBuilderNewsActivityDetailsContent.push('<div class="tournament-matches-division">' + item.torneo.deporteCategoria.nombreCorto + '');
 				if (item.vivo == "true") {
@@ -462,6 +462,7 @@ function builderNewsActivityDetails() {
 
 
 			} else if (item.tipoObjeto == "torneo-tabla-posicion") {
+				if(item.id != 32) {
 				console.log(item);
 				console.log('torneo');
 
@@ -577,12 +578,13 @@ function builderNewsActivityDetails() {
 				//mainView.router.load({pageName: 'positionstable'});
 				//myApp.initImagesLazyLoad(mainView.activePage.container);
 
+			}
 			} else if (item.tipoObjeto == "torneo-fecha") {
 				var encuentroFecha = 0;
 				console.log(item.id);
 				strBuilderNewsActivityDetailsContent.push('<div class="card tournament-matches"> <a onclick="loadMatchDetailsFixture(' + item.id + ' ,\'' + sucesoDetailFromSports + '\')" href="#">');
 				strBuilderNewsActivityDetailsContent.push('<div id="tournament-matches-header" class="card-header no-border">');
-				strBuilderNewsActivityDetailsContent.push('<div class="tournament-matches-icon"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-tournament" ></div>');
+				strBuilderNewsActivityDetailsContent.push('<div class="tournament-matches-icon"><img data-src='+item.torneo.deporte.imagenPrincipalMin+' class="lazy lazy-fadeIn img-shield-tournament" ></div>');
 				strBuilderNewsActivityDetailsContent.push('<div class="tournament-matches-name">' + item.nombre + '</div>');
 				strBuilderNewsActivityDetailsContent.push('<div class="tournament-matches-division">', item.nombre);
 				strBuilderNewsActivityDetailsContent.push('<div class="tournament-matches-matchday">' + item.nombre + '</div></div></div>');
