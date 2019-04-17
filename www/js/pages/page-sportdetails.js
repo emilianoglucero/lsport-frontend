@@ -1022,7 +1022,6 @@ function builderNewsSportDetails() {
 
 
 			} else if (item.tipoObjeto == "torneo-tabla-posicion") {
-				if(item.id != 32) {
 				console.log(item);
 				console.log('torneo');
 
@@ -1136,7 +1135,7 @@ function builderNewsSportDetails() {
 				//$('#positionstable-list').append(strBuilderListCards.join(""));
 				//mainView.router.load({pageName: 'positionstable'});
 				//myApp.initImagesLazyLoad(mainView.activePage.container);
-			}
+				
 			} else if (item.tipoObjeto == "torneo-fecha") {
 				var encuentroFecha = 0;
 				console.log(item.id);
