@@ -497,6 +497,7 @@
 .card .tournament-matches-icon {
     float: left;
     margin-left: 5px;
+    margin-right: 11px;
 }
 
 .card .img-shield-tournament {
@@ -593,6 +594,7 @@
     /* margin-bottom: 5px; */
     padding: 15px 0;
     font-family: "Montserrat-Semibold";
+    padding-right: 15px;
 
 }
 

@@ -199,8 +199,8 @@ function builderActivityDetails(idAct) {
 
 function builderInformationActivityDetails() {
 
-	$('#textDescriptionActivityDetails').html(activityDetails.desc);
-	$('#cardScheduleActivityDetails').html(builderScheduleActivityDetails(activityDetails.schedule));
+	$('#textDescriptionActivityDetails').html(activityDetails.detalle);
+	$('#cardScheduleActivityDetails').html(builderScheduleActivityDetails(activityDetails.horarioTexto));
 
 	$('#cardPriceActivityDetails').html(builderPriceDetails(activityDetails.precio));
 

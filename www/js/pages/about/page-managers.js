@@ -75,7 +75,7 @@ function builderManagersList(managersList){
 									}
 									strBuilderManagersContent.push('<img data-src="'+urlImgProfile+'" alt="'+item.persona.imagenPrincipalMin+'" class="lazy lazy-fedeIn" />');
 								strBuilderManagersContent.push('</div>');
-							strBuilderManagersContent.push('<div class="manager-name">'+item.persona.nombre+'</div>');
+							strBuilderManagersContent.push('<div class="manager-name">'+item.persona.nombre+''+item.persona.apellido+'</div>');
 							strBuilderManagersContent.push('<div class="manager-date">'+item.fechaDesde+'</div>');
 							strBuilderManagersContent.push('<div class="manager-date"><a href="#" onclick="openPhoneCaller(\''+item.phone+'\')">'+item.phone+'</a></div>');
 							strBuilderManagersContent.push('<div class="manager-date"><a href="#" onclick="openMailer(\''+lblSubjectEmail+'\',\''+item.persona.correo+'\')">'+item.persona.correo+'</a></div>');
