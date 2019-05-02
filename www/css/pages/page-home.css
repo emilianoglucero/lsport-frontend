@@ -616,6 +616,7 @@
 
 .tournament-child .tournament-child-team {
     display: flex !important;
+    width: 43%;
 }
 
 .tournament-child .tournament-child-numbers {
@@ -627,6 +628,7 @@
 
 .tournament-father-team {
     text-align: center;
+    min-width: 40%;
 }
 
 .tournament-header-fecha {

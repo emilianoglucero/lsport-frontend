@@ -18,7 +18,7 @@ myApp.onPageBeforeAnimation('positionstable', function (page)
 	trackPageGA("Tabla de Posiciones");
 });
 
-function loadPositionsTable(idTournament, nameTournamentSelected){
+/*function loadPositionsTable(idTournament, nameTournamentSelected){
 	showLoadSpinnerWS();
 	$.ajax({
 		// URL del Web Service
@@ -55,7 +55,7 @@ function loadPositionsTable(idTournament, nameTournamentSelected){
 	          showMessage(messageConexionError);
 		}
 	});
-}
+}*/
 
 function loadPositionsTableDetails(idTournament, state){
 console.log(state);
@@ -70,6 +70,9 @@ console.log(state);
         });
         newsDetailsHome = newsDetailsHome[0];
         torneoEncuentroState = true;
+
+        sportIDCategorie = newsDetailsHome.torneo.deporteCategoria.id;
+
      } else {
          console.log(idTournament);
          console.log(positionTablesList);
@@ -80,16 +83,18 @@ console.log(state);
          newsDetailsHome = newsDetailsHome[0];
          torneoEncuentroState = false;
 
+         sportIDCategorie = newsDetailsHome.deporteCategoria.id;
+
      }
-
-
+        console.log(newsDetailsHome);
+        //sportIDCategorie = newsDetailsHome.torneo.deporteCategoria.id;
         // averiguar como hacer esto builderNewBanner(response.banner);
         builderPositionsTableDetails(newsDetailsHome);
         hideLoadSpinnerWS();
 
 
 }
-
+// function that builds the full position table detail
 function builderPositionsTableDetails(item){
 console.log(item);
 	//$('#lblHeaderPositionsTables').text(nameTournamentSelected);
@@ -113,37 +118,42 @@ console.log(item);
                     $.each(item.tablaGeneral.cabecera, function(i, item) {
                     //console.log(item.nombreCorto);
                     //console.log(item.columna);
-                        if (item.columna == 'eq'){
-                            if(item.columna != "" && item.columna != undefined){
-                                strBuilderListCards.push('<div class="col-40 tournament-father-team">'+item.nombreCorto+'</div>');
+
+                        if (item.columna == 'eq') {
+                            if (item.columna != "" && item.columna != undefined) {
+                                strBuilderListCards.push('<div class="col tournament-father-team">' + item.nombreCorto + '</div>');
                             }
-                        } else if (item.columna == 'pt'){
-                            if(item.columna != "" && item.columna != undefined){
-                                strBuilderListCards.push('<div class="col-10 tournament-father-numbers">'+item.nombreCorto+'</div>');
+                        } else if (item.columna == 'pt') {
+                            if (item.columna != "" && item.columna != undefined) {
+                                strBuilderListCards.push('<div class="col tournament-father-numbers">' + item.nombreCorto + '</div>');
                             }
-                        } else if (item.columna == 'pj'){
-                            if(item.columna != "" && item.columna != undefined){
-                                strBuilderListCards.push('<div class="col-8 tournament-father-numbers">'+item.nombreCorto+'</div>');
+                        } else if (item.columna == 'pg') {
+                            if (item.columna != "" && item.columna != undefined) {
+                                strBuilderListCards.push('<div class="col tournament-father-numbers">' + item.nombreCorto + '</div>');
                             }
-                        } else if (item.columna == 'pe'){
-                            if(item.columna != "" && item.columna != undefined){
-                                strBuilderListCards.push('<div class="col-8 tournament-father-numbers">'+item.nombreCorto+'</div>');
+                        } else if (item.columna == 'pj') {
+                            if (item.columna != "" && item.columna != undefined) {
+                                strBuilderListCards.push('<div class="col tournament-father-numbers">' + item.nombreCorto + '</div>');
                             }
-                        } else if (item.columna == 'pp'){
-                            if(item.columna != "" && item.columna != undefined){
-                                strBuilderListCards.push('<div class="col-8 tournament-father-numbers">'+item.nombreCorto+'</div>');
+                        } else if (item.columna == 'pe') {
+                            if (item.columna != "" && item.columna != undefined) {
+                                strBuilderListCards.push('<div class="col tournament-father-numbers">' + item.nombreCorto + '</div>');
                             }
-                        } else if (item.columna == 'tf'){
-                            if(item.columna != "" && item.columna != undefined){
-                                strBuilderListCards.push('<div class="col-8 tournament-father-numbers">'+item.nombreCorto+'</div>');
+                        } else if (item.columna == 'pp') {
+                            if (item.columna != "" && item.columna != undefined) {
+                                strBuilderListCards.push('<div class="col tournament-father-numbers">' + item.nombreCorto + '</div>');
                             }
-                        } else if (item.columna == 'tc'){
-                            if(item.columna != "" && item.columna != undefined){
-                                strBuilderListCards.push('<div class="col-8 tournament-father-numbers">'+item.nombreCorto+'</div>');
+                        } else if (item.columna == 'tf') {
+                            if (item.columna != "" && item.columna != undefined) {
+                                strBuilderListCards.push('<div class="col tournament-father-numbers">' + item.nombreCorto + '</div>');
                             }
-                        } else if (item.columna == 'td'){
-                            if(item.columna != "" && item.columna != undefined){
-                                strBuilderListCards.push('<div class="col-10 tournament-father-numbers">'+item.nombreCorto+'</div>');
+                        } else if (item.columna == 'tc') {
+                            if (item.columna != "" && item.columna != undefined) {
+                                strBuilderListCards.push('<div class="col tournament-father-numbers">' + item.nombreCorto + '</div>');
+                            }
+                        } else if (item.columna == 'td') {
+                            if (item.columna != "" && item.columna != undefined) {
+                                strBuilderListCards.push('<div class="col tournament-father-numbers">' + item.nombreCorto + '</div>');
                             }
                         }
 
@@ -161,29 +171,32 @@ console.log(item);
                         console.log(equipoTabla);
                         //console.log(verMas);
                         //if (equipoTabla < 5){
-                            if(item.eq.nombre !== "" && item.eq.nombre !== undefined){
-                                strBuilderListCards.push('<div class="col-40 tournament-child-team"><span class="td-span-team-pos">'+pos+'</span><span class="td-span-team-name">'+item.eq.nombre+'</span></div>');
+                            if (item.eq.nombre !== "" && item.eq.nombre !== undefined) {
+                                strBuilderListCards.push('<div class="col tournament-child-team"><span class="td-span-team-pos">' + pos + '</span><span class="td-span-team-name">' + item.eq.nombre + '</span></div>');
                             }
-                            if(item.pt !== "" && item.pt !== undefined){
-                                strBuilderListCards.push('<div class="col-10 tournament-child-numbers">'+item.pt+'</div>');
+                            if (item.pt !== "" && item.pt !== undefined) {
+                                strBuilderListCards.push('<div class="col tournament-child-numbers">' + item.pt + '</div>');
                             }
-                            if(item.pj !== "" && item.pj !== undefined){
-                                strBuilderListCards.push('<div class="col-8 tournament-child-numbers">'+item.pj+'</div>');
+                            if (item.pg !== "" && item.pg !== undefined) {
+                                strBuilderListCards.push('<div class="col tournament-child-numbers">' + item.pt + '</div>');
                             }
-                            if(item.pe !== "" && item.pe !== undefined){
-                                strBuilderListCards.push('<div class="col-8 tournament-child-numbers">'+item.pe+'</div>');
+                            if (item.pj !== "" && item.pj !== undefined) {
+                                strBuilderListCards.push('<div class="col tournament-child-numbers">' + item.pj + '</div>');
                             }
-                            if(item.pp !== "" && item.pp !== undefined){
-                                strBuilderListCards.push('<div class="col-8 tournament-child-numbers">'+item.pp+'</div>');
+                            if (item.pe !== "" && item.pe !== undefined) {
+                                strBuilderListCards.push('<div class="col tournament-child-numbers">' + item.pe + '</div>');
                             }
-                            if(item.tf !== "" && item.tf !== undefined){
-                                strBuilderListCards.push('<div class="col-8 tournament-child-numbers">'+item.tf+'</div>');
+                            if (item.pp !== "" && item.pp !== undefined) {
+                                strBuilderListCards.push('<div class="col tournament-child-numbers">' + item.pp + '</div>');
                             }
-                            if(item.tc !== "" && item.tc !== undefined){
-                                strBuilderListCards.push('<div class="col-8 tournament-child-numbers">'+item.tc+'</div>');
+                            if (item.tf !== "" && item.tf !== undefined) {
+                                strBuilderListCards.push('<div class="col tournament-child-numbers">' + item.tf + '</div>');
                             }
-                            if(item.td  !== "" && item.td !== undefined){
-                                strBuilderListCards.push('<div class="col-10 tournament-child-numbers">'+item.td+'</div>');
+                            if (item.tc !== "" && item.tc !== undefined) {
+                                strBuilderListCards.push('<div class="col tournament-child-numbers">' + item.tc + '</div>');
+                            }
+                            if (item.td !== "" && item.td !== undefined) {
+                                strBuilderListCards.push('<div class="col tournament-child-numbers">' + item.td + '</div>');
                             }
                        /* } else{
 

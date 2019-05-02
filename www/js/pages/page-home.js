@@ -239,6 +239,281 @@ myApp.onPageBeforeAnimation('home', function (page) {
     }
 });
 
+/** 
+ * 
+ * html structures functions to insert inside de differents main builders and try to not duplicate code 
+ * 
+*/
+
+
+function htmlTournamentTableCard (item) {
+
+    console.log(item);
+    var strBuilderLastNewsContentHtml = [];
+                console.log('torneo');
+
+                $('#positionstable-list').html('');
+                
+                console.log(item.id);
+                strBuilderLastNewsContentHtml.push('<div class="card tournament-matches"> <a onclick="loadPositionsTableDetails(' + item.id + ', ' + false + ')" href="#">');
+                strBuilderLastNewsContentHtml.push('<div id="tournament-matches-header" class="card-header no-border">');
+
+                strBuilderLastNewsContentHtml.push('<div class="tournament-header-titulo">' + item.torneo.nombre + '</div>');
+                strBuilderLastNewsContentHtml.push('<div class="tournament-header-fecha">' + item.titulo + '</div>');
+
+                strBuilderLastNewsContentHtml.push('</div>');
+                strBuilderLastNewsContentHtml.push('<div class="card-content tournament-matches-content">');
+                strBuilderLastNewsContentHtml.push('<div class="card-content-inner">');
+                var verMasFecha = false;
+                //console.log(item);
+                //console.log(item.tablaGeneral.cabecera);
+                strBuilderLastNewsContentHtml.push('<div class="row tournament-father no-gutter">');
+                $.each(item.tablaGeneral.cabecera, function (i, item) {
+                    //console.log(item.nombreCorto);
+                    //console.log(item.columna);
+                    if (item.columna == 'eq') {
+                        if (item.columna != "" && item.columna != undefined) {
+                            strBuilderLastNewsContentHtml.push('<div class="col tournament-father-team">' + item.nombreCorto + '</div>');
+                        }
+                    } else if (item.columna == 'pt') {
+                        if (item.columna != "" && item.columna != undefined) {
+                            strBuilderLastNewsContentHtml.push('<div class="col tournament-father-numbers">' + item.nombreCorto + '</div>');
+                        }
+                    } else if (item.columna == 'pg') {
+                        if (item.columna != "" && item.columna != undefined) {
+                            strBuilderLastNewsContentHtml.push('<div class="col tournament-father-numbers">' + item.nombreCorto + '</div>');
+                        }
+                    } else if (item.columna == 'pj') {
+                        if (item.columna != "" && item.columna != undefined) {
+                            strBuilderLastNewsContentHtml.push('<div class="col tournament-father-numbers">' + item.nombreCorto + '</div>');
+                        }
+                    } else if (item.columna == 'pe') {
+                        if (item.columna != "" && item.columna != undefined) {
+                            strBuilderLastNewsContentHtml.push('<div class="col tournament-father-numbers">' + item.nombreCorto + '</div>');
+                        }
+                    } else if (item.columna == 'pp') {
+                        if (item.columna != "" && item.columna != undefined) {
+                            strBuilderLastNewsContentHtml.push('<div class="col tournament-father-numbers">' + item.nombreCorto + '</div>');
+                        }
+                    } else if (item.columna == 'tf') {
+                        if (item.columna != "" && item.columna != undefined) {
+                            strBuilderLastNewsContentHtml.push('<div class="col tournament-father-numbers">' + item.nombreCorto + '</div>');
+                        }
+                    } else if (item.columna == 'tc') {
+                        if (item.columna != "" && item.columna != undefined) {
+                            strBuilderLastNewsContentHtml.push('<div class="col tournament-father-numbers">' + item.nombreCorto + '</div>');
+                        }
+                    } else if (item.columna == 'td') {
+                        if (item.columna != "" && item.columna != undefined) {
+                            strBuilderLastNewsContentHtml.push('<div class="col tournament-father-numbers">' + item.nombreCorto + '</div>');
+                        }
+                    }
+
+
+                    //}
+                });
+                strBuilderLastNewsContentHtml.push('</div>');
+                var verMas = false;
+                $.each(item.tablaGeneral.cuerpo, function (i, item) {
+                    
+                    var pos = i + 1;
+                    var equipoTabla = i + 1;
+
+                    console.log(item);
+                    console.log(equipoTabla);
+                    console.log(verMas);
+                    if (equipoTabla < 5) {
+                        strBuilderLastNewsContentHtml.push('<div class="row tournament-child no-gutter">');
+                        if (item.eq.nombre !== "" && item.eq.nombre !== undefined) {
+                            strBuilderLastNewsContentHtml.push('<div class="col tournament-child-team"><span class="td-span-team-pos">' + pos + '</span><span class="td-span-team-name">' + item.eq.nombre + '</span></div>');
+                        }
+                        if (item.pt !== "" && item.pt !== undefined) {
+                            strBuilderLastNewsContentHtml.push('<div class="col tournament-child-numbers">' + item.pt + '</div>');
+                        }
+                        if (item.pg !== "" && item.pg !== undefined) {
+                            strBuilderLastNewsContentHtml.push('<div class="col tournament-child-numbers">' + item.pt + '</div>');
+                        }
+                        if (item.pj !== "" && item.pj !== undefined) {
+                            strBuilderLastNewsContentHtml.push('<div class="col tournament-child-numbers">' + item.pj + '</div>');
+                        }
+                        if (item.pe !== "" && item.pe !== undefined) {
+                            strBuilderLastNewsContentHtml.push('<div class="col tournament-child-numbers">' + item.pe + '</div>');
+                        }
+                        if (item.pp !== "" && item.pp !== undefined) {
+                            strBuilderLastNewsContentHtml.push('<div class="col tournament-child-numbers">' + item.pp + '</div>');
+                        }
+                        if (item.tf !== "" && item.tf !== undefined) {
+                            strBuilderLastNewsContentHtml.push('<div class="col tournament-child-numbers">' + item.tf + '</div>');
+                        }
+                        if (item.tc !== "" && item.tc !== undefined) {
+                            strBuilderLastNewsContentHtml.push('<div class="col tournament-child-numbers">' + item.tc + '</div>');
+                        }
+                        if (item.td !== "" && item.td !== undefined) {
+                            strBuilderLastNewsContentHtml.push('<div class="col tournament-child-numbers">' + item.td + '</div>');
+                        }
+                        strBuilderLastNewsContentHtml.push('</div>');
+                    } else {
+
+                        if (verMas == false) {
+                            strBuilderLastNewsContentHtml.push('<div class="col-50"> ...</div>');
+                            verMas = true;
+                        }
+                        //strBuilderLastNewsContentHtml.push('</div>');
+
+                    }
+                    //strBuilderLastNewsContentHtml.push('</div>');
+                });
+
+                strBuilderLastNewsContentHtml.push('</div></div>');
+                strBuilderLastNewsContentHtml.push('<div class="card-footer tournament-matches-footer">Ver más...</div></div>');
+                strBuilderLastNewsContentHtml.push('</a>');
+
+        
+
+        return strBuilderLastNewsContentHtml;
+
+}
+                
+
+function htmlEventCard (item) { 
+                   
+    var noticiaTruncada = truncateNoticia(item.detalleTxt);
+    var strBuilderLastNewsContent = [];
+    console.log(noticiaTruncada);
+    strBuilderLastNewsContent.push('<div class="card demo-card-header-pic">');
+
+        // -----------> Header
+        strBuilderLastNewsContent.push('<div class="card-header color-white no-border">');
+            strBuilderLastNewsContent.push('<div style="width: 100%;/*height: 100%*/;overflow: hidden;">');
+                strBuilderLastNewsContent.push('<img style="width:100%;" src=\'' + item.imagenPrincipal + '\' >');
+            strBuilderLastNewsContent.push('</div>');
+        strBuilderLastNewsContent.push('</div>');
+        // <----------- Header
+
+        strBuilderLastNewsContent.push('<div class="chipHomeContainer">');
+            if (item.tags.publicador != "") {
+                strBuilderLastNewsContent.push('<div class="chip chipHomeCategory">');
+                    strBuilderLastNewsContent.push('<div class="media">');
+                        strBuilderLastNewsContent.push('<i style="background-image: url(' + item.datosPublicacion.ente.imagenPrincipalMin + ');" class="icon icon-chiptag-categoria"></i>');
+                    strBuilderLastNewsContent.push('</div>');
+                    strBuilderLastNewsContent.push('<div class="chip-label chipHomeCategoryLabel">' + item.datosPublicacion.ente.nombre + '</div>');
+                strBuilderLastNewsContent.push('</div>');
+            }
+                strBuilderLastNewsContent.push('<div class="chip chipHomeDate">');
+                    strBuilderLastNewsContent.push('<div class="media">');
+                        strBuilderLastNewsContent.push('<i class="icon icon-date-home"></i>');
+                    strBuilderLastNewsContent.push('</div>');
+                    strBuilderLastNewsContent.push('<div class="chip-label chipHomeDateLabel">' + formatDateSucesos(item.fecha.fecha) + '</div>');
+                strBuilderLastNewsContent.push('</div>');
+
+            strBuilderLastNewsContent.push('<div class="chip chipHomeTags">');
+                strBuilderLastNewsContent.push('<div class="media">');
+                    strBuilderLastNewsContent.push('<i style="background-image: url(' + item.tags.icono + ');" class="icon icon-chiptag-categoria"></i>');
+                strBuilderLastNewsContent.push('</div>');
+                strBuilderLastNewsContent.push('<div class="chip-label chipHomeCategoryLabel">' + item.tags.categoria + '</div>');
+                strBuilderLastNewsContent.push('</div>');
+            strBuilderLastNewsContent.push('</div>');
+        //strBuilderLastNewsContent.push('<a onclick="loadEventDetails1(' + item.id + ',\'' + sucesoDetailFromHome + '\')" href="#" class="item-link item-content">');
+        //strBuilderLastNewsContent.push('</a>');
+strBuilderLastNewsContent.push('<a onclick="loadEventDetails1(' + item.id + ',\'' + sucesoDetailFromHome + '\')" href="#" class="item-link item-content">');
+    // --------------> Content
+        strBuilderLastNewsContent.push('<div class="card-content news-content">');
+            strBuilderLastNewsContent.push('<div class="card-content-inner">');
+            var urlImgNewsList = getDefaultImageNewsList();
+            if (item.urlImgMin != "") {
+                urlImgNewsList = item.urlImgMin;
+            }
+                strBuilderLastNewsContent.push('<div style="font-family:Montserrat-Regular; font-size: 16px; color: #585858;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">' + item.titulo + '</div>');
+                strBuilderLastNewsContent.push('<div class="color-gray homeCardcontent">' + noticiaTruncada + '</div>');
+                strBuilderLastNewsContent.push('</div>');
+            strBuilderLastNewsContent.push('</div>');
+        // strBuilderLastNewsContent.push('<div class="card-footer tournament-matches-footer">Ver más...</div>');
+    strBuilderLastNewsContent.push('</div>');
+strBuilderLastNewsContent.push('</a>');
+    // <-------------- Content
+strBuilderLastNewsContent.push('</div>');
+
+return strBuilderLastNewsContent;
+
+}
+
+function htmlTournamentMatchesCard (item) {
+
+console.log(item);
+var strBuilderLastNewsContent = [];
+            
+            console.log(item.id);
+
+            var encuentroFecha = 0;
+                console.log(item.id);
+                strBuilderLastNewsContent.push('<div class="card tournament-matches"> <a onclick="loadMatchDetailsFixture(' + item.id + ' ,\'' + sucesoDetailFromHome + '\')" href="#">');
+                strBuilderLastNewsContent.push('<div id="tournament-matches-header" class="card-header no-border">');
+                //strBuilderLastNewsContent.push('<div class="tournament-matches-icon"><img data-src='+item.torneo.deporte.imagenPrincipalMin+' class="lazy lazy-fadeIn img-shield-tournament" ></div>');
+                strBuilderLastNewsContent.push('<div class="tournament-matches-name">' + item.nombre + '<span class="tournament-matches-matchday">' + item.nombre + '</span></div>');
+                strBuilderLastNewsContent.push('<div class="tournament-matches-division">', item.nombre);
+                strBuilderLastNewsContent.push('</div></div>');
+                strBuilderLastNewsContent.push('<div class="card-content tournament-matches-content">');
+                strBuilderLastNewsContent.push('<div class="card-content-inner">');
+                var verMasFecha = false;
+
+                $.each(item.encuentros, function (n, match) {
+                    encuentroFecha = encuentroFecha + 1;
+                    console.log(encuentroFecha);
+                    if (encuentroFecha < 5) {
+                        strBuilderLastNewsContent.push('<div class="row row-tournament-matches">');
+                        strBuilderLastNewsContent.push('<div class="col-25">');
+                            strBuilderLastNewsContent.push('<div style="text-align: right;font-family: Montserrat-Regular;font-size: 12px;color: #585858;">' + match.local.nombreCorto + '</div>');
+                        strBuilderLastNewsContent.push('</div>');
+                        strBuilderLastNewsContent.push('<div class="col-15">');
+                        if (match.local.imagenPrincipalMin != "") {
+                            strBuilderLastNewsContent.push('<div style="text-align: center;"><img data-src="' + match.local.imagenPrincipalMin + '" class="lazy lazy-fadeIn img-shield-team"></div>');
+                        } else {
+                            strBuilderLastNewsContent.push('<div style="text-align: center;"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-team"></div>');
+                        }
+                        strBuilderLastNewsContent.push('</div>');
+                        // strBuilderLastNewsContent.push('<div class="col-40">');
+                            // if (match.local.imagenPrincipalMin != "") {
+                            //     strBuilderLastNewsContent.push('<div style="text-align: center;"><img data-src="' + match.local.imagenPrincipalMin + '" class="lazy lazy-fadeIn img-shield-team"></div>');
+                            // } else {
+                            //     strBuilderLastNewsContent.push('<div style="text-align: center;"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-team"></div>');
+                            // }
+                            // strBuilderLastNewsContent.push('<div style="text-align: center;font-family: Montserrat-Regular;font-size: 12px;color: #585858;margin-top: 5px">' + match.local.nombreCorto + '</div>');
+                        // strBuilderLastNewsContent.push('</div>');
+
+                        if (match.local.tantos != null || match.visit.tantos != null) {
+                            strBuilderLastNewsContent.push('<div class="col-20 match-scorer">' + match.local.tantos + ' - ' + match.visitante.tantos + '</div>');
+                        } else {
+                            strBuilderLastNewsContent.push('<div class="col-20 match-scorer">' + match.fechaOcurrencia.fecha + '</div>');
+                        }
+
+                        strBuilderLastNewsContent.push('<div class="col-15">');
+                        strBuilderLastNewsContent.push('<div style="text-align: center;"><img data-src="' + match.visitante.imagenPrincipalMin + '" class="lazy lazy-fadeIn img-shield-team"></div>');
+                        strBuilderLastNewsContent.push('</div>');
+                        strBuilderLastNewsContent.push('<div class="col-25">');
+                        strBuilderLastNewsContent.push('<div style="text-align: left;font-family: Montserrat-Regular;font-size: 12px;color: #585858;">' + match.visitante.nombreCorto + '</div></div>');
+                        strBuilderLastNewsContent.push('</div>');
+
+                        // strBuilderLastNewsContent.push('<div class="col-40">');
+                        //     strBuilderLastNewsContent.push('<div style="text-align: center;"><img data-src="' + match.visitante.imagenPrincipalMin + '" class="lazy lazy-fadeIn img-shield-team"></div>');
+                        //     strBuilderLastNewsContent.push('<div style="text-align: center;font-family: Montserrat-Regular;font-size: 12px;color: #585858;margin-top: 5px">' + match.visitante.nombreCorto + '</div></div>');
+                        // strBuilderLastNewsContent.push('</div>');
+                    }
+                });
+                strBuilderLastNewsContent.push('</div></div>');
+                strBuilderLastNewsContent.push('<div class="card-footer tournament-matches-footer">Ver más...</div></div>');
+
+    
+
+    return strBuilderLastNewsContent;
+
+}
+
+/** 
+ * 
+ * end of the html structures functions 
+ * 
+*/
+
 function truncateNoticia(string) {
     console.log(string);
     console.log(string.length);
@@ -718,14 +993,17 @@ function builderNewsHomeDetails() {
     console.log('arranca builder de los suceso');
     //$('#last-news-list-block').html('');
     var strBuilderLastNewsContent = [];
+    console.log(strBuilderLastNewsContent);
     console.log(newsListHome);
     console.log(newsListHome.length);
     if (newsListHome.length == 0) {
         strBuilderLastNewsContent.push('<div class="divNotLastestNews">' + divNotLastestNews + '</div>');
     } else {
+
         strBuilderLastNewsContent.push('<div class="list-block list-block-home media-list">');
         //strBuilderLastNewsContent.push('<ul>');
         $.each(newsListHome, function (i, item) {
+        console.log(strBuilderLastNewsContent);
             console.log(item.id);
             console.log(item);
             if (item.tipoObjeto == "banner") {
@@ -736,6 +1014,7 @@ function builderNewsHomeDetails() {
 
                 var noticiaTruncada = truncateNoticia(item.detalleTxt);
                 console.log(noticiaTruncada);
+                console.log(strBuilderLastNewsContent);
                 strBuilderLastNewsContent.push('<div class="card demo-card-header-pic">');
                 strBuilderLastNewsContent.push('<div class="card-header color-white no-border">');
                 strBuilderLastNewsContent.push('<div style="width: 100%;/*height: 250px*/;overflow: hidden;">');
@@ -810,7 +1089,7 @@ function builderNewsHomeDetails() {
 
                 //$.each( item.encuentros, function( n, match ){
                 // encuentroFecha = encuentroFecha+1;
-                console.log(encuentroFecha);
+                //console.log(encuentroFecha);
                 //if (encuentroFecha < 3){
                 strBuilderLastNewsContent.push('<div class="row no-gutter row-tournament-matches">');
                 strBuilderLastNewsContent.push('<div class="col-40">');
@@ -845,245 +1124,24 @@ function builderNewsHomeDetails() {
 
 
             } else if (item.tipoObjeto == "evento") {
-                var noticiaTruncada = truncateNoticia(item.detalleTxt);
-                console.log(noticiaTruncada);
-                strBuilderLastNewsContent.push('<div class="card demo-card-header-pic">');
 
-                    // -----------> Header
-                    strBuilderLastNewsContent.push('<div class="card-header color-white no-border">');
-                        strBuilderLastNewsContent.push('<div style="width: 100%;/*height: 100%*/;overflow: hidden;">');
-                            strBuilderLastNewsContent.push('<img style="width:100%;" src=\'' + item.imagenPrincipal + '\' >');
-                        strBuilderLastNewsContent.push('</div>');
-                    strBuilderLastNewsContent.push('</div>');
-                    // <----------- Header
-
-                    strBuilderLastNewsContent.push('<div class="chipHomeContainer">');
-                        if (item.tags.publicador != "") {
-                            strBuilderLastNewsContent.push('<div class="chip chipHomeCategory">');
-                                strBuilderLastNewsContent.push('<div class="media">');
-                                    strBuilderLastNewsContent.push('<i style="background-image: url(' + item.datosPublicacion.ente.imagenPrincipalMin + ');" class="icon icon-chiptag-categoria"></i>');
-                                strBuilderLastNewsContent.push('</div>');
-                                strBuilderLastNewsContent.push('<div class="chip-label chipHomeCategoryLabel">' + item.datosPublicacion.ente.nombre + '</div>');
-                            strBuilderLastNewsContent.push('</div>');
-                        }
-                            strBuilderLastNewsContent.push('<div class="chip chipHomeDate">');
-                                strBuilderLastNewsContent.push('<div class="media">');
-                                    strBuilderLastNewsContent.push('<i class="icon icon-date-home"></i>');
-                                strBuilderLastNewsContent.push('</div>');
-                                strBuilderLastNewsContent.push('<div class="chip-label chipHomeDateLabel">' + formatDateSucesos(item.fecha.fecha) + '</div>');
-                            strBuilderLastNewsContent.push('</div>');
-
-                        strBuilderLastNewsContent.push('<div class="chip chipHomeTags">');
-                            strBuilderLastNewsContent.push('<div class="media">');
-                                strBuilderLastNewsContent.push('<i style="background-image: url(' + item.tags.icono + ');" class="icon icon-chiptag-categoria"></i>');
-                            strBuilderLastNewsContent.push('</div>');
-                            strBuilderLastNewsContent.push('<div class="chip-label chipHomeCategoryLabel">' + item.tags.categoria + '</div>');
-                            strBuilderLastNewsContent.push('</div>');
-                        strBuilderLastNewsContent.push('</div>');
-                    //strBuilderLastNewsContent.push('<a onclick="loadEventDetails1(' + item.id + ',\'' + sucesoDetailFromHome + '\')" href="#" class="item-link item-content">');
-                    //strBuilderLastNewsContent.push('</a>');
-            strBuilderLastNewsContent.push('<a onclick="loadEventDetails1(' + item.id + ',\'' + sucesoDetailFromHome + '\')" href="#" class="item-link item-content">');
-                // --------------> Content
-                    strBuilderLastNewsContent.push('<div class="card-content news-content">');
-                        strBuilderLastNewsContent.push('<div class="card-content-inner">');
-                        var urlImgNewsList = getDefaultImageNewsList();
-                        if (item.urlImgMin != "") {
-                            urlImgNewsList = item.urlImgMin;
-                        }
-                            strBuilderLastNewsContent.push('<div style="font-family:Montserrat-Regular; font-size: 16px; color: #585858;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">' + item.titulo + '</div>');
-                            strBuilderLastNewsContent.push('<div class="color-gray homeCardcontent">' + noticiaTruncada + '</div>');
-                            strBuilderLastNewsContent.push('</div>');
-                        strBuilderLastNewsContent.push('</div>');
-                    // strBuilderLastNewsContent.push('<div class="card-footer tournament-matches-footer">Ver más...</div>');
-                strBuilderLastNewsContent.push('</div>');
-            strBuilderLastNewsContent.push('</a>');
-                // <-------------- Content
-            strBuilderLastNewsContent.push('</div>');
+                var strBuilderLastNewsContentEventArray = htmlEventCard(item);
+                //strBuilderLastNewsContent.append(strBuilderLastNewsContentTournamentArray.join(""));
+                strBuilderLastNewsContent.push(strBuilderLastNewsContentEventArray.join(""));
 
             } else if (item.tipoObjeto == "torneo-tabla-posicion") {
-            if(item.id != 32) {
-                console.log(item);
-                console.log('torneo');
 
-                //$('#lblHeaderPositionsTables').text(nameTournamentSelected);
-                $('#positionstable-list').html('');
-                //var strBuilderLastNewsContent = [];
-                //$.each(positionTables, function(n, table) {
-                console.log(item.id);
-                strBuilderLastNewsContent.push('<div class="card tournament-matches"> <a onclick="loadPositionsTableDetails(' + item.id + ', ' + false + ')" href="#">');
-                strBuilderLastNewsContent.push('<div id="tournament-matches-header" class="card-header no-border">');
+                var strBuilderLastNewsContentTournamentArray = htmlTournamentTableCard(item);
+                //strBuilderLastNewsContent.append(strBuilderLastNewsContentTournamentArray.join(""));
+                strBuilderLastNewsContent.push(strBuilderLastNewsContentTournamentArray.join(""));
 
-                strBuilderLastNewsContent.push('<div class="tournament-header-titulo">' + item.torneo.nombre + '</div>');
-                strBuilderLastNewsContent.push('<div class="tournament-header-fecha">' + item.titulo + '</div>');
-
-                strBuilderLastNewsContent.push('</div>');
-                strBuilderLastNewsContent.push('<div class="card-content tournament-matches-content">');
-                strBuilderLastNewsContent.push('<div class="card-content-inner">');
-                var verMasFecha = false;
-                //console.log(item);
-                //console.log(item.tablaGeneral.cabecera);
-                strBuilderLastNewsContent.push('<div class="row tournament-father no-gutter">');
-                $.each(item.tablaGeneral.cabecera, function (i, item) {
-                    //console.log(item.nombreCorto);
-                    //console.log(item.columna);
-                    if (item.columna == 'eq') {
-                        if (item.columna != "" && item.columna != undefined) {
-                            strBuilderLastNewsContent.push('<div class="col-40 tournament-father-team">' + item.nombreCorto + '</div>');
-                        }
-                    } else if (item.columna == 'pt') {
-                        if (item.columna != "" && item.columna != undefined) {
-                            strBuilderLastNewsContent.push('<div class="col-10 tournament-father-numbers">' + item.nombreCorto + '</div>');
-                        }
-                    } else if (item.columna == 'pj') {
-                        if (item.columna != "" && item.columna != undefined) {
-                            strBuilderLastNewsContent.push('<div class="col-8 tournament-father-numbers">' + item.nombreCorto + '</div>');
-                        }
-                    } else if (item.columna == 'pe') {
-                        if (item.columna != "" && item.columna != undefined) {
-                            strBuilderLastNewsContent.push('<div class="col-8 tournament-father-numbers">' + item.nombreCorto + '</div>');
-                        }
-                    } else if (item.columna == 'pp') {
-                        if (item.columna != "" && item.columna != undefined) {
-                            strBuilderLastNewsContent.push('<div class="col-8 tournament-father-numbers">' + item.nombreCorto + '</div>');
-                        }
-                    } else if (item.columna == 'tf') {
-                        if (item.columna != "" && item.columna != undefined) {
-                            strBuilderLastNewsContent.push('<div class="col-8 tournament-father-numbers">' + item.nombreCorto + '</div>');
-                        }
-                    } else if (item.columna == 'tc') {
-                        if (item.columna != "" && item.columna != undefined) {
-                            strBuilderLastNewsContent.push('<div class="col-8 tournament-father-numbers">' + item.nombreCorto + '</div>');
-                        }
-                    } else if (item.columna == 'td') {
-                        if (item.columna != "" && item.columna != undefined) {
-                            strBuilderLastNewsContent.push('<div class="col-10 tournament-father-numbers">' + item.nombreCorto + '</div>');
-                        }
-                    }
-
-
-                    //}
-                });
-                strBuilderLastNewsContent.push('</div>');
-                var verMas = false;
-                $.each(item.tablaGeneral.cuerpo, function (i, item) {
-                    
-                    var pos = i + 1;
-                    var equipoTabla = i + 1;
-
-                    console.log(item);
-                    console.log(equipoTabla);
-                    console.log(verMas);
-                    if (equipoTabla < 5) {
-                        strBuilderLastNewsContent.push('<div class="row tournament-child no-gutter">');
-                        if (item.eq.nombre !== "" && item.eq.nombre !== undefined) {
-                            strBuilderLastNewsContent.push('<div class="col-40 tournament-child-team"><span class="td-span-team-pos">' + pos + '</span><span class="td-span-team-name">' + item.eq.nombre + '</span></div>');
-                        }
-                        if (item.pt !== "" && item.pt !== undefined) {
-                            strBuilderLastNewsContent.push('<div class="col-10 tournament-child-numbers">' + item.pt + '</div>');
-                        }
-                        if (item.pj !== "" && item.pj !== undefined) {
-                            strBuilderLastNewsContent.push('<div class="col-8 tournament-child-numbers">' + item.pj + '</div>');
-                        }
-                        if (item.pe !== "" && item.pe !== undefined) {
-                            strBuilderLastNewsContent.push('<div class="col-8 tournament-child-numbers">' + item.pe + '</div>');
-                        }
-                        if (item.pp !== "" && item.pp !== undefined) {
-                            strBuilderLastNewsContent.push('<div class="col-8 tournament-child-numbers">' + item.pp + '</div>');
-                        }
-                        if (item.tf !== "" && item.tf !== undefined) {
-                            strBuilderLastNewsContent.push('<div class="col-8 tournament-child-numbers">' + item.tf + '</div>');
-                        }
-                        if (item.tc !== "" && item.tc !== undefined) {
-                            strBuilderLastNewsContent.push('<div class="col-8 tournament-child-numbers">' + item.tc + '</div>');
-                        }
-                        if (item.td !== "" && item.td !== undefined) {
-                            strBuilderLastNewsContent.push('<div class="col-10 tournament-child-numbers">' + item.td + '</div>');
-                        }
-                        strBuilderLastNewsContent.push('</div>');
-                    } else {
-
-                        if (verMas == false) {
-                            strBuilderLastNewsContent.push('<div class="col-50"> ...</div>');
-                            verMas = true;
-                        }
-                        //strBuilderLastNewsContent.push('</div>');
-
-                    }
-                    //strBuilderLastNewsContent.push('</div>');
-                });
-
-                strBuilderLastNewsContent.push('</div></div>');
-                strBuilderLastNewsContent.push('<div class="card-footer tournament-matches-footer">Ver más...</div></div>');
-                strBuilderLastNewsContent.push('</a>');
-
-                //$('#positionstable-list').append(strBuilderListCards.join(""));
-                //mainView.router.load({pageName: 'positionstable'});
-                //myApp.initImagesLazyLoad(mainView.activePage.container);
-            }
 
             } else if (item.tipoObjeto == "torneo-fecha") {
-                var encuentroFecha = 0;
-                console.log(item.id);
-                strBuilderLastNewsContent.push('<div class="card tournament-matches"> <a onclick="loadMatchDetailsFixture(' + item.id + ' ,\'' + sucesoDetailFromHome + '\')" href="#">');
-                strBuilderLastNewsContent.push('<div id="tournament-matches-header" class="card-header no-border">');
-                //strBuilderLastNewsContent.push('<div class="tournament-matches-icon"><img data-src='+item.torneo.deporte.imagenPrincipalMin+' class="lazy lazy-fadeIn img-shield-tournament" ></div>');
-                strBuilderLastNewsContent.push('<div class="tournament-matches-name">' + item.nombre + '<span class="tournament-matches-matchday">' + item.nombre + '</span></div>');
-                strBuilderLastNewsContent.push('<div class="tournament-matches-division">', item.nombre);
-                strBuilderLastNewsContent.push('</div></div>');
-                strBuilderLastNewsContent.push('<div class="card-content tournament-matches-content">');
-                strBuilderLastNewsContent.push('<div class="card-content-inner">');
-                var verMasFecha = false;
-
-                $.each(item.encuentros, function (n, match) {
-                    encuentroFecha = encuentroFecha + 1;
-                    console.log(encuentroFecha);
-                    if (encuentroFecha < 3) {
-                        strBuilderLastNewsContent.push('<div class="row row-tournament-matches">');
-                        strBuilderLastNewsContent.push('<div class="col-25">');
-                            strBuilderLastNewsContent.push('<div style="text-align: right;font-family: Montserrat-Regular;font-size: 12px;color: #585858;">' + match.local.nombreCorto + '</div>');
-                        strBuilderLastNewsContent.push('</div>');
-                        strBuilderLastNewsContent.push('<div class="col-15">');
-                        if (match.local.imagenPrincipalMin != "") {
-                            strBuilderLastNewsContent.push('<div style="text-align: center;"><img data-src="' + match.local.imagenPrincipalMin + '" class="lazy lazy-fadeIn img-shield-team"></div>');
-                        } else {
-                            strBuilderLastNewsContent.push('<div style="text-align: center;"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-team"></div>');
-                        }
-                        strBuilderLastNewsContent.push('</div>');
-                        // strBuilderLastNewsContent.push('<div class="col-40">');
-                            // if (match.local.imagenPrincipalMin != "") {
-                            //     strBuilderLastNewsContent.push('<div style="text-align: center;"><img data-src="' + match.local.imagenPrincipalMin + '" class="lazy lazy-fadeIn img-shield-team"></div>');
-                            // } else {
-                            //     strBuilderLastNewsContent.push('<div style="text-align: center;"><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-team"></div>');
-                            // }
-                            // strBuilderLastNewsContent.push('<div style="text-align: center;font-family: Montserrat-Regular;font-size: 12px;color: #585858;margin-top: 5px">' + match.local.nombreCorto + '</div>');
-                        // strBuilderLastNewsContent.push('</div>');
-
-                        if (match.local.tantos != null || match.visit.tantos != null) {
-                            strBuilderLastNewsContent.push('<div class="col-20 match-scorer">' + match.local.tantos + ' - ' + match.visitante.tantos + '</div>');
-                        } else {
-                            strBuilderLastNewsContent.push('<div class="col-20 match-scorer">' + match.fechaOcurrencia.fecha + '</div>');
-                        }
-
-                        strBuilderLastNewsContent.push('<div class="col-15">');
-                        strBuilderLastNewsContent.push('<div style="text-align: center;"><img data-src="' + match.visitante.imagenPrincipalMin + '" class="lazy lazy-fadeIn img-shield-team"></div>');
-                        strBuilderLastNewsContent.push('</div>');
-                        strBuilderLastNewsContent.push('<div class="col-25">');
-                        strBuilderLastNewsContent.push('<div style="text-align: left;font-family: Montserrat-Regular;font-size: 12px;color: #585858;">' + match.visitante.nombreCorto + '</div></div>');
-                        strBuilderLastNewsContent.push('</div>');
-
-                        // strBuilderLastNewsContent.push('<div class="col-40">');
-                        //     strBuilderLastNewsContent.push('<div style="text-align: center;"><img data-src="' + match.visitante.imagenPrincipalMin + '" class="lazy lazy-fadeIn img-shield-team"></div>');
-                        //     strBuilderLastNewsContent.push('<div style="text-align: center;font-family: Montserrat-Regular;font-size: 12px;color: #585858;margin-top: 5px">' + match.visitante.nombreCorto + '</div></div>');
-                        // strBuilderLastNewsContent.push('</div>');
-                    }
-                });
-                strBuilderLastNewsContent.push('</div></div>');
-                strBuilderLastNewsContent.push('<div class="card-footer tournament-matches-footer">Ver más...</div></div>');
-
-
-            } else {
-
-            }
+                
+                var strBuilderLastNewsContentTournamentMatchesArray = htmlTournamentMatchesCard(item);
+                //strBuilderLastNewsContent.append(strBuilderLastNewsContentTournamentArray.join(""));
+                strBuilderLastNewsContent.push(strBuilderLastNewsContentTournamentMatchesArray.join(""));
+            } 
         });
         //strBuilderLastNewsContent.push('</ul>');
         strBuilderLastNewsContent.push('</div>');

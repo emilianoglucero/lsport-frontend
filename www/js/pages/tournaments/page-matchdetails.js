@@ -401,30 +401,6 @@ function loadMatchDetails1(idNew, state){
                 idLiveMatchActivePage = idNew;
             }
 
-
-
-			/*if(response.errorCode != 0)
-            {
-                hideLoadSpinnerWS();
-                filterCodeErrorWS(response);
-                return;
-            }
-            if(isAppUpdate(response.serverVersion) == false){
-                hideLoadSpinnerWS();
-                mainView.router.load({pageName: 'update'});
-                return;
-            }
-            if (response.matchDetail == "" || response.matchDetail == undefined){
-                hideLoadSpinnerWS();
-                showMessage(messageConexionError);
-                return;
-            }*/
-
-            /*if(idLiveMatchActivePage != idMatch){
-                $('#lblHeaderMatchDetails').text(response.matchDetail.shortCategoryName);
-                $('.icon-sportDetails').css('background-image','url("'+response.matchDetail.urlImgHeader+'")');
-                idLiveMatchActivePage = idMatch;
-            }*/
             sportIDCategorie = matchDetailsHome.torneo.deporteCategoria.id;
             console.log(sportIDCategorie);
             matchDetailsHomeInfo = matchDetailsHome;
@@ -510,100 +486,6 @@ function loadMatchDetailsFromFixture(id, idPartido){
 			hideLoadSpinnerWS();
 
 }
-
-/*function loadMatchDetails(idMatch){
-	$('#matchdetails-list').html('');
-	$('#icon-refresh-matchdetails').hide();
-	showLoadSpinnerWS();
-	$.ajax({
-		// URL del Web Service
-		url: getPathWS() + 'getMatchDetail',
-		dataType: 'jsonp',
-		data: { 'idClub': idClub,
-				'idMatch': idMatch
-		 },
-		timeout: timeOut,
-		success: function(response){
-			if(response.errorCode != 0)
-			{
-			    hideLoadSpinnerWS();
-			    filterCodeErrorWS(response);
-			    return;
-			}
-			if(isAppUpdate(response.serverVersion) == false){
-				hideLoadSpinnerWS();
-				mainView.router.load({pageName: 'update'});
-				return;
-			}
-			if (response.matchDetail == "" || response.matchDetail == undefined){
-				hideLoadSpinnerWS();
-			    showMessage(messageConexionError);
-			    return;
-			}
-			
-			if(idLiveMatchActivePage != idMatch){
-				$('#lblHeaderMatchDetails').text(response.matchDetail.shortCategoryName);
-				$('.icon-sportDetails').css('background-image','url("'+response.matchDetail.urlImgHeader+'")');
-				idLiveMatchActivePage = idMatch;
-			}
-			builderMatchDetails(response.matchDetail,response.banner);
-			hideLoadSpinnerWS();
-		},
-		error: function (data, status, error){
-	          builderErrorMatchDetails(idMatch);
-	          hideLoadSpinnerWS();
-		}
-	});
-
-}*/
-
-/*function refreshMatchDetails(idMatch){
-	$('#icon-refresh-matchdetails').hide();
-	//showLoadSpinnerWS();
-	$.ajax({
-		// URL del Web Service
-		url: getPathWS() + 'getMatchDetail',
-		dataType: 'jsonp',
-		data: { 'idClub': idClub,
-				'idMatch': idMatch
-		 },
-		timeout: timeOut,
-		success: function(response){
-		console.log(response);
-			/*if(response.errorCode != 0)
-			{
-			    filterCodeErrorWS(response);
-			    return;
-			}
-			if(isAppUpdate(response.serverVersion) == false){
-				mainView.router.load({pageName: 'update'});
-				return;
-			}
-			if (response.matchDetail == "" || response.matchDetail == undefined){
-			    showMessage(messageConexionError);
-			    return;
-			}*/
-			
-			/*if(idLiveMatchActivePage != idMatch){
-				$('#lblHeaderMatchDetails').text(response.matchDetail.shortCategoryName);
-				$('.icon-sportDetails').css('background-image','url("'+response.matchDetail.urlImgHeader+'")');
-				idLiveMatchActivePage = idMatch;
-			}*/
-			/*builderMatchDetails(response.matchDetail,response.banner);
-			//hideLoadSpinnerWS();
-		},
-		error: function (data, status, error){
-	          //hideLoadSpinnerWS();
-	          showMessage(messageConexionError);
-	          $("#icon-refresh-matchdetails").off("click");
-	          $('#icon-refresh-matchdetails').show();
-	          $('#icon-refresh-matchdetails').click(function (){
-	          	refreshMatchDetails(idMatch);
-	          });
-		}
-	});
-
-}*/
 
 function refreshMatchDetails1(idMatch){
 	$('#icon-refresh-matchdetails').hide();

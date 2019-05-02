@@ -449,8 +449,10 @@ function setPushConfigurations() {
       console.log(notification);
       var user = firebase.auth().currentUser;
 
-      var params = JSON.parse(notification.wsParams);
-      var paramsId = JSON.parse(params.params);
+      var paramsId = JSON.parse(notification.wsParams);
+      var paramsIdCard = JSON.parse(paramsId.params);
+      //var paramsId = JSON.parse(wsParams.params);
+      //console.log(params);
       console.log(paramsId);
       console.log(paramsId.id);
       //var ids = JSON.parse(params.params);
@@ -471,7 +473,7 @@ function setPushConfigurations() {
       /*
     	    ('¿La app se inició haciendo touch en la PUSH sobre la barra de Notificaciones?: ' +
            	(data.additionalData.coldstart === undefined ? false : true));*/
-      if (notification.pageName == "encuentro-vivo") {
+        if (notification.pageName == "encuentro-vivo") {
         console.log("encuentro vivo");
         if (notification.tap == true) {
           if (user == null) {
@@ -489,63 +491,63 @@ function setPushConfigurations() {
                 //refreshMatchDetails1(ids.id);
               }, 6000);
           }
-        } else {
-          console.log("tap false");
-          if (user == null) {
-            alert(
-              "Acaba de llegar una notificacion, pero debes loguearte primero para visualizarla"
-            );
-            mainView.router.load({ pageName: "login" });
-            window.location.reload(true);
           } else {
-            console.log("tap false registrado");
-            if (notification.title != undefined) {
-              console.log(idLiveMatchActivePage);
-              console.log(idLiveMatchSportDetails);
-
-              if ( idLiveMatchActivePage == ids.id || idLiveMatchSportDetails == ids.id) {
-              setTimeout(function() {
-                console.log("idlivee");
-                if (idLiveMatchActivePage == ids.id) {
-                  console.log("idlivee2");
-                  refreshMatchDetails1(ids.id);
-                } else {
-                  console.log("idlivee3");
-                  refreshMatchDetails1(ids.id);
-                }
-              }, 6000);
-              } else {
-                console.log("not id livee");
-                vibrate();
-                var textNotification =
-                  notification.message + messageNotificationLiveMatchConfirm;
-                myApp.modal({
-                  title: notification.title,
-                  text: textNotification,
-                  buttons: [
-                    {
-                      text: lblButtonCancel
-                    },
-                    {
-                      text: lblButtonOk,
-                      onClick: function() {
-                        refreshMatchDetails1(ids.id);
-                      }
-                    }
-                  ]
-                });
-              }
+            console.log("la app esta abierta");
+            if (user == null) {
+              alert(
+                "Acaba de llegar una notificacion, pero debes loguearte primero para visualizarla"
+              );
+              mainView.router.load({ pageName: "login" });
+              window.location.reload(true);
             } else {
-              if (
-                idLiveMatchActivePage == paramsId.id ||
-                idLiveMatchSportDetails == paramsId.id
-              ) {
-                if (idLiveMatchActivePage == paramsId.id) {
-                  refreshMatchDetails1(paramsId.id);
+            console.log("app abierta");
+            if (user == null) {
+              alert(
+                "Acaba de llegar una notificacion, pero debes loguearte primero para visualizarla"
+              );
+              mainView.router.load({ pageName: "login" });
+              window.location.reload(true);
+            } else {
+              console.log("app abierta user registrado");
+              //if (notification.title != undefined) {
+                console.log(idLiveMatchActivePage);
+                console.log(paramsIdCard.id);
+
+                if ( idLiveMatchActivePage == paramsIdCard.id) {
+                  console.log("es justo el partido en vivo");
+                    refreshMatchDetails1(paramsIdCard.id);
                 } else {
-                  refreshLiveMatchSportDetails(paramsId.id);
+                  console.log("no esta sobre un partido activo");
+                  vibrate();
+                  //var textNotification = notification.message + messageNotificationLiveMatchConfirm;
+                  myApp.modal({
+                    title: lblNameClub,
+                    text: messageNotificationLiveMatchConfirm,
+                    buttons: [
+                      {
+                        text: lblButtonCancel
+                      },
+                      {
+                        text: lblButtonOk,
+                        onClick: function() {
+                          refreshMatchDetails1(paramsIdCard.id);
+                        }
+                      }
+                    ]
+                  });
                 }
-              }
+              //} else {
+                //if (
+                  /*idLiveMatchActivePage == paramsId.id ||
+                  idLiveMatchSportDetails == paramsId.id
+                //) {
+                  //if (idLiveMatchActivePage == paramsId.id) {
+                    refreshMatchDetails1(paramsId.id);
+                  //} else {
+                    refreshLiveMatchSportDetails(paramsId.id);*/
+                  //}
+                //}
+              //}
             }
           }
         }
