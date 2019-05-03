@@ -198,7 +198,7 @@ myApp.onPageInit('home', function (page) {
     // Add 'refresh' listener on it
     ptrContent.on('ptr:refresh', function (e) {
         //refresh code
-        loadContentHomePage();
+        reloadContentHomePage();
         //alert('pull refresh');
         // When loading done, we need to reset it
         myApp.pullToRefreshDone();
@@ -355,7 +355,7 @@ function htmlTournamentTableCard (item) {
                     } else {
 
                         if (verMas == false) {
-                            strBuilderLastNewsContentHtml.push('<div class="col-50"> ...</div>');
+                            strBuilderLastNewsContentHtml.push('<div class="col-50 tournament-child-dots"> ...</div>');
                             verMas = true;
                         }
                         //strBuilderLastNewsContentHtml.push('</div>');
@@ -670,6 +670,7 @@ function loadContentHomePage() {
 }
 
 function reloadContentHomePage() {
+
     $('#iconHeaderFavouritesHome .icon').addClass('animation-preloader');
     var currentFavouritesList = $.parseJSON(window.localStorage.getItem("FAVS" + idClub));
     if (currentFavouritesList == null) {
@@ -1242,6 +1243,28 @@ function builderHomeDetails2() {
             '</div>' +
             '</div>',
         onOpen: function (p) {
+            //build the current day event in the calendar
+            var today = new Date();
+            var dd = today.getDate();
+
+            var mm = today.getMonth()+1;
+            var yyyy = today.getFullYear();
+            if(dd<10)
+            {
+                dd='0'+dd;
+            }
+
+            if(mm<10)
+            {
+                mm='0'+mm;
+            }
+            today = dd+'/'+mm+'/'+yyyy;
+            console.log(today);
+
+            //mostrar eventos del dia
+            builderDayEvents(today);
+
+
             $$('.calendar-custom-toolbar .center').text(monthNames[p.currentMonth] + ', ' + p.currentYear);
             $$('.calendar-custom-toolbar .left .link').on('click', function () {
                 calendarInline.prevMonth();
@@ -1253,7 +1276,7 @@ function builderHomeDetails2() {
         onMonthYearChangeStart: function (p) {
             $$('.calendar-custom-toolbar .center').text(monthNames[p.currentMonth] + ', ' + p.currentYear);
         },
-        onDayClick: function (p, dayContainer, year, month, day) {
+        onDayClick: function (p, year, month, day) {
             //construye la fecha seleccionada en el calendario
             console.log(year, month, day);
             var monthFinal = parseInt(month) + 1;

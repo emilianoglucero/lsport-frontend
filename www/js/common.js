@@ -486,7 +486,7 @@ function setPushConfigurations() {
                 console.log(paramsId.id);
                 //mainView.router.load({pageName: 'home'});
                 //showLoadSpinnerWS();
-                refreshMatchDetails1(paramsId.id);
+                refreshMatchDetails1(paramsIdCard.id);
                 //hideLoadSpinnerWS();
                 //refreshMatchDetails1(ids.id);
               }, 6000);
@@ -560,8 +560,8 @@ function setPushConfigurations() {
             setTimeout(function() {
               console.log("set time function for push not");
               loadNewDetailsNotifications(
-                paramsId.id,
-                notification.notId,
+                paramsIdCard.id,
+                notification.noId,
                 null
               );
             }, 6000);
@@ -591,8 +591,8 @@ function setPushConfigurations() {
                   text: lblButtonOk,
                   onClick: function() {
                     loadNewDetailsNotifications(
-                      paramsId.id,
-                      notification.notId,
+                      paramsIdCard.id,
+                      notification.noId,
                       null
                     );
                   }
@@ -610,8 +610,8 @@ function setPushConfigurations() {
             setTimeout(function() {
               console.log("set time function for push not evento");
               loadEventDetailsNotifications(
-                paramsId.id,
-                notification.notId,
+                paramsIdCard.id,
+                notification.noId,
                 null
               );
             }, 6000);
@@ -641,8 +641,8 @@ function setPushConfigurations() {
                   text: lblButtonOk,
                   onClick: function() {
                     loadEventDetailsNotifications(
-                      paramsId.id,
-                      notification.notId,
+                      paramsIdCard.id,
+                      notification.noId,
                       null
                     );
                   }

@@ -606,6 +606,10 @@
     text-align: center;
 }
 
+.tournament-child-dots {
+    padding-left: 25px;
+}
+
 .tournament-child {
     margin-bottom: 5px;
     /* border-bottom: solid; */
@@ -645,6 +649,9 @@
     /* font-weight: 450; */
     font-family: "Montserrat-Regular";
     color: #919191;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .demo-card-header-pic {
