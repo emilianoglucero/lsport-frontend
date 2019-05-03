@@ -198,7 +198,7 @@ myApp.onPageInit('home', function (page) {
     // Add 'refresh' listener on it
     ptrContent.on('ptr:refresh', function (e) {
         //refresh code
-        reloadContentHomePage();
+        loadContentHomePage();
         //alert('pull refresh');
         // When loading done, we need to reset it
         myApp.pullToRefreshDone();
@@ -992,7 +992,14 @@ function builderFavouritesHome() {
 
 function builderNewsHomeDetails() {
     console.log('arranca builder de los suceso');
-    //$('#last-news-list-block').html('');
+
+    //we need to know if the builder of the cards are loaded by refresh/init the app or by the infinite scroll
+    if (loadingInfiniteScrollHomeNews) {
+       console.log('viene del scroll infinito');
+    } else{
+        console.log('no viene del scroll infinito')
+        $('#last-news-list-block').html('');
+    }
     var strBuilderLastNewsContent = [];
     console.log(strBuilderLastNewsContent);
     console.log(newsListHome);
@@ -1276,9 +1283,14 @@ function builderHomeDetails2() {
         onMonthYearChangeStart: function (p) {
             $$('.calendar-custom-toolbar .center').text(monthNames[p.currentMonth] + ', ' + p.currentYear);
         },
-        onDayClick: function (p, year, month, day) {
+        onDayClick: function (p, dayContainer, year, month, day) {
             //construye la fecha seleccionada en el calendario
-            console.log(year, month, day);
+            console.log(year);
+            console.log(month);
+            console.log(day);
+            console.log(p);
+            console.log(dayContainer);
+
             var monthFinal = parseInt(month) + 1;
             if (month.length == 1) {
                 monthFinal = '0' + monthFinal

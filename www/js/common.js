@@ -375,7 +375,7 @@ function loadPageLogin() {
                   console.log(response.access_token);
                   accessToken = response.access_token;
                   mainView.router.load({ pageName: "home" });
-                  reloadContentHomePage();
+                  loadContentHomePage();
                   //hideLoadSpinnerWS();
                 },
                 error: function(data, status, error) {
@@ -454,7 +454,7 @@ function setPushConfigurations() {
       //var paramsId = JSON.parse(wsParams.params);
       //console.log(params);
       console.log(paramsId);
-      console.log(paramsId.id);
+      console.log(paramsIdCard.id);
       //var ids = JSON.parse(params.params);
 
       //alert(ids);
@@ -519,10 +519,15 @@ function setPushConfigurations() {
                 } else {
                   console.log("no esta sobre un partido activo");
                   vibrate();
-                  //var textNotification = notification.message + messageNotificationLiveMatchConfirm;
+                  if (notification.title != ""){
+                    var textNotification = notification.title + "<br/>¿Desea visualizarlo?";
+                  } else {
+                    var textNotification = messageNotificationLiveMatchConfirm;
+                  }
+                  
                   myApp.modal({
                     title: lblNameClub,
-                    text: messageNotificationLiveMatchConfirm,
+                    text: textNotification,
                     buttons: [
                       {
                         text: lblButtonCancel

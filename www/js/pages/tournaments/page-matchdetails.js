@@ -395,10 +395,11 @@ function loadMatchDetails1(idNew, state){
             }
 
             if(idLiveMatchActivePage != idNew){
-            console.log('idnew es igual a idlivematch');
+            console.log('idnew no es igual a idlivematch');
                 $('#lblHeaderMatchDetails').text(matchDetailsHome.torneo.deporteCategoria.nombreCorto);
                 $('.icon-sportDetails').css('background-image','url("'+matchDetailsHome.torneo.deporte.imagenPrincipalMin+'")');
                 idLiveMatchActivePage = idNew;
+                console.log(idLiveMatchActivePage);
             }
 
             sportIDCategorie = matchDetailsHome.torneo.deporteCategoria.id;
@@ -503,11 +504,11 @@ function refreshMatchDetails1(idMatch){
                     });
                     matchDetailsHomeInfo = matchDetailsHome[0];
                     console.log(matchDetailsHomeInfo);
-                   /* if(idLiveMatchActivePage != idMatch){
-                        $('#lblHeaderMatchDetails').text(matchDetailsHome.torneo.deporteCategoria.nombreCorto);
-                        $('.icon-sportDetails').css('background-image','url("'+matchDetailsHome.torneo.deporte.imagenPrincipalMin+'")');
+                    if(idLiveMatchActivePage != idMatch){
+                        //$('#lblHeaderMatchDetails').text(matchDetailsHome.torneo.deporteCategoria.nombreCorto);
+                        //$('.icon-sportDetails').css('background-image','url("'+matchDetailsHome.torneo.deporte.imagenPrincipalMin+'")');
                         idLiveMatchActivePage = idMatch;
-                    }*/
+                    }
                     hideLoadSpinnerWS();
         			//builderDetailsMatchDetails(matchDetailsHome);
         			builderDetailsMatchDetails(matchDetailsHomeInfo);
