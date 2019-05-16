@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:341095560807:android:9915ebed7339e281",
         "android_client_info": {
-          "package_name": "com.ls.cabavillamalcolm"
+          "package_name": "com.lsc.ar.caba.villamalcolm"
         }
       },
       "oauth_client": [
@@ -49,28 +49,20 @@
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
               "client_id": "341095560807-e0qrhjf71n24drkd1gok23prv34d9iqv.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "341095560807-oj60bel7qnk1p44842khob46i2ntm33c.apps.googleusercontent.com",
+              "client_id": "341095560807-pa097k6nhruhlo7uuoibqsr5ni6544gr.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.lsc.ar.josecpaz.josecpaz",
-                "app_store_id": "1354560002"
+                "bundle_id": "com.lsc.ar.chajari.santarosa"
               }
             }
           ]
-        },
-        "ads_service": {
-          "status": 2
         }
       }
     },
@@ -109,28 +101,20 @@
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
               "client_id": "341095560807-e0qrhjf71n24drkd1gok23prv34d9iqv.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "341095560807-oj60bel7qnk1p44842khob46i2ntm33c.apps.googleusercontent.com",
+              "client_id": "341095560807-pa097k6nhruhlo7uuoibqsr5ni6544gr.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.lsc.ar.josecpaz.josecpaz",
-                "app_store_id": "1354560002"
+                "bundle_id": "com.lsc.ar.chajari.santarosa"
               }
             }
           ]
-        },
-        "ads_service": {
-          "status": 2
         }
       }
     },
@@ -169,28 +153,20 @@
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
               "client_id": "341095560807-e0qrhjf71n24drkd1gok23prv34d9iqv.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "341095560807-oj60bel7qnk1p44842khob46i2ntm33c.apps.googleusercontent.com",
+              "client_id": "341095560807-pa097k6nhruhlo7uuoibqsr5ni6544gr.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.lsc.ar.josecpaz.josecpaz",
-                "app_store_id": "1354560002"
+                "bundle_id": "com.lsc.ar.chajari.santarosa"
               }
             }
           ]
-        },
-        "ads_service": {
-          "status": 2
         }
       }
     },
@@ -229,28 +205,20 @@
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
               "client_id": "341095560807-e0qrhjf71n24drkd1gok23prv34d9iqv.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "341095560807-oj60bel7qnk1p44842khob46i2ntm33c.apps.googleusercontent.com",
+              "client_id": "341095560807-pa097k6nhruhlo7uuoibqsr5ni6544gr.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.lsc.ar.josecpaz.josecpaz",
-                "app_store_id": "1354560002"
+                "bundle_id": "com.lsc.ar.chajari.santarosa"
               }
             }
           ]
-        },
-        "ads_service": {
-          "status": 2
         }
       }
     },
@@ -281,28 +249,20 @@
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
               "client_id": "341095560807-e0qrhjf71n24drkd1gok23prv34d9iqv.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "341095560807-oj60bel7qnk1p44842khob46i2ntm33c.apps.googleusercontent.com",
+              "client_id": "341095560807-pa097k6nhruhlo7uuoibqsr5ni6544gr.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.lsc.ar.josecpaz.josecpaz",
-                "app_store_id": "1354560002"
+                "bundle_id": "com.lsc.ar.chajari.santarosa"
               }
             }
           ]
-        },
-        "ads_service": {
-          "status": 2
         }
       }
     },
@@ -333,28 +293,20 @@
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
               "client_id": "341095560807-e0qrhjf71n24drkd1gok23prv34d9iqv.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "341095560807-oj60bel7qnk1p44842khob46i2ntm33c.apps.googleusercontent.com",
+              "client_id": "341095560807-pa097k6nhruhlo7uuoibqsr5ni6544gr.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.lsc.ar.josecpaz.josecpaz",
-                "app_store_id": "1354560002"
+                "bundle_id": "com.lsc.ar.chajari.santarosa"
               }
             }
           ]
-        },
-        "ads_service": {
-          "status": 2
         }
       }
     },
@@ -393,30 +345,23 @@
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
               "client_id": "341095560807-e0qrhjf71n24drkd1gok23prv34d9iqv.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "341095560807-oj60bel7qnk1p44842khob46i2ntm33c.apps.googleusercontent.com",
+              "client_id": "341095560807-pa097k6nhruhlo7uuoibqsr5ni6544gr.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.lsc.ar.josecpaz.josecpaz",
-                "app_store_id": "1354560002"
+                "bundle_id": "com.lsc.ar.chajari.santarosa"
               }
             }
           ]
-        },
-        "ads_service": {
-          "status": 2
         }
-      }
+      },
+      "admob_app_id": "ca-app-pub-4977768595563395~1709002229"
     },
     {
       "client_info": {
@@ -453,28 +398,72 @@
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
               "client_id": "341095560807-e0qrhjf71n24drkd1gok23prv34d9iqv.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "341095560807-oj60bel7qnk1p44842khob46i2ntm33c.apps.googleusercontent.com",
+              "client_id": "341095560807-pa097k6nhruhlo7uuoibqsr5ni6544gr.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.lsc.ar.josecpaz.josecpaz",
-                "app_store_id": "1354560002"
+                "bundle_id": "com.lsc.ar.chajari.santarosa"
               }
             }
           ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:341095560807:android:cc0144b2eb4af90a",
+        "android_client_info": {
+          "package_name": "com.lsc.ar.chajari.santarosa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "341095560807-70d9sfe7cc5s25pg0emtrjlujtav0fhr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lsc.ar.chajari.santarosa",
+            "certificate_hash": "985c4d5400a8c442ed9f5ed5dadbae3d48622925"
+          }
         },
-        "ads_service": {
-          "status": 2
+        {
+          "client_id": "341095560807-9tj7v6dbicc1p42t592281fhlit1kgsd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lsc.ar.chajari.santarosa",
+            "certificate_hash": "93321c6e1827b66f770fde90eba0cfd5cc93080c"
+          }
+        },
+        {
+          "client_id": "341095560807-e0qrhjf71n24drkd1gok23prv34d9iqv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkBXXUq54uM_LgZMHzAEo2jJzeT9o89P8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "341095560807-e0qrhjf71n24drkd1gok23prv34d9iqv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "341095560807-pa097k6nhruhlo7uuoibqsr5ni6544gr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.lsc.ar.chajari.santarosa"
+              }
+            }
+          ]
         }
       }
     },
@@ -513,28 +502,56 @@
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
               "client_id": "341095560807-e0qrhjf71n24drkd1gok23prv34d9iqv.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "341095560807-oj60bel7qnk1p44842khob46i2ntm33c.apps.googleusercontent.com",
+              "client_id": "341095560807-pa097k6nhruhlo7uuoibqsr5ni6544gr.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.lsc.ar.josecpaz.josecpaz",
-                "app_store_id": "1354560002"
+                "bundle_id": "com.lsc.ar.chajari.santarosa"
               }
             }
           ]
-        },
-        "ads_service": {
-          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:341095560807:android:c05c71afeb130f47",
+        "android_client_info": {
+          "package_name": "com.lsc.ar.tostado.sanlorenzo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "341095560807-e0qrhjf71n24drkd1gok23prv34d9iqv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkBXXUq54uM_LgZMHzAEo2jJzeT9o89P8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "341095560807-e0qrhjf71n24drkd1gok23prv34d9iqv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "341095560807-pa097k6nhruhlo7uuoibqsr5ni6544gr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.lsc.ar.chajari.santarosa"
+              }
+            }
+          ]
         }
       }
     },
@@ -573,28 +590,20 @@
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
               "client_id": "341095560807-e0qrhjf71n24drkd1gok23prv34d9iqv.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "341095560807-oj60bel7qnk1p44842khob46i2ntm33c.apps.googleusercontent.com",
+              "client_id": "341095560807-pa097k6nhruhlo7uuoibqsr5ni6544gr.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.lsc.ar.josecpaz.josecpaz",
-                "app_store_id": "1354560002"
+                "bundle_id": "com.lsc.ar.chajari.santarosa"
               }
             }
           ]
-        },
-        "ads_service": {
-          "status": 2
         }
       }
     }

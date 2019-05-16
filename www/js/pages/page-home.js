@@ -565,6 +565,16 @@ function loadContentHomePage() {
         dataType: 'json',
         success: function (response) {
             console.log(response);
+            console.log(response.menu.deportes);
+            /*$.each(data, function (key, value) {
+                console.log(key);
+                console.log(value);
+                if (value === "Update" ){
+                    hideLoadSpinnerWS();
+                    mainView.router.load({pageName: 'update'});
+                    return;
+                }
+            });*/
             /* if(response.errorCode != 0)
                {
                    hideLoadSpinnerWS();
@@ -572,7 +582,23 @@ function loadContentHomePage() {
                    filterCodeErrorWS(response);
                    return;
                }*/
-            /*if(isAppUpdate(response.serverVersion) == false){
+            console.log(platform);
+            
+                var allSports = response.menu.deportes;   
+                if (allSports !== ""){
+                    allSportsLength = allSports.length - 1
+                    for (i = 0; i <= allSportsLength; i++){
+                        console.log(allSports[i]);
+                        console.log(allSports[i].nombre);
+                        if (allSports[i].nombre === "Update"){
+                            hideLoadSpinnerWS();
+                            mainView.router.load({pageName: 'update'});
+                            return;
+                        }
+                    } 
+                }
+
+            /*if(isAppUpdate(response.menu.deportes) == false){
                 hideLoadSpinnerWS();
                 mainView.router.load({pageName: 'update'});
                 return;

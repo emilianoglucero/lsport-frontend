@@ -934,7 +934,7 @@ function builderBannerPublicityDetail(banner) {
 }
 
 function isAppUpdate(serverVersion) {
-  if (serverVersion != numberVersionWS) {
+  if (serverVersion == "Update") {
     return false;
   } else {
     return true;

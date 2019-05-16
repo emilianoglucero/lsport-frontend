@@ -5,7 +5,12 @@ myApp.onPageInit('update', function (page)
    
 	$("#button-update-page").on( "click", function() 
 	{
-		window.open('https://play.google.com/store/apps/details?id='+compilationNameClub, '_system');
+		console.log(platform);
+		if (platform == "Android") {
+			window.open('https://play.google.com/store/apps/details?id='+compilationNameClub, '_system');
+		} else {
+			window.open('https://itunes.apple.com/ar/app/'+compilationNameClub, '_system');
+		}
 	});
    
 });

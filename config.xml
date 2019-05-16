@@ -96,16 +96,13 @@
     <plugin name="cordova-plugin-admobpro-firebase" spec="~2.37.0">
         <variable name="PLAY_SERVICES_VERSION" value="+" />
     </plugin>
-    <plugin name="cordova-plugin-firebase" spec="~2.0.5">
-        <variable name="PLAY_SERVICES_VERSION" value="+" />
-    </plugin>
     <plugin name="cordova-android-play-services-gradle-release" spec="~2.0.0">
         <variable name="PLAY_SERVICES_VERSION" value="+" />
     </plugin>
     <plugin name="cordova-android-firebase-gradle-release" spec="~2.0.0">
         <variable name="FIREBASE_VERSION" value="+" />
     </plugin>
+    <plugin name="cordova-plugin-firebase" spec="https://github.com/dpa99c/cordova-plugin-firebase#GH-1057-April-05-android-build-issue" />
     <engine name="browser" spec="^5.0.4" />
-    <engine name="ios" spec="^4.5.5" />
     <engine name="android" spec="^6.4.0" />
 </widget>
