@@ -346,6 +346,110 @@ function htmlMatchDetailsEvents (match) {
     return strBuilderLastMatch;
 }
 
+// html structure function to show the images, videos an other data from the torneo-encuentro
+
+var swiperPhotoGalleryMatchDetails, swiperVideoGalleryMatchDetails;
+
+var listPhotosBrowserMatchDetails = [];
+var listVideoBrowserMatchDetails = [];
+
+var myPhotoBrowserPhotoGalleryMatchDetails = myApp.photoBrowser();
+var myPhotoBrowserVideoGalleryMatchDetails = myApp.photoBrowser();
+
+
+function htmlMatchDetailsMultiMedia (match) {
+    console.log(match);
+
+    var strBuilderGalleryMatchDetails = [];
+
+    //$('#divContentPhotoGalleryMatchDetails').html(builderPhotoGalleryNewDetails(match.imagenes));
+	//$('#divContentVideoGalleryMatchDetails').html(builderVideoGalleryNewDetails(match.audiovisuales));
+	
+	//mainView.router.load({pageName: 'newdetails'});
+//builderPhotoGalleryNewDetails
+	strBuilderGalleryMatchDetails.push('');
+	if(match.imagenes != ""){
+		strBuilderGalleryMatchDetails.push('<div class="content-block-title content-block-title-custom lblPhotoGallery">'+lblPhotoGallery+'</div>');
+		strBuilderGalleryMatchDetails.push('<div id="swiper-container-photogallery-matchdetails" class="swiper-container swiper-container-gallery-min swiper-container-horizontal">');
+			strBuilderGalleryMatchDetails.push('<div class="swiper-wrapper">');
+				listPhotosBrowserMatchDetails = [];
+				$.each(match.imagenes, function(index, item) {
+                    listPhotosBrowserMatchDetails.push(item.imagenMin);
+                    strBuilderGalleryMatchDetails.push('<div class="swiper-slide">');
+                    strBuilderGalleryMatchDetails.push('<img onclick="openPhotoBrowserMatchDetails('+index+')" class="swiper-lazy swiperGalleryPhotosImg" data-src="'+item.imagenMin+'"/>');
+                    strBuilderGalleryMatchDetails.push('<div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>');
+                    strBuilderGalleryMatchDetails.push('</div>');
+				});
+			strBuilderGalleryMatchDetails.push('</div>');
+			strBuilderGalleryMatchDetails.push('<div class="swiper-pagination swiper-pagination-photogallery"></div>');
+		strBuilderGalleryMatchDetails.push('</div>');
+	}
+	console.log(strBuilderGalleryMatchDetails);
+
+	if(match.audiovisuales != ""){
+        strBuilderGalleryMatchDetails.push('<div class="content-block-title content-block-title-custom lblVideoGallery">'+lblVideoGallery+'</div>');
+        strBuilderGalleryMatchDetails.push('<div id="swiper-container-videogallery-matchdetails" class="swiper-container swiper-container-gallery-min swiper-container-horizontal">');
+            strBuilderGalleryMatchDetails.push('<div class="swiper-wrapper">');
+                listVideoBrowserMatchDetails = [];
+                $.each(match.audiovisuales, function(index, item) {
+                console.log(item);
+                    listVideoBrowserMatchDetails.push(item);
+                    strBuilderGalleryMatchDetails.push('<div class="swiper-slide">');
+                    strBuilderGalleryMatchDetails.push('<img onclick="openVideoBrowserMatchDetails('+index+')" class="swiper-lazy swiperGalleryPhotosImg" data-src="'+item.imagen+'"/>');
+                    strBuilderGalleryMatchDetails.push('<div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>');
+                    strBuilderGalleryMatchDetails.push('</div>');
+                });
+                console.log(listVideoBrowserMatchDetails);
+            strBuilderGalleryMatchDetails.push('</div>');
+            strBuilderGalleryMatchDetails.push('<div class="swiper-pagination swiper-pagination-videogallery"></div>');
+        strBuilderGalleryMatchDetails.push('</div>');
+    }
+	return strBuilderGalleryMatchDetails;
+	console.log(strBuilderGalleryMatchDetails);
+	//myApp.initImagesLazyLoad(mainView.activePage.container);
+}
+
+//presets to the photo and video gallery
+
+function openPhotoBrowserMatchDetails(idPhoto){
+console.log(idPhoto);
+	myPhotoBrowserPhotoGalleryMatchDetails.open(idPhoto);
+	$('.lblHeaderClose').text(lblHeaderClose);
+	$('.lblHeaderOfPhotoBrowser').text(lblHeaderOfPhotoBrowser);
+}
+
+
+function openVideoBrowserMatchDetails(idVideo){
+console.log(idVideo);
+listVideoBrowserMatchDetails[idVideo].url
+	var video = [
+		{
+			html: '<iframe src="'+listVideoBrowserMatchDetails[idVideo].url+'" frameborder="0" allowfullscreen></iframe>'
+	    }
+	];
+
+	myPhotoBrowserVideoGalleryMatchDetails = myApp.photoBrowser({
+	    photos : video,
+	    photoLazyTemplate: photoLazyBrowser,
+	    theme: 'dark',
+	    swipeToClose: false,
+	    lazyLoading: true,
+	    navbarTemplate: navbarVideoBrowser,
+	    toolbar: false,
+	    onOpen: function (){screen.orientation.unlock(); },
+        	    onClose: function (){screen.orientation.lock('portrait'); }
+	    /*onOpen: function (){navigator.screenOrientation.set('user'); },
+    	onClose: function (){navigator.screenOrientation.set('portrait'); }*/
+	});
+	myPhotoBrowserVideoGalleryMatchDetails.open();
+	$('.lblHeaderClose').text(lblHeaderClose);
+	console.log(listVideoBrowserMatchDetails);
+	console.log(listVideoBrowserMatchDetails[idVideo]);
+	$('.lblHeaderOfVideoBrowser').text(listVideoBrowserMatchDetails[idVideo].titulo);
+}
+
+/**** final html structure ****/
+
 
 
 function loadMatchDetails1(idNew, state){
@@ -556,14 +660,66 @@ function builderDetailsMatchDetailsInfo(match) {
     $('#tabMatchDetails1').html('');
     console.log(match);
 
+        //myApp.initImagesLazyLoad(mainView.activePage.container);
+
 	var finalInfoStructureMatchDetails = htmlMatchDetailsCard(match);
 	console.log(finalInfoStructureMatchDetails);
-	var finalInfoStructureMatchDetailsEvents = htmlMatchDetailsEvents(match);
-	console.log(finalInfoStructureMatchDetailsEvents);
+	var finalInfoStructureMatchDetailsMultiMedia = htmlMatchDetailsMultiMedia(match);
+	console.log(finalInfoStructureMatchDetailsMultiMedia);
 
 	$('#tabMatchDetails1').append(finalInfoStructureMatchDetails.join(""));
 	//myApp.initImagesLazyLoad(mainView.activePage.container);
-	//$('#tabMatchDetails1').append(finalInfoStructureMatchDetailsEvents.join(""));
+	$('#tabMatchDetails1').append(finalInfoStructureMatchDetailsMultiMedia.join(""));
+
+	var centerSwiperPhotos = false;
+        if (match.imagenes.length == 1){
+            centerSwiperPhotos = true;
+        }
+        console.log(centerSwiperPhotos);
+
+            swiperPhotoGalleryMatchDetails = new Swiper('#swiper-container-photogallery-matchdetails', {
+                pagination: '.swiper-pagination-photogallery',
+                slidesPerView: 2,
+                centeredSlides: centerSwiperPhotos,
+                paginationClickable: true,
+                spaceBetween: 15,
+                preloadImages: true,
+                updateOnImagesReady: true,
+                lazyLoadingInPrevNext: true,
+                lazyLoading: true
+            });
+
+            var centerSwiperVideos = false;
+            if (match.audiovisuales.length == 1){
+                centerSwiperVideos = true;
+            }
+
+            swiperVideoGalleryMatchDetails = new Swiper('#swiper-container-videogallery-matchdetails', {
+                pagination: '.swiper-pagination-videogallery',
+                slidesPerView: 2,
+                centeredSlides: centerSwiperVideos,
+                paginationClickable: true,
+                spaceBetween: 15,
+                preloadImages: true,
+                updateOnImagesReady: true,
+                lazyLoadingInPrevNext: true,
+                lazyLoading: true
+            });
+
+            myPhotoBrowserPhotoGalleryMatchDetails = myApp.photoBrowser({
+                photos : listPhotosBrowserMatchDetails,
+                photoLazyTemplate: photoLazyBrowser,
+                theme: 'dark',
+                swipeToClose: false,
+                lazyLoading: true,
+                navbarTemplate: navbarPhotoBrowser,
+                toolbar: false
+            });
+
+    //mainView.router.load({pageName: 'newdetails'});
+    myApp.initImagesLazyLoad(mainView.activePage.container);
+
+
 
 }
 
@@ -578,7 +734,8 @@ function builderDetailsMatchDetailsTimeLine(match) {
 	console.log(finalInfoStructureMatchDetailsEvents);
 
 	$('#tabMatchDetails2').append(finalInfoStructureMatchDetails.join(""));
-	$('#tabMatchDetails2').append(finalInfoStructureMatchDetailsEvents.join(""));
+    $('#tabMatchDetails2').append(finalInfoStructureMatchDetailsEvents.join(""));
+    
 
     myApp.initImagesLazyLoad(mainView.activePage.container);
 
