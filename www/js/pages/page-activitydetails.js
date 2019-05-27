@@ -380,7 +380,7 @@ function builderNewsActivityDetails() {
 					urlImgNewsList = item.urlImgMin;
 				}
 				strBuilderNewsActivityDetailsContent.push('<div class="row"><div class="col-70"><div class="">' + item.titulo + '</div></div>');
-				strBuilderNewsActivityDetailsContent.push('<div class="col-30"><div class="dateTitleNew color-gray">15/09/2018</div></div></div>');
+				strBuilderNewsActivityDetailsContent.push('<div class="col-30"><div class="dateTitleNew color-gray">' + item.fecha.fecha + '</div></div></div>');
 				strBuilderNewsActivityDetailsContent.push('<div class="row"><div class="col-100"><div class="color-gray homeCardcontent">' + item.detalle + '</div></div></div>');
 
 				strBuilderNewsActivityDetailsContent.push('</div></div>');

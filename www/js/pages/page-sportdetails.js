@@ -890,7 +890,7 @@ function builderNewsSportDetails() {
 					urlImgNewsList = item.urlImgMin;
 				}
 				strBuilderNewsSportDetailsContent.push('<div class="row"><div class="col-70"><div class="" style="font-weight: 700">' + item.titulo + '</div></div>');
-				strBuilderNewsSportDetailsContent.push('<div class="col-30"><div class="dateTitleNew color-gray">15/09/2018</div></div></div>');
+				strBuilderNewsSportDetailsContent.push('<div class="col-30"><div class="dateTitleNew color-gray">' + item.fecha.fecha + '</div></div></div>');
 				strBuilderNewsSportDetailsContent.push('<div class="row"><div class="col-100"><div class="color-gray homeCardcontent">' + noticiaTruncada + '</div></div></div>');
 
 				strBuilderNewsSportDetailsContent.push('</div></div>');

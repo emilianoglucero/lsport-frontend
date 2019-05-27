@@ -192,6 +192,9 @@ myApp.onPageInit('home', function (page) {
 
     //admob finished
 
+    //used to fix the home grey screen on app init
+    myApp.closeModal();
+
     // Pull to refresh content
     var ptrContent = $$('.pull-to-refresh-content');
 
@@ -1080,7 +1083,7 @@ function builderNewsHomeDetails() {
                     urlImgNewsList = item.urlImgMin;
                 }
                 strBuilderLastNewsContent.push('<div class="row"><div class="col-70"><div style="font-family:Montserrat-Regular; font-size: 16px; color: #585858;text-overflow: ellipsis;overflow: hidden;">' + item.titulo + '</div></div>');
-                strBuilderLastNewsContent.push('<div class="col-30"><div class="dateTitleNew color-gray">15/09/2018</div></div></div>');
+                strBuilderLastNewsContent.push('<div class="col-30"><div class="dateTitleNew color-gray">' + item.fecha.fecha + '</div></div></div>');
                 strBuilderLastNewsContent.push('<div class="row"><div class="col-100"><div class="color-gray homeCardcontent">' + noticiaTruncada + '</div></div></div>');
 
                 strBuilderLastNewsContent.push('</div></div></a>');
