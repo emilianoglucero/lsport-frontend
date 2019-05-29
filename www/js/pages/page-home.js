@@ -426,7 +426,7 @@ strBuilderLastNewsContent.push('<a onclick="loadEventDetails1(' + item.id + ',\'
             if (item.urlImgMin != "") {
                 urlImgNewsList = item.urlImgMin;
             }
-                strBuilderLastNewsContent.push('<div style="font-family:Montserrat-Regular; font-size: 16px; color: #585858;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">' + item.titulo + '</div>');
+                strBuilderLastNewsContent.push('<div style="font-family:Montserrat-Regular; font-size: 16px; color: #585858;/*white-space: nowrap*/;text-overflow: ellipsis;overflow: hidden;">' + item.titulo + '</div>');
                 strBuilderLastNewsContent.push('<div class="color-gray homeCardcontent">' + noticiaTruncada + '</div>');
                 strBuilderLastNewsContent.push('</div>');
             strBuilderLastNewsContent.push('</div>');
@@ -483,7 +483,7 @@ var strBuilderLastNewsContent = [];
                             // strBuilderLastNewsContent.push('<div style="text-align: center;font-family: Montserrat-Regular;font-size: 12px;color: #585858;margin-top: 5px">' + match.local.nombreCorto + '</div>');
                         // strBuilderLastNewsContent.push('</div>');
 
-                        if (match.local.tantos != null || match.visit.tantos != null) {
+                        if (match.local.tantos != null || match.visitante.tantos != null) {
                             strBuilderLastNewsContent.push('<div class="col-20 match-scorer">' + match.local.tantos + ' - ' + match.visitante.tantos + '</div>');
                         } else {
                             strBuilderLastNewsContent.push('<div class="col-20 match-scorer">' + match.fechaOcurrencia.fecha + '</div>');
@@ -1464,7 +1464,7 @@ function builderDayEvents(eventDay) {
                     strBuilderCalendarContent.push('</div>');
                     strBuilderCalendarContent.push('</div>');
                     strBuilderCalendarContent.push('<div class="description-lastmatch-tournament">');
-                    strBuilderCalendarContent.push(item.visitante.nombe);
+                    strBuilderCalendarContent.push(item.visitante.nombre);
                     strBuilderCalendarContent.push('</div>');
                     strBuilderCalendarContent.push('</div>');
                     strBuilderCalendarContent.push('</div>');
@@ -1628,7 +1628,7 @@ function builderTimeLineEventsHome() {
                 strBuilderTimeLineContent.push('</div>');
                 strBuilderTimeLineContent.push('</div>');
                 strBuilderTimeLineContent.push('<div class="description-lastmatch-tournament">');
-                strBuilderTimeLineContent.push(item.visitante.nombe);
+                strBuilderTimeLineContent.push(item.visitante.nombre);
                 strBuilderTimeLineContent.push('</div>');
                 strBuilderTimeLineContent.push('</div>');
                 strBuilderTimeLineContent.push('</div>');

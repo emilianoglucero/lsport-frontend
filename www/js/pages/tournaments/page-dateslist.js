@@ -115,9 +115,9 @@ function builderDatesList(idDateSelected, nameDateSelected){
 						strBuilderListCards.push('</table>');
 						strBuilderListCards.push('</td>');
 						strBuilderListCards.push('<td class="td-35-tournaments">');
-							strBuilderListCards.push('<div>'+match.visitante.name+'</div>');
-							if (match.visitante.urlShield != ""){
-								strBuilderListCards.push('<div><img data-src="'+match.visit.urlShield+'" class="lazy lazy-fadeIn img-shield-datelist" ></div>');
+							strBuilderListCards.push('<div>'+match.visitante.nombre+'</div>');
+							if (match.visitante.imagenPrincipalMin != ""){
+								strBuilderListCards.push('<div><img data-src="'+match.visitante.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-datelist" ></div>');
 							}
 							else{
 								strBuilderListCards.push('<div><img data-src="img/icon-shield-default.png" class="lazy lazy-fadeIn img-shield-datelist" ></div>');
