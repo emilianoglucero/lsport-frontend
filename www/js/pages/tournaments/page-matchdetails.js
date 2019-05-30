@@ -367,7 +367,12 @@ function htmlMatchDetailsMultiMedia (match) {
 	
 	//mainView.router.load({pageName: 'newdetails'});
 //builderPhotoGalleryNewDetails
-	strBuilderGalleryMatchDetails.push('');
+    strBuilderGalleryMatchDetails.push('');
+    
+    //match details text
+    strBuilderGalleryMatchDetails.push('<p class="descriptionMatchDetail">'+match.detalle+'<p/>');
+
+    //match images and videos
 	if(match.imagenes != ""){
 		strBuilderGalleryMatchDetails.push('<div class="content-block-title content-block-title-custom lblPhotoGallery">'+lblPhotoGallery+'</div>');
 		strBuilderGalleryMatchDetails.push('<div id="swiper-container-photogallery-matchdetails" class="swiper-container swiper-container-gallery-min swiper-container-horizontal">');

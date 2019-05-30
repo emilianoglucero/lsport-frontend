@@ -53,3 +53,10 @@
 .match-event-timeline-commentary{
     color: gray;
 }
+
+.descriptionMatchDetail {
+	text-align: justify;
+    font-family: "Montserrat-Regular";
+    color: #919191;
+	margin: 20px;
+}
