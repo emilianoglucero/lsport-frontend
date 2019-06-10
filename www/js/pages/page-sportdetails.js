@@ -851,52 +851,10 @@ function builderNewsSportDetails() {
 
 
 			if (item.tipoObjeto == "noticia") {
-				var noticiaTruncada = truncateNoticia(item.detalleTxt);
 
-				strBuilderNewsSportDetailsContent.push('<div class="card demo-card-header-pic">');
-				strBuilderNewsSportDetailsContent.push('<div style="height: 250px;overflow: hidden;position: relative;">');
-				strBuilderNewsSportDetailsContent.push('<img style="width: 100%;top: 50%;position: absolute;left: 50%;transform: translate(-50%, -50%);" src="' + item.imagenPrincipal + '" />');
-				strBuilderNewsSportDetailsContent.push('</div>');
-				strBuilderNewsSportDetailsContent.push('<div class="card-header color-white no-border">');
-				strBuilderNewsSportDetailsContent.push('<a onclick="loadNewDetails(' + item.id + ',\'' + sucesoDetailFromSports + '\')" href="#" class="item-link item-content">');
-				// **************** ChipHomeContainer ****************** //
-
-				strBuilderNewsSportDetailsContent.push('<div class="chipHomeContainer">');
-				//strBuilderNewsSportDetailsContent.push('<a onclick="loadNewDetails('+item.id+')" href="#" class="item-link item-content">');
-				//strBuilderNewsSportDetailsContent.push('<div class="chip chipHomeDate"><div class="media"><i class="icon icon-date-home"></i></div><div class="chip-label chipHomeDateLabel">'+formatDateSucesos(item.fecha.fecha)+'</div></div>');
-				if (item.tags.publicador != "") {
-					strBuilderNewsSportDetailsContent.push('<div class="chip chipHomeCategory"><div class="media"><i style="background-image: url(' + item.datosPublicacion.ente.imagenPrincipalMin + ');" class="icon icon-chiptag-categoria"></i></div><div class="chip-label chipHomeCategoryLabel">' + item.datosPublicacion.ente.nombre + '</div></div>');
-				}
-				//strBuilderNewsSportDetailsContent.push('<div class="chip chipHomeTags"><div class="media"><i class="icon icon-home-tiposuceso"></i></div><div class="chip-label chipHomeCategoryLabel">'+item.tags.categoria+'</div></div>');
-
-				// ***************** ChipHomeTags ******************** //
-
-				strBuilderNewsSportDetailsContent.push('<div class="chip chipHomeTags" style="float: left;margin-left: 15px;">');
-					strBuilderNewsSportDetailsContent.push('<div class="media">');
-						strBuilderNewsSportDetailsContent.push('<i style="background-image: url(' + item.tags.icono + ');" class="icon icon-chiptag-categoria"></i>');
-					strBuilderNewsSportDetailsContent.push('</div>');
-					strBuilderNewsSportDetailsContent.push('<div class="chip-label chipHomeCategoryLabel">' + item.tags.categoria + '</div>');
-				strBuilderNewsSportDetailsContent.push('</div>');
-
-				//strBuilderNewsSportDetailsContent.push('<i style="background-image: url(' + item.tags.icono + ');" class="icon icon-chiptag-categoria"></i>');
-
-				strBuilderNewsSportDetailsContent.push('</div>');
-				strBuilderNewsSportDetailsContent.push('</div>');
-				strBuilderNewsSportDetailsContent.push('<div class="card-content news-content">');
-
-				strBuilderNewsSportDetailsContent.push('<div class="card-content-inner">');
-				var urlImgNewsList = getDefaultImageNewsList();
-				if (item.urlImgMin != "") {
-					urlImgNewsList = item.urlImgMin;
-				}
-				strBuilderNewsSportDetailsContent.push('<div class="row"><div class="col-70"><div class="" style="font-weight: 700">' + item.titulo + '</div></div>');
-				strBuilderNewsSportDetailsContent.push('<div class="col-30"><div class="dateTitleNew color-gray">' + item.fecha.fecha + '</div></div></div>');
-				strBuilderNewsSportDetailsContent.push('<div class="row"><div class="col-100"><div class="color-gray homeCardcontent">' + noticiaTruncada + '</div></div></div>');
-
-				strBuilderNewsSportDetailsContent.push('</div></div>');
-				strBuilderNewsSportDetailsContent.push('<div class="card-footer tournament-matches-footer">Ver más...</div></a>');
-				strBuilderNewsSportDetailsContent.push('</div>');
-
+				var strBuilderLastNewsContentArray = htmlNewCard(item);
+                //strBuilderLastNewsContent.append(strBuilderLastNewsContentTournamentArray.join(""));
+                strBuilderNewsSportDetailsContent.push(strBuilderLastNewsContentArray.join(""));
 				//}
 			} else if (item.tipoObjeto == "torneo-encuentro") {
 

@@ -248,7 +248,7 @@ myApp.onPageBeforeAnimation('home', function (page) {
  * 
 */
 
-
+//function to build the 'torneo-tabla-posicion' card
 function htmlTournamentTableCard (item) {
 
     console.log(item);
@@ -377,7 +377,7 @@ function htmlTournamentTableCard (item) {
 
 }
                 
-
+// function to build the 'evento' card
 function htmlEventCard (item) { 
                    
     var noticiaTruncada = truncateNoticia(item.detalleTxt);
@@ -440,6 +440,7 @@ return strBuilderLastNewsContent;
 
 }
 
+//function to build the 'torneo-fechas' card
 function htmlTournamentMatchesCard (item) {
 
 console.log(item);
@@ -502,7 +503,7 @@ var strBuilderLastNewsContent = [];
                         // strBuilderLastNewsContent.push('</div>');
                     }
                 });
-                strBuilderLastNewsContent.push('</div></div>');
+                strBuilderLastNewsContent.push('</div></div></a>');
                 strBuilderLastNewsContent.push('<div class="card-footer tournament-matches-footer">Ver más...</div></div>');
 
     
@@ -510,6 +511,62 @@ var strBuilderLastNewsContent = [];
     return strBuilderLastNewsContent;
 
 }
+
+//function to build the 'noticia' card
+function htmlNewCard (item) {
+
+    console.log(item);
+    var strBuilderLastNewsContent = [];
+
+    var noticiaTruncada = truncateNoticia(item.detalleTxt);
+        console.log(noticiaTruncada);
+        console.log(strBuilderLastNewsContent);
+        strBuilderLastNewsContent.push('<div class="card demo-card-header-pic">');
+
+        strBuilderLastNewsContent.push('<a onclick="loadNewDetails(' + item.id + ',\'' + sucesoDetailFromHome + '\')" href="#"> ');
+
+        strBuilderLastNewsContent.push('<div class="card-header color-white no-border">');
+        strBuilderLastNewsContent.push('<div style="width: 100%;/*height: 250px*/;overflow: hidden;">');
+        strBuilderLastNewsContent.push('<img style=\"width: 100%;\" src=\'' + item.imagenPrincipal + '\' >');
+        strBuilderLastNewsContent.push('</div>');
+        strBuilderLastNewsContent.push('</div>');
+
+        strBuilderLastNewsContent.push('<div class="chipHomeContainer">');
+        //strBuilderLastNewsContent.push('<a onclick="loadNewDetails('+item.id+')" href="#" class="item-link item-content">');
+        // strBuilderLastNewsContent.push('<div class="chip chipHomeDate"><div class="media"><i class="icon icon-date-home"></i></div><div class="chip-label chipHomeDateLabel">'+formatDateSucesos(item.fecha.fecha)+'</div></div>');
+        if (item.tags.publicador != "") {
+            strBuilderLastNewsContent.push('<div class="chip chipHomeCategory"><div class="media"><i style="background-image: url(' + item.datosPublicacion.ente.imagenPrincipalMin + ');" class="icon icon-chiptag-categoria"></i></div><div class="chip-label chipHomeCategoryLabel">' + item.datosPublicacion.ente.nombre + '</div></div>');
+            strBuilderLastNewsContent.push('<div class="chip chipHomeTags"><div class="media"><i style="background-image: url(' + item.tags.icono + ');" class="icon icon-chiptag-categoria"></i></div><div class="chip-label chipHomeCategoryLabel">' + item.tags.categoria + '</div></div>');
+            strBuilderLastNewsContent.push('</div>');
+        } else {
+            strBuilderLastNewsContent.push('<div class="chip chipHomeTagsLeft"><div class="media"><i style="background-image: url(' + item.tags.icono + ');" class="icon icon-chiptag-categoria"></i></div><div class="chip-label chipHomeCategoryLabel">' + item.tags.categoria + '</div></div>');
+            strBuilderLastNewsContent.push('</div>');
+        }
+        //strBuilderLastNewsContent.push('<div class="chip chipHomeTags"><div class="media"><i class="icon icon-home-tiposuceso"></i></div><div class="chip-label chipHomeCategoryLabel">'+item.tags.categoria+'</div></div>');
+        //strBuilderLastNewsContent.push('<div class="chip chipHomeTags"><div class="media"><i style="background-image: url(' + item.tags.icono + ');" class="icon icon-chiptag-categoria"></i></div><div class="chip-label chipHomeCategoryLabel">' + item.tags.categoria + '</div></div>');
+        //strBuilderLastNewsContent.push('</div>');
+        //strBuilderLastNewsContent.push('<a onclick="loadNewDetails(' + item.id + ',\'' + sucesoDetailFromHome + '\')" href="#" class="item-link item-content">');
+
+        strBuilderLastNewsContent.push('<div class="card-content news-content">');
+
+        strBuilderLastNewsContent.push('<div class="card-content-inner">');
+        var urlImgNewsList = getDefaultImageNewsList();
+        if (item.urlImgMin != "") {
+            urlImgNewsList = item.urlImgMin;
+        }
+        strBuilderLastNewsContent.push('<div class="row"><div class="col-70"><div style="font-family:Montserrat-Regular; font-size: 16px; color: #585858;text-overflow: ellipsis;overflow: hidden;">' + item.titulo + '</div></div>');
+        strBuilderLastNewsContent.push('<div class="col-30"><div class="dateTitleNew color-gray">' + item.fecha.fecha + '</div></div></div>');
+        strBuilderLastNewsContent.push('<div class="row"><div class="col-100"><div class="color-gray homeCardcontent">' + noticiaTruncada + '</div></div></div>');
+
+        strBuilderLastNewsContent.push('</div></div></a>');
+        // strBuilderLastNewsContent.push('<div class="card-footer tournament-matches-footer">Ver más...</div>');
+        strBuilderLastNewsContent.push('</div>');
+        //strBuilderLastNewsContent.push('</div>');
+
+        //}
+
+    return strBuilderLastNewsContent;
+} 
 
 /** 
  * 
@@ -1049,49 +1106,10 @@ function builderNewsHomeDetails() {
                 strBuilderLastNewsContent.push('</div>');
             } else if (item.tipoObjeto == "noticia") {
 
-                var noticiaTruncada = truncateNoticia(item.detalleTxt);
-                console.log(noticiaTruncada);
-                console.log(strBuilderLastNewsContent);
-                strBuilderLastNewsContent.push('<div class="card demo-card-header-pic">');
-                strBuilderLastNewsContent.push('<div class="card-header color-white no-border">');
-                strBuilderLastNewsContent.push('<div style="width: 100%;/*height: 250px*/;overflow: hidden;">');
-                strBuilderLastNewsContent.push('<img style=\"width: 100%;\" src=\'' + item.imagenPrincipal + '\' >');
-                strBuilderLastNewsContent.push('</div>');
-                strBuilderLastNewsContent.push('</div>');
+                var strBuilderLastNewsContentArray = htmlNewCard(item);
+                //strBuilderLastNewsContent.append(strBuilderLastNewsContentTournamentArray.join(""));
+                strBuilderLastNewsContent.push(strBuilderLastNewsContentArray.join(""));
 
-                strBuilderLastNewsContent.push('<div class="chipHomeContainer">');
-                //strBuilderLastNewsContent.push('<a onclick="loadNewDetails('+item.id+')" href="#" class="item-link item-content">');
-                // strBuilderLastNewsContent.push('<div class="chip chipHomeDate"><div class="media"><i class="icon icon-date-home"></i></div><div class="chip-label chipHomeDateLabel">'+formatDateSucesos(item.fecha.fecha)+'</div></div>');
-                if (item.tags.publicador != "") {
-                    strBuilderLastNewsContent.push('<div class="chip chipHomeCategory"><div class="media"><i style="background-image: url(' + item.datosPublicacion.ente.imagenPrincipalMin + ');" class="icon icon-chiptag-categoria"></i></div><div class="chip-label chipHomeCategoryLabel">' + item.datosPublicacion.ente.nombre + '</div></div>');
-                    strBuilderLastNewsContent.push('<div class="chip chipHomeTags"><div class="media"><i style="background-image: url(' + item.tags.icono + ');" class="icon icon-chiptag-categoria"></i></div><div class="chip-label chipHomeCategoryLabel">' + item.tags.categoria + '</div></div>');
-                    strBuilderLastNewsContent.push('</div>');
-                } else {
-                    strBuilderLastNewsContent.push('<div class="chip chipHomeTagsLeft"><div class="media"><i style="background-image: url(' + item.tags.icono + ');" class="icon icon-chiptag-categoria"></i></div><div class="chip-label chipHomeCategoryLabel">' + item.tags.categoria + '</div></div>');
-                    strBuilderLastNewsContent.push('</div>');
-                }
-                //strBuilderLastNewsContent.push('<div class="chip chipHomeTags"><div class="media"><i class="icon icon-home-tiposuceso"></i></div><div class="chip-label chipHomeCategoryLabel">'+item.tags.categoria+'</div></div>');
-                //strBuilderLastNewsContent.push('<div class="chip chipHomeTags"><div class="media"><i style="background-image: url(' + item.tags.icono + ');" class="icon icon-chiptag-categoria"></i></div><div class="chip-label chipHomeCategoryLabel">' + item.tags.categoria + '</div></div>');
-                //strBuilderLastNewsContent.push('</div>');
-                strBuilderLastNewsContent.push('<a onclick="loadNewDetails(' + item.id + ',\'' + sucesoDetailFromHome + '\')" href="#" class="item-link item-content">');
-
-                strBuilderLastNewsContent.push('<div class="card-content news-content">');
-
-                strBuilderLastNewsContent.push('<div class="card-content-inner">');
-                var urlImgNewsList = getDefaultImageNewsList();
-                if (item.urlImgMin != "") {
-                    urlImgNewsList = item.urlImgMin;
-                }
-                strBuilderLastNewsContent.push('<div class="row"><div class="col-70"><div style="font-family:Montserrat-Regular; font-size: 16px; color: #585858;text-overflow: ellipsis;overflow: hidden;">' + item.titulo + '</div></div>');
-                strBuilderLastNewsContent.push('<div class="col-30"><div class="dateTitleNew color-gray">' + item.fecha.fecha + '</div></div></div>');
-                strBuilderLastNewsContent.push('<div class="row"><div class="col-100"><div class="color-gray homeCardcontent">' + noticiaTruncada + '</div></div></div>');
-
-                strBuilderLastNewsContent.push('</div></div></a>');
-                // strBuilderLastNewsContent.push('<div class="card-footer tournament-matches-footer">Ver más...</div>');
-                strBuilderLastNewsContent.push('</div>');
-                //strBuilderLastNewsContent.push('</div>');
-
-                //}
             } else if (item.tipoObjeto == "torneo-encuentro") {
 
                 console.log(item.id);
