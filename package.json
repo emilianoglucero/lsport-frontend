@@ -77,5 +77,8 @@
             "browser",
             "android"
         ]
+    },
+    "devDependencies": {
+        "cordova-uglify": "^0.3.3"
     }
 }

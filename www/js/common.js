@@ -556,7 +556,7 @@ function setPushConfigurations() {
             }
           }
         }
-      } else if (notification.pageName == "noticia") {
+       }else if (notification.pageName == "noticia") {
         if (notification.tap == true) {
           if (user == null) {
             mainView.router.load({ pageName: "login" });

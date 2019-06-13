@@ -578,7 +578,7 @@ function htmlTournamentMatchCard(item) {
     strBuilderLastNewsContent.push('<div class="card tournament-matches"><a onclick="loadMatchDetails1(' + item.id + ', \'' + sucesoDetailFromHome + '\')" href="#">');
     strBuilderLastNewsContent.push('<div id="tournament-matches-header" class="card-header no-border">');
     strBuilderLastNewsContent.push('<div class="tournament-matches-icon"><img data-src=' + item.torneo.deporte.imagenPrincipalMin + ' class="lazy lazy-fadeIn img-shield-tournament" ></div>');
-    let tmpMatchname = '<div class="tournament-matches-name">' + item.torneo.nombre;
+    var tmpMatchname = '<div class="tournament-matches-name">' + item.torneo.nombre;
     if(item.vivo == "true") {
         tmpMatchname += '<span class="tournament-matches-matchday-live animated infinite pulse">PARTIDO EN VIVO</span>';
     }
@@ -717,7 +717,7 @@ function loadContentHomePage() {
             
                 var allSports = response.menu.deportes;   
                 if (allSports !== ""){
-                    allSportsLength = allSports.length - 1
+                    allSportsLength = allSports.length - 1;
                     for (i = 0; i <= allSportsLength; i++){
                         console.log(allSports[i]);
                         console.log(allSports[i].nombre);
@@ -1154,7 +1154,7 @@ function builderNewsHomeDetails() {
     if (loadingInfiniteScrollHomeNews) {
        console.log('viene del scroll infinito');
     } else{
-        console.log('no viene del scroll infinito')
+        console.log('no viene del scroll infinito');
         $('#last-news-list-block').html('');
     }
     var strBuilderLastNewsContent = [];
@@ -1229,7 +1229,7 @@ function showPageSettings() {
 /**** builder de la 2da tab ****/
 
 function convert(d) {
-    console.log(d)
+    console.log(d);
     var w = d.split("/");
     console.log(w[2], w[1] - 1, w[0]);
     return new Date(w[2], w[1] - 1, w[0]);
@@ -1244,7 +1244,7 @@ function builderHomeDetails2() {
     //$('#tabHomeDetails2').html('');
     var events = [];
     // console.log(homeDetails2List.calendario);
-    console.log(newsListHome)
+    console.log(newsListHome);
     for (var k in homeDetails2List.calendario) {
         //console.log(newsListHome[k].fecha.fecha);
         console.log(homeDetails2List.calendario[k]);
@@ -1293,7 +1293,7 @@ function builderHomeDetails2() {
         container: '#calendar-inline-container',
         value: [new Date()],
         weekHeader: false,
-        events,
+        events: events,
         toolbarTemplate: '<div class="toolbar calendar-custom-toolbar">' +
             '<div class="toolbar-inner">' +
             '<div class="left">' +
@@ -1349,11 +1349,11 @@ function builderHomeDetails2() {
 
             var monthFinal = parseInt(month) + 1;
             if (month.length == 1) {
-                monthFinal = '0' + monthFinal
+                monthFinal = '0' + monthFinal;
             }
             var dayFinal = parseInt(day);
             if (day.length == 1) {
-                dayFinal = '0' + dayFinal
+                dayFinal = '0' + dayFinal;
             }
             var eventDay = dayFinal + '/' + monthFinal + '/' + year;
             console.log(eventDay);
@@ -1440,7 +1440,7 @@ function builderDayEvents(eventDay) {
                     // strBuilderCalendarContent.push('<div class="timeline-item-date">'+dateTimeLineEventsSplitedFormat(item.fechaEncuentro.fecha, 0)+' <small>'+dateTimeLineEventsSplitedFormat(item.fechaEncuentro.fecha, 1)+'</small></div>');
                     // strBuilderCalendarContent.push('<div class="timeline-item-divider"></div>');
                     strBuilderCalendarContent.push('<div class="card card-event-home">');
-                    strBuilderCalendarContent.push('<div class="timeline-item-content card" id="cardHomeTimeLine">')
+                    strBuilderCalendarContent.push('<div class="timeline-item-content card" id="cardHomeTimeLine">');
 
                     strBuilderCalendarContent.push('<div class="card-header card-header-center">' + item.torneo.nombre + '</div>');
                     //}
@@ -1540,7 +1540,7 @@ function dateTimeLineEventsSplitedFormat(date, n) {
 }
 
 function builderTimeLineEventsHome() {
-    console.log(homeDetails2List)
+    console.log(homeDetails2List);
     //console.log(newsListHome);
 
     var strBuilderTimeLineContent = [];
@@ -1605,7 +1605,7 @@ function builderTimeLineEventsHome() {
                 // strBuilderTimeLineContent.push('<div class="timeline-item-date">'+dateTimeLineEventsSplitedFormat(item.fechaEncuentro.fecha, 0)+' <small>'+dateTimeLineEventsSplitedFormat(item.fechaEncuentro.fecha, 1)+'</small></div>');
                 // strBuilderTimeLineContent.push('<div class="timeline-item-divider"></div>');
                 strBuilderTimeLineContent.push('<div class="card card-event-home">');
-                strBuilderTimeLineContent.push('<div class="timeline-item-content card" id="cardHomeTimeLine">')
+                strBuilderTimeLineContent.push('<div class="timeline-item-content card" id="cardHomeTimeLine">');
 
                 strBuilderTimeLineContent.push('<div class="custom-calendar-match-card"><div style="font-family: Montserrat-Regular;font-size: 16px;color: #585858;padding: 10px 10px 0 20px;">' + item.torneo.nombre + '</div><div style="font-family: Montserrat-Light;font-size: 11px;color: #919191;padding: 5px 0 10px 20px;">' + item.torneo.deporteCategoria.nombreCorto + '</div></div>');
                 //}
@@ -1692,8 +1692,9 @@ function formatDateSucesos(dateNew) {
         month: "short",
         day: "numeric"
     };
-
-    return date.toLocaleDateString("es", options) //en is language option, you may specify..
+		
+    //en is language option, you may specify..
+    return date.toLocaleDateString("es", options); 
 
 
 }
@@ -1712,8 +1713,9 @@ function formatDateMonthSucesos(dateNew) {
         month: "short",
         day: "numeric"
     };
-
-    var newdateFormated = date.toLocaleDateString("es", options) //en is language option, you may specify..
+  
+    //en is language option, you may specify..
+    var newdateFormated = date.toLocaleDateString("es", options); 
     console.log(newdateFormated);
     var newdateArray = dateEvent.split("/");
     var newdateEventFormated = datearray[1];
