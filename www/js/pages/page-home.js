@@ -1491,7 +1491,7 @@ function builderDayEvents(eventDay) {
                     strBuilderCalendarContent.push('</div>');
                     strBuilderCalendarContent.push('</div>');
                     strBuilderCalendarContent.push('<div class="description-lastmatch-tournament">');
-                    strBuilderCalendarContent.push(item.visitante.nombre);
+                    strBuilderCalendarContent.push(item.detalle);
                     strBuilderCalendarContent.push('</div>');
                     strBuilderCalendarContent.push('</div>');
                     strBuilderCalendarContent.push('</div>');
@@ -1655,7 +1655,7 @@ function builderTimeLineEventsHome() {
                 strBuilderTimeLineContent.push('</div>');
                 strBuilderTimeLineContent.push('</div>');
                 strBuilderTimeLineContent.push('<div class="description-lastmatch-tournament">');
-                strBuilderTimeLineContent.push(item.visitante.nombre);
+                strBuilderTimeLineContent.push(item.detalle);
                 strBuilderTimeLineContent.push('</div>');
                 strBuilderTimeLineContent.push('</div>');
                 strBuilderTimeLineContent.push('</div>');

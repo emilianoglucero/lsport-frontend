@@ -110,7 +110,7 @@ function htmlMatchDetailsCard (match) {
                             strBuilderMatchDetailInfo.push('</div>');
                         strBuilderMatchDetailInfo.push('</div>');
                         strBuilderMatchDetailInfo.push('<div class="description-lastmatch-tournament">');
-                            strBuilderMatchDetailInfo.push(match.visitante.nombre);
+                            strBuilderMatchDetailInfo.push(match.detalle);
                         strBuilderMatchDetailInfo.push('</div>');
                 strBuilderMatchDetailInfo.push('</div>');
             strBuilderMatchDetailInfo.push('</div>');
@@ -134,12 +134,12 @@ function htmlMatchDetailsEvents (match) {
 
     var strBuilderLastMatch = [];
 
-        if (match.tipoObjeto == "torneo-encuentro") {
+if (match.tipoObjeto == "torneo-encuentro") {
 		    var equipoLocal = match.local.nombre;
 		    var equipoVisitante = match.visitante.nombre;
 
 		    var timelineSide = true;
-		    if (match.eventos.todos.length !== 0){
+		if (match.eventos.todos.length !== 0){
 
 		    strBuilderLastMatch.push('<div class="timeline timeline-sides">');
 
@@ -153,38 +153,17 @@ function htmlMatchDetailsEvents (match) {
 
                         if (item.equipo.localia == "local") {
                             strBuilderLastMatch.push('<div class="timeline-item timeline-item-left">');
-                                strBuilderLastMatch.push('<div class="timeline-item-date">'+item.tiempo.relojEtapa+'<small><img data-src='+item.tipoIncidencia.icono+' class="match-img-events lazy lazy-fadeIn"/></small></div>');
+                                strBuilderLastMatch.push('<div class="timeline-item-date"></div>');
                                 strBuilderLastMatch.push('<div class="timeline-item-divider"></div>');
                                 //strBuilderLastMatch.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
-                                    strBuilderLastMatch.push('<div class="timeline-item-content">');
-                                        //strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
+                                    strBuilderLastMatch.push('<div class="timeline-item-content" style="width:width: 100%;">');
+                                    strBuilderLastMatch.push('<small style="float: right;"><img data-src='+item.tipoIncidencia.icono+' class="match-img-events lazy lazy-fadeIn"/></small>');
+                                        strBuilderLastMatch.push('<div class="timeline-item-inner" style="margin-top: 18px;"><div class="match-event-title">'+item.tiempo.relojEtapa+'</div>');
                                         if (item.detallePrincipal == null) {
-                                            strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title"></div>');
-                                        } else {
-                                            strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
-                                        }
-                                            if (item.comentario !== "") {
-                                                strBuilderLastMatch.push('<div class="match-event-timeline-commentary">'+item.comentario+'</div>');
-                                            }
-                                        strBuilderLastMatch.push('</div>');
-                                    strBuilderLastMatch.push('</div>');
-                            strBuilderLastMatch.push('</div>');
-
-                            timelineSide = true;
-
-                        }
-                        else if (item.equipo.localia == "visitante"){
-
-                            strBuilderLastMatch.push('<div class="timeline-item timeline-item-right">');
-                                strBuilderLastMatch.push('<div class="timeline-item-date">'+item.tiempo.relojEtapa+'<small><img data-src='+item.tipoIncidencia.icono+' class="match-img-events lazy lazy-fadeIn"/></small></div>');
-                                strBuilderLastMatch.push('<div class="timeline-item-divider"></div>');
-                                //strBuilderLastMatch.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
-                                    strBuilderLastMatch.push('<div class="timeline-item-content">');
-                                        if (item.comentario.detalle == null) {
-                                            strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title"></div>');
+                                            strBuilderLastMatch.push('<div class="match-event-title"></div>');
                                             //strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
                                         } else {
-                                            strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
+                                            strBuilderLastMatch.push('<div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
                                             //strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title"></div>');
                                         }
                                         if (item.comentario !== "") {
@@ -196,7 +175,32 @@ function htmlMatchDetailsEvents (match) {
 
                             timelineSide = true;
 
+                        } else if (item.equipo.localia == "visitante"){
+
+                            strBuilderLastMatch.push('<div class="timeline-item timeline-item-right">');
+                                strBuilderLastMatch.push('<div class="timeline-item-date"></div>');
+                                strBuilderLastMatch.push('<div class="timeline-item-divider"></div>');
+                                //strBuilderLastMatch.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
+                                    strBuilderLastMatch.push('<div class="timeline-item-content" style="width:width: 100%;">');
+                                    strBuilderLastMatch.push('<small style="float: left;"><img data-src='+item.tipoIncidencia.icono+' class="match-img-events lazy lazy-fadeIn"/></small>');
+                                        strBuilderLastMatch.push('<div class="timeline-item-inner" style="margin-top: 18px;"><div class="match-event-title">'+item.tiempo.relojEtapa+'</div>');
+                                        if (item.detallePrincipal == null) {
+                                            strBuilderLastMatch.push('<div class="match-event-title"></div>');
+                                            //strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
+                                        } else {
+                                            strBuilderLastMatch.push('<div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
+                                            //strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title"></div>');
+                                        }
+                                        if (item.comentario !== "") {
+                                            strBuilderLastMatch.push('<div class="match-event-timeline-commentary">'+item.comentario+'</div>');
+                                        }
+                                        strBuilderLastMatch.push('</div>');
+                                    strBuilderLastMatch.push('</div>');
+                            strBuilderLastMatch.push('</div>');
+
+                            timelineSide = true;
                         }
+
                     } else if (item.tipoEvento == "inicializar") {
 
                         strBuilderLastMatch.push('</div>');
@@ -254,15 +258,20 @@ function htmlMatchDetailsEvents (match) {
                     }
 
                         if (item.equipo.localia == "local") {
+                            
                             strBuilderLastMatch.push('<div class="timeline-item timeline-item-left">');
-                                strBuilderLastMatch.push('<div class="timeline-item-date">'+item.tiempo.relojEtapa+'<small><img data-src='+item.tipoIncidencia.icono+' class="match-img-events lazy lazy-fadeIn"/></small></div>');
+                                strBuilderLastMatch.push('<div class="timeline-item-date"></div>');
                                 strBuilderLastMatch.push('<div class="timeline-item-divider"></div>');
                                 //strBuilderLastMatch.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
-                                    strBuilderLastMatch.push('<div class="timeline-item-content">');
+                                    strBuilderLastMatch.push('<div class="timeline-item-content" style="width:width: 100%;">');
+                                    strBuilderLastMatch.push('<small style="float: right;"><img data-src='+item.tipoIncidencia.icono+' class="match-img-events lazy lazy-fadeIn"/></small>');
+                                        strBuilderLastMatch.push('<div class="timeline-item-inner" style="margin-top: 18px;"><div class="match-event-title">'+item.tiempo.relojEtapa+'</div>');
                                         if (item.detallePrincipal == null) {
-                                            strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title"></div>');
+                                            strBuilderLastMatch.push('<div class="match-event-title"></div>');
+                                            //strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
                                         } else {
-                                            strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
+                                            strBuilderLastMatch.push('<div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
+                                            //strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title"></div>');
                                         }
                                         if (item.comentario !== "") {
                                             strBuilderLastMatch.push('<div class="match-event-timeline-commentary">'+item.comentario+'</div>');
@@ -277,14 +286,18 @@ function htmlMatchDetailsEvents (match) {
                         else if (item.equipo.localia == "visitante"){
 
                             strBuilderLastMatch.push('<div class="timeline-item timeline-item-right">');
-                                strBuilderLastMatch.push('<div class="timeline-item-date">'+item.tiempo.relojEtapa+'<small><img data-src='+item.tipoIncidencia.icono+' class="match-img-events lazy lazy-fadeIn"/></small></div>');
+                                strBuilderLastMatch.push('<div class="timeline-item-date"></div>');
                                 strBuilderLastMatch.push('<div class="timeline-item-divider"></div>');
                                 //strBuilderLastMatch.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
-                                    strBuilderLastMatch.push('<div class="timeline-item-content">');
+                                    strBuilderLastMatch.push('<div class="timeline-item-content" style="width:width: 100%;">');
+                                    strBuilderLastMatch.push('<small style="float: left;"><img data-src='+item.tipoIncidencia.icono+' class="match-img-events lazy lazy-fadeIn"/></small>');
+                                        strBuilderLastMatch.push('<div class="timeline-item-inner" style="margin-top: 18px;"><div class="match-event-title">'+item.tiempo.relojEtapa+'</div>');
                                         if (item.detallePrincipal == null) {
-                                            strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title"></div>');
+                                            strBuilderLastMatch.push('<div class="match-event-title"></div>');
+                                            //strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
                                         } else {
-                                            strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
+                                            strBuilderLastMatch.push('<div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
+                                            //strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title"></div>');
                                         }
                                         if (item.comentario !== "") {
                                             strBuilderLastMatch.push('<div class="match-event-timeline-commentary">'+item.comentario+'</div>');
@@ -306,11 +319,11 @@ function htmlMatchDetailsEvents (match) {
 
                         if (item.equipo.localia == "local") {
                             strBuilderLastMatch.push('<div class="timeline-item timeline-item-left">');
-                                strBuilderLastMatch.push('<div class="timeline-item-date">'+item.tiempo.relojEtapa+'<small><img data-src='+item.tipoIncidencia.icono+' class="match-img-events lazy lazy-fadeIn"/></small></div>');
+                                strBuilderLastMatch.push('<div class="timeline-item-date"></div>');
                                 strBuilderLastMatch.push('<div class="timeline-item-divider"></div>');
                                 //strBuilderLastMatch.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
-                                    strBuilderLastMatch.push('<div class="timeline-item-content">');
-                                        strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.label+': '+item.detallePrincipal.detalle+'</div><div class="match-event-timeline-commentary">'+item.detalleSecundario.label+': '+item.detalleSecundario.detalle+'</div>');
+                                    strBuilderLastMatch.push('<div class="timeline-item-content" style="width:width: 100%;">');
+                                        strBuilderLastMatch.push('<div class="timeline-item-inner" style="margin-top: 18px;"><div class="match-event-title">'+item.tiempo.relojEtapa+'</div><div class="match-event-title">'+item.detallePrincipal.label+': '+item.detallePrincipal.detalle+'</div><div class="match-event-timeline-commentary">'+item.detalleSecundario.label+': '+item.detalleSecundario.detalle+'</div>');
                                         strBuilderLastMatch.push('</div>');
                                     strBuilderLastMatch.push('</div>');
                             strBuilderLastMatch.push('</div>');
@@ -321,11 +334,11 @@ function htmlMatchDetailsEvents (match) {
                         else if (item.equipo.localia == "visitante"){
 
                             strBuilderLastMatch.push('<div class="timeline-item timeline-item-right">');
-                                strBuilderLastMatch.push('<div class="timeline-item-date">'+item.tiempo.relojEtapa+'<small><img data-src='+item.tipoIncidencia.icono+' class="match-img-events lazy lazy-fadeIn"/></small></div>');
+                                strBuilderLastMatch.push('<div class="timeline-item-date"></div>');
                                 strBuilderLastMatch.push('<div class="timeline-item-divider"></div>');
                                 //strBuilderLastMatch.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
-                                    strBuilderLastMatch.push('<div class="timeline-item-content">');
-                                        strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.label+': '+item.detallePrincipal.detalle+'</div><div class="match-event-timeline-commentary">'+item.detalleSecundario.label+': '+item.detalleSecundario.detalle+'</div>');
+                                    strBuilderLastMatch.push('<div class="timeline-item-content" style="width:width: 100%;">');
+                                        strBuilderLastMatch.push('<div class="timeline-item-inner" style="margin-top: 18px;"><div class="match-event-title">'+item.tiempo.relojEtapa+'</div><div class="match-event-title">'+item.detallePrincipal.label+': '+item.detallePrincipal.detalle+'</div><div class="match-event-timeline-commentary">'+item.detalleSecundario.label+': '+item.detalleSecundario.detalle+'</div>');
                                         strBuilderLastMatch.push('</div>');
                                     strBuilderLastMatch.push('</div>');
                             strBuilderLastMatch.push('</div>');
