@@ -164,7 +164,7 @@ function htmlMatchDetailsEvents (match) {
                                             strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
                                         }
                                             if (item.comentario !== "") {
-                                                strBuilderLastMatch.push('<div class="match-event-timeline-commentary"><br>'+item.comentario+'</div>');
+                                                strBuilderLastMatch.push('<div class="match-event-timeline-commentary">'+item.comentario+'</div>');
                                             }
                                         strBuilderLastMatch.push('</div>');
                                     strBuilderLastMatch.push('</div>');
@@ -188,7 +188,7 @@ function htmlMatchDetailsEvents (match) {
                                             //strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title"></div>');
                                         }
                                         if (item.comentario !== "") {
-                                            strBuilderLastMatch.push('<div class="match-event-timeline-commentary"><br>'+item.comentario+'</div>');
+                                            strBuilderLastMatch.push('<div class="match-event-timeline-commentary">'+item.comentario+'</div>');
                                         }
                                         strBuilderLastMatch.push('</div>');
                                     strBuilderLastMatch.push('</div>');
@@ -265,7 +265,7 @@ function htmlMatchDetailsEvents (match) {
                                             strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
                                         }
                                         if (item.comentario !== "") {
-                                            strBuilderLastMatch.push('<div class="match-event-timeline-commentary"><br>'+item.comentario+'</div>');
+                                            strBuilderLastMatch.push('<div class="match-event-timeline-commentary">'+item.comentario+'</div>');
                                         }
                                         strBuilderLastMatch.push('</div>');
                                     strBuilderLastMatch.push('</div>');
@@ -287,7 +287,7 @@ function htmlMatchDetailsEvents (match) {
                                             strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.detalle+'</div>');
                                         }
                                         if (item.comentario !== "") {
-                                            strBuilderLastMatch.push('<div class="match-event-timeline-commentary"><br>'+item.comentario+'</div>');
+                                            strBuilderLastMatch.push('<div class="match-event-timeline-commentary">'+item.comentario+'</div>');
                                         }
                                         strBuilderLastMatch.push('</div>');
                                     strBuilderLastMatch.push('</div>');
@@ -310,7 +310,7 @@ function htmlMatchDetailsEvents (match) {
                                 strBuilderLastMatch.push('<div class="timeline-item-divider"></div>');
                                 //strBuilderLastMatch.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
                                     strBuilderLastMatch.push('<div class="timeline-item-content">');
-                                        strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.label+': '+item.detallePrincipal.detalle+'</div><div class="match-event-timeline-commentary"><br>'+item.detalleSecundario.label+': '+item.detalleSecundario.detalle+'</div>');
+                                        strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.label+': '+item.detallePrincipal.detalle+'</div><div class="match-event-timeline-commentary">'+item.detalleSecundario.label+': '+item.detalleSecundario.detalle+'</div>');
                                         strBuilderLastMatch.push('</div>');
                                     strBuilderLastMatch.push('</div>');
                             strBuilderLastMatch.push('</div>');
@@ -325,7 +325,7 @@ function htmlMatchDetailsEvents (match) {
                                 strBuilderLastMatch.push('<div class="timeline-item-divider"></div>');
                                 //strBuilderLastMatch.push('<a href="#" class="aEventDetails" onclick="loadEventDetails1('+item.id+')">');
                                     strBuilderLastMatch.push('<div class="timeline-item-content">');
-                                        strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.label+': '+item.detallePrincipal.detalle+'</div><div class="match-event-timeline-commentary"><br>'+item.detalleSecundario.label+': '+item.detalleSecundario.detalle+'</div>');
+                                        strBuilderLastMatch.push('<div class="timeline-item-inner"><div class="match-event-title">'+item.detallePrincipal.label+': '+item.detallePrincipal.detalle+'</div><div class="match-event-timeline-commentary">'+item.detalleSecundario.label+': '+item.detalleSecundario.detalle+'</div>');
                                         strBuilderLastMatch.push('</div>');
                                     strBuilderLastMatch.push('</div>');
                             strBuilderLastMatch.push('</div>');
@@ -370,7 +370,9 @@ function htmlMatchDetailsMultiMedia (match) {
     strBuilderGalleryMatchDetails.push('');
     
     //match details text
-    strBuilderGalleryMatchDetails.push('<p class="descriptionMatchDetail">'+match.detalle+'<p/>');
+    if(match.detalle != null) {
+        strBuilderGalleryMatchDetails.push('<p class="descriptionMatchDetail">'+match.detalle+'<p/>');
+    }
 
     //match images and videos
 	if(match.imagenes != ""){
