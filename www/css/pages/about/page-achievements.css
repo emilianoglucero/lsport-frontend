@@ -13,7 +13,8 @@
 
 .imgCardAchievement {
     width: 90px;
-    height: 90px;
+	height: 90px;
+	font-size: 10px;
 }
 
 .content-block-title-achievements{

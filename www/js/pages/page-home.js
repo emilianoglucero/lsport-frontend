@@ -384,6 +384,7 @@ function htmlEventCard (item) {
     var strBuilderLastNewsContent = [];
     console.log(noticiaTruncada);
     strBuilderLastNewsContent.push('<div class="card demo-card-header-pic">');
+    strBuilderLastNewsContent.push('<a onclick="loadEventDetails1(' + item.id + ',\'' + sucesoDetailFromHome + '\')" href="#" class="">');
 
         // -----------> Header
         strBuilderLastNewsContent.push('<div class="card-header color-white no-border">');
@@ -418,7 +419,7 @@ function htmlEventCard (item) {
             strBuilderLastNewsContent.push('</div>');
         //strBuilderLastNewsContent.push('<a onclick="loadEventDetails1(' + item.id + ',\'' + sucesoDetailFromHome + '\')" href="#" class="item-link item-content">');
         //strBuilderLastNewsContent.push('</a>');
-strBuilderLastNewsContent.push('<a onclick="loadEventDetails1(' + item.id + ',\'' + sucesoDetailFromHome + '\')" href="#" class="item-link item-content">');
+//strBuilderLastNewsContent.push('<a onclick="loadEventDetails1(' + item.id + ',\'' + sucesoDetailFromHome + '\')" href="#" class="item-link item-content">');
     // --------------> Content
         strBuilderLastNewsContent.push('<div class="card-content news-content">');
             strBuilderLastNewsContent.push('<div class="card-content-inner">');
