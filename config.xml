@@ -24,6 +24,7 @@
     </platform>
     <preference name="AllowInlineMediaPlayback" value="true" />
     <preference name="MediaPlaybackRequiresUserAction" value="false" />
+    <preference name="android-minSdkVersion" value="19" />
     <allow-navigation href="*youtube*" />
     <allow-navigation href="*ytimg*" />
     <platform name="android">
@@ -70,6 +71,16 @@
         </host>
     </universal-links>
     <preference name="AndroidLaunchMode" value="singleTask" />
+    <plugin name="cordova-universal-links-plugin" spec="~1.2.1" />
+    <plugin name="cordova-plugin-admobpro-firebase" spec="^2.37.0">
+        <variable name="PLAY_SERVICES_VERSION" value="+" />
+    </plugin>
+    <plugin name="cordova-android-firebase-gradle-release" spec="^3.0.0">
+        <variable name="FIREBASE_VERSION" value="+" />
+    </plugin>
+    <plugin name="cordova-android-play-services-gradle-release" spec="^3.0.0">
+        <variable name="PLAY_SERVICES_VERSION" value="+" />
+    </plugin>
     <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
     <plugin name="cordova-plugin-device" spec="^2.0.2" />
     <plugin name="cordova-plugin-dialogs" spec="^2.0.1" />
@@ -81,10 +92,10 @@
     <plugin name="cordova-plugin-screen-orientation" spec="^3.0.1" />
     <plugin name="cordova-plugin-splashscreen" spec="^5.0.2" />
     <plugin name="cordova-plugin-vibration" spec="^3.1.0" />
-    <plugin name="cordova-plugin-x-socialsharing" spec="^5.4.5">
+    <plugin name="cordova-plugin-x-socialsharing" spec="^5.4.6">
         <variable name="ANDROID_SUPPORT_V4_VERSION" value="24.1.1+" />
     </plugin>
-    <plugin name="cordova-plugin-buildinfo" spec="^2.0.2" />
+    <plugin name="cordova-plugin-buildinfo" spec="^2.0.3" />
     <plugin name="cordova-plugin-browsertab" spec="^0.2.0" />
     <plugin name="cordova-plugin-customurlscheme" spec="^4.4.0">
         <variable name="URL_SCHEME" value="com.lsc.ar.caba.villamalcolm" />
@@ -92,18 +103,12 @@
         <variable name="ANDROID_HOST" value=" " />
         <variable name="ANDROID_PATHPREFIX" value="/" />
     </plugin>
-    <plugin name="cordova-plugin-admobpro-firebase" spec="^2.37.0">
-        <variable name="PLAY_SERVICES_VERSION" value="+" />
-    </plugin>
-    <plugin name="cordova-android-play-services-gradle-release" spec="^3.0.0">
-        <variable name="PLAY_SERVICES_VERSION" value="+" />
-    </plugin>
-    <plugin name="cordova-android-firebase-gradle-release" spec="^3.0.0">
-        <variable name="FIREBASE_VERSION" value="+" />
-    </plugin>
     <plugin name="cordova-android-support-gradle-release" spec="^3.0.0">
         <variable name="ANDROID_SUPPORT_VERSION" value="+" />
     </plugin>
+    <plugin name="cordova-plugin-androidx" spec="^1.0.2" />
+    <plugin name="cordova-plugin-androidx-adapter" spec="^1.1.0" />
+    <plugin name="cordova-plugin-firebasex" spec="^3.0.2" />
     <engine name="browser" spec="^5.0.4" />
     <engine name="android" spec="^8.0.0" />
 </widget>
