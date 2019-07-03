@@ -347,3 +347,7 @@
 	font-family: "Montserrat-Regular";
 	color: #919191;
 }
+
+.information-description-label {
+    margin: 10px 19px;
+}

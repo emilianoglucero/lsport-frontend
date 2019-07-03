@@ -1,4 +1,4 @@
-var activitiesList = [];
+//var activitiesList = [];
 var areActivitiesLoaded = false;
 
 
@@ -17,57 +17,25 @@ myApp.onPageBeforeAnimation('activities', function (page)
 	trackPageGA("Actividades");
 });
 
-/*function loadActivities(){
-	showLoadSpinnerWS();
-	$('#activities-list').html('');
-	$.ajax({
-			// URL del Web Service
-			url: getPathWS() + 'getActivityList',
-			dataType: 'jsonp',
-			data: { 'idClub': idClub },
-			timeout: timeOut,
-			success: function(response){
-				if(response.errorCode != 0)
-				{
-				    hideLoadSpinnerWS();
-				    filterCodeErrorWS(response);
-				    return;
-				}
-				if(isAppUpdate(response.serverVersion) == false){
-					hideLoadSpinnerWS();
-					mainView.router.load({pageName: 'update'});
-					return;
-				}
-				activitiesList = response.activitiesList;
-				areActivitiesLoaded = true;
-				builderActivitiesList();
-				hideLoadSpinnerWS();
-			},
-			error: function (data, status, error){
-		          builderActivitiesList();
-		          hideLoadSpinnerWS();
-		   }
-		});
-}*/
 
 function builderActivitiesList(){
 	$('#activities-list').html('');
-	console.log(activitiesList);
+	console.log(clubList);
 	var strBuilderActivitiesContent = [];
 	//if(areActivitiesLoaded == true){
-		if(activitiesList.length == 0){
+		if(clubList.length == 0){
 				strBuilderActivitiesContent.push('<div class="divNotActivities">'+divNotActivities+'</div>');
 		}
 		else{
-			$.each( activitiesList, function( i, item ){
-				strBuilderActivitiesContent.push('<div onclick="loadActivityDetails('+item.id+')" class="card card-activity">');
+			$.each( clubList, function( i, item ){
+				strBuilderActivitiesContent.push('<div class="card card-activity">');
 				strBuilderActivitiesContent.push('<div class="card-activity-content">');
 					strBuilderActivitiesContent.push('<div valign="bottom" class="card-header card-header-photo color-white no-border">');
 						strBuilderActivitiesContent.push('<img class="lazy lazy-fadeIn imgCardHeaderActivities" data-src="'+item.imagenPrincipalMin+'" alt="'+item.nombre+'" />');
 					strBuilderActivitiesContent.push('</div>');
 					strBuilderActivitiesContent.push('<div class="card-header card-header-title">'+item.nombre+'</div>');
 					strBuilderActivitiesContent.push('<div class="card-content-inner">');
-						strBuilderActivitiesContent.push('<p class="color-gray">'+item.descripcion+'</p>');
+						strBuilderActivitiesContent.push('<p class="color-gray">'+item.direccion+'</p>');
 					strBuilderActivitiesContent.push('</div>');
 				strBuilderActivitiesContent.push('</div>');
 				strBuilderActivitiesContent.push('</div>');

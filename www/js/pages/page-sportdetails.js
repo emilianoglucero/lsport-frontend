@@ -545,10 +545,11 @@ function builderSportDetails1() {
 function builderInformationSportDetails() {
 	console.log(sportDetails);
 	var strBuildetTabSportDetails1 = [];
-	strBuildetTabSportDetails1.push(builderCoordinatorsSport(sportDetails.coordinadores));
+	//strBuildetTabSportDetails1.push(builderCoordinatorsSport(sportDetails.coordinadores));
+	strBuildetTabSportDetails1.push('<div class="information-description-label">' +sportDetails.descripcion+' </div>');
 
-	strBuildetTabSportDetails1.push(builderGeneralInformationSport(sportDetails.horarioTexto, sportDetails.lugar, sportDetails.correoContacto));
-	strBuildetTabSportDetails1.push(builderPriceDetails(sportDetails.precio));
+	//strBuildetTabSportDetails1.push(builderGeneralInformationSport(sportDetails.horarioTexto, sportDetails.lugar, sportDetails.correoContacto));
+	//strBuildetTabSportDetails1.push(builderPriceDetails(sportDetails.precio));
 
 	$('#tabSportDetails1').html(strBuildetTabSportDetails1.join(""));
 

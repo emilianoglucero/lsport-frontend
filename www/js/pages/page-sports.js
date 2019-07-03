@@ -70,12 +70,12 @@ function builderSportsList(){
 			$.each( sportsList, function( i, item ){
 			console.log('lista deportes');
 			console.log(item);
-			console.log(item.enac);
+			//console.log(item.enac);
 			console.log(item.categorias);
-			var sportEnacs = item.enac;
+			//var sportEnacs = item.enac;
 			var sportCategories = item.categorias;
 			sportCategories.id;
-			console.log(sportEnacs.length);
+			//console.log(sportEnacs.length);
 
 				//var enacsSportList = item.enac;
 				//console.log(enacsSportList);

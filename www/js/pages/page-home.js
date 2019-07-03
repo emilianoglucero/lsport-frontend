@@ -26,8 +26,13 @@ var calendarInline;
 var homeDetails2List;
 var homeDetails3List;
 
+//sports lists
 var sportsList = [];
+//activities list
 var activitiesList = [];
+
+//clubs list, we use it for ENACS
+var clubList = [];
 
 //acumuladores de sucesos de torneos y actividades
 //accumulators of tournaments and activities
@@ -697,7 +702,7 @@ function loadContentHomePage() {
         dataType: 'json',
         success: function (response) {
             console.log(response);
-            console.log(response.menu.deportes);
+            console.log(response.menu.clubes);
             /*$.each(data, function (key, value) {
                 console.log(key);
                 console.log(value);
@@ -716,13 +721,14 @@ function loadContentHomePage() {
                }*/
             console.log(platform);
             
-                var allSports = response.menu.deportes;   
-                if (allSports !== ""){
+                var allSports = response.sucesosPanel.sucesos;
+                console.log(allSports);   
+                if (Array.isArray(allSports)) {
                     allSportsLength = allSports.length - 1;
                     for (i = 0; i <= allSportsLength; i++){
                         console.log(allSports[i]);
                         console.log(allSports[i].nombre);
-                        if (allSports[i].nombre === "Update"){
+                        if (allSports[i].titulo === "l3ngu4j3"){
                             hideLoadSpinnerWS();
                             mainView.router.load({pageName: 'update'});
                             return;
@@ -742,7 +748,9 @@ function loadContentHomePage() {
             console.log(homeDetails2List);
             console.log(homeDetails3List);
             sportsList = response.menu.deportes;
-            activitiesList = response.menu.actividades;
+            //activitiesList = response.menu.actividades;
+            clubList = response.menu.clubes;
+            console.log(clubList);
             if (newsListHome !== "") {
                 console.log('es la primera');
                 allSucesosPageList = response.sucesosPanel.sucesos;
