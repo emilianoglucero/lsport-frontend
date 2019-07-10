@@ -74,7 +74,68 @@ function confirmSetProfile() {
           displayName: userFullName
         }).then(function() {
           // Update successful.
-          loadPageInit();
+          //loadPageInit();
+          firebase
+            .auth()
+            .currentUser.getIdToken(true)
+            .then(function(idToken) {
+              //console.log(idToken);
+              tokenUser = idToken;
+              console.log(userFullName); //nombre y apellido del usuario
+              console.log(tokenUser);
+              //we cannot pass devideID = null to the server
+              if (deviceID == null) {
+                deviceID = "null";
+              }
+              console.log(deviceID);
+              console.log(window.localStorage.getItem("TOKEN" + idClub));
+              console.log(platform);
+              console.log(userEmail);
+
+              $.ajax({
+                // URL del Web Service
+                url: getPathWS() + "registrarUsuario",
+                type: "POST",
+                //contentType: 'application/json',
+                dataType: "json",
+                //timeout: 5566456,
+                headers: {
+                  "Content-Type": "application/json"
+                },
+                data: JSON.stringify({
+                  grant_type: "urn:ietf:params:oauth:grant-type:jwt-bearer",
+                  assertion: tokenUser,
+                  dispositivoId: deviceID,
+                  tokenNotificacion: window.localStorage.getItem(
+                    "TOKEN" + idClub
+                  ),
+                  platforma: platform,
+                  nombre: userFullName,
+                  apellido: "",
+                  correo: userEmail,
+                  telefono: userPhoneNumber
+                }),
+                success: function(response) {
+                  //showLoadSpinnerWS();
+                  console.log(response.access_token);
+                  accessToken = response.access_token;
+                  mainView.router.load({ pageName: "home" });
+                  loadContentHomePage();
+                  //hideLoadSpinnerWS();
+                },
+                error: function(data, status, error) {
+                  console.log(data);
+                  console.log(status);
+                  console.log(error);
+                }
+              });
+
+              //mainView.router.load({pageName: 'home'});
+              //reloadContentHomePage();
+            })
+            .catch(function(error) {
+              console.log(error);
+            });
         }).catch(function(error) {
           // An error happened.
         });

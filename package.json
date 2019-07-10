@@ -22,7 +22,7 @@
         "cordova-plugin-buildinfo": "^2.0.3",
         "cordova-plugin-cocoapod-supportx": "^1.7.2",
         "cordova-plugin-compat": "^1.2.0",
-        "cordova-plugin-customurlscheme": "^4.4.0",
+        "cordova-plugin-customurlscheme": "4.4.0",
         "cordova-plugin-device": "^2.0.2",
         "cordova-plugin-dialogs": "^2.0.1",
         "cordova-plugin-firebasex": "^3.0.5",
@@ -70,7 +70,7 @@
             "cordova-plugin-buildinfo": {},
             "cordova-plugin-browsertab": {},
             "cordova-plugin-customurlscheme": {
-                "URL_SCHEME": "com.lsc.ar.caba.villamalcolm",
+                "URL_SCHEME": "com.lse.ar.rosario.art",
                 "ANDROID_SCHEME": " ",
                 "ANDROID_HOST": " ",
                 "ANDROID_PATHPREFIX": "/"

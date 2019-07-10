@@ -17,6 +17,7 @@ $(document).ready(function() {
   $("#lblSendButtonLoginFacebookLogin").text(lblSendButtonLoginFacebook);
   $("#lblSendButtonLoginGoogleLogin").text(lblSendButtonLoginGoogle);
   $("#lblSendButtonLoginEmailLogin").text(lblSendButtonLoginEmail);
+
 });
 
 //added to execute on login page
