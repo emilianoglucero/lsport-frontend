@@ -258,7 +258,11 @@ function onDeviceReady() {
   // set to lock the screen orientation on potrait (https://github.com/apache/cordova-plugin-screen-orientation)
   screen.orientation.lock("portrait");
 
-  loadPageLogin();
+  //executes the login page
+  //loadPageLogin();
+
+  //executes the home page
+  loadContentHomePage();
   //loadPageInit();
   //ejecutamos la funcion de la push notification despues para evitar conflictos con el observer de OnAuthStateChange
   setTimeout(function() {
@@ -308,7 +312,9 @@ var userEmail;
 var userPhoneNumber;
 
 function loadPageLogin() {
+  console.log('loadpagelogin');
   firebase.auth().onAuthStateChanged(function(user) {
+    console.log('loadpageloginInside');
     if (user) {
       console.log(user.phoneNumber);
       if (user.emailVerified || user.phoneNumber || loggedByFacebook == true) {
@@ -398,7 +404,9 @@ function loadPageLogin() {
         mainView.router.load({ pageName: "pleaseverify" });
       }
     } else {
+      console.log('not register');
       mainView.router.load({ pageName: "login" });
+      //window.location.reload(true);
     }
   });
 }

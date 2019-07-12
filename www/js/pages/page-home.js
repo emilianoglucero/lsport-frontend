@@ -116,6 +116,18 @@ $(document).ready(function () {
     $('#spnDisabledPopup').text(spnDisabledPopup);
     $('#headerPopupCustom').text(lblNameClub);
     $('#lblCloseButton').text(lblCloseButton);
+
+    //INIT HEADERS LOGIN IN HOME
+    //INIT HEADERS
+    $("#lblWellcomeLoginHome").text(lblWellcomeLogin);
+    $("#lblSendButtonLoginHome").text(lblSendButtonLogin);
+    $("#lblInfoLoginHome").text(lblInfoLogin);
+
+    $("#lblSendButtonLoginFacebookLoginHome").text(lblSendButtonLoginFacebook);
+    $("#lblSendButtonLoginGoogleLoginHome").text(lblSendButtonLoginGoogle);
+    $("#lblSendButtonLoginEmailLoginHome").text(lblSendButtonLoginEmail);
+
+
 });
 
 myApp.onPageInit('home', function (page) {
@@ -644,7 +656,51 @@ function htmlTournamentMatchCard(item) {
    return strBuilderLastNewsContent; 
 }
 
+//function to build the 'login main page' 
+/*
+function htmlLoginPage () {
 
+    //console.log(item);
+    var strBuilderLoginHome = [];
+
+    //var noticiaTruncada = truncateNoticia(item.detalleTxt);
+        //console.log(noticiaTruncada);
+        //console.log(strBuilderLoginHome);
+        strBuilderLoginHome.push('<div class="page-content login-screen-content">');
+
+            strBuilderLoginHome.push('<div class="login-screen-title" id="lblWellcomeLogin"></div>');
+
+            strBuilderLoginHome.push('<div id="containerImgLogin"><img src="img/club/club-shield.png" alt="Imagen del Club" class="imgHeaderImgShieldClubContact" /></div>');
+            strBuilderLoginHome.push('<form><div class="login-form"><select name="country" id="phone-code" class="login-input-select">');
+                    strBuilderLoginHome.push('<option value="+549" selected>Argentina (+549)</option>');
+                    strBuilderLoginHome.push('<option value="+55">Brasil (+55)</option>');
+                    strBuilderLoginHome.push('<option value="+56">Chile (+56)</option>');
+                    strBuilderLoginHome.push('<option value="+598">Uruguay (+598)</option>');
+                    strBuilderLoginHome.push('<option value="+591">Bolivia (+591)</option>');
+                    strBuilderLoginHome.push('<option value="+51">Peru (+51)</option>');
+                    strBuilderLoginHome.push('<option value="+595">Paraguay (+595)</option>');
+                    strBuilderLoginHome.push('<option value="+52">Mexico (+52)</option>');
+                    strBuilderLoginHome.push('<option value="+34">España (+34)</option>');
+                    strBuilderLoginHome.push('<option value="+44">Inglaterra (+44)</option>');
+                    strBuilderLoginHome.push('<option value="+1">USA (+1)</option>');
+                strBuilderLoginHome.push('</select>');
+                strBuilderLoginHome.push('<input class="login-input" type="tel" id="phonenumber" name="phonenumber" placeholder="3476599999" maxlength="11">');
+            strBuilderLoginHome.push('</div>');
+            strBuilderLoginHome.push('<div class="list-block">');
+                strBuilderLoginHome.push('<ul><li><a href="#" onclick="confirmNumber()" class="item-link list-button" id="lblSendButtonLogin"></a></li></ul>');
+                strBuilderLoginHome.push('<div class="list-block-label" id="lblInfoLogin"></div>');
+                strBuilderLoginHome.push('<div id= "otherLoginInicio">');
+                    strBuilderLoginHome.push('<ul><li><div class="list-block-label">Otros metodos de logueo:</div></li></ul>');
+                    strBuilderLoginHome.push('<ul id="otherlogin-buttonGoogleInicio"><li><a href="#" onclick="confirmGoogle()" class="button button-big" id="lblSendButtonLoginGoogleLogin"><div class="icon-share-googlelogin"></div></a></li>');
+                    strBuilderLoginHome.push('<ul id="otherlogin-buttonFacebookInicio"><li><a href="#" onclick="confirmFacebook()" class="button button-big button-fill" id="lblSendButtonLoginFacebookLogin"><i class="icon-share-facebook"></i></a></li></ul>');
+                    strBuilderLoginHome.push('<ul id="otherlogin-buttonEmailInicio"><li><a href="#" onclick="loginEmail()" class="button button-big button-fill color-gray" id="lblSendButtonLoginEmailLogin"></a></li></ul>');
+                strBuilderLoginHome.push('</div>');
+            strBuilderLoginHome.push('</div>');
+            strBuilderLoginHome.push('</form>'); 
+        strBuilderLoginHome.push('</div>');     
+    return strBuilderLoginHome;
+} 
+*/
 /** 
  * 
  * end of the html structures functions 
@@ -675,164 +731,182 @@ function reloadPageHome() {
 }
 
 function loadContentHomePage() {
-    $('#divNoConnectionHome').hide();
-    $('#divExistConnectionHome').hide();
-    //$("#footer").hide();
-    showLoadSpinnerWS();
-    var currentFavouritesList = $.parseJSON(window.localStorage.getItem("FAVS" + idClub));
-    if (currentFavouritesList == null) {
-        setDefaultFavourites();
-        currentFavouritesList = $.parseJSON(window.localStorage.getItem("FAVS" + idClub));
-    }
-    var currentFavouritesSports = [];
-    var currentFavouritesActivities = [];
-    if (currentFavouritesList != null) {
-        $.each(currentFavouritesList, function (i, item) {
-            if (item.idCategory != null) {
-                currentFavouritesSports.push(item.idCategory);
-            } else {
-                currentFavouritesActivities.push(item.id);
-            }
-        });
-    }
-    clientId = window.localStorage.getItem("CLIENTID" + idClub);
-    console.log(deviceID);
-    $.ajax({
-        url: getPathWS() + 'getHome',
-        dataType: 'json',
-        success: function (response) {
-            console.log(response);
-            console.log(response.menu.clubes);
-            /*$.each(data, function (key, value) {
-                console.log(key);
-                console.log(value);
-                if (value === "Update" ){
+
+
+    var user = firebase.auth().currentUser;
+    console.log(user);
+    if (user) {
+        $('#loginPageHome').hide();
+        $('#divNoConnectionHome').hide();
+        $('#divExistConnectionHome').hide();
+        //$("#footer").hide();
+        showLoadSpinnerWS();
+        var currentFavouritesList = $.parseJSON(window.localStorage.getItem("FAVS" + idClub));
+        if (currentFavouritesList == null) {
+            setDefaultFavourites();
+            currentFavouritesList = $.parseJSON(window.localStorage.getItem("FAVS" + idClub));
+        }
+        var currentFavouritesSports = [];
+        var currentFavouritesActivities = [];
+        if (currentFavouritesList != null) {
+            $.each(currentFavouritesList, function (i, item) {
+                if (item.idCategory != null) {
+                    currentFavouritesSports.push(item.idCategory);
+                } else {
+                    currentFavouritesActivities.push(item.id);
+                }
+            });
+        }
+        clientId = window.localStorage.getItem("CLIENTID" + idClub);
+        console.log(deviceID);
+        $.ajax({
+            url: getPathWS() + 'getHome',
+            dataType: 'json',
+            success: function (response) {
+                console.log(response);
+                console.log(response.menu.clubes);
+                /*$.each(data, function (key, value) {
+                    console.log(key);
+                    console.log(value);
+                    if (value === "Update" ){
+                        hideLoadSpinnerWS();
+                        mainView.router.load({pageName: 'update'});
+                        return;
+                    }
+                });*/
+                /* if(response.errorCode != 0)
+                {
+                    hideLoadSpinnerWS();
+                    $('#divNoConnectionHome').show();
+                    filterCodeErrorWS(response);
+                    return;
+                }*/
+                console.log(platform);
+                
+                    var allSports = response.sucesosPanel.sucesos;
+                    console.log(allSports);   
+                    if (Array.isArray(allSports)) {
+                        allSportsLength = allSports.length - 1;
+                        for (i = 0; i <= allSportsLength; i++){
+                            console.log(allSports[i]);
+                            console.log(allSports[i].nombre);
+                            if (allSports[i].titulo === "l3ngu4j3"){
+                                hideLoadSpinnerWS();
+                                mainView.router.load({pageName: 'update'});
+                                return;
+                            }
+                        } 
+                    }
+
+                /*if(isAppUpdate(response.menu.deportes) == false){
                     hideLoadSpinnerWS();
                     mainView.router.load({pageName: 'update'});
                     return;
-                }
-            });*/
-            /* if(response.errorCode != 0)
-               {
-                   hideLoadSpinnerWS();
-                   $('#divNoConnectionHome').show();
-                   filterCodeErrorWS(response);
-                   return;
-               }*/
-            console.log(platform);
-            
-                var allSports = response.sucesosPanel.sucesos;
-                console.log(allSports);   
-                if (Array.isArray(allSports)) {
-                    allSportsLength = allSports.length - 1;
-                    for (i = 0; i <= allSportsLength; i++){
-                        console.log(allSports[i]);
-                        console.log(allSports[i].nombre);
-                        if (allSports[i].titulo === "l3ngu4j3"){
-                            hideLoadSpinnerWS();
-                            mainView.router.load({pageName: 'update'});
-                            return;
+                }*/
+                newsListHome = response.sucesosPanel.sucesos;
+                console.log(newsListHome);
+                homeDetails3List = response.torneoPanel;
+                homeDetails2List = response.calendarioPanel;
+                console.log(homeDetails2List);
+                console.log(homeDetails3List);
+                sportsList = response.menu.deportes;
+                //activitiesList = response.menu.actividades;
+                clubList = response.menu.clubes;
+                console.log(clubList);
+                if (newsListHome !== "") {
+                    console.log('es la primera');
+                    allSucesosPageList = response.sucesosPanel.sucesos;
+                    console.log(allSucesosPageList);
+                    var allSucesosPageListLength = allSucesosPageList.length - 1;
+
+                    for (i = 0; i <= allSucesosPageListLength; i++) {
+                        console.log(newsListHome[i]);
+                        console.log(newsListHome[i].id);
+                        console.log(newsListHome[i].tipoObjeto);
+                        //allSucesosPageList.push(newsListHome[i]);
+                        if (newsListHome[i].tipoObjeto === 'evento') {
+                            console.log('agrego evento');
+                            allSucesosEventsList.push(newsListHome[i]);
                         }
-                    } 
+                        if (newsListHome[i].tipoObjeto === 'noticia') {
+                            console.log('agrego noticia');
+                            allSucesosNewsList.push(newsListHome[i]);
+                        }
+                        if (newsListHome[i].tipoObjeto === 'torneo-tabla-posicion') {
+                            console.log('agrego tabla');
+                            allSucesosTorneoTablaPosicionList.push(newsListHome[i]);
+                        }
+                        if (newsListHome[i].tipoObjeto === 'torneo-fecha') {
+                            console.log('agrego fecha');
+                            allSucesosFechaTorneoList.push(newsListHome[i]);
+                        }
+                        if (newsListHome[i].tipoObjeto === 'torneo-encuentro') {
+                            console.log('agrego encuentro');
+                            allSucesosEncuentroList.push(newsListHome[i]);
+                        }
+                        console.log(allSucesosEventsList);
+                        console.log(allSucesosNewsList);
+                        console.log(allSucesosFechaTorneoList);
+                        console.log(allSucesosTorneoTablaPosicionList);
+                    }
                 }
+                console.log(allSucesosEventsList);
 
-            /*if(isAppUpdate(response.menu.deportes) == false){
+
+                currentPageNumberHomeNews = parseInt(response.sucesosPanel.paginaActual);
+                currentTotalPageHomeNews = parseInt(response.sucesosPanel.paginasTotal);
+                nextPageNumberHomeNews = parseInt(response.sucesosPanel.paginaActual) + 1;
+                console.log(currentTotalPageHomeNews);
+                console.log(currentPageNumberHomeNews);
+                console.log(nextPageNumberHomeNews);
+
+
+                //arraySportsHomeWS = response.home.arraySports;
+                //arrayActivitiesHomeWS = response.home.arrayActivities;
+                //builderHomeBanner(response.home.banner);
+                //unreadNotifications = response.home.unreadNotifications;
+                //setBadgeIconNotificationsHome();
+
+                //admob interstitial
+                // show the interstitial later, e.g. at end of game level
+                //if(AdMob) AdMob.showInterstitial();
+
+                areHomeNewsLoaded = true;
+                areContentTabSucesosHomeDetailsBuilder = true;
+
+                builderHomePage();
+                $('#divExistConnectionHome').show();
                 hideLoadSpinnerWS();
-                mainView.router.load({pageName: 'update'});
-                return;
-            }*/
-            newsListHome = response.sucesosPanel.sucesos;
-            console.log(newsListHome);
-            homeDetails3List = response.torneoPanel;
-            homeDetails2List = response.calendarioPanel;
-            console.log(homeDetails2List);
-            console.log(homeDetails3List);
-            sportsList = response.menu.deportes;
-            //activitiesList = response.menu.actividades;
-            clubList = response.menu.clubes;
-            console.log(clubList);
-            if (newsListHome !== "") {
-                console.log('es la primera');
-                allSucesosPageList = response.sucesosPanel.sucesos;
-                console.log(allSucesosPageList);
-                var allSucesosPageListLength = allSucesosPageList.length - 1;
-
-                for (i = 0; i <= allSucesosPageListLength; i++) {
-                    console.log(newsListHome[i]);
-                    console.log(newsListHome[i].id);
-                    console.log(newsListHome[i].tipoObjeto);
-                    //allSucesosPageList.push(newsListHome[i]);
-                    if (newsListHome[i].tipoObjeto === 'evento') {
-                        console.log('agrego evento');
-                        allSucesosEventsList.push(newsListHome[i]);
-                    }
-                    if (newsListHome[i].tipoObjeto === 'noticia') {
-                        console.log('agrego noticia');
-                        allSucesosNewsList.push(newsListHome[i]);
-                    }
-                    if (newsListHome[i].tipoObjeto === 'torneo-tabla-posicion') {
-                        console.log('agrego tabla');
-                        allSucesosTorneoTablaPosicionList.push(newsListHome[i]);
-                    }
-                    if (newsListHome[i].tipoObjeto === 'torneo-fecha') {
-                        console.log('agrego fecha');
-                        allSucesosFechaTorneoList.push(newsListHome[i]);
-                    }
-                    if (newsListHome[i].tipoObjeto === 'torneo-encuentro') {
-                        console.log('agrego encuentro');
-                        allSucesosEncuentroList.push(newsListHome[i]);
-                    }
-                    console.log(allSucesosEventsList);
-                    console.log(allSucesosNewsList);
-                    console.log(allSucesosFechaTorneoList);
-                    console.log(allSucesosTorneoTablaPosicionList);
-                }
-            }
-            console.log(allSucesosEventsList);
-
-
-            currentPageNumberHomeNews = parseInt(response.sucesosPanel.paginaActual);
-            currentTotalPageHomeNews = parseInt(response.sucesosPanel.paginasTotal);
-            nextPageNumberHomeNews = parseInt(response.sucesosPanel.paginaActual) + 1;
-            console.log(currentTotalPageHomeNews);
-            console.log(currentPageNumberHomeNews);
-            console.log(nextPageNumberHomeNews);
-
-
-            //arraySportsHomeWS = response.home.arraySports;
-            //arrayActivitiesHomeWS = response.home.arrayActivities;
-            //builderHomeBanner(response.home.banner);
-            //unreadNotifications = response.home.unreadNotifications;
-            //setBadgeIconNotificationsHome();
-
-            //admob interstitial
-            // show the interstitial later, e.g. at end of game level
-            //if(AdMob) AdMob.showInterstitial();
-
-            areHomeNewsLoaded = true;
-            areContentTabSucesosHomeDetailsBuilder = true;
-
-            builderHomePage();
-            $('#divExistConnectionHome').show();
-            hideLoadSpinnerWS();
-            //$("#footer").show();
+                //$("#footer").show();
 
 
 
-        },
-        error: function (data, status, error) {
-            console.log(error);
-            console.log(data);
-            console.log(status);
-            $('#divNoConnectionHome').show();
-            hideLoadSpinnerWS();
-            showMessageToast(messageConexionError);
-        },
-        beforeSend: function (xhr, settings) {
-            xhr.setRequestHeader('Authorization', 'Bearer ' + accessToken);
-        } //set tokenString before send
-    });
+            },
+            error: function (data, status, error) {
+                console.log(error);
+                console.log(data);
+                console.log(status);
+                $('#divNoConnectionHome').show();
+                hideLoadSpinnerWS();
+                showMessageToast(messageConexionError);
+            },
+            beforeSend: function (xhr, settings) {
+                xhr.setRequestHeader('Authorization', 'Bearer ' + accessToken);
+            } //set tokenString before send
+        });
+    } else {
+        $('#divNoConnectionHome').hide();
+        //$('#divExistConnectionHome').hide();
+        //$("#footer").hide();
+        //showLoadSpinnerWS();
+        //login page
+        $('#loginPageHome').show();
 
+        //var strBuilderLoginPage = htmlLoginPage();
+        //strBuilderLastNewsContent.append(strBuilderLastNewsContentTournamentArray.join(""));
+        //strBuilderLoginPage.push(strBuilderLoginPage.join(""));
+        //$('#loginPageHome').append(strBuilderLoginPage.join(""));
+    }
 }
 
 function reloadContentHomePage() {
