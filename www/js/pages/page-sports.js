@@ -5,15 +5,43 @@ var categoriesSportList = [];
 
 myApp.onPageInit('sports', function (page)
 {
-	myApp.initImagesLazyLoad(mainView.activePage.container);
-	//if(areSportsLoaded == true){
+
+	//var user = firebase.auth().currentUser;
+    //if (user) {
+		$("#notLoggedSports").hide();
+        //$("#loggedSports").show();
+		myApp.initImagesLazyLoad(mainView.activePage.container);
+		//if(areSportsLoaded == true){
     	builderSportsList();
-   // }
-    //else {
-    //	loadSports();
-    //}
+	// }
+		//else {
+		//	loadSports();
+		//}
+	//} else {
+		//$("#loggedSports").hide();
+        //$("#notLoggedSports").show();
+
 });
 
+myApp.onPageReinit('sports', function (page)
+{
+	/*var user = firebase.auth().currentUser;
+	if (user) {
+		$("#notLoggedSports").hide();
+        //$("#loggedSports").show();
+		myApp.initImagesLazyLoad(mainView.activePage.container);
+		//if(areSportsLoaded == true){
+    	builderSportsList();
+	// }
+		//else {
+		//	loadSports();
+		//}
+	} else {
+		//$("#loggedSports").hide();
+        $("#notLoggedSports").show();
+	}	*/
+
+});	
 myApp.onPageBeforeAnimation('sports', function (page)
 {
 	myApp.params.swipePanel = 'left';

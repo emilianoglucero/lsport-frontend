@@ -64,153 +64,105 @@ myApp.onPageBack('sportdetails', function (page) {
 });
 
 function loadSportDetails(idCategorySelectedFromLoad) {
-	//idSportSelected = idSport;
-	//idCategorySelected = idCat;
-	console.log(idCategorySelectedFromLoad);
-	idCategorySelected = idCategorySelectedFromLoad;
-	showLoadSpinnerWS();
-	$('#tabSportDetails1').html("");
-	$('#contentTabSportDetails2').html("");
-	$('#tabSportDetails3').html("");
-	$('#noConnection-content-block-sportdetails').hide();
-	builderSelectHeader = true;
-	areSportDetailsLoaded = false;
-	areContentTabInformationSportDetailsBuilder = false;
-	areContentTabNewsSportDetailsBuilder = false;
-	areContentTabTournamentsSportDetailsBuilder = false;
-	$.ajax({
-		// URL del Web Service
-		url: getPathWS() + 'getDeporteCategoriaDetalle',
-		dataType: 'json',
-		data: {
-			'deporteCategoriaId': idCategorySelected,
-			'sucesosItemsPorPagina': 20
-		},
-		timeout: timeOut,
-		success: function (response) {
-			console.log(response);
-			/*if(response.errorCode != 0)
-			{
-			    hideLoadSpinnerWS();
-			    filterCodeErrorWS(response);
-			    return;
-			}
-			if(isAppUpdate(response.serverVersion) == false){
-			    hideLoadSpinnerWS();
-			    mainView.router.load({pageName: 'update'});
-			    return;
-			}*/
-			sportDetails = response.deporteCategoria;
-			//bannerSportDetails = response.banner;
-			recentNewsListSporDetails = response.sucesosPanel.sucesos;
-			currentLastMatch = response.encuentroCercano;
-			console.log(currentLastMatch)
-			currentTournaments = response.torneosPanel;
-			console.log(currentTournaments);
-			//bannerTournaments = response.banner;
-			categoriesSportList = response.categoriasHermanas;
 
-			currentPageNumberSportDetails = parseInt(response.sucesosPanel.paginaActual);
-			currentTotalPageSportDetails = parseInt(response.sucesosPanel.paginasTotal);
-			nextPageNumberSportDetails = parseInt(response.sucesosPanel.paginaActual) + 1;
+	var user = firebase.auth().currentUser;
+	if (user) {
+		//idSportSelected = idSport;
+		//idCategorySelected = idCat;
+		console.log(idCategorySelectedFromLoad);
+		idCategorySelected = idCategorySelectedFromLoad;
+		showLoadSpinnerWS();
+		$('#tabSportDetails1').html("");
+		$('#contentTabSportDetails2').html("");
+		$('#tabSportDetails3').html("");
+		$('#noConnection-content-block-sportdetails').hide();
+		builderSelectHeader = true;
+		areSportDetailsLoaded = false;
+		areContentTabInformationSportDetailsBuilder = false;
+		areContentTabNewsSportDetailsBuilder = false;
+		areContentTabTournamentsSportDetailsBuilder = false;
+		$.ajax({
+			// URL del Web Service
+			url: getPathWS() + 'getDeporteCategoriaDetalle',
+			dataType: 'json',
+			data: {
+				'deporteCategoriaId': idCategorySelected,
+				'sucesosItemsPorPagina': 20
+			},
+			timeout: timeOut,
+			success: function (response) {
+				console.log(response);
+				sportDetails = response.deporteCategoria;
+				//bannerSportDetails = response.banner;
+				recentNewsListSporDetails = response.sucesosPanel.sucesos;
+				currentLastMatch = response.encuentroCercano;
+				console.log(currentLastMatch)
+				currentTournaments = response.torneosPanel;
+				console.log(currentTournaments);
+				//bannerTournaments = response.banner;
+				categoriesSportList = response.categoriasHermanas;
 
-			//vacio los acumuladores por si venian con info de la pantalla de deportes
-			tournamentNewsList = [];
-			tournamentEventList = [];
-			tournamentPositionList = [];
-			tournamentMatchList = [];
-			tournamentEncuentroList = [];
+				currentPageNumberSportDetails = parseInt(response.sucesosPanel.paginaActual);
+				currentTotalPageSportDetails = parseInt(response.sucesosPanel.paginasTotal);
+				nextPageNumberSportDetails = parseInt(response.sucesosPanel.paginaActual) + 1;
 
-			var tournamentSucesosLenght = recentNewsListSporDetails.length - 1;
-			console.log(tournamentSucesosLenght);
-			//clasifico y almaceno los sucesos, para no tener inconvenientes con ids duplicados
-			for (i = 0; i <= tournamentSucesosLenght; i++) {
-				console.log(recentNewsListSporDetails[i]);
-				console.log(recentNewsListSporDetails[i].id);
-				console.log(recentNewsListSporDetails[i].tipoObjeto);
-				//allSucesosPageList.push(newsListHome[i]);
-				if (recentNewsListSporDetails[i].tipoObjeto === 'evento') {
-					console.log('agrego evento');
-					tournamentEventList.push(recentNewsListSporDetails[i]);
-				}
-				if (recentNewsListSporDetails[i].tipoObjeto === 'noticia') {
-					console.log('agrego noticia');
-					tournamentNewsList.push(recentNewsListSporDetails[i]);
-				}
-				if (recentNewsListSporDetails[i].tipoObjeto === 'torneo-tabla-posicion') {
-					console.log('agrego tabla de pos');
-					tournamentPositionList.push(recentNewsListSporDetails[i]);
-				}
-				if (recentNewsListSporDetails[i].tipoObjeto === 'torneo-fecha') {
-					console.log('agrego torneo fecha');
-					tournamentMatchList.push(recentNewsListSporDetails[i]);
-				}
-				if (recentNewsListSporDetails[i].tipoObjeto === 'torneo-encuentro') {
-					console.log('agrego encuentro');
-					tournamentEncuentroList.push(recentNewsListSporDetails[i]);
+				//vacio los acumuladores por si venian con info de la pantalla de deportes
+				tournamentNewsList = [];
+				tournamentEventList = [];
+				tournamentPositionList = [];
+				tournamentMatchList = [];
+				tournamentEncuentroList = [];
+
+				var tournamentSucesosLenght = recentNewsListSporDetails.length - 1;
+				console.log(tournamentSucesosLenght);
+				//clasifico y almaceno los sucesos, para no tener inconvenientes con ids duplicados
+				for (i = 0; i <= tournamentSucesosLenght; i++) {
+					console.log(recentNewsListSporDetails[i]);
+					console.log(recentNewsListSporDetails[i].id);
+					console.log(recentNewsListSporDetails[i].tipoObjeto);
+					//allSucesosPageList.push(newsListHome[i]);
+					if (recentNewsListSporDetails[i].tipoObjeto === 'evento') {
+						console.log('agrego evento');
+						tournamentEventList.push(recentNewsListSporDetails[i]);
+					}
+					if (recentNewsListSporDetails[i].tipoObjeto === 'noticia') {
+						console.log('agrego noticia');
+						tournamentNewsList.push(recentNewsListSporDetails[i]);
+					}
+					if (recentNewsListSporDetails[i].tipoObjeto === 'torneo-tabla-posicion') {
+						console.log('agrego tabla de pos');
+						tournamentPositionList.push(recentNewsListSporDetails[i]);
+					}
+					if (recentNewsListSporDetails[i].tipoObjeto === 'torneo-fecha') {
+						console.log('agrego torneo fecha');
+						tournamentMatchList.push(recentNewsListSporDetails[i]);
+					}
+					if (recentNewsListSporDetails[i].tipoObjeto === 'torneo-encuentro') {
+						console.log('agrego encuentro');
+						tournamentEncuentroList.push(recentNewsListSporDetails[i]);
+					}
+
+
 				}
 
-
-			}
-
-			areSportDetailsLoaded = true;
-			builderSportDetails1();
-			hideLoadSpinnerWS();
-
-		},
-		error: function (data, status, error) {
-			hideLoadSpinnerWS();
-			showMessage(messageConexionError);
-		},
-		beforeSend: function (xhr, settings) {
-			xhr.setRequestHeader('Authorization', 'Bearer ' + accessToken);
-		} //set tokenString before send
-	});
-
-
-
-	/*$.ajax({
-		// URL del Web Service
-		url: getPathWS() + 'getDeporteCategoriaDetalle',
-		dataType: 'jsonp',
-		data: {
-				'deporteCategoriaId': idCategorySelected
-		 },
-		timeout: timeOut,
-		success: function(response){
-		console.log(response);
-			/*if(response.errorCode != 0)
-			{
-			    hideLoadSpinnerWS();
-			    filterCodeErrorWS(response);
-			    return;
-			}
-			if(isAppUpdate(response.serverVersion) == false){
+				areSportDetailsLoaded = true;
+				builderSportDetails1();
 				hideLoadSpinnerWS();
-				mainView.router.load({pageName: 'update'});
-				return;
-			}*/
-	/*sportDetails = response.categorySport;
-			bannerSportDetails = response.banner;
-			recentNewsListSporDetails = response.news;
-			currentLastMatch = response.lastMatch;
-			currentTournaments = response.tournaments;
-			bannerTournaments = response.banner;
-			
-			currentPageNumberSportDetails = parseInt(response.pageNumber);
-			currentTotalPageSportDetails = parseInt(response.totalPage);
-			nextPageNumberSportDetails = parseInt(response.pageNumber) + 1;
-			
-			areSportDetailsLoaded = true;
-			builderSportDetails();
-			hideLoadSpinnerWS();
-		},
-		error: function (data, status, error){
-	          hideLoadSpinnerWS();
-	          showMessage(messageConexionError);
-	   },
-              beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer ' + accessToken ); } //set tokenString before send
-		});*/
+
+			},
+			error: function (data, status, error) {
+				hideLoadSpinnerWS();
+				showMessage(messageConexionError);
+			},
+			beforeSend: function (xhr, settings) {
+				xhr.setRequestHeader('Authorization', 'Bearer ' + accessToken);
+			} //set tokenString before send
+		});
+	} else {
+		showMessage('Debes iniciar sesión para poder ingresar a esta funcionalidad');
+	}	
+
+
 }
 
 function loadSportDetails1(idSport, idEnac, idCat) {

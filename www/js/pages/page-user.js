@@ -10,6 +10,29 @@ $(document).ready(function(){
 
 myApp.onPageInit('user', function (page)
 {
+    var user = firebase.auth().currentUser;
+    console.log(user);
+    if (user) {
+        $("#notLoggedUser").hide();
+        $("#loggedUser").show();
+    } else {
+        $("#loggedUser").hide();
+        $("#notLoggedUser").show();
+    }
+
+
+});
+myApp.onPageReinit('user', function (page)
+{
+    var user = firebase.auth().currentUser;
+    console.log(user);
+    if (user) {
+        $("#notLoggedUser").hide();
+        $("#loggedUser").show();
+    } else {
+        $("#loggedUser").hide();
+        $("#notLoggedUser").show();
+    }
 
 
 });

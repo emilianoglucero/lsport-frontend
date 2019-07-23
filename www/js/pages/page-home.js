@@ -117,17 +117,7 @@ $(document).ready(function () {
     $('#headerPopupCustom').text(lblNameClub);
     $('#lblCloseButton').text(lblCloseButton);
 
-    //INIT HEADERS LOGIN IN HOME
-    //INIT HEADERS
-    $("#lblWellcomeLoginHome").text(lblWellcomeLogin);
-    $("#lblSendButtonLoginHome").text(lblSendButtonLogin);
-    $("#lblInfoLoginHome").text(lblInfoLogin);
-
-    $("#lblSendButtonLoginFacebookLoginHome").text(lblSendButtonLoginFacebook);
-    $("#lblSendButtonLoginGoogleLoginHome").text(lblSendButtonLoginGoogle);
-    $("#lblSendButtonLoginEmailLoginHome").text(lblSendButtonLoginEmail);
-
-
+    console.log('home');
 });
 
 myApp.onPageInit('home', function (page) {
@@ -656,51 +646,7 @@ function htmlTournamentMatchCard(item) {
    return strBuilderLastNewsContent; 
 }
 
-//function to build the 'login main page' 
-/*
-function htmlLoginPage () {
 
-    //console.log(item);
-    var strBuilderLoginHome = [];
-
-    //var noticiaTruncada = truncateNoticia(item.detalleTxt);
-        //console.log(noticiaTruncada);
-        //console.log(strBuilderLoginHome);
-        strBuilderLoginHome.push('<div class="page-content login-screen-content">');
-
-            strBuilderLoginHome.push('<div class="login-screen-title" id="lblWellcomeLogin"></div>');
-
-            strBuilderLoginHome.push('<div id="containerImgLogin"><img src="img/club/club-shield.png" alt="Imagen del Club" class="imgHeaderImgShieldClubContact" /></div>');
-            strBuilderLoginHome.push('<form><div class="login-form"><select name="country" id="phone-code" class="login-input-select">');
-                    strBuilderLoginHome.push('<option value="+549" selected>Argentina (+549)</option>');
-                    strBuilderLoginHome.push('<option value="+55">Brasil (+55)</option>');
-                    strBuilderLoginHome.push('<option value="+56">Chile (+56)</option>');
-                    strBuilderLoginHome.push('<option value="+598">Uruguay (+598)</option>');
-                    strBuilderLoginHome.push('<option value="+591">Bolivia (+591)</option>');
-                    strBuilderLoginHome.push('<option value="+51">Peru (+51)</option>');
-                    strBuilderLoginHome.push('<option value="+595">Paraguay (+595)</option>');
-                    strBuilderLoginHome.push('<option value="+52">Mexico (+52)</option>');
-                    strBuilderLoginHome.push('<option value="+34">España (+34)</option>');
-                    strBuilderLoginHome.push('<option value="+44">Inglaterra (+44)</option>');
-                    strBuilderLoginHome.push('<option value="+1">USA (+1)</option>');
-                strBuilderLoginHome.push('</select>');
-                strBuilderLoginHome.push('<input class="login-input" type="tel" id="phonenumber" name="phonenumber" placeholder="3476599999" maxlength="11">');
-            strBuilderLoginHome.push('</div>');
-            strBuilderLoginHome.push('<div class="list-block">');
-                strBuilderLoginHome.push('<ul><li><a href="#" onclick="confirmNumber()" class="item-link list-button" id="lblSendButtonLogin"></a></li></ul>');
-                strBuilderLoginHome.push('<div class="list-block-label" id="lblInfoLogin"></div>');
-                strBuilderLoginHome.push('<div id= "otherLoginInicio">');
-                    strBuilderLoginHome.push('<ul><li><div class="list-block-label">Otros metodos de logueo:</div></li></ul>');
-                    strBuilderLoginHome.push('<ul id="otherlogin-buttonGoogleInicio"><li><a href="#" onclick="confirmGoogle()" class="button button-big" id="lblSendButtonLoginGoogleLogin"><div class="icon-share-googlelogin"></div></a></li>');
-                    strBuilderLoginHome.push('<ul id="otherlogin-buttonFacebookInicio"><li><a href="#" onclick="confirmFacebook()" class="button button-big button-fill" id="lblSendButtonLoginFacebookLogin"><i class="icon-share-facebook"></i></a></li></ul>');
-                    strBuilderLoginHome.push('<ul id="otherlogin-buttonEmailInicio"><li><a href="#" onclick="loginEmail()" class="button button-big button-fill color-gray" id="lblSendButtonLoginEmailLogin"></a></li></ul>');
-                strBuilderLoginHome.push('</div>');
-            strBuilderLoginHome.push('</div>');
-            strBuilderLoginHome.push('</form>'); 
-        strBuilderLoginHome.push('</div>');     
-    return strBuilderLoginHome;
-} 
-*/
 /** 
  * 
  * end of the html structures functions 
@@ -731,16 +677,14 @@ function reloadPageHome() {
 }
 
 function loadContentHomePage() {
-
-
+    $('#divNoConnectionHome').hide();
+    $('#divExistConnectionHome').hide();
+    //$("#footer").hide();
+    showLoadSpinnerWS();
     var user = firebase.auth().currentUser;
     console.log(user);
     if (user) {
-        $('#loginPageHome').hide();
-        $('#divNoConnectionHome').hide();
-        $('#divExistConnectionHome').hide();
-        //$("#footer").hide();
-        showLoadSpinnerWS();
+    console.log('user');
         var currentFavouritesList = $.parseJSON(window.localStorage.getItem("FAVS" + idClub));
         if (currentFavouritesList == null) {
             setDefaultFavourites();
@@ -759,6 +703,7 @@ function loadContentHomePage() {
         }
         clientId = window.localStorage.getItem("CLIENTID" + idClub);
         console.log(deviceID);
+        console.log(accessToken);
         $.ajax({
             url: getPathWS() + 'getHome',
             dataType: 'json',
@@ -775,16 +720,16 @@ function loadContentHomePage() {
                     }
                 });*/
                 /* if(response.errorCode != 0)
-                {
-                    hideLoadSpinnerWS();
-                    $('#divNoConnectionHome').show();
-                    filterCodeErrorWS(response);
-                    return;
-                }*/
+                   {
+                       hideLoadSpinnerWS();
+                       $('#divNoConnectionHome').show();
+                       filterCodeErrorWS(response);
+                       return;
+                   }*/
                 console.log(platform);
-                
+
                     var allSports = response.sucesosPanel.sucesos;
-                    console.log(allSports);   
+                    console.log(allSports);
                     if (Array.isArray(allSports)) {
                         allSportsLength = allSports.length - 1;
                         for (i = 0; i <= allSportsLength; i++){
@@ -795,7 +740,7 @@ function loadContentHomePage() {
                                 mainView.router.load({pageName: 'update'});
                                 return;
                             }
-                        } 
+                        }
                     }
 
                 /*if(isAppUpdate(response.menu.deportes) == false){
@@ -894,19 +839,48 @@ function loadContentHomePage() {
                 xhr.setRequestHeader('Authorization', 'Bearer ' + accessToken);
             } //set tokenString before send
         });
-    } else {
-        $('#divNoConnectionHome').hide();
-        //$('#divExistConnectionHome').hide();
-        //$("#footer").hide();
-        //showLoadSpinnerWS();
-        //login page
-        $('#loginPageHome').show();
 
-        //var strBuilderLoginPage = htmlLoginPage();
-        //strBuilderLastNewsContent.append(strBuilderLastNewsContentTournamentArray.join(""));
-        //strBuilderLoginPage.push(strBuilderLoginPage.join(""));
-        //$('#loginPageHome').append(strBuilderLoginPage.join(""));
+    } else {
+    console.log('not logged');
+        $('#divExistConnectionHome').show();
+        $('#loginPageHome').show();
+        //getHome call without bearer token to bring the sports and club list information
+            $.ajax({
+                url: getPathWS() + 'getHome',
+                dataType: 'json',
+                success: function (response) {
+                    console.log(response);
+                    console.log(response.menu.clubes);
+
+                    console.log(platform);
+
+                    homeDetails3List = response.torneoPanel;
+                    homeDetails2List = response.calendarioPanel;
+                    console.log(homeDetails2List);
+                    console.log(homeDetails3List);
+                    sportsList = response.menu.deportes;
+                    //activitiesList = response.menu.actividades;
+                    clubList = response.menu.clubes;
+                    console.log(clubList);
+                    console.log(sportsList);
+
+
+                },
+                error: function (data, status, error) {
+                    console.log(error);
+                    console.log(data);
+                    console.log(status);
+                    $('#divNoConnectionHome').show();
+                    hideLoadSpinnerWS();
+                    showMessageToast(messageConexionError);
+                }
+            });
+        
+        hideLoadSpinnerWS();
+
+
     }
+
 }
 
 function reloadContentHomePage() {
@@ -1327,22 +1301,26 @@ function builderHomeDetails2() {
     //$('#tabHomeDetails2').html('');
     var events = [];
     // console.log(homeDetails2List.calendario);
-    console.log(newsListHome);
-    for (var k in homeDetails2List.calendario) {
-        //console.log(newsListHome[k].fecha.fecha);
-        console.log(homeDetails2List.calendario[k]);
-        //console.log(homeDetails2List.calendario[k].fechaOcurrencia.fecha);
-        //events.push(convert(newsListHome[k].fecha.fecha));
-        if (homeDetails2List.calendario[k].tipoObjeto == 'evento') {
-            events.push(convert(homeDetails2List.calendario[k].fechaOcurrencia.fecha));
-        }
-        if (homeDetails2List.calendario[k].tipoObjeto == 'torneo-encuentro') {
-            events.push(convert(homeDetails2List.calendario[k].fechaEncuentro.fecha));
+    console.log(homeDetails2List);
+    if (homeDetails2List != undefined) {
+        for (var k in homeDetails2List.calendario) {
+            //console.log(newsListHome[k].fecha.fecha);
+            console.log(homeDetails2List.calendario[k]);
+            //console.log(homeDetails2List.calendario[k].fechaOcurrencia.fecha);
+            //events.push(convert(newsListHome[k].fecha.fecha));
+            if (homeDetails2List.calendario[k].tipoObjeto == 'evento') {
+                events.push(convert(homeDetails2List.calendario[k].fechaOcurrencia.fecha));
+            }
+            if (homeDetails2List.calendario[k].tipoObjeto == 'torneo-encuentro') {
+                events.push(convert(homeDetails2List.calendario[k].fechaEncuentro.fecha));
+            }
         }
     }
     console.log(events);
 
-    builderTimeLineEventsHome();
+    if (homeDetails2List != undefined & Array.isArray(homeDetails2List) && homeDetails2List.length) {
+        builderTimeLineEventsHome();
+    }
 
     //funcion para esconder y mostrar el div con la vista que corresponda
     /*$('#timeLineView').show();
@@ -1408,8 +1386,9 @@ function builderHomeDetails2() {
             console.log(today);
 
             //mostrar eventos del dia
-            builderDayEvents(today);
-
+            if (homeDetails2List != undefined && Array.isArray(homeDetails2List) && homeDetails2List.length) {
+                builderDayEvents(today);
+            }        
 
             $$('.calendar-custom-toolbar .center').text(monthNames[p.currentMonth] + ', ' + p.currentYear);
             $$('.calendar-custom-toolbar .left .link').on('click', function () {
@@ -1442,7 +1421,9 @@ function builderHomeDetails2() {
             console.log(eventDay);
 
             //mostrar eventos del dia
-            builderDayEvents(eventDay);
+            if (homeDetails2List != undefined && Array.isArray(homeDetails2List) && homeDetails2List.length) {
+                builderDayEvents(eventDay);
+            }
 
         }
 

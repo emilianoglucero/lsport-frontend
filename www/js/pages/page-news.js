@@ -45,126 +45,142 @@ myApp.onPageBeforeAnimation('news', function (page)
 function loadNews(){
 	showLoadSpinnerWS();
 	console.log(nextPageNumberNews);
-	/*$.ajax({
+	console.log(accessToken);
+	var user = firebase.auth().currentUser;
+	if (user) {
+		$.ajax({
 			// URL del Web Service
-			url: getPathWS() + 'getNews',
-			dataType: 'jsonp',
-			data: { 'idClub': idClub,
-					'pageNumber': nextPageNumberNews
-				 },
-			timeout: timeOut,
-			success: function(response){
-				if(response.errorCode != 0)
-				{
-				    hideLoadSpinnerWS();
-				    filterCodeErrorWS(response);
-				    return;
-				}
-				if(isAppUpdate(response.serverVersion) == false){
-					mainView.router.load({pageName: 'update'});
-					return;
-				}
-				nextPageNumberNews = parseInt(response.pageNumber) + 1;
-				if( response.pageNumber == 1 ){
-					$('#news-content-block').html('');
-				}
-				recentNewsList = [];
-				recentNewsList = response.news;
-				builderNewsList();
-				hideLoadSpinnerWS();
-				if( response.totalPage < nextPageNumberNews ){
-					myApp.detachInfiniteScroll('.infinite-scroll-news');
-				}
-				loadingInfiniteScrollNews = false;
-				areAccessedServerNews = false;
-				$('#noConnection-content-block-news').hide();
+				url: getPathWS() + 'getNoticias',
+				dataType: 'json',
+				data: { 'idClub': idClub,
+						'paginaActual': nextPageNumberNews
+				},
+				timeout: timeOut,
+				success: function(response){
+				console.log(response);
+
+					/*if(response.errorCode != 0)
+					{
+						hideLoadSpinnerWS();
+						filterCodeErrorWS(response);
+						return;
+					}
+					if(isAppUpdate(response.serverVersion) == false){
+						mainView.router.load({pageName: 'update'});
+						return;
+					}*/
+					nextPageNumberNews = parseInt(response.paginaActual) + 1;
+					console.log(response.paginaActual);
+					if( response.paginaActual == 1 ){
+						$('#news-content-block').html('');
+					}
+					recentNewsList = [];
+					recentNewsList = response.noticias;
+					builderNewsList();
+					hideLoadSpinnerWS();
+					console.log(response.paginasTotal);
+					console.log(nextPageNumberNews);
+
+					//logica para almacenar todas las noticias, y así poder acceder al detalle de todas
+					if (allNewsPageList == ""){
+					//console.log('no agrega y es la primera');
+						allNewsPageList = response.noticias;
+					} else {
+					//console.log('agrega news');
+					//console.log(allNewsPageList.length);
+					var allNewsPageListLength = recentNewsList.length - 1;
+					console.log(allNewsPageListLength);
+						for (i = 0; i <= allNewsPageListLength ; i++) {
+							console.log(recentNewsList[i]);
+							allNewsPageList.push(recentNewsList[i]);
+						}
+						//allNewsPageList.push(response.noticias);
+						console.log(allNewsPageList);
+					}
+
+					if( response.paginasTotal < nextPageNumberNews ){
+						myApp.detachInfiniteScroll('.infinite-scroll-news');
+					}
+					loadingInfiniteScrollNews = false;
+					areAccessedServerNews = false;
+					$('#noConnection-content-block-news').hide();
+
+				},
+				error: function (data, status, error){
+					if( nextPageNumberNews == 1 ){
+						builderErrorNews();
+						hideLoadSpinnerWS();
+					} else {
+						hideLoadSpinnerWS();
+						showMessageToast(messageCanNotRefresh);
+						loadingInfiniteScrollNews = false;
+						areAccessedServerNews = true;
+					}
 			},
-			error: function (data, status, error){
-		          if( nextPageNumberNews == 1 ){
-		          	builderErrorNews();
-		          	hideLoadSpinnerWS();
-		          } else {
-		          	hideLoadSpinnerWS();
-		          	showMessageToast(messageCanNotRefresh);
-		          	loadingInfiniteScrollNews = false;
-		          	areAccessedServerNews = true;
-		          }
-		   }
-	});*/
-	console.log(nextPageNumberNews);
-	    console.log(accessToken);
-    $.ajax({
-    	// URL del Web Service
-            url: getPathWS() + 'getNoticias',
-            dataType: 'json',
-            data: { 'idClub': idClub,
-                    'paginaActual': nextPageNumberNews
-            },
-            timeout: timeOut,
-            success: function(response){
-            console.log(response);
+			beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer ' + accessToken ); } //set tokenString before send
+		});
+	} else {
+		$.ajax({
+			// URL del Web Service
+				url: getPathWS() + 'getNoticias',
+				dataType: 'json',
+				data: { 'idClub': idClub,
+						'paginaActual': nextPageNumberNews
+				},
+				timeout: timeOut,
+				success: function(response){
+				console.log(response);
 
-                /*if(response.errorCode != 0)
-                {
-                    hideLoadSpinnerWS();
-                    filterCodeErrorWS(response);
-                    return;
-                }
-                if(isAppUpdate(response.serverVersion) == false){
-                    mainView.router.load({pageName: 'update'});
-                    return;
-                }*/
-                nextPageNumberNews = parseInt(response.paginaActual) + 1;
-                console.log(response.paginaActual);
-                if( response.paginaActual == 1 ){
-                    $('#news-content-block').html('');
-                }
-                recentNewsList = [];
-                recentNewsList = response.noticias;
-                builderNewsList();
-                hideLoadSpinnerWS();
-                console.log(response.paginasTotal);
-                console.log(nextPageNumberNews);
+					nextPageNumberNews = parseInt(response.paginaActual) + 1;
+					console.log(response.paginaActual);
+					if( response.paginaActual == 1 ){
+						$('#news-content-block').html('');
+					}
+					recentNewsList = [];
+					recentNewsList = response.noticias;
+					builderNewsList();
+					hideLoadSpinnerWS();
+					console.log(response.paginasTotal);
+					console.log(nextPageNumberNews);
 
-                //logica para almacenar todas las noticias, y así poder acceder al detalle de todas
-                if (allNewsPageList == ""){
-                //console.log('no agrega y es la primera');
-                    allNewsPageList = response.noticias;
-                } else {
-                //console.log('agrega news');
-                //console.log(allNewsPageList.length);
-                var allNewsPageListLength = recentNewsList.length - 1;
-                console.log(allNewsPageListLength);
-                    for (i = 0; i <= allNewsPageListLength ; i++) {
-                        console.log(recentNewsList[i]);
-                        allNewsPageList.push(recentNewsList[i]);
-                    }
-                    //allNewsPageList.push(response.noticias);
-                    console.log(allNewsPageList);
-                }
+					//logica para almacenar todas las noticias, y así poder acceder al detalle de todas
+					if (allNewsPageList == ""){
+					//console.log('no agrega y es la primera');
+						allNewsPageList = response.noticias;
+					} else {
+					//console.log('agrega news');
+					//console.log(allNewsPageList.length);
+					var allNewsPageListLength = recentNewsList.length - 1;
+					console.log(allNewsPageListLength);
+						for (i = 0; i <= allNewsPageListLength ; i++) {
+							console.log(recentNewsList[i]);
+							allNewsPageList.push(recentNewsList[i]);
+						}
+						//allNewsPageList.push(response.noticias);
+						console.log(allNewsPageList);
+					}
 
-                if( response.paginasTotal < nextPageNumberNews ){
-                    myApp.detachInfiniteScroll('.infinite-scroll-news');
-                }
-                loadingInfiniteScrollNews = false;
-                areAccessedServerNews = false;
-                $('#noConnection-content-block-news').hide();
+					if( response.paginasTotal < nextPageNumberNews ){
+						myApp.detachInfiniteScroll('.infinite-scroll-news');
+					}
+					loadingInfiniteScrollNews = false;
+					areAccessedServerNews = false;
+					$('#noConnection-content-block-news').hide();
 
-            },
-            error: function (data, status, error){
-                if( nextPageNumberNews == 1 ){
-                    builderErrorNews();
-                    hideLoadSpinnerWS();
-                  } else {
-                    hideLoadSpinnerWS();
-                    showMessageToast(messageCanNotRefresh);
-                    loadingInfiniteScrollNews = false;
-                    areAccessedServerNews = true;
-                  }
-           },
-           beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer ' + accessToken ); } //set tokenString before send
-    });
-
+				},
+				error: function (data, status, error){
+					if( nextPageNumberNews == 1 ){
+						builderErrorNews();
+						hideLoadSpinnerWS();
+					} else {
+						hideLoadSpinnerWS();
+						showMessageToast(messageCanNotRefresh);
+						loadingInfiniteScrollNews = false;
+						areAccessedServerNews = true;
+					}
+			}
+		});
+	}
 }
 
 function reloadNews(){

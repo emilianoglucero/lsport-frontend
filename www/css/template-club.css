@@ -1013,3 +1013,8 @@ label.label-checkbox input[type="checkbox"]:checked + .item-media i.icon-form-ch
     margin-left: 9px;
 }
 
+/* register button for not registered users */
+#lblRegisterButtonHome {
+    color: #2E539F;
+}
+

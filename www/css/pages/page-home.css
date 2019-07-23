@@ -732,3 +732,15 @@
 #last-news-list-block .item-link {
     min-height: 0 !important;
 }
+
+/* register button for not registered users */
+#lblRegisterButtonHome {
+    font-family: "Montserrat-Semibold";
+    font-size: 20px;
+}
+
+.notLoggedMessage {
+    font-family: "Montserrat-Light";
+    font-size: 18px;
+    margin: 20px;
+}

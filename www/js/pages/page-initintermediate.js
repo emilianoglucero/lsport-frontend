@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	mainView.router.load({ pageName: "home" });
+	console.log('intermediate');
 });
 
 myApp.onPageInit('initintermediate', function (page)
@@ -10,6 +10,6 @@ myApp.onPageInit('initintermediate', function (page)
 myApp.onPageBeforeAnimation('initintermediate', function (page)
 {
 	//loadPageLogin();
-	//mainView.router.load({ pageName: "home" });
+	//loadContentHomePage();
 });
 

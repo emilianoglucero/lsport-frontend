@@ -4,10 +4,31 @@ var areActivitiesLoaded = false;
 
 myApp.onPageInit('activities', function (page)
 {
-	myApp.initImagesLazyLoad(mainView.activePage.container);
-	//loadActivities();
-	builderActivitiesList();
 	
+	//var user = firebase.auth().currentUser;
+    //if (user) {
+		$("#notLoggedActivities").hide();
+		myApp.initImagesLazyLoad(mainView.activePage.container);
+		//loadActivities();
+		builderActivitiesList();
+	//} else {
+	//	$("#notLoggedActivities").show();
+	//}
+	
+});
+
+myApp.onPageReinit('activities', function (page)
+{
+	/*var user = firebase.auth().currentUser;
+    if (user) {
+		$("#notLoggedActivities").hide();
+		myApp.initImagesLazyLoad(mainView.activePage.container);
+		//loadActivities();
+		builderActivitiesList();
+	} else {
+		$("#notLoggedActivities").show();
+	}*/
+
 });
 
 myApp.onPageBeforeAnimation('activities', function (page)

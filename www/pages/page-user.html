@@ -1,22 +1,30 @@
 <div class="page-content" >	
-	<div class="content-block-title" id="lblTitleUser"></div>
-	<div class="list-block">
-	  <ul>
-	    <!-- Text inputs -->
-	    <li>
-	      <div class="item-content">
-	        <div class="item-inner">
-	          <div class="item-title label" id="lblNameUser"></div>
-	        </div>  
-	          <div class="item-input">
-	            <input type="text" id="user-profile-name" disabled>
-	          </div>	        
-	      </div>
-	    </li>
-        	    <li>
-		 <a href="#" onclick="logOutUser()" class="item-link list-button" id="lblLogoutButton"></a>
-                </li>
-	  </ul>
+	<div id="loggedUser">
+		<div class="content-block-title" id="lblTitleUser"></div>
+		<div class="list-block">
+		<ul>
+			<!-- Text inputs -->
+			<li>
+			<div class="item-content">
+				<div class="item-inner">
+				<div class="item-title label" id="lblNameUser"></div>
+				</div>  
+				<div class="item-input">
+					<input type="text" id="user-profile-name" disabled>
+				</div>	        
+			</div>
+			</li>
+					<li>
+			<a href="#" onclick="logOutUser()" class="item-link list-button" id="lblLogoutButton"></a>
+					</li>
+		</ul>
+		</div>
+	</div>
+	<div id="notLoggedUser">
+		<div style="text-align: center;">
+			<div class="notLoggedMessage">Si queres disfrutar de todas las funcionalidades, debes registrarte</div>
+			<a href="#" onclick="goToLogin();" class="register-home item-link list-button" id="lblRegisterButtonHome">Registrarse<div class="icon-share-googlelogin"></div></a>
+		</div>
 	</div>
 </div>
 

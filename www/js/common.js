@@ -34,11 +34,11 @@ function callBackMobileURL(e)
 var xhReq = new XMLHttpRequest();
 
 jQuery(document).ready(function() {
-  //INTERMEDIA DE INICIO
-  xhReq.open("GET", "pages/page-initintermediate.html", false);
-  xhReq.send(null);
-  document.getElementById("page-initintermediate").innerHTML =
-    xhReq.responseText;
+
+    //INTERMEDIA DE INICIO
+    xhReq.open("GET", "pages/page-initintermediate.html", false);
+    xhReq.send(null);
+    document.getElementById("page-initintermediate").innerHTML = xhReq.responseText;
 
   //LOGIN
   xhReq.open("GET", "pages/login/page-login.html", false);
@@ -258,11 +258,11 @@ function onDeviceReady() {
   // set to lock the screen orientation on potrait (https://github.com/apache/cordova-plugin-screen-orientation)
   screen.orientation.lock("portrait");
 
-  //executes the login page
   //loadPageLogin();
-
-  //executes the home page
-  loadContentHomePage();
+  console.log('deviceready');
+  //mainView.router.load({ pageName: "home" });
+  loadPageLogin();
+  //loadContentHomePage();
   //loadPageInit();
   //ejecutamos la funcion de la push notification despues para evitar conflictos con el observer de OnAuthStateChange
   setTimeout(function() {
@@ -304,6 +304,13 @@ function loadPageInit() {
   }
 }
 
+function goToLogin() {
+
+    mainView.router.load({ pageName: "login" });
+    $( "#subnavbarHomeDetails" ).hide();
+
+}
+
 //variable que rellena el nombre del usuario seteado en firebase
 var userName;
 var userLastName;
@@ -312,9 +319,7 @@ var userEmail;
 var userPhoneNumber;
 
 function loadPageLogin() {
-  console.log('loadpagelogin');
   firebase.auth().onAuthStateChanged(function(user) {
-    console.log('loadpageloginInside');
     if (user) {
       console.log(user.phoneNumber);
       if (user.emailVerified || user.phoneNumber || loggedByFacebook == true) {
@@ -381,6 +386,8 @@ function loadPageLogin() {
                   console.log(response.access_token);
                   accessToken = response.access_token;
                   mainView.router.load({ pageName: "home" });
+                  $( "#subnavbarHomeDetails" ).show();
+                  $('#loginPageHome').hide();
                   loadContentHomePage();
                   //hideLoadSpinnerWS();
                 },
@@ -404,14 +411,18 @@ function loadPageLogin() {
         mainView.router.load({ pageName: "pleaseverify" });
       }
     } else {
-      console.log('not register');
-      mainView.router.load({ pageName: "login" });
+    console.log('to login page');
+    mainView.router.load({ pageName: "home" });
+
+      //mainView.router.load({ pageName: "login" });
+      //$( "#subnavbarHomeDetails" ).hide();
       //window.location.reload(true);
     }
   });
 }
 
 function setPushConfigurations() {
+console.log('setpushconfig');
   window.FirebasePlugin.grantPermission();
 
   window.FirebasePlugin.getToken(
@@ -454,6 +465,7 @@ function setPushConfigurations() {
 
   window.FirebasePlugin.onNotificationOpen(
     function(notification) {
+    console.log('onnotificationopen');
       console.log(notification);
       var user = firebase.auth().currentUser;
 
@@ -855,14 +867,14 @@ function getPathWS() {
   //return wsUrl;
   //return 'http://testing.lenguajesport.com/webservice/';
   //return 'http://clubes.lenguajesport.com/webservice/';
-  return "https://enac.lenguajesport.com/2/api/";
+  return "https://enac.lenguajefutbol.com/1/api/";
 }
 
 function getPathMobile() {
   //return mobileUrl;
   //return 'http://testing.lenguajesport.com/movil/';
   //return 'http://clubes.lenguajesport.com/movil/';
-  return "https://enac.lenguajesport.com/2/api/";
+  return "https://enac.lenguajefutbol.com/1/api/";
 }
 
 function showMessage(message) {

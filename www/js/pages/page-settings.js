@@ -3,132 +3,294 @@ var json;
 var areFavouritesChanged = false;
 myApp.onPageInit('settings', function (page)
 {
-    $('#buttonSaveFavouritesSettings').hide();
-	//$('#lblMenuItemSettingsFavourites').text(lblHeaderSettingsFavourites);
-	//$('#lblMenuItemSettingsNotifications').text(lblHeaderSettingsNotifications);
-	$('#buttonSaveFavouritesSettings').text(lblSaveFavouritesSettings);
-	$('#buttonSaveFavouritesSettings').on('click', function(){
-		goBack = false;
-		sendPreferences();
-	});
+    var user = firebase.auth().currentUser;
+    if (user) {
+        $("#notLoggedSettings").hide();
+        $("#loggedSettings").show();
 
-	$('#btnBackPageSettings').on('click', function(){
-		confirmChangesFavouritesSettings();
-	});
-	$$('.panel-left').on('open', function () {
-	    if(mainView.activePage.name == "settings"){
-			confirmChangesFavouritesSettingsFromMenu();
-	    }
-	});
+        //load settings page
+        $('#buttonSaveFavouritesSettings').hide();
+        //$('#lblMenuItemSettingsFavourites').text(lblHeaderSettingsFavourites);
+        //$('#lblMenuItemSettingsNotifications').text(lblHeaderSettingsNotifications);
+        $('#buttonSaveFavouritesSettings').text(lblSaveFavouritesSettings);
+       /* $('#buttonSaveFavouritesSettings').on('click', function(){
+            goBack = false;
+            sendPreferences();
+        });*/
 
-	//traigo los favoritos
-	showLoadSpinnerWS();
-	$.ajax({
-    // URL del Web Service, en este ws no hace falta enviar datos, con el bearer identifica el usuario
-            url: getPathWS() + 'setPreferencias',
-            type: "GET",
-            contentType: "application/json",
-            dataType: 'json',
-            timeout: timeOut,
-            success: function(response){
-                /*if(response.errorCode != 0)
-                {
-                    hideLoadSpinnerWS();
-                    filterCodeErrorWS(response);
-                    $('#iconHeaderFavouritesHome .icon').removeClass('animation-preloader');
-                    return;
-                }
-                if(isAppUpdate(response.serverVersion) == false){
-                    hideLoadSpinnerWS();
-                    mainView.router.load({pageName: 'update'});
-                    return;
-                }*/
+        $('#btnBackPageSettings').on('click', function(){
+            confirmChangesFavouritesSettings();
+        });
+        $$('.panel-left').on('open', function () {
+            if(mainView.activePage.name == "settings"){
+                confirmChangesFavouritesSettingsFromMenu();
+            }
+        });
 
-                console.log(response);
-                json = response;
-                update_tree();
-
-
-                //$ele1 = $(this);
-                $('.check').filter('[data-favourite="1"]').attr("data-checked", "1");
-                var busquedaChecks = $('.check').filter('[data-favourite="1"]');
-                console.log(busquedaChecks);
-                //var ele2 = $('.custom_check .fa-check');
-                //console.log(ele2);
-                //var ele3 = $('.check').find('.fa-check');
-                //console.log(ele3);
-
-
-                var finalresult = busquedaChecks.find('.custom_check .fa-check');
-                console.log(finalresult);
-                console.log(finalresult[0]);
-                console.log(finalresult[1]);
-                finalresult.css("display", "inline");
-                //var finalresultParents1 = finalresult.parents('.check');
-                //var finalresultParents2 = finalresultParents1.parents('.custom_check');
-                //var finalresultParents2 = finalresultParents1.parent('.custom_check');
-
-
-                var finalresultParents = finalresult.closest('.check');
-                var finalresultParents2 = finalresultParents.closest('.check').closest('.check_container').closest('.check').children( '.custom_check' ).children( '.fa-check' ).css("display", "inline");
-                //console.log(finalresultParents1[0]);
-                //console.log(finalresultParents2[0]);
-                var finalresultParentsContainer = finalresultParents.closest('.check').closest('.check_container');
-                var contCheckNoFavourite = 0;
-                console.log(finalresultParentsContainer.length);
-                console.log(finalresultParentsContainer);
-                console.log(finalresultParentsContainer[0]);
-                console.log(finalresultParentsContainer[1]);
-                console.log(finalresultParentsContainer.eq(1).children('.check'));
-                //console.log(finalresultParentsContainer.eq(1).children());
-                var cantDom;
-                    for (cantDom = 0; cantDom < finalresultParentsContainer.length; cantDom++) {
-                    console.log('for');
-                    console.log(cantDom);
-                    console.log(finalresultParentsContainer.length);
-                    var finalresultParentsContainerCheck = finalresultParentsContainer.eq(cantDom).children('.check');
-                    console.log(finalresultParentsContainerCheck);
-                    //console.log(finalresultParentsContainerCheck.attr('data-favourite'));
-                    var cantCheck;
-                        for (cantCheck = 0; cantCheck < finalresultParentsContainerCheck.length; cantCheck++) {
-                        console.log(finalresultParentsContainerCheck.eq(cantCheck));
-
-                            if (finalresultParentsContainerCheck.eq(cantCheck).attr('data-favourite') == "0" ) {
-                            console.log('datafavourite00');
-                            contCheckNoFavourite = contCheckNoFavourite++;
-                            console.log(finalresultParentsContainerCheck.eq(cantCheck));
-                            //console.log(finalresultParentsContainerCheck[cantCheck]);
-                            finalresultParentsContainerCheck.eq(cantCheck).closest( '.check_container' ).siblings( '.custom_check' ).children( '.fa-check' ).css("display", "none");
-                            var finalresultParentsContainerCheckMinus = finalresultParentsContainerCheck.eq(cantCheck).closest( '.check_container' ).siblings( '.custom_check' ).children( '.fa-minus' ).css("display", "inline");
-                            console.log (finalresultParentsContainerCheckMinus);
-
-                            }
-                        }
-
-
-
+        //traigo los favoritos
+        showLoadSpinnerWS();
+        $.ajax({
+        // URL del Web Service, en este ws no hace falta enviar datos, con el bearer identifica el usuario
+                url: getPathWS() + 'setPreferencias',
+                type: "GET",
+                contentType: "application/json",
+                dataType: 'json',
+                timeout: timeOut,
+                success: function(response){
+                    /*if(response.errorCode != 0)
+                    {
+                        hideLoadSpinnerWS();
+                        filterCodeErrorWS(response);
+                        $('#iconHeaderFavouritesHome .icon').removeClass('animation-preloader');
+                        return;
                     }
-                    hideLoadSpinnerWS();
-                    //showMessageToast(messageSettingsNotificationsSuccessfullySaved);
+                    if(isAppUpdate(response.serverVersion) == false){
+                        hideLoadSpinnerWS();
+                        mainView.router.load({pageName: 'update'});
+                        return;
+                    }*/
+
+                    console.log(response);
+                    json = response;
+                    update_tree();
 
 
+                    //$ele1 = $(this);
+                    $('.check').filter('[data-favourite="1"]').attr("data-checked", "1");
+                    var busquedaChecks = $('.check').filter('[data-favourite="1"]');
+                    console.log(busquedaChecks);
+                    //var ele2 = $('.custom_check .fa-check');
+                    //console.log(ele2);
+                    //var ele3 = $('.check').find('.fa-check');
+                    //console.log(ele3);
+
+
+                    var finalresult = busquedaChecks.find('.custom_check .fa-check');
+                    console.log(finalresult);
+                    console.log(finalresult[0]);
+                    console.log(finalresult[1]);
+                    finalresult.css("display", "inline");
+                    //var finalresultParents1 = finalresult.parents('.check');
+                    //var finalresultParents2 = finalresultParents1.parents('.custom_check');
+                    //var finalresultParents2 = finalresultParents1.parent('.custom_check');
+
+
+                    var finalresultParents = finalresult.closest('.check');
+                    var finalresultParents2 = finalresultParents.closest('.check').closest('.check_container').closest('.check').children( '.custom_check' ).children( '.fa-check' ).css("display", "inline");
+                    //console.log(finalresultParents1[0]);
+                    //console.log(finalresultParents2[0]);
+                    var finalresultParentsContainer = finalresultParents.closest('.check').closest('.check_container');
+                    var contCheckNoFavourite = 0;
+                    console.log(finalresultParentsContainer.length);
+                    console.log(finalresultParentsContainer);
+                    console.log(finalresultParentsContainer[0]);
+                    console.log(finalresultParentsContainer[1]);
+                    console.log(finalresultParentsContainer.eq(1).children('.check'));
+                    //console.log(finalresultParentsContainer.eq(1).children());
+                    var cantDom;
+                        for (cantDom = 0; cantDom < finalresultParentsContainer.length; cantDom++) {
+                        console.log('for');
+                        console.log(cantDom);
+                        console.log(finalresultParentsContainer.length);
+                        var finalresultParentsContainerCheck = finalresultParentsContainer.eq(cantDom).children('.check');
+                        console.log(finalresultParentsContainerCheck);
+                        //console.log(finalresultParentsContainerCheck.attr('data-favourite'));
+                        var cantCheck;
+                            for (cantCheck = 0; cantCheck < finalresultParentsContainerCheck.length; cantCheck++) {
+                            console.log(finalresultParentsContainerCheck.eq(cantCheck));
+
+                                if (finalresultParentsContainerCheck.eq(cantCheck).attr('data-favourite') == "0" ) {
+                                console.log('datafavourite00');
+                                contCheckNoFavourite = contCheckNoFavourite++;
+                                console.log(finalresultParentsContainerCheck.eq(cantCheck));
+                                //console.log(finalresultParentsContainerCheck[cantCheck]);
+                                finalresultParentsContainerCheck.eq(cantCheck).closest( '.check_container' ).siblings( '.custom_check' ).children( '.fa-check' ).css("display", "none");
+                                var finalresultParentsContainerCheckMinus = finalresultParentsContainerCheck.eq(cantCheck).closest( '.check_container' ).siblings( '.custom_check' ).children( '.fa-minus' ).css("display", "inline");
+                                console.log (finalresultParentsContainerCheckMinus);
+
+                                }
+                            }
+
+
+
+                        }
+                        hideLoadSpinnerWS();
+                        //showMessageToast(messageSettingsNotificationsSuccessfullySaved);
+
+
+                },
+                error: function (data, status, error){
+                    console.log(error);
+                    console.log(data);
+                    console.log(status);
+                    //showMessageToast(messageConexionError);
+                    //$('#iconHeaderFavouritesHome .icon').removeClass('animation-preloader');
             },
-            error: function (data, status, error){
-                console.log(error);
-                console.log(data);
-                console.log(status);
-                //showMessageToast(messageConexionError);
-                //$('#iconHeaderFavouritesHome .icon').removeClass('animation-preloader');
-           },
-           beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer ' + accessToken ); } //set tokenString before send
-    });
+            beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer ' + accessToken ); } //set tokenString before send
+        });
+
+    } else {
+        $("#loggedSettings").hide();
+        $("#notLoggedSettings").show();
+
+        $('#btnBackPageSettings').on('click', function(){
+            mainView.router.back({
+                pageName: 'home',
+                force: true
+            });
+        });
+    }
+
+
+
 
 
 });
+
 myApp.onPageReinit('settings', function (page)
 {
+    /*var user = firebase.auth().currentUser;
+    if (user) {
+        $("#notLoggedSettings").hide();
+        $("#loggedSettings").show();
+    } else {
+        $("#loggedSettings").hide();
+        $("#notLoggedSettings").show();
+    }*/
+
+    var user = firebase.auth().currentUser;
+    if (user) {
+        $("#notLoggedSettings").hide();
+        $("#loggedSettings").show();
+
+        //load settings page
+        $('#buttonSaveFavouritesSettings').hide();
+        //$('#lblMenuItemSettingsFavourites').text(lblHeaderSettingsFavourites);
+        //$('#lblMenuItemSettingsNotifications').text(lblHeaderSettingsNotifications);
+        $('#buttonSaveFavouritesSettings').text(lblSaveFavouritesSettings);
+        /*$('#buttonSaveFavouritesSettings').on('click', function(){
+            goBack = false;
+            sendPreferences();
+        });*/
+
+        $('#btnBackPageSettings').on('click', function(){
+            confirmChangesFavouritesSettings();
+        });
+        $$('.panel-left').on('open', function () {
+            if(mainView.activePage.name == "settings"){
+                confirmChangesFavouritesSettingsFromMenu();
+            }
+        });
+
+        //traigo los favoritos
+        showLoadSpinnerWS();
+        $.ajax({
+        // URL del Web Service, en este ws no hace falta enviar datos, con el bearer identifica el usuario
+                url: getPathWS() + 'setPreferencias',
+                type: "GET",
+                contentType: "application/json",
+                dataType: 'json',
+                timeout: timeOut,
+                success: function(response){
+
+                    console.log(response);
+                    json = response;
+                    update_tree();
+
+
+                    //$ele1 = $(this);
+                    $('.check').filter('[data-favourite="1"]').attr("data-checked", "1");
+                    var busquedaChecks = $('.check').filter('[data-favourite="1"]');
+                    console.log(busquedaChecks);
+                    //var ele2 = $('.custom_check .fa-check');
+                    //console.log(ele2);
+                    //var ele3 = $('.check').find('.fa-check');
+                    //console.log(ele3);
+
+
+                    var finalresult = busquedaChecks.find('.custom_check .fa-check');
+                    console.log(finalresult);
+                    console.log(finalresult[0]);
+                    console.log(finalresult[1]);
+                    finalresult.css("display", "inline");
+                    //var finalresultParents1 = finalresult.parents('.check');
+                    //var finalresultParents2 = finalresultParents1.parents('.custom_check');
+                    //var finalresultParents2 = finalresultParents1.parent('.custom_check');
+
+
+                    var finalresultParents = finalresult.closest('.check');
+                    var finalresultParents2 = finalresultParents.closest('.check').closest('.check_container').closest('.check').children( '.custom_check' ).children( '.fa-check' ).css("display", "inline");
+                    //console.log(finalresultParents1[0]);
+                    //console.log(finalresultParents2[0]);
+                    var finalresultParentsContainer = finalresultParents.closest('.check').closest('.check_container');
+                    var contCheckNoFavourite = 0;
+                    console.log(finalresultParentsContainer.length);
+                    console.log(finalresultParentsContainer);
+                    console.log(finalresultParentsContainer[0]);
+                    console.log(finalresultParentsContainer[1]);
+                    console.log(finalresultParentsContainer.eq(1).children('.check'));
+                    //console.log(finalresultParentsContainer.eq(1).children());
+                    var cantDom;
+                        for (cantDom = 0; cantDom < finalresultParentsContainer.length; cantDom++) {
+                        console.log('for');
+                        console.log(cantDom);
+                        console.log(finalresultParentsContainer.length);
+                        var finalresultParentsContainerCheck = finalresultParentsContainer.eq(cantDom).children('.check');
+                        console.log(finalresultParentsContainerCheck);
+                        //console.log(finalresultParentsContainerCheck.attr('data-favourite'));
+                        var cantCheck;
+                            for (cantCheck = 0; cantCheck < finalresultParentsContainerCheck.length; cantCheck++) {
+                            console.log(finalresultParentsContainerCheck.eq(cantCheck));
+
+                                if (finalresultParentsContainerCheck.eq(cantCheck).attr('data-favourite') == "0" ) {
+                                console.log('datafavourite00');
+                                contCheckNoFavourite = contCheckNoFavourite++;
+                                console.log(finalresultParentsContainerCheck.eq(cantCheck));
+                                //console.log(finalresultParentsContainerCheck[cantCheck]);
+                                finalresultParentsContainerCheck.eq(cantCheck).closest( '.check_container' ).siblings( '.custom_check' ).children( '.fa-check' ).css("display", "none");
+                                var finalresultParentsContainerCheckMinus = finalresultParentsContainerCheck.eq(cantCheck).closest( '.check_container' ).siblings( '.custom_check' ).children( '.fa-minus' ).css("display", "inline");
+                                console.log (finalresultParentsContainerCheckMinus);
+
+                                }
+                            }
+
+
+
+                        }
+                        hideLoadSpinnerWS();
+                        //showMessageToast(messageSettingsNotificationsSuccessfullySaved);
+
+
+                },
+                error: function (data, status, error){
+                    console.log(error);
+                    console.log(data);
+                    console.log(status);
+                    //showMessageToast(messageConexionError);
+                    //$('#iconHeaderFavouritesHome .icon').removeClass('animation-preloader');
+            },
+            beforeSend: function(xhr, settings) { xhr.setRequestHeader('Authorization','Bearer ' + accessToken ); } //set tokenString before send
+        });
+
+    } else {
+        $("#loggedSettings").hide();
+        $("#notLoggedSettings").show();
+
+        $('#btnBackPageSettings').on('click', function(){
+            mainView.router.back({
+                pageName: 'home',
+                force: true
+            });
+        });
+    }
+
+
 console.log('reinittt');
 $('#buttonSaveFavouritesSettings').hide();
+
+
+
+
 });
 
 myApp.onPageBeforeAnimation('settings', function (page)
@@ -137,44 +299,6 @@ myApp.onPageBeforeAnimation('settings', function (page)
 	activateStateItemMenu(myApp.getCurrentView().activePage.name);
 	trackPageGA("Configuraciones");
 
-	/*if(page.fromPage.name == "initsettings")
-	{
-		loadSettingNotificationsList(true);
-		myApp.params.swipePanel = false;
-		$('#btnMenuPageSettings').css("display", "none");
-
-		$('#btnBackPageSettings').css("display", "-webkit-box");
-		$('#btnBackPageSettings').css("display", "-ms-flexbox");
-		$('#btnBackPageSettings').css("display", "-webkit-flex");
-		$('#btnBackPageSettings').css("display", "flex");
-		$('#buttonSaveFavouritesSettings').css("display", "-webkit-box");
-		$('#buttonSaveFavouritesSettings').css("display", "-ms-flexbox");
-		$('#buttonSaveFavouritesSettings').css("display", "-webkit-flex");
-		$('#buttonSaveFavouritesSettings').css("display", "flex");
-		//$('#btnMenuPageSettings').css('display', 'none');
-		//$('#btnBackPageSettings').css('display', 'block');
-		//$('#buttonSaveFavouritesSettings').show();
-	}
-	else
-	{
-		loadSettingNotificationsList(false);
-		myApp.params.swipePanel = 'left';
-		$('#btnMenuPageSettings').css("display", "-webkit-box");
-		$('#btnMenuPageSettings').css("display", "-ms-flexbox");
-		$('#btnMenuPageSettings').css("display", "-webkit-flex");
-		$('#btnMenuPageSettings').css("display", "flex");
-		$('#btnBackPageSettings').css("display", "none");
-		$('#buttonSaveFavouritesSettings').css("display", "none");
-	}
-	if(window.localStorage.getItem("COUNTERACCESSSETTINGS"+idClub) == null){
-		window.localStorage.setItem("COUNTERACCESSSETTINGS"+idClub,0);
-		var now = getNowDate();
-		window.localStorage.setItem("INSTALLATIONDATE"+idClub,now);
-	} else if(window.localStorage.getItem("COUNTERACCESSSETTINGS"+idClub) < 3)
-	{
-		var count = parseInt(window.localStorage.getItem("COUNTERACCESSSETTINGS"+idClub)) + 1;
-		window.localStorage.setItem("COUNTERACCESSSETTINGS"+idClub,count);
-	}*/
 
 });
 
@@ -271,6 +395,12 @@ $(document).ready(function() {
       $('body').on('click','.check_title', function() {
                    $(this).closest('.check').find('.check_arrow:first').click()
       })
+
+      //"save" button  
+      $('#buttonSaveFavouritesSettings').on('click', function(){
+        goBack = false;
+        sendPreferences();
+    });
 
 
 
@@ -535,6 +665,7 @@ console.log(settingsToSendFinal);
 var goBack = false;
 function confirmChangesFavouritesSettings()
 {
+    console.log('confirmchangesfavourites');
 	goBack = false;
 	if($('#buttonSaveFavouritesSettings').is(':visible') == true){
 		myApp.modal({

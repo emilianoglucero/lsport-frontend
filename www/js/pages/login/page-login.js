@@ -20,6 +20,13 @@ $(document).ready(function() {
 
 });
 
+myApp.onPageInit('login', function (page) {
+    console.log('login on page init');
+    //myApp.hideNavbar(".navbar");
+    //myApp.params.swipePanel = false;
+});
+
+
 //added to execute on login page
 function loginBackButton() {
   myApp.confirm("Vas a salir de la App, estas seguro?", function() {
