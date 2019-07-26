@@ -6,6 +6,8 @@ $(document).ready(function(){
     $('#lblNameUser').text(lblNameUser);
     $('#lblLogoutButton').text(lblLogoutButton);
 
+    $('.lblNotLogged').text(lblNotLogged);
+
 });
 
 myApp.onPageInit('user', function (page)

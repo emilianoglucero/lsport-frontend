@@ -117,6 +117,8 @@ $(document).ready(function () {
     $('#headerPopupCustom').text(lblNameClub);
     $('#lblCloseButton').text(lblCloseButton);
 
+    $('.lblNotLogged').text(lblNotLogged);
+
     console.log('home');
 });
 
@@ -999,6 +1001,9 @@ function builderHomePage() {
             $("#whiteSpaceHomePublicity").fadeOut(0);
         }
     });
+
+    //workaraound to fix the problem with the missed hamburg icon in the navbar, when the 'reinit' fires
+    $('.navbar-on-left').removeClass('navbar-on-left').addClass('navbar-on-center');
 }
 
 function builderHomeBanner(banner) {

@@ -38,6 +38,10 @@ myApp.onPageBeforeAnimation('activities', function (page)
 	trackPageGA("Actividades");
 });
 
+$(document).ready(function () {
+	$('.lblNotLogged').text(lblNotLogged);
+});
+
 
 function builderActivitiesList(){
 	$('#activities-list').html('');
