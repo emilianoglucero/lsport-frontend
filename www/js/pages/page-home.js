@@ -537,7 +537,11 @@ function htmlNewCard (item) {
 
         strBuilderLastNewsContent.push('<div class="card-header color-white no-border">');
         strBuilderLastNewsContent.push('<div style="width: 100%;/*height: 250px*/;overflow: hidden;">');
-        strBuilderLastNewsContent.push('<img style=\"width: 100%;\" src=\'' + item.imagenPrincipal + '\' >');
+        if (item.imagenPrincipal == "") {
+            strBuilderLastNewsContent.push('<img style=\"width: 100%;\" src="img/default-news-list.png" >');
+        } else {
+            strBuilderLastNewsContent.push('<img style=\"width: 100%;\" src=\'' + item.imagenPrincipal + '\' >');
+        }
         strBuilderLastNewsContent.push('</div>');
         strBuilderLastNewsContent.push('</div>');
 
