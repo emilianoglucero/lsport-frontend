@@ -147,9 +147,9 @@ if (match.tipoObjeto == "torneo-encuentro") {
                 console.log(item);
                     if (item.tipoEvento == "anotacion") {
 
-                    if (timelineSide == false) {
-                     strBuilderLastMatch.push('<div class="timeline timeline-sides">');
-                    }
+                        if (timelineSide == false) {
+                        strBuilderLastMatch.push('<div class="timeline timeline-sides">');
+                        }
 
                         if (item.equipo.localia == "local") {
                             strBuilderLastMatch.push('<div class="timeline-item timeline-item-left">');
@@ -346,13 +346,15 @@ if (match.tipoObjeto == "torneo-encuentro") {
                             timelineSide = true;
                         }
 
+                    } else if (item.tipoEvento == "general") {
+                        //evento gral
                     }
 
                 });
 
             strBuilderLastMatch.push('</div>');
 
-		    }
+		}
 
         }
     console.log(strBuilderLastMatch);
@@ -733,7 +735,9 @@ function builderDetailsMatchDetailsInfo(match) {
                 swipeToClose: false,
                 lazyLoading: true,
                 navbarTemplate: navbarPhotoBrowser,
-                toolbar: false
+                toolbar: false,
+                onOpen: function (){screen.orientation.unlock(); },
+                onClose: function (){screen.orientation.lock('portrait'); }
             });
 
     //mainView.router.load({pageName: 'newdetails'});

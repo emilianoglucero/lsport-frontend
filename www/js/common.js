@@ -867,14 +867,14 @@ function getPathWS() {
   //return wsUrl;
   //return 'http://testing.lenguajesport.com/webservice/';
   //return 'http://clubes.lenguajesport.com/webservice/';
-  return "https://enac.lenguajesport.com/2/api/";
+  return "https://club.lenguajefutbol.com/22/api/";
 }
 
 function getPathMobile() {
   //return mobileUrl;
   //return 'http://testing.lenguajesport.com/movil/';
   //return 'http://clubes.lenguajesport.com/movil/';
-  return "https://enac.lenguajesport.com/2/api/";
+  return "https://club.lenguajefutbol.com/22/api/";
 }
 
 function showMessage(message) {

@@ -209,7 +209,9 @@ console.log(eventDetailsItem);
 	    swipeToClose: false,
 	    lazyLoading: true,
 	    navbarTemplate: navbarPhotoBrowser,
-	    toolbar: false
+	    toolbar: false,
+	    onOpen: function (){screen.orientation.unlock(); },
+        onClose: function (){screen.orientation.lock('portrait'); }
 	});
 	
 	myApp.initImagesLazyLoad(mainView.activePage.container);

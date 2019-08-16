@@ -149,7 +149,9 @@ console.log(newDetailsItem);
 	    swipeToClose: false,
 	    lazyLoading: true,
 	    navbarTemplate: navbarPhotoBrowser,
-	    toolbar: false
+		toolbar: false,
+		onOpen: function (){screen.orientation.unlock(); },
+		onClose: function (){screen.orientation.lock('portrait'); }
 	});
 	
 	myApp.initImagesLazyLoad(mainView.activePage.container);
@@ -166,9 +168,9 @@ console.log(imagesGallery.tipo);
 			strBuilderPhotogallery.push('<div class="swiper-wrapper">');
 				listPhotosBrowserNewDetails = [];
 				$.each(imagesGallery, function(index, item) {
-                    listPhotosBrowserNewDetails.push(item.imagenMin);
+                    listPhotosBrowserNewDetails.push(item.imagen);
                     strBuilderPhotogallery.push('<div class="swiper-slide">');
-                    strBuilderPhotogallery.push('<img onclick="openPhotoBrowserNewDetails('+index+')" class="swiper-lazy swiperGalleryPhotosImg" data-src="'+item.imagenMin+'"/>');
+                    strBuilderPhotogallery.push('<img onclick="openPhotoBrowserNewDetails('+index+')" class="swiper-lazy swiperGalleryPhotosImg" data-src="'+item.imagen+'"/>');
                     strBuilderPhotogallery.push('<div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>');
                     strBuilderPhotogallery.push('</div>');
 				});
@@ -231,7 +233,7 @@ listVideoBrowserNewDetails[idVideo].url
 	    navbarTemplate: navbarVideoBrowser,
 	    toolbar: false,
 	    onOpen: function (){screen.orientation.unlock(); },
-        	    onClose: function (){screen.orientation.lock('portrait'); }
+        onClose: function (){screen.orientation.lock('portrait'); }
 	    /*onOpen: function (){navigator.screenOrientation.set('user'); },
     	onClose: function (){navigator.screenOrientation.set('portrait'); }*/
 	});
