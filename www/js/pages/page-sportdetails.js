@@ -42,6 +42,7 @@ myApp.onPageInit('sportdetails', function (page) {
 		myApp.initImagesLazyLoad(mainView.activePage.container);
 	});
 	$$('#tabSportDetails3').on('show', function () {
+		console.log(areContentTabInformationSportDetailsBuilder);
 		if (areContentTabTournamentsSportDetailsBuilder == false) {
 			builderTournamentsSportDetails();
 		}
@@ -151,6 +152,9 @@ function loadSportDetails(idCategorySelectedFromLoad) {
 
 			},
 			error: function (data, status, error) {
+				console.log(data);
+				console.log(status);
+				console.log(error);
 				hideLoadSpinnerWS();
 				showMessage(messageConexionError);
 			},
@@ -1093,6 +1097,7 @@ function builderTournamentsSportDetails() {
 		strBuilderTournamentsSportDetails.push(builderTournamentsTournamentsSportDetails(currentTournaments));
 	}
 
+	console.log(strBuilderTournamentsSportDetails);
 	$('#tabSportDetails3').append(strBuilderTournamentsSportDetails.join(""));
 	myApp.initImagesLazyLoad(mainView.activePage.container);
 }
@@ -1298,20 +1303,20 @@ function builderTournamentsTournamentsSportDetails(tournaments) {
 			strBuilderTournaments.push('<div class="card-content-inner">');
 			strBuilderTournaments.push('<div class="list-block general-information">');
 			strBuilderTournaments.push('<ul>');
-			if (item.tablasPosicion !== "") {
-				$.each(item.tablasPosicion, function (i, position) {
-					positionTablesList.push(position);
-					console.log(positionTablesList);
+			//if (item.tablasPosicion !== "") {
+				//$.each(item.tablasPosicion, function (i, position) {
+					//positionTablesList.push(position);
+					//console.log(positionTablesList);
 					strBuilderTournaments.push('<li>');
-					strBuilderTournaments.push('<a href="#" onclick="loadPositionsTableDetails(' + position.id + ', ' + true + ')" class="item-link item-content">');
+					strBuilderTournaments.push('<a href="#" onclick="loadPositionsTableDetails(' + item.id + ', ' + true + ')" class="item-link item-content">');
 					strBuilderTournaments.push('<div class="item-media"><i class="icon icon-positionstable"></i></div>');
 					strBuilderTournaments.push('<div class="item-inner">');
-					strBuilderTournaments.push('<div class="item-title">' + position.titulo + '</div>');
+					strBuilderTournaments.push('<div class="item-title">' + lblTablePositions + '</div>');
 					strBuilderTournaments.push('</div>');
 					strBuilderTournaments.push('</a>');
 					strBuilderTournaments.push('</li>');
-				});
-			}
+			//	});
+			//}*/
 			strBuilderTournaments.push('<li>');
 			strBuilderTournaments.push('<a href="#" onclick="loadFixtures(' + item.id + ')" class="item-link item-content">');
 			strBuilderTournaments.push('<div class="item-media"><i class="icon icon-fixture"></i></div>');
@@ -1320,7 +1325,7 @@ function builderTournamentsTournamentsSportDetails(tournaments) {
 			strBuilderTournaments.push('</div>');
 			strBuilderTournaments.push('</a>');
 			strBuilderTournaments.push('</li>');
-			if (item.hasScorersTables == true) {
+			/*if (item.hasScorersTables == true) {
 				strBuilderTournaments.push('<li>');
 				strBuilderTournaments.push('<a href="#" onclick="loadShootersTable(' + item.id + ',\'' + item.nombre + '\')" class="item-link item-content">');
 				strBuilderTournaments.push('<div class="item-media"><i class="icon icon-shooters"></i></div>');
@@ -1329,7 +1334,7 @@ function builderTournamentsTournamentsSportDetails(tournaments) {
 				strBuilderTournaments.push('</div>');
 				strBuilderTournaments.push('</a>');
 				strBuilderTournaments.push('</li>');
-			}
+			}*/
 			strBuilderTournaments.push('</ul>');
 			strBuilderTournaments.push('</div>');
 			strBuilderTournaments.push('</div>');
@@ -1337,6 +1342,7 @@ function builderTournamentsTournamentsSportDetails(tournaments) {
 			strBuilderTournaments.push('</div>');
 		});
 	}
+	console.log(strBuilderTournaments);
 	return (strBuilderTournaments.join(""));
 }
 

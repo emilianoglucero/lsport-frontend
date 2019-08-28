@@ -471,6 +471,11 @@ var strBuilderLastNewsContent = [];
                 var verMasFecha = false;
 
                 $.each(item.encuentros, function (n, match) {
+                    //cut the year of the date, to short the string
+                    var fechaOcurrenciaCompleta = match.fechaOcurrencia.fecha;
+                    var fechaOcurrenciaShort = fechaOcurrenciaCompleta.slice(0, -5);
+
+
                     encuentroFecha = encuentroFecha + 1;
                     console.log(encuentroFecha);
                     if (encuentroFecha < 5) {
@@ -497,7 +502,7 @@ var strBuilderLastNewsContent = [];
                         if (match.local.tantos != null || match.visitante.tantos != null) {
                             strBuilderLastNewsContent.push('<div class="col-20 match-scorer">' + match.local.tantos + ' - ' + match.visitante.tantos + '</div>');
                         } else {
-                            strBuilderLastNewsContent.push('<div class="col-20 match-scorer">' + match.fechaOcurrencia.fecha + '</div>');
+                            strBuilderLastNewsContent.push('<div class="col-20 match-scorer">' + fechaOcurrenciaShort + '</div>');
                         }
 
                         strBuilderLastNewsContent.push('<div class="col-15">');
@@ -647,7 +652,7 @@ function htmlTournamentMatchCard(item) {
     // });
     strBuilderLastNewsContent.push('</div></div>');
     // strBuilderLastNewsContent.push('<div class="card-footer tournament-matches-footer">Ver más...</div>');
-    strBuilderLastNewsContent.push('</a></div>');
+    strBuilderLastNewsContent.push('</a></div></div>');
 
    return strBuilderLastNewsContent; 
 }
