@@ -58,6 +58,9 @@ myApp.onPageBeforeAnimation('sportdetails', function (page) {
 	$('#noConnection-content-block-sportdetails').hide();
 	myApp.initImagesLazyLoad(mainView.activePage.container);
 	trackPageGA("Detalle Deporte");
+
+	//used to fix the home grey screen on app init
+    myApp.closeModal();
 });
 
 myApp.onPageBack('sportdetails', function (page) {
@@ -65,14 +68,15 @@ myApp.onPageBack('sportdetails', function (page) {
 });
 
 function loadSportDetails(idCategorySelectedFromLoad) {
+		showLoadSpinnerWS();
 
 	var user = firebase.auth().currentUser;
 	if (user) {
+		showLoadSpinnerWS();
 		//idSportSelected = idSport;
 		//idCategorySelected = idCat;
 		console.log(idCategorySelectedFromLoad);
 		idCategorySelected = idCategorySelectedFromLoad;
-		showLoadSpinnerWS();
 		$('#tabSportDetails1').html("");
 		$('#contentTabSportDetails2').html("");
 		$('#tabSportDetails3').html("");
@@ -163,6 +167,7 @@ function loadSportDetails(idCategorySelectedFromLoad) {
 			} //set tokenString before send
 		});
 	} else {
+		hideLoadSpinnerWS();
 		showMessage('Debes iniciar sesión para poder ingresar a esta funcionalidad');
 	}	
 

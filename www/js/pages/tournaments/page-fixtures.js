@@ -56,41 +56,64 @@ function loadFixturesOld(idTournament, nameTournamentSelected) {
 
 function loadFixtures(idTournament) {
     showLoadSpinnerWS();
+     //call to the tournament details
+     // URL del Web Service
+     $.ajax({
+        url: getPathWS() + 'getTorneo',
+        dataType: 'json',
+        data: { 
+            'id': idTournament
+        },
+        timeout: timeOut,
+        success: function(response){
+            console.log(response);
+            // add logic
+            hideLoadSpinnerWS();
+                //if (state){
+            /*console.log(currentTournaments);
+            tournamentFixture = currentTournaments.filter(function (obj) {
+                return obj.id == idTournament;
+            });
+            tournamentFixture = tournamentFixture[0];*/
+            tournamentFixture = response.torneo;
+            console.log(tournamentFixture.fechas);
+            /* } else {
+                var newsDetails = allSucesosNewsList.filter(function( obj ) {
+                return obj.id == idNew;
+                });
+                newsDetailsHome = newsDetails[0];
+            }*/
 
-    //if (state){
-    console.log(currentTournaments);
-    tournamentFixture = currentTournaments.filter(function (obj) {
-        return obj.id == idTournament;
-    });
-    tournamentFixture = tournamentFixture[0];
-    console.log(tournamentFixture.fechas);
-    /* } else {
-         var newsDetails = allSucesosNewsList.filter(function( obj ) {
-           return obj.id == idNew;
-         });
-         newsDetailsHome = newsDetails[0];
-     }*/
 
-
-    if (tournamentFixture.fechas == "") {
-        hideLoadSpinnerWS();
-        showMessage(messageNotDates);
-        return;
-    }
+            if (tournamentFixture.fechas == "") {
+                hideLoadSpinnerWS();
+                showMessage(messageNotDates);
+                return;
+            }
 
 
 
-    //fixturesList = response.fixtures;
-    builderFixturesDetails(tournamentFixture);
-    hideLoadSpinnerWS();
+            //fixturesList = response.fixtures;
+            builderFixturesDetails(tournamentFixture);
+            hideLoadSpinnerWS();
 
-
+		},
+        error: function (data, status, error) {
+            console.log(data);
+            console.log(status);
+            console.log(error);
+            hideLoadSpinnerWS();
+            showMessage(messageConexionError);
+        },
+        beforeSend: function (xhr, settings) {
+            xhr.setRequestHeader('Authorization', 'Bearer ' + accessToken);
+        } //set tokenString before send
+	});
 
 }
 
 
 function builderFixturesDetails(fixturesList) {
-
 
 
     $('#selectFixtureDetails').empty();
@@ -151,7 +174,7 @@ function builderFixturesDetails(fixturesList) {
 
                 strBuilderListCards.push('</div>');
                 strBuilderListCards.push('<div class="col-33 col-lastmatch-tournament col-lastmatch-tournament.middle">');
-                strBuilderListCards.push('<div class="col-lastmatch-tournament-date"><p>18/10/18</p></div>');
+                strBuilderListCards.push('<div class="col-lastmatch-tournament-date"><p>' + match.fechaOcurrencia.fecha+ '</p></div>');
                 //strBuilderListCards.push('<div class="col-lastmatch-tournament-nametournament">'+match.torneo.deporteCategoria.nombreCorto+'</div>');
                 //strBuilderListCards.push('<div class="col-lastmatch-tournament-name">'+match.torneo.nombre+'</div>');
                 if (match.local.tantos != null || match.visitante.tantos != null) {

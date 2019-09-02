@@ -245,7 +245,7 @@ if (match.tipoObjeto == "torneo-encuentro") {
 
                         strBuilderLastMatch.push('</div>');
                         strBuilderLastMatch.push('<div class="matchdetails-events-comments">');
-                            strBuilderLastMatch.push('<div class="content-block-title">Terminó el partido!</div>');
+                            strBuilderLastMatch.push('<div class="content-block-title">Terminó!</div>');
                             strBuilderLastMatch.push('<div class="timeline-item-time"">'+equipoLocal+' '+item.tanteadorLocal+' - '+item.tanteadorVisitante+' '+equipoVisitante+'</div>');
                         strBuilderLastMatch.push('</div>');
                         timelineSide = false;

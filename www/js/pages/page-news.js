@@ -40,6 +40,9 @@ myApp.onPageBeforeAnimation('news', function (page)
 	trackPageGA("Noticias");
 	idLiveMatchActivePage=null;
 	idLiveMatchSportDetails= null;
+
+	//used to fix the home grey screen on app init
+    myApp.closeModal();
 });
 
 function loadNews(){

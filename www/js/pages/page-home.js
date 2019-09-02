@@ -267,7 +267,7 @@ function htmlTournamentTableCard (item) {
                 $('#positionstable-list').html('');
                 
                 console.log(item.id);
-                strBuilderLastNewsContentHtml.push('<div class="card tournament-matches"> <a onclick="loadPositionsTableDetails(' + item.id + ', ' + false + ')" href="#">');
+                strBuilderLastNewsContentHtml.push('<div class="card tournament-matches"> <a onclick="loadPositionsTableDetails(' + item.torneo.id + ', ' + false + ')" href="#">');
                 strBuilderLastNewsContentHtml.push('<div id="tournament-matches-header" class="card-header no-border">');
 
                 strBuilderLastNewsContentHtml.push('<div class="tournament-header-titulo">' + item.torneo.nombre + '</div>');
@@ -1332,9 +1332,12 @@ function builderHomeDetails2() {
     }
     console.log(events);
 
-    if (homeDetails2List != undefined & Array.isArray(homeDetails2List) && homeDetails2List.length) {
+    if (homeDetails2List != undefined) {
         builderTimeLineEventsHome();
     }
+    /*if (homeDetails2List != undefined & Array.isArray(homeDetails2List) && homeDetails2List.length) {
+        builderTimeLineEventsHome();
+    }*/
 
     //funcion para esconder y mostrar el div con la vista que corresponda
     /*$('#timeLineView').show();
@@ -1400,9 +1403,12 @@ function builderHomeDetails2() {
             console.log(today);
 
             //mostrar eventos del dia
-            if (homeDetails2List != undefined && Array.isArray(homeDetails2List) && homeDetails2List.length) {
+            if (homeDetails2List != undefined) {
                 builderDayEvents(today);
-            }        
+            }
+            /*if (homeDetails2List != undefined && Array.isArray(homeDetails2List) && homeDetails2List.length) {
+                builderDayEvents(today);
+            }*/           
 
             $$('.calendar-custom-toolbar .center').text(monthNames[p.currentMonth] + ', ' + p.currentYear);
             $$('.calendar-custom-toolbar .left .link').on('click', function () {
@@ -1435,9 +1441,16 @@ function builderHomeDetails2() {
             console.log(eventDay);
 
             //mostrar eventos del dia
-            if (homeDetails2List != undefined && Array.isArray(homeDetails2List) && homeDetails2List.length) {
+            console.log(homeDetails2List);
+            if (homeDetails2List != undefined) {
+                console.log('builderdayevents');
                 builderDayEvents(eventDay);
             }
+            /*if (homeDetails2List != undefined && Array.isArray(homeDetails2List) && homeDetails2List.length) {
+                console.log('builderdayevents');
+                builderDayEvents(eventDay);
+            }*/
+
 
         }
 

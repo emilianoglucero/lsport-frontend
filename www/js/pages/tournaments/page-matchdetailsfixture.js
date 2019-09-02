@@ -19,7 +19,7 @@ function loadMatchDetailsFixture(idNew, state){
 	        showLoadSpinnerWS();
 	        console.log(idNew);
 	        console.log(allSucesosFechaTorneoList);
-	        console.log(datesTournaments);
+	        //console.log(datesTournaments);
 	        //var homeDetails2ListCalendario = newsListHome;
             if (state == "home"){
 	        	var matchDetailsHomeDate = allSucesosFechaTorneoList.filter(function( obj ) {
