@@ -144,7 +144,7 @@ var item = item[0];
         strBuilderListCards.push('<div class="row tournament-father no-gutter">');
         $.each(item.tablaGeneral.cabecera, function(i, item) {
         //console.log(item.nombreCorto);
-        //console.log(item.columna);
+        console.log(item.columna);
 
             if (item.columna == 'eq') {
                 if (item.columna != "" && item.columna != undefined) {
@@ -204,23 +204,23 @@ var item = item[0];
                 if (item.pt !== "" && item.pt !== undefined) {
                     strBuilderListCards.push('<div class="col tournament-child-numbers">' + item.pt + '</div>');
                 }
-                if (item.pg !== "" && item.pg !== undefined) {
-                    strBuilderListCards.push('<div class="col tournament-child-numbers">' + item.pt + '</div>');
+                if (item.tf !== "" && item.tf !== undefined) {
+                    strBuilderListCards.push('<div class="col tournament-child-numbers">' + item.tf + '</div>');
+                }
+                if (item.tc !== "" && item.tc !== undefined) {
+                    strBuilderListCards.push('<div class="col tournament-child-numbers">' + item.tc + '</div>');
                 }
                 if (item.pj !== "" && item.pj !== undefined) {
                     strBuilderListCards.push('<div class="col tournament-child-numbers">' + item.pj + '</div>');
+                }
+                if (item.pg !== "" && item.pg !== undefined) {
+                    strBuilderListCards.push('<div class="col tournament-child-numbers">' + item.pg + '</div>');
                 }
                 if (item.pe !== "" && item.pe !== undefined) {
                     strBuilderListCards.push('<div class="col tournament-child-numbers">' + item.pe + '</div>');
                 }
                 if (item.pp !== "" && item.pp !== undefined) {
                     strBuilderListCards.push('<div class="col tournament-child-numbers">' + item.pp + '</div>');
-                }
-                if (item.tf !== "" && item.tf !== undefined) {
-                    strBuilderListCards.push('<div class="col tournament-child-numbers">' + item.tf + '</div>');
-                }
-                if (item.tc !== "" && item.tc !== undefined) {
-                    strBuilderListCards.push('<div class="col tournament-child-numbers">' + item.tc + '</div>');
                 }
                 if (item.td !== "" && item.td !== undefined) {
                     strBuilderListCards.push('<div class="col tournament-child-numbers">' + item.td + '</div>');
