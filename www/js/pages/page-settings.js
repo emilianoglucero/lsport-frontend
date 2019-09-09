@@ -608,6 +608,12 @@ for (i = 0; i < busquedaActividades.length; i++) {
     settingsToSend.preferenciasPrincipales.actividades.push(busquedaActividades[i].getAttribute("org-id"));
 }
 
+//insert data in preferenciasNotificaciones array
+for (i = 0; i < busquedaDeportes.length; i++) {
+    busquedaDeportes[i].getAttribute("org-id");
+    settingsToSend.preferenciasNotificacion.deportesCategorias.push(busquedaDeportes[i].getAttribute("org-id"));
+}
+
 
 
 console.log(settingsToSend);

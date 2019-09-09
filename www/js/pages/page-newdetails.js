@@ -33,6 +33,9 @@ myApp.onPageBeforeAnimation('newdetails', function (page)
 	myApp.params.swipePanel = false;
 	$$('#page-newdetails .page-content').scrollTop(0);
 	trackPageGA("Detalle Noticia");
+	//used to fix the home grey screen on app init
+    myApp.closeModal();
+
 });
 
 function loadNewDetails(idNew, state){
