@@ -71,7 +71,8 @@
         </host>
     </universal-links>
     <preference name="AndroidLaunchMode" value="singleTask" />
-    <plugin name="cordova-universal-links-plugin" spec="~1.2.1" />
+    <engine name="browser" spec="^5.0.4" />
+    <engine name="ios" spec="^5.0.1" />
     <plugin name="cordova-plugin-firebasex" spec="^3.0.5" />
     <plugin name="cordova-android-play-services-gradle-release" spec="^3.0.0">
         <variable name="PLAY_SERVICES_VERSION" value="+" />
@@ -106,6 +107,5 @@
         <variable name="ANDROID_HOST" value=" " />
         <variable name="ANDROID_PATHPREFIX" value="/" />
     </plugin>
-    <engine name="browser" spec="^5.0.4" />
-    <engine name="ios" spec="^5.0.1" />
+    <plugin name="cordova-universal-links-plugin" spec="~1.2.1" />
 </widget>

@@ -614,6 +614,12 @@ for (i = 0; i < busquedaDeportes.length; i++) {
     settingsToSend.preferenciasNotificacion.deportesCategorias.push(busquedaDeportes[i].getAttribute("org-id"));
 }
 
+//insert data in preferenciasNotificaciones array, only for clubes
+for (i = 0; i < busquedaActividades.length; i++) {
+    busquedaActividades[i].getAttribute("org-id");
+    settingsToSend.preferenciasNotificacion.actividades.push(busquedaActividades[i].getAttribute("org-id"));
+}
+
 
 
 console.log(settingsToSend);

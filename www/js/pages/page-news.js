@@ -12,7 +12,7 @@ myApp.onPageInit('news', function (page)
     $('.contentListEndNews').text(contentListEndNews);
     $('#news-content-block').html('');
     
-    nextPageNumberNews = 1;
+	nextPageNumberNews = 1;
     loadNews();
     
     $$('.infinite-scroll-news').on('infinite', function () {

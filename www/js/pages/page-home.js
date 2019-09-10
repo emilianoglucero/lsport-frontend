@@ -767,9 +767,10 @@ function loadContentHomePage() {
                 console.log(homeDetails2List);
                 console.log(homeDetails3List);
                 sportsList = response.menu.deportes;
-                //activitiesList = response.menu.actividades;
-                clubList = response.menu.clubes;
-                console.log(clubList);
+                activitiesList = response.menu.actividades;
+                //clubList = response.menu.clubes;
+                //console.log(clubList);
+                console.log(activitiesList);
                 if (newsListHome !== "") {
                     console.log('es la primera');
                     allSucesosPageList = response.sucesosPanel.sucesos;

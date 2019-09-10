@@ -1,34 +1,13 @@
-//var activitiesList = [];
+var activitiesList = [];
 var areActivitiesLoaded = false;
 
 
 myApp.onPageInit('activities', function (page)
 {
+	myApp.initImagesLazyLoad(mainView.activePage.container);
+	//loadActivities();
+	builderActivitiesList();
 	
-	//var user = firebase.auth().currentUser;
-    //if (user) {
-		$("#notLoggedActivities").hide();
-		myApp.initImagesLazyLoad(mainView.activePage.container);
-		//loadActivities();
-		builderActivitiesList();
-	//} else {
-	//	$("#notLoggedActivities").show();
-	//}
-	
-});
-
-myApp.onPageReinit('activities', function (page)
-{
-	/*var user = firebase.auth().currentUser;
-    if (user) {
-		$("#notLoggedActivities").hide();
-		myApp.initImagesLazyLoad(mainView.activePage.container);
-		//loadActivities();
-		builderActivitiesList();
-	} else {
-		$("#notLoggedActivities").show();
-	}*/
-
 });
 
 myApp.onPageBeforeAnimation('activities', function (page)
@@ -38,29 +17,57 @@ myApp.onPageBeforeAnimation('activities', function (page)
 	trackPageGA("Actividades");
 });
 
-$(document).ready(function () {
-	$('.lblNotLogged').text(lblNotLogged);
-});
-
+/*function loadActivities(){
+	showLoadSpinnerWS();
+	$('#activities-list').html('');
+	$.ajax({
+			// URL del Web Service
+			url: getPathWS() + 'getActivityList',
+			dataType: 'jsonp',
+			data: { 'idClub': idClub },
+			timeout: timeOut,
+			success: function(response){
+				if(response.errorCode != 0)
+				{
+				    hideLoadSpinnerWS();
+				    filterCodeErrorWS(response);
+				    return;
+				}
+				if(isAppUpdate(response.serverVersion) == false){
+					hideLoadSpinnerWS();
+					mainView.router.load({pageName: 'update'});
+					return;
+				}
+				activitiesList = response.activitiesList;
+				areActivitiesLoaded = true;
+				builderActivitiesList();
+				hideLoadSpinnerWS();
+			},
+			error: function (data, status, error){
+		          builderActivitiesList();
+		          hideLoadSpinnerWS();
+		   }
+		});
+}*/
 
 function builderActivitiesList(){
 	$('#activities-list').html('');
-	console.log(clubList);
+	console.log(activitiesList);
 	var strBuilderActivitiesContent = [];
 	//if(areActivitiesLoaded == true){
-		if(clubList.length == 0){
+		if(activitiesList.length == 0){
 				strBuilderActivitiesContent.push('<div class="divNotActivities">'+divNotActivities+'</div>');
 		}
 		else{
-			$.each( clubList, function( i, item ){
-				strBuilderActivitiesContent.push('<div class="card card-activity">');
+			$.each( activitiesList, function( i, item ){
+				strBuilderActivitiesContent.push('<div onclick="loadActivityDetails('+item.id+')" class="card card-activity">');
 				strBuilderActivitiesContent.push('<div class="card-activity-content">');
 					strBuilderActivitiesContent.push('<div valign="bottom" class="card-header card-header-photo color-white no-border">');
 						strBuilderActivitiesContent.push('<img class="lazy lazy-fadeIn imgCardHeaderActivities" data-src="'+item.imagenPrincipalMin+'" alt="'+item.nombre+'" />');
 					strBuilderActivitiesContent.push('</div>');
 					strBuilderActivitiesContent.push('<div class="card-header card-header-title">'+item.nombre+'</div>');
 					strBuilderActivitiesContent.push('<div class="card-content-inner">');
-						strBuilderActivitiesContent.push('<p class="color-gray">'+item.direccion+'</p>');
+						strBuilderActivitiesContent.push('<p class="color-gray">'+item.descripcion+'</p>');
 					strBuilderActivitiesContent.push('</div>');
 				strBuilderActivitiesContent.push('</div>');
 				strBuilderActivitiesContent.push('</div>');
