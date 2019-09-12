@@ -80,9 +80,9 @@ console.log(achievementDetailsItem);
 						listPhotosBrowserAchievement = [];
 						$.each(achievementDetailsItem.imagenes, function(index, item) {
 						    
-						    listPhotosBrowserAchievement.push(item.imagenMin);
+						    listPhotosBrowserAchievement.push(item.imagen);
 							strBuilderPhotogallery.push('<div class="swiper-slide">');
-							strBuilderPhotogallery.push('<img onclick="openPhotoBrowserAchievement('+index+')" class="swiper-lazy swiperGalleryPhotosImg" data-src="'+item.imagenMin+'"/>');
+							strBuilderPhotogallery.push('<img onclick="openPhotoBrowserAchievement('+index+')" class="swiper-lazy swiperGalleryPhotosImg" data-src="'+item.imagen+'"/>');
 							strBuilderPhotogallery.push('<div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>');
 							strBuilderPhotogallery.push('</div>');
 						});

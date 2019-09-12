@@ -52,9 +52,9 @@ function builderInstallationDetails(idItem){
 				listPhotosBrowserInstallation = [];
 				$.each(installationDetailsItem[0].imagenes, function(index, item) {
 				    
-				    listPhotosBrowserInstallation.push(item.imagenMin);
+				    listPhotosBrowserInstallation.push(item.imagen);
 					strBuilderPhotogallery.push('<div class="swiper-slide">');
-					strBuilderPhotogallery.push('<img onclick="openPhotoBrowserIntallation('+index+')" class="swiper-lazy swiperGalleryPhotosImg" data-src="'+item.imagenMin+'"/>');
+					strBuilderPhotogallery.push('<img onclick="openPhotoBrowserIntallation('+index+')" class="swiper-lazy swiperGalleryPhotosImg" data-src="'+item.imagen+'"/>');
 					strBuilderPhotogallery.push('<div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>');
 					strBuilderPhotogallery.push('</div>');
 				});
