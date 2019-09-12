@@ -136,7 +136,7 @@ console.log(eventDetailsItem);
 				listPhotosBrowserEvent = [];
 				$.each(eventDetailsItem.imagenes, function(index, item) {
 				    
-				    listPhotosBrowserEvent.push(item.imagenMin);
+				    listPhotosBrowserEvent.push(item.imagen);
 					strBuilderPhotogallery.push('<div class="swiper-slide">');
 					strBuilderPhotogallery.push('<img onclick="openPhotoBrowserEvent('+index+')" class="swiper-lazy swiperGalleryPhotosImg" data-src="'+item.imagen+'"/>');
 					strBuilderPhotogallery.push('<div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>');

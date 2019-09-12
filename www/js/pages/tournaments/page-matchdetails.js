@@ -396,7 +396,7 @@ function htmlMatchDetailsMultiMedia (match) {
 			strBuilderGalleryMatchDetails.push('<div class="swiper-wrapper">');
 				listPhotosBrowserMatchDetails = [];
 				$.each(match.imagenes, function(index, item) {
-                    listPhotosBrowserMatchDetails.push(item.imagenMin);
+                    listPhotosBrowserMatchDetails.push(item.imagen);
                     strBuilderGalleryMatchDetails.push('<div class="swiper-slide">');
                     strBuilderGalleryMatchDetails.push('<img onclick="openPhotoBrowserMatchDetails('+index+')" class="swiper-lazy swiperGalleryPhotosImg" data-src="'+item.imagenMin+'"/>');
                     strBuilderGalleryMatchDetails.push('<div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>');
