@@ -352,7 +352,7 @@ function htmlTournamentTableCard (item) {
                             strBuilderLastNewsContentHtml.push('<div class="col tournament-child-numbers">' + item.pj + '</div>');
                         }
                         if (item.pg !== "" && item.pg !== undefined) {
-                            strBuilderLastNewsContentHtml.push('<div class="col tournament-child-numbers">' + item.pt + '</div>');
+                            strBuilderLastNewsContentHtml.push('<div class="col tournament-child-numbers">' + item.pg + '</div>');
                         }
                         if (item.pe !== "" && item.pe !== undefined) {
                             strBuilderLastNewsContentHtml.push('<div class="col tournament-child-numbers">' + item.pe + '</div>');
