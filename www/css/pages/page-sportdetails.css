@@ -314,6 +314,10 @@
 
 #page-sportdetails #tabSportDetails2 #contentTabSportDetails2 .card-header {
 	padding: 0;
+	background-color: white;
+    display: block;
+    min-height: 0 !important;
+    padding: 10px 10px 10px 20px !important;
 }
 
 #page-sportdetails #tabSportDetails2 #contentTabSportDetails2 .card-header a {

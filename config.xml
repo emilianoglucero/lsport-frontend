@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget android-versionCode="425" id="com.lse.ar.rosario.art" ios-CFBundleVersion="4.2" version="4.2.5" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget android-versionCode="426" id="com.lse.ar.rosario.art" ios-CFBundleVersion="4.2" version="4.2.6" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>A. R. de Tenis</name>
     <description>
         Aplicación oficial de la Asociación Rosarina de Tenis
