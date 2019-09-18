@@ -1,0 +1,36 @@
+#containerNameMilestoneDetails {
+    text-align: center;
+}
+
+#pNameMilestoneDetails {
+    color: #585858;
+    font-size: 18px;
+    font-family: "Montserrat-Semibold";
+}
+
+#containerImgHeaderMilestoneDetail{
+	text-align: center;
+}
+
+#imgHeaderMilestoneDetails {
+    width: 200px;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    
+}
+
+#descriptionMilestoneDetails{
+    color: #919191;
+    text-align: justify;
+    font-family: "Montserrat-Regular";
+    font-size: 14px;
+}
+
+#detaileMilestoneDetails{
+    color: #919191;
+    text-align: justify;
+    font-family: "Montserrat-Regular";
+    font-size: 14px;
+}

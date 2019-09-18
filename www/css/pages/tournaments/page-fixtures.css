@@ -1,0 +1,43 @@
+.card-header-fixtures {
+    background-color: #E1E1E1;
+    min-height: 39px;
+    font-size: 14px;
+}
+
+#selectFixtureDetails {
+    color: #585858;
+    text-align: center;
+    border: 0;
+    font-size: 20px;
+    font-weight: 400;
+    white-space: normal;
+    line-height: 22px;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: transparent url(../../../img/template/icon-down.png) no-repeat scroll right;
+    background-size: 10px 11px;
+    width: 80%;
+    padding: 5px;
+    padding-bottom: 2px;
+}
+
+#page-fixtures #fixtures-list #fixture-content .card-header {
+    color: #585858;
+}
+
+#page-fixtures #fixtures-list #fixture-content .card-header::after {
+    background-color: #F6F6F6 !important;
+}
+
+#page-fixtures #fixtures-list #fixture-content .card-content #row-lastmatch-tournament .col-lastmatch-tournament-result {
+    color: white;
+    font-weight: 800;
+    border-radius: 100px;
+    padding: 5px;
+    text-align: center;
+    box-shadow: 2px 2px 10px #bbb;
+    font-family: "Montserrat-Medium";
+    font-size: 15px;
+    border: none !important;
+}

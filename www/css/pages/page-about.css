@@ -1,0 +1,22 @@
+#containerImgShieldClub{
+	text-align: center;
+	color: #000000;
+}
+
+.imgHeaderImgShieldClubContact {
+    height: 230px;
+    width: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+/*ADDED*/
+#page-about {
+    background-image: url(../../img/club/background-about.png);
+    background: #FCFCFC;
+}
+
+/*#page-about .item-inner {
+    background-image: url(../../img/club/icon-left-arrow.png);
+}*/

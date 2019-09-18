@@ -1,0 +1,357 @@
+.list-block.general-information .item-content {
+	padding-left: 15px;
+}
+
+#selectSportDetails {
+	border: 0;
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 500;
+    white-space: normal;
+    line-height: 22px;
+    -webkit-appearance: none;
+    background: transparent url(../../img/template/icon-down.png) no-repeat scroll;
+    background-size: 13px 13px;
+    background-position: 100% 84%;
+    width: 80%;
+    padding: 20px;
+    padding-bottom: 2px;
+}
+
+#imgHeaderSportDetails {
+	height: 230px;
+	width: auto;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+}
+
+
+.theme-white .button.active:not(.button-fill) {
+	background-color: #fff;
+	color: #1A9AD9;
+}
+
+.subnavbar {
+	background: #1A9AD9;
+	/* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); */
+}
+
+.subnavbar:after {
+	background-color: rgba(0, 0, 0, 0);
+}
+
+#titleSportDetails {
+	color: #000000;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+#shortcontentSportDetails {
+	color: #000000;
+}
+
+#descriptionSportDetails {
+	color: #000000;
+	text-align: justify;
+}
+
+.imgNewsSportDetails {
+	width: 80px;
+	height: 50px;
+	font-size: 9px;
+	text-align: justify;
+}
+
+.imgTournamentsSportDetails {
+	width: 50px;
+	height: 50px;
+}
+
+.divContainerUpload {
+	text-align: center;
+}
+
+#divSportLastNewsErrorHeader {
+	font-size: 20px;
+	text-align: center;
+}
+
+#divSportCoordinatorsErrorHeader {
+	font-size: 20px;
+	text-align: center;
+}
+
+#divSportLastNewsErrorText {
+	padding: 10px 20px 20px;
+	text-align: center;
+	color: #808080;
+}
+
+.divImgsSportError {
+	text-align: center;
+}
+
+.imgSportUpload {
+	height: auto;
+	max-width: 120px;
+}
+
+.list-block .item-content {
+	width: 100%;
+}
+
+.imgProfileCoordinator {
+	width: 70px;
+	height: 70px;
+	font-size: 12px;
+	border-radius: 100%;
+}
+
+.divConnectionErrorHeader {
+	font-size: 20px;
+	text-align: center;
+}
+
+.divConnectionErrorText {
+	padding: 10px 20px 20px;
+	text-align: center;
+	color: #808080;
+}
+
+.divImgConnectionError {
+	text-align: center;
+}
+
+.imgUploadConnectionError {
+	height: auto;
+	max-width: 120px;
+}
+
+#noConnection-content-block-sportdetails {
+	display: none;
+}
+
+/* ############################################################### */
+/* ##################### Tab Tournaments ########################## */
+/* ############################################################### */
+
+.list-block.lastmatch-tournaments .item-content {
+	padding-left: 0px;
+}
+
+#row-lastmatch-tournament {
+	width: 100%;
+	padding: 7px;
+}
+
+#row-lastmatch-tournament .col-lastmatch-tournament {
+	text-align: center;
+}
+
+#row-lastmatch-tournament .col-lastmatch-tournament-middle {
+	margin-top: 7px;
+}
+
+#row-lastmatch-tournament .col-lastmatch-tournament .col-lastmatch-tournament-team {
+	padding-bottom: 5px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	font-size: 15px;
+	font-weight: 700;
+	font-family: "Montserrat-Regular";
+	color: #585858;
+}
+
+#row-lastmatch-tournament .col-lastmatch-tournament .col-lastmatch-tournament-result {
+	/* border: 3px solid rgb(0, 0, 0); */
+	color: #000000;
+	background-color: #FFFFFF;
+	margin: 0px auto;
+	max-width: 130px;
+}
+
+#row-lastmatch-tournament .col-lastmatch-tournament .col-lastmatch-tournament-result p {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	font-size: 20px;
+	font-weight: 700;
+}
+
+
+#row-lastmatch-tournament .col-lastmatch-tournament .col-lastmatch-tournament-name {
+	font-size: 13px;
+	font-weight: 700;
+}
+
+#row-lastmatch-tournament .col-lastmatch-tournament .col-lastmatch-tournament-date {
+	font-size: 13px;
+}
+
+#row-lastmatch-tournament .col-lastmatch-tournament .col-lastmatch-tournament-live {
+	font-size: 15px;
+	font-weight: 700;
+}
+
+#row-lastmatch-tournament .col-lastmatch-tournament .col-lastmatch-tournament-nametournament {
+	font-size: 13px;
+}
+
+.img-shield-lastmatch {
+	width: 60px;
+	height: 60px;
+	/* padding-top: 5px; */
+}
+
+.description-lastmatch-tournament {
+	color: rgb(142, 142, 147);
+	font-size: 13px;
+	line-height: 15px;
+	text-align: justify;
+	padding: 7px;
+}
+
+.tabs-sportdetails-header {
+	margin-top: 44px;
+	padding: 0 10px;
+}
+
+.tabs-sportdetails-header > div:first-child {
+	margin: 0 0 10px 10px;
+}
+
+.tabs-sportdetails-header > div:nth-child(2) {
+	background-color: white;
+    /* margin: 0 10px; */
+    padding: 15px 15px 20px 15px;
+    border-radius: 20px 20px 0 0;
+}
+
+.tabs-sportdetails-tab-controllers {
+	height: 100%;
+}
+
+.tabs-sportdetails-tab-controllers > a {
+	border-radius: 20px 0 0 20px;
+    height: 100%;
+	line-height: 44px;
+	border: 0 !important;
+	font-family: "Montserrat-Light";
+	font-size: 13px;
+}
+
+.tabs-sportdetails-tab-controllers > a:first-child {
+	border-radius: 60px 0 0 60px !important;
+}
+
+.tabs-sportdetails-tab-controllers > a:nth-child(3) {
+	border-radius: 0 60px 60px 0 !important;
+}
+
+#tabSportDetails1 {
+	padding-top: 0 !important;
+	background-color: #FCFCFC;
+}
+
+#tabSportDetails1 .card {
+	background: #fff;
+    box-shadow: 0 0px 16px #f1f1f1;
+    margin: 10px;
+    position: relative;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+#tabSportDetails2 {
+	padding-top: 0 !important;
+	background-color: #FCFCFC;
+}
+
+#tabSportDetails3 {
+	padding-top: 0 !important;
+	background-color: #FCFCFC;
+}
+
+#divCoordinatorsSport, #spnScheduleSportDetails {
+	margin: 10px;
+	font-family: "Montserrat-Regular";
+	font-size: 16px;
+	color: #919191;
+}
+
+.custom-sportdetails-price-card {
+	margin: 10px;
+    display: flex;
+}
+
+.custom-sportdetails-price-card-header {
+	flex: 1;
+    display: flex;
+    align-items: center;
+	padding-left: 10px;
+	background-color: white;
+	font-family: "Montserrat-Regular";
+	font-size: 18px;
+	color: #919191;
+}
+
+.custom-sportdetails-price-card-content {
+	flex: 1;
+}
+
+.custom-sportdetails-price-card-inner ul::before {
+	height: 0 !important;
+}
+
+.custom-sportdetails-price-card-inner ul::after {
+	height: 0 !important;
+}
+
+.custom-sportdetails-price-card-inner .list-block {
+	margin: 0 !important;
+}
+
+#page-sportdetails #tabSportDetails2 #contentTabSportDetails2 .card-header {
+	padding: 0;
+	background-color: white;
+    display: block;
+    min-height: 0 !important;
+    padding: 10px 10px 10px 20px !important;
+}
+
+#page-sportdetails #tabSportDetails2 #contentTabSportDetails2 .card-header a {
+	width: 100%;
+}
+
+#page-sportdetails #tabSportDetails2 #contentTabSportDetails2 .card-header a .chipHomeContainer {
+	text-align: center;
+}
+
+#page-sportdetails #tabSportDetails2 #contentTabSportDetails2 .card-header a .chipHomeContainer .chipHomeCategory {
+	margin-left: 10px;
+}
+
+/* #page-sportdetails #tabSportDetails2 #contentTabSportDetails2 .card-content .card-content-inner a {
+	font-family: "Montserrat-Regular";
+	color: #585858;
+} */
+
+#page-sportdetails #tabSportDetails2 #contentTabSportDetails2 .card-content .card-content-inner > div:first-child a {
+	font-family: "Montserrat-Regular";
+	color: #919191;
+}
+
+#page-sportdetails #tabSportDetails2 #contentTabSportDetails2 .card-content .card-content-inner > div:nth-child(2) a {
+	font-family: "Montserrat-Regular";
+	color: #585858;
+}
+
+#page-sportdetails #tabSportDetails2 #contentTabSportDetails2 .card-footer a {
+	font-family: "Montserrat-Regular";
+	color: #919191;
+}
+
+.information-description-label {
+    margin: 10px 19px;
+}

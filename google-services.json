@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "341095560807",
+    "firebase_url": "https://lenguaje-sport.firebaseio.com",
+    "project_id": "lenguaje-sport",
+    "storage_bucket": "lenguaje-sport.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:341095560807:android:40f79d9b2d44dc1e6546c2",
+        "android_client_info": {
+          "package_name": "com.lsp.ar.fantasy.femenino"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "341095560807-jfdtkmg6dea09hg0pvrk217e1cnm13t4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lsp.ar.fantasy.femenino",
+            "certificate_hash": "93321c6e1827b66f770fde90eba0cfd5cc93080c"
+          }
+        },
+        {
+          "client_id": "341095560807-e0qrhjf71n24drkd1gok23prv34d9iqv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkBXXUq54uM_LgZMHzAEo2jJzeT9o89P8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "341095560807-e0qrhjf71n24drkd1gok23prv34d9iqv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "341095560807-712mejhac4idc5orcbs426pvr4vi5734.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.lsp.ar.fantasy.femenino"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

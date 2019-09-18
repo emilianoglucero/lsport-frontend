@@ -1,0 +1,101 @@
+#lblWellcomeLogin, #lblTitleSignUp {
+    font-family: "Montserrat-Regular";
+    font-size: 28px;
+    color: #585858;
+}
+
+#containerImgLogin {
+    text-align: center;
+}
+
+.login-form {
+        border-radius: 5px;
+        padding: 20px;
+}
+
+.login-input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #fff;
+    border-radius: 50px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 15px;
+    box-shadow: 0px 0px 20px #ececec;
+    color: #ADADAD;
+    font-family: "Montserrat-Light";
+    font-size: 14px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #ADADAD;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #ADADAD;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: #ADADAD;
+  }
+
+.login-input-select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #fff;
+    border-radius: 50px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 15px;
+    padding-left: 32%;
+    background-color: white;
+    box-shadow: 0px 0px 20px #ececec;
+    color: #ADADAD;
+    font-family: "Montserrat-Light";
+    font-size: 14px;
+}
+
+#lblSendButtonLogin {
+    font-family: "Montserrat-Semibold";
+    font-size: 16px;
+}
+
+#lblInfoLogin {
+    color: #848585;
+    font-family: "Montserrat-Regular";
+    font-size: 14px;
+}
+
+.login-input-label {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 15px;
+}
+
+.login-button {
+    padding: 0 15px;
+    text-align: center;
+    color: #007aff;
+    display: block;
+    line-height: 43px;
+}
+
+#lblSendButtonLoginSign, #lblSendButtonResetPassSign {
+    font-family: "Montserrat-Bold";
+    font-size: 16px;
+}
+
+#lblInfoSignUp {
+    color: #848585;
+    font-family: "Montserrat-Regular";
+    font-size: 14px;
+}
