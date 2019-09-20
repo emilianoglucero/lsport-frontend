@@ -119,6 +119,8 @@ $(document).ready(function () {
 
     $('.lblNotLogged').text(lblNotLogged);
 
+    $('#lblMnuVersion').text(lblMnuVersion);
+
     console.log('home');
 });
 

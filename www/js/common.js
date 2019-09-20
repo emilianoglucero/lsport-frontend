@@ -832,7 +832,7 @@ function hideLoadSpinnerWS() {
 }
 
 function openBrowser(url) {
-  window.open(url, "_system");
+  cordova.InAppBrowser.open(url, "_blank", 'location=no');
 }
 
 function openYoutube(url) {
