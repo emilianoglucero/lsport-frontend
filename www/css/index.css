@@ -133,6 +133,27 @@ i.icon.icon-user {
     border-radius: 0px;
 }
 
+i.icon.icon-version {
+    width: 85px;
+    height: 35px;
+    background-image: url(../img/template/icon-version.png);
+    border-radius: 0px;
+}
+
+#lblVersionImg {
+    text-align: center;
+}
+#liVersion {
+    margin-top: 100px;
+    margin-left: 30%;
+    font-size: 10px;
+    width: 40%;
+}
+
+#lblMnuVersion {
+    text-align: center;
+}
+
 i.icon.icon-updatefavourites {
     width: 20px;
     height: 20px;

@@ -232,6 +232,10 @@ jQuery(document).ready(function() {
   document.getElementById("page-unsupported").innerHTML = xhReq.responseText;
 
   //loadPageInit();
+
+  //Inappbrowser
+  //window.open = cordova.InAppBrowser.open;
+
 });
 
 myApp.init();
@@ -832,6 +836,10 @@ function hideLoadSpinnerWS() {
 }
 
 function openBrowser(url) {
+  cordova.InAppBrowser.open(url, "_blank", 'location=no');
+}
+
+function openForm(url) {
   window.open(url, "_system");
 }
 
@@ -867,14 +875,14 @@ function getPathWS() {
   //return wsUrl;
   //return 'http://testing.lenguajesport.com/webservice/';
   //return 'http://clubes.lenguajesport.com/webservice/';
-  return "https://enac.lenguajesport.com/2/api/";
+  return "https://prensa.lenguajefutbol.com/1/api/";
 }
 
 function getPathMobile() {
   //return mobileUrl;
   //return 'http://testing.lenguajesport.com/movil/';
   //return 'http://clubes.lenguajesport.com/movil/';
-  return "https://enac.lenguajesport.com/2/api/";
+  return "https://prensa.lenguajefutbol.com/1/api/";
 }
 
 function showMessage(message) {
