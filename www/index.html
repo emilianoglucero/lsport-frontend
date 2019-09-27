@@ -79,6 +79,30 @@
 		<div class="list-block">
 			<div class="list-group">
 				<ul id="ulListMenu">
+					<li id="liCustomItemMenu">
+						<a onclick="openBrowser('https://docs.google.com/forms/d/1K-l1dYssMfkx-AW3MIGxJbU0e2IsbCx-8xi-wQZK3DE/edit')" class="item-link item-content close-panel">
+							<div class="item-media"><i class="icon icon-fantasy"></i></div>
+							<div class="item-inner">
+								<div id="lblMnuCustom" class="item-title"></div>
+							</div>
+						</a>
+					</li>
+					<li id="liScoreItemMenu">
+						<a onclick="loadShootersTable('52')" class="item-link item-content  close-panel">
+							<div class="item-media"><i class="icon icon-score"></i></div>
+							<div class="item-inner">
+								<div id="lblMnuScore" class="item-title"></div>
+							</div>
+						</a>
+					</li> 
+					<li id="liFixtureItemMenu">
+						<a onclick="loadFixtures('52')" class="item-link item-content  close-panel">
+							<div class="item-media"><i class="icon icon-fixture-home"></i></div>
+							<div class="item-inner">
+								<div id="lblMnuFixture" class="item-title"></div>
+							</div>
+						</a>
+					</li>
 					<li id="liHomeItemMenu" class="activeStateMenu">
 						<a href="#home" class="item-link item-content  close-panel">
 							<div class="item-media"><i class="icon icon-home"></i></div>
@@ -95,14 +119,14 @@
 							</div>
 						</a>
 					</li>
-					<li id="liSportsItemMenu">
+					<!--<li id="liSportsItemMenu">
 						<a href="#sports" class="item-link item-content close-panel">
 							<div class="item-media"><i class="icon icon-sports"></i></div>
 							<div class="item-inner">
 								<div id="lblMnuSports" class="item-title"></div>
 							</div>
 						</a>
-					</li>
+					</li> 
 					<li id="liActivitiesItemMenu">
 						<a href="#activities" class="item-link item-content close-panel">
 							<div class="item-media"><i class="icon icon-activities"></i></div>
@@ -110,7 +134,7 @@
 								<div id="lblMnuActivities" class="item-title"></div>
 							</div>
 						</a>
-					</li>
+					</li> -->
 					<!--<li id="liEventsItemMenu" >
 			      <a href="#events" class="item-link item-content close-panel">
 			        <div class="item-media"><i class="icon icon-events"></i></div>
@@ -127,14 +151,14 @@
 							</div>
 						</a>
 					</li>
-					<li id="liSettingsItemMenu">
+					<!-- <li id="liSettingsItemMenu">
 						<a href="#settings" class="item-link item-content close-panel">
 							<div class="item-media"><i class="icon icon-settings"></i></div>
 							<div class="item-inner">
 								<div id="lblMnuSettings" class="item-title"></div>
 							</div>
 						</a>
-					</li>
+					</li> -->
 					<li id="liUserItemMenu">
 						<a href="#user" class="item-link item-content close-panel">
 							<div class="item-media"><i class="icon icon-user"></i></div>
@@ -146,14 +170,14 @@
 				</ul>
 			</div>
 		</div>
-	<!--<div id="liUserItemMenu" style="margin-top: 60px;margin-left: 15px;font-size: 10px;">
-		<div class="item-media"><i class="icon icon-user"></i></div>
+	<div id="liVersion">
+		<div class="item-media" id="lblVersionImg"><i class="icon icon-version"></i></div>
 		<a href="#user" class="item-link item-content close-panel">
 		<div class="item-inner">
-			<div id="lblMnuUser" class="item-title">1.0.4</div>
+			<div id="lblMnuVersion" class="item-title"></div>
 		</div>
 		</a>
-    </div> -->
+    </div>
 	</div>
 	<!-- Views -->
 	<div class="views">
@@ -291,8 +315,8 @@
 					</div> -->
 					<div class="right sliding">
 						<!-- Right link contains only icon - additional "icon-only" class
-                                <a href="#" class="link icon-only"><i id="icon-refresh-matchdetails" class="icon icon-refresh-matchdetails"></i></a>-->
-						<a class="buttonGoToFixture" href="#" class="link"><span class="spnHeader lblHeaderGoToFavorites">Fixture</span></a>
+                                <a href="#" class="link icon-only"><i id="icon-refresh-matchdetails" class="icon icon-refresh-matchdetails"></i></a>
+						<a class="buttonGoToFixture" href="#" class="link"><span class="spnHeader lblHeaderGoToFavorites">Fixture</span></a>-->
 					</div>
 				</div>
 
@@ -328,8 +352,8 @@
 					</div>
 					<div class="right sliding">
 						<!-- Right link contains only icon - additional "icon-only" class
-							<a href="#" class="link icon-only"><i id="icon-refresh-matchdetails" class="icon icon-refresh-matchdetails"></i></a>-->
-						<a class="buttonGoToFixture" href="#" class="link"><span class="spnHeader lblHeaderGoToFavorites">Fixture</span></a>
+							<a href="#" class="link icon-only"><i id="icon-refresh-matchdetails" class="icon icon-refresh-matchdetails"></i></a>
+						<a class="buttonGoToFixture" href="#" class="link"><span class="spnHeader lblHeaderGoToFavorites">Fixture</span></a>-->
 					</div>
 				</div>
 

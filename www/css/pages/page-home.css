@@ -635,6 +635,12 @@
     min-width: 40%;
 }
 
+/* tournament styles for fantasy prensa*/
+.tournament-father-fantasy {
+    text-align: center;
+    min-width: 50%;
+}
+
 .tournament-header-fecha {
     text-align: left;
     font-size: 12px;

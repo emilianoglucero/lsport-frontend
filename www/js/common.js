@@ -832,7 +832,35 @@ function hideLoadSpinnerWS() {
 }
 
 function openBrowser(url) {
-  window.open(url, "_system");
+  //cordova.InAppBrowser.open(url, "_self", 'location=no');
+  cordova.ThemeableBrowser.open(url, '_blank', {
+
+    toolbar: {
+        height: 55,
+        color: '#673AB7'
+    },
+    title: {
+        color: '#003264ff',
+        showPageTitle: false
+    },
+    backButton: {
+        wwwImage: 'img/template/icon-back-browser1.png',
+        //imagePressed: 'back_pressed',
+        align: 'left',
+        //event: 'backPressed'
+    },
+    backButtonCanClose: true
+  }).addEventListener('backPressed', function(e) {
+    //alert('back pressed');
+  }).addEventListener('helloPressed', function(e) {
+    //alert('hello pressed');
+  }).addEventListener('sharePressed', function(e) {
+    //alert(e.url);
+  }).addEventListener(cordova.ThemeableBrowser.EVT_ERR, function(e) {
+    console.error(e.message);
+  }).addEventListener(cordova.ThemeableBrowser.EVT_WRN, function(e) {
+    console.log(e.message);
+  });
 }
 
 function openYoutube(url) {
@@ -867,14 +895,14 @@ function getPathWS() {
   //return wsUrl;
   //return 'http://testing.lenguajesport.com/webservice/';
   //return 'http://clubes.lenguajesport.com/webservice/';
-  return "https://prensa.lenguajefutbol.com/1/api/";
+  return "https://prensa.lenguajesport.com/1/api/";
 }
 
 function getPathMobile() {
   //return mobileUrl;
   //return 'http://testing.lenguajesport.com/movil/';
   //return 'http://clubes.lenguajesport.com/movil/';
-  return "https://prensa.lenguajefutbol.com/1/api/";
+  return "https://prensa.lenguajesport.com/1/api/";
 }
 
 function showMessage(message) {

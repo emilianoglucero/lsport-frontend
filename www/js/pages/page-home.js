@@ -100,12 +100,15 @@ $(document).ready(function () {
     $('#lblMnuTitle').text(lblMnuTitle);
     $('#lblMnuHome').text(lblMnuHome);
     $('#lblMnuNews').text(lblMnuNews);
-    $('#lblMnuSports').text(lblMnuSports);
-    $('#lblMnuActivities').text(lblMnuActivities);
+    //$('#lblMnuSports').text(lblMnuSports);
+    //$('#lblMnuActivities').text(lblMnuActivities);
     $('#lblMnuEvents').text(lblMnuEvents);
     $('#lblMnuAbout').text(lblMnuAbout);
-    $('#lblMnuSettings').text(lblMnuSettings);
+    //$('#lblMnuSettings').text(lblMnuSettings);
     $('#lblMnuUser').text(lblMnuUser);
+    $('#lblMnuCustom').text(lblMnuCustom);
+    $('#lblMnuScore').text(lblMnuScore);
+    $('#lblMnuFixture').text(lblMnuFixture);
 
     $('.divNoConnectionHeader').text(divNoConnectionHeader);
     $('.divNoConnectionText').text(divNoConnectionText);
@@ -119,6 +122,8 @@ $(document).ready(function () {
 
     $('.lblNotLogged').text(lblNotLogged);
 
+    $('#lblMnuVersion').text(lblMnuVersion);
+    
     console.log('home');
 });
 

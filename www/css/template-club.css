@@ -5,7 +5,7 @@
 .navbar::after,
 .navbar 
 {
-    background-color: #2E539F;
+    background-color: #7b2e88;
 }
 
 .theme-lenguajesport a {
@@ -15,17 +15,17 @@
 .swiper-pagination.color-blue .swiper-pagination-bullet-active, 
 .theme-lenguajesport .swiper-pagination .swiper-pagination-bullet-active 
 {
-    background-color: #2E539F;
+    background-color: #7b2e88;
 }
 
 .photo-browser .navbar 
 {
-    background: #2E539F none repeat scroll 0 0;
+    background: #7b2e88 none repeat scroll 0 0;
 }
 
 .modal-title
 {
-    color: #2E539F;
+    color: #7b2e88;
     font-family: "Montserrat-Regular";
 }
 
@@ -37,13 +37,13 @@
 
 .modal-button
 {
-    color: #2E539F;
+    color: #7b2e88;
     font-family: "Montserrat-Regular";
 }
 
 .popover-inner ul li a .row
 {
-	color: #2E539F;
+	color: #7b2e88;
 }
 
 
@@ -101,7 +101,7 @@
 
 #page-home #last-news-list-block ul li .item-title
 {
-	color: #2E539F;
+	color: #7b2e88;
 }
 
 #page-home #last-news-list-block ul li .item-title-row
@@ -111,7 +111,7 @@
 
 #page-home #last-news-list-block .list-block .item-inner::after 
 {
-    background-color: #2E539F;
+    background-color: #7b2e88;
 }
 
 #page-home .row-home-page .col-50 
@@ -143,7 +143,7 @@
 #page-news ul li a .item-title.item-title-new
 {
 	font-family: "Montserrat-Light";
-    color: #2E539F;
+    color: #7b2e88;
     font-size: 14px;
 }
 
@@ -151,7 +151,7 @@
 .card-header-home{
 	display: block !important;
 	text-align: center;
-	color: #2E539F;
+	color: #7b2e88;
 	font-size: 16px;
 
     min-height: 44px;
@@ -170,7 +170,7 @@
 
 #page-newdetails #titleNewDetails, #page-newdetails #divContentPhotoGalleryNewDetails > .lblPhotoGallery
 {
-    color: #2E539F;
+    color: #7b2e88;
     font-family: "Montserrat-Semibold";
 }
 
@@ -192,19 +192,19 @@
 
 #subnavbarSportDetails.subnavbar
 {
-    background: #2E539F none repeat scroll 0 0;
+    background: #7b2e88 none repeat scroll 0 0;
 }
 
 #subnavbarSportDetails .buttons-row a.button.active:not(.button-fill)
 {
     color: white;
-    background-color: #2E539F;
+    background-color: #7b2e88;
 }
 
 #subnavbarHomeDetails.subnavbar
 {
     height: 106px;
-    background: #2E539F none repeat scroll 0 0;
+    background: #7b2e88 none repeat scroll 0 0;
     padding: 0px !important;
 }
 
@@ -221,11 +221,11 @@
     line-height: 44px !important;
     height: 100%;
     color: white;
-    background-color:#2E539F;
+    background-color:#7b2e88;
 }
 #subnavbarMatchDetails.subnavbar
 {
-    background: #2E539F none repeat scroll 0 0;
+    background: #7b2e88 none repeat scroll 0 0;
     height: 106px;
     padding: 0 !important;
 }
@@ -238,13 +238,13 @@
 #subnavbarMatchDetails .buttons-row a.button.active:not(.button-fill)
 {
     color: white;
-    background-color: #2E539F;
+    background-color: #7b2e88;
 }
 
 #page-sportdetails #tabs-sportdetails ul li a div.item-subtitle,
 #page-sportdetails #tabs-sportdetails ul li a div.item-title
 {
-	color: #2E539F;
+	color: #7b2e88;
 }
 
 #page-sportdetails .card .row-tournament-matches > div:nth-child(2), #page-sportdetails .card .row-tournament-matches > div:nth-child(4) {
@@ -306,7 +306,7 @@
 
 #page-activities #activities-list .card-activity-content .card-header.card-header-title
 {
-    color: #2E539F;
+    color: #7b2e88;
     font-family: "Montserrat-Light";
     font-size: 16px;
 }
@@ -332,7 +332,7 @@
 
 #subnavbarActivityDetails.subnavbar
 {
-    background: #2E539F none repeat scroll 0 0;
+    background: #7b2e88 none repeat scroll 0 0;
     height: 106px;
 }
 
@@ -341,7 +341,7 @@
     line-height: 44px !important;
     height: 100%;
     color: white;
-    background-color: #2E539F;
+    background-color: #7b2e88;
 }
 
 #subnavbarActivityDetails .buttons-row .button, #subnavbarMatchDetails2 .buttons-row .button {
@@ -361,7 +361,7 @@
 #page-activitydetails .tabs ul li a div.item-subtitle,
 #page-activitydetails .tabs ul li a div.item-title
 {
-	color: #2E539F;
+	color: #7b2e88;
 }
 
 .color-blue i.icon, 
@@ -369,7 +369,7 @@
 i.icon.color-blue, 
 i.icon.theme-lenguajesport 
 {
-    color: #2E539F;
+    color: #7b2e88;
 }
 
 .navbar-inner-activitydetails .buttons-row .button
@@ -417,12 +417,12 @@ i.icon.theme-lenguajesport
 
 #page-events a.aEventDetails .card-footer.card-footer-event
 {
-	color: #2E539F;
+	color: #7b2e88;
 }
 
 #page-events a.aEventDetails .card-footer::before
 {
-	background-color: #2E539F;
+	background-color: #7b2e88;
 }
 
 #page-events a.aEventDetails .table-events-page
@@ -454,7 +454,7 @@ i.icon.theme-lenguajesport
 /*#page-eventdetails div.content-block-title.content-block-title-custom.lblPhotoGallery,
 #page-eventdetails div.content-block-title.content-block-title-custom.lblVideoGallery*/
 {
-    color: #2E539F;
+    color: #7b2e88;
 }
 
 #page-eventdetails .table-eventdetails-page tr td
@@ -470,7 +470,7 @@ i.icon.theme-lenguajesport
 
 #page-about .list-block ul
 {
-	background-color: #2E539F;
+	background-color: #7b2e88;
 }
 
 #page-about .list-block ul li
@@ -480,7 +480,7 @@ i.icon.theme-lenguajesport
 
 #page-about .list-block ul li a:active
 {
-	background-color: #2E539F;
+	background-color: #7b2e88;
 }
 
 #page-about .list-block .item-inner::after 
@@ -495,7 +495,7 @@ i.icon.theme-lenguajesport
 #page-installations #installations-list .card.card-installations .card-content .item-title
 {
     font-family: "Montserrat-Light";
-    color: #2E539F;
+    color: #7b2e88;
     font-size: 16px;
 }
 
@@ -506,7 +506,7 @@ i.icon.theme-lenguajesport
 #page-installationdetails .content-block-title.content-block-title-custom.lblPhotoGallery,
 #page-installationdetails .content-block-title.content-block-title-custom.lblVideoGallery
 {
-    color: #2E539F;
+    color: #7b2e88;
     font-family: "Montserrat-Semibold";
     font-size: 14px;
 }
@@ -519,7 +519,7 @@ i.icon.theme-lenguajesport
 #page-milestones #milestones-list .card.card-milestones ul li a .item-title
 {
 	font-family: "Montserrat-Light";
-    color: #2E539F;
+    color: #7b2e88;
     font-size: 16px;
 }
 
@@ -530,7 +530,7 @@ i.icon.theme-lenguajesport
 #page-milestonedetails .content-block-title.content-block-title-custom.lblPhotoGallery,
 #page-milestonedetails .content-block-title.content-block-title-custom.lblVideoGallery
 {
-	color: #2E539F;
+	color: #7b2e88;
 }
 
 /* *********************************************************************** */
@@ -540,7 +540,7 @@ i.icon.theme-lenguajesport
 #page-achievements #achievements-list .card.card-achievements ul li a .item-title
 {
 	font-family: "Montserrat-Light";
-    color: #2E539F;
+    color: #7b2e88;
     font-size: 16px;
 }
 
@@ -551,7 +551,7 @@ i.icon.theme-lenguajesport
 #page-achievementdetails .content-block-title.content-block-title-custom.lblPhotoGallery,
 #page-achievementdetails .content-block-title.content-block-title-custom.lblVideoGallery
 {
-	color: #2E539F;
+	color: #7b2e88;
     font-family: "Montserrat-Semibold";
     font-size: 14px;
 }
@@ -562,7 +562,7 @@ i.icon.theme-lenguajesport
 
 #page-managers #managers-list .card-managers-content a
 {
-    color: #2E539F;
+    color: #7b2e88;
     font-family: "Montserrat-Regular";
     font-size: 14px;
 }
@@ -578,7 +578,7 @@ i.icon.theme-lenguajesport
 
 #page-contact #list-block-contact ul li .item-title.label
 {
-	color: #2E539F;
+	color: #7b2e88;
 }
 
 /* *********************************************************************** */
@@ -586,7 +586,7 @@ i.icon.theme-lenguajesport
 /* *********************************************************************** */
 #page-sports  #sports-list .list-block .item-inner::after 
 {
-    background-color: #2E539F;
+    background-color: #7b2e88;
 }
 
 #page-sports #sports-list .list-block ul li .item-content .item-inner .item-title {
@@ -611,17 +611,17 @@ MODIFICAR CON LOS COLORES CORRESPONDIENTES
 #row-lastmatch-tournament .col-lastmatch-tournament .col-lastmatch-tournament-result{
     /* border: 3px solid rgb(0, 0, 0); */
     color: #FFFFFF;
-    background-color: #2E539F;
+    background-color: #7b2e88;
     border-radius: 100px;
 }
 
 .table-tournaments .tr-header{
-    background-color: #2E539F;
+    background-color: #7b2e88;
     color: #FFFFFF;
 }
 
 .tr-header-home{
-    background-color: #2E539F;
+    background-color: #7b2e88;
     color: #FFFFFF;
     font-size: 14px;
 }
@@ -632,13 +632,13 @@ MODIFICAR CON LOS COLORES CORRESPONDIENTES
 /* ************************* Page: #page-dateslist *********************** */
 /* *********************************************************************** */
 #page-dateslist .button{
-    border: 1px solid #2E539F;
-    color: #2E539F;
+    border: 1px solid #7b2e88;
+    color: #7b2e88;
     background-color: #FFFFFF;
 }
 
 #page-dateslist .table-datelist tr {
-    border-bottom: 1px solid #2E539F;
+    border-bottom: 1px solid #7b2e88;
 }
 
 .interzonal-datelist {
@@ -655,7 +655,7 @@ MODIFICAR CON LOS COLORES CORRESPONDIENTES
 /* *********************************************************************** */
 
 #page-positionstable .table-positionstable tr {
-    border-bottom: 1px solid #2E539F;
+    border-bottom: 1px solid #7b2e88;
 }
 
 /* *********************************************************************** */
@@ -663,7 +663,7 @@ MODIFICAR CON LOS COLORES CORRESPONDIENTES
 /* *********************************************************************** */
 
 #page-shooterstable .table-shooterstable tr {
-    border-bottom: 1px solid #2E539F;
+    border-bottom: 1px solid #7b2e88;
 }
 
 /*MODIFICAR HASTA ACA ARRIBA*/
@@ -677,12 +677,12 @@ MODIFICAR CON LOS COLORES CORRESPONDIENTES
 
 #page-settings .list-block .item-inner::after 
 {
-    background-color: #2E539F;
+    background-color: #7b2e88;
 }
 
 #page-settings .list-block ul::before 
 {
-    background-color: #2E539F;
+    background-color: #7b2e88;
 }
 
 
@@ -696,12 +696,12 @@ label.label-checkbox input[type="checkbox"]:checked + .item-media i.icon-form-ch
 
 #page-settingsfavourites #title-settings-favourites
 {
-	color: #2E539F;
+	color: #7b2e88;
 }
 
 #page-settingsfavourites  #settingsfavourites-list .list-block .item-inner::after 
 {
-    background-color: #2E539F;
+    background-color: #7b2e88;
 }
 
 #page-settingsfavourites  #settingsfavourites-list .list-block ul::before 
@@ -715,7 +715,7 @@ label.label-checkbox input[type="checkbox"]:checked + .item-media i.icon-form-ch
 }
 
 .label-switch input[type="checkbox"]:checked + .checkbox {
-    background: #2E539F;
+    background: #7b2e88;
 }
 
 /* *********************************************************************** */
@@ -724,12 +724,12 @@ label.label-checkbox input[type="checkbox"]:checked + .item-media i.icon-form-ch
 
 #page-settingsnotifications #title-settings-notifications
 {
-	color: #2E539F;
+	color: #7b2e88;
 }
 
 #page-settingsnotifications  #settingsnotifications-list .list-block .item-inner::after 
 {
-    background-color: #2E539F;
+    background-color: #7b2e88;
 }
 
 #page-settingsnotifications  #settingsnotifications-list .list-block ul::before 
@@ -747,22 +747,22 @@ label.label-checkbox input[type="checkbox"]:checked + .item-media i.icon-form-ch
 /* *********************************************************************** */
 
 #lblLogoutButton {
-    color: #2E539F;
+    color: #7b2e88;
     font-family: "Montserrat-Regular";
     font-size: 16px;
 }
 
 #lblSendButtonLogin {
-    color: #2E539F;
+    color: #7b2e88;
 }
 
 #resend-smscode {
-    color: #2E539F;
+    color: #7b2e88;
     font-size: 12px;
 }
 
 #lblSendSmsCodeButton{
-    color: #2E539F;
+    color: #7b2e88;
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -773,7 +773,7 @@ label.label-checkbox input[type="checkbox"]:checked + .item-media i.icon-form-ch
 }
 
 #lblSendButtonProfile {
-    color: #2E539F;
+    color: #7b2e88;
 }
 
 #subnavbarHomeDetails1 {
@@ -845,7 +845,7 @@ label.label-checkbox input[type="checkbox"]:checked + .item-media i.icon-form-ch
 }
 
 #tabSportDetails3 .card .item-title {
-    color: #2E539F !important;
+    color: #7b2e88 !important;
 }
 
 #tabSportDetails3 .item-inner::after {
@@ -929,7 +929,7 @@ label.label-checkbox input[type="checkbox"]:checked + .item-media i.icon-form-ch
 }
 
 .lblShareNewWhatsapp, .lblShareNewFacebook, .lblShareNewTwitter {
-    color: #2E539F;
+    color: #7b2e88;
 }
 
 #page-news #news-content-block .item-shortContent {
@@ -951,7 +951,7 @@ label.label-checkbox input[type="checkbox"]:checked + .item-media i.icon-form-ch
 }
 
 .lblShareEventWhatsapp, .lblShareEventFacebook, .lblShareEventTwitter {
-    color: #2E539F;
+    color: #7b2e88;
 }
 
 .timeline {
@@ -979,42 +979,42 @@ label.label-checkbox input[type="checkbox"]:checked + .item-media i.icon-form-ch
 }
 
 .custom-navbar {
-    background-color: #2E539F;
+    background-color: #7b2e88;
 }
 
 #lblSendButtonLoginSign, #lblSendButtonResetPassSign {
-    color: #2E539F;
+    color: #7b2e88;
 }
 
 .match-scorer-lastmatch {
-    background-color: #2E539F;
+    background-color: #7b2e88;
 }
 
 .tabs-sportdetails-header {
-    background-color: #2E539F;
+    background-color: #7b2e88;
 }
 
 .custom-sportdetails-price-card-header {
-    border-left: 8px solid #2E539F;
+    border-left: 8px solid #7b2e88;
 }
 
 #page-fixtures #fixtures-list #fixture-content .card-content #row-lastmatch-tournament .col-lastmatch-tournament-result {
-    background-color: #2E539F;
+    background-color: #7b2e88;
 }
 
 .td-span-team-pos {
-    color: #2E539F;
+    color: #7b2e88;
 }
 
 #row-lastmatch-tournament-calendar .col-lastmatch-tournament .col-lastmatch-tournament-result {
     border: 3px solid rgb(0, 0, 0);
     color: #FFFFFF;
-    background-color: #2E539F;
+    background-color: #7b2e88;
     margin-left: 9px;
 }
 
 /* register button for not registered users */
 #lblRegisterButtonHome {
-    color: #2E539F;
+    color: #7b2e88;
 }
 

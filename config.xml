@@ -2,7 +2,7 @@
 <widget android-versionCode="426" id="com.lsp.ar.fantasy.femenino" ios-CFBundleVersion="4.2" version="4.2.6" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Fantasy Femenino</name>
     <description>
-        Aplicación oficial de la Asociación Rosarina de Tenis
+        Aplicación oficial de Fantasy Femenino
     </description>
     <author email="info@lenguajesport.com" href="http://www.lenguajesport.com">
         Lenguaje Sport
@@ -27,6 +27,7 @@
     <preference name="android-minSdkVersion" value="19" />
     <allow-navigation href="*youtube*" />
     <allow-navigation href="*ytimg*" />
+    <allow-navigation href="*docs.google.com/*" />
     <platform name="android">
         <splash density="port-hdpi" src="res/screen/android/splash-port-hdpi.png" />
         <splash density="port-ldpi" src="res/screen/android/splash-port-ldpi.png" />
@@ -107,5 +108,4 @@
         <variable name="ANDROID_PATHPREFIX" value="/" />
     </plugin>
     <engine name="browser" spec="^5.0.4" />
-    <engine name="ios" spec="^5.0.1" />
 </widget>

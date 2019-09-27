@@ -1312,6 +1312,7 @@ function builderTournamentsTournamentsSportDetails(tournaments) {
 				//$.each(item.tablasPosicion, function (i, position) {
 					//positionTablesList.push(position);
 					//console.log(positionTablesList);
+					//position table item
 					strBuilderTournaments.push('<li>');
 					strBuilderTournaments.push('<a href="#" onclick="loadPositionsTableDetails(' + item.id + ', ' + true + ')" class="item-link item-content">');
 					strBuilderTournaments.push('<div class="item-media"><i class="icon icon-positionstable"></i></div>');
@@ -1322,6 +1323,7 @@ function builderTournamentsTournamentsSportDetails(tournaments) {
 					strBuilderTournaments.push('</li>');
 			//	});
 			//}*/
+			// fixture item
 			strBuilderTournaments.push('<li>');
 			strBuilderTournaments.push('<a href="#" onclick="loadFixtures(' + item.id + ')" class="item-link item-content">');
 			strBuilderTournaments.push('<div class="item-media"><i class="icon icon-fixture"></i></div>');
@@ -1330,16 +1332,18 @@ function builderTournamentsTournamentsSportDetails(tournaments) {
 			strBuilderTournaments.push('</div>');
 			strBuilderTournaments.push('</a>');
 			strBuilderTournaments.push('</li>');
-			/*if (item.hasScorersTables == true) {
-				strBuilderTournaments.push('<li>');
-				strBuilderTournaments.push('<a href="#" onclick="loadShootersTable(' + item.id + ',\'' + item.nombre + '\')" class="item-link item-content">');
-				strBuilderTournaments.push('<div class="item-media"><i class="icon icon-shooters"></i></div>');
-				strBuilderTournaments.push('<div class="item-inner">');
-				strBuilderTournaments.push('<div class="item-title">' + lblTableShooters + '</div>');
-				strBuilderTournaments.push('</div>');
-				strBuilderTournaments.push('</a>');
-				strBuilderTournaments.push('</li>');
-			}*/
+
+			//scores trable item
+			strBuilderTournaments.push('<li>');
+			strBuilderTournaments.push('<a href="#" onclick="loadShootersTable(' + item.id +')" class="item-link item-content">');
+			strBuilderTournaments.push('<div class="item-media"><i class="icon icon-shooters"></i></div>');
+			strBuilderTournaments.push('<div class="item-inner">');
+			strBuilderTournaments.push('<div class="item-title">' + lblTableShooters + '</div>');
+			strBuilderTournaments.push('</div>');
+			strBuilderTournaments.push('</a>');
+			strBuilderTournaments.push('</li>');
+
+
 			strBuilderTournaments.push('</ul>');
 			strBuilderTournaments.push('</div>');
 			strBuilderTournaments.push('</div>');
