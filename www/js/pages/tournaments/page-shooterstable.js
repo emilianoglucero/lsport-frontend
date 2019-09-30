@@ -95,7 +95,7 @@ console.log(item);
 
             if (item.columna == 'ju') {
                 if (item.columna != "" && item.columna != undefined) {
-                    strBuilderListCards.push('<div class="col tournament-father-fantasy">Instagram</div>');
+                    strBuilderListCards.push('<div class="col tournament-father-fantasy">Jugador/a</div>');
                 }
 
             } else if (item.columna == 'an') {
@@ -119,7 +119,7 @@ console.log(item);
             //console.log(verMas);
             //if (equipoTabla < 5){
                 if (item.ju.nombreCompleto !== "" && item.ju.nombreCompleto !== undefined) {
-                    strBuilderListCards.push('<div class="col tournament-child-team"><span class="td-span-team-pos">' + pos + '</span><span class="td-span-team-name">@' + item.ju.nombre + '</span></div>');
+                    strBuilderListCards.push('<div class="col tournament-child-team"><span class="td-span-team-pos">' + pos + '</span><span class="td-span-team-name">' + item.ju.nombre + '</span></div>');
                 }
                 if (item.an !== "" && item.an !== undefined) {
                     strBuilderListCards.push('<div class="col tournament-child-numbers">' + item.an + '</div>');

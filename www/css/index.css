@@ -207,6 +207,13 @@ i.icon.icon-positionstable {
     border-radius: 0px;
 }
 
+i.icon.icon-positionstable-home {
+    width: 35px;
+    height: 35px;
+    background-image: url("../img/template/icon-positionstable-home.png");
+    border-radius: 0px;
+}
+
 i.icon.icon-fixture {
     width: 35px;
     height: 35px;

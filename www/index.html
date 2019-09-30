@@ -80,7 +80,7 @@
 			<div class="list-group">
 				<ul id="ulListMenu">
 					<li id="liCustomItemMenu">
-						<a onclick="openBrowser('https://docs.google.com/forms/d/1K-l1dYssMfkx-AW3MIGxJbU0e2IsbCx-8xi-wQZK3DE/edit')" class="item-link item-content close-panel">
+						<a onclick="openBrowser(urlGoogleForm)" class="item-link item-content close-panel">
 							<div class="item-media"><i class="icon icon-fantasy"></i></div>
 							<div class="item-inner">
 								<div id="lblMnuCustom" class="item-title"></div>
@@ -94,12 +94,28 @@
 								<div id="lblMnuScore" class="item-title"></div>
 							</div>
 						</a>
+					</li>
+					<li id="liScorePlayersItemMenu">
+						<a onclick="loadShootersTable('54')" class="item-link item-content  close-panel">
+							<div class="item-media"><i class="icon icon-score"></i></div>
+							<div class="item-inner">
+								<div id="lblMnuScorePlayers" class="item-title">Puntaje de Equipos</div>
+							</div>
+						</a>
 					</li> 
 					<li id="liFixtureItemMenu">
 						<a onclick="loadFixtures('52')" class="item-link item-content  close-panel">
 							<div class="item-media"><i class="icon icon-fixture-home"></i></div>
 							<div class="item-inner">
 								<div id="lblMnuFixture" class="item-title"></div>
+							</div>
+						</a>
+					</li>
+					<li id="liPositionTableItemMenu">
+						<a onclick="loadPositionsTableDetails('52', 'false')" class="item-link item-content  close-panel">
+							<div class="item-media"><i class="icon icon-positionstable-home"></i></div>
+							<div class="item-inner">
+								<div id="liPositionTableItemMenu" class="item-title">Tabla de Posiciones</div>
 							</div>
 						</a>
 					</li>
@@ -326,8 +342,8 @@
 						<a href="#" class="back link"> <i class="icon icon-back"></i></a>
 					</div>
 					<div class="center sliding">
-						<i class="icon icon-sportDetails"></i>
-						<span id="lblHeaderShootersTables" class="spnHeader lblHeaderTournaments"></span>
+						<!--<i class="icon icon-sportDetails"></i>
+						<span id="lblHeaderShootersTables" class="spnHeader lblHeaderTournaments"></span>-->
 					</div>
 				</div>
 
