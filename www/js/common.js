@@ -102,6 +102,11 @@ jQuery(document).ready(function() {
   xhReq.send(null);
   document.getElementById("page-newdetails").innerHTML = xhReq.responseText;
 
+  // WEBAPP EXAMPLE
+  xhReq.open("GET", "pages/page-webapp.html", false);
+  xhReq.send(null);
+  document.getElementById("page-webapp").innerHTML = xhReq.responseText;
+
   // DEPORTES
   xhReq.open("GET", "pages/page-sports.html", false);
   xhReq.send(null);
