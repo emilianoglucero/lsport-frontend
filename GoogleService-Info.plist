@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>341095560807-712mejhac4idc5orcbs426pvr4vi5734.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.341095560807-712mejhac4idc5orcbs426pvr4vi5734</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>341095560807-kcj5fgijvp1u5vrufm7p75i1g7760gp3.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBAM58Rgpe1Cfm8x23gz1QiYS_zkJP4Nko</string>
+	<key>GCM_SENDER_ID</key>
+	<string>341095560807</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.lsp.ar.fantasy.femenino</string>
+	<key>PROJECT_ID</key>
+	<string>lenguaje-sport</string>
+	<key>STORAGE_BUCKET</key>
+	<string>lenguaje-sport.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:341095560807:ios:f1c035a14ca7d7fb6546c2</string>
+	<key>DATABASE_URL</key>
+	<string>https://lenguaje-sport.firebaseio.com</string>
+</dict>
+</plist>
