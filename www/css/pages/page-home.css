@@ -585,6 +585,12 @@
     width: 35px;
 }
 
+.card-content .img-shield-tournament {
+    height: 25px;
+    width: 25px;
+    margin-left: 10px;
+}
+
 /*suceso tabla de posiciones de fecha*/
 
 .tournament-father {
@@ -620,7 +626,7 @@
 
 .tournament-child .tournament-child-team {
     display: flex !important;
-    width: 43%;
+    width: 75%;
 }
 
 .tournament-child .tournament-child-numbers {
@@ -632,7 +638,7 @@
 
 .tournament-father-team {
     text-align: center;
-    min-width: 40%;
+    min-width: 80%;
 }
 
 .tournament-header-fecha {
