@@ -15,6 +15,7 @@
         "cordova-android-play-services-gradle-release": "^3.0.0",
         "cordova-android-support-gradle-release": "^3.0.1",
         "cordova-browser": "^5.0.4",
+        "cordova-ios": "^5.0.1",
         "cordova-plugin-androidx": "^1.0.2",
         "cordova-plugin-androidx-adapter": "^1.1.0",
         "cordova-plugin-browsertab": "^0.2.0",
@@ -76,7 +77,8 @@
             }
         },
         "platforms": [
-            "browser"
+            "browser",
+            "ios"
         ]
     },
     "devDependencies": {

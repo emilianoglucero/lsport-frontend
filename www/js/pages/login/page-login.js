@@ -18,10 +18,19 @@ $(document).ready(function() {
   $("#lblSendButtonLoginGoogleLogin").text(lblSendButtonLoginGoogle);
   $("#lblSendButtonLoginEmailLogin").text(lblSendButtonLoginEmail);
 
+ 
+  if (platform != "Android"){
+    $("#otherlogin-buttonFacebookInicio").hide();
+  }
+
 });
 
 myApp.onPageInit('login', function (page) {
     console.log('login on page init');
+    /*console.log(platform);
+    if (platform != "Android"){
+      $("#otherlogin-buttonFacebookInicio").hide();
+    }*/
     //myApp.hideNavbar(".navbar");
     //myApp.params.swipePanel = false;
 });
