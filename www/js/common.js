@@ -35,10 +35,10 @@ var xhReq = new XMLHttpRequest();
 
 jQuery(document).ready(function() {
 
-    //INTERMEDIA DE INICIO
-    xhReq.open("GET", "pages/page-initintermediate.html", false);
-    xhReq.send(null);
-    document.getElementById("page-initintermediate").innerHTML = xhReq.responseText;
+  //INTERMEDIA DE INICIO
+  xhReq.open("GET", "pages/page-initintermediate.html", false);
+  xhReq.send(null);
+  document.getElementById("page-initintermediate").innerHTML = xhReq.responseText;
 
   //LOGIN
   xhReq.open("GET", "pages/login/page-login.html", false);
@@ -230,6 +230,12 @@ jQuery(document).ready(function() {
   xhReq.open("GET", "pages/page-unsupported.html", false);
   xhReq.send(null);
   document.getElementById("page-unsupported").innerHTML = xhReq.responseText;
+
+  // BOOKING - CHOOSE DATE
+  xhReq.open("GET", "pages/booking/page-date.html", false);
+  xhReq.send(null);
+  document.getElementById("page-date").innerHTML =
+    xhReq.responseText;
 
   //loadPageInit();
 });
@@ -867,14 +873,16 @@ function getPathWS() {
   //return wsUrl;
   //return 'http://testing.lenguajesport.com/webservice/';
   //return 'http://clubes.lenguajesport.com/webservice/';
-  return "https://enac.lenguajesport.com/2/api/";
+  //return "https://enac.lenguajesport.com/2/api/";
+  return "https://club.lenguajefutbol.com/2/api/";
 }
 
 function getPathMobile() {
   //return mobileUrl;
   //return 'http://testing.lenguajesport.com/movil/';
   //return 'http://clubes.lenguajesport.com/movil/';
-  return "https://enac.lenguajesport.com/2/api/";
+  //return "https://enac.lenguajesport.com/2/api/";
+  return "https://club.lenguajefutbol.com/2/api/";
 }
 
 function showMessage(message) {
