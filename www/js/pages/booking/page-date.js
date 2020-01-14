@@ -15,7 +15,7 @@ $$(document).on('DOMContentLoaded', function() {
    
   var calendarDisabled = myApp.calendar({
       input: '#calendar-date-booking',
-      dateFormat: 'D d MM yyyy',
+      dateFormat: 'dd-mm-yyyy',
       disabled: {
         from: new Date(1900, 1, 1),
         to: yesterday
@@ -25,7 +25,7 @@ $$(document).on('DOMContentLoaded', function() {
 
  
   var pickerDescribe = myApp.picker({
-    input: '#picker-describe',
+    input: '#picker-hour',
     rotateEffect: true,
     cols: [
         {
@@ -47,5 +47,21 @@ $$(document).on('DOMContentLoaded', function() {
 
 
 });
+
+function serviceAvailable() {
+    var date = document.getElementById('calendar-date-booking').value.split('-');
+    var hour = document.getElementById('picker-hour').value;
+
+   
+    var hourFinal = hour.split(" ").join(":");
+    console.log(date);
+    var dateFinal = date[1] + '-' + date[0] + '-' + date[2];
+
+    console.log(date);
+    console.log(hour);
+    console.log(hourFinal);
+
+    console.log(dateFinal);
+}
   
 
