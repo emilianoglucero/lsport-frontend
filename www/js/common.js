@@ -45,7 +45,7 @@ jQuery(document).ready(function() {
   xhReq.send(null);
   document.getElementById("page-login").innerHTML = xhReq.responseText;
 
-  xhReq.open("GET", "pages/login/page-emailsignup.html", false);
+  /*xhReq.open("GET", "pages/login/page-emailsignup.html", false);
   xhReq.send(null);
   document.getElementById("page-emailsignup").innerHTML = xhReq.responseText;
 
@@ -70,7 +70,7 @@ jQuery(document).ready(function() {
   //SETEO DE PERFIL EN REGISTRO
   xhReq.open("GET", "pages/login/page-setprofile.html", false);
   xhReq.send(null);
-  document.getElementById("page-setprofile").innerHTML = xhReq.responseText;
+  document.getElementById("page-setprofile").innerHTML = xhReq.responseText;*/
 
   //CUENTA DE USUARIO
   xhReq.open("GET", "pages/page-user.html", false);
@@ -93,7 +93,7 @@ jQuery(document).ready(function() {
   document.getElementById("page-notifications").innerHTML = xhReq.responseText;
 
   // NOTICIAS
-  xhReq.open("GET", "pages/page-news.html", false);
+  /*xhReq.open("GET", "pages/page-news.html", false);
   xhReq.send(null);
   document.getElementById("page-news").innerHTML = xhReq.responseText;
 
@@ -229,13 +229,25 @@ jQuery(document).ready(function() {
 
   xhReq.open("GET", "pages/page-unsupported.html", false);
   xhReq.send(null);
-  document.getElementById("page-unsupported").innerHTML = xhReq.responseText;
+  document.getElementById("page-unsupported").innerHTML = xhReq.responseText;*/
 
   // BOOKING - CHOOSE DATE
   xhReq.open("GET", "pages/booking/page-date.html", false);
   xhReq.send(null);
   document.getElementById("page-date").innerHTML =
     xhReq.responseText;
+
+  // BOOKING - CHOOSE SERVICES
+  xhReq.open("GET", "pages/booking/page-services.html", false);
+  xhReq.send(null);
+  document.getElementById("page-services").innerHTML =
+    xhReq.responseText;
+  
+  // BOOKING - REVIEW
+  /*xhReq.open("GET", "pages/booking/page-review.html", false);
+  xhReq.send(null);
+  document.getElementById("page-review").innerHTML =
+    xhReq.responseText;*/
 
   //loadPageInit();
 });
@@ -325,7 +337,8 @@ var userEmail;
 var userPhoneNumber;
 
 function loadPageLogin() {
-  firebase.auth().onAuthStateChanged(function(user) {
+  mainView.router.load({ pageName: "login" });
+  /*firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       console.log(user.phoneNumber);
       if (user.emailVerified || user.phoneNumber || loggedByFacebook == true) {
@@ -347,7 +360,7 @@ function loadPageLogin() {
                                   }).catch(function(error) {
                                     console.log(error);
                                   });*/
-          firebase
+          /*firebase
             .auth()
             .currentUser.getIdToken(true)
             .then(function(idToken) {
@@ -424,7 +437,7 @@ function loadPageLogin() {
       //$( "#subnavbarHomeDetails" ).hide();
       //window.location.reload(true);
     }
-  });
+  });*/
 }
 
 function setPushConfigurations() {
@@ -690,7 +703,7 @@ console.log('setpushconfig');
   );
 }
 
-function registerNewClient() {
+/*function registerNewClient() {
   $.ajax({
     // URL del Web Service
     url: getPathMobile() + "registrar",
@@ -711,7 +724,7 @@ function registerNewClient() {
     },
     error: function(data, status, error) {}
   });
-}
+}*/
 
 function existInternetConnection() {
   try {
@@ -874,7 +887,7 @@ function getPathWS() {
   //return 'http://testing.lenguajesport.com/webservice/';
   //return 'http://clubes.lenguajesport.com/webservice/';
   //return "https://enac.lenguajesport.com/2/api/";
-  return "https://club.lenguajefutbol.com/2/api/";
+  return "https://enac.lenguajefutbol.com/1/api/";
 }
 
 function getPathMobile() {
@@ -882,7 +895,7 @@ function getPathMobile() {
   //return 'http://testing.lenguajesport.com/movil/';
   //return 'http://clubes.lenguajesport.com/movil/';
   //return "https://enac.lenguajesport.com/2/api/";
-  return "https://club.lenguajefutbol.com/2/api/";
+  return "https://enac.lenguajefutbol.com/1/api/";
 }
 
 function showMessage(message) {

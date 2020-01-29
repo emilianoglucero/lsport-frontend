@@ -1,3 +1,5 @@
+var servicesAvailables;
+
 myApp.onPageInit('date', function (page)
 {
     console.log('date page init');
@@ -55,13 +57,50 @@ function serviceAvailable() {
    
     var hourFinal = hour.split(" ").join(":");
     console.log(date);
-    var dateFinal = date[1] + '-' + date[0] + '-' + date[2];
+    var dateFinal = date[2] + '-' + date[1] + '-' + date[0];
+
+    //var services = [8,56];
+    console.log(idBookingServices);
 
     console.log(date);
     console.log(hour);
     console.log(hourFinal);
-
     console.log(dateFinal);
+
+    $.ajax({
+        // URL del Web Service
+            url: "http://45.33.71.239/?rest_route=/salon/api/v1/availability/services/primary",
+            method: 'GET',
+            dataType: "json",
+            contentType: "application/json",
+            headers: {
+                "Access-Token": tokenBooking
+            },
+            data: { 
+                "date": dateFinal,
+                "time": hourFinal,
+                "primary_services": idBookingServices 
+
+            },
+            timeout: timeOut,
+            success: function(response){
+                console.log(response);
+                servicesAvailables = response.services;
+                if (response.status == "OK"){
+
+                    mainView.router.load({ pageName: "services" });
+                    //builderServicesAvailables();
+
+                } else {
+                    alert('Hubo un problema, por favor intente nuevamente');
+                }
+
+            },
+            error: function (data, status, error){
+
+        }
+    });
+
 }
   
 

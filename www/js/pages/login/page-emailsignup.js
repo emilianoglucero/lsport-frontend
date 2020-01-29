@@ -1,5 +1,5 @@
 
-$(document).ready(
+/*$(document).ready(
   function() {
     //INIT HEADERS
     $('#lblSendButtonLoginSign').text(lblSendButtonLoginSign);
@@ -64,4 +64,4 @@ function confirmSignUp() {
 function confirmPasswordSign() {
     //go to the password recovery page
     mainView.router.load({pageName: 'passwordrecovery'});
-}
+}*/
