@@ -244,10 +244,10 @@ jQuery(document).ready(function() {
     xhReq.responseText;
   
   // BOOKING - REVIEW
-  /*xhReq.open("GET", "pages/booking/page-review.html", false);
+  xhReq.open("GET", "pages/booking/page-review.html", false);
   xhReq.send(null);
   document.getElementById("page-review").innerHTML =
-    xhReq.responseText;*/
+    xhReq.responseText;
 
   //loadPageInit();
 });

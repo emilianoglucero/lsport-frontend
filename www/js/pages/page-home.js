@@ -1,7 +1,7 @@
 var idBookingServices;
 
 /*services ids from categories*/
-var tenisIDs = [8,56];
+var tenisIDs = [8,56, 157];
 var botesIDs = [10,37,39,41,20];
 
 

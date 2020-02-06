@@ -1,4 +1,7 @@
 var servicesAvailables;
+var dateFinal;
+var hourFinal;
+var dateToShow;
 
 myApp.onPageInit('date', function (page)
 {
@@ -53,11 +56,14 @@ $$(document).on('DOMContentLoaded', function() {
 function serviceAvailable() {
     var date = document.getElementById('calendar-date-booking').value.split('-');
     var hour = document.getElementById('picker-hour').value;
+    console.log(date);
 
    
-    var hourFinal = hour.split(" ").join(":");
-    console.log(date);
-    var dateFinal = date[2] + '-' + date[1] + '-' + date[0];
+    hourFinal = hour.split(" ").join(":");
+
+    dateFinal = date[2] + '-' + date[1] + '-' + date[0];
+    dateToShow = date[0] + '-' + date[1] + '-' + date[2];
+    console.log(dateToShow);
 
     //var services = [8,56];
     console.log(idBookingServices);
