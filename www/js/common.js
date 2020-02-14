@@ -248,6 +248,12 @@ jQuery(document).ready(function() {
   xhReq.send(null);
   document.getElementById("page-review").innerHTML =
     xhReq.responseText;
+  
+    // BOOKING - REVIEW
+  xhReq.open("GET", "pages/booking/page-confirmation.html", false);
+  xhReq.send(null);
+  document.getElementById("page-confirmation").innerHTML =
+    xhReq.responseText;  
 
   //loadPageInit();
 });

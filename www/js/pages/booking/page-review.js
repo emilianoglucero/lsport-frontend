@@ -1,4 +1,6 @@
 var hourFinalTill;
+var idConfirmation;
+var serviceName;
 
 myApp.onPageInit('review', function (page)
 {
@@ -42,43 +44,74 @@ myApp.onPageInit('review', function (page)
 
 function serviceConfirm(){
 
-    $.ajax({
-        // URL del Web Service
-            url: "http://45.33.71.239/?rest_route=/salon/api/v1/bookings",
-            method: 'POST',
-            dataType: "json",
-            contentType: "application/json",
-            headers: {
-                "Access-Token": tokenBooking
-            },
-            data:JSON.stringify({
-                "date": dateFinal,
-                "time": hourFinal,
-                "status": "sln-b-confirmed",
-                "customer_id": 1,
-                "customer_first_name": "Rodrigo",
-                "customer_last_name": "Ulloa",
-                "customer_email": "ulloa@rodrigo.com",
-                "customer_phone": "",
-                "customer_address": "abc 527",
-                "services": [
-                    {
-                    "service_id": idServiceSelected
+    myApp.confirm('¿Seguro desea reservar?', function () {
+        //myApp.alert('You clicked Ok button');
+        //mainView.router.load({ pageName: "confirmation" });
+        
+
+        $.ajax({
+            // URL del Web Service
+                url: "http://45.33.71.239/?rest_route=/salon/api/v1/bookings",
+                method: 'POST',
+                dataType: "json",
+                contentType: "application/json",
+                headers: {
+                    "Access-Token": tokenBooking
+                },
+                data:JSON.stringify({
+                    "date": dateFinal,
+                    "time": hourFinal,
+                    "status": "sln-b-confirmed",
+                    "customer_id": 1,
+                    "customer_first_name": "Rodrigo",
+                    "customer_last_name": "Ulloa",
+                    "customer_email": "ulloa@rodrigo.com",
+                    "customer_phone": "",
+                    "customer_address": "abc 527",
+                    "services": [
+                        {
+                        "service_id": idServiceSelected
+                        }
+                    ],
+                    "note": "a ver si suma"
+                }),
+                timeout: timeOut,
+                success: function(response){
+                    console.log(response);
+                    if (response.status == "OK") {
+                        idConfirmation = response.id;
+                        console.log(idConfirmation);
+                        mainView.router.load({ pageName: "confirmation" });
+
+                        //$$('.confirm-title-ok').on('click', function () {
+                            /*myApp.confirm('Seguro desea reservar?', function () {
+                                //myApp.alert('You clicked Ok button');
+                                mainView.router.load({ pageName: "confirmation" });
+                            });*/
+                        //});
+                        
+                        //alert('Tu reserva ha sido confirmada!');
+                        /*myApp.alert(
+                            "Tu reserva ha sido confirmada!", // message
+                            toHome, // callback
+                            "", // title
+                            "Ok" // buttonName
+                        );
+                    
+                        function toHome() {
+                            mainView.router.load({ pageName: "confirmation" });
+                        }*/
+
                     }
-                ],
-                "note": "a ver si suma"
-            }),
-            timeout: timeOut,
-            success: function(response){
-                console.log(response);
-                alert('Tu reserva ha sido confirmada!');
-                mainView.router.load({ pageName: "home" });
-            
+                    
+                
 
-            },
-            error: function (data, status, error){
+                },
+                error: function (data, status, error){
 
-        }
+            }
+        });
+
     });
 }
 
@@ -99,6 +132,7 @@ function builderReviewServices() {
             console.log(item);
             console.log(idServiceSelected);
             if(item.service_id == idServiceSelected){
+                serviceName = item.service_name;
 
                 //alert(item.service_name);
                 strBuilderReviewServicesContent.push('<li><a href="#" class="item-link item-content">');
