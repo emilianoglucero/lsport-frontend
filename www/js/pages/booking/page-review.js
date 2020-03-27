@@ -45,6 +45,7 @@ myApp.onPageInit('review', function (page)
 function serviceConfirm(){
 
     myApp.confirm('¿Seguro desea reservar?', function () {
+        console.log('reserva yes');
         //myApp.alert('You clicked Ok button');
         //mainView.router.load({ pageName: "confirmation" });
         
@@ -75,7 +76,7 @@ function serviceConfirm(){
                     ],
                     "note": "a ver si suma"
                 }),
-                timeout: timeOut,
+                timeout: 10000000,
                 success: function(response){
                     console.log(response);
                     if (response.status == "OK") {
@@ -102,14 +103,17 @@ function serviceConfirm(){
                             mainView.router.load({ pageName: "confirmation" });
                         }*/
 
+                    } else {
+                        console.log('response is not OK');
                     }
                     
                 
 
                 },
                 error: function (data, status, error){
+                    console.log(data, status, error);
 
-            }
+                }
         });
 
     });
