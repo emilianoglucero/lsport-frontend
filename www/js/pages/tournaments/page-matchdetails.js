@@ -169,6 +169,12 @@ if (match.tipoObjeto == "torneo-encuentro") {
                                         if (item.comentario !== "") {
                                             strBuilderLastMatch.push('<div class="match-event-timeline-commentary">'+item.comentario+'</div>');
                                         }
+                                        if (item.jugadorLocal1 !== "" || item.jugadorLocal2 !== "" || item.jugadorVisitante1 !== "" || item.jugadorVisitante2 !== "") {
+                                            strBuilderLastMatch.push('<div class="match-event-title">'+item.jugadorLocal1.apellido+', '+item.jugadorLocal1.nombre+': '+item.jugadorLocal1Puntos+'<br>'+item.jugadorVisitante1.apellido+', '+item.jugadorVisitante1.nombre+': '+item.jugadorVisitante1Puntos+'</div>');
+
+                                        } else {
+
+                                        }
                                         strBuilderLastMatch.push('</div>');
                                     strBuilderLastMatch.push('</div>');
                             strBuilderLastMatch.push('</div>');
@@ -193,6 +199,12 @@ if (match.tipoObjeto == "torneo-encuentro") {
                                         }
                                         if (item.comentario !== "") {
                                             strBuilderLastMatch.push('<div class="match-event-timeline-commentary">'+item.comentario+'</div>');
+                                        }
+                                        if (item.jugadorLocal1 !== "" || item.jugadorLocal2 !== "" || item.jugadorVisitante1 !== "" || item.jugadorVisitante2 !== "") {
+                                            strBuilderLastMatch.push('<div class="match-event-title">'+item.jugadorVisitante1.apellido+', '+item.jugadorVisitante1.nombre+': '+item.jugadorVisitante1Puntos+'<br>'+item.jugadorLocal1.apellido+', '+item.jugadorLocal1.nombre+': '+item.jugadorLocal1Puntos+'</div>');
+                                        
+                                        } else {
+
                                         }
                                         strBuilderLastMatch.push('</div>');
                                     strBuilderLastMatch.push('</div>');
