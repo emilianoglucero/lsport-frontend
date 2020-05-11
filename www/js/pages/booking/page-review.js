@@ -52,7 +52,7 @@ function serviceConfirm(){
 
         $.ajax({
             // URL del Web Service
-                url: "http://45.33.71.239/?rest_route=/salon/api/v1/bookings",
+                url: "http://172.105.156.64/?rest_route=/salon/api/v1/bookings",
                 method: 'POST',
                 dataType: "json",
                 contentType: "application/json",

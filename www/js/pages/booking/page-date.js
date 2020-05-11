@@ -72,10 +72,12 @@ function serviceAvailable() {
     console.log(hour);
     console.log(hourFinal);
     console.log(dateFinal);
+    console.log(tokenBooking);
+    console.log(idBookingServices);
 
     $.ajax({
         // URL del Web Service
-            url: "http://45.33.71.239/?rest_route=/salon/api/v1/availability/services/primary",
+            url: "http://172.105.156.64/?rest_route=/salon/api/v1/availability/services/primary",
             method: 'GET',
             dataType: "json",
             contentType: "application/json",
@@ -96,6 +98,42 @@ function serviceAvailable() {
 
                     mainView.router.load({ pageName: "services" });
                     //builderServicesAvailables();
+
+
+                    /*
+                    * I need to add intelligence to full my matrix
+                    */
+
+                    /*var matrixTest = {
+                        cancha: {
+                            singles: true,
+                            dobles: false,
+                            service_id: ""
+                        },
+                        cancha2: {
+                            singles: false,
+                            dobles: false,
+                            service_id: ""
+                        }
+                    }*/
+
+                    var availables = {};
+
+                   $.each( servicesAvailables, function( i, item ){
+
+
+                        // Example of an object property added with defineProperty with a data property descriptor
+                        Object.defineProperty(availables, serviceAvailable.item.service_name, {
+                            singles_available : serviceAvailable.item.available,
+                            dobles_available : false,
+                            enumerable : serviceAvailable.item.service_id
+                        });
+                        // 'property3' property exists on object obj and its value is 37
+
+
+                   });
+                   console.log(availables);
+                
 
                 } else {
                     alert('Hubo un problema, por favor intente nuevamente');
