@@ -3,9 +3,27 @@ var dateFinal;
 var hourFinal;
 var dateToShow;
 
+//function to built-in vivificate objects literal notations / json
+var insertNode = function(obj, node, value) {
+    var segments = node.split('.');
+    var key = segments.pop();
+    var ref = obj;
+    
+    while (segments.length > 0) {
+        var segment = segments.shift();
+        if (typeof ref[segment] != 'object') {
+            ref[segment] = {};
+        }
+        ref = ref[segment];
+    }
+    
+    ref[key] = value;
+};
+
 myApp.onPageInit('date', function (page)
 {
     console.log('date page init');
+
 });
 
 
@@ -49,8 +67,6 @@ $$(document).on('DOMContentLoaded', function() {
   });                                
 
 
-
-
 });
 
 function serviceAvailable() {
@@ -77,7 +93,7 @@ function serviceAvailable() {
 
     $.ajax({
         // URL del Web Service
-            url: "http://172.105.156.64/?rest_route=/salon/api/v1/availability/services/primary",
+            url: "https://regatasreservas.lenguajesport.com/?rest_route=/salon/api/v1/availability/services/primary",
             method: 'GET',
             dataType: "json",
             contentType: "application/json",
@@ -96,7 +112,7 @@ function serviceAvailable() {
                 servicesAvailables = response.services;
                 if (response.status == "OK"){
 
-                    mainView.router.load({ pageName: "services" });
+                    //mainView.router.load({ pageName: "services" });
                     //builderServicesAvailables();
 
 
@@ -108,7 +124,10 @@ function serviceAvailable() {
                         cancha: {
                             singles: true,
                             dobles: false,
-                            service_id: ""
+                            service_id: "",
+                            date: "",
+                            time: ""
+
                         },
                         cancha2: {
                             singles: false,
@@ -116,23 +135,24 @@ function serviceAvailable() {
                             service_id: ""
                         }
                     }*/
-
-                    var availables = {};
+                   var availables = {};
 
                    $.each( servicesAvailables, function( i, item ){
-
-
-                        // Example of an object property added with defineProperty with a data property descriptor
-                        Object.defineProperty(availables, serviceAvailable.item.service_name, {
-                            singles_available : serviceAvailable.item.available,
-                            dobles_available : false,
-                            enumerable : serviceAvailable.item.service_id
-                        });
-                        // 'property3' property exists on object obj and its value is 37
+                    
+                        console.log(item);
+    
+                        insertNode(availables, item.service_name,);
+                        //insertNode(availables,pathToSingles,'true');
+                        insertNode(availables,item.service_name + '.singles',item.available);
+                        insertNode(availables,item.service_name + '.id',item.service_id);
+                        //insertNode(availables,'Cancha de Tenis 1.date','05/10/2020');
+                    
 
 
                    });
                    console.log(availables);
+
+                   mainView.router.load({ pageName: "services" });
                 
 
                 } else {

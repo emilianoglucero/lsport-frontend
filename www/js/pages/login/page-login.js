@@ -63,7 +63,7 @@ function confirmSignUp() {
 
       $.ajax({
         // URL del Web Service
-            url: 'http://172.105.156.64/?rest_route=/salon/api/v1/login',
+            url: 'https://regatasreservas.lenguajesport.com/?rest_route=/salon/api/v1/login',
             dataType: 'json',
             data: { 'name': email,
                     'password': password
