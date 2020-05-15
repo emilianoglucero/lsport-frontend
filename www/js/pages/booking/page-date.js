@@ -2,8 +2,18 @@ var servicesAvailables;
 var dateFinal;
 var hourFinal;
 var dateToShow;
+var availables = {};
+var matrixServicesAvailables = {};
+var allBookingsDay = {};
+var filteredBookingsDay = {};
 
-//function to built-in vivificate objects literal notations / json
+var matrixServices = {};
+
+/* function to built-in vivificate objects literal notations / json
+* var x = {};
+* insertNode(x, 'foo.bar.baz', 'hello world');
+* alert(x.foo.bar.baz); // "hello world"
+*/
 var insertNode = function(obj, node, value) {
     var segments = node.split('.');
     var key = segments.pop();
@@ -109,48 +119,230 @@ function serviceAvailable() {
             timeout: timeOut,
             success: function(response){
                 console.log(response);
-                servicesAvailables = response.services;
+                allServicesAvailables = response.services;
                 if (response.status == "OK"){
 
-                    //mainView.router.load({ pageName: "services" });
-                    //builderServicesAvailables();
-
-
-                    /*
-                    * I need to add intelligence to full my matrix
-                    */
-
-                    /*var matrixTest = {
-                        cancha: {
-                            singles: true,
-                            dobles: false,
-                            service_id: "",
-                            date: "",
-                            time: ""
-
-                        },
-                        cancha2: {
-                            singles: false,
-                            dobles: false,
-                            service_id: ""
-                        }
-                    }*/
-                   var availables = {};
-
-                   $.each( servicesAvailables, function( i, item ){
+                
+                   $.each( allServicesAvailables, function( i, item ){
                     
                         console.log(item);
+                        var serviceNameFinal;
+                        //variable float para saber si es un servicio extendido
+                        var isExtended;
+                        var serviceName = item.service_name;
+
+                        //formateo el nombre final para insertar en mi matriz
+
+                        if(serviceName.includes("_DOUBLE_")) {
+                            //tengo que borrar _DOUBLE_
+                            serviceNameFinal = serviceName.substring(0, serviceName.length-8);
+                            isExtended = true;
+                        } else {
+                            serviceNameFinal = serviceName;
+                            isExtended = false;
+                        }
+                        console.log(serviceNameFinal);
+
+                        //tengo el nombre final
+                        //quizas este nombre ya está escrito en matrixServices
+
+                        //si no esta escrito lo inserto
+                        //si esta escrito solo escribo los valores id y available para dobles
+                        
+                        //recorro la matriz y busco si ya se escribió
+                        //$.each( matrixServices, function( i, item ){
+                        //console.log(item);
+                        if (matrixServices.hasOwnProperty(serviceNameFinal)) { 
+                            console.log("is in the matrix");
+                            if (isExtended == true){
+                                insertNode(matrixServices, serviceNameFinal + '.dobles_available', item.available);
+                                insertNode(matrixServices, serviceNameFinal + '.service_id_dobles', item.service_id);
+                                insertNode(matrixServices, serviceNameFinal + '.date', dateFinal);
+                                insertNode(matrixServices, serviceNameFinal + '.time', hourFinal);
+
+                            } else {
+                                insertNode(matrixServices, serviceNameFinal + '.singles_available', item.available);
+                                insertNode(matrixServices, serviceNameFinal + '.service_id_singles', item.service_id);
+                                insertNode(matrixServices, serviceNameFinal + '.date', dateFinal);
+                                insertNode(matrixServices, serviceNameFinal + '.time', hourFinal);
+                            }
+
+
+                        } else { 
+
+                            console.log("is NOT in the matrix");
+                            //si no esta en la matriz lo agregamos por primera vez
+                            insertNode(matrixServices, serviceNameFinal,);
+                            //si es extendido agregamo solo el id y el availables del dobles
+                            if (isExtended == true){
+                                insertNode(matrixServices, serviceNameFinal + '.dobles_available', item.available);
+                                insertNode(matrixServices, serviceNameFinal + '.service_id_dobles', item.service_id);
+                                insertNode(matrixServices, serviceNameFinal + '.date', dateFinal);
+                                insertNode(matrixServices, serviceNameFinal + '.time', hourFinal);
+                            //si es el single agregamos el resto (siempre va a haber un simple)    
+                            } else {
+                                insertNode(matrixServices, serviceNameFinal + '.singles_available', item.available);
+                                //insertNode(matrixServices, serviceNameFinal + '.dobles_available', false);
+                                insertNode(matrixServices, serviceNameFinal + '.service_id_singles', item.service_id);
+                                insertNode(matrixServices, serviceNameFinal + '.date', dateFinal);
+                                insertNode(matrixServices, serviceNameFinal + '.time', hourFinal);
+
+                            }
+
+
+
+                        } 
+
+
+                       // });
     
+                        //if item.service_name contains _DOUBLE_ 
+                        // delete the string and insert it
+                        // if service_name already inserted, update dobles_availables
+
+                        //if this record is new I have to insert it
+                        /*if(item.service_name != matrixServices[item.service_name]){
+                            
+                            //if it's an extended service i have to write only the 'double' row
+                            if(item.service_name.contains("_DOUBLE_")) {
+
+                                //tengo que borrar _DOUBLE_ en service_name e insertar solo el valor de dobles
+                                var serviceNameToSingle = item.service_name.substring(0, name.length-8);
+                                    
+                                    //tengo que buscar en la matrix esa entrada y escribir en la parte de dobles
+                                    insertNode(matrixServices, serviceNameToSingle,);
+                                    insertNode(matrixServices, serviceNameToSingle + '.dobles_available', item.available);
+
+                                
+
+                            } else {
+
+                                insertNode(matrixServices, item.service_name,);
+                                insertNode(matrixServices, item.service_name + '.singles_available', item.available);
+                                insertNode(matrixServices, item.service_name + '.dobles_available', false);
+                                insertNode(matrixServices, item.service_name + '.id', item.service_id);
+                                insertNode(matrixServices, item.service_name + '.date', dateFinal);
+                                insertNode(matrixServices, item.service_name + '.time', hourFinal);
+
+                            }
+                            
+                            insertNode(matrixServices, item.service_name,);
+                            insertNode(matrixServices, item.service_name + '.singles_available', item.available);
+                            insertNode(matrixServices, item.service_name + '.dobles_available', item.available);
+                            insertNode(matrixServices, item.service_name + '.id', item.service_id);
+                            insertNode(matrixServices, item.service_name + '.date', dateFinal);
+                            insertNode(matrixServices, item.service_name + '.time', hourFinal);
+
+                        }
+                        if(item.service_name.contains("_DOUBLE_")) {
+
+                        }
+                        insertNode(matrixServices, item.service_name,);
+                        insertNode(matrixServices, item.service_name + '.singles_available', item.available);
+                        insertNode(matrixServices, item.service_name + '.dobles_available', item.available);
+                        insertNode(matrixServices, item.service_name + '.id', item.service_id);
+                        insertNode(matrixServices, item.service_name + '.date', dateFinal);
+                        insertNode(matrixServices, item.service_name + '.time', hourFinal);
+                        
+                        
+                        
+                        
+                        
+                        
                         insertNode(availables, item.service_name,);
                         //insertNode(availables,pathToSingles,'true');
-                        insertNode(availables,item.service_name + '.singles',item.available);
-                        insertNode(availables,item.service_name + '.id',item.service_id);
+                        insertNode(availables, item.service_name + '.available', item.available);
+                        insertNode(availables, item.service_name + '.id', item.service_id);
+                        //insertNode(availables, item.service_name + '.date', dateFinal);
+                        //insertNode(availables, item.service_name + '.time', hourFinal);
                         //insertNode(availables,'Cancha de Tenis 1.date','05/10/2020');
-                    
+                        if (item.available == true) { 
 
+                            //matrixServicesAvailables = 
+                            insertNode(matrixServicesAvailables, item.service_name,);
+                            insertNode(matrixServicesAvailables, item.service_name + '.available', item.available);
+                            insertNode(matrixServicesAvailables, item.service_name + '.id', item.service_id);
+                            insertNode(matrixServicesAvailables, item.service_name + '.date', dateFinal);
+                            insertNode(matrixServicesAvailables, item.service_name + '.time', hourFinal);
+
+                        }
+
+                    */
 
                    });
                    console.log(availables);
+                   console.log(matrixServices);
+                   
+
+                   if (jQuery.isEmptyObject({matrixServices})) {
+
+                    console.log('matrix is empty');
+
+
+
+                   } else {
+                        console.log('matrix is NOT empty');
+                        
+                        $.ajax({
+                            // URL del Web Service
+                                url: "https://regatasreservas.lenguajesport.com/?rest_route=/salon/api/v1/bookings",
+                                method: 'GET',
+                                dataType: "json",
+                                contentType: "application/json",
+                                headers: {
+                                    "Access-Token": tokenBooking
+                                },
+                                data: { 
+                                    "start_date": dateFinal,
+                                    "end_date": dateFinal,
+                                    "services": idBookingServices 
+                    
+                                },
+                                timeout: timeOut,
+                                success: function(response){
+                                    console.log(response);
+                                    allBookingsDay = response.items;
+                                    //filtrar response by time
+                                    $.each( allBookingsDay, function( i, item ){
+                                        console.log('allbokingday');
+                                        console.log(item);
+                                        
+                                        /*if(item.time == hourFinal) {
+                                            console.log('existe una reserva a esa hora');
+                                            var idServiceAlreadyBooked = item.services.id[i];
+                                            //if booked service is the same than the request one
+                                            if (idServiceAlreadyBooked == matrixServicesAvailables) {
+
+                                                //need to figure it out if is extended or not
+
+                                            }
+
+
+                                        }*/
+                                    
+                                    });
+
+
+                                
+                                },
+                                error: function (data, status, error){
+                                //alert('Hubo un error, por favor revisá tu correo y contraseña');
+                                    console.log(error, data, status);
+                                }
+                        });
+
+                        //console.log()
+                        
+                        
+                        /*
+                        significa que quizas haya alguna reserva
+                        hago una llamada ajax para saber los detalles con la hora y el dia
+
+                        filtro los resultados by time
+
+                        */
+
+                   }
 
                    mainView.router.load({ pageName: "services" });
                 

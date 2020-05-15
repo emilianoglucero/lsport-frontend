@@ -82,7 +82,7 @@ function confirmSignUp() {
             error: function (data, status, error){
               alert('Hubo un error, por favor revisá tu correo y contraseña');
 
-        }
+            }
       });
 
   }
