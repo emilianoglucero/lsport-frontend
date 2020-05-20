@@ -7,8 +7,11 @@ var availables = {};
 var allBookingsDay = {};
 var filteredBookingsDay = {};
 
-//declaramos un array donde almacenar los servicios validados x matrixServicex
+//declaramos un array donde almacenar los servicios validados ya x matrixServicex
 var idBookingServicesAvailables = [];
+
+//declaramos un array donde almacenar los servicios NOT availables x matrixServicex
+//var idBookingServicesNotAvailables = [];
 
 //matriz donde voy a almacenar la logica de mis servicios
 var matrixServices = {};
@@ -33,6 +36,21 @@ var insertNode = function(obj, node, value) {
     
     ref[key] = value;
 };
+
+/* function to sum hours/minutes
+* https://stackoverflow.com/questions/40808504/sum-hours-and-minutes-in-javascript
+*/
+function get_add_two_times(json1, json2) {
+    hr            = parseInt(json1.hour) + parseInt(json2.hour); 
+    mn            = parseInt(json1.minutes) + parseInt(json2.minutes);
+    final_hr      = hr + Math.floor(mn/60);
+    final_mn      = mn%60;
+    final_mn      = (final_mn < 10) ? '0' + final_mn : final_mn;
+    //console.log(final_hr);
+    if (final_hr <= 9){ final_hr = "0" + final_hr;}
+    //console.log(final_hr +':'+ final_mn);
+    return final_hr +':'+ final_mn;
+}
 
 myApp.onPageInit('date', function (page)
 {
@@ -224,22 +242,29 @@ function serviceAvailable() {
                             } else {
 
 
-                                /*
-                                if item.menor_duracion = false {
-                                    set service_avalible = false;
+                                
+                                if (item.shorter_available == false) {
+                                    //set service_avalible = false;
+                                    insertNode(matrixServices, item.service_name + '.service_available', false);
+                                } else {
+                                    console.log('agrego un servicio single al array');
+                                    idBookingServicesAvailables.push(item.shorter_service_id);
                                 }
-                                */
 
-                                console.log('pintado disponible');
-                                //significa que debe aparecer pintado como disponible y setear service_available=true
+                                //formula to determinate not availables services
+                                //longer_service->End_at   >   booking_time  AND  longer_service->start_at < (booking_time + service_duration)
+                                
+
+                                //console.log('pintado disponible');
+                                //significa que debo investigar mas sobre estos servicios para saber si estan realmente disponibles
                                 //si esta disponible sacamos sus ids para buscar si alguien ya reservo ese servicio
-                                if (item.shorter_available == true) {
+                                /*if (item.shorter_available == true) {
                                     console.log('agrego un servicio single al array');
                                     idBookingServicesAvailables.push(item.service_id_singles);
-                                }
+                                }*/
                                 if (item.longer_available == true) {
                                     console.log('agrego un servicio doble al array');
-                                    idBookingServicesAvailables.push(item.service_id_dobles);
+                                    idBookingServicesAvailables.push(item.longer_service_id);
                                 }
 
                             }
@@ -275,6 +300,29 @@ function serviceAvailable() {
                                         $.each( allBookingsDay, function( i, item ){
                                             console.log('allbokingday');
                                             console.log(item);
+                                            
+                                            
+                                            //formula to determinate not availables services
+                                            //function to sum hours
+                                            var hourFinalSplited = hourFinal.split(":");
+                                            var ItemDuration = item.duration.split(":");
+
+                                            var bookingTime = { hour : hourFinalSplited[0], minutes : hourFinalSplited[1] };
+                                            var serviceDuration = { hour : ItemDuration[0], minutes : ItemDuration[1] };
+
+                                            var hourFinalPlusServiceDuration = get_add_two_times(bookingTime,serviceDuration);
+                                            console.log(hourFinalPlusServiceDuration);
+
+                                            //i use Date.parse('01/01/2011 10:20:45') > Date.parse('01/01/2011 5:10:10') to compare hours
+                                            //https://stackoverflow.com/questions/6212305/how-can-i-compare-two-time-strings-in-the-format-hhmmss
+                                           
+                                            //var hourFinalPlusServiceDuration = hourFinal + item.duration;
+                                            //longer_service->End_at   >   booking_time  AND  longer_service->start_at < (booking_time + service_duration)
+                                            if (longer_service_endat > hourFinal && longer_service_startat < hourFinalPlusServiceDuration) {
+                                                //set service to not available
+                                            }
+                                            
+                                            
                                             
                                             if(item.time == hourFinal) {
                                                 console.log('existe una reserva a esa hora');
