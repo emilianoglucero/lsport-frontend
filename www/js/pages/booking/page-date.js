@@ -55,6 +55,7 @@ function get_add_two_times(json1, json2) {
 myApp.onPageInit('date', function (page)
 {
     console.log('date page init');
+    console.log(idBookingServices);
 
 });
 
@@ -121,7 +122,6 @@ function serviceAvailable() {
     console.log(hourFinal);
     console.log(dateFinal);
     console.log(tokenBooking);
-    console.log(idBookingServices);
 
     $.ajax({
         // URL del Web Service

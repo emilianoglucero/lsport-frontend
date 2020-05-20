@@ -1,10 +1,11 @@
-var idBookingServices;
+var idBookingServices = [];
 var allCategoriesNamesToList = [];
+var categorieName;
 
 /*services ids from categories*/
 //var tenisIDs = [15,17, 19, 21];
 //var botesIDs = [10,37,39,41,20];
-myApp.onPageInit('date', function (page)
+myApp.onPageInit('home', function (page)
 {
     console.log('date page init');
 
@@ -31,9 +32,10 @@ myApp.onPageInit('date', function (page)
                 
                 });
 
-                //builderhome with the name of the categories
 
+                //buil home with the name of the categories
 
+                builderCategoriesNames(allCategoriesNamesToList);
 
             
             },
@@ -45,19 +47,69 @@ myApp.onPageInit('date', function (page)
 
 });
 
-function serviceRerservation(tenisIDs){
-    console.log(tenisIDs);
-    idBookingServices = tenisIDs;
-    mainView.router.load({ pageName: "date" });
+function serviceReservation(categorieNameHTML){
+    console.log(categorieNameHTML);
+    categorieName = categorieNameHTML;
+    //console.log(tenisIDs);
+    //idBookingServices = tenisIDs;
+    //list all the services and finde only the ones with the name categorie
+    $.ajax({
+        // URL del Web Service
+            url: "https://regatasreservas.lenguajesport.com/?rest_route=/salon/api/v1/services",
+            method: 'GET',
+            dataType: "json",
+            contentType: "application/json",
+            headers: {
+                "Access-Token": tokenBooking
+            },
+            data: { 
+                "type": "primary",
+            },
+            timeout: timeOut,
+            success: function(response){
+                console.log(response);
+                var allServicesList = response.items;
+                //filtrar response by time
+                if (response.status == "OK") {
+                    $.each( allServicesList, function( i, item ){
+                        
+                       console.log(item);
+                       console.log(categorieName);
+                       if(item.name.includes(categorieName)) {
+
+                        idBookingServices.push(item.id);
+
+                       }
+                                        
+                    
+                    });
+
+                    mainView.router.load({ pageName: "date" });
+                }
+            
+            },
+            error: function (data, status, error){
+            //alert('Hubo un error, por favor revisá tu correo y contraseña');
+                console.log(error, data, status);
+            }
+    });
+   // mainView.router.load({ pageName: "date" });
 
 }
 
-function builderHomeServices(allCategoriesNamesToList) {
+function builderCategoriesNames(allCategoriesNamesToList){
+    console.log(allCategoriesNamesToList);
 
-    var arrayTobuildHome;
-
-    arrayTobuildHome.push('html');
-
+    //var mainId = item.id;
+        var strBuilderCategoriesNames = [];
+        $('#homecategories-list').html('');
+        $.each( allCategoriesNamesToList, function( i, item ){
+            console.log(item);
+            var categorieNameHTML = item;
+                strBuilderCategoriesNames.push("<p><a href='#' onclick='serviceReservation(\""+ categorieNameHTML + "\")' class='button button-big button-fill' >"+item+"</a></p>");
+                
+        });
+        $('#homecategories-list').append(strBuilderCategoriesNames.join(""));
 }
 
 
