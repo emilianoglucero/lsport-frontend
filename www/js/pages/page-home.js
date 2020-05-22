@@ -1,6 +1,7 @@
 var idBookingServices = [];
-var allCategoriesNamesToList = [];
-var categorieName;
+var allCategoriesIdsToList = [];
+var categorieIdHTML;
+var categorieNameHTML;
 
 /*services ids from categories*/
 //var tenisIDs = [15,17, 19, 21];
@@ -27,7 +28,8 @@ myApp.onPageInit('home', function (page)
                 $.each( allCategoriesToList, function( i, item ){
                     
                     console.log(item.name);
-                    allCategoriesNamesToList.push(item.name);
+                    //allCategoriesIdsToList.push(item.id);
+                    allCategoriesIdsToList[item.id] = item.name;
                                       
                 
                 });
@@ -35,7 +37,7 @@ myApp.onPageInit('home', function (page)
 
                 //buil home with the name of the categories
 
-                builderCategoriesNames(allCategoriesNamesToList);
+                builderCategoriesNames(allCategoriesIdsToList);
 
             
             },
@@ -47,9 +49,9 @@ myApp.onPageInit('home', function (page)
 
 });
 
-function serviceReservation(categorieNameHTML){
-    console.log(categorieNameHTML);
-    categorieName = categorieNameHTML;
+function serviceReservation(categorieIdHTML){
+    console.log(categorieIdHTML);
+    categorieIdHTML = categorieIdHTML;
     //console.log(tenisIDs);
     //idBookingServices = tenisIDs;
     //list all the services and finde only the ones with the name categorie
@@ -74,9 +76,11 @@ function serviceReservation(categorieNameHTML){
                     $.each( allServicesList, function( i, item ){
                         
                        console.log(item);
-                       console.log(categorieName);
-                       if(item.name.includes(categorieName)) {
+                       console.log(item.categories[0]);
+                       console.log(categorieIdHTML);
+                       if(item.categories[0] == categorieIdHTML) {
 
+                        //idBookingServices.push(item.id);
                         idBookingServices.push(item.id);
 
                        }
@@ -97,19 +101,24 @@ function serviceReservation(categorieNameHTML){
 
 }
 
-function builderCategoriesNames(allCategoriesNamesToList){
-    console.log(allCategoriesNamesToList);
+function builderCategoriesNames(allCategoriesIdsToList){
+    console.log(allCategoriesIdsToList);
 
     //var mainId = item.id;
         var strBuilderCategoriesNames = [];
         $('#homecategories-list').html('');
-        $.each( allCategoriesNamesToList, function( i, item ){
+        $.each( allCategoriesIdsToList, function( i, item ){
             console.log(item);
-            var categorieNameHTML = item;
-                strBuilderCategoriesNames.push("<p><a href='#' onclick='serviceReservation(\""+ categorieNameHTML + "\")' class='button button-big button-fill' >"+item+"</a></p>");
-                
+            console.log(i);
+            categorieIdHTML = i;
+            categorieNameHTML = item;
+            //find a better solution to this array
+            if (item !== undefined) {
+                strBuilderCategoriesNames.push("<p><a href='#' onclick='serviceReservation(\""+ categorieIdHTML + "\")' class='button button-big button-fill' >"+item+"</a></p>");
+            }   
         });
         $('#homecategories-list').append(strBuilderCategoriesNames.join(""));
 }
+
 
 

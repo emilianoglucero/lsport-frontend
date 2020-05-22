@@ -4,6 +4,17 @@ var hourFinal;
 var dateToShow;
 var availables = {};
 
+/*
+* ASSUMPTIONS 
+*/
+// array que almacena strings que se utilizaran para diferenciar servicios extendidos
+//var extendedKeys = [idCategory :"_DOUBLE_", "isLongerExt": true];
+
+//
+
+
+
+
 var allBookingsDay = {};
 var filteredBookingsDay = {};
 
@@ -146,6 +157,8 @@ function serviceAvailable() {
 
                 
                    $.each( allServicesAvailables, function( i, item ){
+
+                    if (item.selected == true) {
                     
                         console.log(item);
                         var serviceNameFinal;
@@ -154,8 +167,10 @@ function serviceAvailable() {
                         var serviceName = item.service_name;
 
                         //formateo el nombre final para insertar en mi matriz
+                        //recorro extendedKeys para completar dinamicamente el string _DOUBLE_
 
                         if(serviceName.includes("_DOUBLE_")) {
+
                             //tengo que borrar _DOUBLE_
                             serviceNameFinal = serviceName.substring(0, serviceName.length-8);
                             isExtended = true;
@@ -177,16 +192,46 @@ function serviceAvailable() {
                         if (matrixServices.hasOwnProperty(serviceNameFinal)) { 
                             console.log("is in the matrix");
                             if (isExtended == true){
-                                insertNode(matrixServices, serviceNameFinal + '.longer_available', item.available);
-                                insertNode(matrixServices, serviceNameFinal + '.longer_service_id', item.service_id);
+                                if (extendedIsLonger == true) {
+                                    insertNode(matrixServices, serviceNameFinal + '.longer_available', item.available);
+                                    insertNode(matrixServices, serviceNameFinal + '.longer_service_id', item.service_id);
+                                    //if serviceNameFinal.shorter_available is undefined {
+                                        insertNode(matrixServices, serviceNameFinal + '.shorter_available', false);
+                                        insertNode(matrixServices, serviceNameFinal + '.shorter_service_id', false);
+                                    //}    
+                                    
+                                    //
+                                } else {
+
+                                    insertNode(matrixServices, serviceNameFinal + '.shorter_available', item.available);
+                                    insertNode(matrixServices, serviceNameFinal + '.shorter_service_id', item.service_id);
+                                    //if serviceNameFinal.shorter_available is undefined {
+                                        insertNode(matrixServices, serviceNameFinal + '.longer_available', false);
+                                        insertNode(matrixServices, serviceNameFinal + '.longer_service_id', false);
+                                    //}
+
+                                }
+
                                 insertNode(matrixServices, serviceNameFinal + '.date', dateFinal);
                                 insertNode(matrixServices, serviceNameFinal + '.time', hourFinal);
 
                             } else {
-                                insertNode(matrixServices, serviceNameFinal + '.shorter_available', item.available);
-                                insertNode(matrixServices, serviceNameFinal + '.shorter_service_id', item.service_id);
-                                insertNode(matrixServices, serviceNameFinal + '.date', dateFinal);
-                                insertNode(matrixServices, serviceNameFinal + '.time', hourFinal);
+
+                                if (extendedIsLonger == true) {
+                                    insertNode(matrixServices, serviceNameFinal + '.shorter_available', item.available);
+                                    insertNode(matrixServices, serviceNameFinal + '.shorter_service_id', item.service_id);
+                                    insertNode(matrixServices, serviceNameFinal + '.longer_available', false);
+                                    insertNode(matrixServices, serviceNameFinal + '.longer_service_id', false);
+                                    insertNode(matrixServices, serviceNameFinal + '.date', dateFinal);
+                                    insertNode(matrixServices, serviceNameFinal + '.time', hourFinal);
+                                } else {
+                                    insertNode(matrixServices, serviceNameFinal + '.shorter_available', false);
+                                    insertNode(matrixServices, serviceNameFinal + '.shorter_service_id', false);
+                                    insertNode(matrixServices, serviceNameFinal + '.longer_available', item.available);
+                                    insertNode(matrixServices, serviceNameFinal + '.longer_service_id', falitem.service_idse);
+                                    insertNode(matrixServices, serviceNameFinal + '.date', dateFinal);
+                                    insertNode(matrixServices, serviceNameFinal + '.time', hourFinal);
+                                }
                             }
 
 
@@ -214,19 +259,19 @@ function serviceAvailable() {
 
 
                         } 
-
+                    }  
                    });
                    console.log(availables);
                    console.log(matrixServices);
                    
 
-                   if (jQuery.isEmptyObject({matrixServices})) {
+                    if (jQuery.isEmptyObject({matrixServices})) {
 
                     console.log('matrix is empty');
 
 
 
-                   } else {
+                    } else {
                         console.log('matrix is NOT empty');
 
                         //recorro matrixServices para validar y chequear si hay trues,
@@ -234,22 +279,41 @@ function serviceAvailable() {
                         $.each( matrixServices, function( i, item ){
                             console.log(item);
                             console.log(i);
-                            if (item.shorter_available == false && item.longer_available == false){
+                            if (item.shorter_available == true && item.longer_available == true){
                                 //este servicio debe pintarse como no disponible y setear service_available=false
+                                //insertNode(matrixServices, item.service_name + '.service_available', false);
+                                idBookingServicesAvailables.push(item.longer_service_id);
+
+
+                            } else if (item.shorter_available == false && item.longer_available == true){
+                                
+                                insertNode(matrixServices, item.service_name + '.longer_available', false);
+                                // 
                                 insertNode(matrixServices, item.service_name + '.service_available', false);
 
+                            } else if (item.shorter_available == true && item.longer_available == false) { 
 
-                            } else {
+                                idBookingServicesAvailables.push(item.longer_service_id);
+
+                            } else if (item.shorter_available == false && item.longer_available == false) {
+                                
+                                insertNode(matrixServices, item.service_name + '.service_available', false);
+
+                            } //else {
+                                //averiguar sintaxis, sino usar la ultima condicion false false
+                            //}
 
 
                                 
-                                if (item.shorter_available == false) {
+                                //if (item.shorter_available == false) {
                                     //set service_avalible = false;
-                                    insertNode(matrixServices, item.service_name + '.service_available', false);
-                                } else {
-                                    console.log('agrego un servicio single al array');
-                                    idBookingServicesAvailables.push(item.shorter_service_id);
-                                }
+                                   // insertNode(matrixServices, item.service_name + '.service_available', false);
+
+                                    //setear a false el longer_available
+                                //} /*else {
+                                   // console.log('agrego un servicio single al array');
+                                    //idBookingServicesAvailables.push(item.shorter_service_id);
+                                
 
                                 //formula to determinate not availables services
                                 //longer_service->End_at   >   booking_time  AND  longer_service->start_at < (booking_time + service_duration)
@@ -258,16 +322,12 @@ function serviceAvailable() {
                                 //console.log('pintado disponible');
                                 //significa que debo investigar mas sobre estos servicios para saber si estan realmente disponibles
                                 //si esta disponible sacamos sus ids para buscar si alguien ya reservo ese servicio
-                                /*if (item.shorter_available == true) {
-                                    console.log('agrego un servicio single al array');
-                                    idBookingServicesAvailables.push(item.service_id_singles);
-                                }*/
-                                if (item.longer_available == true) {
-                                    console.log('agrego un servicio doble al array');
-                                    idBookingServicesAvailables.push(item.longer_service_id);
-                                }
+                                //if (item.shorter_available == true) {
+                                    //console.log('agrego un servicio single al array');
+                                    //idBookingServicesAvailables.push(item.service_id_singles);
+                               
 
-                            }
+                            
 
                 
                         
@@ -295,92 +355,154 @@ function serviceAvailable() {
                                     timeout: timeOut,
                                     success: function(response){
                                         console.log(response);
+
+                                        //function to sum hours
+                                        var hourFinalSplited = hourFinal.split(":");
+                                        var ItemDuration = item.duration.split(":");
+
+                                        var bookingTime = { hour : hourFinalSplited[0], minutes : hourFinalSplited[1] };
+                                        var serviceDuration = { hour : ItemDuration[0], minutes : ItemDuration[1] };
+
+                                        var hourFinalPlusServiceDuration = get_add_two_times(bookingTime,serviceDuration);
+                                        console.log(hourFinalPlusServiceDuration);
+
+                                        //seteo contadores de reservas de shorters o longers
+                                        var shorterServiceCounter = 0;
+                                        var longerServiceCounter = 0;
+                                        //tercer pasada por la matriz
+
                                         allBookingsDay = response.items;
-                                        //filtrar response by time
-                                        $.each( allBookingsDay, function( i, item ){
-                                            console.log('allbokingday');
-                                            console.log(item);
-                                            
-                                            
-                                            //formula to determinate not availables services
-                                            //function to sum hours
-                                            var hourFinalSplited = hourFinal.split(":");
-                                            var ItemDuration = item.duration.split(":");
 
-                                            var bookingTime = { hour : hourFinalSplited[0], minutes : hourFinalSplited[1] };
-                                            var serviceDuration = { hour : ItemDuration[0], minutes : ItemDuration[1] };
+                                        $.each( matrixServices, function( i, item ){
 
-                                            var hourFinalPlusServiceDuration = get_add_two_times(bookingTime,serviceDuration);
-                                            console.log(hourFinalPlusServiceDuration);
+                                            if (item.shorter_available == true && item.longer_available == true){
 
-                                            //i use Date.parse('01/01/2011 10:20:45') > Date.parse('01/01/2011 5:10:10') to compare hours
-                                            //https://stackoverflow.com/questions/6212305/how-can-i-compare-two-time-strings-in-the-format-hhmmss
-                                           
-                                            //var hourFinalPlusServiceDuration = hourFinal + item.duration;
-                                            //longer_service->End_at   >   booking_time  AND  longer_service->start_at < (booking_time + service_duration)
-                                            if (longer_service_endat > hourFinal && longer_service_startat < hourFinalPlusServiceDuration) {
-                                                //set service to not available
-                                            }
-                                            
-                                            
-                                            
-                                            if(item.time == hourFinal) {
-                                                console.log('existe una reserva a esa hora');
-                                                //si existe una reserva a esta hora
-                                                //tengo que setear/calcular en mi matriz cuantos lugares disponibles hay
-                                                //quienes ocupan estos lugares
-                                                //var idServiceAlreadyBooked = item.services.id[i];
+                                                //puede convertirse en false - true
 
-                                                /*
+                                                //set contador reservas a la misma hora = 0;
+                                                
+                                                //1 - 1 persona reserva para single => TRUE FALSE
+                                                //2 -1 a 3 personas haya rerservado dobles => FALSE TRUE
+                                                //3 - nada reservado  => TRUE TRUE
 
+                                                 $.each( allBookingsDay, function( a, booking ){
 
+                                                    if (booking.time == hourFinal) {
+                                                        //set contador += 1
+                                                        //ver que tipo de servicio es 
+                                                        console.log(booking.services[0].id);
+                                                        if (booking.services[0].id == item.longer_service_id){
+                                                            //sumo +1 reserva a longer
+                                                            shorterServiceCounter = ++shorterServiceCounter;
 
-                                                */
+                                                        } else if (booking.services[0].id == item.shorter_service_id) {
+                                                            // o sumo +1 reserva a shorter
+                                                            longerServiceCounter = ++longerServiceCounter;
+                                                        }
+                                                        
+
+                                                    }
+                                                    
+                                                 });
+                                                 console.log(longerServiceCounter);
+                                                 console.log(shorterServiceCounter);
+
+                                                 //me fijo cuantas reservas de que tipo se han hecho 
+                                                 //a esa misma hora con los contadores y de ahi determino
+                                                 //como setear la matriz
+                                                 if (shorterServiceCounter == 0 && longerServiceCounter == 0) {
+                                                     //no hay reservas a esa hora de singles o dobles
+                                                     //setear a TRUE TRUE lo cual ya está
+                                                     //setear tipo de servicio disponible single y doble, y available units 2 y 4
+                                                     insertNode(matrixServices, item.service_name + '.shorter_available', true);
+                                                     insertNode(matrixServices, item.service_name + '.longer_available', true);
+                                                     
+
+                                                 } else if (shorterServiceCounter == 1) {
+                                                     //existe una reserva de singles
+                                                     //setear a TRUE FALSE
+                                                     
+                                                     insertNode(matrixServices, item.service_name + '.shorter_available', true);
+                                                     insertNode(matrixServices, item.service_name + '.longer_available', false);
+
+                                                     //available_units_shorter = 1;
+                                                     insertNode(matrixServices, item.service_name + '.shorter_available_units', 1);
+
+                                                 } else if (longerServiceCounter <= 3) {
+                                                     //hay una reserva de dobles
+                                                     // FALSE TRUE
+                                                     //available_units_shorter
+
+                                                     insertNode(matrixServices, item.service_name + '.shorter_available', false);
+                                                     insertNode(matrixServices, item.service_name + '.longer_available', true);
+
+                                                     //available_units_shorter = 1;
+                                                     var unitsLongerAvailable = 4 - longerServiceCounter;
+                                                     insertNode(matrixServices, item.service_name + '.longer_available_units', unitsLongerAvailable);
+
+                                                 }
+
                                                 
 
+                     
+                                            } else if (item.shorter_available == true && item.longer_available == false) { 
 
-                                            } else {
-                                                //no hay ninguna reserva a esa hora, por lo cual sos el primero
+                                                //i use Date.parse('01/01/2011 10:20:45') > Date.parse('01/01/2011 5:10:10') to compare hours
+                                                //https://stackoverflow.com/questions/6212305/how-can-i-compare-two-time-strings-in-the-format-hhmmss
+                                           
 
-                                            }
-                                        
+                                                //set contador reservas a la misma hora = 0;
+
+                                                $.each( allBookingsDay, function( a, booking ){
+                                                    
+                                                    //Date.parse('01/01/2011 10:20:45')
+                                                    if (Date.parse('01/01/2011 '+booking.services[0].end_at) > Date.parse('01/01/2011 '+hourFinal) && Date.parse('01/01/2011' +booking.services[0].start_at) < Date.parse('01/01/2011 ' +hourFinalPlusServiceDuration)) {
+                                                        console.log("set item shorter available false");
+                                                        //SET FALSE FALSE
+                                                    } else {
+                                                        //set item shorter available true
+                                                        //SET TRUE FALSE
+                                                    }
+                                                    
+                                                    //if (booking.services[0].end_at > hourFinal && booking.services[0].start_at < hourFinalPlusServiceDuration ) {
+
+                                                    //}
+                                                    
+
+                                                });
+                                              
+                
+                                            } 
+
                                         });
-
-
-                                    
                                     },
                                     error: function (data, status, error){
-                                    //alert('Hubo un error, por favor revisá tu correo y contraseña');
-                                        console.log(error, data, status);
-                                    }
-                            });
-
-                        }    
-
-                        //console.log()
                         
+                                    }    
+                                        
+                            });    
+
+                        }
+
                         
-                        /*
-                        significa que quizas haya alguna reserva
-                        hago una llamada ajax para saber los detalles con la hora y el dia
-
-                        filtro los resultados by time
-
-                        */
-
-                   }
-
-                   mainView.router.load({ pageName: "services" });
                 
 
-                } else {
-                    alert('Hubo un problema, por favor intente nuevamente');
-                }
+                
 
+                
+                    }
+                    console.log(matrixServices);
+                    mainView.router.load({ pageName: "services" });
+
+                } else{
+                    console.log("response was not ok");
+                }
             },
             error: function (data, status, error){
 
-        }
+            }
+   
+            
     });
 
 }
