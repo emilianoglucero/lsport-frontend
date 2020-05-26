@@ -170,7 +170,9 @@ if (match.tipoObjeto == "torneo-encuentro") {
                                             strBuilderLastMatch.push('<div class="match-event-timeline-commentary">'+item.comentario+'</div>');
                                         }
                                         //it means is a 4 people match
-                                        if (item.jugadorLocal1 !== "" || item.jugadorLocal2 !== "" || item.jugadorVisitante1 !== "" || item.jugadorVisitante2 !== "") {
+                                        console.log(item.jugadorLocal2);
+                                        console.log(item.jugadorVisitante2);
+                                        if (item.jugadorLocal2 != "" && item.jugadorVisitante2 != "") {
                                             strBuilderLastMatch.push('<div class="match-event-title">'+item.jugadorLocal1.apellido+', '+item.jugadorLocal1.nombre+ ' / ' +item.jugadorLocal2.apellido+', '+item.jugadorLocal2.nombre+': ' +item.jugadorLocal1Puntos+ '<br>'+item.jugadorVisitante1.apellido+', '+item.jugadorVisitante1.nombre+' / ' +item.jugadorLocal2.apellido+', '+item.jugadorLocal2.nombre+': '+item.jugadorVisitante1Puntos+'</div>');
 
                                         } else {
