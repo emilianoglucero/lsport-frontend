@@ -1,23 +1,40 @@
-<div class="page-content" >	
+<div class="page-content" style="font-family: Montserrat-Regular">	
 	<div id="loggedUser">
 		<div class="content-block-title" id="lblTitleUser"></div>
 		<div class="list-block">
 		<ul>
 			<!-- Text inputs -->
 			<li>
-			<div class="item-content">
-				<div class="item-inner">
-				<div class="item-title label" id="lblNameUser"></div>
-				</div>  
-				<div class="item-input">
-					<input type="text" id="user-profile-name" disabled>
-				</div>	        
-			</div>
+				<div class="item-content">
+					<!--<div class="item-inner">
+						<div class="item-title label" id="lblNameUser"></div>
+					</div>  -->
+					<div class="item-input">
+						<input type="text" id="user-profile-name" disabled>
+					</div>	        
+				</div>
+			</li>
+			<!--<li>
+				<div class="item-content">
+					<div class="item-input">
+						<input type="text" id="user-profile-lastname" disabled>
+					</div>	        
+				</div>
+			</li>-->
+			<li>
+				<div class="item-content">
+					<div class="item-input">
+						<input type="text" id="user-profile-email" disabled>
+					</div>	        
+				</div>
+			</li>
+			<li>
+				<a href="#" onclick="myBookingsPage()" class="item-link list-button" id="lblMyBookingsButton"></a>
 			</li>
 			<li>
 				<a href="#" onclick="logOutUser()" class="item-link list-button" id="lblLogoutButton"></a>
 			</li>
-			<li>
+			<!--<li>
 				<a href="#" onclick="toPDF()" class="item-link list-button">To PDF</a>
 			</li>
 			<li>
@@ -25,7 +42,7 @@
 			</li>
 			<li>
 				<a href="#" onclick="openBooking()" class="item-link list-button">Abrir Ticket</a>
-			</li>
+			</li>-->
 		</ul>
 		</div>
 	</div>

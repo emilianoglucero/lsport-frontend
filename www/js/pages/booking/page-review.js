@@ -4,9 +4,12 @@ var serviceName;
 
 myApp.onPageInit('review', function (page)
 {
+    //erase later
+    //dateFinal = "2020-06-13";
+    //hourFinal = "14:00";
     console.log('review init');
     //function to sum time https://stackoverflow.com/questions/26056434/sum-of-time-using-javascript
-    function timestrToSec(timestr) {
+   /* function timestrToSec(timestr) {
         var parts = timestr.split(":");
         return (parts[0] * 3600) +
                (parts[1] * 60); 
@@ -35,24 +38,45 @@ myApp.onPageInit('review', function (page)
       formatTime(timestrToSec(hourFinal) + timestrToSec(time2));
       console.log(hourFinalEnd);
 
-
+*/
 
     builderReviewServices();
+    getUserBasicInfo();
 
     
+});
+
+myApp.onPageReinit('review', function (page)
+{
+    //radioValueHasCode = "";
+    //radioValueId = "";
+    console.log("page review re init");
+    builderReviewServices();
+    //getUserBasicInfo();
+    //radioValue = undefined;
+
+
 });
 
 function serviceConfirm(){
 
     myApp.confirm('¿Seguro desea reservar?', function () {
+        showLoadSpinnerWS();
         console.log('reserva yes');
         //myApp.alert('You clicked Ok button');
         //mainView.router.load({ pageName: "confirmation" });
+        console.log(dateFinal);
+        console.log(hourFinal);
+        console.log(userID);
+        console.log(userFirstName);
+        console.log(userLastName);
+        console.log(email);
+        console.log(radioValueId);
         
 
         $.ajax({
             // URL del Web Service
-                url: "http://172.105.156.64/?rest_route=/salon/api/v1/bookings",
+                url: "https://demoreservas.lenguajesport.com/wpfrontend/wp-json/salon/api/v1/bookings",
                 method: 'POST',
                 dataType: "json",
                 contentType: "application/json",
@@ -63,15 +87,15 @@ function serviceConfirm(){
                     "date": dateFinal,
                     "time": hourFinal,
                     "status": "sln-b-confirmed",
-                    "customer_id": 1,
-                    "customer_first_name": "Rodrigo",
-                    "customer_last_name": "Ulloa",
-                    "customer_email": "ulloa@rodrigo.com",
+                    "customer_id": userID,
+                    "customer_first_name": userFirstName,
+                    "customer_last_name": userLastName,
+                    "customer_email": email,
                     "customer_phone": "",
-                    "customer_address": "abc 527",
+                    "customer_address": "",
                     "services": [
                         {
-                        "service_id": idServiceSelected
+                        "service_id": radioValueId
                         }
                     ],
                     "note": "a ver si suma"
@@ -83,6 +107,7 @@ function serviceConfirm(){
                         idConfirmation = response.id;
                         console.log(idConfirmation);
                         mainView.router.load({ pageName: "confirmation" });
+                        hideLoadSpinnerWS();
 
                         //$$('.confirm-title-ok').on('click', function () {
                             /*myApp.confirm('Seguro desea reservar?', function () {
@@ -121,37 +146,46 @@ function serviceConfirm(){
 
 function builderReviewServices() {
     
+    $('#services-review').html('');
+
+                console.log(radioValueId);
+                console.log(radioValueHasCode);
+                console.log(radioValueDuration);
+                console.log(radioValuePrice);
+                console.log(radioValueName);
+                console.log(radioValueType);
+                console.log(dateFinal);
+                console.log(hourFinal);
+                var dateFinalArg = formatDateFromUsToArg(dateFinal);
+                var dayOfTheWeek = getDayOfWeek(dateFinal);
+    
     var strBuilderReviewServicesContent = [];
 
-	if(servicesAvailables.length == 0){
-		strBuilderReviewServicesContent.push('<div class="content-block">');
-        strBuilderReviewServicesContent.push('<div class="divNotLastestNews">No hay reservas disponibles</div>');
-        strBuilderReviewServicesContent.push('</div>');
-        
-	} else{
         strBuilderReviewServicesContent.push('<div class="content-block-title">Revisá Tu Reserva</div>');
         strBuilderReviewServicesContent.push('<div class="list-block media-list">');
         strBuilderReviewServicesContent.push('<ul>');
-        $.each( servicesAvailables, function( i, item ){
-            console.log(item);
-            console.log(idServiceSelected);
-            if(item.service_id == idServiceSelected){
-                serviceName = item.service_name;
+        //$.each( servicesAvailables, function( i, item ){
+            //console.log(item);
+            //console.log(idServiceSelected);
+            //if(item.service_id == idServiceSelected){
+                //serviceName = item.service_name;
 
                 //alert(item.service_name);
-                strBuilderReviewServicesContent.push('<li><a href="#" class="item-link item-content">');
+                strBuilderReviewServicesContent.push('<li>');
                 //strBuilderReviewServicesContent.push('<div class="item-media"></div>');
-                strBuilderReviewServicesContent.push('<div class="item-inner"><div class="item-title-row">');
-                strBuilderReviewServicesContent.push('<div class="item-title">'+item.service_name+'</div><div class="item-after">Precio Final: $40</div></div>');
-                strBuilderReviewServicesContent.push('<div class="item-subtitle">'+dateToShow+'</div>');
-                strBuilderReviewServicesContent.push('<div class="item-subtitle">Desde: '+hourFinal+'hs</div>');
-                strBuilderReviewServicesContent.push('<div class="item-subtitle">Hasta: '+hourFinalEnd+'hs</div>');
+                strBuilderReviewServicesContent.push('<div class="item-inner" style="padding: 15px;><div class="item-title-row">');
+                    strBuilderReviewServicesContent.push('<div class="item-title">'+radioValueName+'</div></div>');
+                strBuilderReviewServicesContent.push('</div>');
+                strBuilderReviewServicesContent.push('<div class="booking-cards" style="margin: 10px;">');
+                strBuilderReviewServicesContent.push('<div class="item-subtitle" style="margin: 5px;">Precio Final: $'+radioValuePrice+'</div>');
+                strBuilderReviewServicesContent.push('<div class="item-subtitle" style="margin: 5px;">Fecha: '+dayOfTheWeek+' '+dateFinalArg+'</div>');
+                strBuilderReviewServicesContent.push('<div class="item-subtitle" style="margin: 5px;">Hora: '+hourFinal+'hs</div>');
+                strBuilderReviewServicesContent.push('<div class="item-subtitle" style="margin: 5px;">Duración: '+radioValueDuration+'hs</div>');
                 strBuilderReviewServicesContent.push('</div></a></li>');
-            }
-        }); 
+            //}
+        //}); 
         strBuilderReviewServicesContent.push('</ul></div></div>');   
 
-    } 
     $('#services-review').append(strBuilderReviewServicesContent.join(""));   
 
 

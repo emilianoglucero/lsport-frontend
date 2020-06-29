@@ -92,6 +92,11 @@ jQuery(document).ready(function() {
   xhReq.send(null);
   document.getElementById("page-notifications").innerHTML = xhReq.responseText;
 
+  // DETALLES DE RESERVAS
+  xhReq.open("GET", "pages/page-bookings.html", false);
+  xhReq.send(null);
+  document.getElementById("page-bookings").innerHTML = xhReq.responseText;
+
   // NOTICIAS
   /*xhReq.open("GET", "pages/page-news.html", false);
   xhReq.send(null);
@@ -230,6 +235,11 @@ jQuery(document).ready(function() {
   xhReq.open("GET", "pages/page-unsupported.html", false);
   xhReq.send(null);
   document.getElementById("page-unsupported").innerHTML = xhReq.responseText;*/
+  // DETALLES DE ACTIVIDAD
+  xhReq.open("GET", "pages/page-activitydetails.html", false);
+  xhReq.send(null);
+  document.getElementById("page-activitydetails").innerHTML =
+    xhReq.responseText;
 
   // BOOKING - CHOOSE DATE
   xhReq.open("GET", "pages/booking/page-date.html", false);
@@ -254,6 +264,12 @@ jQuery(document).ready(function() {
   xhReq.send(null);
   document.getElementById("page-confirmation").innerHTML =
     xhReq.responseText;  
+
+    // CHECKEO DE CODIGO
+  xhReq.open("GET", "pages/booking/page-codecheck.html", false);
+  xhReq.send(null);
+  document.getElementById("page-codecheck").innerHTML =
+    xhReq.responseText;
 
   //loadPageInit();
 });
@@ -1010,3 +1026,20 @@ function dateSubtraction(yesterday, today) {
   var dias = Math.floor(dif / (1000 * 60 * 60 * 24));
   return dias;
 }
+
+
+//BURGER MENU NAMES
+$('#lblMnuHome').text(lblMnuHome);
+$('#lblMnuUser').text(lblMnuUser);
+
+
+//Function to get the day of the week
+// Accepts a Date object or date string that is recognized by the Date.parse() method
+//https://stackoverflow.com/questions/17964170/get-the-weekday-from-a-date-object-or-date-string-using-javascript
+function getDayOfWeek(date) {
+  const dayOfWeek = new Date(date).getDay();    
+  return isNaN(dayOfWeek) ? null : 
+    ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'][dayOfWeek];
+}
+
+

@@ -1,492 +1,286 @@
-var arrayLastestNewsActivity = [];
-var tabsActivityDetails = [];
-var contentTabInformationActivityDetails = [];
-var areContentTabNewsActivityDetailsBuilder = false;
-var areContentTabInformationSportDetailsBuilder = false;
-var currentPageNumberActivityDetails, currentTotalPageActivityDetails;
-var activityDetails = [];
-var bannerActivityDetails = [];
-var areActivityDetailsLoaded = false;
 
-var recentNewsListActivityDetails = [];
+var areContentTabMyPastBookingsBuilder = false;
+var areContentTabMyNextBookingsBuilder = false;
 
-var nextPageNumberActivityDetails = 1;
-var loadingInfiniteScrollActivityDetails = false;
-
-var areAccessedServerNewsActivityDetails = false;
+var areContentTabNewsSportDetailsBuilder = false;
 
 myApp.onPageInit('activitydetails', function (page) {
-	$('#subnavbarActivityDetails1').text(lblTabInformation);
-	$('#subnavbarActivityDetails2').text(lblTabNews);
-	$('#spnDescriptionActivityDetails').text(lblDescription);
-	$('#spnScheduleActivityDetails').text(lblSchedule);
-	$('.headerListEndNews').text(headerListEndNews);
-	$('.contentListEndNews').text(contentListEndNews);
+	
+	$('#subnavbarActivityDetails1').text("Proximas");
+	$('#subnavbarActivityDetails2').text("Historial");
+	$('#tabActivityDetails1').html("");
+	$('#tabActivityDetails2').html("");
+	
 
 	$$('#tabActivityDetails1').on('show', function () {
-		if (areContentTabInformationSportDetailsBuilder == false) {
-			builderInformationActivityDetails();
-			areContentTabInformationSportDetailsBuilder = true;
-		}
+		console.log("tab1");
+       // myApp.alert('Tab 1 is visible');
+        if (areContentTabNewsSportDetailsBuilder == false) {
+            console.log("tab 1 visible");
+            builderUserNextBookings();
+            areContentTabNewsSportDetailsBuilder = true;
+        }
 	});
 
 	$$('#tabActivityDetails2').on('show', function () {
-		if (areContentTabNewsActivityDetailsBuilder == false) {
-			builderNewsActivityDetails();
-			areContentTabNewsActivityDetailsBuilder = true;
-		}
-		myApp.initImagesLazyLoad(mainView.activePage.container);
+		//myApp.alert('Tab 2 is visible');
+		console.log("tab2");
+        if (areContentTabMyPastBookingsBuilder == false) {
+            builderUserPastBookings();
+            areContentTabMyPastBookingsBuilder = true;
+        }
 	});
+
+
+	var todaysDate = new Date();
+
+    function convertDate(date) {
+        var yyyy = date.getFullYear().toString();
+        var mm = (date.getMonth()+1).toString();
+        var dd  = date.getDate().toString();
+
+        var mmChars = mm.split('');
+        var ddChars = dd.split('');
+
+        return yyyy + '-' + (mmChars[1]?mm:"0"+mmChars[0]) + '-' + (ddChars[1]?dd:"0"+ddChars[0]);
+    }
+
+    console.log(convertDate(todaysDate)); // Returns: 2015-08-25
+	todaysDateFormated = convertDate(todaysDate);
+	
+	builderUserNextBookings();
+	areContentTabNewsSportDetailsBuilder = true;
+
+
+});
+
+myApp.onPageReinit('user', function (page)
+{
+
 
 });
 
 myApp.onPageBeforeAnimation('activitydetails', function (page) {
-	myApp.params.swipePanel = false;
-	if (page.fromPage.name != 'newdetails') {
-		$$('#page-activitydetails .page-content').scrollTop(0);
-	}
-	myApp.initImagesLazyLoad(mainView.activePage.container);
-	trackPageGA("Detalle Actividad");
+	//myApp.params.swipePanel = false;
+	
 });
 
-function loadActivityDetails(idAct) {
-	showLoadSpinnerWS();
-	areActivityDetailsLoaded = false;
-	areContentTabInformationSportDetailsBuilder = false;
-	areContentTabNewsActivityDetailsBuilder = false;
-	activityDetails = [];
-	$.ajax({
-		// URL del Web Service
-		url: getPathWS() + 'getActividadDetalle',
-		dataType: 'json',
-		data: {
-			'actividadId': idAct
-		},
-		timeout: timeOut,
-		success: function (response) {
-			console.log(response);
-			/*if(response.errorCode != 0)
-			{
-			    hideLoadSpinnerWS();
-			    filterCodeErrorWS(response);
-			    return;
-			}
-			if(isAppUpdate(response.serverVersion) == false){
+function formatDateFromUsToArg(date){
+	var dateSplited = date.split('-');
+	var dateFinalArg = dateSplited[2] + '-' + dateSplited[1] + '-' + dateSplited[0];
+	return dateFinalArg;
+}
+
+function builderUserNextBookings() {
+    showLoadSpinnerWS();
+    $('#tabActivityDetails1').html('');
+	console.log(userID, todaysDateFormated);
+
+
+    $.ajax({
+        // URL del Web Service
+            url: "https://demoreservas.lenguajesport.com/wpfrontend/wp-json/salon/api/v1/bookings",
+            method: 'GET',
+            dataType: "json",
+            contentType: "application/json",
+            headers: {
+                "Access-Token": tokenBooking
+            },
+            data: { 
+                "customers": userID,
+                "orderby": "date_time",
+                "start_date": todaysDateFormated
+            },
+            timeout: timeOut,
+            success: function(response){
+                console.log(response);
+                var userBookingsList = response.items;
+                
+                console.log(userBookingsList);
+                var strBuildeUserBookingContent = [];
+
+                if(userBookingsList.length == 0){
+                    strBuildeUserBookingContent.push('<div class="content-block">');
+                    strBuildeUserBookingContent.push('<div class="divNotLastestNews">No tienes proximas reservas aún</div>');
+                    strBuildeUserBookingContent.push('</div>');
+                    
+                } else{
+                    strBuildeUserBookingContent.push('<div class="content-block-title">TUS PROXIMAS RESERVAS</div>');
+                    strBuildeUserBookingContent.push('<div class="list-block media-list">');
+					strBuildeUserBookingContent.push('<ul>');
+					var serviceDetail;
+                    $.each( userBookingsList, function( i, item ){
+						console.log(item);
+						console.log(item.services[0]);
+						serviceDetail = item.services[0];
+
+                        var finalDateArg = formatDateFromUsToArg(item.date);
+                        var dayOfTheWeek = getDayOfWeek(item.date);
+                        var myCodeBooking = codeBooking(item.date, item.time, item.id);
+                        console.log(myCodeBooking);
+                        //console.log(idServiceSelected);
+                        //if(item.service_id == idServiceSelected){
+                            //serviceName = item.service_name;
+
+                            //alert(item.service_name);
+                            /*strBuildeUserBookingContent.push('<li><a href="#" class="item-link item-content">');
+                            //strBuildeUserBookingContent.push('<div class="item-media"></div>');
+                            strBuildeUserBookingContent.push('<div class="item-inner"><div class="item-title-row">');
+                            strBuildeUserBookingContent.push('<div class="item-title">'+serviceDetail.service_name+'</div><div class="item-after">Precio Final: $'+item.amount+'</div></div>');
+                            strBuildeUserBookingContent.push('<div class="item-subtitle">'+finalDateArg+'</div>');
+                            strBuildeUserBookingContent.push('<div class="item-subtitle">Desde: '+serviceDetail.start_at+'hs</div>');
+							strBuildeUserBookingContent.push('<div class="item-subtitle">Hasta: '+serviceDetail.end_at+'hs</div>');
+							strBuildeUserBookingContent.push('<div class="item-subtitle">ID: '+item.id+'</div>');
+							//strBuildeUserBookingContent.push('<div class="item-subtitle"><a href="#" onclick="readFile()" class="item-link list-button">Read File</a></div>');
+							//strBuildeUserBookingContent.push('<div class="item-subtitle"><a href="#" onclick="toPDF()" class="item-link list-button">To PDF</a></div>');
+							//strBuildeUserBookingContent.push('<div class="item-subtitle"><a href="#" onclick="openBooking()" class="item-link list-button">Abrir Ticket</a></div>');
+                            strBuildeUserBookingContent.push('</div></a></li>');*/
+
+
+                            //alert(item.service_name);
+                            strBuildeUserBookingContent.push('<li  style="margin-top: 20px;list-style-position: inside;border-radius: 10px;border: 1px solid #c9d1cb">');
+                            //strBuildeUserBookingContent.push('<div class="item-media"></div>');
+                            strBuildeUserBookingContent.push('<div class="item-inner" style="padding: 15px;><div class="item-title-row">');
+                            strBuildeUserBookingContent.push('<div class="item-title">'+serviceDetail.service_name+'</div></div>');
+                            strBuildeUserBookingContent.push('<div class="booking-cards" style="margin: 10px;">');
+                                strBuildeUserBookingContent.push('<div class="item-subtitle">Fecha: '+dayOfTheWeek+' '+finalDateArg+'</div>');
+                                strBuildeUserBookingContent.push('<div class="item-subtitle">Precio Facturado: $'+item.amount+'</div>');
+                                strBuildeUserBookingContent.push('<div class="item-subtitle">Desde: '+serviceDetail.start_at+'hs</div>');
+                                strBuildeUserBookingContent.push('<div class="item-subtitle">Hasta: '+serviceDetail.end_at+'hs</div>');
+                                strBuildeUserBookingContent.push('<div class="item-subtitle">Código de Reserva: '+myCodeBooking+'</div>');
+                                strBuildeUserBookingContent.push('<div class="item-subtitle">ID: '+item.id+'</div>');
+                            //strBuildeUserBookingContent.push('</div>');
+                            strBuildeUserBookingContent.push('</div></li>');
+                        //}
+                    }); 
+                    strBuildeUserBookingContent.push('</ul></div>');   
+
+				} 
+				console.log(strBuildeUserBookingContent);
+				$('#tabActivityDetails1').append(strBuildeUserBookingContent.join(""));   
 				hideLoadSpinnerWS();
-				mainView.router.load({pageName: 'update'});
-				return;
-			}*/
-			nextPageNumberActivityDetails = parseInt(response.sucesosPanel.paginaActual) + 1;
-			currentPageNumberActivityDetails = parseInt(response.sucesosPanel.paginaActual);
-			currentTotalPageActivityDetails = parseInt(response.sucesosPanel.paginasTotal);
 
-			//$('#contentTabActivityDetails2').html('');
-			recentNewsListActivityDetails = [];
-			recentNewsListActivityDetails = response.sucesosPanel.sucesos;
 
-			activityDetails = response.actividad;
-
-			//vacio los acumuladores por si venian con info de la pantalla de deportes
-			tournamentNewsList = [];
-			tournamentEventList = [];
-			tournamentPositionList = [];
-			tournamentMatchList = [];
-			tournamentEncuentroList = [];
-
-			var tournamentSucesosLenght = recentNewsListActivityDetails.length - 1;
-			console.log(tournamentSucesosLenght);
-			//clasifico y almaceno los sucesos, para no tener inconvenientes con ids duplicados
-			for (i = 0; i <= tournamentSucesosLenght; i++) {
-				console.log(recentNewsListActivityDetails[i]);
-				console.log(recentNewsListActivityDetails[i].id);
-				console.log(recentNewsListActivityDetails[i].tipoObjeto);
-				//allSucesosPageList.push(newsListHome[i]);
-				if (recentNewsListActivityDetails[i].tipoObjeto === 'evento') {
-					console.log('agrego evento');
-					tournamentEventList.push(recentNewsListActivityDetails[i]);
-				}
-				if (recentNewsListActivityDetails[i].tipoObjeto === 'noticia') {
-					console.log('agrego noticia');
-					tournamentNewsList.push(recentNewsListActivityDetails[i]);
-				}
-				if (recentNewsListActivityDetails[i].tipoObjeto === 'torneo-tabla-posicion') {
-					console.log('agrego tabla de pos');
-					tournamentPositionList.push(recentNewsListActivityDetails[i]);
-				}
-				if (recentNewsListActivityDetails[i].tipoObjeto === 'torneo-fecha') {
-					console.log('agrego torneo fecha');
-					tournamentMatchList.push(recentNewsListActivityDetails[i]);
-				}
-				if (recentNewsListActivityDetails[i].tipoObjeto === 'torneo-encuentro') {
-					console.log('agrego encuentro');
-					tournamentEncuentroList.push(recentNewsListActivityDetails[i]);
-				}
+            },
+            error: function (data, status, error){
+                console.log(erro, data, status);
 			}
+			
 
-			//bannerActivityDetails = response.banner;
-			areActivityDetailsLoaded = true;
-			areContentTabNewsActivityDetailsBuilder = true;
-			builderActivityDetails(idAct);
-			hideLoadSpinnerWS();
+            
+    });
 
-		},
-		error: function (data, status, error) {
-			hideLoadSpinnerWS();
-			showMessage(messageConexionError);
-		},
-		beforeSend: function (xhr, settings) {
-			xhr.setRequestHeader('Authorization', 'Bearer ' + accessToken);
-		} //set tokenString before send
-	});
+
+
 }
 
-var idActivitySelected;
+function builderUserPastBookings() {
+    showLoadSpinnerWS();
+    $('#tabActivityDetails2').html('');
+	console.log(userID, todaysDateFormated);
 
-function builderActivityDetails(idAct) {
+    $.ajax({
+        // URL del Web Service
+            url: "https://demoreservas.lenguajesport.com/wpfrontend/wp-json/salon/api/v1/bookings",
+            method: 'GET',
+            dataType: "json",
+            contentType: "application/json",
+            headers: {
+                "Access-Token": tokenBooking
+            },
+            data: { 
+                "customers": userID,
+                "orderby": "date_time",
+                "end_date": todaysDateFormated
+            },
+            timeout: timeOut,
+            success: function(response){
+				console.log(response);
+                var userBookingsList = response.items;
+                
+                console.log(userBookingsList);
+                var strBuildeUserBookingContent = [];
 
-	if (areActivityDetailsLoaded == true) {
-		if (activityDetails == "") {
-			hideLoadSpinnerWS();
-			showMessage(messageConexionError);
-		} else {
-			$('.icon-activityDetails').css('background-image', 'url("' + activityDetails.imagenPrincipal + '")');
-			$('#lblHeaderActivityDetails').text(activityDetails.nombreCorto);
+                if(userBookingsList.length == 0){
+                    strBuildeUserBookingContent.push('<div class="content-block">');
+                    strBuildeUserBookingContent.push('<div class="divNotLastestNews">No has hecho reservas aún</div>');
+                    strBuildeUserBookingContent.push('</div>');
+                    
+                } else{
+                    strBuildeUserBookingContent.push('<div class="content-block-title">TUS RESERVAS PASADAS</div>');
+                    strBuildeUserBookingContent.push('<div class="list-block media-list">');
+					strBuildeUserBookingContent.push('<ul>');
+					var serviceDetail;
+                    $.each( userBookingsList, function( i, item ){
+						console.log(item);
+						console.log(item.services[0]);
+                        serviceDetail = item.services[0];
+                        console.log(serviceDetail);
 
-			$('#contentTabActivityDetails2').html('');
-			$$('#contentTabActivityDetails2').scrollTop(0);
+                        var finalDateArg = formatDateFromUsToArg(item.date);
+                        var dayOfTheWeek = getDayOfWeek(item.date);
+                        var myCodeBooking = codeBooking(item.date, item.time, item.id);
+                        console.log(myCodeBooking);
+                        //if(item.service_id == idServiceSelected){
+                            //serviceName = item.service_name;
 
-			idActivitySelected = idAct;
+                            //alert(item.service_name);
+                            strBuildeUserBookingContent.push('<li  style="margin-top: 20px;list-style-position: inside;border-radius: 10px;border: 1px solid #c9d1cb">');
+                            //strBuildeUserBookingContent.push('<div class="item-media"></div>');
+                            strBuildeUserBookingContent.push('<div class="item-inner" style="padding: 15px;><div class="item-title-row">');
+                            strBuildeUserBookingContent.push('<div class="item-title">'+serviceDetail.service_name+'</div></div>');
+                            strBuildeUserBookingContent.push('<div class="booking-cards" style="margin: 10px;">');
+                                strBuildeUserBookingContent.push('<div class="item-subtitle">Fecha: '+dayOfTheWeek+' '+finalDateArg+'</div>');
+                                strBuildeUserBookingContent.push('<div class="item-subtitle">Precio Facturado: $'+item.amount+'</div>');
+                                strBuildeUserBookingContent.push('<div class="item-subtitle">Desde: '+serviceDetail.start_at+'hs</div>');
+                                strBuildeUserBookingContent.push('<div class="item-subtitle">Hasta: '+serviceDetail.end_at+'hs</div>');
+                                strBuildeUserBookingContent.push('<div class="item-subtitle">Código de Reserva: '+myCodeBooking+'</div>');
+                                strBuildeUserBookingContent.push('<div class="item-subtitle">ID: '+item.id+'</div>');
+                            //strBuildeUserBookingContent.push('</div>');
+                            strBuildeUserBookingContent.push('</div></li>');
 
-			if (currentPageNumberActivityDetails < currentTotalPageActivityDetails) {
-				myApp.attachInfiniteScroll('.infinite-scroll-activitydetails');
-				$$('.infinite-scroll-activitydetails').on('infinite', function () {
-					if (loadingInfiniteScrollActivityDetails) {
-						return;
-					}
-					loadingInfiniteScrollActivityDetails = true;
-					if (areAccessedServerNewsActivityDetails == false) {
-						loadNewsActivityDetails(idActivitySelected);
-					} else {
-						$('#noConnection-content-block-activitydetails').show();
-					}
-				});
-			} else {
-				myApp.detachInfiniteScroll('.infinite-scroll-activitydetails');
-			}
 
-			if (recentNewsListActivityDetails != "") {
-				myApp.showTab("#tabActivityDetails2");
-				if ($('#tabActivityDetails2').hasClass('active') == true) {
-					builderNewsActivityDetails();
-					areContentTabNewsActivityDetailsBuilder = true;
-				}
-			} else {
-				myApp.showTab("#tabActivityDetails1");
-				if ($('#tabSportDetails1').hasClass('active') == true) {
-					builderInformationActivityDetails();
-					areContentTabInformationSportDetailsBuilder = true;
-				}
+                            /*strBuildeUserBookingContent.push('<li><a href="#" class="item-link item-content">');
+                            //strBuildeUserBookingContent.push('<div class="item-media"></div>');
+                            strBuildeUserBookingContent.push('<div class="item-inner"><div class="item-title-row">');
+                            strBuildeUserBookingContent.push('<div class="item-title">'+serviceDetail.service_name+'</div><div class="item-after">Precio Final: $'+item.amount+'</div></div>');
+                            strBuildeUserBookingContent.push('<div class="item-subtitle">'+finalDateArg+'</div>');
+                            strBuildeUserBookingContent.push('<div class="item-subtitle">Desde: '+serviceDetail.start_at+'hs</div>');
+							strBuildeUserBookingContent.push('<div class="item-subtitle">Hasta: '+serviceDetail.end_at+'hs</div>');
+							strBuildeUserBookingContent.push('<div class="item-subtitle">ID: '+item.id+'</div>');
+                            strBuildeUserBookingContent.push('</div></a></li>');
 
-			}
 
-			mainView.router.load({
-				pageName: 'activitydetails'
-			});
+                            strBuildeUserBookingContent.push('<li>');
+                            //strBuildeUserBookingContent.push('<div class="item-media"></div>');
+                            strBuildeUserBookingContent.push('<div class="item-inner" style="padding: 15px;><div class="item-title-row">');
+                                strBuildeUserBookingContent.push('<div class="item-title">'+serviceDetail.service_name+'</div></div>');
+                            strBuildeUserBookingContent.push('</div>');
+                            strBuildeUserBookingContent.push('<div class="booking-cards" style="margin: 10px;">');
+                                strBuildeUserBookingContent.push('<div class="item-subtitle" style="margin: 5px;">Precio Final: $'+radioValuePrice+'</div>');
+                                strBuildeUserBookingContent.push('<div class="item-subtitle" style="margin: 5px;">Fecha: '+finalDateArg+'</div>');
+                                strBuildeUserBookingContent.push('<div class="item-subtitle" style="margin: 5px;">Desde: '+serviceDetail.start_at+'hs</div>');
+                                strBuildeUserBookingContent.push('<div class="item-subtitle" style="margin: 5px;">Hasta: '+serviceDetail.end_at+'hs</div>');
+                                strBuildeUserBookingContent.push('<div class="item-subtitle" style="margin: 5px;">ID: '+item.id+'hs</div>');
+                            strBuildeUserBookingContent.push('</div></li>');*/
+                        //}
+                    }); 
+                    strBuildeUserBookingContent.push('</ul></div></div>');   
 
-		}
-	}
-}
-
-function builderInformationActivityDetails() {
-
-	$('#textDescriptionActivityDetails').html(activityDetails.detalle);
-	$('#cardScheduleActivityDetails').html(builderScheduleActivityDetails(activityDetails.horarioTexto));
-
-	$('#cardPriceActivityDetails').html(builderPriceDetails(activityDetails.precio));
-
-	$('#coordinatorsListActivity').html(builderCoordinatorsActivity(activityDetails.coordinadores));
-
-	myApp.initImagesLazyLoad(mainView.activePage.container);
-}
-
-function builderCoordinatorsActivity(coordActivity) {
-	console.log(coordActivity);
-	var strBuilderCoordinatorsContent = [];
-	if (coordActivity.length == 0) {
-		strBuilderCoordinatorsContent.push('');
-	} else {
-		strBuilderCoordinatorsContent.push('<div class="card">');
-		strBuilderCoordinatorsContent.push('<div id="divCoordinatorsActivity" class="card-header card-header-center">' + divCoordinatorsSport + '</div>');
-		strBuilderCoordinatorsContent.push('<div class="card-content">');
-		strBuilderCoordinatorsContent.push('<div class="list-block media-list">');
-		strBuilderCoordinatorsContent.push('<ul>');
-		$.each(coordActivity, function (i, coord) {
-			strBuilderCoordinatorsContent.push('<li class="item-content">');
-			strBuilderCoordinatorsContent.push('<div class="item-media">');
-			var urlImgProfile = getDefaultImageProfile();
-			if (coord.imgProfile != "") {
-				urlImgProfile = coord.imgProfile;
-			}
-			strBuilderCoordinatorsContent.push('<img class="lazy lazy-fadeIn imgProfileCoordinator" alt="' + coord.altImg + '" data-src="' + urlImgProfile + '">');
-			strBuilderCoordinatorsContent.push('</div>');
-			strBuilderCoordinatorsContent.push('<div class="item-inner">');
-			strBuilderCoordinatorsContent.push('<div class="item-title-row">');
-			strBuilderCoordinatorsContent.push('<div class="item-title item-title-coord">' + coord.role + '</div>');
-			strBuilderCoordinatorsContent.push('</div>');
-			strBuilderCoordinatorsContent.push('<div class="item-subtitle item-subtitle-name">' + coord.name + '</div>');
-			strBuilderCoordinatorsContent.push('<a onclick="openPhoneCaller(\'' + coord.phone + '\')" herf="#">');
-			strBuilderCoordinatorsContent.push('<div class="item-subtitle item-subtitle-link-phone">' + coord.phone + '</div>');
-			strBuilderCoordinatorsContent.push('</a>');
-			strBuilderCoordinatorsContent.push('<a onclick="openMailer(\'' + lblSubjectEmail + '\',\'' + coord.email + '\')" herf="#">');
-			strBuilderCoordinatorsContent.push('<div class="item-subtitle item-subtitle-link-email">' + coord.email + '</div>');
-			strBuilderCoordinatorsContent.push('</a>');
-			strBuilderCoordinatorsContent.push('</div>');
-			strBuilderCoordinatorsContent.push('</li>');
-		});
-		strBuilderCoordinatorsContent.push('</ul>');
-		strBuilderCoordinatorsContent.push('</div>');
-		strBuilderCoordinatorsContent.push('</div>');
-	}
-	return (strBuilderCoordinatorsContent.join(""));
-}
-
-function loadNewsActivityDetails(idAct) {
-	showLoadSpinnerWS();
-	$.ajax({
-		// URL del Web Service
-		url: getPathWS() + 'getSucesosPorActividad',
-		dataType: 'json',
-		data: {
-			'id': idAct,
-			'pageNumber': nextPageNumberActivityDetails
-		},
-		timeout: timeOut,
-		success: function (response) {
-			console.log(response);
-			/*if(response.errorCode != 0)
-			{
-			    hideLoadSpinnerWS();
-			    filterCodeErrorWS(response);
-			    return;
-			}
-			if(isAppUpdate(response.serverVersion) == false){
+				} 
+				console.log(strBuildeUserBookingContent);
+				$('#tabActivityDetails2').append(strBuildeUserBookingContent.join(""));   
 				hideLoadSpinnerWS();
-				mainView.router.load({pageName: 'update'});
-				return;
-			}*/
-			nextPageNumberActivityDetails = parseInt(response.paginaActual) + 1;
-
-			if (response.pageNumber == 1) {
-				$('#contentTabActivityDetails2').html('');
-				recentNewsListActivityDetails = [];
-				recentNewsListActivityDetails = response.sucesos;
-				builderNewsActivityDetails();
-				hideLoadSpinnerWS();
-			} else {
-				recentNewsListActivityDetails = [];
-				recentNewsListActivityDetails = response.sucesos;
-				builderNewsActivityDetails();
-				hideLoadSpinnerWS();
-			}
-
-			if (response.totalPage < nextPageNumberActivityDetails) {
-				myApp.detachInfiniteScroll('.infinite-scroll-activitydetails');
-			}
-			loadingInfiniteScrollActivityDetails = false;
-			areAccessedServerNewsActivityDetails = false;
-			$('#noConnection-content-block-activitydetails').hide();
 
 
-		},
-		error: function (data, status, error) {
-			if (nextPageNumberActivityDetails == 1) {
-				builderErrorNewsActivityDetails(idAct);
-				hideLoadSpinnerWS();
-			} else {
-				hideLoadSpinnerWS();
-				showMessageToast(messageCanNotRefresh);
-				loadingInfiniteScrollActivityDetails = false;
-				areAccessedServerNewsActivityDetails = true;
-			}
-		},
-		beforeSend: function (xhr, settings) {
-			xhr.setRequestHeader('Authorization', 'Bearer ' + accessToken);
-		} //set tokenString before send
-	});
-}
+            },
+            error: function (data, status, error){
+                console.log(erro, data, status);
+            }
 
-function reloadNewsActivityDetails() {
-	if (existInternetConnection() == true) {
-		loadNewsActivityDetails(idActivitySelected);
-	} else {
-		showMessageToast(messageCanNotRefresh);
-	}
-}
-
-function builderErrorNewsActivityDetails(idAct) {
-	$('#contentTabActivityDetails2').html('');
-	var srBuilderNewsActivityDetailsContent = [];
-	srBuilderNewsActivityDetailsContent.push('<div onclick="loadNewsActivityDetails(\'' + idAct + '\')" class="content-block content-block-information">');
-	srBuilderNewsActivityDetailsContent.push('<div id="divNewsActivityDetailsErrorHeader"></div>');
-
-	srBuilderNewsActivityDetailsContent.push('<div id="divNewsActivityDetailsErrorText"></div>');
-
-	srBuilderNewsActivityDetailsContent.push('<div class="link" id="divImgNewsActivityDetailsError">');
-	srBuilderNewsActivityDetailsContent.push('<img id="imgNewsActivityDetailsUpload" src="img/template/icon-upload.png" />');
-	srBuilderNewsActivityDetailsContent.push('</div>');
-	srBuilderNewsActivityDetailsContent.push('</div>');
-	$('#contentTabActivityDetails2').append(srBuilderNewsActivityDetailsContent.join(""));
-	$('#divNewsActivityDetailsErrorHeader').text(divErrorConnectionHeader);
-	$('#divNewsActivityDetailsErrorText').text(divNewsActivityDetailsErrorText);
-}
-
-function builderNewsActivityDetails() {
-
-	var strBuilderNewsActivityDetailsContent = [];
-	if (recentNewsListActivityDetails.length == 0) {
-		strBuilderNewsActivityDetailsContent.push('<div class="content-block">');
-		strBuilderNewsActivityDetailsContent.push('<div class="divNotLastestNews"></div>');
-		strBuilderNewsActivityDetailsContent.push('</div>');
-	} else {
-		$.each(recentNewsListActivityDetails, function (i, item) {
-			/*if(item.type == "banner"){
-				/*strBuilderNewsActivityDetailsContent.push('<div class="item-list-banner">'); ERASE
-					strBuilderNewsActivityDetailsContent.push(builderBannerPublicityList(item.urlAdBanner,item.linkAdBanner));
-				strBuilderNewsActivityDetailsContent.push('</div>');
-			} else{*
-				strBuilderNewsActivityDetailsContent.push('<div class="card card-news"><div class="card-content"><div class="list-block list-block-about media-list">');
-					strBuilderNewsActivityDetailsContent.push('<ul><li class="item-content">');
-						strBuilderNewsActivityDetailsContent.push('<a onclick="loadNewDetails('+item.id+')" href="#" class="item-link item-content">');
-
-						*/
-			if (item.tipoObjeto == "noticia") {
-
-				var strBuilderLastNewsContentArray = htmlEventCard(item);
-                //strBuilderLastNewsContent.append(strBuilderLastNewsContentTournamentArray.join(""));
-                strBuilderNewsActivityDetailsContent.push(strBuilderLastNewsContentArray.join(""));
-
-				//}
-			} else if (item.tipoObjeto == "torneo-encuentro") {
-
-				console.log(item.id);
+            
+    });
 
 
-				// var encuentroFecha = 0;
-				console.log(item.id);
-				strBuilderNewsActivityDetailsContent.push('<div class="card tournament-matches"><a onclick="loadMatchDetails1(' + item.id + ',\'' + sucesoDetailFromSports + '\')" href="#">');
-				strBuilderNewsActivityDetailsContent.push('<div id="tournament-matches-header" class="card-header no-border">');
-				strBuilderNewsActivityDetailsContent.push('<div class="tournament-matches-icon"><img data-src=' + item.torneo.deporte.imagenPrincipalMin + ' class="lazy lazy-fadeIn img-shield-tournament" ></div>');
-				strBuilderNewsActivityDetailsContent.push('<div class="tournament-matches-name">' + item.torneo.nombre + '</div>');
-				strBuilderNewsActivityDetailsContent.push('<div class="tournament-matches-division">' + item.torneo.deporteCategoria.nombreCorto + '');
-				if (item.vivo == "true") {
-					strBuilderNewsActivityDetailsContent.push('<div class="tournament-matches-matchday-live animated infinite pulse">PARTIDO EN VIVO</div></div></div>');
-				} else {
-					strBuilderNewsActivityDetailsContent.push('<div class="tournament-matches-matchday">' + item.fechaEncuentro.fecha + '</div></div></div>');
-				}
-				strBuilderNewsActivityDetailsContent.push('<div class="card-content tournament-matches-content">');
-				strBuilderNewsActivityDetailsContent.push('<div class="card-content-inner">');
-				//var verMasFecha = false;
 
-				//$.each( item.encuentros, function( n, match ){
-				// encuentroFecha = encuentroFecha+1;
-				console.log(encuentroFecha);
-				//if (encuentroFecha < 3){
-				strBuilderNewsActivityDetailsContent.push('<div class="row no-gutter row-tournament-matches">');
-				strBuilderNewsActivityDetailsContent.push('<div class="col-25 team-lastmatch-left">' + item.local.nombre + '</div>');
-				//if (match.local.imagenPrincipalMin != ""){
-				//strBuilderNewsActivityDetailsContent.push('<div class="col-10"><img data-src="'+match.local.imagenPrincipalMin+'" class="lazy lazy-fadeIn img-shield-team"></div>');
-				//} else {
-				strBuilderNewsActivityDetailsContent.push('<div class="col-15" img-lastmatch><img data-src=' + item.local.imagenPrincipalMin + ' class="lazy lazy-fadeIn img-shield-lastmatch"></div>');
-				//}
-				//if (match.local.tantos != "" || match.visit.tantos != ""){
-				//strBuilderNewsActivityDetailsContent.push('<div class="col-20 match-scorer">'+match.local.tantos+' - '+match.visitante.tantos+'</div>');
-				//}
-				//else {
-				strBuilderNewsActivityDetailsContent.push('<div class="col-20 match-scorer-lastmatch">' + item.local.tantos + ' - ' + item.visitante.tantos + '</div>');
-				//}
-				strBuilderNewsActivityDetailsContent.push('<div class="col-15 img-lastmatch"><img data-src=' + item.visitante.imagenPrincipalMin + ' class="lazy lazy-fadeIn img-shield-lastmatch"></div>');
-				strBuilderNewsActivityDetailsContent.push('<div class="col-25 team-lastmatch-right">' + item.visitante.nombre + '</div></div>');
-				// }
-				// });
-				strBuilderNewsActivityDetailsContent.push('</div></div>');
-				strBuilderNewsActivityDetailsContent.push('<div class="card-footer tournament-matches-footer">Ver más...</div></a></div>');
-
-
-			} else if (item.tipoObjeto == "evento") {
-				
-				var strBuilderLastNewsContentEventArray = htmlEventCard(item);
-                //strBuilderLastNewsContent.append(strBuilderLastNewsContentTournamentArray.join(""));
-                strBuilderNewsActivityDetailsContent.push(strBuilderLastNewsContentEventArray.join(""));
-
-			} else if (item.tipoObjeto == "torneo-tabla-posicion") {
-				
-				var strBuilderLastNewsContentTournamentArray = htmlTournamentTableCard(item);
-                //strBuilderLastNewsContent.append(strBuilderLastNewsContentTournamentArray.join(""));
-                strBuilderNewsActivityDetailsContent.push(strBuilderLastNewsContentTournamentArray.join(""));
-
-
-			} else if (item.tipoObjeto == "torneo-fecha") {
-				var strBuilderLastNewsContentTournamentMatchesArray = htmlTournamentMatchesCard(item);
-                //strBuilderLastNewsContent.append(strBuilderLastNewsContentTournamentArray.join(""));
-				strBuilderLastNewsContent.push(strBuilderLastNewsContentTournamentMatchesArray.join(""));
-				
-			}
-
-			/*strBuilderNewsActivityDetailsContent.push('<div class="item-media">');
-								var urlImgNewsList = getDefaultImageNewsList();
-								if(item.urlImgMin != ""){
-									urlImgNewsList = item.urlImgMin; 
-								}
-								strBuilderNewsActivityDetailsContent.push('<img class="lazy lazy-fadeIn imgCardNew" data-src="'+urlImgNewsList+'" alt="'+item.altImg+'" />');
-								strBuilderNewsActivityDetailsContent.push('</div>');
-								
-								strBuilderNewsActivityDetailsContent.push('<div class="item-inner">');
-								strBuilderNewsActivityDetailsContent.push('<div class="item-title-row">');
-								strBuilderNewsActivityDetailsContent.push('<div class="item-title item-title-new">'+item.title+'</div>');
-								strBuilderNewsActivityDetailsContent.push('</div>');
-								strBuilderNewsActivityDetailsContent.push('<div class="item-subContent-news">');
-									strBuilderNewsActivityDetailsContent.push('<span class="item-date">'+item.publishDate+'</span>');
-									strBuilderNewsActivityDetailsContent.push('<span class="item-shortContent">'+item.shortContent+'</span>');
-								strBuilderNewsActivityDetailsContent.push('</div>');
-								strBuilderNewsActivityDetailsContent.push('</div>');
-							strBuilderNewsActivityDetailsContent.push('</a>');
-						strBuilderNewsActivityDetailsContent.push('</li></ul>');
-					strBuilderNewsActivityDetailsContent.push('</div></div></div>');*/
-			//}
-		});
-	}
-	$('#contentTabActivityDetails2').append(strBuilderNewsActivityDetailsContent.join(""));
-	$('.divNotLastestNews').text(divNotLastestNews);
-	myApp.initImagesLazyLoad(mainView.activePage.container);
-}
-
-function builderScheduleActivityDetails(schedule) {
-	var strBuilderScheduleContent = [];
-	if (schedule == "") {
-		strBuilderScheduleContent.push('');
-	} else {
-		strBuilderScheduleContent.push('<div class="card">');
-		strBuilderScheduleContent.push('<div class="card-header">' + lblSchedule + '</div>');
-		strBuilderScheduleContent.push('<div class="card-content">');
-		strBuilderScheduleContent.push('<div class="card-content-inner">');
-		strBuilderScheduleContent.push('<div class="list-block general-information">');
-		strBuilderScheduleContent.push('<ul>');
-		strBuilderScheduleContent.push('<li>');
-		strBuilderScheduleContent.push('<div class="item-content">');
-		strBuilderScheduleContent.push('<div class="item-media"><i class="icon icon-form-calendar"></i></div>');
-		strBuilderScheduleContent.push('<div class="item-inner">');
-		strBuilderScheduleContent.push('<div class="item-title label color-gray">');
-		strBuilderScheduleContent.push(schedule);
-		strBuilderScheduleContent.push('</div>');
-		strBuilderScheduleContent.push('</div>');
-		strBuilderScheduleContent.push('</div>');
-		strBuilderScheduleContent.push('</li>');
-		strBuilderScheduleContent.push('</ul>');
-		strBuilderScheduleContent.push('</div>');
-		strBuilderScheduleContent.push('</div>');
-		strBuilderScheduleContent.push('</div>');
-		strBuilderScheduleContent.push('</div>');
-	}
-
-	return (strBuilderScheduleContent.join(""));
 }

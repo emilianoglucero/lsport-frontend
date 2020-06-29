@@ -1,0 +1,70 @@
+
+
+
+if service has extended {
+    if longer_available {
+        pintar azul;
+        if tiene reservas {
+            este turno ya ha sido reservado por otra persona, si deseas unirte ingresá el código de reserva
+            {textbox}
+        } else {
+            Este turno aún no ha sido reservado por nadie, sé el primero!
+        }
+
+    } else {
+        pintar gris;
+        No hay lugar para este turno en este horario
+    }
+
+    nombre de servico + para string_longer;
+    Precio
+    duracion
+
+} else {
+     if shorter_available {
+        pintar azul;
+        if tiene reservas {
+            este turno ya ha sido reservado por otra persona, si deseas unirte ingresá el código de reserva
+            {textbox}
+        } else {
+            Este turno aún no ha sido reservado por nadie, sé el primero!
+        }
+
+    } else {
+        pintar gris;
+         No hay lugar para este turno en este horario
+    }
+
+    nombre de servico + para string_shorter;
+    Precio
+    duracion
+}
+
+if longer_available
+pintar azul
+Nombre del servicio + para string_longer
+else
+
+else
+
+
+pintado azul
+else
+pintado gris
+
+if shorter_available
+Nombre del servicio + para string_shorter
+else
+
+Precio:
+
+Este turno aún no ha sido reservado por nadie
+
+
+este turno ya ha sido reservado por otra persona, si deseas unirte ingresa el código de reserva
+
+Lugares disponibles:
+
+
+
+Reservar para singles

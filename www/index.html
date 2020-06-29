@@ -8,6 +8,7 @@
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 	<meta http-equiv="Content-Security-Policy" />
+	<!--<meta http-equiv="Content-Security-Policy" content="script-src https://regatasreservas.lenguajesport.com/;" >-->
 
 
 
@@ -65,7 +66,11 @@
 	<link rel="stylesheet" type="text/css" href="css/pages/login/page-smscode.css">
 	<link rel="stylesheet" type="text/css" href="css/pages/login/page-emailregister.css">
 
+	<link rel="stylesheet" type="text/css" href="css/pages/booking/page-bookings.css">
+
 	<link href="css/font-awesome.min.css" rel="stylesheet">
+
+	<link rel="manifest" href="manifest.json">
 </head>
 
 <body>
@@ -88,7 +93,7 @@
 							</div>
 						</a>
 					</li>
-					<li id="liNewsItemMenu">
+					<!--<li id="liNewsItemMenu">
 						<a href="#news" class="item-link item-content close-panel">
 							<div class="item-media"><i class="icon icon-news"></i></div>
 							<div class="item-inner">
@@ -120,7 +125,7 @@
 			        </div>
 			      </a>
 			    </li> -->
-					<li id="liAboutItemMenu">
+					<!--<li id="liAboutItemMenu">
 						<a href="#about" class="item-link item-content close-panel">
 							<div class="item-media"><i class="icon icon-about"></i></div>
 							<div class="item-inner">
@@ -135,7 +140,7 @@
 								<div id="lblMnuSettings" class="item-title"></div>
 							</div>
 						</a>
-					</li>
+					</li>-->
 					<li id="liUserItemMenu">
 						<a href="#user" class="item-link item-content close-panel">
 							<div class="item-media"><i class="icon icon-user"></i></div>
@@ -163,31 +168,43 @@
 			<!-- Top Navbar-->
 			<div class="navbar theme-white">
 				<!-- Navbar for Index page -->
-				<div data-page="home" class="navbar-inner data-page-home cached custom-navbar">
+				<!--<div data-page="home" class="navbar-inner data-page-home cached custom-navbar">
 					<div class="left">
 						<!-- Right link contains only icon - additional "icon-only" class-->
-						<a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
+						<!--<a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
 					</div>
 					<!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
 					<!-- <div class="center sliding">
 							<i class="icon icon-home"></i>
 			            	<span id="lblHeaderHome" class="spnHeader"></span>
 						</div> -->
-					<img src="img/template/app_logo.png" class="custom-navbar-img" />
+					<!--<img src="img/template/app_logo.png" class="custom-navbar-img" />
 					<div id="subnavbarHomeDetails" class="subnavbar sliding" style="display: block !important;">
 						<div style="height: 46px;">
 							<div class="buttons-row">
 								<a href="#tabHomeDetails1" id="subnavbarHomeDetails1" class="button active tab-link"></a>
 								<a href="#tabHomeDetails2" id="subnavbarHomeDetails2" class="button tab-link"></a>
 								<!--<a href="#tabHomeDetails3" id="subnavbarHomeDetails3" class="button tab-link"></a>-->
-							</div>
+							<!--</div>
 						</div>
 					</div>
 					<div class="right">
 						<!-- Right link contains only icon - additional "icon-only" class
 							<a href="" id="icon-settings-favourites-notifications" class="link icon-only"><i  class="icon icon-settings-favourites-notifications"></i></a>
 							<a href="#notifications" class="link icon-only"><i id="icon-notifications-home" class="icon icon-notifications"></i></a>-->
+					<!--</div>
+				</div>
+
+				<!-- Navbar for Home page -->
+				<div data-page="home" class="navbar-inner cached">
+					<div class="left">
+						<a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
 					</div>
+					<!-- <div class="center sliding">
+						<i class="icon icon-user"></i>
+						<span id="lblHeaderUser" class="spnHeader"></span>
+					</div> -->
+					<img src="img/template/app_logo.png" class="custom-navbar-img" />
 				</div>
 
 				<!-- Navbar for Notifications page
@@ -381,6 +398,50 @@
 					</div> -->
 					<img src="img/template/app_logo.png" class="custom-navbar-img" />
 				</div>
+				<!-- Navbar for Users page -->
+				<div data-page="date" class="navbar-inner cached">
+					<div class="left sliding">
+						<a href="#" class="back link"> <i class="icon icon-back"></i></a>
+					</div>
+					<!-- <div class="center sliding">
+						<i class="icon icon-user"></i>
+						<span id="lblHeaderUser" class="spnHeader"></span>
+					</div> -->
+					<img src="img/template/app_logo.png" class="custom-navbar-img" />
+				</div>
+				<!-- Navbar for Services page -->
+				<div data-page="services" class="navbar-inner cached">
+					<div class="left sliding">
+						<a href="#" class="back link"> <i class="icon icon-back"></i></a>
+					</div>
+					<!-- <div class="center sliding">
+						<i class="icon icon-user"></i>
+						<span id="lblHeaderUser" class="spnHeader"></span>
+					</div> -->
+					<img src="img/template/app_logo.png" class="custom-navbar-img" />
+				</div>
+				<!-- Navbar for Review page -->
+				<div data-page="review" class="navbar-inner cached">
+					<div class="left sliding">
+						<a href="#" class="back link"> <i class="icon icon-back"></i></a>
+					</div>
+					<!-- <div class="center sliding">
+						<i class="icon icon-user"></i>
+						<span id="lblHeaderUser" class="spnHeader"></span>
+					</div> -->
+					<img src="img/template/app_logo.png" class="custom-navbar-img" />
+				</div>
+				<!-- Navbar for Confirmation page -->
+				<div data-page="confirmation" class="navbar-inner cached">
+					<!--<div class="left sliding">
+						<a href="#" class="back link"> <i class="icon icon-back"></i></a>
+					</div>
+					 <div class="center sliding">
+						<i class="icon icon-user"></i>
+						<span id="lblHeaderUser" class="spnHeader"></span>
+					</div> -->
+					<img src="img/template/app_logo.png" class="custom-navbar-img" />
+				</div>
 
 				<!-- Navbar for Activity Details page -->
 				<div data-page="activitydetails" class="navbar-inner cached navbar-inner-activitydetails">
@@ -396,12 +457,33 @@
 					<div id="subnavbarActivityDetails" class="subnavbar sliding">
 						<div style="margin: 20px 10px 0 10px;background-color: white;padding: 20px;border-radius: 20px 20px 0 0;height: 46px;width: 100%;">
 							<div class="buttons-row">
+								<a href="#tabActivityDetails1" id="subnavbarActivityDetails1" class="button active tab-link" style="font-family: Montserrat-Regular;"></a>
+								<a href="#tabActivityDetails2" id="subnavbarActivityDetails2" class="button tab-link" style="font-family: Montserrat-Regular;"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Navbar for My Bookings page 		
+				<div data-page="bookings" class="navbar-inner cached navbar-inner-activitydetails">
+					<div class="left sliding">
+						<a href="#" class="back link"> <i class="icon icon-back"></i></a>
+					</div>
+					<img src="img/template/app_logo.png" class="custom-navbar-img" />
+					<!-- <div class="center sliding">
+						<i class="icon icon-activityDetails"></i>
+						<span id="lblHeaderActivityDetails" class="spnHeader"></span>
+					</div> 
+					<div class="right sliding"></div>
+					<div id="subnavbarActivityDetails" class="subnavbar sliding">
+						<div style="margin: 20px 10px 0 10px;background-color: white;padding: 20px;border-radius: 20px 20px 0 0;height: 46px;width: 100%;">
+							<div class="buttons-row">
 								<a href="#tabActivityDetails1" id="subnavbarActivityDetails1" class="button active tab-link"></a>
 								<a href="#tabActivityDetails2" id="subnavbarActivityDetails2" class="button tab-link"></a>
 							</div>
 						</div>
 					</div>
-				</div>
+				</div>-->	
 
 				<!-- Navbar for Events page -->
 				<div data-page="events" class="navbar-inner cached">
@@ -630,10 +712,13 @@
 				<div data-page="update" id="page-update" class="page no-navbar cached"></div>
 				<div data-page="unsupported" id="page-unsupported" class="page no-navbar cached"></div>
 
-				<div data-page="date" id="page-date" class="page no-navbar cached"></div>
-				<div data-page="services" id="page-services" class="page no-navbar cached"></div>
-				<div data-page="review" id="page-review" class="page no-navbar cached"></div>
-				<div data-page="confirmation" id="page-confirmation" class="page no-navbar cached"></div>
+				<div data-page="date" id="page-date" class="page cached"></div>
+				<div data-page="services" id="page-services" class="page cached"></div>
+				<div data-page="review" id="page-review" class="page cached"></div>
+				<div data-page="confirmation" id="page-confirmation" class="page cached"></div>
+
+				<div data-page="bookings" id="page-bookings" class="page with-subnavbar cached"></div>
+				<div data-page="codecheck" id="page-codecheck" class="page cached"></div>
 			</div>
 
 		</div>
@@ -713,6 +798,12 @@
 	<script type="text/javascript" src="language/language.js"></script>
 	<script type="text/javascript" src="js/framework7/framework7.min.js"></script>
 
+	<!--Moment.js library-->
+	<script src="js/lib/moment.js"></script>
+	<script>
+		moment().format();
+	</script>
+
 	<!--Iniciar Firebase para Authorization-->
 	<script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
 	<script>
@@ -726,6 +817,14 @@
 			messagingSenderId: "341095560807"
 		};
 		firebase.initializeApp(config);
+	</script>
+
+	<script>
+	if ('serviceWorker' in navigator) {
+		navigator.serviceWorker.register('service-worker.js')
+		.then(() => console.log('service worker installed'))
+		.catch(err => console.log('Error', err));
+	}
 	</script>
 
 
@@ -786,6 +885,9 @@
 	<script type="text/javascript" src="js/pages/booking/page-services.js"></script>
 	<script type="text/javascript" src="js/pages/booking/page-review.js"></script>
 	<script type="text/javascript" src="js/pages/booking/page-confirmation.js"></script>
+
+	<script type="text/javascript" src="js/pages/booking/page-bookings.js"></script>
+	<script type="text/javascript" src="js/pages/booking/page-codecheck.js"></script>
 </body>
 
 </html>

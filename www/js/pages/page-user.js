@@ -1,10 +1,17 @@
+//var userInfo;
+var userFirstName;
+var userLastName;
+var userEmail;
+var userID;
 
+var userBookingsList;
 
 $(document).ready(function(){
 
     $('#lblTitleUser').text(lblTitleUser);
     $('#lblNameUser').text(lblNameUser);
     $('#lblLogoutButton').text(lblLogoutButton);
+    $('#lblMyBookingsButton').text(lblMyBookingsButton);
 
     $('.lblNotLogged').text(lblNotLogged);
 
@@ -12,21 +19,25 @@ $(document).ready(function(){
 
 myApp.onPageInit('user', function (page)
 {
-    var user = firebase.auth().currentUser;
-    console.log(user);
-    if (user) {
+    /*var user = firebase.auth().currentUser;
+    //console.log(user);
+    //if (user) {
         $("#notLoggedUser").hide();
         $("#loggedUser").show();
     } else {
         $("#loggedUser").hide();
         $("#notLoggedUser").show();
-    }
+    }*/
+    $("#notLoggedUser").hide();
+    console.log(email);
+
+    getUserBasicInfo();
 
 
 });
 myApp.onPageReinit('user', function (page)
 {
-    var user = firebase.auth().currentUser;
+    /*var user = firebase.auth().currentUser;
     console.log(user);
     if (user) {
         $("#notLoggedUser").hide();
@@ -34,22 +45,112 @@ myApp.onPageReinit('user', function (page)
     } else {
         $("#loggedUser").hide();
         $("#notLoggedUser").show();
-    }
+    }*/
+    $("#notLoggedUser").hide();
+    //getUserBasicInfo();
 
 
 });
 
 myApp.onPageBeforeAnimation('user', function (page)
 {
-    document.getElementById("user-profile-name").placeholder = userFullName;
+
 });
+
+function getUserBasicInfo () {
+    //load user info and bookings
+    showLoadSpinnerWS();
+    $.ajax({
+        // URL del Web Service
+            url: "https://demoreservas.lenguajesport.com/wpfrontend/wp-json/salon/api/v1/customers",
+            method: 'GET',
+            dataType: "json",
+            contentType: "application/json",
+            headers: {
+                "Access-Token": tokenBooking
+            },
+            data: { 
+                "search": email
+            },
+            timeout: timeOut,
+            success: function(response){
+                console.log(response);
+                
+                $.each( response.items, function( i, item ){
+                    console.log(item);
+                    if (item.email == email) {
+                        console.log("its the same");
+                        userFirstName = item.first_name;
+                        userLastName = item.last_name;
+                        userEmail = item.email;
+                        userID = item.id;
+
+                    } else {
+                        console.log("no se encontro el usuario");
+                    }
+
+                   
+                    
+                });
+
+                document.getElementById("user-profile-name").placeholder = userFirstName+" "+userLastName;
+                //document.getElementById("user-profile-lastname").placeholder = userLastName;
+                document.getElementById("user-profile-email").placeholder = email;
+
+                
+
+            },
+            error: function (data, status, error){
+                console.log(error, data, status);
+            }
+   
+            
+    });
+    hideLoadSpinnerWS();
+}
+
+/*function getAllMyBookingInformation() {
+
+    $.ajax({
+        // URL del Web Service
+            url: "https://demoreservas.lenguajesport.com/?rest_route=/salon/api/v1/bookings",
+            method: 'GET',
+            dataType: "json",
+            contentType: "application/json",
+            headers: {
+                "Access-Token": tokenBooking
+            },
+            data: { 
+                "customers": userID,
+                "orderby": "date_time"
+            },
+            timeout: timeOut,
+            success: function(response){
+                console.log(response);
+                userBookingsList = response.items;
+                
+                //builderUserBookings(userBookingsList);
+
+            },
+            error: function (data, status, error){
+                console.log(erro, data, status);
+            }
+
+            
+    });
+}*/
+
+function myBookingsPage() {
+    console.log("my bookings");
+    mainView.router.load({ pageName: "activitydetails" });
+}
 
 function logOutUser() {
 
         var textMessage = 'Estas seguro que queres cerrar sesion en este dispositivo?';
         myApp.confirm(textMessage, function () {
 
-                firebase.auth().signOut();
+                /*firebase.auth().signOut();
                 usedPhoneNumber = '';
                 smsCode = '';
                 //vaciar el input smscode y setear el tiempo que quedo corriendo a 0
@@ -57,7 +158,30 @@ function logOutUser() {
                 sec = 0;
                 showLoadSpinnerWS();
                 setTimeout("hideLoadSpinnerWS()", 1000);
-                window.location.reload(true);
+                window.location.reload(true);*/
+
+                $.ajax({
+                    // URL del Web Service
+                        url: "https://demoreservas.lenguajesport.com/wpfrontend/wp-json/salon/api/v1/logout",
+                        method: 'POST',
+                        dataType: "json",
+                        contentType: "application/json",
+                        headers: {
+                            "Access-Token": tokenBooking
+                        },
+                        timeout: timeOut,
+                        success: function(response){
+                            console.log(response);
+                            showLoadSpinnerWS();
+                            setTimeout("hideLoadSpinnerWS()", 1000);
+                            window.location.reload(true);
+                        },
+                        error: function (data, status, error){
+            
+                        }
+               
+                        
+                });
 
         });
 

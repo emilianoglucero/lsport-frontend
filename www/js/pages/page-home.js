@@ -3,17 +3,40 @@ var allCategoriesIdsToList = [];
 var categorieIdHTML;
 var categorieNameHTML;
 
+
+//function to calculate the code booking
+function codeBooking(date, time, id){
+   
+    console.log(date);
+    console.log(time);
+    console.log(id);
+    var finalDate = date.split("-").join("");
+    var finalTime = time.replace(":", "");
+    var stringCode = finalDate + finalTime + id;
+    console.log(stringCode);
+    var stringCodeToInteger = parseInt(stringCode);
+    console.log(stringCodeToInteger);
+    var CodeBookingLong = stringCodeToInteger / 8888;
+    console.log(CodeBookingLong);
+    var CodeBookingLongString = CodeBookingLong.toString();
+    finalCodeBooking = CodeBookingLongString.split(".").pop();
+    console.log(finalCodeBooking);
+    return finalCodeBooking;
+  
+  
+  }
+
 /*services ids from categories*/
 //var tenisIDs = [15,17, 19, 21];
 //var botesIDs = [10,37,39,41,20];
 myApp.onPageInit('home', function (page)
 {
     console.log('date page init');
-
+    showLoadSpinnerWS();
     //call to determine the categories to use and list in the home page
     $.ajax({
         // URL del Web Service
-            url: "https://regatasreservas.lenguajesport.com/?rest_route=/salon/api/v1/services/categories",
+            url: "https://demoreservas.lenguajesport.com/wpfrontend/wp-json/salon/api/v1/services/categories",
             method: 'GET',
             dataType: "json",
             contentType: "application/json",
@@ -38,6 +61,7 @@ myApp.onPageInit('home', function (page)
                 //buil home with the name of the categories
 
                 builderCategoriesNames(allCategoriesIdsToList);
+                hideLoadSpinnerWS();
 
             
             },
@@ -50,6 +74,7 @@ myApp.onPageInit('home', function (page)
 });
 
 function serviceReservation(categorieIdHTML){
+    showLoadSpinnerWS();
     console.log(categorieIdHTML);
     categorieIdHTML = categorieIdHTML;
     //console.log(tenisIDs);
@@ -57,7 +82,7 @@ function serviceReservation(categorieIdHTML){
     //list all the services and finde only the ones with the name categorie
     $.ajax({
         // URL del Web Service
-            url: "https://regatasreservas.lenguajesport.com/?rest_route=/salon/api/v1/services",
+            url: "https://demoreservas.lenguajesport.com/wpfrontend/wp-json/salon/api/v1/services",
             method: 'GET',
             dataType: "json",
             contentType: "application/json",
@@ -89,6 +114,7 @@ function serviceReservation(categorieIdHTML){
                     });
 
                     mainView.router.load({ pageName: "date" });
+                    hideLoadSpinnerWS();
                 }
             
             },

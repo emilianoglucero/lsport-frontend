@@ -1,5 +1,8 @@
 var tokenBooking;
 
+var email;
+var password;
+
 $(document).ready(function() {
   //INIT HEADERS
   $("#lblWellcomeLogin").text(lblWellcomeLogin);
@@ -29,8 +32,9 @@ function loginBackButton() {
 function confirmSignUp() {
   
 
-  var email = document.getElementById('user-signemail').value;
-  var password = document.getElementById('user-signpassword').value;
+  //email = document.getElementById('user-signemail').value;
+  email = "emilianoglucero@gmail.com";
+  password = document.getElementById('user-signpassword').value;
 
 
   //validacion de los campos de mail y pass
@@ -63,10 +67,12 @@ function confirmSignUp() {
 
       $.ajax({
         // URL del Web Service
-            url: 'https://regatasreservas.lenguajesport.com/?rest_route=/salon/api/v1/login',
+            url: 'https://demoreservas.lenguajesport.com/wpfrontend/wp-json/salon/api/v1/login',
             dataType: 'json',
-            data: { 'name': email,
-                    'password': password
+            data: { //'name': email,
+                    //'password': password
+                    'name': 'emilianoglucero@gmail.com',
+                    'password': '123456'
             },
             method: 'GET',
             timeout: timeOut,
@@ -81,6 +87,7 @@ function confirmSignUp() {
             },
             error: function (data, status, error){
               alert('Hubo un error, por favor revisá tu correo y contraseña');
+              console.log(error);
 
             }
       });
